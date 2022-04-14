@@ -1,4 +1,4 @@
-## Welcome to GitHub Pages
+## Welcome to my GitHub Pages. Website under construction...
 
 You can use the [editor on GitHub](https://github.com/dgmx/www/edit/main/docs/index.md) to maintain and preview the content for your website in Markdown files.
 
