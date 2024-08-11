@@ -1,11 +1,12 @@
-# Aprendiendo Bash Script
+
+# Aprendiendo Bash Script
 
 Este tutorial formado por 9 capitulos te enseñará los conceptos basicos de programación de shell con Bash
 
 Cada capítulo está escrito con un enfoque práctico. Lo que significa que deberías poder seguir los ejemplos de tu sistema Linux. 
 Hay ejercicios de muestra para poner a prueba tu aprendizaje al final de cada capítulo.
 
-## ¿Que aprenderás?
+## ¿Que aprenderás?
 
 En los nueve capitulos que forman este tutorial de bash aprenderás:
 - Crear y ejecutar tu primer script de shell en Basu
