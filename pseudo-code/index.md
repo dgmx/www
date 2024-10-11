@@ -1,6 +1,5 @@
 
-# Introducción al Pseudocódigo y PSeInt para Alumnos de Bachillerato
-
+# Introducción al Pseudocódigo y PSeInt 
 El pseudocódigo es una herramienta fundamental en la programación, utilizada para expresar algoritmos de forma clara y sencilla. Su objetivo principal es describir los pasos que debe seguir un programa sin la necesidad de usar la sintaxis estricta de un lenguaje de programación. El pseudocódigo utiliza una combinación de palabras en lenguaje natural y estructuras básicas de control que hacen que sea más fácil de entender y analizar, tanto para programadores como para personas que no tienen experiencia técnica.
 
 ## ¿Qué es PSeInt?
