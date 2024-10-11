@@ -1,3 +1,8 @@
+---
+title: "Variables"
+parent: "Pseudo-Codigo"
+nav_order: 4
+---
 
 # Variables en PSeInt
 
