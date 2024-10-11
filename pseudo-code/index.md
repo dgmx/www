@@ -1,83 +1,52 @@
 
-# Guía sobre Funciones en Pseudocódigo
+# Introducción al Pseudocódigo y PSeInt para Alumnos de Bachillerato
 
-## Introducción a las Funciones
-En programación, **las funciones** son bloques de código que realizan una tarea específica. Se utilizan para dividir el código en partes más pequeñas y manejables, facilitando su comprensión y mantenimiento. Las funciones pueden o no devolver un valor, y pueden recibir información a través de **parámetros**.
+El pseudocódigo es una herramienta fundamental en la programación, utilizada para expresar algoritmos de forma clara y sencilla. Su objetivo principal es describir los pasos que debe seguir un programa sin la necesidad de usar la sintaxis estricta de un lenguaje de programación. El pseudocódigo utiliza una combinación de palabras en lenguaje natural y estructuras básicas de control que hacen que sea más fácil de entender y analizar, tanto para programadores como para personas que no tienen experiencia técnica.
 
-En pseudocódigo, el uso de funciones es fundamental para estructurar programas complejos de manera clara y ordenada. A continuación, explicaremos cómo definir y utilizar funciones, diferenciando entre aquellas que devuelven un valor y las que no.
+## ¿Qué es PSeInt?
 
-## Tipos de Funciones
+PSeInt (PSeudo INTérprete) es un software educativo diseñado para ayudar a los estudiantes a iniciarse en el mundo de la programación mediante el uso del pseudocódigo. Este programa permite escribir, analizar y ejecutar pseudocódigo, proporcionando un entorno de aprendizaje interactivo y amigable para los principiantes.
 
-### 1. Funciones sin retorno
-Las funciones **sin retorno** son aquellas que realizan una serie de acciones pero no devuelven ningún valor al programa que las llama. Estas funciones se usan cuando no necesitamos un resultado específico, sino simplemente ejecutar un conjunto de instrucciones.
+## Características de PSeInt
 
-#### Sintaxis en pseudocódigo
-```pseudocode
-SubProceso NombreDeLaFuncion (parámetros)
-    // Instrucciones de la función
-FinSubProceso
-```
+1. **Entorno Visual Intuitivo:** PSeInt tiene una interfaz sencilla y visualmente clara que ayuda a los estudiantes a concentrarse en la lógica del algoritmo sin complicarse con la sintaxis.
 
-#### Ejemplo: Imprimir un mensaje
-```pseudocode
-SubProceso MostrarMensaje (mensaje Como Texto)
-    Escribir "El mensaje es: ", mensaje
-FinSubProceso
-```
+2. **Corrección y Diagnóstico de Errores:** El programa ayuda a identificar errores comunes en la lógica y la sintaxis del pseudocódigo, permitiendo a los estudiantes corregir y aprender de sus errores rápidamente.
 
-- **Descripción**: Esta función, llamada `MostrarMensaje`, recibe un **parámetro** llamado `mensaje` y lo muestra en pantalla. No devuelve ningún valor.
+3. **Diagramas de flujo:** Además de escribir pseudocódigo, PSeInt también permite generar diagramas de flujo automáticamente, lo que facilita la visualización de la estructura y el funcionamiento de los algoritmos.
 
-### Llamada a una función sin retorno
-Para usar una función sin retorno en pseudocódigo, simplemente escribimos su nombre y pasamos los **argumentos** necesarios:
-```pseudocode
-MostrarMensaje("Hola, mundo!")
-```
+4. **Soporte Multilenguaje:** Aunque PSeInt se centra en pseudocódigo, el lenguaje utilizado es similar a muchos lenguajes de programación reales, lo que ayuda a una transición más fluida a lenguajes como Python, C++ o Java.
 
-### 2. Funciones con retorno
-Las funciones **con retorno** realizan un conjunto de acciones y devuelven un valor al programa que las llama. Estas funciones se utilizan cuando necesitamos calcular un resultado y luego utilizarlo.
+## ¿Cómo usar PSeInt?
 
-#### Sintaxis en pseudocódigo
-```pseudocode
-Funcion NombreDeLaFuncion (parámetros) Como TipoDeDato
-    // Instrucciones de la función
-    Retornar valor
-FinFuncion
-```
+1. **Escribir un Algoritmo:** Para comenzar, debes escribir el algoritmo utilizando una estructura clara. Por ejemplo, un algoritmo que sume dos números y muestre el resultado podría verse así:
 
-#### Ejemplo: Calcular el cuadrado de un número
-```pseudocode
-Funcion CalcularCuadrado (numero Como Real) Como Real
-    Retornar numero * numero
-FinFuncion
-```
+   ```
+   Algoritmo SumaDeDosNumeros
+   Definir numero1, numero2, resultado Como Entero
+   Escribir "Ingrese el primer número: "
+   Leer numero1
+   Escribir "Ingrese el segundo número: "
+   Leer numero2
+   resultado = numero1 + numero2
+   Escribir "El resultado de la suma es: ", resultado
+   FinAlgoritmo
+   ```
 
-- **Descripción**: Esta función, llamada `CalcularCuadrado`, recibe un **parámetro** llamado `numero`, calcula su cuadrado y devuelve el resultado.
+2. **Ejecución del Algoritmo:** Una vez que hayas escrito tu pseudocódigo, puedes ejecutarlo en PSeInt para ver cómo funciona. El programa te mostrará cómo se procesan cada una de las instrucciones que has escrito.
 
-### Llamada a una función con retorno
-Para usar una función con retorno, almacenamos el valor devuelto en una variable o lo usamos directamente:
-```pseudocode
-resultado <- CalcularCuadrado(5)
-Escribir "El cuadrado es: ", resultado
-```
+3. **Corrección de Errores:** Si tu algoritmo no funciona como esperabas, PSeInt te indicará dónde podrían estar los problemas y te ofrecerá sugerencias para solucionarlos.
 
-## Parámetros y Argumentos
+4. **Uso de Diagramas de Flujo:** Puedes visualizar el algoritmo como un diagrama de flujo, lo que te permitirá entender mejor la secuencia de pasos y la lógica del proceso.
 
-### ¿Qué son los parámetros?
-**Los parámetros** son las variables que se definen en la cabecera de una función y que se utilizan para recibir valores cuando la función es llamada. Se comportan como variables locales dentro de la función.
+## Ventajas de Aprender con PSeInt
 
-- En el ejemplo `Funcion CalcularCuadrado (numero Como Real) Como Real`, `numero` es un parámetro.
-
-### ¿Qué son los argumentos?
-**Los argumentos** son los valores específicos que se pasan a una función cuando se llama a esa función. Son los datos que se utilizan para que la función realice sus cálculos o acciones.
-
-- En la llamada `CalcularCuadrado(5)`, el valor `5` es un argumento que se pasa al parámetro `numero`.
-
-## Resumen
-
-| Tipo de Función           | Sintaxis de Ejemplo                                      | Descripción                                     |
-|---------------------------|---------------------------------------------------------|-------------------------------------------------|
-| Función sin retorno       | `SubProceso NombreDeLaFuncion (parámetros)`              | Ejecuta instrucciones pero no devuelve valor.   |
-| Función con retorno       | `Funcion NombreDeLaFuncion (parámetros) Como TipoDeDato` | Ejecuta instrucciones y devuelve un valor.      |
+- **Desarrollar el pensamiento lógico:** Aprender a escribir pseudocódigo te ayudará a pensar de manera lógica y estructurada, una habilidad esencial para resolver problemas y programar.
+- **Comprender la lógica antes de codificar:** El uso de pseudocódigo te permite diseñar y entender la lógica de un programa antes de preocuparte por la sintaxis específica de un lenguaje de programación.
+- **Facilita la transición a lenguajes reales:** Una vez que comprendas bien el pseudocódigo y la lógica de los algoritmos, será mucho más sencillo aprender y utilizar lenguajes de programación como Python, C++ o Java.
 
 ## Conclusión
-Las funciones son herramientas poderosas para organizar y modularizar tu código en pseudocódigo. Las funciones **sin retorno** son útiles para ejecutar tareas repetitivas, mientras que las funciones **con retorno** son esenciales para cálculos y manipulación de datos. Comprender la diferencia entre **parámetros** y **argumentos** es clave para utilizar las funciones de manera eficiente.
+
+PSeInt es una herramienta valiosa para estudiantes de bachillerato que quieren adentrarse en el mundo de la programación. Su enfoque en el pseudocódigo permite desarrollar habilidades lógicas y de resolución de problemas, que son la base para cualquier lenguaje de programación. Además, su entorno amigable y sus funciones de corrección hacen que el aprendizaje sea más accesible y menos intimidante para quienes recién empiezan.
+
+¿Listos para comenzar a programar? ¡Es hora de escribir tu primer algoritmo en PSeInt!
