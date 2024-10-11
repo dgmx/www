@@ -1,6 +1,3 @@
-remote_theme: just-the-docs/just-the-docs
-color_scheme: dark
-title: "Diego J. González"
 
 
 # Opciones de navegación
@@ -16,3 +13,7 @@ just_the_docs:
       url: /processing/intro/
     "Otros":
       url: /otros
+
+remote_theme: just-the-docs/just-the-docs
+color_scheme: dark
+title: "Diego J. González"
