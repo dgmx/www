@@ -1,5 +1,5 @@
 
-# Variables en PSeInt para Alumnos de Bachillerato
+# Variables en PSeInt
 
 ### ¿Qué son las Variables en Programación?
 
