@@ -1,5 +1,5 @@
 
-# Operadores Lógicos y Relacionales en Programación y Pseudocódigo
+# Operadores
 
 ### ¿Qué son los Operadores Lógicos y Relacionales?
 
