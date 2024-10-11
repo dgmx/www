@@ -7,4 +7,6 @@ nav_order: 1
 
 Bienvenidos a mi blog. Aquí encontrarás artículos sobre diversos temas
 
-[- [Aprendiendo BASH](bash)]
+[- [Aprendiendo BASH](bash)]:#
+
+
