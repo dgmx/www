@@ -1,3 +1,18 @@
 remote_theme: just-the-docs/just-the-docs
 color_scheme: dark
 title: "Diego J. González"
+
+
+# Opciones de navegación
+just_the_docs:
+  aux_nav:
+    "Inicio":
+      url: /
+    "Bash":
+      url: /bash/intro/
+    "Pseudo-Codigo":
+      url: /pseudo-codigo/intro/
+    "Processing":
+      url: /processing/intro/
+    "Otros":
+      url: /otros

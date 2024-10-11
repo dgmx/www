@@ -1,3 +1,8 @@
+---
+title: "Funciones"
+parent: "Pseudo-Codigo"
+nav_order: 2
+---
 
 # Guía sobre Funciones en Pseudocódigo
 

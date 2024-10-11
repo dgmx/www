@@ -1,3 +1,9 @@
+---
+title: "Intro"
+parent: "Bash"
+nav_order: 1
+---
+
 
 # Aprendiendo Bash Script
 
