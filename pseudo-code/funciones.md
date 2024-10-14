@@ -92,7 +92,7 @@ Las funciones son herramientas poderosas para organizar y modularizar tu código
 
 Programa que pide al usuario la dimensión de un array para almacenar las calificaciones de un alumno, las muestra por pantalla y calcula la media una función (devuelve un float) y devuelve la calificación final como una cadena con otra función (devuelve un string)
 
-```pseudocode
+```plaintext
 Funcion notafin <- Calificacion (NotaFinal)
 	Definir evaluacion,notafin como Caracter
 	
