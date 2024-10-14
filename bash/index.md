@@ -14,7 +14,7 @@ Hay ejercicios de muestra para poner a prueba tu aprendizaje al final de cada ca
 ## ¿Que aprenderás?
 
 En los nueve capitulos que forman este tutorial de bash aprenderás:
-- Crear y ejecutar tu primer script de shell en Basu
+- Crear y ejecutar tu primer script de shell en Bash
 - Usar variables, propias y del sistema
 - Paso de argumentos y aceptar entradas de usuario en tus scripts
 - Llevar a cabo calculos matematicos
