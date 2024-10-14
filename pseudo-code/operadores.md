@@ -1,7 +1,7 @@
 ---
 title: "Operadores"
 parent: "Pseudo-Codigo"
-nav_order: 3
+
 ---
 
 # Operadores
