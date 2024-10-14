@@ -1,7 +1,6 @@
 ---
 title: "Conceptos Básicos"
 parent: "Processing"
-
 ---
 
 
