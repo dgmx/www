@@ -86,3 +86,68 @@ Escribir "El cuadrado es: ", resultado
 
 ## Conclusión
 Las funciones son herramientas poderosas para organizar y modularizar tu código en pseudocódigo. Las funciones **sin retorno** son útiles para ejecutar tareas repetitivas, mientras que las funciones **con retorno** son esenciales para cálculos y manipulación de datos. Comprender la diferencia entre **parámetros** y **argumentos** es clave para utilizar las funciones de manera eficiente.
+
+
+## Ejemplo
+
+Programa que pide al usuario la dimensión de un array para almacenar las calificaciones de un alumno, las muestra por pantalla y calcula la media una función (devuelve un float) y devuelve la calificación final como una cadena con otra función (devuelve un string)
+
+```pseudocode
+Funcion notafin <- Calificacion (NotaFinal)
+	Definir evaluacion,notafin como Caracter
+	
+	Si NotaFinal < 5 Entonces
+        evaluacion <- "Suspenso"
+    Sino
+        Si NotaFinal >= 5 Y NotaFinal < 6 Entonces
+            evaluacion <- "Aprobado"
+        Sino
+            Si NotaFinal >= 6 Y NotaFinal < 7 Entonces
+                evaluacion <- "Bien"
+            Sino
+                Si (NotaFinal >= 7 Y NotaFinal < 9) Entonces
+                    evaluacion <- "Notable"
+                Sino
+                    Si NotaFinal >= 9 Y NotaFinal <= 10 Entonces
+                        evaluacion <- "Sobresaliente"
+                    Sino
+                        evaluacion <- "Nota no válida"
+                    FinSi
+                FinSi
+            FinSi
+        FinSi
+    FinSi
+	notafin<-evaluacion
+Fin Funcion
+
+Funcion notamedia <- Promedio (num, cantidad)
+	Definir suma Como Entero
+	Definir notamedia como Real
+	suma <-0
+	Para i<-1 Hasta cantidad Hacer
+		suma <- suma + num[i]
+	FinPara
+	notamedia <- suma/cantidad
+Fin Funcion
+
+
+
+Algoritmo array2
+	Definir cantidad,i Como Entero
+	Definir NotaFinal como Real
+	Escribir "Introduce numero de calificaciones: "
+	Leer cantidad
+	Dimension num[cantidad]
+	Para i<-1 Hasta cantidad  Hacer
+		Escribir "Ingrese calificación número ",i 
+		Leer num[i]
+	FinPara
+	Escribir "Las calificaciones ingresadas son : "
+	Para i<-1 Hasta cantidad Hacer
+		Escribir num[i]
+	FinPara
+	NotaFinal<-Promedio(num,cantidad)
+	Escribir "La nota media es: ", NotaFinal
+	Escribir "La nota Fin de Curso es: ", Calificacion(NotaFinal)
+FinAlgoritmo
+```
