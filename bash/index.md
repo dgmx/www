@@ -1,6 +1,7 @@
 ---
-title: "Bash"
-nav_order: 2
+title: "Intro"
+parent: "Bash"
+nav_order: 1
 ---
 
 

@@ -1,6 +1,5 @@
 ---
-title: "Inicio"
-parent: "Pseudo-Codigo"
+title: "Pseudo-Codigo"
 nav_order: 1
 ---
 
