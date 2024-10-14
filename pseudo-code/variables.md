@@ -1,7 +1,7 @@
 ---
 title: "Variables"
 parent: "Pseudo-Codigo"
-nav_order: 4
+nav_order: 2
 ---
 
 # Variables en PSeInt

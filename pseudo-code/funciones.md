@@ -1,7 +1,7 @@
 ---
 title: "Funciones"
 parent: "Pseudo-Codigo"
-nav_order: 2
+nav_order: 4
 ---
 
 # Guía sobre Funciones en Pseudocódigo

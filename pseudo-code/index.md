@@ -1,6 +1,7 @@
 ---
-title: "Pseudo-Codigo"
-nav_order: 3
+title: "Inicio"
+parent: "Pseudo-Codigo"
+nav_order: 1
 ---
 
 # Introducción al Pseudocódigo y PSeInt 
