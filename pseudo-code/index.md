@@ -1,6 +1,6 @@
 ---
 title: "Pseudo-Codigo"
-nav_order: 1
+nav_order: 4
 ---
 
 # Introducción al Pseudocódigo y PSeInt 
