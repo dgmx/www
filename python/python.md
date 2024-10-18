@@ -162,7 +162,7 @@ resultado = a - b
 ```
 *   **Multiplicación (\*)**: multiplica dos operandos.
 ```python
-resultado = a \* b
+resultado = a * b
 ```
 *   **División (/)**: divide el primer operando por el segundo. El resultado es un número de punto flotante.
 ```python
@@ -178,7 +178,7 @@ resultado = a % b
 ```
 *   **Exponenciación (\*\*)**: eleva el primer operando a la potencia del segundo.
 ```python
-resultado = a \*\* b
+resultado = a ** b
 ```
 Sigamos con los **operadores de comparación**. Estos se utilizan para comparar dos valores y devuelven un valor booleano (**True** o **False**).
 
@@ -229,7 +229,7 @@ Es importante entender el **orden de precedencia de los operadores** para evalua
 *   **Paréntesis ()**: Evalúan las expresiones dentro de los paréntesis primero.
 *   **Exponenciación \*\***.
 *   **Signos + y –**: Signos unarios antes de una variable (por ejemplo, -a).
-*   **Multiplicación \*, división /, división entera //, y módulo %**.
+*   **Multiplicación *, división /, división entera //, y módulo %**.
 *   **Suma + y resta –**.
 *   **Operadores de comparación**: ==, !=, >, <, >=, <=.
 *   **Operadores lógicos** not, and, or.
@@ -241,15 +241,15 @@ b = 3
 c = 2
 d = 4
 
-resultado = (a + b) \* c / d 
-resultado = a + b \* c \*\* d - (a / b)
+resultado = (a + b) * c / d 
+resultado = a + b * c ** d - (a / b)
 ```
 Además, también podemos realizar operaciones con las cadenas de texto. Python permite **concatenar** (unir) cadenas usando el operador **_+_**, y repetir cadenas usando el operador **_\*_**. Por ejemplo:
 ```python
 nombre = "Juan"
 saludo = "Hola, " + nombre + "!"
 
-repetir = "Hola" \* 3  
+repetir = "Hola" * 3  
 ```
 ## Comentarios
 
@@ -276,7 +276,7 @@ Cuando programamos, la interacción con el usuario es muy importante porque nos 
 
 Python utiliza la función **_print()_** para mostrar datos en la pantalla. Esta función es muy flexible y permite mostrar texto, variables y resultados de expresiones de manera fácil.
 ```python
-print(valor1, valor2, ..., sep=' ', end='\\n')
+print(valor1, valor2, ..., sep=' ', end='n')
 ```
 Donde:
 
@@ -295,7 +295,7 @@ edad = 25
 print("Nombre:", nombre, "Edad:", edad)
 
 # Cambiar el separador y el final de línea
-print("Python", "es", "genial", sep='-', end='!\\n')
+print("Python", "es", "genial", sep='-', end='!n')
 ```
 A veces, podemos necesitar usar la sintaxis **F-strings**, que nos facilita la escritura de salidas en pantalla:
 ```python
@@ -409,29 +409,29 @@ Cada elemento de la lista ocupa una posición, llamada **índice**, a la que pod
 Las listas en Python se definen utilizando corchetes **_\[ \]_** y los elementos se separan por **comas**.
 ```python
 # Crear una lista
-frutas = \["manzana", "platano", "cereza"\]
+frutas = ["manzana", "platano", "cereza"\]
 
 # Acceder a elementos de la lista
-print(frutas\[0\])  # Salida: manzana
-print(frutas\[1\])  # Salida: banana
+print(frutas[0])  # Salida: manzana
+print(frutas[1])  # Salida: banana
 
 # Modificar un elemento de la lista
-frutas\[1\] = "kiwi"
-print(frutas)  # Salida: \['manzana', 'kiwi', 'cereza'\]
+frutas[1] = "kiwi"
+print(frutas)  # Salida: ['manzana', 'kiwi', 'cereza']
 ```
 También disponemos de muchas funciones integradas en el lenguaje, que nos permiten realizar operaciones comunes con las listas.
 ```python
 # Agregar elementos
 frutas.append("naranja") # Añade un elemento al final de la lista
-print(frutas)  # Salida: \['manzana', 'kiwi', 'cereza', 'naranja'\]
+print(frutas)  # Salida: ['manzana', 'kiwi', 'cereza', 'naranja']
 
 # Eliminar elementos
 frutas.remove("kiwi") # Elimina el elemento que le indiquemos
-print(frutas)  # Salida: \['manzana', 'cereza', 'naranja'\]
+print(frutas)  # Salida: ['manzana', 'cereza', 'naranja']
 
 # Insertar elementos en una posición específica
 frutas.insert(1, "pera")
-print(frutas)  # Salida: \['manzana', 'pera', 'cereza', 'naranja'\]
+print(frutas)  # Salida: ['manzana', 'pera', 'cereza', 'naranja']
 
 # Obtener la longitud de la lista
 longitud = len(frutas)
@@ -440,7 +440,7 @@ print(longitud)  # Salida: 4
 Por último, necesitamos saber cómo podemos recorrer una lista para poder realizar comprobaciones u operaciones sobre cada uno de los elementos que contiene.
 ```python
 # Definir una lista
-frutas = \["manzana", "pera", "cereza"\]
+frutas = ["manzana", "pera", "cereza"]
 
 # Recorrer la lista con un bucle for
 for fruta in frutas:
@@ -451,11 +451,11 @@ En este ejemplo, el bucle **_for_** itera sobre cada elemento de la lista **_fru
 Esto mismo también puede hacerse recorriendo la lista por medio de un índice que indica la posición que ocupa cada elemento en la lista:
 ```python
 # Definir una lista
-frutas = \["manzana", "pera", "cereza"\]
+frutas = ["manzana", "pera", "cereza"]
 
 # Recorrer la lista con un bucle for
 for indice in range(0,len(frutas)):
-    print(frutas\[indice\])
+    print(frutas[indice])
 ```
 ¿Cuándo debes usar un método u otro? Te lo dirá las necesidades que tengas en cada momento para resolver un problema concreto.
 
