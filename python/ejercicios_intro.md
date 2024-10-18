@@ -19,6 +19,8 @@ Tabla de contenidos
 - [Ejercicio 5: calcular la media de tres números](#ejercicio-5-calcular-la-media-de-tres-números)
 - [Ejercicio 6: multiplicar dos números](#ejercicio-6-multiplicar-dos-números)
 - [Ejercicio 7: concatenar dos cadenas de texto](#ejercicio-7-concatenar-dos-cadenas-de-texto)
+- [Ejercicio 8: mostrar un número repetido varias veces](#ejercicio-8-mostrar-un-número-repetido-varias-veces)
+- [Ejercicio 9: calcular el área de un rectángulo](#ejercicio-9-calcular-el-área-de-un-rectángulo)
 - [Ejercicio 10: calcular el perímetro de un rectángulo](#ejercicio-10-calcular-el-perímetro-de-un-rectángulo)
 
 Para que puedas practicar sobre los conceptos de variables, constantes, operadores, expresiones y la entrada/salida de datos usando Python, aquí tienes una batería de ejercicios resueltos con explicaciones detalladas de cada uno.
@@ -56,7 +58,7 @@ PI = 3.14159
 radio = float(input("Introduce el radio del círculo: "))
 
 # Calcular el área
-area = PI \* (radio \*\* 2)
+area = PI * (radio ** 2)
 
 # Mostrar el resultado
 print(f"El área del círculo es: {area}")
@@ -74,7 +76,7 @@ Solución
 celsius = float(input("Introduce la temperatura en grados Celsius: "))
 
 # Convertir a Fahrenheit
-fahrenheit = (celsius \* 9/5) + 32
+fahrenheit = (celsius * 9/5) + 32
 
 # Mostrar el resultado
 print(f"{celsius} grados Celsius son {fahrenheit} grados Fahrenheit.")
@@ -92,8 +94,8 @@ Solución
 numero = float(input("Introduce un número: "))
 
 # Calcular el doble y el triple
-doble = numero \* 2
-triple = numero \* 3
+doble = numero * 2
+triple = numero * 3
 
 # Mostrar los resultados
 print(f"El doble de {numero} es: {doble}")
@@ -133,7 +135,7 @@ numero1 = float(input("Introduce el primer número: "))
 numero2 = float(input("Introduce el segundo número: "))
 
 # Calcular el producto
-producto = numero1 \* numero2
+producto = numero1 * numero2
 
 # Mostrar el resultado
 print(f"El producto de {numero1} y {numero2} es: {producto}")
@@ -152,11 +154,11 @@ frase1 = input("Introduce la primera frase: ")
 frase2 = input("Introduce la segunda frase: ")
 
 # Concatenar las frases
-frases\_concatenadas = frase1 + " " + frase2
+frases_concatenadas = frase1 + " " + frase2
 
 # Mostrar el resultado
-print(f"Las frases concatenadas son: {frases\_concatenadas}")
-
+print(f"Las frases concatenadas son: {frases_concatenadas}")
+```
 El programa solicita dos cadenas de texto al usuario y las une usando el operador de concatenación `+`. Posteriormente, muestra la cadena resultante.
 
 Ejercicio 8: mostrar un número repetido varias veces
@@ -165,16 +167,16 @@ Ejercicio 8: mostrar un número repetido varias veces
 Escribe un programa que pida al usuario un número y luego muestre ese número repetido 5 veces.
 
 Solución
-
-\# Solicitar un número al usuario
+```python
+# Solicitar un número al usuario
 numero = input("Introduce un número: ")
 
 # Repetir el número 5 veces
-numero\_repetido = numero \* 5
+numero_repetido = numero \* 5
 
 # Mostrar el resultado
-print(f"El número repetido 5 veces es: {numero\_repetido}")
-
+print(f"El número repetido 5 veces es: {numero_repetido}")
+```
 Usamos el operador `*` para repetir la cadena que representa el número introducido por el usuario cinco veces. El resultado es una concatenación del número 5 veces seguidas.
 
 Ejercicio 9: calcular el área de un rectángulo
@@ -183,13 +185,13 @@ Ejercicio 9: calcular el área de un rectángulo
 Escribe un programa que calcule el área de un rectángulo a partir de su base y altura proporcionadas por el usuario.
 
 Solución
-
-\# Solicitar base y altura al usuario
+```python
+# Solicitar base y altura al usuario
 base = float(input("Introduce la base del rectángulo: "))
 altura = float(input("Introduce la altura del rectángulo: "))
 
 # Calcular el área
-area = base \* altura
+area = base * altura
 
 # Mostrar el resultado
 print(f"El área del rectángulo es: {area}")
@@ -208,7 +210,7 @@ base = float(input("Introduce la base del rectángulo: "))
 altura = float(input("Introduce la altura del rectángulo: "))
 
 # Calcular el perímetro
-perimetro = 2 \* (base + altura)
+perimetro = 2 * (base + altura)
 
 # Mostrar el resultado
 print(f"El perímetro del rectángulo es: {perimetro}")
