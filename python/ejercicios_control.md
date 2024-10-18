@@ -1,17 +1,15 @@
 ---
-title: "Introduccion a Python"
-parent: "Pythoh"
+title: "Ejercicios resueltos sobre Estructuras de Control"
+parent: "Python"
 nav_exclude: true
 ---
 
-##
-
-Ejercicios resueltos sobre Estructuras de Control
+## Ejercicios resueltos sobre Estructuras de Control
 
 Tabla de contenidos
 -------------------
 
-- [](#)
+- [Ejercicios resueltos sobre Estructuras de Control](#ejercicios-resueltos-sobre-estructuras-de-control)
 - [Tabla de contenidos](#tabla-de-contenidos)
 - [Ejercicio 1: determinar si un número es positivo, negativo o cero](#ejercicio-1-determinar-si-un-número-es-positivo-negativo-o-cero)
 - [Ejercicio 2: comprobar si un número es par o impar](#ejercicio-2-comprobar-si-un-número-es-par-o-impar)

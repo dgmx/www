@@ -1,6 +1,16 @@
+---
+title: "Ejercicios resueltos sobre estructuras de listas"
+parent: "Python"
+nav_exclude: true
+---
+
+## Ejercicios resueltos sobre estructuras de listas
+
+
 Tabla de contenidos
 -------------------
 
+- [Ejercicios resueltos sobre estructuras de listas](#ejercicios-resueltos-sobre-estructuras-de-listas)
 - [Tabla de contenidos](#tabla-de-contenidos)
 - [Ejercicio 1: sumar todos los elementos de una lista de números](#ejercicio-1-sumar-todos-los-elementos-de-una-lista-de-números)
 - [Ejercicio 2: encontrar el número más grande en una lista](#ejercicio-2-encontrar-el-número-más-grande-en-una-lista)

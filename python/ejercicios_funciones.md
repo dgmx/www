@@ -1,6 +1,16 @@
+---
+title: "Ejercicios resueltos sobre Funciones"
+parent: "Python"
+nav_exclude: true
+---
+
+## Ejercicios resueltos sobre Diccionarios
+
+
 Tabla de contenidos
 -------------------
 
+- [Ejercicios resueltos sobre Diccionarios](#ejercicios-resueltos-sobre-diccionarios)
 - [Tabla de contenidos](#tabla-de-contenidos)
 - [Ejercicio 1: calcular el salario total de un trabajador con horas extras](#ejercicio-1-calcular-el-salario-total-de-un-trabajador-con-horas-extras)
 - [Ejercicio 2: crear un módulo con funciones de conversión de temperatura](#ejercicio-2-crear-un-módulo-con-funciones-de-conversión-de-temperatura)

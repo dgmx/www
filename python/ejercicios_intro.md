@@ -1,6 +1,16 @@
+---
+title: "Ejercicios resueltos de Python básico"
+parent: "Python"
+nav_exclude: true
+---
+
+## Ejercicios resueltos de Python básico
+
+
 Tabla de contenidos
 -------------------
 
+- [Ejercicios resueltos de Python básico](#ejercicios-resueltos-de-python-básico)
 - [Tabla de contenidos](#tabla-de-contenidos)
 - [Ejercicio 1: calcular la suma de dos números](#ejercicio-1-calcular-la-suma-de-dos-números)
 - [Ejercicio 2: calcular el área de un círculo](#ejercicio-2-calcular-el-área-de-un-círculo)

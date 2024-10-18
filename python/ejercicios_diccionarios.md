@@ -1,6 +1,15 @@
+---
+title: "Ejercicios resueltos sobre Diccionarios"
+parent: "Python"
+nav_exclude: true
+---
+
+## Ejercicios resueltos sobre Diccionarios
+
 Tabla de contenidos
 -------------------
 
+- [Ejercicios resueltos sobre Diccionarios](#ejercicios-resueltos-sobre-diccionarios)
 - [Tabla de contenidos](#tabla-de-contenidos)
 - [Ejercicio 1: agregar estudiantes y sus calificaciones a un diccionario](#ejercicio-1-agregar-estudiantes-y-sus-calificaciones-a-un-diccionario)
 - [Ejercicio 2: buscar un valor en un diccionario](#ejercicio-2-buscar-un-valor-en-un-diccionario)
