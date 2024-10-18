@@ -27,7 +27,7 @@ La función `setup()` se ejecuta una sola vez cuando el programa inicia.
 
 ### Ejemplo:
 
-```processing
+```java
 void setup() {
   size(400, 300);  // Establece el tamaño de la ventana a 400x300 píxeles
   background(200); // Establece el color de fondo a gris claro
@@ -54,7 +54,7 @@ La función `draw()` se ejecuta continuamente después de que `setup()` haya fin
 
 ### Ejemplo:
 
-```processing
+```java
 void draw() {
   // Dibuja un círculo en la posición del ratón
   ellipse(mouseX, mouseY, 50, 50);
@@ -65,7 +65,7 @@ void draw() {
 
 Aquí tienes un ejemplo que muestra cómo `setup()` y `draw()` trabajan juntos:
 
-```processing
+```java
 float x = 0;  // Variable para la posición x
 
 void setup() {

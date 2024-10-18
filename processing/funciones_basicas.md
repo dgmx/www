@@ -11,7 +11,7 @@ parent: "Processing"
 La función `background()` establece el color de fondo para la ventana de visualización de Processing.
 
 ### Sintaxis
-```processing
+```java
 background(rgb)
 background(gray)
 background(v1, v2, v3)
@@ -23,7 +23,7 @@ background(v1, v2, v3)
 - `v1`, `v2`, `v3`: valores de rojo, verde y azul respectivamente (int)
 
 ### Ejemplos
-```processing
+```java
 background(255);        // Fondo blanco
 background(0);          // Fondo negro
 background(255, 0, 0);  // Fondo rojo
@@ -38,7 +38,7 @@ background(255, 0, 0);  // Fondo rojo
 La función `fill()` establece el color de relleno para las formas que se dibujen después de llamarla.
 
 ### Sintaxis
-```processing
+```java
 fill(rgb)
 fill(gray)
 fill(v1, v2, v3)
@@ -50,7 +50,7 @@ fill(v1, v2, v3)
 - `v1`, `v2`, `v3`: valores de rojo, verde y azul respectivamente (int)
 
 ### Ejemplos
-```processing
+```java
 fill(255);        // Relleno blanco
 fill(0);          // Relleno negro
 fill(255, 0, 0);  // Relleno rojo
@@ -65,7 +65,7 @@ fill(255, 0, 0);  // Relleno rojo
 La función `stroke()` establece el color del trazo (contorno) para las formas que se dibujen después de llamarla.
 
 ### Sintaxis
-```processing
+```java
 stroke(rgb)
 stroke(gray)
 stroke(v1, v2, v3)
@@ -77,7 +77,7 @@ stroke(v1, v2, v3)
 - `v1`, `v2`, `v3`: valores de rojo, verde y azul respectivamente (int)
 
 ### Ejemplos
-```processing
+```java
 stroke(255);        // Trazo blanco
 stroke(0);          // Trazo negro
 stroke(255, 0, 0);  // Trazo rojo
@@ -89,7 +89,7 @@ stroke(255, 0, 0);  // Trazo rojo
 
 ## Ejemplo combinando las tres funciones
 
-```processing
+```java
 void setup() {
   size(400, 400);
 }
