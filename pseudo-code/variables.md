@@ -4,7 +4,7 @@ parent: "Pseudo-Codigo"
 
 ---
 
-# Variables en PSeInt
+# 2. Variables en PSeInt
 
 ### ¿Qué son las Variables en Programación?
 

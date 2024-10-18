@@ -4,7 +4,7 @@ parent: "Pseudo-Codigo"
 
 ---
 
-# Guía sobre Funciones en Pseudocódigo
+# 4. Funciones en Pseudocódigo
 
 ## Introducción a las Funciones
 En programación, **las funciones** son bloques de código que realizan una tarea específica. Se utilizan para dividir el código en partes más pequeñas y manejables, facilitando su comprensión y mantenimiento. Las funciones pueden o no devolver un valor, y pueden recibir información a través de **parámetros**.

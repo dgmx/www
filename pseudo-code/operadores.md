@@ -4,9 +4,9 @@ parent: "Pseudo-Codigo"
 
 ---
 
-# Operadores
+# 3. Operadores
 
-### ¿Qué son los Operadores Lógicos y Relacionales?
+## Operadores Lógicos y Relacionales
 
 En programación, los **operadores lógicos** y **operadores relacionales** son fundamentales para la toma de decisiones y el control del flujo de un programa. Son utilizados en expresiones que nos ayudan a evaluar condiciones y ejecutar acciones dependiendo de los resultados de esas evaluaciones.
 
