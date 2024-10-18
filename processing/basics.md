@@ -22,6 +22,11 @@ void draw() {
 ```
 Este sketch crea una ventana de 400 x 400 píxeles y dibuja un círculo en el centro.
 
+Pero que son las funciones `setup()`y `draw()`:
+
+[En este enlace se explican estas dos funciones fundamentales de Processing»](funciones_basicas.md)
+
+
 ## Sistema de Coordenadas
 Processing utiliza un sistema de coordenadas basado en píxeles para posicionar y dibujar elementos en la pantalla. El origen de las coordenadas (0, 0) está en la esquina superior izquierda de la ventana, donde el valor de **x** aumenta hacia la derecha y el valor de **y** aumenta hacia abajo.
 
@@ -95,5 +100,4 @@ void draw() {
 ```
 En este ejemplo, el rectángulo se dibuja con un relleno rojo y un borde azul.
 
-[En este enlace se explica cada una de estas funciones básicas de `Processing`]
-(funciones_basicas.md)
+[En este enlace se explican cada una de estas funciones básicas de Processing»](funciones_basicas.md)
