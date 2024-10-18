@@ -1,5 +1,5 @@
 ---
-title: "Variables"
+title: "2. Variables"
 parent: "Pseudo-Codigo"
 
 ---

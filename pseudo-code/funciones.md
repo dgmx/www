@@ -1,5 +1,5 @@
 ---
-title: "Funciones"
+title: "4. Funciones"
 parent: "Pseudo-Codigo"
 
 ---

@@ -1,5 +1,5 @@
 ---
-title: "Operadores"
+title: "3. Operadores"
 parent: "Pseudo-Codigo"
 
 ---
