@@ -6,6 +6,4 @@ nav_order: 3
 
 
 
-## Introducción a Processing
-## Conceptos básicos
-## Ejemplos
+### Introducción a la programación Gráfica con Processing

@@ -5,7 +5,7 @@ parent: "Processing"
 
 
 
-# Introducción a Processing
+# 1. Introducción a Processing
 
 ## ¿Qué es Processing?
 **Processing** es un lenguaje de programación y un entorno de desarrollo visual diseñado para artistas, diseñadores, estudiantes y cualquier persona interesada en explorar la programación a través de la creación de gráficos y animaciones. Fue desarrollado para facilitar el aprendizaje de conceptos de programación mediante la experimentación visual, lo que lo convierte en una excelente opción para principiantes que desean aprender a programar de una manera interactiva y atractiva.
