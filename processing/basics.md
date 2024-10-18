@@ -94,3 +94,6 @@ void draw() {
 }
 ```
 En este ejemplo, el rectángulo se dibuja con un relleno rojo y un borde azul.
+
+[En este enlace se explica cada una de estas funciones básicas de `Processing`]
+(funciones_basicas.md)
