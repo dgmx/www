@@ -24,7 +24,7 @@ Este sketch crea una ventana de 400 x 400 píxeles y dibuja un círculo en el ce
 
 Pero que son las funciones `setup()`y `draw()`:
 
-[En este enlace se explican estas dos funciones fundamentales de Processing»](funciones_basicas.md)
+[En este enlace se explican estas dos funciones fundamentales de Processing](funciones_principales.md)
 
 
 ## Sistema de Coordenadas

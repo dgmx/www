@@ -1,10 +1,10 @@
 ---
-title: 6. Funciones Básicas
+title: 6. Formas Básicas
 parent: "Processing"
 ---
 
 
-# 6 Formas Básicas en Processing
+# 6. Formas Básicas en Processing
 
 Processing ofrece una variedad de funciones para dibujar formas básicas. Este documento explica las formas más comunes y cómo crearlas.
 

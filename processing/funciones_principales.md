@@ -4,7 +4,7 @@ parent: "Processing"
 ---
 
 
-# 4 Funciones Fundamentales de Processing
+# 4. Funciones Fundamentales de Processing
 
 En Processing, `setup()` y `draw()` son dos funciones esenciales que forman la estructura básica de la mayoría de los sketches. Entender estas funciones es crucial para crear cualquier programa en Processing.
 
