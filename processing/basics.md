@@ -25,6 +25,9 @@ Este sketch crea una ventana de 400 x 400 píxeles y dibuja un círculo en el ce
 ## Sistema de Coordenadas
 Processing utiliza un sistema de coordenadas basado en píxeles para posicionar y dibujar elementos en la pantalla. El origen de las coordenadas (0, 0) está en la esquina superior izquierda de la ventana, donde el valor de **x** aumenta hacia la derecha y el valor de **y** aumenta hacia abajo.
 
+![](images/sistema_de_coordenadas.svg)
+
+
 ### Ejemplo de Coordenadas
 ```java
 void setup() {
