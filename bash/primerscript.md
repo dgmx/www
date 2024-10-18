@@ -3,8 +3,7 @@ title: "1. Primer Script"
 parent: "Bash"
 ---
 
-
-# Capítulo 1: Crear y ejecutar tu primer script de shell en Bash
+# 1: Crear y ejecutar tu primer script de shell en Bash
 
 ## Introducción
 Bash (Bourne Again Shell) es un intérprete de comandos ampliamente utilizado en sistemas Unix y Linux. En este capítulo, aprenderás a crear y ejecutar tu primer script de shell en Bash.

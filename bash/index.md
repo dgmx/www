@@ -3,7 +3,6 @@ title: "Bash"
 nav_order: 2
 ---
 
-
 # Aprendiendo Bash Script
 
 Este tutorial formado por 9 capitulos te enseñará los conceptos basicos de programación de shell con Bash

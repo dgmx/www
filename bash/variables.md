@@ -3,7 +3,7 @@ title: "2 .Variables"
 parent: "Bash"
 ---
 
-# Capítulo 2: Usar variables, propias y del sistema
+# 2. Usar variables, propias y del sistema
 
 ## Introducción
 Las variables en Bash son fundamentales para almacenar y manipular datos en tus scripts. En este capítulo, aprenderás sobre dos tipos principales de variables: las que defines tú mismo (variables propias) y las que proporciona el sistema (variables del sistema).
