@@ -1,10 +1,10 @@
 ---
-title: "6. Ejemplos"
+title: "7. Ejemplos"
 parent: "Processing"
 ---
 
 
-# 6. Ejercicios Básicos de Processing (Java y Python)
+# 7. Ejercicios Básicos de Processing (Java y Python)
 
 ## 1. ¿Qué es un Sketch?
 ### Ejercicio
