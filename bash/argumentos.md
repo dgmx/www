@@ -3,7 +3,7 @@ title: "3. Argumentos"
 parent: "Bash"
 ---
 
-# Capítulo 3: Paso de argumentos y aceptar entradas de usuario en tus scripts
+# 3. Paso de argumentos y aceptar entradas de usuario en tus scripts
 
 ## Introducción
 
