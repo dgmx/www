@@ -4,7 +4,7 @@ parent: "Processing"
 ---
 
 
-# 2. Conceptos Básicos de Processing
+# 3. Conceptos Básicos de Processing
 
 ## ¿Qué es un Sketch?
 Un **sketch** en Processing es el término que se utiliza para describir un programa o proyecto. Cada sketch es un conjunto de instrucciones que el entorno de Processing ejecuta para producir gráficos, animaciones o interacciones. En Processing, los sketches son la base para crear arte visual y explorar la programación de una manera sencilla y accesible.
