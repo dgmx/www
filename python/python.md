@@ -2,51 +2,149 @@
 title: "Introduccion a Python"
 parent: "Python"
 ---
+# Introduccion a Python
 
-## Introduccion a Python
 
-1 Tipos de datos
--------------------
+## Tipos de datos en Python
 
-Cuando escribimos programas lo que estamos haciendo es **realizar operaciones con datos**. En el ejemplo anterior, nuestros datos eran la base, la altura y el área; y las operaciones multiplicar, dividir y mostrar en pantalla.
+### 1. Tipos de datos básicos
+Los tipos básicos de datos, también llamados primitivos, se pueden agrupar en 3: Los tipos de datos numéricos, los lógicos y los de texto (o alfanuméricos).
 
-Existen muchos tipos de datos. Si estamos trabajando con un dato que representa el peso de una persona necesitaremos un número con decimales, como por ejemplo 84,25 Kg. Si por el contrario, lo que queremos es usar la cantidad de personas que han asistido al Bernabéu usaremos un número entero, ya que no tiene sentido expresar que asistieron 13.437,6 personas. Y si por ejemplo queremos trabajar con el nombre de los días de las semana, necesitamos un tipo de dato que maneje cadenas de caracteres, como “Lunes”, “Jueves” o “Sábado”.
+Dentro del grupo de los tipos de datos numéricos, a su vez, destacan dos tipos: los enteros y los reales.
 
-Los cuatro principales tipos de datos que manejaremos serán los enteros, los números de punto flotante, las cadenas de caracteres y los booleanos:
 
-*   **Enteros (_int_)**: representan números enteros (sin parte decimal). Ejemplo: **_x=5_**
-*   **Números de punto flotante (_float_)**: representan números reales con parte decimal. Ejemplo: **_y=3.14_**
-*   **Cadenas de texto (_str_)**: son secuencias de caracteres utilizadas para representar texto. Se pueden definir utilizando comillas simples o dobles. Ejemplo: **_mensaje=”Hola mundo”_**
-*   **Booleanos (_bool_)**: los valores booleanos representan verdadero (**_True_**) o falso (**_False_**), y son útiles cuando debemos decidir entre dos posibles estados. Ejemplo: **_sesion\_iniciada=True_**
+1. **Números enteros (int)**
+   - Son números sin decimales, positivos o negativos.
+   - Ejemplo: `10`, `-3`, `0`.
+   - Útil para contar cosas o representar cantidades.
 
-2 Constantes y variables
----------------------------
+   ```python
+   edad = 17
+   numero_de_estudiantes = 30
+   ```
 
-Al trabajar con datos necesitamos guardarlos en algún sitio, para que podamos usarlos tantas veces como necesitemos a lo largo de nuestro programa. Esos sitios son los que llamamos **variables**. Las variables son espacios en memoria del ordenador que se utilizan para almacenar datos.
+2. **Números de punto flotante (float)**
+   - Son números con decimales.
+   - Ejemplo: `3.14`, `-0.5`, `2.0`.
+   - Se usan cuando se necesitan cálculos más precisos, como notas o medidas.
 
-Piensa en las variables como en un cajón con un nombre. Normalmente usamos un cajón para camisetas, otro para bañadores y otro para complementos. El cajón puede estar vacío, o tener elementos dentro. Podemos meter cosas y sacarlas. También podemos dejarlo vacío. Las variables funcionan igual, el cajón sería un espacio en memoria donde podemos almacenar datos, cambiarlos o borrarlos.
+   ```python
+   precio = 19.99
+   temperatura = -2.5
+   ```
 
-Para acceder a esos datos usamos el nombre de la variable, que es un identificador que le ponemos a ese espacio de memoria.
+3. **Cadenas de texto (str)**
+   - Representan secuencias de caracteres o texto.
+   - Se escriben entre comillas simples o dobles.
+   - Ejemplo: `"Hola"`, `'Python es divertido'`.
+   - Útil para almacenar nombres, palabras, frases, etc.
 
-Por ejemplo:
-```python
-edad = 25
-nombre = "Juan"
-altura = 1.75
-es_estudiante = True
-```
+   ```python
+   nombre = "Ana"
+   saludo = 'Hola, ¿cómo estás?'
+   ```
 
-Aquí las variables son **_edad_**, **_nombre_**, **_altura_** y **_es\_estudiante_**, y almacenan respectivamente los datos **_25_**, **_“Juan”_**, **_1.75_** y **_True_**.
+4. **Booleanos (bool)**
+   - Solo tienen dos valores posibles: `True` (verdadero) o `False` (falso).
+   - Se utilizan en condiciones y comparaciones.
+   - Ejemplo: `True`, `False`.
 
-En todos los lenguajes de programación, existen un tipo de variables especiales llamadas **constantes**. Funcionan igual sintácticamente hablando, pero una vez que se les asigna un valor, no puede ser cambiado. ¿Una variable que no varía? Exacto.
+   ```python
+   es_mayor_de_edad = True
+   tiene_permiso = False
+   ```
 
-Además, para diferenciarlas de las variables normales, le ponemos nombres en mayúsculas, como a estas:
-```python
-PI = 3.14159
-GRAVEDAD = 9.81
-```
-3 Operadores y expresiones
------------------------------
+### 2. Tipos de datos compuestos
+
+Los tipos de datos compuestos en Python son aquellos que permiten agrupar múltiples tipos de datos en una única variable. Pueden contener tanto tipos de datos primitivos como otros tipos de datos compuestos. Estos tipos de datos ofrecen la flexibilidad de estructurar y organizar información de manera más compleja, permitiendo la creación de estructuras más avanzadas.
+
+1. **Listas (list)**
+   - Son colecciones ordenadas de elementos que pueden ser de cualquier tipo.
+   - Se escriben entre corchetes `[]` y los elementos se separan por comas.
+   - Las listas son mutables, lo que significa que se pueden modificar.
+
+   ```python
+   numeros = [1, 2, 3, 4, 5]
+   nombres = ["Ana", "Luis", "Carlos"]
+   ```
+
+2. **Tuplas (tuple)**
+   - Son similares a las listas, pero son inmutables (no se pueden cambiar después de crearlas).
+   - Se escriben entre paréntesis `()` y los elementos se separan por comas.
+
+   ```python
+   coordenadas = (10, 20)
+   colores = ("rojo", "azul", "verde")
+   ```
+
+3. **Diccionarios (dict)**
+   - Son colecciones de pares clave-valor, donde cada valor está asociado con una clave única.
+   - Se escriben entre llaves `{}` y los pares se separan por comas.
+   - Útiles para representar datos estructurados como las propiedades de un objeto.
+
+   ```python
+   estudiante = {"nombre": "Ana", "edad": 17, "grado": "12°"}
+   ```
+
+4. **Conjuntos (set)**
+   - Son colecciones desordenadas de elementos únicos (no se permiten duplicados).
+   - Se escriben usando llaves `{}` pero no se pueden tener pares clave-valor como en los diccionarios.
+
+   ```python
+   numeros_unicos = {1, 2, 3, 3, 4}  # El número 3 solo se guardará una vez
+   ```
+
+## Resumen práctico para los estudiantes
+
+- **`int`**: Números enteros.
+- **`float`**: Números decimales.
+- **`str`**: Texto.
+- **`bool`**: Verdadero o falso.
+- **`list`**: Lista de elementos (se puede cambiar).
+- **`tuple`**: Lista de elementos (no se puede cambiar).
+- **`dict`**: Pares clave-valor.
+- **`set`**: Conjunto de elementos únicos.
+
+
+
+
+
+
+## Variables y Constantes en Python
+
+
+### Variables en Python
+- Una **variable** es un espacio en la memoria del ordenador donde se almacena un valor.
+- El valor de una variable puede cambiar durante la ejecución del programa.
+- Para crear una variable en Python, solo necesitas darle un nombre y asignarle un valor usando el símbolo `=`.
+- Ejemplo:
+  ```python
+  edad = 17
+  nombre = "Ana"
+  ```
+  En este ejemplo, `edad` y `nombre` son variables que almacenan los valores `17` y `"Ana"`, respectivamente.
+
+### Reglas para nombrar variables
+- El nombre de una variable debe empezar con una letra o un guion bajo (`_`), pero no con un número.
+- No puede contener espacios ni caracteres especiales como `@`, `#`, `%`.
+- Es sensible a mayúsculas y minúsculas, es decir, `nombre` y `Nombre` serían dos variables diferentes.
+
+### Constantes en Python
+- Una **constante** es un valor que no cambia durante la ejecución del programa.
+- En Python, no existe una manera estricta de declarar constantes, pero por convención se utilizan nombres en **mayúsculas** para identificarlas.
+- Ejemplo:
+  ```python
+  PI = 3.1416
+  VELOCIDAD_DE_LUZ = 299792458  # en metros por segundo
+  ```
+  En este ejemplo, `PI` y `VELOCIDAD_DE_LUZ` son constantes, y aunque el lenguaje permite cambiarlas, por convención no se deben modificar.
+
+### Diferencias entre variables y constantes
+- **Variables**: su valor puede cambiar.
+- **Constantes**: su valor se mantiene igual durante todo el programa (aunque Python permite cambiarlas, es una mala práctica hacerlo).
+
+## Operadores y expresiones
+
 
 Los operadores son fundamentales en programación, ya que permiten realizar cálculos, comparaciones y operaciones lógicas sobre los datos. Veamos algunos de los más importantes.
 
@@ -153,8 +251,7 @@ saludo = "Hola, " + nombre + "!"
 
 repetir = "Hola" \* 3  
 ```
-4 Comentarios
-----------------
+## Comentarios
 
 Los comentarios dentro del código son fundamentales para su comprensión y mantenimiento. Una cosa importante que es necesario entender es que, a pesar de que están en el código, no intervienen en el funcionamiento del mismo, ya que son líneas que no se ejecutan. Sólo están ahí para que los programadores se dejen mensajes sobre el funcionamiento del programa.
 
@@ -170,12 +267,12 @@ También se suele usar para explicar porqué el programador
 ha tomado una decisión de diseño concreta y no otra.
 """
 ```
-5 Interacción con el usuario
--------------------------------
+## Interacción con el usuario
+
 
 Cuando programamos, la interacción con el usuario es muy importante porque nos permite mostrarle datos al usuario (_output_), y también leer datos que el usuario introduce por el teclado (_input_). Python facilita enormemente este proceso, haciendo de las tareas de entrada/salida un trabajo realmente simple.
 
-### 5.1. Mostrar datos en pantalla
+###  Mostrar datos en pantalla
 
 Python utiliza la función **_print()_** para mostrar datos en la pantalla. Esta función es muy flexible y permite mostrar texto, variables y resultados de expresiones de manera fácil.
 ```python
@@ -206,7 +303,7 @@ nombre = "Ana"
 edad = 30
 print(f"Nombre: {nombre}, Edad: {edad}")
 ```
-### 5.2. Obtener datos de teclado
+###  Obtener datos de teclado
 
 La función **_input()_** se utiliza para leer datos introducidos por el usuario desde el teclado. Esta función siempre devuelve una cadena de texto, por lo que es necesario convertir los datos al tipo adecuado si se espera un valor numérico.
 ```python
@@ -224,12 +321,12 @@ print("Mides", altura, " metros")
 ```
 [Ejercicios resueltos sobre variables, operadores e interacción con el usuario »](ejercicios_intro.md)
 
-6 Estructuras de control
-----------------------------
+## Estructuras de control
+
 
 Las estructuras de control nos permiten dirigir el flujo de ejecución del programa según ciertas condiciones, es decir, habrá unas instrucciones que se ejecutarán y otras que no. ¿Cómo se decide qué instrucciones se ejecutarán y cuáles no? Dependerá de las condiciones que escribamos en el código. Incluyen las estructuras condicionales, repetitivas y de salto.
 
-### 6.1. Estructuras condicionales
+###  Estructuras condicionales
 
 Las estructuras condicionales **permiten ejecutar bloques de código solo si se cumplen ciertas condiciones**. Python utiliza las palabras clave **_if_**, **_elif_** (abreviatura de «else if») y **_else_** para definir estas condiciones.
 ```python
@@ -248,7 +345,7 @@ Como puedes ver, para indicar que un **bloque de código** está dentro de algú
 
 ![](images/tabulador.jpg)
 
-### 6.2. Estructuras repetitivas
+###  Estructuras repetitivas
 
 Las estructuras repetitivas nos permiten **repetir un bloque de código las veces que necesitemos**. Popularmente se les conoce como **bucles**, y en Python tenemos dos: los bucles **_for_** y los bucles **_while_**.
 
@@ -276,7 +373,7 @@ while contador < 5:
     print(contador)
     contador = contador + 1
 ```
-### 6.3. Estructuras de salto
+###  Estructuras de salto
 
 Permiten alterar el flujo normal de ejecución de las estructuras de control.
 
@@ -296,12 +393,12 @@ for numero in range(10):
 ```
 [Ejercicios resueltos sobre estructuras de control »](ejercicios_control.md)
 
-7 Estructuras de datos
---------------------------
+## Estructuras de datos
+
 
 Las **estructuras de datos** son una parte fundamental de la programación, ya que permiten organizar y gestionar de manera eficiente los datos en la memoria. En Python, existen varias estructuras de datos integradas que son ampliamente utilizadas debido a su flexibilidad. Aunque las principales estructuras de datos que se suelen manejar incluyen listas, tuplas, conjuntos, diccionarios y clases, nosotros por tratarse de un estudio introductorio a la programación, sólo aprenderemos lo básico de listas y diccionarios.
 
-### 7.1. Listas
+###  Listas
 
 Las **listas** son **colecciones ordenadas y mutables de elementos**. Esto significa que se pueden modificar (agregar, eliminar o cambiar elementos) después de haber sido creadas.
 
@@ -364,7 +461,7 @@ for indice in range(0,len(frutas)):
 
 [Ejercicios resueltos sobre listas »](ejercicios_listas.md)
 
-### 7.2. Diccionarios
+### Diccionarios
 
 Los **diccionarios** son **colecciones desordenadas de pares clave-valor**. Cada clave debe ser única, y se utiliza para acceder al valor asociado.
 
@@ -431,8 +528,8 @@ En el primer ejemplo, el método **_keys()_** se utiliza para obtener una vista 
 
 [Ejercicios resueltos sobre diccionarios »](ejercicios_diccionarios.md)
 
-8 Funciones y módulos
--------------------------
+## Funciones y módulos
+
 
 Desde el punto de vista de la escritura de código, las **funciones** son bloques de código que realizan una tarea específica y se pueden invocar -ser llamadas- desde otras partes del programa. En Python se definen utilizando la palabra clave **_def_** seguida del nombre de la función y paréntesis que pueden incluir parámetros.
 ```python
