@@ -170,7 +170,7 @@ También se suele usar para explicar porqué el programador
 ha tomado una decisión de diseño concreta y no otra.
 """
 ```
-5. Interacción con el usuario
+5 Interacción con el usuario
 -------------------------------
 
 Cuando programamos, la interacción con el usuario es muy importante porque nos permite mostrarle datos al usuario (_output_), y también leer datos que el usuario introduce por el teclado (_input_). Python facilita enormemente este proceso, haciendo de las tareas de entrada/salida un trabajo realmente simple.
