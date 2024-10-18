@@ -1,6 +1,6 @@
 ---
 title: "Introduccion a Python"
-parent: "Pythoh"
+parent: "Python"
 ---
 
 ## Introduccion a Python
@@ -383,12 +383,12 @@ persona = {
     "ciudad": "Madrid"
 }
 ```
-# Acceder a valores por clave
+### Acceder a valores por clave
 ```python
 print(persona["nombre"])  # Salida: Juan
 print(persona["edad"])  # Salida: 30
 ```
-# Modificar un valor
+### Modificar un valor
 ```python
 persona["edad"] = 31
 print(persona)  # Salida: {'nombre': 'Juan', 'edad': 31, 'ciudad': 'Madrid'}
@@ -410,7 +410,7 @@ persona = {
     "ciudad": "Madrid"
 }
 ```
-# Recorrer el diccionario con un bucle for
+### Recorrer el diccionario con un bucle for
 ```python
 for clave, valor in persona.items():
     print(f"{clave}: {valor}")
