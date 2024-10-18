@@ -1,5 +1,5 @@
 ---
-title: 5. Funciones Básicas"
+title: 5. Funciones Básicas
 parent: "Processing"
 ---
 

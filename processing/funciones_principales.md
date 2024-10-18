@@ -1,5 +1,5 @@
 ---
-title: 4. Funciones Fundamentales"
+title: 4. Funciones Fundamentales
 parent: "Processing"
 ---
 
