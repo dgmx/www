@@ -4,7 +4,7 @@ parent: "Processing"
 ---
 
 
-# 5 Funciones Básicas de Processing: background(), fill() y stroke()
+# 5 Funciones Básicas de Processing
 
 ## background()
 
