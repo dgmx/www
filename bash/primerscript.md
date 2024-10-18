@@ -1,5 +1,5 @@
 ---
-title: "Primer Script"
+title: "1. Primer Script"
 parent: "Bash"
 ---
 
