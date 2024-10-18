@@ -1,3 +1,10 @@
+---
+title: "Introduccion a Python"
+parent: "Pythoh"
+---
+
+## Introduccion a Python
+
 1 Tipos de datos
 -------------------
 
