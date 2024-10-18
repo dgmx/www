@@ -5,9 +5,9 @@ parent: "Python"
 # Introduccion a Python
 
 
-## Tipos de datos en Python
+## 1. Tipos de datos en Python
 
-### 1. Tipos de datos básicos
+### 1.1 Tipos de datos básicos
 Los tipos básicos de datos, también llamados primitivos, se pueden agrupar en 3: Los tipos de datos numéricos, los lógicos y los de texto (o alfanuméricos).
 
 Dentro del grupo de los tipos de datos numéricos, a su vez, destacan dos tipos: los enteros y los reales.
@@ -54,7 +54,7 @@ Dentro del grupo de los tipos de datos numéricos, a su vez, destacan dos tipos:
    tiene_permiso = False
    ```
 
-### 2. Tipos de datos compuestos
+### 1.2. Tipos de datos compuestos
 
 Los tipos de datos compuestos en Python son aquellos que permiten agrupar múltiples tipos de datos en una única variable. Pueden contener tanto tipos de datos primitivos como otros tipos de datos compuestos. Estos tipos de datos ofrecen la flexibilidad de estructurar y organizar información de manera más compleja, permitiendo la creación de estructuras más avanzadas.
 
@@ -110,10 +110,10 @@ Los tipos de datos compuestos en Python son aquellos que permiten agrupar múlti
 
 
 
-## Variables y Constantes en Python
+## 3. Variables y Constantes en Python
 
 
-### Variables en Python
+### 3.1. Variables en Python
 - Una **variable** es un espacio en la memoria del ordenador donde se almacena un valor.
 - El valor de una variable puede cambiar durante la ejecución del programa.
 - Para crear una variable en Python, solo necesitas darle un nombre y asignarle un valor usando el símbolo `=`.
@@ -129,7 +129,7 @@ Los tipos de datos compuestos en Python son aquellos que permiten agrupar múlti
 - No puede contener espacios ni caracteres especiales como `@`, `#`, `%`.
 - Es sensible a mayúsculas y minúsculas, es decir, `nombre` y `Nombre` serían dos variables diferentes.
 
-### Constantes en Python
+### 3.2. Constantes en Python
 - Una **constante** es un valor que no cambia durante la ejecución del programa.
 - En Python, no existe una manera estricta de declarar constantes, pero por convención se utilizan nombres en **mayúsculas** para identificarlas.
 - Ejemplo:
@@ -143,8 +143,7 @@ Los tipos de datos compuestos en Python son aquellos que permiten agrupar múlti
 - **Variables**: su valor puede cambiar.
 - **Constantes**: su valor se mantiene igual durante todo el programa (aunque Python permite cambiarlas, es una mala práctica hacerlo).
 
-## Operadores y expresiones
-
+## 4. Operadores y expresiones
 
 Los operadores son fundamentales en programación, ya que permiten realizar cálculos, comparaciones y operaciones lógicas sobre los datos. Veamos algunos de los más importantes.
 
@@ -251,7 +250,7 @@ saludo = "Hola, " + nombre + "!"
 
 repetir = "Hola" * 3  
 ```
-## Comentarios
+## 5. Comentarios
 
 Los comentarios dentro del código son fundamentales para su comprensión y mantenimiento. Una cosa importante que es necesario entender es que, a pesar de que están en el código, no intervienen en el funcionamiento del mismo, ya que son líneas que no se ejecutan. Sólo están ahí para que los programadores se dejen mensajes sobre el funcionamiento del programa.
 
@@ -267,12 +266,12 @@ También se suele usar para explicar porqué el programador
 ha tomado una decisión de diseño concreta y no otra.
 """
 ```
-## Interacción con el usuario
+## 6. Interacción con el usuario
 
 
 Cuando programamos, la interacción con el usuario es muy importante porque nos permite mostrarle datos al usuario (_output_), y también leer datos que el usuario introduce por el teclado (_input_). Python facilita enormemente este proceso, haciendo de las tareas de entrada/salida un trabajo realmente simple.
 
-###  Mostrar datos en pantalla
+### 6.1. Mostrar datos en pantalla
 
 Python utiliza la función **_print()_** para mostrar datos en la pantalla. Esta función es muy flexible y permite mostrar texto, variables y resultados de expresiones de manera fácil.
 ```python
@@ -303,7 +302,7 @@ nombre = "Ana"
 edad = 30
 print(f"Nombre: {nombre}, Edad: {edad}")
 ```
-###  Obtener datos de teclado
+### 6.2. Obtener datos de teclado
 
 La función **_input()_** se utiliza para leer datos introducidos por el usuario desde el teclado. Esta función siempre devuelve una cadena de texto, por lo que es necesario convertir los datos al tipo adecuado si se espera un valor numérico.
 ```python
@@ -321,12 +320,12 @@ print("Mides", altura, " metros")
 ```
 [Ejercicios resueltos sobre variables, operadores e interacción con el usuario »](ejercicios_intro.md)
 
-## Estructuras de control
+## 7. Estructuras de control
 
 
 Las estructuras de control nos permiten dirigir el flujo de ejecución del programa según ciertas condiciones, es decir, habrá unas instrucciones que se ejecutarán y otras que no. ¿Cómo se decide qué instrucciones se ejecutarán y cuáles no? Dependerá de las condiciones que escribamos en el código. Incluyen las estructuras condicionales, repetitivas y de salto.
 
-###  Estructuras condicionales
+###  7.1. Estructuras condicionales
 
 Las estructuras condicionales **permiten ejecutar bloques de código solo si se cumplen ciertas condiciones**. Python utiliza las palabras clave **_if_**, **_elif_** (abreviatura de «else if») y **_else_** para definir estas condiciones.
 ```python
@@ -345,7 +344,7 @@ Como puedes ver, para indicar que un **bloque de código** está dentro de algú
 
 ![](images/tabulador.jpg)
 
-###  Estructuras repetitivas
+### 7.2. Estructuras repetitivas
 
 Las estructuras repetitivas nos permiten **repetir un bloque de código las veces que necesitemos**. Popularmente se les conoce como **bucles**, y en Python tenemos dos: los bucles **_for_** y los bucles **_while_**.
 
@@ -373,7 +372,7 @@ while contador < 5:
     print(contador)
     contador = contador + 1
 ```
-###  Estructuras de salto
+### 7.3. Estructuras de salto
 
 Permiten alterar el flujo normal de ejecución de las estructuras de control.
 
@@ -393,12 +392,11 @@ for numero in range(10):
 ```
 [Ejercicios resueltos sobre estructuras de control »](ejercicios_control.md)
 
-## Estructuras de datos
-
+## 8. Estructuras de datos
 
 Las **estructuras de datos** son una parte fundamental de la programación, ya que permiten organizar y gestionar de manera eficiente los datos en la memoria. En Python, existen varias estructuras de datos integradas que son ampliamente utilizadas debido a su flexibilidad. Aunque las principales estructuras de datos que se suelen manejar incluyen listas, tuplas, conjuntos, diccionarios y clases, nosotros por tratarse de un estudio introductorio a la programación, sólo aprenderemos lo básico de listas y diccionarios.
 
-###  Listas
+### 8.1. Listas
 
 Las **listas** son **colecciones ordenadas y mutables de elementos**. Esto significa que se pueden modificar (agregar, eliminar o cambiar elementos) después de haber sido creadas.
 
@@ -461,7 +459,7 @@ for indice in range(0,len(frutas)):
 
 [Ejercicios resueltos sobre listas »](ejercicios_listas.md)
 
-### Diccionarios
+### 8.2. Diccionarios
 
 Los **diccionarios** son **colecciones desordenadas de pares clave-valor**. Cada clave debe ser única, y se utiliza para acceder al valor asociado.
 
@@ -480,12 +478,12 @@ persona = {
     "ciudad": "Madrid"
 }
 ```
-### Acceder a valores por clave
+#### Acceder a valores por clave
 ```python
 print(persona["nombre"])  # Salida: Juan
 print(persona["edad"])  # Salida: 30
 ```
-### Modificar un valor
+#### Modificar un valor
 ```python
 persona["edad"] = 31
 print(persona)  # Salida: {'nombre': 'Juan', 'edad': 31, 'ciudad': 'Madrid'}
@@ -507,7 +505,7 @@ persona = {
     "ciudad": "Madrid"
 }
 ```
-### Recorrer el diccionario con un bucle for
+#### Recorrer el diccionario con un bucle for
 ```python
 for clave, valor in persona.items():
     print(f"{clave}: {valor}")
@@ -528,7 +526,7 @@ En el primer ejemplo, el método **_keys()_** se utiliza para obtener una vista 
 
 [Ejercicios resueltos sobre diccionarios »](ejercicios_diccionarios.md)
 
-## Funciones y módulos
+## 9. Funciones y módulos
 
 
 Desde el punto de vista de la escritura de código, las **funciones** son bloques de código que realizan una tarea específica y se pueden invocar -ser llamadas- desde otras partes del programa. En Python se definen utilizando la palabra clave **_def_** seguida del nombre de la función y paréntesis que pueden incluir parámetros.
