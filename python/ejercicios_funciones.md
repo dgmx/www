@@ -10,8 +10,6 @@ nav_exclude: true
 Tabla de contenidos
 -------------------
 
-- [Ejercicios resueltos sobre Diccionarios](#ejercicios-resueltos-sobre-diccionarios)
-- [Tabla de contenidos](#tabla-de-contenidos)
 - [Ejercicio 1: calcular el salario total de un trabajador con horas extras](#ejercicio-1-calcular-el-salario-total-de-un-trabajador-con-horas-extras)
 - [Ejercicio 2: crear un módulo con funciones de conversión de temperatura](#ejercicio-2-crear-un-módulo-con-funciones-de-conversión-de-temperatura)
 - [Ejercicio 3: contar cuántos elementos de una lista son pares e impares](#ejercicio-3-contar-cuántos-elementos-de-una-lista-son-pares-e-impares)

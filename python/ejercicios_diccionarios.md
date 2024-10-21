@@ -9,8 +9,6 @@ nav_exclude: true
 Tabla de contenidos
 -------------------
 
-- [Ejercicios resueltos sobre Diccionarios](#ejercicios-resueltos-sobre-diccionarios)
-- [Tabla de contenidos](#tabla-de-contenidos)
 - [Ejercicio 1: agregar estudiantes y sus calificaciones a un diccionario](#ejercicio-1-agregar-estudiantes-y-sus-calificaciones-a-un-diccionario)
 - [Ejercicio 2: buscar un valor en un diccionario](#ejercicio-2-buscar-un-valor-en-un-diccionario)
 - [Ejercicio 3: actualizar los precios de productos en un diccionario](#ejercicio-3-actualizar-los-precios-de-productos-en-un-diccionario)
