@@ -1,5 +1,5 @@
 ---
-title: "Ejercicios resueltos sobre Funciones"
+title: "E5 Ejercicios resueltos sobre Funciones"
 parent: "Python"
 nav_exclude: true
 ---

@@ -1,5 +1,5 @@
 ---
-title: "Ejercicios resueltos sobre Estructuras de Control"
+title: "E4 Ejercicios resueltos sobre Estructuras de Control"
 parent: "Python"
 nav_exclude: true
 ---

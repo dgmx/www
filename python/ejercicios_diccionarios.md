@@ -1,5 +1,5 @@
 ---
-title: "Ejercicios resueltos sobre Diccionarios"
+title: "E3 Ejercicios resueltos sobre Diccionarios"
 parent: "Python"
 nav_exclude: true
 ---

@@ -1,5 +1,5 @@
 ---
-title: "Ejercicios resueltos de Python básico"
+title: "E1 Ejercicios resueltos de Python básico"
 parent: "Python"
 nav_exclude: true
 ---
