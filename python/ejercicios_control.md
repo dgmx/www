@@ -9,9 +9,6 @@ nav_exclude: true
 Tabla de contenidos
 -------------------
 
-
-- [Ejercicios resueltos sobre Estructuras de Control](#ejercicios-resueltos-sobre-estructuras-de-control)
-- [Tabla de contenidos](#tabla-de-contenidos)
 - [Ejercicio 1: determinar si un número es positivo, negativo o cero](#ejercicio-1-determinar-si-un-número-es-positivo-negativo-o-cero)
 - [Ejercicio 2: comprobar si un número es par o impar](#ejercicio-2-comprobar-si-un-número-es-par-o-impar)
 - [Ejercicio 3: calcular el factorial de un número](#ejercicio-3-calcular-el-factorial-de-un-número)
