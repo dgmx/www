@@ -10,8 +10,6 @@ nav_exclude: true
 Tabla de contenidos
 -------------------
 
-- [Ejercicios resueltos de Python básico](#ejercicios-resueltos-de-python-básico)
-- [Tabla de contenidos](#tabla-de-contenidos)
 - [Ejercicio 1: calcular la suma de dos números](#ejercicio-1-calcular-la-suma-de-dos-números)
 - [Ejercicio 2: calcular el área de un círculo](#ejercicio-2-calcular-el-área-de-un-círculo)
 - [Ejercicio 3: convertir grados Celsius a Fahrenheit](#ejercicio-3-convertir-grados-celsius-a-fahrenheit)
