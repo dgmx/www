@@ -1,9 +1,8 @@
 ---
-title: "Introduccion a Python"
+title: "1. Introduccion a Python"
 parent: "Python"
 ---
 # Introduccion a Python
-
 
 ## 1. Tipos de datos en Python
 

@@ -3,10 +3,6 @@ title: 2. La biblioteca math en Python
 parent: "Python"
 ---
 
-# La biblioteca `math` en Python
-
-Explicación para estudiantes de bachillerato sobre el uso de la función `math` en Python y sus funciones matemáticas incorporadas más importantes.
-
 ## La biblioteca `math` en Python
 - La biblioteca `math` en Python es un módulo que proporciona funciones matemáticas avanzadas y constantes que permiten realizar cálculos numéricos de forma más precisa y eficiente.
 - Para usar las funciones de la biblioteca `math`, primero necesitas importarla en tu programa con la siguiente línea de código:
