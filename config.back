@@ -1,0 +1,18 @@
+
+
+# Opciones de navegación
+just_the_docs:
+  aux_nav:
+    "Inicio":
+      url: /
+    "Bash":
+      url: /bash/intro/
+    "Pseudo-Codigo":
+      url: /pseudo-codigo/intro/
+    "Processing":
+      url: /processing/intro/
+    "Otros":
+      url: /otros
+
+remote_theme: just-the-docs/just-the-docs
+title: "Diego J. González"
