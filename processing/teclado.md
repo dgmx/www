@@ -104,6 +104,29 @@ void keyPressed() {
   }
 }
 ```
+Aqui tenemos un ejemplo usando `Python` donde paramos la ejecución de un programa usando `keyPressed` y lo reactivamos de la misma forma usando diferentes `keyCode` para conseguirlo.
+
+```python
+terminado = False
+def setup():
+    size(800,600)
+    background(115)
+
+def draw():
+    if terminado == False:
+        fill(random(255), random (255),random (255))
+        rect(random(800), random(600),20,20)
+        ellipse(random(800), random(600),20,20)
+    print(terminado)
+        
+def keyPressed():
+    if keyCode == UP:
+        global terminado 
+        terminado = True
+    elif keyCode == DOWN:
+        global terminado
+        terminado = False
+```
 
 ## Resumen
 
