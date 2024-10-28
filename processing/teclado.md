@@ -1,5 +1,5 @@
 ---
-title: 8. Funciones para Trabajar con el Teclado
+title: 8. Funciones usando el Teclado
 parent: "Processing"
 ---
 # Funciones para Trabajar con el Teclado en Processing
