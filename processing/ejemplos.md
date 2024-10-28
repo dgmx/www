@@ -4,7 +4,7 @@ parent: "Processing"
 ---
 
 
-# 8. Ejercicios Básicos de Processing (Java y Python)
+# 10. Ejercicios Básicos de Processing (Java y Python)
 
 ## 1. ¿Qué es un Sketch?
 ### Ejercicio
