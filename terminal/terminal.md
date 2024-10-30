@@ -1,10 +1,10 @@
 ---
-title: "Termianl"
+title: "Terminal"
 nav_order: 6
 ---
 
 
-Introducción a la terminal
+##Introducción a la terminal
 
 *   Terminología
 *   Comandos
