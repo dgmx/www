@@ -1,10 +1,9 @@
 ---
-title: "Terminal"
-nav_order: 5
+title: "01. Introducción a la terminal"
+parent: "Terminal"
 ---
 
-
-##Introducción a la terminal
+## Introducción a la terminal
 
 *   Terminología
 *   Comandos
