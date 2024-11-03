@@ -1,10 +1,10 @@
 ---
-title: "E3 Ejercicios resueltos sobre estructuras de listas"
+title: "E3 Ejercicios resueltos sobre Listas"
 parent: "Python"
 nav_exclude: true
 ---
 
-## Ejercicios resueltos sobre estructuras de listas
+## Ejercicios resueltos sobre Listas
 
 
 Tabla de contenidos
