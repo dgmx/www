@@ -265,7 +265,7 @@ Escribe un programa que permita al usuario adivinar un número secreto entre 1 y
 Solución
 ```python
 # Definir el número secreto
-numero\_secreto = 7
+numero_secreto = 7
 
 # Inicializar el número de intentos
 intentos = 0
@@ -274,7 +274,7 @@ intentos = 0
 while intentos < 5:
     numero = int(input("Adivina el número (entre 1 y 10): "))
     
-    if numero == numero\_secreto:
+    if numero == numero_secreto:
         print("¡Felicidades! Has adivinado el número.")
         break  # Salir del bucle si el número es correcto
     else:
@@ -282,7 +282,7 @@ while intentos < 5:
     
     intentos += 1
 
-if intentos == 5 and numero != numero\_secreto:
+if intentos == 5 and numero != numero_secreto:
     print("Lo siento, has agotado todos los intentos.")
 ```
 El bucle `while` permite que el usuario adivine el número secreto en un máximo de 5 intentos. Si el usuario acierta, usamos `break` para detener el bucle y terminar el programa. Si no, el bucle continúa hasta agotar los intentos.
