@@ -1,5 +1,5 @@
 ---
-title: "E2 Ejercicios resueltos sobre estructuras de listas"
+title: "E3 Ejercicios resueltos sobre estructuras de listas"
 parent: "Python"
 nav_exclude: true
 ---
