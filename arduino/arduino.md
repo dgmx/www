@@ -1,5 +1,5 @@
 ---
-title: "1 .Arduinos"
+title: "1. Arduino"
 parent: "Arduino"
 ---
 
