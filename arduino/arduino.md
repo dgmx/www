@@ -470,7 +470,7 @@ Te invito a pensar qué programa habría que escribir para conseguir que dos LED
 
 Esos son algunos de los ejercicios que te propopongo ahora que ya sabes como controlar uno y varios LEDs a la vez.
 
-[Ejercicios](https://www.yourtechnologyweb.com/ejercicios-1o-de-bach/ejercicios-de-arduino/)
+[Ejercicios](ejercicios_facil.md)
 
 6\. LED RGB
 -----------
