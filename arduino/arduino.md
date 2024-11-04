@@ -37,17 +37,11 @@ Un microcontrolador es **un circuito eléctrónico** muy complejo compuesto de m
 
 Como puedes observar, no se ve ningún tipo de componente electrónico a simple vista. El motivo es que un microcontrolador es un **circuito integrado** (o microchip), lo que significa que los diferentes componentes se encuentran confinados en una cápsula de unos pocos centímetros cuadrados. Para conseguirlo se emplea una técnica muy compleja denominada [fotolitografía](https://es.wikipedia.org/wiki/Fotolitograf%C3%ADa) que básicamente consiste en «dibujar» los componentes sobre una lámina de silicio (material semiconductor).
 
-* * *
-
 Seguro que has oído hablar de **Silicon Valle**y (**Valle del Silicio** en español), una zona de California en la que se pueden encontrar algunas de las principales empresas tecnológicas del mundo. Apple, Intel, Hewlett-Packard, Facebook, Tesla, Twitter… Pues bien, el nombre procede precisamente de que las empresas que allí se instalaron fueron las primeras en empezar a utilizar circuitos integrados y estos eran fabricados con silicio.
-
-* * *
 
 Pero un microcontrolador no es un circuito cualquiera, sino que es un circuito programable. Es decir, es un circuito al que se le pueden dar órdenes. **A la lista de órdenes que se le da a un microcontrolador se le denomina programa.** Y programar no es otra cosa que escribir un programa para un microcontrolador.
 
 El único problema es que para programar hay que emplear un lenguaje específico que el microcontrolador es capaz de entender, a ese lenguaje se le llama **lenguaje de programación**. Es necesario aprender ese lenguaje para poder dar órdenes a un microcontrolador y así conseguir que haga lo que deseamos.
-
-* * *
 
 ##### ¿Qué es Arduino?
 
@@ -62,8 +56,6 @@ En la siguiente imagen puedes ver un Arduino Uno real:
 ![](images/arduino_uno_atmega.jpg)
 
 Puedes pensar que no se parece en nada al microcontrolador de la primera imagen, pero si te fijas comprobarás que el componente al que apunta la flecha es exactamente el mismo. De hecho ese componente es realmente el microcontrolador, mientras que la función del resto de la placa es básicamente facilitar las conexiones como veremos más adelante.
-
-* * *
 
 ##### ¿Para qué sirve un microcontrolador?
 
@@ -183,16 +175,20 @@ Fíjate en que las **órdenes** que hay que dar al microcontrolador deben estar 
 
 Sin embargo, como se ha explicado en la página anterior, los microcontroladores utilizan un lenguaje específico, lo que se denomina un lenguaje de programación. Por tanto, debemos traducir las órdenes anteriores al lenguaje que puede entender el Arduino. Eso es lo que vamos a aprender a hacer a partir de ahora, pero de momento tienes que creerte que la traducción de las órdenes anteriores sería la siguiente:
 
-`void setup()` `{`  
-`pinMode(8, OUTPUT);`  
-`}`
+```c
+void setup() {
+       pinMode(8, OUTPUT);
+}
 
-`void loop()` `{`  
-`digitalWrite(8, HIGH);`  
-`delay(2000);`  
-`digitalWrite(8, LOW);`  
-`elay(2000);`  
-`}`
+void loop() {
+    digitalWrite(8, HIGH);
+    delay(2000);
+    digitalWrite(8, LOW);
+    delay(2000);
+}
+```
+
+
 
 Puedes copiar y pegar directamente el texto azul en el área del programa y a continuación hacer click en el botón _Iniciar simulación_:
 
@@ -205,8 +201,6 @@ Y comprobarás que la bombilla empieza a parpadear así:
 Ya has hecho tu primer programa, uno muy sencillo que solamente controla una bombilla. Sin embargo, los has hecho copiando y pegando un programa que realmente no sabes cómo funciona. En las siguientes páginas lo entenderás.
 
 También tienes que tener presente que el ejemplo que hemos visto es muy sencillo, pero la cosa se puede ir complicando tanto como lo desees. Imagina que además de la bombilla conectas un sensor de presencia al Arduino. Con el programa adecuado podrías crear un sistema automático en el que se enciende una bombilla cuando alguien entra en una habitación. O imagínate que conectas un sensor de luz y un motor además de la bombilla. Podrías crear un sistema que abra o cierre unas persianas en función del nivel de luz que entra en un local.
-
-* * *
 
 Antes de pasar a la siguiente página puede que te preguntes **qué diferencia hay entre el uso de un simulador y de un Arduino real**. La respuesta es que si eres capaz de controlar un circuito con el simulador también serás capaz de hacerlo en un Arduino real. la única diferencia será que para programar un Arduino real, una vez escrito el programa, tendrás que cargarlo (grabarlo) en el microcontrolador. Esto se hace mediante un cable USB como los que se utilizan para conectar las impresoras al ordenador:
 
@@ -271,13 +265,16 @@ Lo primero que tienes que saber es que cualquier programa de Arduino tiene **dos
 
 Por eso, hay ciertas líneas que siempre van a estar presentes en un programa de Arduino ya que constituyen la estructura del programa:
 
-`void setup()   {`
 
-`}`
+```c
+void setup() {
 
-`void loop()   {`
+}
 
-`}`
+void loop() {
+
+}
+```
 
 Es importante no borrar las llaves, «{» y «}», de ambas partes del programa, ya que si se hace se producirá un error y el programa no funcionará. Si por algún motivo se borran puedes o bien copiar y pegar de nuevo el texto azul de arriba o escribirlas con tu teclado (pulsando _AltGr_ y las teclas que se encuentran a la izquierda de la tecla intro).
 
@@ -294,10 +291,13 @@ _**pinMode(«nº de pin», OUTPUT);**_
 
 Veámoslo con un ejemplo práctico. Si hemos conectado un motor al pin número 7, el set up ( ) del programa debera ser así:
 
-`void setup()`  
-`{`  
-`pinMode(7,OUTPUT);`  
-`}`
+```c
+void setup() {
+
+pinMode(7,OUTPUT);
+
+}
+````
 
 ![](images/motor_pinmode.jpg)
 
@@ -309,11 +309,12 @@ De momento todos los componentes que vamos a utilizar son actuadores, así que s
 
 **IMPORTANTE**: el lenguaje de programación es muy preciso y cualquier pequeño cambio puede hacer que nada funcione. Por ejemplo, en la única línea que hemos escrito hasta el momento:
 
-_pinMode(7,OUTPUT);_
+```c
+pinMode(7,OUTPUT);
+```
 
 Es necesario que la letra M se escriba con mayúsculas, que la palabra OUTPUT también y que no te olvides de escribir el «;» al final de la línea.
 
-* * *
 
 ##### Configuración con múltiples componentes
 
@@ -322,14 +323,15 @@ Antes de pasar a escribir las órdenes del programa vamos a ver cómo se configu
 ![](images/arduino_3_bombillas_setup.jpg)
 
 En el set up ( ) del programa habrá que escribir esto:
+```c
+void setup() {
 
-`void setup()`  
-`{`  
-`pinMode(12,OUTPUT);`  
-`pinMode(6,OUTPUT);`  
-`pinMode(2,OUTPUT);`  
-`}`
+pinMode(12,OUTPUT);
+pinMode(6,OUTPUT);
+pinMode(2,OUTPUT);
 
+}
+```
 Es decir, habrá que repetir esa línea del programa tantas veces como componentes se hayan conectado al Arduino.
 
 En la siguiente página se verá como se programa la segunda parte de cualquier programa: **el void loop ( )**.
@@ -372,13 +374,15 @@ Indicando entre los paréntesis el tiempo que se desea detener el programa. Sól
 
 Por ejemplo, si quieres hacer que un LED conectado al pin 3 parpadee cada medio segundo (medio segundo encendido y medio segundo apagado), tendrás que escribir las siguiente órdenes:
 
-`digitalWrite(3, HIGH);`
+```c
+digitalWrite(3, HIGH);
 
-`delay(500);`
+delay(500);
 
-`digitalWrite(3, LOW);`
+digitalWrite(3, LOW);
 
-`delay(500);`
+delay(500);
+````
 
 ##### Ejemplos
 
@@ -391,29 +395,23 @@ En primer lugar habría que conectar el LED: la pata larga (doblada) al pin 6 y 
 ![](images/primer_programa.jpg)
 
 Después escribir el siguiente programa, como se puede ver en la imagen, y hacer click en el botón _Iniciar simulación_:
+```c
+void setup() {
+pinMode(6,OUTPUT);
+}
 
-`void setup()`  
-`{`  
-`pinMode(6,OUTPUT);`  
-`}`
-
-`void loop()`  
-`{`  
-`digitalWrite(6,HIGH);`  
-`delay(1500);`  
-`digitalWrite(6,LOW);`  
-`delay(1500);`  
-`}`
-
+void loop() {
+digitalWrite(6,HIGH);
+delay(1500);
+digitalWrite(6,LOW);
+delay(1500);
+}
+```
 Y este sería el resultado:
 
 ![](images/gif_4.gif)
 
-* * *
-
 Fíjate en el hecho de que con tan sólo cuatro órdenes el LED parpadea de manera indefinida. Eso se debe a que, como se ha dicho antes, las órdenes que se escriben en el void loop ( ) **se repiten una y otra vez**. Es decir, en este caso, se enciende el led, se mantiene encendido un segundo y medio, se apaga el led, se mantiene apagado un segundo y medio y tras esto vuelve a repetirse la primera orden (encender el LED).
-
-* * *
 
 Ahora te hago la siguiente pregunta **¿qué ocurrirá si con el mismo programa del ejemplo anterior se sustituye el LED por un motor conectado al mismo pin?**
 
@@ -425,11 +423,7 @@ Ten en cuenta que las órdenes que hemos visto lo que hacen es enviar o no envia
 
 Con tan sólo las tres órdenes que se han explicado se pueden crear un montón de programas diferentes. Sólo hay que combinarlas adecuadamente y tener en cuenta que el orden en que se escriben es muy relevante, ya que las órdenes se ejecutan de arriba hacia abajo y cuando ya se ha ejecutado la última se vuelve al inicio.
 
-* * *
-
 Tampoco te olvides de ser cuidadoso con la escritura del programa, es muy frecuente que un programa dé error porque se ha olvidado escribir el «;» al final de una línea o porque una letra que debía escribirse con mayúsculas se ha escrito con minúsculas.
-
-* * *
 
 **Ejemplo 2: a continuación se muestra un ejemplo en el que se hace que dos LEDs, uno azul conectado al pin 9 y otro amarillo conectado al pin 12 parpadeen a la vez, pero en este caso no se desea que estén el mismo tiempo apagados que encendidos. Por el contrario, se quiere que estén apagados un segundo y que después se enciendan durante dos segundos.**
 
@@ -443,27 +437,24 @@ Para cambiar el color de un LED hay que seleccionar el componente y cambiar el c
 
 Por último, hay que escribir el siguiente programa en la parte derecha:
 
-`void setup()`  
-`{`  
-`pinMode(9,OUTPUT);`  
-`pinMode(12,OUTPUT);`  
-`}`
+```c
+void setup() {
+pinMode(9,OUTPUT);
+pinMode(12,OUTPUT);
+}
 
-`void loop()`  
-`{`  
-`digitalWrite(9,LOW);`  
-`digitalWrite(12,LOW);`  
-`delay(1000);`  
-`digitalWrite(9,HIGH);`  
-`digitalWrite(12,HIGH);`  
-`delay(2000);`  
-`}`
-
+void loop() {
+digitalWrite(9,LOW);
+digitalWrite(12,LOW);
+delay(1000);
+digitalWrite(9,HIGH);
+digitalWrite(12,HIGH);
+delay(2000);
+}
+```
 Al hacer click en _Iniciar simulación_ los LEDs parpearán así:
 
-![](images/gif_5.gif)![](https://www.yourtechnologyweb.com/wp-content/uploads/2020/05/gif_5.gif)
-
-* * *
+![](images/gif_5.gif)
 
 Te invito a pensar qué programa habría que escribir para conseguir que dos LEDs parpadeen cada dos segundos, pero de forma alternada, como en el siguiente gif. Es decir, cuando uno está encendido el otro está apagado y viceversa:
 
@@ -512,8 +503,6 @@ Por último, para que el componente no se estropee y funcione correctamente, es 
 
 Sin embargo, como puedes imaginarte, la opción de la izquierda es mucho más sencilla y económica, ya que sólo requiere la conexión de una resistencia. La clave está en que **el terminal negativo está compartido por los tres colores** Por ese motivo, es suficiente conectar una resistencia a ese terminal, pues de esa forma la resistencia está afectando a los tres colores. Por el contario, si se conecta a los terminales de color será neceario conectar una resistencia por cada uno de los colores.
 
-* * *
-
 ##### Controlando un RGB LED con Arduino
 
 Como se ha dicho al principio, el principal uso de los LEDs RGB es en la fabricación de pantallas. Y para conseguir formar una imagen o un vídeo, que no es más que una sucesión de imágenes, es necesario controlar todos y cada uno de los LEDs de la pantalla. Es decir, es necesario indicarle de qué color debe ser la luz que emita para que la imagen obtenida sea la deseada.
@@ -540,17 +529,28 @@ Como se quiere emitir luz azul, que es uno de los colores primarios, bastará co
 
 El programa sería el siguiente:
 
-`void setup()   {   pinMode(2, OUTPUT);   pinMode(4, OUTPUT);   pinMode(12, OUTPUT);   }`
+```c
+void setup() {
+pinMode(2, OUTPUT);
+pinMode(4, OUTPUT);
+pinMode(12, OUTPUT);
+}
 
-`void loop()   {`
+void loop() {
 
-`digitalWrite(2, LOW);   digitalWrite(4, HIGH);   digitalWrite(12, LOW);   delay(1000);`
+digitalWrite(2, LOW);
+digitalWrite(4, HIGH);
+digitalWrite(12, LOW);
+delay(1000);
 
-`digitalWrite(2, LOW);   digitalWrite(4, LOW);   digitalWrite(12, LOW);   delay(1000);`
+digitalWrite(2, LOW);
+digitalWrite(4, LOW);
+digitalWrite(12, LOW);
+delay(1000);
 
-`}`
+}
+```
 
-* * *
 
 **Ejemplo 2: hacer que el LED RBG parpadee con luz amarilla cada dos segundos.**
 
@@ -559,18 +559,28 @@ Para conseguir luz amarilla es necesario mezclar luz roja y verde. Por tanto, se
 ![](images/ejemplo_RGB_2.gif)
 
 El programa sería el siguiente:
+```c
+void setup() {
+pinMode(2, OUTPUT);
+pinMode(4, OUTPUT);
+pinMode(12, OUTPUT);
+}
 
-`void setup()   {   pinMode(2, OUTPUT);   pinMode(4, OUTPUT);   pinMode(12, OUTPUT);   }`
+void loop() {
 
-`void loop()   {`
+digitalWrite(2, HIGH);
+digitalWrite(4, LOW);
+digitalWrite(12, HIGH);
+delay(2000);
 
-`digitalWrite(2, HIGH);   digitalWrite(4, LOW);   digitalWrite(12, HIGH);   delay(2000);`
+digitalWrite(2, LOW);
+digitalWrite(4, LOW);
+digitalWrite(12, LOW);
+delay(2000);
 
-`digitalWrite(2, LOW);   digitalWrite(4, LOW);   digitalWrite(12, LOW);   delay(2000);`
+}
+```
 
-`}`
-
-* * *
 
 **Nota:** en realidad, para conseguir todos los colores posibles en una pantalla real no basta con indicar qué colores se activan, sino la intensidad con que debe emitirse cada uno de los tres tipos de luz. Eso es lo que se conoce como **código RGB** de un color. El código RGB son tres valores entre el 0 y el 255 que indican qué intensidad de cada color de luz es necesaria para generar ese color. Es muy fácil comprobar el funcionamiento de este código por ejemplo en el cuadro de selección de color de un editor de texto (word, por ejemplo):
 
@@ -578,4 +588,4 @@ El programa sería el siguiente:
 
 En el **ejemplo 2** la luz **amarilla** que se ha conseguido mezclando luz roja y verde se correspondería con el código RGB: **255, 255, 0** (rojo y verde al máximo y azul apagado):
 
-![](images/codigo_RGB_amarillo.png?time=1730735912238)
+![](images/codigo_RGB_amarillo.png)
