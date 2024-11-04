@@ -15,7 +15,7 @@ secundaria.
 ## Indice de Contenidos
 
 
-**[Introducción a BASH](bash)**.
+**[Curso de Introducción a BASH](bash)**.
 
 Enlace a **[Moodle](https://dgmx.duckdns.org)**.
 
