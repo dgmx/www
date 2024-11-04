@@ -6,13 +6,20 @@ just_the_docs:
     "Inicio":
       url: /
     "Bash":
-      url: /bash/intro/
+      url: /bash/
     "Pseudo-Codigo":
-      url: /pseudo-codigo/intro/
+      url: /pseudo-codigo/
     "Processing":
-      url: /processing/intro/
+      url: /processing/
+    "Python":
+      url: /python
+    "Terminal":
+      url: /terminal
+
     "Otros":
       url: /otros
 
 remote_theme: just-the-docs/just-the-docs
 title: "Diego J. González"
+
+
