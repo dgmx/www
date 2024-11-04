@@ -7,43 +7,22 @@ Una **variable** es un espacio en la memoria del ordenador en el que se puede al
 
 Para poder untilizar una variable, lo primero que hay que hacer es **declarar esa variable**, es decir, crearla. Para declarar una variable hay que escribir un **identificador** (que dependerá del tipo de dato que se va a almacenar, un espacio y, a continuación, el **nombre**.
 
-**Tipo de dato**
-
-**Identificador**
-
-**Ejemplo**
-
-Número entero
-
-int
-
-1, 5, 100…
-
-Número decimal
-
-float o double
-
-1.6, 4.5, 0.76, -1.65
-
-Caracter
-
-char
-
-a, R, +, w…
-
-Cadenas de caracteres
-
-String
-
-«Hola», «numero», «contador»
+|     |     |     |
+| --- | --- | --- |
+| **Tipo de dato** | **Identificador** | **Ejemplo** |
+| Número entero | int | 1, 5, 100… |
+| Número decimal | float o double | 1.6, 4.5, 0.76, -1.65 |
+| Caracter | char | a, R, +, w… |
+| Cadenas de caracteres | String | «Hola», «numero», «contador» |
 
 **Ejemplo**: abajo se muestra la orden que se debe incluir en un programa de Arduino para crear una variable de tipo número entero («int») a la que se va a llamar «dato». En la línea siguiente, se asigna (guarda) el valor «5» en dicha variable.
 
-_int dato;_
+```c
+int dato;
 
-_dato = 5;_
+dato = 5;
+```
 
-* * *
 
 **Ejercicio 1** **\[fácil\]**
 
@@ -71,85 +50,57 @@ Conectar 3 LEDs de colores distintos (vered, rojo y amarillo) como se muestra en
 
 A continuación, vamos a aprender a incluir condiciones en los programas que escribamos. Esto es de gran utilidad, ya que nos permitirá realizar ciertas acciones únicamente cuando se cumpla una condición. Abajo se muestra un ejemplo de la sintaxis que se debe utilizar y una traducción en «pseudocódigo» a la derecha.
 
-_if (numero > 3) digitalWrite(7,HIGH);_
+```c
+if (numero > 3) digitalWrite(7,HIGH);
 
-_if (numero < 3) digitalWrite(7,LOW);_
+// Si el valor de la variable «numero» es mayor que 3 se enciende el LED conectado al PIN número 7.
 
-_Si el valor de la variable «numero» es mayor que 3 se enciende el LED conectado al PIN número 7._
+if (numero < 3) digitalWrite(7,LOW);
 
-_Si el valor de la variable «numero» es mayor que 3 se apaga el LED conectado al PIN número 7._
+// Si el valor de la variable «numero» es mayor que 3 se apaga el LED conectado al PIN número 7.
+
+```
+
+
+
 
 También puede ocurrir que deseemos ejecutar varias órdenes seguidas cuando se cumple una condición. En ese caso, deberemos utilizar el símbolo de las llaves «{» y «}» para agrupar todas las órdenes. Veamos un ejemplo:
 
-_if (numero > 3) {_
 
-_digitalWrite(7,HIGH);_
+```c
 
-delay(1000);
+if (numero > 3) {
+   digitalWrite(7,HIGH);
+   delay(1000);
+   digitalWrite(7,LOW);
+   delay(1000);
 
-_digitalWrite(7,LOW);_
-
-delay(1000);
-
+// Si el valor de la variable «numero» es mayor que 3 se el LED conectado al PIN número 7 parpadeará encendiéndose y apagándose cada segundo (1000ms).
 }
 
-_if (numero < 3) {_
+if (numero < 3) {
+   digitalWrite(7,HIGH);
+   delay(500);
+   digitalWrite(7,LOW);
+   delay(500);
 
-_digitalWrite(7,HIGH);_
-
-delay(500);
-
-_digitalWrite(7,LOW);_
-
-delay(500);
-
+// Si el valor de la variable «numero» es menor que 3 se el LED conectado al PIN número 7 parpadeará encendiéndose y apagándose cada medio segundo (500ms)._
 }
+```
 
-_Si el valor de la variable «numero» es mayor que 3 se el LED conectado al PIN número 7 parpadeará encendiéndose y apagándose **cada segundo** (1000ms)._
 
-_Si el valor de la variable «numero» es menor que 3 se el LED conectado al PIN número 7 parpadeará encendiéndose y apagándose **cada medio segundo** (500ms)._
+
+
 
 Para escribir las condiciones de la sentencia «if» es necesario recurrir a una serie de símbolos que se indican a continuación:
 
-**Símbolo**
-
-**Significado**
-
-**Símbolo**
-
-**Significado**
-
-\>
-
-«Mayor que»
-
-\==
-
-«Igual que»
-
-<
-
-«Menor que»
-
-!=
-
-«Distinto que»
-
-\>=
-
-«Mayor o igual que»
-
-| | (Alt Gr + 1)
-
-«o»
-
-<=
-
-«Menor o igual que»
-
-&& (Mayús + 6)
-
-«y»
+|     |     |     |     |
+| --- | --- | --- | --- |
+| **Símbolo** | **Significado** | **Símbolo** | **Significado** |
+| \>  | «Mayor que» | \== | «Igual que» |
+| <   | «Menor que» | !=  | «Distinto que» |
+| \>= | «Mayor o igual que» | \| \| (Alt Gr + 1) | «o» |
+| <=  | «Menor o igual que» | && (Mayús + 6) | «y» |
 
 Veamos algunos ejemplos:
 
@@ -199,7 +150,7 @@ Con la misma conexión del ejercicio anterior (se puede duplicar un proyecto hac
 *   Si el valor de una variable llamada «distancia» es mayor que 20, parpadeará el LED azul con un _delay_ de medio segundo.
 *   Si el valor de la variable «distancia» está entre 10 y 20 (ambos incluidos) ambos LEDs parpaderán con un _delay_ de un segundo.
 
-![](images/LEDS_2-290x300.png)
+![](images/LEDS_2.png)
 
 * * *
 
@@ -233,86 +184,68 @@ Cuando se desean incluir varias sentencias «if», una a continuación de la otr
 
 Abajo se muestra un **ejemplo de la sentencia «else»**. Esta sentencia sirve para indicar qué debe ocurrir cuando se cumpla una condición y en caso de que esta no se cumpla, por ese motivo, no se debe incluir ninguna condición específica:
 
-_if (dato == 1)_ {
 
-_digitalWrite(3,HIGH);_
+```c
+if (dato == 1) {
+    digitalWrite(3,HIGH);
+    digitalWrite(7,LOW);
 
-_digitalWrite(7,LOW);_
-
+// Si el valor de la variable «dato» es «1», se enciende el componente del PIN 3 y se apaga el componente del PIN 7.
 }
 
-_else {_
+else {
+    digitalWrite(3,LOW);
+    digitalWrite(7,HIGH);
 
-_digitalWrite(3,LOW);_
-
-_digitalWrite(7,HIGH);_
+// En caso contrario, se apaga el componente del PIN 3 y se enciende el componente del PIN 7.
 
 }
-
-_Si el valor de la variable «dato» es «1», se enciende el componente del PIN 3 y se apaga el componente del PIN 7._
-
-_En caso contrario, se apaga el componente del PIN 3 y se enciende el componente del PIN 7._
+```
 
 Y, a continuación se muestra un ejemplo de uso de la sentencia «else if», que resulta útil cuando existen muchas condiciones posibles\*.
 
 _\*La ventaja de utilizar «else if» en vez de «if» es que una vez que se ha entrado en una de las condiciones, no se seguirán comprobando las demás condiciones, sino que se saltarán._
 
-_if (dato == 1)_ {
+```c
+if (dato == 1) {
+    digitalWrite(1,HIGH);
+    digitalWrite(2,LOW);
+    digitalWrite(3,LOW);
+    digitalWrite(4,LOW);
 
-_digitalWrite(1,HIGH);_
+// Si el valor de la variable dato es 1, se encenderá únicamente el componente conectado al PIN 1
+}
 
-_digitalWrite(2,LOW);_
+else if (dato == 2) {
+    digitalWrite(1,LOW);
+    digitalWrite(2,HIGH);
+    digitalWrite(3,LOW);
+    digitalWrite(4,LOW);
 
-_digitalWrite(3,LOW);_
-
-_digitalWrite(4,LOW);_
+// Si el valor de la variable dato es 2, se encenderá únicamente el componente conectado al PIN 2.
 
 }
 
-_else if (dato == 2)_ {
+else if (dato == 3) {
+    digitalWrite(1,LOW);
+    digitalWrite(2,LOW);
+    digitalWrite(3,HIGH);
+    digitalWrite(4,LOW);
 
-_digitalWrite(1,LOW);_
-
-_digitalWrite(2,HIGH);_
-
-_digitalWrite(3,LOW);_
-
-_digitalWrite(4,LOW);_
+// Si el valor de la variable «dato» es 3, se encenderá únicamente el componente conectado al PIN 3.
 
 }
 
-_else if (dato == 3)_ {
+else {
+    digitalWrite(1,LOW);
+    digitalWrite(2,LOW);
+    digitalWrite(3,LOW);
+    digitalWrite(4,HIGH);
 
-_digitalWrite(1,LOW);_
-
-_digitalWrite(2,LOW);_
-
-_digitalWrite(3,HIGH);_
-
-_digitalWrite(4,LOW);_
+// Si el valor de la variable dato no es ni 1, ni 2, ni 3, se encenderá el componente conectado al PIN 4.
 
 }
-
-_else_ {
-
-_digitalWrite(1,LOW);_
-
-_digitalWrite(2,LOW);_
-
-_digitalWrite(3,LOW);_
-
-_digitalWrite(4,HIGH);_
-
-}
-
-_Si el valor de la variable «dato» es «1», se e_ncenderá únicamente el componente conectado al PIN 1.
-
-_Si el valor de la variable «dato» es «2», se encenderá únicamente el componente conectado al PIN 2._
-
-_Si el valor de la variable «dato» es «3», se encenderá únicamente el componente conectado al PIN 3._
-
-_Si el valor de la variable «dato» no es ni «1», ni «2», ni «3», se encenderá el componente conectado al PIN 4._
-
+```
 * * *
 
 **Ejercicio 9** ****\[fácil\]****
@@ -350,7 +283,7 @@ Se quiere hacer un programa con el que se active un motor de corriente continua,
 
 Cuando se desea repetir una orden o una serie de órdenes **mientras** se cumpla una condición, se puede emplear la sentencia «while». Abajo se muestra un ejemplo en el que un LED rojo parpadea 5 veces (cada medio segundo) y después pasa a parpadear, indefinidamente, un LED verde (cada segundo). En este caso, la condición del bucle «while» es que la variable «veces» sea menor o igual que cinco, ya que deseamos que el LED rojo parpadee 5 veces únicamente\*.
 
-_\*Hay que destacar que la variable «veces» se ha creado al inicio del programa, no dentro del loop, de tal manera que no se le vuelve a dar el valor cero cada vez que vuelve a ejecutarse el loop._
+_Hay que destacar que la variable «veces» se ha creado al inicio del programa, no dentro del loop, de tal manera que no se le vuelve a dar el valor cero cada vez que vuelve a ejecutarse el loop._
 
 La conexión es la siguiente:
 
@@ -358,51 +291,38 @@ La conexión es la siguiente:
 
 Y el programa es:
 
-_int veces;_
 
-_veces=1;_
+```c
+int veces;
+veces=1;
 
-_void setup() {_
-
-_pinMode(8,OUTPUT);_
-
-_pinMode(9,OUTPUT);_
-
-_}_
-
-_void loop() {_
-
-_**while**(veces<=5){_
-
-_digitalWrite(8,HIGH);_
-
-_delay(500);_
-
-_digitalWrite(8,LOW);_
-
-_delay(500);_
-
-_veces=veces+1;_
+void setup() {
+    pinMode(8,OUTPUT);
+    pinMode(9,OUTPUT);
+}
+void loop() {
+    while(veces<=5){
+        digitalWrite(8,HIGH);
+        delay(500);
+        digitalWrite(8,LOW);
+        delay(500);
+    veces=veces+1;
+}
+    digitalWrite(9,HIGH);
+    delay(1000);
+    digitalWrite(9,LOW);
+    delay(1000);
 
 }
+```
 
-_digitalWrite(9,HIGH);_
+Se crea una variable entera, llamada `veces`, a la que se da un valor inicial de 1.
 
-_delay(1000);_
+Mientras la variable «veces» tenga un valor menor o igual que 5, parpadeará el LED rojo (PIN 8) con un `delay` de medio segundo.
 
-_digitalWrite(9,LOW);_
+Tras cada parpadeo, el valor de la variable veces se incrementará en una unidad `(veces=veces+1)`. Si no se incluyera esta orden, la variable veces siempre valdría «1» y nunca se saldría del bucle «while».
 
-_delay(1000);_
-
-}
-
-Se crea una variable entera, llamada «veces», a la que se da un valor inicial de «1».
-
-Mientras la variable «veces» tenga un valor menor o igual que «5», parpadeará el LED rojo (PIN 8) con un _delay_ de medio segundo.
-
-Tras cada parpadeo, el valor de la variable veces se incrementará en una unidad («veces=veces+1″\*). Si no se incluyera esta orden, la variable veces siempre valdría «1» y nunca se saldría del bucle «while».
-
-_\*Esta orden también se puedes escribir, de manera abreviada como «veces++»._
+_Esta orden también se puedes escribir, de manera abreviada como `veces++`._
 
 Por último, cuando la variable veces llegue a «5», el programa saldrá del bucle while y ya nunca más volverá a entrar en él, quedando el LED verde parpadeando ininterrumpidamente.
 
@@ -434,12 +354,13 @@ Con la misma conexión del ejercicio anterior, escribir un programa en el que, p
 
 Cuando se desea repetir una orden o un conjunto de órdenes un número concreto de veces (3, 4, 5…) normalmente la mejor opción es utilizar un bucle for. La sitnaxis del bucle for en la siguiente:
 
-**for (int i=1 ; i<=10 ; i=i+1){**
+```c
+for (int i=1 ; i<=10 ; i=i+1){
 
-_órdenes que se desean ejecutar_
+// órdenes que se desean ejecutar_
 
 }
-
+```
 Como puedes ver, tras la palabra «for» se deben abrir paréntesis y, dentro, incluir **tres apartados separados por «punto y coma»**:
 
 1.  Crear una variable (habitualmente entera – int, que en el ejemplo se ha llamado «i») y darle un valor inicial (en el ejemplo se h dado el valor «1»).
@@ -450,27 +371,27 @@ En función de los valores que se introduzcan entre paréntesis, se logrará rep
 
 Veamos un ejemplo:
 
-_//dentro del loop_
 
-_**for**(int a=1;a<=6;a=a+2){_
+```c
+//dentro del loop
 
-_digitalWrite(8,HIGH);_
-
-_delay(500);_
-
-_digitalWrite(8,LOW);_
-
-_delay(500);_
+for(int a=1;a<=6;a=a+2){
+    
+    digitalWrite(8,HIGH);
+    delay(500);
+    digitalWrite(8,LOW);
+    delay(500);
 
 }
+```
 
-En el bucle «for» de la izquierda, se crea una variable, llamada «a» a la que se da un valor inicial de 1.
+En el bucle «for» de la izquierda, se crea una variable, llamada `a` a la que se da un valor inicial de 1.
 
 El bucle se repetirá mientras la variable a valga 6 o menos.
 
 Cada vez que se ejecuta el bucle, la variable «a» se incrementará en dos unidades.
 
-Esos parámetros harán que el LED del PIN número 8 parpadee 3 veces seguidas (la primera vez, la variable «a» vale «1», la segunda vez, vale «3» y la tercera vez «5». A la siguiente repetición, ya valdría «7», por lo que no se ejecutarían las órdenes.
+Esos parámetros harán que el LED del PIN número 8 parpadee 3 veces seguidas,la primera vez, la variable `a`vale 1, la segunda vez, vale 3 y la tercera vez 5. A la siguiente repetición, ya valdría 7, por lo que no se ejecutarían las órdenes.
 
 * * *
 
