@@ -23,7 +23,7 @@ Conectar los componentes del circuito y responder a las preguntas:
 
 * * *
 
-****Ejercicio**** **2** **\[fácil\]**
+**Ejercicio** **2** **\[fácil\]**
 
 Conectar los componentes del circuito y responder a las preguntas:
 
@@ -35,7 +35,7 @@ Conectar los componentes del circuito y responder a las preguntas:
 
 * * *
 
-****Ejercicio**** **3:** **\[fácil\]**
+**Ejercicio** **3:** **\[fácil\]**
 
 Conectar los componentes del circuito y responder a las preguntas:
 
@@ -56,7 +56,7 @@ Conectar los componentes del circuito y responder a las preguntas:
 
 * * *
 
-****Ejercicio**** **5:** **\[fácil\]**
+**Ejercicio** **5:** **\[fácil\]**
 
 Conectar los componentes del circuito y responder a las preguntas:
 
@@ -67,7 +67,7 @@ Conectar los componentes del circuito y responder a las preguntas:
 
 * * *
 
-****Ejercicio**** **6:** **\[fácil\]**
+**Ejercicio** **6:** **\[fácil\]**
 
 Conectar los componentes del circuito y responder a las preguntas:
 
@@ -87,7 +87,7 @@ Conectar los componentes del circuito y dibujar su esquema eléctrico.
 
 * * *
 
-****Ejercicio**** **8:** **\[fácil\]**
+**Ejercicio** **8:** **\[fácil\]**
 
 Conectar los componentes del circuito y dibujar su esquema eléctrico.
 
