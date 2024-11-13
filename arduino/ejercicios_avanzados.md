@@ -118,7 +118,7 @@ d) _if(temperatura<=25)_
 
 e) _if(precio>100&&precio<200)_
 
-f) _if(distancia<4| |distancia>8)_
+f) _if(distancia<4 or distancia>8)_
 
 a) _Si la variable dato es mayor que 5._
 
