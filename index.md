@@ -17,6 +17,16 @@ secundaria.
 
 **[Curso de Introducción a BASH](bash)**.
 
+**[Introducción a Processing](processing)**.
+
+**[Introducción a la programación con Pseudo-Codigo](pseudo-code)**.
+
+**[Introducción a la programación con Pseudo-Codigo](pseudo-code)**.
+
+**[Introducción a la programación con Python](python)**.
+
+**[Introducción al uso de la Termina](terminal)**.
+
 Enlace a **[Moodle](https://dgmx.duckdns.org)**.
 
 
