@@ -1,5 +1,5 @@
 ---
-title: "8. Métodos Especiales en Python "
+title: "08. Métodos Especiales en Python "
 parent: "Python"
 ---
 

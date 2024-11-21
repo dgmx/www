@@ -3,24 +3,12 @@ title: "10. Ficheros "
 parent: "Python"
 ---
 
-
-Programación con Python: Ficheros
-=================================
+# Programación con Python: Ficheros
 
 Trabajar con ficheros es esencial para leer y escribir datos en el sistema de archivos de nuestro ordenador. A continuación mostraremos la sintaxis básica para utilizar ficheros en Python, incluyendo cómo abrir, leer y escribir en ellos. Utilizaremos explicaciones acompañadas de ejercicios prácticos.
 
-Toggle 
 
-- [Programación con Python: Ficheros](#programación-con-python-ficheros)
-  - [Abrir y cerrar ficheros](#abrir-y-cerrar-ficheros)
-  - [Leer contenido de un fichero](#leer-contenido-de-un-fichero)
-  - [Escribir en un archivo](#escribir-en-un-archivo)
-  - [Gestores de contexto](#gestores-de-contexto)
-  - [Verificar si un archivo existe](#verificar-si-un-archivo-existe)
-  - [Test](#test)
-
-Abrir y cerrar ficheros
------------------------
+## 1. Abrir y cerrar ficheros
 
 Para trabajar con un archivo en Python, primero debemos abrirlo. Podemos usar la función `open()` para abrir un archivo en diferentes modos, como lectura ( `'r'` ) o escritura ( `'w'` ) y también para añadir ( `'a'` ). Después de terminar de trabajar con el fichero, debemos cerrarlo utilizando el método `close()` para liberar recursos y también para evitar la pérdida de datos:
 ```python
@@ -31,8 +19,8 @@ archivo = open("archivo.txt", "r")
 # Cerrar el archivo después de terminar
 archivo.close()
 ```
-Leer contenido de un fichero
-----------------------------
+
+## 2. Leer contenido de un fichero
 
 Para leer el contenido de un archivo, podemos usar los métodos `read()` , `readline()` o `readlines()` :
 
@@ -57,8 +45,7 @@ lineas = archivo.readlines()
 print(lineas)
 archivo.close()
 ```
-Escribir en un archivo
-----------------------
+## 3. Escribir en un archivo
 
 Para escribir en un archivo, debemos abrirlo en modo de escritura, con `'w'` o para añadir, con `'a'` , según lo que necesitemos en cada momento:
 
@@ -76,8 +63,7 @@ archivo.write("Este es un contenido adicional.\n")
 archivo.write("¡Hola de nuevo!\n")
 archivo.close()
 ```
-Gestores de contexto
---------------------
+## 4. Gestores de contexto
 
 El uso de un `gestor de contexto` con la declaración `with` es una forma más segura y eficiente de trabajar con ficheros. Utilizando esta funcionalidad, el archivo se cierra automáticamente cuando el bloque `with` termina, incluso si se produce una excepción:
 ```python
@@ -90,8 +76,7 @@ with open("archivo.txt", "r") as archivo:
 with open("archivo.txt", "a") as archivo:
     archivo.write("Esto es un nuevo contenido con Context Manager.\\n")
 ```
-Verificar si un archivo existe
-------------------------------
+## 5. Verificar si un archivo existe
 
 Podemos usar el módulo `os` para verificar si un archivo existe antes de abrirlo.
 ```python
@@ -106,7 +91,3 @@ if os.path.exists(nombre_archivo):
 else:
     print(f"El archivo '{nombre_archivo}' no existe.")
 ```
-Test
-----
-
-Evalúa tus conocimientos mediante este  [test](https://trivial.pro/preguntas/informatica/python-ficheros/1)  que incluye preguntas relacionadas con esta unidad.

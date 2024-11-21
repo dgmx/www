@@ -1,5 +1,5 @@
 ---
-title: "3. Slicing en Python"
+title: "03. Slicing en Python"
 parent: "Python"
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: 2. La biblioteca math en Python
+title: 02. La biblioteca math en Python
 parent: "Python"
 ---
 

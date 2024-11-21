@@ -1,5 +1,5 @@
 ---
-title: "6. Programación Orientada a Objetos "
+title: "06. Programación Orientada a Objetos "
 parent: "Python"
 ---
 
