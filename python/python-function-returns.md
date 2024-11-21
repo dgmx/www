@@ -114,7 +114,7 @@ for numero in generador_pares(10):
 ## Buenas Prácticas
 
 1. Sé consistente con los tipos de retorno
-2. Documenta el tipo de retorno esperado
+2. Documenta el tipo de retorno esperado. Puedes encontrar mas informacion **[aqui](python-uso-de.md)
 3. Maneja los casos de retorno de manera clara y predecible
 4. Usa anotaciones de tipo para mayor claridad
 

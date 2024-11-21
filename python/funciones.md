@@ -3,30 +3,13 @@ title: "4. Funciones en Python"
 parent: "Python"
 ---
 
-Programación con Python: Funciones
-==================================
+# Programación con Python: Funciones
+
 
 Las funciones son bloques de código reutilizables en Python que pueden tener argumentos de entrada, realizar un conjunto de acciones y devolver un resultado. Son una parte fundamental de la programación, ya que nos permiten dividir tareas complejas en piezas más pequeñas y organizadas. A continuación analizaremos la sintaxis básica de las funciones en Python, con explicaciones y ejemplos prácticos.
 
-Toggle 
 
-- [Programación con Python: Funciones](#programación-con-python-funciones)
-  - [Definición de funciones](#definición-de-funciones)
-  - [Llamadas a funciones](#llamadas-a-funciones)
-  - [Argumentos de funciones](#argumentos-de-funciones)
-    - [Parámetros con valores predeterminados](#parámetros-con-valores-predeterminados)
-    - [Parámetros posicionales](#parámetros-posicionales)
-      - [Orden de los argumentos en una función](#orden-de-los-argumentos-en-una-función)
-      - [Orden de los parámetros en la definición de la función](#orden-de-los-parámetros-en-la-definición-de-la-función)
-    - [Parámetros nominales](#parámetros-nominales)
-    - [Paso de argumentos variables](#paso-de-argumentos-variables)
-  - [Valor de retorno](#valor-de-retorno)
-  - [Ámbito de variables](#ámbito-de-variables)
-  - [Funciones anidadas](#funciones-anidadas)
-  - [Funciones lambda](#funciones-lambda)
-  - [Otras Consideraciones](#otras-consideraciones)
-
-Definición de funciones
+## 1. Definición de funciones
 -----------------------
 
 En Python podemos definir una función utilizando la palabra clave `def` , seguida del nombre de la función y los paréntesis de apertura y cierre, que pueden contener los argumentos de la función. A continuación debemos añadir dos puntos `:` y el bloque de código que forma el cuerpo de la función:
@@ -34,8 +17,8 @@ En Python podemos definir una función utilizando la palabra clave `def` , segui
 def saludar():
     print("¡Hola! Bienvenido.")
 ```
-Llamadas a funciones
---------------------
+## 2. Llamadas a funciones
+
 
 Para ejecutar el código de la función simplemente debemos realizar una llamada utilizando su nombre seguido de paréntesis:
 ```python
@@ -43,8 +26,9 @@ def saludar():
     print("¡Hola!")
     saludar()  # Salida: ¡Hola!
 ```
-Argumentos de funciones
------------------------
+
+## 3. Argumentos de funciones
+
 
 Las funciones pueden aceptar argumentos de entrada, que son valores que se pasan a la función cuando se llama. Los parámetros que recibirán esos argumentos se escriben entre paréntesis en la definición de la función:
 ```python
@@ -105,7 +89,7 @@ En el segundo caso, se asignaron los valores `3` y `10` a `a` y `b` , respectiva
 El orden en que definamos los parámetros posicionales en la declaración de la función también es importante. En el siguiente ejemplo definimos la función `potencia` , recibiendo los parámetros `(a, b)` en el primer caso, y `(b, a)` en el segundo:
 ```python
 def potencia(a, b):
-    resultado = a \*\* b
+    resultado = a ** b
     return resultado
 
 resultado1 = potencia(2, 3)
@@ -153,8 +137,9 @@ funcion(1, 2, 3, nombre="Ana", edad=30)
 # (1, 2, 3)
 # {'nombre': 'Ana', 'edad': 30}
 ```
-Valor de retorno
-----------------
+
+## 4. Valor de retorno
+
 
 Las funciones pueden devolver un valor utilizando la palabra clave `return` . Esto es útil cuando queremos que una función realice un cálculo o una tarea y devuelva el resultado para su posterior uso:
 ```python
@@ -204,8 +189,8 @@ print("Área del triángulo:", area_triangulo)   # Área del triángulo: 8.0
 En este último ejemplo, el `match case` nos permite realizar los cálculos del área de diferentes formas geométricas de manera sencilla y legible. Cada caso corresponde a una forma geométrica específica, y el resultado se calcula utilizando las medidas proporcionadas. Al utilizar el `match case` , evitamos la necesidad de utilizar una serie de sentencias `if-elif-else` para identificar la forma geométrica y realizar el cálculo correspondiente. El código resultante es más limpio y más claro.
 
 
-Ámbito de variables
--------------------
+## 5. Ámbito de variables
+
 
 Las variables declaradas dentro de una función tienen un alcance local y solo existen dentro de la función:
 ```python
@@ -229,8 +214,8 @@ def incrementar_contador():
 incrementar_contador()
 print(contador_global)  # Salida: 1
 ```
-Funciones anidadas
-------------------
+## 6. Funciones anidadas
+
 
 Podemos definir funciones dentro de otras funciones, lo que se conoce como funciones anidadas:
 ```python
@@ -247,18 +232,15 @@ funcion_principal()
 # Función principal
 # Función anidada
 ```
-Funciones lambda
-----------------
+## 7. Funciones lambda
+
 
 Las funciones lambda son funciones anónimas y pequeñas que pueden tener cualquier número de parámetros, pero solo pueden tener una expresión. Se definen utilizando la palabra clave `lambda` :
 ```python
 # Función lambda que devuelve el cuadrado de un número
-cuadrado = lambda x: x \*\* 2
+cuadrado = lambda x: x ** 2
 
 resultado = cuadrado(5)
 print(resultado)  # Salida: 25
 ```
-
-Otras Consideraciones
----------------------
 
