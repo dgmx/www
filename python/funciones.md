@@ -10,7 +10,6 @@ Las funciones son bloques de código reutilizables en Python que pueden tener ar
 
 
 ## 1. Definición de funciones
------------------------
 
 En Python podemos definir una función utilizando la palabra clave `def` , seguida del nombre de la función y los paréntesis de apertura y cierre, que pueden contener los argumentos de la función. A continuación debemos añadir dos puntos `:` y el bloque de código que forma el cuerpo de la función:
 ```python
@@ -68,7 +67,7 @@ def dividir(a, b):
 resultado = dividir(10, 5)
 print(resultado)  # Salida: 2.0
 ```
-#### Orden de los argumentos en una función
+### Orden de los argumentos en una función
 
 El orden de los argumentos en una función es esencial cuando se utilizan parámetros posicionales. Si cambiamos el orden, los valores se asignarán a los parámetros de forma diferente y la función puede no producir los resultados esperados:
 ```python
@@ -84,7 +83,7 @@ print(resultado_resta2)  # Salida: -7
 ```
 En el segundo caso, se asignaron los valores `3` y `10` a `a` y `b` , respectivamente. Como la operación en la función es `a - b` , obtuvimos `-7` en lugar de `7` .
 
-#### Orden de los parámetros en la definición de la función
+### Orden de los parámetros en la definición de la función
 
 El orden en que definamos los parámetros posicionales en la declaración de la función también es importante. En el siguiente ejemplo definimos la función `potencia` , recibiendo los parámetros `(a, b)` en el primer caso, y `(b, a)` en el segundo:
 ```python
@@ -216,7 +215,6 @@ print(contador_global)  # Salida: 1
 ```
 ## 6. Funciones anidadas
 
-
 Podemos definir funciones dentro de otras funciones, lo que se conoce como funciones anidadas:
 ```python
 def funcion_principal():
@@ -233,7 +231,6 @@ funcion_principal()
 # Función anidada
 ```
 ## 7. Funciones lambda
-
 
 Las funciones lambda son funciones anónimas y pequeñas que pueden tener cualquier número de parámetros, pero solo pueden tener una expresión. Se definen utilizando la palabra clave `lambda` :
 ```python
