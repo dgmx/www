@@ -5,6 +5,8 @@ just_the_docs:
   aux_nav:
     "Inicio":
       url: /
+    "Arduino":
+      url: /arduino
     "Bash":
       url: /bash/
     "Pseudo-Codigo":
@@ -16,8 +18,6 @@ just_the_docs:
     "Terminal":
       url: /terminal
 
-    "Otros":
-      url: /otros
 
 remote_theme: just-the-docs/just-the-docs
 title: "Diego J. González"
