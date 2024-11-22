@@ -1,3 +1,9 @@
+---
+title: "Tema 2 Elementos Funcionales de un Ordenador Digital"
+parent: "Maps"
+nav_exclude: true
+---
+
 # Mapa Mental: Elementos Funcionales de un Ordenador Digital
 
 ## 1. Introducción
@@ -101,3 +107,6 @@
 ## 10. Bibliografía
 - Autores destacados: Prieto, Joyanes, Stallings, Tanenbaum.
 - Recursos web: top500.org, cpuid.com.
+
+
+**[Tema 2 Visual](tema2map.html)**.
