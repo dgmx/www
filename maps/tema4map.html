@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Markmap</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+#mindmap {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.17.2/dist/style.css">
+</head>
+<body>
+<svg id="mindmap"></svg>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.8.5/dist/d3.min.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-view@0.17.2/dist/browser/index.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.17.2/dist/index.js"></script><script>(r => {
+                setTimeout(r);
+              })(() => {
+  const {
+    markmap,
+    mm
+  } = window;
+  const {
+    el
+  } = markmap.Toolbar.create(mm);
+  el.setAttribute('style', 'position:absolute;bottom:20px;right:20px');
+  document.body.append(el);
+})</script><script>((getMarkmap, getOptions, root2, jsonOptions) => {
+              const markmap = getMarkmap();
+              window.mm = markmap.Markmap.create(
+                "svg#mindmap",
+                (getOptions || markmap.deriveOptions)(jsonOptions),
+                root2
+              );
+            })(() => window.markmap,null,{"content":"Mapa Mental: Memoria Interna - Tipos, Direccionamiento, Características y Funciones","children":[{"content":"1. Introducción","children":[{"content":"<strong>Arquitectura Von Neumann</strong>:","children":[{"content":"Elementos: memoria, CPU, entrada/salida y buses.","children":[],"payload":{"lines":"6,7"}},{"content":"Diferenciación entre memoria interna (registros, caché, RAM, ROM) y externa (HDD, SSD).","children":[],"payload":{"lines":"7,8"}}],"payload":{"lines":"5,8"}},{"content":"<strong>Relevancia</strong>:","children":[{"content":"Incluida en ciclos formativos: Administración de Sistemas, Desarrollo de Aplicaciones, y Redes.","children":[],"payload":{"lines":"9,11"}}],"payload":{"lines":"8,11"}}],"payload":{"lines":"4,5"}},{"content":"2. Características y Funciones","children":[{"content":"Características:","children":[{"content":"<strong>Capacidad</strong>: Tamaño en bits, bytes o palabras (K, M, G, T).","children":[],"payload":{"lines":"15,16"}},{"content":"<strong>Duración</strong>:","children":[{"content":"Volátil: Pierde datos sin energía (RAM).","children":[],"payload":{"lines":"17,18"}},{"content":"No volátil: Conserva datos sin energía (ROM, Flash).","children":[],"payload":{"lines":"18,19"}}],"payload":{"lines":"16,19"}},{"content":"<strong>Tipo</strong>: DRAM, SRAM, Flash.","children":[],"payload":{"lines":"19,20"}},{"content":"<strong>Latencia</strong>: Tiempo de acceso a datos.","children":[],"payload":{"lines":"20,21"}},{"content":"<strong>Ancho de banda</strong>: Velocidad de transferencia (GB/s).","children":[],"payload":{"lines":"21,23"}}],"payload":{"lines":"14,15"}},{"content":"Funciones:","children":[{"content":"<strong>Almacenamiento temporal</strong>: Datos y programas activos.","children":[],"payload":{"lines":"24,25"}},{"content":"<strong>Instrucciones de inicio</strong>: BIOS en ROM.","children":[],"payload":{"lines":"25,26"}},{"content":"<strong>Caché</strong>: Datos frecuentes para mejorar rendimiento.","children":[],"payload":{"lines":"26,27"}},{"content":"<strong>Comunicación</strong>: Entre CPU, E/S y subsistemas.","children":[],"payload":{"lines":"27,29"}}],"payload":{"lines":"23,24"}}],"payload":{"lines":"13,14"}},{"content":"3. Tipos de Memoria Interna","children":[{"content":"3.1. Registros","children":[{"content":"<strong>Generales</strong>: Operandos para instrucciones.","children":[],"payload":{"lines":"33,34"}},{"content":"<strong>Específicos</strong>:","children":[{"content":"<strong>MAR</strong>: Dirección de memoria.","children":[],"payload":{"lines":"35,36"}},{"content":"<strong>AC</strong>: Resultado de la ALU.","children":[],"payload":{"lines":"36,37"}},{"content":"<strong>PC</strong>: Siguiente instrucción.","children":[],"payload":{"lines":"37,38"}},{"content":"<strong>IR</strong>: Instrucción actual.","children":[],"payload":{"lines":"38,39"}},{"content":"<strong>SP</strong>: Puntero de pila.","children":[],"payload":{"lines":"39,40"}},{"content":"<strong>PSW</strong>: Estado del procesador.","children":[],"payload":{"lines":"40,42"}}],"payload":{"lines":"34,42"}}],"payload":{"lines":"32,33"}},{"content":"3.2. Memoria Caché","children":[{"content":"Entre procesador y RAM.","children":[],"payload":{"lines":"43,44"}},{"content":"<strong>SRAM</strong>: Más rápida pero costosa.","children":[],"payload":{"lines":"44,45"}},{"content":"Niveles:","children":[{"content":"<strong>L1</strong>: Más rápida, menor capacidad.","children":[],"payload":{"lines":"46,47"}},{"content":"<strong>L2</strong>: Intermedia.","children":[],"payload":{"lines":"47,48"}},{"content":"<strong>L3</strong>: Mayor capacidad, más lenta.","children":[],"payload":{"lines":"48,50"}}],"payload":{"lines":"45,50"}}],"payload":{"lines":"42,43"}},{"content":"3.3. Memoria RAM","children":[{"content":"<strong>Tipos</strong>:","children":[{"content":"<strong>DDR, DDR2, DDR3, DDR4, DDR5</strong>: Mayor velocidad y eficiencia en generaciones sucesivas.","children":[],"payload":{"lines":"52,53"}},{"content":"<strong>GDDR</strong>: Gráficos.","children":[],"payload":{"lines":"53,54"}},{"content":"<strong>LPDDR</strong>: Bajo consumo para móviles.","children":[],"payload":{"lines":"54,55"}}],"payload":{"lines":"51,55"}},{"content":"<strong>Formatos</strong>:","children":[{"content":"<strong>DIMM</strong>: PCs de escritorio.","children":[],"payload":{"lines":"56,57"}},{"content":"<strong>SO-DIMM</strong>: Portátiles.","children":[],"payload":{"lines":"57,58"}},{"content":"<strong>CAMM</strong>: Nuevo estándar (2023).","children":[],"payload":{"lines":"58,60"}}],"payload":{"lines":"55,60"}}],"payload":{"lines":"50,51"}},{"content":"3.4. Memoria ROM","children":[{"content":"No volátil, datos permanentes.","children":[],"payload":{"lines":"61,62"}},{"content":"Tipos:","children":[{"content":"ROM: Programada en fábrica.","children":[],"payload":{"lines":"63,64"}},{"content":"PROM: Programable una vez.","children":[],"payload":{"lines":"64,65"}},{"content":"EPROM: Borrable por UV.","children":[],"payload":{"lines":"65,66"}},{"content":"EEPROM: Borrado y escritura eléctrica (Flash).","children":[],"payload":{"lines":"66,68"}}],"payload":{"lines":"62,68"}}],"payload":{"lines":"60,61"}}],"payload":{"lines":"31,32"}},{"content":"4. Direccionamiento","children":[{"content":"<strong>Palabras</strong>: Dirección única por palabra.","children":[],"payload":{"lines":"71,72"}},{"content":"<strong>Bytes</strong>: Memoria lee toda la palabra, ignora bytes no solicitados.","children":[],"payload":{"lines":"72,73"}},{"content":"<strong>Bloques</strong>: Transferencia de bloques completos.","children":[],"payload":{"lines":"73,75"}}],"payload":{"lines":"70,71"}},{"content":"5. Recursos Educativos","children":[{"content":"Herramientas: RAMMap (análisis avanzado de memoria en Windows).","children":[],"payload":{"lines":"78,80"}}],"payload":{"lines":"77,78"}},{"content":"6. Principales Fabricantes de RAM","children":[{"content":"<strong>Marcas</strong>: Kingston, Corsair, OCZ Technology, Crucial, G.Skill, Transcend.","children":[],"payload":{"lines":"83,85"}}],"payload":{"lines":"82,83"}},{"content":"7. Aplicaciones en Contexto Escolar y Laboral","children":[{"content":"Escolar:","children":[{"content":"Introducción en secundaria y FP (módulos de hardware y sistemas).","children":[],"payload":{"lines":"89,90"}}],"payload":{"lines":"88,89"}},{"content":"Laboral:","children":[{"content":"Diseño de sistemas.","children":[],"payload":{"lines":"91,92"}},{"content":"Optimización de software.","children":[],"payload":{"lines":"92,93"}},{"content":"IA: Gestión eficiente de memoria.","children":[],"payload":{"lines":"93,94"}},{"content":"Diagnóstico y actualización de sistemas.","children":[],"payload":{"lines":"94,96"}}],"payload":{"lines":"90,91"}}],"payload":{"lines":"87,88"}},{"content":"8. Conclusión","children":[{"content":"Memoria interna: Clave para el rendimiento de dispositivos modernos.","children":[],"payload":{"lines":"99,100"}},{"content":"Jerarquía y tipos (registros, caché, RAM, ROM): Esenciales para la operación eficiente de sistemas.","children":[],"payload":{"lines":"100,102"}}],"payload":{"lines":"98,99"}},{"content":"9. Bibliografía","children":[{"content":"Autores destacados: Prieto, Stallings, Tanenbaum, Moreno.","children":[],"payload":{"lines":"105,106"}},{"content":"Recursos web: Xataka, ComputerHoy.","children":[],"payload":{"lines":"106,107"}}],"payload":{"lines":"104,105"}}],"payload":{"lines":"2,3"}},{})</script>
+</body>
+</html>

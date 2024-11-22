@@ -109,4 +109,4 @@ nav_exclude: true
 - Recursos web: top500.org, cpuid.com.
 
 
-**[Tema 2 Visual](tema2map.html)**.
+[Tema 2 Mapa Visual](tema2map.html).
