@@ -2,6 +2,7 @@
 title: "Ejercicios Programación Orientada a Objetos"
 parent: "Java"
 nav_exclude: true
+has_toc: false
 ---
 
 # Programación Orientada a Objetos
