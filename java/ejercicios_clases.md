@@ -62,6 +62,7 @@ Crea una clase `Persona` con atributos `nombre`, `edad` y `dni`. Incluye método
         }
     }
 ```
+
 Ejercicio 2: Clase `CuentaBancaria`
 -----------------------------------
 
@@ -122,6 +123,7 @@ Crea una clase `CuentaBancaria` con atributos `numeroCuenta`, `saldo` y `titular
         }
     }
 ```
+
 Ejercicio 3: Clase `Círculo` y Herencia
 ---------------------------------------
 
@@ -159,6 +161,7 @@ Crea una clase `Figura` con un método `calcularArea`. Luego, crea una clase `C�
         }
     }
 ```
+
 Ejercicio 4: Clase `Empleado` y Polimorfismo
 --------------------------------------------
 
@@ -217,6 +220,7 @@ Crea una clase `Empleado` con atributos `nombre` y `salario`, y un método `calc
         }
     }
 ```
+
 Ejercicio 5: Clase `Rectángulo` con Interfaces
 ----------------------------------------------
 
@@ -501,6 +505,7 @@ public class Libro {
 
 }
 ```
+
 Ejercicio 7: Clase `Ordenador` 
 ----------------------------------------------
 Crea una clase que represente a un ordenador. Un ordenador se define por:
@@ -837,6 +842,7 @@ public class Ordenador {
 
 }
 ```
+
 Conclusión
 ----------
 
