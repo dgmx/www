@@ -4,6 +4,8 @@ parent: "Java"
 nav_exclude: true
 ---
 
+# Programación Orientada a Objetos
+
 La programación orientada a objetos (POO) es un paradigma de programación que utiliza “objetos” para modelar datos y métodos asociados. Java es un lenguaje de programación que soporta POO de manera robusta. A continuación, se presentan una serie de ejercicios que te ayudarán a mejorar tus habilidades en POO utilizando Java.
 
 Ejercicio 1: Clase `Persona`
