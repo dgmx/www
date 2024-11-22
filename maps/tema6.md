@@ -111,3 +111,5 @@ nav_exclude: true
 ## 10. Bibliografía
 - Referencias clave: Prieto, Stallings, Tanenbaum, Moreno.
 - Fuentes web: Xataka, ComputerHoy, Tom’s Hardware.
+
+[Tema 6 Mapa Visual](tema6map.html).
