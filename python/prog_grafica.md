@@ -1,5 +1,5 @@
 ---
-title: "07. Programación gráfica"
+title: "11. Programación gráfica"
 parent: "Python"
 ---
 
