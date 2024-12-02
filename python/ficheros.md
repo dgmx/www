@@ -7,8 +7,7 @@ parent: "Python"
 
 Trabajar con ficheros es esencial para leer y escribir datos en el sistema de archivos de nuestro ordenador. A continuación mostraremos la sintaxis básica para utilizar ficheros en Python, incluyendo cómo abrir, leer y escribir en ellos. Utilizaremos explicaciones acompañadas de ejercicios prácticos.
 
-
-## 1. Abrir y cerrar ficheros
+## 1. Abrir y cerrar ficheros
 
 Para trabajar con un archivo en Python, primero debemos abrirlo. Podemos usar la función `open()` para abrir un archivo en diferentes modos, como lectura ( `'r'` ) o escritura ( `'w'` ) y también para añadir ( `'a'` ). Después de terminar de trabajar con el fichero, debemos cerrarlo utilizando el método `close()` para liberar recursos y también para evitar la pérdida de datos:
 ```python
@@ -20,7 +19,7 @@ archivo = open("archivo.txt", "r")
 archivo.close()
 ```
 
-## 2. Leer contenido de un fichero
+## 2. Leer contenido de un fichero
 
 Para leer el contenido de un archivo, podemos usar los métodos `read()` , `readline()` o `readlines()` :
 
