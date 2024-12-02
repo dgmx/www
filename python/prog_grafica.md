@@ -179,7 +179,7 @@ while running:
 pygame.quit()
 ```
 
-![image.png](image.png)
+![](images/image1.png)
 
 La carrocería la hemos dibujado con dos rectángulos, uno más grande para la parte inferior del coche y otro más pequeño en la parte superior. Las ruedas las conseguimos creando dos círculos negros y dos círculos grises más pequeños en su interior. Las ventanas y techo se delimitan trazando líneas en las coordenadas necesarias.
 
@@ -197,7 +197,7 @@ Por tanto, al modificar los valores de estos píxeles, podemos cambiar la aparie
 
 El procesamiento de imágenes también tiene aplicaciones mucho más amplias que van desde el diseño gráfico hasta la inteligencia artificial. Puedes pensar en los sistemas de reconocimiento facial, los filtros que usamos en redes sociales o incluso los coches autónomos que utilizan visión por computador para identificar objetos y señales en la carretera.
 
-[https://lh7-rt.googleusercontent.com/docsz/AD_4nXcMx9eZg4KRENjBpdSAerSdjYOd64WyWWLmO0_BSOxDjrzyZjOHLGZW6uw6EY9o74SINHTlaVVrJTESNw4fjy51tJgv_ykTJFa30hAC32xcw-FtPtiW50hjz1EQQMD1IJV1Nw6e3A?key=JvNFcQHY19_e86nfLNk5AamX](https://lh7-rt.googleusercontent.com/docsz/AD_4nXcMx9eZg4KRENjBpdSAerSdjYOd64WyWWLmO0_BSOxDjrzyZjOHLGZW6uw6EY9o74SINHTlaVVrJTESNw4fjy51tJgv_ykTJFa30hAC32xcw-FtPtiW50hjz1EQQMD1IJV1Nw6e3A?key=JvNFcQHY19_e86nfLNk5AamX)
+![Ciudad_inteligente](images/city.png)
 
 En los siguientes apartados comenzaremos a explorar cómo podemos usar Python para modificar imágenes.
 
@@ -205,15 +205,15 @@ En los siguientes apartados comenzaremos a explorar cómo podemos usar Python pa
 
 El procesamiento de imágenes basado en mapas de bits es fundamental para entender cómo se almacenan y manipulan imágenes digitales. Un **mapa de bits**, o «***bitmap***», es una representación de una imagen en la que cada píxel tiene asignado un valor que describe su color.
 
-[https://lh7-rt.googleusercontent.com/docsz/AD_4nXey8xAnvdQv27dGLeSqhO1e98cX8nLaRwOoJIWiITJtjmZvQdYGX14vXfRq96aJSC2IytlcX3kiDcv2zOA1LtGORQ7Wont49tQhjODt1Spo2ov-euZD_8S1ua7t-OMtQdxYaeTQOgBUW-fXl_5BmzA2Qf4a?key=SQU3C03purYpd-qTp9_Xaw](https://lh7-rt.googleusercontent.com/docsz/AD_4nXey8xAnvdQv27dGLeSqhO1e98cX8nLaRwOoJIWiITJtjmZvQdYGX14vXfRq96aJSC2IytlcX3kiDcv2zOA1LtGORQ7Wont49tQhjODt1Spo2ov-euZD_8S1ua7t-OMtQdxYaeTQOgBUW-fXl_5BmzA2Qf4a?key=SQU3C03purYpd-qTp9_Xaw)
+![Zoom](images/zoom.jpg)
 
 Al procesar una imagen píxel a píxel, podemos acceder a esa información y cambiarla, permitiéndonos aplicar una gran variedad de transformaciones.
 
-[https://lh7-rt.googleusercontent.com/docsz/AD_4nXfxB5Y4nAgrW5pGaLiTfMcHbDDl_MNe_YeFXpLrHu4tBFmJRzdYUCdwcPSkrpHuKPYuqLSddFz1QVMqpmjhxjJtHAvGSAZkWh7ZbOSCkym7YHWEr-GfrWgIhaumhHIEZzQkqYoEeNmEFVip9C_FaSX1-rQ4?key=SQU3C03purYpd-qTp9_Xaw](https://lh7-rt.googleusercontent.com/docsz/AD_4nXfxB5Y4nAgrW5pGaLiTfMcHbDDl_MNe_YeFXpLrHu4tBFmJRzdYUCdwcPSkrpHuKPYuqLSddFz1QVMqpmjhxjJtHAvGSAZkWh7ZbOSCkym7YHWEr-GfrWgIhaumhHIEZzQkqYoEeNmEFVip9C_FaSX1-rQ4?key=SQU3C03purYpd-qTp9_Xaw)
+![Pixeles](images/hexa-color.gif)
 
 Una de las aplicaciones más comunes del procesamiento de imágenes es la **aplicación de filtros**. Los filtros nos permiten realizar cambios globales o específicos en la imagen, como ajustar el brillo, el contraste, o aplicar efectos como convertir la imagen en escala de grises, invertir los colores o pixelar ciertas áreas para obtener efectos visuales particulares.
 
-[https://lh7-rt.googleusercontent.com/docsz/AD_4nXc-YH2igC9po8hVIQKLH-Pv_yJCdunmT0R7JWOumqWIRmgrRATDL1zJPD2QfjaRk0MEkV761ivwpro8pUiqB7E36DyCZsyAjrFYbkLCnq6DOWUFdriirKitdOJOnep5UX6PK3MbjPR7VSgu6Gmvrw_kGZMe?key=SQU3C03purYpd-qTp9_Xaw](https://lh7-rt.googleusercontent.com/docsz/AD_4nXc-YH2igC9po8hVIQKLH-Pv_yJCdunmT0R7JWOumqWIRmgrRATDL1zJPD2QfjaRk0MEkV761ivwpro8pUiqB7E36DyCZsyAjrFYbkLCnq6DOWUFdriirKitdOJOnep5UX6PK3MbjPR7VSgu6Gmvrw_kGZMe?key=SQU3C03purYpd-qTp9_Xaw)
+![](images/coches.png)
 
 El procesamiento píxel a píxel implica acceder a cada punto de la imagen, analizar su valor de color (que generalmente **está compuesto por tres valores: rojo -R-, verde -G- y azul -B-**) y modificarlo. Por ejemplo, si queremos hacer una imagen monocromática, simplemente calculamos el promedio de los valores RGB de cada píxel y asignamos ese valor a los tres componentes de color, creando una escala de grises. Pero claro, para hacer ese trabajo ya tenemos numerosas bibliotecas que nos ayudan, como por ejemplo **Pillow**.
 
@@ -240,9 +240,9 @@ imagen_gris = imagen_color.convert('L')
 imagen_gris.save('imagen_en_grises.jpg')
 ```
 
-![https://lopegonzalez.es/wp-content/uploads/2024/10/holi.jpg](https://lopegonzalez.es/wp-content/uploads/2024/10/holi.jpg)
+![](images/holi.jpg)
 
-![https://lopegonzalez.es/wp-content/uploads/2024/10/holi-grises.jpg](https://lopegonzalez.es/wp-content/uploads/2024/10/holi-grises.jpg)
+![](images/holi-grises.jpg)
 
 Fácil, ¿verdad?
 
@@ -256,7 +256,7 @@ Pero, ¿qué significa exactamente «el color opuesto» en este contexto?
 
 Imagina que tienes una fotografía y quieres crear su negativo, como se hacía antiguamente con los carretes fotográficos. En un negativo, las áreas claras se vuelven oscuras y las oscuras se vuelven claras.
 
-[https://lh7-rt.googleusercontent.com/docsz/AD_4nXc75nYIyrZbDx-ZS3H4x-OGDCnjBtMb6ESmJJ17Q9h9-FrfvnIXCMRmZJVJzH2l6_qWC0T8oM_qY-VMZnurTSUGIMfY0cXQNHyoQKxN7fMgo0le7RqifVsBO9V7ct1botd9cnizl_by5nu1DrYk7adqX02g?key=SQU3C03purYpd-qTp9_Xaw](https://lh7-rt.googleusercontent.com/docsz/AD_4nXc75nYIyrZbDx-ZS3H4x-OGDCnjBtMb6ESmJJ17Q9h9-FrfvnIXCMRmZJVJzH2l6_qWC0T8oM_qY-VMZnurTSUGIMfY0cXQNHyoQKxN7fMgo0le7RqifVsBO9V7ct1botd9cnizl_by5nu1DrYk7adqX02g?key=SQU3C03purYpd-qTp9_Xaw)
+![](images/osos.png)
 
 Los colores también cambian a sus tonalidades opuestas, creando un efecto visual interesante y a veces sorprendente.
 
@@ -265,7 +265,7 @@ En el mundo digital, cada color que ves en una imagen está compuesto por tres v
 - El negro se representa como (0, 0, 0), ya que no tiene brillo en ningún componente.
 - El blanco es (255, 255, 255), con el máximo brillo en todos los componentes.
 
-[https://lh7-rt.googleusercontent.com/docsz/AD_4nXdIIvIJEbMDukcGyVI5dnkyiJ9CYJJa4MpuznYqyhArvcOHPb_4yEg_u7Bf4QEfJChrbgs71j1WwyON3QbISI7zO_C4l1F19zD_72h1c2Lb0TlP4inEqpiErMKVe6BI9oUPs7bjanhAK-QfEzbW8Xo-S92Y?key=SQU3C03purYpd-qTp9_Xaw](https://lh7-rt.googleusercontent.com/docsz/AD_4nXdIIvIJEbMDukcGyVI5dnkyiJ9CYJJa4MpuznYqyhArvcOHPb_4yEg_u7Bf4QEfJChrbgs71j1WwyON3QbISI7zO_C4l1F19zD_72h1c2Lb0TlP4inEqpiErMKVe6BI9oUPs7bjanhAK-QfEzbW8Xo-S92Y?key=SQU3C03purYpd-qTp9_Xaw)
+![](images/color-selector.png)
 
 *[Puedes jugar con los valores RGB de los colores en esta [herramienta online](https://g.co/kgs/yHr6zUR)]*
 
@@ -277,7 +277,7 @@ Verde (G): **100**
 
 Azul (B): **150**
 
-[https://lh7-rt.googleusercontent.com/docsz/AD_4nXdvvtLKIni373-6cl_ukf8ptuZ5FekuUB49Xa1XsoVQCEK3JYQpHJ_aiAnTO0k5zmoRQol8j1LRjQQ_aWrWJ9T2ltjxwoO5mREzdeHqeqL8iFHCCzeWCzW0uK25fjF-paHgnUx1pJ6XUED6nTyz9qDSq_1_?key=SQU3C03purYpd-qTp9_Xaw](https://lh7-rt.googleusercontent.com/docsz/AD_4nXdvvtLKIni373-6cl_ukf8ptuZ5FekuUB49Xa1XsoVQCEK3JYQpHJ_aiAnTO0k5zmoRQol8j1LRjQQ_aWrWJ9T2ltjxwoO5mREzdeHqeqL8iFHCCzeWCzW0uK25fjF-paHgnUx1pJ6XUED6nTyz9qDSq_1_?key=SQU3C03purYpd-qTp9_Xaw)
+![](images/color-azul.png)
 
 Al invertirlos, calculamos:
 
@@ -289,7 +289,7 @@ Azul (B): 255 – 150 = **105**
 
 El nuevo color sería **(205, 155, 105)**, que es el opuesto al original en la escala de colores.
 
-[https://lh7-rt.googleusercontent.com/docsz/AD_4nXfr_6e16BtbTJj-D5LL0gUFPskqJcuv7FO_aFXrS_dWmE9KDhF77zHIjhCCvdCODVHJdgC5yjA9L20KjNVEI76Dvsjccx5FDkB-ztz7NkK8FjkI7ZOnN-hpapWNnyahPQn8m-eMAGi15d0ht_knfefYu1w?key=SQU3C03purYpd-qTp9_Xaw](https://lh7-rt.googleusercontent.com/docsz/AD_4nXfr_6e16BtbTJj-D5LL0gUFPskqJcuv7FO_aFXrS_dWmE9KDhF77zHIjhCCvdCODVHJdgC5yjA9L20KjNVEI76Dvsjccx5FDkB-ztz7NkK8FjkI7ZOnN-hpapWNnyahPQn8m-eMAGi15d0ht_knfefYu1w?key=SQU3C03purYpd-qTp9_Xaw)
+![](images/color-marrobn.png)
 
 Por tanto, el azul que hemos seleccionado, cuando lo invertimos se convierte en ese naranja que tienes en la imagen anterior.
 
@@ -303,7 +303,7 @@ Esta transformación cambia los colores de tal manera que:
 
 Para visualizarlo mejor, piensa en una rueda de colores. En esta rueda, los colores opuestos o complementarios están en lados contrarios. Cuando invertimos los colores de una imagen, cada tono se desplaza a su posición opuesta en esta rueda, generando contrastes fuertes y resaltando detalles que quizás pasaban desapercibidos en la imagen original.
 
-[https://lh7-rt.googleusercontent.com/docsz/AD_4nXdUkAsJlCBsF1oFgI0V7FR8tb4smHuliMvSq77Qx1HlTTwkZgaPzu0-inExzqmJcQPMd3LWCXkP3PV-1H_2JsYzOXoqLjGw3gFBx_ic6RBvYtpaEMirWP79LxXjanDiHJaIacByxQwU0vZeDV4SLyBuQFk?key=SQU3C03purYpd-qTp9_Xaw](https://lh7-rt.googleusercontent.com/docsz/AD_4nXdUkAsJlCBsF1oFgI0V7FR8tb4smHuliMvSq77Qx1HlTTwkZgaPzu0-inExzqmJcQPMd3LWCXkP3PV-1H_2JsYzOXoqLjGw3gFBx_ic6RBvYtpaEMirWP79LxXjanDiHJaIacByxQwU0vZeDV4SLyBuQFk?key=SQU3C03purYpd-qTp9_Xaw)
+![](images/circulo-colores.jpg)
 
 Este proceso no solo es útil para crear efectos artísticos, sino que también tiene aplicaciones prácticas. Por ejemplo, en fotografía para crear imágenes impactantes, en medicina al analizar radiografías o escáneres, donde invertir los colores puede ayudar a detectar anomalías.
 
@@ -341,9 +341,9 @@ for x in range(ancho):
 imagen_invertida.save('imagen_invertida.jpg')
 ```
 
-![https://lopegonzalez.es/wp-content/uploads/2024/10/wanda.jpg](https://lopegonzalez.es/wp-content/uploads/2024/10/wanda.jpg)
+![](images/wanda.jpg)
 
-![https://lopegonzalez.es/wp-content/uploads/2024/10/wanda-invertida.jpg](https://lopegonzalez.es/wp-content/uploads/2024/10/wanda-invertida.jpg)
+![](images/wanda-invertida.jpg)
 
 ### **2.3.2. Binarización**
 
@@ -361,7 +361,7 @@ Para que puedas ver el resultado en acción, prueba este sencillo programa:
 from PIL import Image
 
 # Abrimos la imagen original
-imagen_original = Image.open('mapa de bits.jpg')
+imagen_original = Image.open('binary.jpg')
 
 # Convertimos la imagen a escala de grises
 imagen_gris = imagen_original.convert('L')
@@ -389,12 +389,12 @@ for x in range(ancho):
             imagen_binarizada.putpixel((x, y), 0)
 
 # Guardamos la imagen binarizada
-imagen_binarizada.save('mapa de bits-binarizada.png')
+imagen_binarizada.save('binarizada.png')
 ```
+![](images/binary.jpg)
 
-![https://lopegonzalez.es/wp-content/uploads/2024/10/roberts.jpg](https://lopegonzalez.es/wp-content/uploads/2024/10/roberts.jpg)
+![](images/binarizada.png)
 
-![https://lopegonzalez.es/wp-content/uploads/2024/10/roberts-binarizada.png](https://lopegonzalez.es/wp-content/uploads/2024/10/roberts-binarizada.png)
 
 ### **2.3.3. Posterización**
 
@@ -410,7 +410,7 @@ Basta de teoría, veamos un ejemplo:
 from PIL import Image
 
 # Abrimos la imagen original
-imagen_original = Image.open('maluma.jpg')
+imagen_original = Image.open('leo.jpg')
 
 # Aseguramos que la imagen esté en modo RGB
 imagen_rgb = imagen_original.convert('RGB')
@@ -447,10 +447,10 @@ for x in range(ancho):
         imagen_posterizada.putpixel((x, y), (r_nuevo, g_nuevo, b_nuevo))
 
 # Guardamos la imagen posterizada
-imagen_posterizada.save('maluma_posterizado.jpg')
+imagen_posterizada.save('leo_posterizado.jpg')
 ```
 
-[https://lh7-rt.googleusercontent.com/docsz/AD_4nXfT-zrokYA87hiR4wVd84rzxzJ9Au8YCgO2MLyZaHp9SBHWqf0llMR5oxPKgGCA8aVU7qkgwrIAEJ-EWeCY0js9-LRlrvITeuyIGXeqgU5UInEyYxI1VGBkiN94yPmONYTB0OlTDKboyP5G93J8Y6MMlDPE?key=SQU3C03purYpd-qTp9_Xaw](https://lh7-rt.googleusercontent.com/docsz/AD_4nXfT-zrokYA87hiR4wVd84rzxzJ9Au8YCgO2MLyZaHp9SBHWqf0llMR5oxPKgGCA8aVU7qkgwrIAEJ-EWeCY0js9-LRlrvITeuyIGXeqgU5UInEyYxI1VGBkiN94yPmONYTB0OlTDKboyP5G93J8Y6MMlDPE?key=SQU3C03purYpd-qTp9_Xaw)
+![](images/leo.png)
 
 ### **2.3.4. Pixelado**
 
@@ -464,7 +464,7 @@ Como siempre, esto se ve mejor con un ejemplo:
 from PIL import Image
 
 # Abrimos la imagen original
-imagen_original = Image.open('georgina.jpg')
+imagen_original = Image.open('jim.jpg')
 
 # Definimos el tamaño de los píxeles grandes
 tamano_pixel = 10  # Puedes cambiar este valor para ver diferentes efectos
@@ -483,10 +483,10 @@ imagen_pixelada = imagen_pequena.resize(
     resample=Image.NEAREST)
 
 # Guardamos la imagen pixelada
-imagen_pixelada.save('georgina_pixelada.jpg')
+imagen_pixelada.save('jim_pixelado.jpg')
 ```
+![](images/jim-pixel.png)
 
-[https://lh7-rt.googleusercontent.com/docsz/AD_4nXf5c2CesCy_VwkfMTL58pmA7atNhkd9C_slE4r8Ggd5JzGxea7w5WtXvPvDXTDmqh8pGBrnxPmKW0yWL_rTU6le94UaqzYZERPQohuPqTmoghzQUIt6iScUQTMzhGY8f4UOY8X3Hzs_8QECL0fT_Z9sXnQi?key=SQU3C03purYpd-qTp9_Xaw](https://lh7-rt.googleusercontent.com/docsz/AD_4nXf5c2CesCy_VwkfMTL58pmA7atNhkd9C_slE4r8Ggd5JzGxea7w5WtXvPvDXTDmqh8pGBrnxPmKW0yWL_rTU6le94UaqzYZERPQohuPqTmoghzQUIt6iScUQTMzhGY8f4UOY8X3Hzs_8QECL0fT_Z9sXnQi?key=SQU3C03purYpd-qTp9_Xaw)
 
 ### **2.3.5. Puntillismo animado**
 
@@ -494,9 +494,9 @@ El **puntillismo** es una técnica artística en la que se utilizan pequeños
 
 El **puntillismo animado** lleva esta idea un paso más allá al agregar movimiento a los puntos. En el procesamiento de imágenes, esto significa que **los colores de los puntos pueden cambiar con el tiempo o en respuesta a los colores de los píxeles vecinos**. Puedes imaginarlo pensando que cada punto en la imagen no es estático, sino que interactúa con los que están a su alrededor, creando un efecto visual en constante cambio.
 
-[https://lh7-rt.googleusercontent.com/docsz/AD_4nXc6eYbBuVDBB04Pn5NxbkbSt4NyqODoCmAmF2ccLxmQVfBBxQsO1knxnkCURl4Tzsub5FNBxclHl0LSNC1mN1bIA7Rp-EDWW4aEUjPyNmEqZp3zrkhdd_RK43VLgPqKCqc7vw-P8nJmRp3IvzMqoiPHvS0?key=SQU3C03purYpd-qTp9_Xaw](https://lh7-rt.googleusercontent.com/docsz/AD_4nXc6eYbBuVDBB04Pn5NxbkbSt4NyqODoCmAmF2ccLxmQVfBBxQsO1knxnkCURl4Tzsub5FNBxclHl0LSNC1mN1bIA7Rp-EDWW4aEUjPyNmEqZp3zrkhdd_RK43VLgPqKCqc7vw-P8nJmRp3IvzMqoiPHvS0?key=SQU3C03purYpd-qTp9_Xaw)
+![](images/bowie.jpg)
 
-[https://lh7-rt.googleusercontent.com/docsz/AD_4nXe1c15uxTa45HUzPH6AVXBv44HKJYKaPA1eMVXDaPd7GqM7GpiHCkpSck5yaqzPOrO_1RxQa54zgZsmLhz_qbP8eflHgYJxMM5ia6yBFtPG_ByywXsE0AN9wLOUw4m2V4VWwXoZ3qxNGO15V9TeeP6tmLyH?key=SQU3C03purYpd-qTp9_Xaw](https://lh7-rt.googleusercontent.com/docsz/AD_4nXe1c15uxTa45HUzPH6AVXBv44HKJYKaPA1eMVXDaPd7GqM7GpiHCkpSck5yaqzPOrO_1RxQa54zgZsmLhz_qbP8eflHgYJxMM5ia6yBFtPG_ByywXsE0AN9wLOUw4m2V4VWwXoZ3qxNGO15V9TeeP6tmLyH?key=SQU3C03purYpd-qTp9_Xaw)
+![](images/bowie_animado.gif)
 
 En una imagen digital, podemos representar cada píxel como un punto. Para aplicar el efecto de puntillismo, reemplazamos áreas de la imagen por puntos de color que representan el valor promedio de los píxeles en esa área. Para agregar la parte «*animada*», hacemos que el color de cada punto cambie dinámicamente, por ejemplo, variando ligeramente con respecto al tiempo o en función de los colores de los píxeles vecinos.
 
@@ -507,7 +507,7 @@ from PIL import Image, ImageDraw
 import random
 
 # Abrimos la imagen original
-imagen_original = Image.open('simeone.jpg')
+imagen_original = Image.open('bowie.jpg')
 
 # Convertimos la imagen a modo RGB
 imagen_rgb = imagen_original.convert('RGB')
@@ -552,7 +552,7 @@ for i in range(numero_cuadros):
 
 # Guardamos los cuadros como una animación GIF
 cuadros[0].save(
-    'simeone_animado.gif',
+    'bowie_animado.gif',
     save_all=True,
     append_images=cuadros[1:],
     duration=200,
@@ -568,13 +568,10 @@ Cuando mezclamos imágenes digitalmente, estamos combinando los valores de color
 
 Una de las formas más sencillas de mezclar dos imágenes es calcular el promedio de los valores de color de cada píxel. Por ejemplo, si en una posición determinada un píxel en la primera imagen es de color rojo brillante (R=255, G=0, B=0) y el píxel correspondiente en la segunda imagen es de color azul brillante (R=0, G=0, B=255), el píxel resultante tendrá valores (R=127, G=0, B=127), que es un tono de púrpura.
 
-![image.png](image%201.png)
+![image.png](images/image01.png)
 
 Además del promedio simple, podemos ajustar la mezcla utilizando un **factor de opacidad o transparencia** (también conocido como «***alfa***»), que nos permite controlar cuánto de cada imagen contribuye al resultado final. Esto es similar a superponer dos láminas transparentes, donde puedes ver ambas imágenes al mismo tiempo, pero una puede ser más visible que la otra dependiendo de la opacidad.
 
-En esta imagen puedes ver una foto de la cantante Pink posando a la llegada de un concierto. A su izquierda se ha superpuesto la silueta de otra foto suya con una opacidad del 75% para que se transparente y se puedan ver las letras de detrás.
-
-[https://lh7-rt.googleusercontent.com/docsz/AD_4nXdU0-T3fulXgXc_suZweW7XV8ztJG-T0YCAiDyuoZitI0T1fOi6im1mkAv-ub-VijW25ThSQXsKTrmR8P4NaIb96EnvMLbjy-9yxxQT0CciV7FmnL1uo6UH4So0YBqtySJtqW5tI-66d1f1Mq3jhpl_qRc?key=SQU3C03purYpd-qTp9_Xaw](https://lh7-rt.googleusercontent.com/docsz/AD_4nXdU0-T3fulXgXc_suZweW7XV8ztJG-T0YCAiDyuoZitI0T1fOi6im1mkAv-ub-VijW25ThSQXsKTrmR8P4NaIb96EnvMLbjy-9yxxQT0CciV7FmnL1uo6UH4So0YBqtySJtqW5tI-66d1f1Mq3jhpl_qRc?key=SQU3C03purYpd-qTp9_Xaw)
 
 Veamos cómo podemos mezclar dos imágenes usando Python:
 
@@ -599,7 +596,7 @@ imagen_mezclada = Image.blend(imagen1, imagen2, factor)
 imagen_mezclada.save('messironaldomezcladas.jpg')
 ```
 
-![image.png](image%202.png)
+![image.png](images/image02.png)
 
 ## **2.5. Gráficos vectoriales y diseño digital generativo**
 
@@ -607,11 +604,11 @@ Hasta ahora hemos trabajado con imágenes de mapa de bits, donde cada imagen se
 
 Sin embargo, existe otra forma de representar imágenes en el mundo digital: los **gráficos vectoriales**. En lugar de estar formados por píxeles individuales, los gráficos vectoriales **se crean a partir de formas geométricas como líneas, curvas y polígonos, definidos matemáticamente mediante coordenadas y ecuaciones**.
 
-[https://lh7-rt.googleusercontent.com/docsz/AD_4nXeiaynSQydysQXY_Qf-Xo0w_Yq2pclmauIGyfenD0n3VrgOccZyXdt86L72Qqh0rrZo4ROqScxyj2eSSQpmRXSEtRNCEs21LqLhZQiyl_Klt-qxzbI1lXiCJ70cN3gmHzs7wZQHOSnM0HVwaOm58qwr8uM?key=SQU3C03purYpd-qTp9_Xaw](https://lh7-rt.googleusercontent.com/docsz/AD_4nXeiaynSQydysQXY_Qf-Xo0w_Yq2pclmauIGyfenD0n3VrgOccZyXdt86L72Qqh0rrZo4ROqScxyj2eSSQpmRXSEtRNCEs21LqLhZQiyl_Klt-qxzbI1lXiCJ70cN3gmHzs7wZQHOSnM0HVwaOm58qwr8uM?key=SQU3C03purYpd-qTp9_Xaw)
+![](images/lince_pol.png)
 
 Imagina que dibujas un círculo en un programa de diseño. Si utilizas gráficos vectoriales, ese círculo no está compuesto por puntos individuales, sino por una fórmula que describe su forma y tamaño. Esto significa que puedes agrandarlo o reducirlo tanto como quieras sin perder calidad o definición.
 
-[https://lh7-rt.googleusercontent.com/docsz/AD_4nXdXOhu0dH475vRoAsB2rr6UD0H8aLWiGlmzjBH-Lj1ew_m_yMoY-6fCNI92-rwdzCTY6Qx7eTZMh6vhh1v1gLEMbZtYs3ML4nnvG5ELOzO6DaVZI8-ffQkmqM7jCqa8j9xq615eK2xMrBW2iKS3fMPaxl4?key=SQU3C03purYpd-qTp9_Xaw](https://lh7-rt.googleusercontent.com/docsz/AD_4nXdXOhu0dH475vRoAsB2rr6UD0H8aLWiGlmzjBH-Lj1ew_m_yMoY-6fCNI92-rwdzCTY6Qx7eTZMh6vhh1v1gLEMbZtYs3ML4nnvG5ELOzO6DaVZI8-ffQkmqM7jCqa8j9xq615eK2xMrBW2iKS3fMPaxl4?key=SQU3C03purYpd-qTp9_Xaw)
+![](images/globos_pix.png)
 
 Los gráficos vectoriales son especialmente útiles cuando necesitamos imágenes que puedan escalarse sin perder nitidez, como logotipos, iconos o tipografías. Al trabajar con vectores, podemos modificar fácilmente las propiedades de las formas, como su color, posición o tamaño, de manera precisa y flexible.
 
@@ -646,7 +643,7 @@ ax.axis('off')
 plt.show()
 ```
 
-![image.png](image%203.png)
+![image.png](images/image%203.png)
 
 En este otro ejemplo vamos a crear un muñeco tipo androide usando sólo formas básicas:
 
@@ -699,13 +696,13 @@ ax.axis('off')
 plt.show()
 ```
 
-![image.png](image%204.png)
+![image.png](images/image04.png)
 
 Por su parte, el **diseño generativo** es una **técnica que combina programación y arte para crear obras visuales mediante algoritmos**. En lugar de dibujar cada elemento de forma manual, escribimos código que establece reglas y patrones para generar diseños. Esto nos permite crear composiciones complejas y únicas que pueden variar cada vez que se ejecuta el programa, ofreciendo infinitas posibilidades creativas.
 
 Piensa en cómo en la naturaleza se forman patrones como las vetas de una hoja, las espirales de una concha o las ramificaciones de un rayo. Estos patrones siguen reglas matemáticas y físicas que podemos emular mediante algoritmos en nuestros programas.
 
-![image.png](image%205.png)
+![image.png](images/image05.png)
 
 Por ejemplo, podríamos escribir código que genere una serie de líneas que se bifurcan como las ramas de un árbol, o que cree formas geométricas que se repiten y transforman siguiendo secuencias matemáticas como la de Fibonacci.
 
@@ -755,7 +752,6 @@ En el mundo de la programación gráfica, uno de los aspectos que más gustan a 
 
 Cada vez que en un videojuego mueves un personaje usando las flechas del teclado, cada vez que en Photoshop haces clic en la pantalla para dibujar o seleccionar elementos, estás **disparando eventos**, que son acciones que ocurren, que el programa puede detectar y a los que puede responder adecuadamente.
 
-![https://lopegonzalez.es/wp-content/uploads/2024/10/assassins-creed.jpg](https://lopegonzalez.es/wp-content/uploads/2024/10/assassins-creed.jpg)
 
 Cuando utilizamos una aplicación en nuestros dispositivos digitales, constantemente estamos **generando eventos** sin darnos cuenta. Por ejemplo, al mover el ratón, al hacer clic en un botón, o al escribir un texto. En la programación gráfica, podemos capturar estos eventos y definir cómo queremos que el programa reaccione. Esto nos permite crear aplicaciones interactivas, donde el usuario no es un espectador pasivo, sino que participa activamente en lo que ocurre en la pantalla.
 
@@ -892,9 +888,7 @@ while True:
     pygame.time.Clock().tick(60)
 ```
 
-Felicidades, acabas de programar un panel de firmas:
-
-[https://lh7-rt.googleusercontent.com/docsz/AD_4nXda1Di1Lu0MVYBTzvqXvytRHg6RogwAViK-o9zDvtuL-aUkDYY3Cl028nXWSG-foMdNPbQAOLaDtKUC5ER9O4aeWyzVP_POvtJaY2y9F6ACDOZbzdqmntyOsypbTTT8naadgzHkY0MiW7DRos0XedEpnHPJ?key=SQU3C03purYpd-qTp9_Xaw](https://lh7-rt.googleusercontent.com/docsz/AD_4nXda1Di1Lu0MVYBTzvqXvytRHg6RogwAViK-o9zDvtuL-aUkDYY3Cl028nXWSG-foMdNPbQAOLaDtKUC5ER9O4aeWyzVP_POvtJaY2y9F6ACDOZbzdqmntyOsypbTTT8naadgzHkY0MiW7DRos0XedEpnHPJ?key=SQU3C03purYpd-qTp9_Xaw)
+Felicidades, acabas de programar un panel de firmas.
 
 Además, puedes asignar diferentes teclas para cambiar el color del pincel, haciendo:
 
@@ -1229,7 +1223,7 @@ ax.legend(['Original', 'Trasladado', 'Escalado', 'Rotado'])
 plt.show()
 ```
 
-[https://lh7-rt.googleusercontent.com/docsz/AD_4nXexq2WprWwmYuzQBck9h0YUoHGNKF-uEUipBhOZk-C3qggAhzmGAGVljMdQrpmN5fg0hnbqO5KMFIeaRHJ-IxVsjhlG0EfZkNV9vfes9_cXibpk7-6DKHuOzA4rpLHpUHBnfkeH954THM2jbkpMFCdKAc5o?key=SQU3C03purYpd-qTp9_Xaw](https://lh7-rt.googleusercontent.com/docsz/AD_4nXexq2WprWwmYuzQBck9h0YUoHGNKF-uEUipBhOZk-C3qggAhzmGAGVljMdQrpmN5fg0hnbqO5KMFIeaRHJ-IxVsjhlG0EfZkNV9vfes9_cXibpk7-6DKHuOzA4rpLHpUHBnfkeH954THM2jbkpMFCdKAc5o?key=SQU3C03purYpd-qTp9_Xaw)
+![](images/4pol.png)
 
 ## **2.9. Arte generativo en la naturaleza**
 
@@ -1260,7 +1254,7 @@ Esta secuencia aparece en numerosos fenómenos naturales, como:
 
 La razón entre dos números consecutivos de Fibonacci tiende al **número áureo** (*phi* ≈ 1.618), que es considerado estéticamente agradable apareciendo en numerosos elementos del arte, la arquitectura y muchísimos objetos de nuestro día a día, como las tarjetas bancarias:
 
-[https://lh7-rt.googleusercontent.com/docsz/AD_4nXdkCiR91pjzmO6Qw9jC3sdaVhmUUc_NYB6gs0obdc_i0znQECczdipeatwF4iCV70QdfZ6Acimcb62w6ZnrQVahJ3elj2NS3V7knijo2b_t395xbmZASu8m2-HjfuMwaSL-ux41gZfUHxytg8WNpfMjTRk?key=SQU3C03purYpd-qTp9_Xaw](https://lh7-rt.googleusercontent.com/docsz/AD_4nXdkCiR91pjzmO6Qw9jC3sdaVhmUUc_NYB6gs0obdc_i0znQECczdipeatwF4iCV70QdfZ6Acimcb62w6ZnrQVahJ3elj2NS3V7knijo2b_t395xbmZASu8m2-HjfuMwaSL-ux41gZfUHxytg8WNpfMjTRk?key=SQU3C03purYpd-qTp9_Xaw)
+![](images/fibo-visa.jpg)
 
 Vamos a dibujar con Python y la librería ***Turtle*** una espiral de Fibonacci:
 
@@ -1411,6 +1405,6 @@ plt.title('Conjunto de Mandelbrot')
 plt.show()
 ```
 
-![image.png](image%206.png)
+![image.png](images/image06.png)
 
 /
