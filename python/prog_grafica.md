@@ -643,7 +643,7 @@ ax.axis('off')
 plt.show()
 ```
 
-![image.png](images/image%203.png)
+![image.png](images/image03.png)
 
 En este otro ejemplo vamos a crear un muñeco tipo androide usando sólo formas básicas:
 
@@ -1406,5 +1406,3 @@ plt.show()
 ```
 
 ![image.png](images/image06.png)
-
-/
