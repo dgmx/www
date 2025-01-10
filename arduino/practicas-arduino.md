@@ -1,5 +1,5 @@
 ---
-title: "4. Practicas Arduino"
+title: "7. Practicas Arduino"
 parent: "Arduino"
 ---
 
