@@ -1,7 +1,4 @@
----
-title: "1. Arduino"
-parent: "Arduino"
----
+
 
 Tabla de Contenidos
 -------------------
@@ -26,7 +23,7 @@ Tabla de Contenidos
     *   Controlando un RGB LED con Arduino
     *   Ejemplos
 
-1\. Arduino
+1. Arduino
 -----------
 
 ##### ¿Qué es un microcontrolador?
