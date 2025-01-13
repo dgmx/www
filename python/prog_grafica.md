@@ -3,8 +3,6 @@ title: "11. Programación gráfica"
 parent: "Python"
 ---
 
-# **Tema 2. Programación gráfica**
-
 ## **Tabla de contenidos**
 
 - 2.1. Introducción al uso de funciones gráficas
