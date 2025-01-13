@@ -75,7 +75,7 @@ with open("archivo.txt", "r") as archivo:
 with open("archivo.txt", "a") as archivo:
     archivo.write("Esto es un nuevo contenido con Context Manager.\\n")
 ```
-## 5. Verificar si un archivo existe
+## 5. Verificar si un archivo existe
 
 Podemos usar el módulo `os` para verificar si un archivo existe antes de abrirlo.
 ```python
@@ -90,3 +90,34 @@ if os.path.exists(nombre_archivo):
 else:
     print(f"El archivo '{nombre_archivo}' no existe.")
 ```
+
+
+**Ejercicio – Ficheros**
+
+Escribe un programa que le pida al usuario nombres de grupos de música y los vaya añadiendo a un archivo de texto llamado misgrupos.txt. El programa dejará de pedir grupos cuando el usuario escriba la palabra Salir. Cuando se guarde un grupo en el fichero debe quedar claro el orden en el que introdujeron. Al finalizar el programa, el contenido del fichero debe ser algo parecido a esto:
+
+Archivo `misgrupos.txt`
+```
+1 Metallica
+2 Guns N’ Roses
+3 The Doors
+4 The Rolling Stones
+```
+**Solución**
+```python
+file = "misgrupos.txt"
+with open(file, 'w') as archivo:
+    count = 1
+    while True:
+        grupo = input("Introduce nombre grupo de música ('Salir' para terminar): ")
+        if grupo.lower() == 'salir':
+            break
+        archivo.write(f"{count}\t{grupo}.\n")
+        count += 1
+print(f"Grupos guardados en {file}.")
+
+print(f"Los Grupos guardados en {file}. son:")
+with open(file, 'r') as archivo:
+    contenido = archivo.read()
+    print(contenido)
+````
