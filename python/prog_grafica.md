@@ -5,8 +5,6 @@ parent: "Python"
 
 # **Tema 2. Programación gráfica**
 
-Currículo: esta unidad cubre parte de los saberes básicos del Bloque A – Programación gráfica multimedia (CDPC.1.A.4, CDPC.1.A.5 y CDPC.1.A.6), y con ellos puedes prepararte para superar el criterio de evaluación 1.2, 1.3 y 1.4, correspondiente a 1º Bachillerato.
-
 ## **Tabla de contenidos**
 
 - 2.1. Introducción al uso de funciones gráficas
