@@ -102,7 +102,7 @@ Conecta el cableado con el escudo de sensores como aparece en el siguiente esque
 
 Para programar este sensor, puedes realizar el siguiente código en la plataforma Make Code. Una vez completado, descárgalo en la BBC micro:bit, inserta la placa en el escudo y comprueba que funciona correctamente.
 
-![](images/Img%2012%20%20-%20cod%20Led%20brillo.png)  
+![](images/Img%2012%20-%20cod%20Led%20brillo.png)  
 
 ##### _Archivo hexadecimal con la solución listo para descargar:_
 
