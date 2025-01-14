@@ -12,6 +12,7 @@ La interactividad es una parte fundamental de muchos sketches de Processing. Est
 1. [Interacción con el Ratón](#interacción-con-el-ratón)
 2. [Interacción con el Teclado](#interacción-con-el-teclado)
 3. [Ejemplo Combinado](#ejemplo-combinado)
+4. Ejercicio](#ejercicio)
 
 ## Interacción con el Ratón
 
@@ -155,3 +156,41 @@ Este sketch crea un círculo interactivo que:
 - Cambia de color con las teclas 'r', 'g' y 'b'
 
 Recuerda que la interactividad puede hacer tus sketches más dinámicos y atractivos. Experimenta combinando diferentes tipos de interacciones para crear experiencias únicas.
+
+## Ejercicio
+
+A partir del siguiente ejemplo, añade la funcionalidad de detener la ejecución del programa pulsando la tecla `UP` y de detenerlo usando la tecla `DOWN`
+
+```java
+void setup() {
+  size(800,600);
+}
+
+void draw() {
+ if (terminado == false) {
+   fill(random(255), random(255),0);
+   rect(random(800),random(600), random(40), random(40));
+ }
+ ```
+
+**Solución:**
+```java
+boolean terminado = false;
+
+void setup() {
+  size(800,600);
+}
+
+void draw() {
+ if (terminado == false) {
+   fill(random(255), random(255),0);
+   rect(random(800),random(600), random(40), random(40));
+ }
+ println(terminado);
+ if (keyPressed) {
+    if (keyCode == UP) terminado = true;
+    if (keyCode == DOWN) terminado = false;
+ }
+}
+
+```
