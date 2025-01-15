@@ -1,7 +1,6 @@
 ---
 title: "Java"
-nav_order: 8
 has_toc: false
 ---
 
-# ZONA RESTRINGIDA #
+Ejercicios de POO con Java

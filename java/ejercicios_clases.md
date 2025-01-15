@@ -1,7 +1,6 @@
 ---
 title: "Ejercicios Programación Orientada a Objetos"
 parent: "Java"
-nav_exclude: true
 ---
 
 # Programación Orientada a Objetos
