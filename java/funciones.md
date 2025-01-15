@@ -1,3 +1,9 @@
+---
+title: "Funciones en Java"
+parent: "Java"
+---
+
+
 Funciones en Java
 =================
 
