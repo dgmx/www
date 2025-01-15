@@ -57,7 +57,8 @@ En Java, las funciones se definen dentro de una clase y se utilizan para manipul
 **Sintaxis de una función en Java**:
 
 ```java 
-modificadorAcceso tipoRetorno nombreFuncion (tipoParametro1 nombreParametro1, tipoParametro2 nombreParametro2, ...) {     // Cuerpo de la función    // Procesamiento y cálculos    return valorRetorno; 
+modificadorAcceso tipoRetorno nombreFuncion (tipoParametro1 nombreParametro1, tipoParametro2 nombreParametro2, ...) 
+{     // Cuerpo de la función    // Procesamiento y cálculos    return valorRetorno; 
 }
 ```
 
@@ -80,7 +81,6 @@ public class Calculadora {
     }
 }
 ```
-Lenguaje del código: Java (java)
 
 En este ejemplo, hemos definido una función llamada `sumar` dentro de la clase `Calculadora`. Esta función toma dos parámetros enteros y devuelve la suma de ambos números como resultado.
 
@@ -198,7 +198,7 @@ Dentro del cuerpo de la función, podemos realizar cálculos, manipular variable
 
 **Ejemplo:**
 ```java
-javaCopy codepublic class EjemploCuerpoFunciones {
+public class EjemploCuerpoFunciones {
     public double calcularAreaCirculo(double radio) {
         double area = Math.PI * Math.pow(radio, 2);
         return area;
