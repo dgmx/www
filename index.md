@@ -23,11 +23,9 @@ diego@diegojgonzalez.com
 
 **[Introducción a la programación con Pseudo-Codigo](pseudo-code)**.
 
-**[Introducción a la programación con Pseudo-Codigo](pseudo-code)**.
-
 **[Introducción a la programación con Python](python)**.
 
-**[Introducción al uso de la Termina](terminal)**.
+**[Introducción al uso de la Terminal](terminal)**.
 
 Enlace a **[Moodle](https://dgmx.duckdns.org)**.
 
