@@ -1,5 +1,5 @@
 ---
-title: "4. Entradas analógicas en Arduino"
+title: "4. Entradas analógicas"
 parent: "Arduino"
 ---
 

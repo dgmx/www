@@ -1,5 +1,5 @@
 ---
-title: "2. Entradas digitales en Arduino"
+title: "2. Entradas digitales"
 parent: "Arduino"
 ---
 

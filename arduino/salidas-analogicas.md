@@ -1,5 +1,5 @@
 ---
-title: "5. Salidas analógicas PWM en Arduino"
+title: "5. Salidas analógicas PWM"
 parent: "Arduino"
 ---
 
