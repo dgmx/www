@@ -202,27 +202,38 @@ chmod 751 dir2
 mkdir dir2/dir21
 ```
 47. ¿Cuáles son los valores por omisión asignados a los archivos?  
- ls -l dir2
+```
+ls -l dir2
+```
 48. Cambiar el directorio actual al directorio dir3. Imprimir su trayectoria completa para verificar el cambio.  
- cd ..
- cd dir3
- ls -lR
+```
+cd ..
+cd dir3
+ls -lR
+```
 49. ¿Cuáles son los permisos asignados en su momento a este directorio?  
- ls -lR
+```
+ls -lR
+```
 50. Reiniciar el ordenador.  
- reboot
+```
+reboot
+```
 51. Crear cuatro nuevos directorios llamados dira, dirb, dirc, y dird bajo el directorio actual.  
- mkdir dira
- mkdir dirb
- mkdir dirc
- mkdir dird
+```
+mkdir dira dirb dirc dird
+```
 52. Comprobar los permisos de acceso de los directorios recién creados para comprobar el funcionamiento del comando umask.  
- ls -l
+```
+ls -l
+```
 53. Crear el fichero uno . Quitarle todos los permisos de lectura. Comprobarlo. Intentar borrar dicho fichero.  
- touch uno
- chmod a-r uno
- ls -l
- rm uno
+```
+touch uno
+chmod a-r uno
+ls -l
+rm uno
+```
 54. Quitarle todos los permisos de paso al directorio dir2 y otorgarle todos los demás.  
  chmod = dir2
  chmod o=rwx dir2
