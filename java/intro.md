@@ -10,11 +10,8 @@ Es hora de escribir tu primer programa en Java. No hay mejor manera de comenzar 
 
 Este programa simple no solo te enseñará la estructura básica de un programa Java, sino que también te ayudará a entender cómo compilar y ejecutar tu código.
 
-\[oregoom-shortcode-button-play-youtube id=”CW0fY-dsEQs”\]
-
 Tabla de contenidos
 
-[Toggle](#)
 
 - [Hola Mundo en Java](#hola-mundo-en-java)
   - [¿Qué es “Hola Mundo” en Java?](#qué-es-hola-mundo-en-java)
