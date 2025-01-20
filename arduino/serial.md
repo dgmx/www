@@ -1,5 +1,5 @@
 ---
-title: "6. Comunicación de Arduino con puerto serie"
+title: "6. Comunicación Serie"
 parent: "Arduino"
 ---
 

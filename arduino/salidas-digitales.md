@@ -17,7 +17,7 @@ Salidas digitales en Arduino
 Salidas digitales en Arduino
 ============================
 
-En la entrada anterior hemos visto cómo usar las [entradas digitales](/entradas-digitales/) para recibir señales del mundo. Sin embargo, si solo pudiéramos realizar lecturas los automatismos no tendrían mucha utilidad _(al menos, tendrían mucha menos de la que tienen)_.
+En la entrada anterior hemos visto cómo usar las [entradas digitales](entradas-digitales.md) para recibir señales del mundo. Sin embargo, si solo pudiéramos realizar lecturas los automatismos no tendrían mucha utilidad _(al menos, tendrían mucha menos de la que tienen)_.
 
 Ahora vamos a aprender a _**emplear las salidas de Arduino para poder realizar acciones en el mundo**_. Vamos a empezar por las salidas digitales, dado que son más sencillas que las analógicas.
 

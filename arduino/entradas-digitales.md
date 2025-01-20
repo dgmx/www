@@ -100,7 +100,7 @@ El código para realizar la lectura es realmente sencillo. Simplemente tenemos q
       value = digitalRead(pin);  //lectura digital de pin
     
       //mandar mensaje a puerto serie en función del valor leido
-      if (value == `HIGH`) {
+      if (value == HIGH) {
           Serial.println("Encendido");
       }
       else {
@@ -109,7 +109,6 @@ El código para realizar la lectura es realmente sencillo. Simplemente tenemos q
       delay(1000);
     }
 ```
-[Pruébalo online](/simulador-arduino/index.html?data=3691_entradas-digitales-en-arduino_0)
 
 Los pines configurados como entradas están en estado de alta impedancia, es decir, se comportan como resistencias de muy elevado valor (del orden de 100 megaohmnios). Por tanto, por ellos circula una intensidad despreciable.
 
