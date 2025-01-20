@@ -29,8 +29,6 @@ Por tanto **el puerto serie es un componente fundamental** de una gran cantidad 
 
 Al final de la entrada os pongo varios códigos de ejemplo, pero antes conviene explicar brevemente algo de teoría sobre qué es un puerto serie, y algunos términos que necesitaremos para entender correctamente el funcionamiento del puerto serie.
 
-Puedes consultar el resto de tutoriales sobre el puerto de serie en Arduino, ([recibir números](/enviar-recibir-numeros-puerto-serie-arduino/), [textos](/cadenas-de-texto-puerto-serie-arduino/), [arrays separados por coma](/arduino-array-separado-comas/), [bytes](/arduino-bytes-puerto-serie/), y muchos más) en la categoría [**puerto serie Arduino**](/tag/puerto-serie/)
-
 ¿Qué es el puerto serie?
 ------------------------
 
