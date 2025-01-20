@@ -431,12 +431,6 @@ switch (comando) {
 ```
 4.  Interpretar las notas en una escala de calificaciones:
 
-`int nota = 85; String calificacion = switch (nota / 10) {     case 10, 9 -> "A";    case 8 -> "B";    case 7 -> "C";    case 6 -> "D";    default -> "F"; }; System.out.println("La calificación es: " + calificacion);`
-
-Lenguaje del código: Java (java)
-
-5.  Gestionar estados en un juego o aplicación:
-
 ```java
 int nota = 85;
 String calificacion = switch (nota / 10) {
@@ -446,8 +440,31 @@ String calificacion = switch (nota / 10) {
     case 6 -> "D";
     default -> "F";
 };
+```
 
-System.out.println("La calificación es: " + calificacion);
+5.  Gestionar estados en un juego o aplicación:
+
+```java
+enum EstadoJuego {
+    INICIO, JUGANDO, PAUSA, FINALIZADO
+}
+
+EstadoJuego estado = EstadoJuego.PAUSA;
+
+switch (estado) {
+    case INICIO:
+        iniciarJuego();
+        break;
+    case JUGANDO:
+        actualizarJuego();
+        break;
+    case PAUSA:
+        pausarJuego();
+        break;
+    case FINALIZADO:
+        terminarJuego();
+        break;
+}
 ```
 
 Estos ejemplos muestran cómo la **declaración switch** y la **expresión switch** pueden ser útiles en diferentes situaciones, desde la toma de decisiones simples hasta la gestión de estados y flujos de control en aplicaciones y juegos.
