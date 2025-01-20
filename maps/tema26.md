@@ -82,3 +82,5 @@
 
 ## 10. Bibliografía
 - Referencias a autores y fuentes.
+
+[Tema 26 Mapa Visual](tema26map.html).
