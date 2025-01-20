@@ -1,5 +1,5 @@
 ---
-title: "Funciones en Java"
+title: "20. Funciones"
 parent: "Java"
 ---
 
