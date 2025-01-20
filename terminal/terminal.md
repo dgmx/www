@@ -150,11 +150,11 @@ Tiene varios argumentos de entrada:
 
 *   Origen: uno o varios archivos
 *   Destino: un directorio (incluyendo `.` o `..`)
-
+```bash
     $ cp file1 file2
     $ cp dir/f1 dir2/
     $ cp f1 f2 f3 dir/
-    
+```
 
 La opción `-r` lo hace de forma recursiva, permitiendo copiar directorios y no sólo archivos. En este comando tiene relevancia terminar los directorios con barra `/` o sin ella:
 
