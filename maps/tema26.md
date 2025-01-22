@@ -1,3 +1,9 @@
+---
+title: "Tema 26 Programación Modular, Diseño de Funciones, Recursividad, Librerías"
+parent: "Maps"
+nav_exclude: true
+---
+
 # Programación Modular, Diseño de Funciones, Recursividad, Librerías
 
 ## 1. Introducción

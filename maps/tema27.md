@@ -1,3 +1,9 @@
+---
+title: "Tema 27 Programación Orientada a Objetos"
+parent: "Maps"
+nav_exclude: true
+---
+
 # Programación Orientada a Objetos (POO)
 
 ## 1. Introducción
