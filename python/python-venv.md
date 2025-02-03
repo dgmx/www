@@ -85,7 +85,7 @@ pip list
 ```
 - Guardar las dependencias en un archivo:
 ```bash
-- pip freeze > requirements.txt
+pip freeze > requirements.txt
 ```
 Esto crea un archivo requirements.txt con todas las librerías instaladas y sus versiones.
 - Instalar dependencias desde un archivo:
