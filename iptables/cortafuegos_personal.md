@@ -1,5 +1,5 @@
 ---
-title: "02. Implementación de un cortafuegos personal"
+title: "02. Cortafuegos personal"
 parent: "IPTables"
 ---
 

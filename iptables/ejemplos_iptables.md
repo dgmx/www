@@ -1,5 +1,5 @@
 ---
-title: "04. Ejemplos de reglas IPTABLES"
+title: "04. Reglas IPTABLES"
 parent: "IPTables"
 ---
 
@@ -10,7 +10,7 @@ Ejemplos de reglas IPTABLES
 *   Los siguientes comandos deberían funcionar en cualquier distro linux moderna.
 *   Esto NO es un tutorial de como configurar iptables. Puedes ver un tutorial aquí. Es más bien una referencia rápida de los comandos más comunes de iptables.
 
-#1: Mostrando el estado de nuestro firewall
+ Mostrando el estado de nuestro firewall
 ===========================================
 
 Teclea el siguiente comando como root:
@@ -59,7 +59,7 @@ Donde,
 *   **\-v** : Muestra información detallada.
 *   **\-n** : Muestra la dirección ip y puerto en formato numérico. No usa DNS para resolver nombres. Esto acelera la lista.
 
-#1.1:Para Inspeccionar el firewall con número de lineas:
+1.1 Para Inspeccionar el firewall con número de lineas:
 --------------------------------------------------------
 
     iptables -n -L -v --line-numbers
@@ -92,15 +92,15 @@ Salida:
 
 Podemos usar los números de línea para borrar o añadir nuevas reglas al firewall.
 
-#1.2: Mostrar las reglas de cadena de entrada y salida:
+1.2: Mostrar las reglas de cadena de entrada y salida:
 -------------------------------------------------------
 ```bash
     iptables -L INPUT -n -v
     iptables -L OUTPUT -n -v --line-numbers
 ```  
 
-#2: Parar / Iniciar / Reiniciar el firewall
-===========================================
+2: Parar / Iniciar / Reiniciar el firewall
+==========================================
 
 Si usas CentOS / RHEL / Fedora linux:
 ```bash
@@ -129,7 +129,7 @@ Donde:
 *   **\-t table\_name** : Selecciona una tabla y elimina reglas
 *   **\-P** : Establece la política por defecto (como DROP, REJECT o ACCEPT)
 
-#3: Borrar reglas del firewall
+3: Borrar reglas del firewall
 ==============================
 
 Para mostrar los números de línea junto a otra información para reglas existentes:
@@ -154,7 +154,7 @@ Donde:
 
 *   **\-D** : Elimina una o más reglas de la cadena seleccionada.
 
-#4: Insertar reglas:
+4: Insertar reglas:
 ====================
 
 Para insertar una o más reglas en la cadena seleccionada como el número de cadena dada usamos la siguiente sintaxis. Primero encontramos el número de línea:
@@ -189,7 +189,7 @@ Salida:
     3    ACCEPT     all  --  0.0.0.0/0            0.0.0.0/0           state NEW,ESTABLISHED
 ```
 
-#5: Guardar reglas
+5: Guardar reglas
 ==================
 
 Para guardar reglas en CentOS / RHEL / Fedora Linux:
@@ -209,7 +209,7 @@ Para todas las demas distros usamos:
     cat /root/my.active.firewall.rules
     
 
-#6: Restaurar reglas
+6: Restaurar reglas
 ====================
 
 Para restaurar reglas desde un archivo llamado /root/my.active.firewall.rules:
@@ -222,7 +222,7 @@ Bajo CentOS / RHEL / Fedora Linux:
     service iptables restart
     
 
-#7: Estableces políticas de firewall por defecto
+7: Estableces políticas de firewall por defecto
 ================================================
 
 Para borrar todo el tráfico:
@@ -236,7 +236,7 @@ Para borrar todo el tráfico:
     wget http://www.kernel.org/pub/linux/kernel/v3.0/testing/linux-3.2-rc5.tar.bz2
     
 
-#7.1: Solo tráfico entrante bloqueado
+7.1: Solo tráfico entrante bloqueado
 -------------------------------------
 
 Para borrar todos los paquetes entrantes / enviados pero permitir el tráfico saliente:
@@ -251,7 +251,7 @@ Para borrar todos los paquetes entrantes / enviados pero permitir el tráfico sa
     wget http://www.kernel.org/pub/linux/kernel/v3.0/testing/linux-3.2-rc5.tar.bz2
     
 
-#8: Borrar direcciones de red privadas en la interfaz pública
+8: Borrar direcciones de red privadas en la interfaz pública
 =============================================================
 
 IP Spoofing es nada más que para detener los siguientes rangos de direcciones IPv4 para redes privadas en sus interfaces públicas. Los paquetes con direcciones de origen no enrutables deben rechazarse mediante la siguiente sintaxis:
@@ -260,7 +260,7 @@ IP Spoofing es nada más que para detener los siguientes rangos de direcciones I
     iptables -A INPUT -i eth1 -s 10.0.0.0/8 -j DROP
     
 
-#9: Bloqueando una direción IP (BLOCK IP)
+9: Bloqueando una direción IP (BLOCK IP)
 =========================================
 
 PAra bloquear una ip atacante llamada 1.2.3.4:
@@ -269,7 +269,7 @@ PAra bloquear una ip atacante llamada 1.2.3.4:
     iptables -A INPUT -s 192.168.0.0/24 -j DROP
     
 
-#10: Bloquear peticiones entrantes de un puerto (BLOCK PORT)
+10: Bloquear peticiones entrantes de un puerto (BLOCK PORT)
 ============================================================
 
 Para bloquear todas las solicitudes de servicio en el puerto 80:
@@ -284,7 +284,7 @@ Para bloquear el puerto 80 para una ip:
     iptables -A INPUT -i eth1 -p tcp -s 192.168.1.0/24 --dport 80 -j DROP
     
 
-#11: Bloquear ips de salida
+11: Bloquear ips de salida
 ===========================
 
 Para bloquear el tráfico saliente a un host o dominio en concreto como por ejemplo cyberciti.biz:
@@ -308,7 +308,7 @@ Se puede usar una subred como la siguiente:
     iptables -A OUTPUT -o eth1 -d 192.168.1.0/24 -j DROP
     
 
-#11.1: Ejemplo - Bloquear el dominio facebook.com
+11.1: Ejemplo - Bloquear el dominio facebook.com
 -------------------------------------------------
 
 Primero, encontrar la dirección ip de facebook.com
@@ -346,7 +346,7 @@ De la página del man de iptables:
 
 > … specifying any name to be resolved with a remote query such as DNS (e.g., facebook.com is a really bad idea), a network IP address (with /mask), or a plain IP address …
 
-#12: Log y borrar paquetes
+12: Log y borrar paquetes
 ==========================
 
 Escribe lo siguiente para añadir al log y bloquear IP spoofing en una interfaz pública llamada eth1
@@ -361,7 +361,7 @@ Por defecto el log está en el archivo /var/log/messages
     grep --color 'IP SPOOF' /var/log/messages
     
 
-#13: Log y borrar paquetes con un número limitado de entradas al log
+13: Log y borrar paquetes con un número limitado de entradas al log
 ====================================================================
 
 El módulo -m limit puede limitar el número de entradas al log creadas por tiempo. Se usa para prevenir que el archivo de log se inunde. Para añadir al log y elminar spoofing cada 5 minutos, en ráfagas de 7 entradas:
@@ -370,7 +370,7 @@ El módulo -m limit puede limitar el número de entradas al log creadas por tiem
     iptables -A INPUT -i eth1 -s 10.0.0.0/8 -j DROP
     
 
-#14: Aceptar o denegar tráfico desde dirección MAC
+14: Aceptar o denegar tráfico desde dirección MAC
 ==================================================
 
     iptables -A INPUT -m mac --mac-source 00:0F:EA:91:04:08 -j DROP
@@ -378,7 +378,7 @@ El módulo -m limit puede limitar el número de entradas al log creadas por tiem
     iptables -A INPUT -p tcp --destination-port 22 -m mac --mac-source 00:0F:EA:91:04:07 -j ACCEPT
     
 
-#15: Bloquear o permitir peticiones ping ICMP
+15: Bloquear o permitir peticiones ping ICMP
 =============================================
 
 Para bloquear peticiones ping ICMP
@@ -402,13 +402,13 @@ Lo siguiente solo acepta limitados tipos de peticiones ICMP:
     iptables -A INPUT -p icmp --icmp-type echo-request -j ACCEPT
 ```    
 
-#16: Abrir un rango de puertos
+16: Abrir un rango de puertos
 ==============================
 
     iptables -A INPUT -m state --state NEW -m tcp -p tcp --dport 7000:7010 -j ACCEPT
     
 
-#17: Abrir un rango de direcciones ip
+17: Abrir un rango de direcciones ip
 =====================================
 ```bash
     ## only accept connection to tcp port 80 (Apache) if ip is between 192.168.1.100 and 192.168.1.200 ##
@@ -419,7 +419,7 @@ Lo siguiente solo acepta limitados tipos de peticiones ICMP:
     iptables -t nat -A POSTROUTING -j SNAT --to-source 192.168.1.20-192.168.1.25
 ```    
 
-#19: Bloquear o abrir puertos comunes
+18: Bloquear o abrir puertos comunes
 =====================================
 ```bash
     Replace ACCEPT with DROP to block port:
@@ -465,7 +465,7 @@ Lo siguiente solo acepta limitados tipos de peticiones ICMP:
     iptables -I INPUT -p tcp --dport 3306 -j ACCEPT
 ```    
 
-#20: Restringir el número de conexiones paralelas a un servidor por direccion Ip del cliente.
+#19: Restringir el número de conexiones paralelas a un servidor por direccion Ip del cliente.
 =============================================================================================
 
 Se puede usar connlimit para crear algunas restricciones. Para permitir 3 conexiones ssh por cliente:
@@ -483,7 +483,7 @@ donde:
 *   **–connlimit-above 3** : Coincide si el número de conexiones existentes está por encima de 3.
 *   **–connlimit-mask 24** : Grupos de hosts usando el prefijo de longitud. Para IPv4, debe ser un número entre 0 y 32 (incluyéndolos.)
 
-#21: HowTO: Use iptables Like a Pro
+#20: HowTO: Use iptables Like a Pro
 ===================================
 
 Para más información sobre iptables, échale un vistazo al manual:
@@ -497,7 +497,7 @@ Para ver la ayuda en general o de un comando específico:
     iptables -j DROP -h
     
 
-#21.1: Probando nuestro firewall
+#20.1: Probando nuestro firewall
 --------------------------------
 
 Conocer si hay puertos abiertos o no:
@@ -510,7 +510,7 @@ Es recomendable instalarse un [sniffer](https://elbauldelprogramador.com/esnifan
 
 ---
 
-Reglas adicionales:
+22: Reglas adicionales:
 ===========================
 
 *   Reestablece las reglas por defecto.
@@ -524,7 +524,7 @@ Reglas adicionales:
 
 IPtables -nL para ver que estan vacias
 
-Configura la máquina para que sólo se pueda acceder desde ella a las webs [http://www.google.es](https://www.google.es) y [http://www.iesgoya.com](http://www.iesgoya.com) y a ninguna otra.
+22.1 Configura la máquina para que sólo se pueda acceder desde ella a las webs [http://www.google.es](https://www.google.es) y [http://www.iesgoya.com](http://www.iesgoya.com) y a ninguna otra.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
     iptables -A OUTPUT -d http://www.google.es -j ACCEPT
@@ -532,26 +532,26 @@ Configura la máquina para que sólo se pueda acceder desde ella a las webs [htt
     iptables -A OUTPUT -p tcp –dport 80 -j DROP # Mas exigente –> iptables -A OUTPUT -p all -j DROP
     
 
-Como google tiene muchas IPs puede que tengamos un problema para ello realizamos lo siguiente antes de la regla EXIGENTE:
+22.2 Como google tiene muchas IPs puede que tengamos un problema para ello realizamos lo siguiente antes de la regla EXIGENTE:
 -------------------------------------------------------------------------------------------------------------------------
 
     iptables -I OUTPUT 1 -d 212.106.221.0/24 -j ACCEPT
     iptables -I OUTPUT 1 -d 173.194.0.0/16 -j ACCEPT
     
 
-Mostrar las reglas que llevamos hasta el momento:
+22.3 Mostrar las reglas que llevamos hasta el momento:
 -------------------------------------------------
 
     iptables -nL –line-numbers
     
 
-Si queremos borrar reglas:
+22.4 Si queremos borrar reglas:
 --------------------------
 
     iptables -D OUTPUT 5
     
 
-Cierra todos los puertos bien conocidos menos los necesarios para acceder a estas dos webs.
+22.5 Cierra todos los puertos bien conocidos menos los necesarios para acceder a estas dos webs.
 -------------------------------------------------------------------------------------------
 
     iptables -A OUTPUT -p TCP –dport 53 -j ACCEPT
@@ -560,7 +560,7 @@ Cierra todos los puertos bien conocidos menos los necesarios para acceder a esta
     iptables -A OUTPUT -p UDP –dport 1:1024 -j DROP
     
 
-Investiga de qué forma podrías hacer que las peticiones entrantes a tu máquina virtual al puerto 81 por http vayan mediante NAT al puerto 80 de la máquina local (arranca WAMP para comprobar que funciona).
+22.6 Investiga de qué forma podrías hacer que las peticiones entrantes a tu máquina virtual al puerto 81 por http vayan mediante NAT al puerto 80 de la máquina local (arranca WAMP para comprobar que funciona).
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Arrancamos wamp en la maquina fisica y comprobamos que accedemos a wamp desde localhost.Comprobamos que podemos acceder desde la maquina virtual y se encuentra cortado
@@ -579,14 +579,14 @@ Ejecutamos las siguientes reglas
     iptables -t nat -A POSTROUTING -s 192.168.203.0/24 -j MASQUERADE
     
 
-Para ver las reglas introducidas:
----------------------------------
+**Para ver las reglas introducidas:**
+
 
     iptables -t nat -nL –line-numbers
     
 
-Permite sólo los mensajes entrantes desde la IP del compañero de tu máquina física (prueba desde otro sitio para ver si funciona).
-----------------------------------------------------------------------------------------------------------------------------------
+**Permite sólo los mensajes entrantes desde la IP del compañero de tu máquina física (prueba desde otro sitio para ver si funciona).**
+
 
     iptables -A INPUT -s 192.168.203.200 -j ACCEPT
     iptables -A INPUT -j DROP
@@ -595,8 +595,8 @@ Permite sólo los mensajes entrantes desde la IP del compañero de tu máquina f
     iptables -A FORWARD -s -j DROP
     
 
-Activa el log sobre todas las reglas y verifica que se anotan los mensajes.
----------------------------------------------------------------------------
+**Activa el log sobre todas las reglas y verifica que se anotan los mensajes.**
+
 
 Insertamos en IPTABLEs las reglas para activar el log:
 

@@ -1,5 +1,5 @@
 ---
-title: "01. Introducción a la Seguridad Informática con IPTABLES"
+title: "01. Introducción IPTABLES"
 parent: "IPTables"
 ---
 

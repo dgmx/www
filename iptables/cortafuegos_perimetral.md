@@ -1,5 +1,5 @@
 ---
-title: "03. Implementación de un cortafuegos perimetral"
+title: "03. Cortafuegos perimetral"
 parent: "IPTables"
 ---
 
