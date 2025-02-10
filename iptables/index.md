@@ -1,5 +1,5 @@
 ---
-title: "IPtables"
+title: "IPTables"
 nav_order: 10
 ---
 
