@@ -15,17 +15,7 @@ Algunos materiales han sido extraidos de internet a modo de repositorio, con el 
 
 diego@diegojgonzalez.com
 
-## Indice de Contenidos
-
-**[Curso de Introducción a BASH](bash)**.
-
-**[Introducción a Processing](processing)**.
-
-**[Introducción a la programación con Pseudo-Codigo](pseudo-code)**.
-
-**[Introducción a la programación con Python](python)**.
-
-**[Introducción al uso de la Terminal](terminal)**.
+![](palestinadelica.png)
 
 Enlace a **[Moodle](https://dgmx.duckdns.org)**.
 
