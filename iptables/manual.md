@@ -56,23 +56,26 @@ IPTABLES es una herramienta de firewall en sistemas Linux que permite filtrar, m
 ## **Configuración Básica de IPTABLES**
 
 1. **Listar reglas existentes**:
-    ```bash
-    iptables -L -v -n
-1. **Agregar una regla**:
-+ Permitir tráfico HTTP (puerto 80):
-    ```bash
-    iptables -A INPUT -p tcp --dport 80 -j ACCEPT
-3. **Eliminar una regla**:
-+ Eliminar la regla de HTTP:
-    ```bash
-    iptables -D INPUT -p tcp --dport 80 -j ACCEPT
+```bash
+iptables -L -v -n
+```
+2. **Agregar una regla**: Permitir tráfico HTTP (puerto 80):
+```bash
+iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+```
+3. **Eliminar una regla**: Eliminar la regla de HTTP:
+```bash
+iptables -D INPUT -p tcp --dport 80 -j ACCEPT
+```
 4. **Guardar reglas**:
 + En sistemas basados en Debian/Ubuntu:
-    ```bash
-    iptables-save > /etc/iptables/rules.v4
+```bash
+iptables-save > /etc/iptables/rules.v4
+```
 + En sistemas basados en RedHat/CentOS:
-    ```bash
-    service iptables save
+```bash
+service iptables save
+```
 
 ## **Administración y Gestión de IPTABLES**
 
