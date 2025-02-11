@@ -1,5 +1,6 @@
 color_scheme: dark
-
+mermaid:
+  version: "10.1.0"
 # Opciones de navegación
 just_the_docs:
   aux_nav:
