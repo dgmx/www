@@ -1,5 +1,5 @@
 ---
-title: "Ejercicios Programación Orientada a Objetos"
+title: "22. Ejercicios POO"
 parent: "Java"
 ---
 
