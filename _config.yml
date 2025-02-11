@@ -1,4 +1,4 @@
-color_scheme: dark
+# color_scheme: dark
 mermaid:
   version: "10.1.0"
 # Opciones de navegación
