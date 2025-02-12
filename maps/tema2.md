@@ -110,4 +110,4 @@ nav_exclude: true
 
 
 [Tema 2 Mapa Visual](tema2map.html).
-🌐 [Resumen Tema 2 PD](pdf/TEMA2.pdf)
+🌐 [Resumen Tema 2 PDF](pdf/TEMA2.pdf)

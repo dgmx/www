@@ -113,3 +113,4 @@ nav_exclude: true
 - Fuentes web: Xataka, ComputerHoy, Tom’s Hardware.
 
 [Tema 6 Mapa Visual](tema6map.html).
+🌐 [Resumen Tema 6 PDF](pdf/TEMA6.pdf)
