@@ -9,6 +9,7 @@
 - Aplicaciones en educación y el mercado laboral
 
 ## 📌 Modelo de Datos Relacional
+
 ### 📌 Modelo de Datos
 - **Definición** de base de datos y SGBD
 - **Niveles de abstracción**
