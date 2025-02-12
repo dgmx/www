@@ -1,3 +1,9 @@
+---
+title: "Tema 40 Diseño de Bases de Datos Relacionales"
+parent: "Maps"
+nav_exclude: true
+---
+
 # Tema 40 - Diseño de Bases de Datos Relacionales
 
 ## 1. Introducción

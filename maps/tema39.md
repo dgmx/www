@@ -1,4 +1,10 @@
-# Tema 39 INF - Lenguajes para Definición y Manipulación de Datos en Bases de Datos Relacionales
+---
+title: "Tema 39 Lenguajes para Definición y Manipulación de Datos en Bases de Datos Relacionales"
+parent: "Maps"
+nav_exclude: true
+---
+
+# Tema 39 - Lenguajes para Definición y Manipulación de Datos en Bases de Datos Relacionales
 
 ## 1. Introducción
 - Importancia de los datos en la actualidad

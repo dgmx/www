@@ -1,3 +1,9 @@
+---
+title: "Tema 38 Modelo de Datos Relacional"
+parent: "Maps"
+nav_exclude: true
+---
+
 # 🌐 Modelo de Datos Relacional
 
 ## 📌 Introducción
