@@ -350,8 +350,9 @@ class EmpleadoPorHoras extends Empleado {
 
 
 **Clase `Empresa` (Ejemplo de Uso)**
-```java
 Implementa el metodo `Main`
+
+```java
 
 public class Empresa {
     public static void main(String[] args) {
