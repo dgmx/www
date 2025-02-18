@@ -10,7 +10,7 @@ parent: "SQL"
 
 Archivo de script para la creación de la Base de Datos [Jardineria](jardineria.sql)
 
-## <span style="color:aqua">Consultas sobre una tabla</span>
+## Consultas sobre una tabla</span>
 
 1. Devuelve un listado con el código de oficina y la ciudad donde hay oficinas.
     ```sql

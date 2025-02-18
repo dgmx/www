@@ -10,7 +10,7 @@ parent: "SQL"
 Archivo de script para la creación de la Base de Datos [Universidad](universidad_a.sql)
 
 
-## <span style="color:aqua">Consultas sobre una tabla</span>
+## Consultas sobre una tabla</span>
 
 1. Devuelve un listado con el primer apellido, segundo apellido y el nombre de todos los alumnos. El listado deberá estar ordenado alfabéticamente de menor a mayor por el primer apellido, segundo apellido y nombre.
     ```sql

@@ -55,7 +55,7 @@ INSERT INTO empleado VALUES(13, '82635162B', 'Juan Antonio','Sáez', 'Guerrero',
 ```
 
 
-## <span style="color:aqua">Consultas sobre una tabla</span>
+## Consultas sobre una tabla</span>
 
 1. Lista el primer apellido de todos los empleados.
     ```sql
