@@ -1,3 +1,8 @@
+---
+title: 03. Gestión de Ventas
+parent: "SQL"
+---
+
 # Ejercicios - Gestión de Ventas
 
 [![DER Gestión Ventas](images/der-gestion-ventas.png)]()

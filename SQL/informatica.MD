@@ -1,3 +1,8 @@
+---
+title: 01. Tienda informática
+parent: "SQL"
+---
+
 # Ejercicios - Tienda informática
 
 [![DER Tienda Informática](images/der-tienda-informatica.png)]()

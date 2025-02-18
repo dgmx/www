@@ -1,3 +1,9 @@
+---
+title: 02. Gestión de Empleados
+parent: "SQL"
+---
+
+
 # Ejercicios - Gestión de Empleados
 
 [![DER Gestión Empleados](images/der-gestion-empleados.png)]()

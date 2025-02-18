@@ -1,3 +1,8 @@
+---
+title: 05. Universidad
+parent: "SQL"
+---
+
 # Ejercicios - Universidad
 
 [![DER Universidad](images/der-universidad.png)]()
