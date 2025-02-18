@@ -1,3 +1,8 @@
+---
+title: "SQL"
+nav_order: 11
+---
+
 # Prácticas SQL - JJ
 Repositorio dedicado a la resolución de ejercicios SQL utilizando el SGBD MySQL, el motor de BD InnoDB y HeidiSQL.
 
