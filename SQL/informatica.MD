@@ -49,7 +49,7 @@ INSERT INTO producto VALUES(11, 'Impresora HP Laserjet Pro M26nw', 180, 3);
 ```
 
 
-## Consultas sobre una tabla</span>
+## Consultas sobre una tabla
 
 1. Lista el nombre de todos los productos que hay en la tabla producto.
     ```sql
