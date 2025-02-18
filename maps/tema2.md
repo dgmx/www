@@ -4,7 +4,7 @@ parent: "Maps"
 nav_exclude: true
 ---
 
-# Mapa Mental: Elementos Funcionales de un Ordenador Digital
+# Tema 2: Elementos Funcionales de un Ordenador Digital
 
 ## 1. Introducción
 - **Arquitectura Von Neumann**:

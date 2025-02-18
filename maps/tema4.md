@@ -5,7 +5,7 @@ nav_exclude: true
 ---
 
 
-# Mapa Mental: Memoria Interna - Tipos, Direccionamiento, Características y Funciones
+# Tema 2: Memoria Interna - Tipos, Direccionamiento, Características y Funciones
 
 ## 1. Introducción
 - **Arquitectura Von Neumann**:

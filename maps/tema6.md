@@ -5,7 +5,7 @@ nav_exclude: true
 ---
 
 
-# Mapa Mental: Sistemas de Almacenamiento Externo - Tipos, Características y Funcionamiento
+# Tema 6: Sistemas de Almacenamiento Externo - Tipos, Características y Funcionamiento
 
 ## 1. Introducción
 - **Memoria externa (secundaria)**:
