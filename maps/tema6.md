@@ -1,11 +1,11 @@
 ---
-title: "Tema 6 Sistemas de Almacenamiento Externo - Tipos, Características y Funcionamiento"
+title: "Tema 6 Sistemas de Almacenamiento Externo, Tipos, Características y Funcionamiento"
 parent: "Maps"
 nav_exclude: true
 ---
 
 
-# Tema 6: Sistemas de Almacenamiento Externo - Tipos, Características y Funcionamiento
+# Tema 6: Sistemas de Almacenamiento Externo, Tipos, Características y Funcionamiento
 
 ## 1. Introducción
 - **Memoria externa (secundaria)**:

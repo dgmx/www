@@ -4,7 +4,7 @@ parent: "Maps"
 nav_exclude: true
 ---
 
-# Dispositivos Periféricos de Entrada/Salida
+# Tema 7. Dispositivos Periféricos de Entrada/Salida
 
 ## 1. Introducción
 - **Basado en la arquitectura de Von Neumann (1946)**

@@ -5,7 +5,7 @@ nav_exclude: true
 ---
 
 
-# Tema 2: Memoria Interna - Tipos, Direccionamiento, Características y Funciones
+# Tema 4: Memoria Interna - Tipos, Direccionamiento, Características y Funciones
 
 ## 1. Introducción
 - **Arquitectura Von Neumann**:

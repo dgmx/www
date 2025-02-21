@@ -8,9 +8,9 @@ nav_exclude: true
 
 ### BLOQUE 01 - HARDWARE
 - 01 Representación y comunicación de la información.
-- 02 [Elementos funcionales de un ordenador digital.](tema2.md)
+- [02 Elementos funcionales de un ordenador digital.](tema2.md)
 - 03 Componentes, estructura y funcionamiento de la Unidad Central de Proceso.
-- 04 [Memoria interna. Tipos. Direccionamiento. Características y funciones.](tema4.md)
+- [04 Memoria interna. Tipos. Direccionamiento. Características y funciones.](tema4.md)
 - 05 Microprocesadores. Estructura. Tipos. Comunicación con el exterior.
 - [06 Sistemas de almacenamiento externo. Tipos. Características y funcionamiento.](tema6.md)
 - [07 Dispositivos periféricos de entrada salida. Características y funcionamiento.](tema7.md)
@@ -83,5 +83,6 @@ nav_exclude: true
 -  72 La seguridad en sistemas en red. Servicios de seguridad. Técnicas y sistemas de protección. Estándares.
 -  73 Evaluación y Mejora de Prestaciones en un Sistema en Red. Técnicas y Procedimientos de Medida.
 -  74 Sistemas Multimedia.
--  
+  
+
 [Temario Global Mapa Visual](temasmap.html).
