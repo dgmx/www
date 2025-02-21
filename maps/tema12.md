@@ -1,5 +1,6 @@
 ---
-title: "Tema 12 Organización Lógica de los Datos. Estructuras de Datos Dinámicas
+title: "Tema 12 Organización Lógica de los Datos. Estructuras de Datos Dinámicas"
+parent: "Maps"
 nav_exclude: true
 ---
 
@@ -124,7 +125,7 @@ void inOrden(Nodo nodo) {
     }
 }
 ```
-[Apendice Árboles](arboles_binarios.html).
+🚀[Apendice Árboles](arboles_binarios.html).
 
 #### 3.2.2. Grafos
 ```mermaid
@@ -143,12 +144,12 @@ class Grafo {
 }
 ```
 
-[Apendice Grafos](grafos.html).
+🚀[Apendice Grafos](grafos.html).
 
 ## 4. Recursos y Herramientas Educativas
 - [SoloLearn](https://www.sololearn.com)
 - [VisuAlgo](https://visualgo.net)
-- 
+  
 ## 5. Aplicaciones en Contexto Escolar y Laboral
 - **Escuela**: Enseñanza en ciclos formativos de informática.
 - **Trabajo**:
