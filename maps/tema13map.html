@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Markmap</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+#mindmap {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css">
+</head>
+<body>
+<svg id="mindmap"></svg>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-view@0.18.10/dist/browser/index.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/index.js"></script><script>(r => {
+              setTimeout(r);
+            })(function renderToolbar() {
+  const {
+    markmap,
+    mm
+  } = window;
+  const {
+    el
+  } = markmap.Toolbar.create(mm);
+  el.setAttribute('style', 'position:absolute;bottom:20px;right:20px');
+  document.body.append(el);
+})</script><script>((getMarkmap, getOptions, root2, jsonOptions) => {
+              const markmap = getMarkmap();
+              window.mm = markmap.Markmap.create(
+                "svg#mindmap",
+                (getOptions || markmap.deriveOptions)(jsonOptions),
+                root2
+              );
+            })(() => window.markmap,null,{"content":"Tema 13 - Ficheros. Tipos. Caracter&#xed;sticas. Organizaciones","children":[{"content":"1. Introducci&#xf3;n","children":[{"content":"Evoluci&#xf3;n del almacenamiento: De sistemas manuales a bases de datos y big data.","children":[],"payload":{"tag":"li","lines":"9,10"}},{"content":"Importancia en inform&#xe1;tica: Gesti&#xf3;n eficiente de datos en sistemas y aplicaciones.","children":[],"payload":{"tag":"li","lines":"10,12"}}],"payload":{"tag":"h2","lines":"8,9"}},{"content":"2. Ficheros","children":[{"content":"\n<p data-lines=\"13,14\"><strong>2.1. Definici&#xf3;n</strong>: Conjunto de datos estructurados en registros y campos.</p>","children":[],"payload":{"tag":"li","lines":"13,15"}},{"content":"\n<p data-lines=\"15,16\"><strong>2.2. Operaciones</strong>: Creaci&#xf3;n, modificaci&#xf3;n, eliminaci&#xf3;n, inserci&#xf3;n y consulta de registros.</p>","children":[],"payload":{"tag":"li","lines":"15,17"}}],"payload":{"tag":"h2","lines":"12,13"}},{"content":"3. Tipos de ficheros","children":[{"content":"\n<p data-lines=\"20,21\"><strong>3.1. Ficheros permanentes</strong>: Almacenan datos relevantes para la aplicaci&#xf3;n.</p>","children":[{"content":"<strong>Ficheros Maestros</strong>: Contienen datos esenciales y actualizables.","children":[],"payload":{"tag":"li","lines":"21,22"}},{"content":"<strong>Ficheros Constantes</strong>: Datos fijos usados para consultas.","children":[],"payload":{"tag":"li","lines":"22,23"}},{"content":"<strong>Ficheros Hist&#xf3;ricos</strong>: Datos antiguos usados para reconstrucci&#xf3;n de situaciones.","children":[],"payload":{"tag":"li","lines":"23,25"}}],"payload":{"tag":"li","lines":"20,25"}},{"content":"\n<p data-lines=\"25,26\"><strong>3.2. Ficheros temporales</strong>: Datos utilizados temporalmente por la aplicaci&#xf3;n.</p>","children":[{"content":"<strong>Intermedios</strong>: Pasan datos entre aplicaciones.","children":[],"payload":{"tag":"li","lines":"26,27"}},{"content":"<strong>De maniobras</strong>: Almacenan datos no retenidos en memoria principal.","children":[],"payload":{"tag":"li","lines":"27,28"}},{"content":"<strong>De resultados</strong>: Generados para dispositivos de salida.","children":[],"payload":{"tag":"li","lines":"28,30"}}],"payload":{"tag":"li","lines":"25,30"}}],"payload":{"tag":"h2","lines":"17,18"}},{"content":"4. Caracter&#xed;sticas","children":[{"content":"<strong>Datos</strong>: Informaci&#xf3;n almacenada para extraer significado.","children":[],"payload":{"tag":"li","lines":"31,32"}},{"content":"<strong>Campos</strong>: Unidad m&#xed;nima de informaci&#xf3;n dentro de un registro.","children":[],"payload":{"tag":"li","lines":"32,33"}},{"content":"<strong>Registros</strong>: Conjunto de campos relacionados.","children":[],"payload":{"tag":"li","lines":"33,34"}},{"content":"<strong>Fichero</strong>: Conjunto de registros con prop&#xf3;sito espec&#xed;fico.","children":[],"payload":{"tag":"li","lines":"34,35"}},{"content":"<strong>Base de datos</strong>: Conjunto de ficheros accesibles por programas.","children":[],"payload":{"tag":"li","lines":"35,37"}}],"payload":{"tag":"h2","lines":"30,31"}},{"content":"5. Organizaci&#xf3;n de ficheros","children":[{"content":"\n<p data-lines=\"39,40\"><strong>5.1. Secuencial</strong>: Los registros se almacenan en orden consecutivo.</p>","children":[],"payload":{"tag":"li","lines":"39,41"}},{"content":"\n<p data-lines=\"41,42\"><strong>5.2. Directa</strong>: Los registros se acceden por su direcci&#xf3;n, no por orden f&#xed;sico.</p>","children":[],"payload":{"tag":"li","lines":"41,43"}},{"content":"\n<p data-lines=\"43,44\"><strong>5.3. Variantes de la organizaci&#xf3;n secuencial</strong>:</p>","children":[{"content":"<strong>Encadenada</strong>: Cada registro apunta al siguiente.","children":[],"payload":{"tag":"li","lines":"44,45"}},{"content":"<strong>Indexada</strong>: Se utilizan &#xed;ndices para mejorar el acceso.","children":[],"payload":{"tag":"li","lines":"45,46"}},{"content":"<strong>Indexada-encadenada</strong>: Combinaci&#xf3;n de punteros e &#xed;ndices.","children":[],"payload":{"tag":"li","lines":"46,48"}}],"payload":{"tag":"li","lines":"43,48"}}],"payload":{"tag":"h2","lines":"37,38"}},{"content":"6. Par&#xe1;metros de utilizaci&#xf3;n","children":[{"content":"<strong>Capacidad</strong>: Espacio ocupado por los registros en memoria.","children":[],"payload":{"tag":"li","lines":"49,50"}},{"content":"<strong>Actividad</strong>: Frecuencia de consultas y modificaciones.","children":[],"payload":{"tag":"li","lines":"50,51"}},{"content":"<strong>Volatilidad</strong>: Tasa de inserciones y eliminaciones.","children":[],"payload":{"tag":"li","lines":"51,52"}},{"content":"<strong>Crecimiento</strong>: Expansi&#xf3;n del fichero con el tiempo.","children":[],"payload":{"tag":"li","lines":"52,54"}}],"payload":{"tag":"h2","lines":"48,49"}},{"content":"7. Aplicaciones","children":[{"content":"<strong>Contexto escolar</strong>: Uso en formaci&#xf3;n profesional y ense&#xf1;anza de bases de datos.","children":[],"payload":{"tag":"li","lines":"55,56"}},{"content":"<strong>Contexto laboral</strong>: Gesti&#xf3;n eficiente de informaci&#xf3;n en investigaci&#xf3;n y docencia.","children":[],"payload":{"tag":"li","lines":"56,59"}}],"payload":{"tag":"h2","lines":"54,55"}}],"payload":{"tag":"h1","lines":"6,7"}},{})</script>
+</body>
+</html>

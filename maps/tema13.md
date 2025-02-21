@@ -51,15 +51,15 @@ graph TD
 
 ## 5. Organización de ficheros
 
+
 ```mermaid
 graph TD;
-    A[Organización de Ficheros] -->|Secuencial| B;
-    A -->|Directa| C;
-    A -->|Secuencial Encadenada| D;
-    A -->|Secuencial Indexada| E;
-    A -->|Secuencial Indexada-Encadenada| F;
+    A["Organización de Ficheros"] --> B["Secuencial"]
+    A --> C["Directa"]
+    B["Secuencial"] --> B1["Encadenada"]
+    B --> B2["Indexada"]
+    B --> B3["Indexada-Encadenada"]
 ```
-
 **5.1. Secuencial**: Los registros se almacenan en orden consecutivo.
 
 **5.2. Directa**: Los registros se acceden por su dirección, no por orden físico.
@@ -81,6 +81,5 @@ graph TD;
 
 
 [Tema 13 Mapa Visual](tema13map.html).
-
 
 
