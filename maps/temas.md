@@ -1,3 +1,9 @@
+---
+title: "Temario General."
+parent: "Maps"
+nav_exclude: true
+---
+
 ## PES Informatica
 
 ### BLOQUE 01 - HARDWARE
