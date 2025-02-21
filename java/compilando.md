@@ -10,9 +10,7 @@ Cuando trabajas con Java, entender el proceso de **compilación y ejecución de 
 
 En este artículo, explicaremos cómo funciona este proceso y cómo puedes compilar y ejecutar tus programas en diferentes plataformas, utilizando ejemplos detallados para una mejor comprensión.
 
-Tabla de contenidos
-
-[Toggle](#)
+**Tabla de contenidos**
 
 - [Compilación y Ejecución de Programas en Java](#compilación-y-ejecución-de-programas-en-java)
   - [Proceso de Compilación en Java](#proceso-de-compilación-en-java)

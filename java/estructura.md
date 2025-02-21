@@ -74,7 +74,7 @@ public class MiPrograma {
 *   **Método `main`**: El método `main` es el punto de inicio de ejecución del programa. Su firma es:
 
 ```java
-public static void main(String[] args)`
+public static void main(String[] args)
 ```
 
 *   **public**: Significa que puede ser accedido desde fuera de la clase.
@@ -124,7 +124,6 @@ Lenguaje del código: Java (java)
 
 `/**  * Este es un comentario para documentar * una clase o un método. */`
 
-Lenguaje del código: Java (java)
 
 **Explicación**: Los comentarios son cruciales para hacer el código más legible y comprensible para otros desarrolladores.
 
@@ -134,7 +133,11 @@ Cuando un programa Java se compila y ejecuta, el flujo comienza en el método `m
 ```java
 public class MiPrograma {     
     public static void main(String[] args) {        
-        saludar(); // Llama al método saludar    }     public static void saludar() {        System.out.println("¡Hola desde un método!");    
+        saludar(); // Llama al método saludar    
+        }     
+    
+    public static void saludar() {        
+        System.out.println("¡Hola desde un método!");    
     } 
 }
 ```

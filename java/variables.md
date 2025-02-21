@@ -8,9 +8,8 @@ Variables en Java
 
 Las variables en Java son contenedores que almacenan datos durante la ejecución de un programa. Cada variable tiene un **tipo de dato** que define qué tipo de información puede contener, como números, caracteres o cadenas de texto. Además, se le asigna un **nombre** que se utiliza para referenciarla en el código.
 
-\[oregoom-shortcode-button-play-youtube id=”qEVeLRJ\_ee8″\]
 
-Tabla de contenidos
+**Tabla de contenidos**
 
 
 - [Variables en Java](#variables-en-java)
@@ -88,7 +87,7 @@ int age; String name; double salary; boolean isEmployee;`
 Algunos ejemplos de nombres de variables inválidos en Java son:
 
 ```java
-int 1age; String name with spaces; double @salary; boolean if;`
+int 1age; String name with spaces; double @salary; boolean if;
 ```
 
 Cómo usar variables en Java

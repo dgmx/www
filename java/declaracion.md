@@ -10,9 +10,7 @@ Para declarar varias variables en Java, puedes seguir varias opciones dependiend
 
 Aquí te presento algunas de las formas más comunes de hacerlo:
 
-\[oregoom-shortcode-button-play-youtube id=”R6vLUZM6RgE”\]
-
-Tabla de contenidos
+**Tabla de contenidos**
 
 
 - [Declarar varias variables en Java](#declarar-varias-variables-en-java)
@@ -26,7 +24,7 @@ Tabla de contenidos
 ```java
 int numero1 = 10; 
 int numero2 = 20; 
-String nombre = "Ana";`
+String nombre = "Ana";
 ```
 
 En este caso, se declaran tres variables diferentes: `numero1`, `numero2` y `nombre`, cada una con su propio tipo de dato y valor inicial.

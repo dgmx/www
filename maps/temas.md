@@ -14,7 +14,7 @@ nav_exclude: true
 - 05 Microprocesadores. Estructura. Tipos. Comunicación con el exterior.
 - [06 Sistemas de almacenamiento externo. Tipos. Características y funcionamiento.](tema6.md)
 - [07 Dispositivos periféricos de entrada salida. Características y funcionamiento.](tema7.md)
-- [08 Hardware comercial de un ordenador. Placa base. Tarjetas controladoras de dispositivos y de entradasalida.](tema8.md)
+- [08 Hardware comercial de un ordenador. Placa base. Tarjetas controladoras de dispositivos y de entrada-salida.](tema8.md)
 - 09 Lógica de circuitos. Circuitos combinacionales y secuenciales.
 
 ### BLOQUE 02 – REPRESENTACIÓN Y ORGANIZACIÓN DE DATOS

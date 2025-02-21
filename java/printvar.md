@@ -26,7 +26,7 @@ El método más sencillo para imprimir variables en Java es usar la clase `Syste
 ```java
 int numero = 10; String nombre = "Juan Pérez"; 
 System.out.println("El número es: " + numero); 
-System.out.println("El nombre es: " + nombre);`
+System.out.println("El nombre es: " + nombre);
 ```
 
 **Salida:**
@@ -46,7 +46,7 @@ El método `System.out.print()` funciona de manera similar a `System.out.println
 int numero1 = 10; 
 int numero2 = 20; 
 System.out.print("El primer número es: " + numero1); 
-System.out.print(" y el segundo número es: " + numero2);`
+System.out.print(" y el segundo número es: " + numero2);
 ```
 
 **Salida:**
@@ -95,7 +95,7 @@ Para imprimir variables junto con texto explicativo, podemos usar la concatenaci
 
 ```java 
 int num1 = 10; int num2 = 20; 
-System.out.println("La suma de " + num1 + " y " + num2 + " es: " + (num1 + num2));`
+System.out.println("La suma de " + num1 + " y " + num2 + " es: " + (num1 + num2));
 ```
 
 **Salida:**
