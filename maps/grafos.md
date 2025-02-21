@@ -1,5 +1,6 @@
 ---
-title: "Tema 12 Apendice Grafos
+title: "Tema 12 Apendice Grafos"
+parent: "Maps"
 nav_exclude: true
 ---
 

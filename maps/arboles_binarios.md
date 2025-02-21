@@ -1,5 +1,6 @@
 ---
-title: "Tema 12 Apendice Árboles Binarios
+title: "Tema 12 Apendice Árboles Binarios"
+parent: "Maps"
 nav_exclude: true
 ---
 ## Tipos de Árboles Binarios
