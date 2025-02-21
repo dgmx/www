@@ -1,5 +1,5 @@
 ---
-title: "Tema 12 Organización Lógica de los Datos. Estructuras de Datos Dinámicas"
+title: "Tema 12. Organización Lógica de los Datos. Estructuras de Datos Dinámicas"
 parent: "Maps"
 nav_exclude: true
 ---
