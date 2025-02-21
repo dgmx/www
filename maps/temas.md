@@ -30,7 +30,7 @@
 ### BLOQUE 05 – ALGORITMOS Y PROGRAMACIÓN
 -  23 Diseño de algoritmos. Técnicas descriptivas.
 -  24 Lenguajes de programación. Tipos. Características.
--  25 Programación estructurada. Estructuras básicas. Funciones y procedimientos.
+-  [25 Programación estructurada. Estructuras básicas. Funciones y procedimientos.](tema25.md)
 -  [26 Programación modular. Diseño de funciones. Recursividad. Librerías.](tema26.md)
 -  [27 Programación Orientada a Objetos. Clases. Herencia. Polimorfismo. Lenguajes.](tema27.md)
 -  28 Programación en tiempo real. Interrupciones. Sincronización y comunicación entretareas. Lenguajes.
