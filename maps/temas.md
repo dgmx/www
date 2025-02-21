@@ -1,3 +1,5 @@
+## PES Informatica
+
 ### BLOQUE 01 - HARDWARE
 - 01 Representación y comunicación de la información.
 - 02 [Elementos funcionales de un ordenador digital.](tema2.md)
@@ -5,7 +7,7 @@
 - 04 [Memoria interna. Tipos. Direccionamiento. Características y funciones.](tema4.md)
 - 05 Microprocesadores. Estructura. Tipos. Comunicación con el exterior.
 - [06 Sistemas de almacenamiento externo. Tipos. Características y funcionamiento.](tema6.md)
-- [07 Dispositivos periféricos de entradasalida. Características y funcionamiento.](tema7.md)
+- [07 Dispositivos periféricos de entrada salida. Características y funcionamiento.](tema7.md)
 - [08 Hardware comercial de un ordenador. Placa base. Tarjetas controladoras de dispositivos y de entradasalida.](tema8.md)
 - 09 Lógica de circuitos. Circuitos combinacionales y secuenciales.
 
@@ -75,3 +77,5 @@
 -  72 La seguridad en sistemas en red. Servicios de seguridad. Técnicas y sistemas de protección. Estándares.
 -  73 Evaluación y Mejora de Prestaciones en un Sistema en Red. Técnicas y Procedimientos de Medida.
 -  74 Sistemas Multimedia.
+-  
+[Temario Global Mapa Visual](temasmap.html).
