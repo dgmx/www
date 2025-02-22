@@ -10,7 +10,7 @@ En Java, una constante es un valor que se asigna a una variable y no cambia dura
 
 Las constantes son útiles para almacenar valores que se utilizan repetidamente en el código y que no deben ser modificados.
 
-Tabla de contenidos
+**Tabla de contenidos**
 
 - [Constantes en Java](#constantes-en-java)
   - [Cómo declarar constantes en Java](#cómo-declarar-constantes-en-java)

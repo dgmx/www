@@ -81,7 +81,7 @@ En Java, los nombres de las variables deben cumplir ciertas reglas para ser vál
 Algunos ejemplos de nombres de variables válidos en Java son:
 
 ```java
-int age; String name; double salary; boolean isEmployee;`
+int age; String name; double salary; boolean isEmployee;
 ```
 
 Algunos ejemplos de nombres de variables inválidos en Java son:

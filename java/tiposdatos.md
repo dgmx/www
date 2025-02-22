@@ -58,17 +58,17 @@ Java tiene varios tipos de datos primitivos que se utilizan para almacenar valor
 
 ### Tabla
 
-|     |     |     |
-| --- | --- | --- |
-| **Tipo de Dato** | **Tamaño** | **Descripción** |
-| byte | 1 byte | Almacena números enteros de -128 a 127 |
-| short | 2 bytes | Almacena números enteros de -32,768 a 32,767 |
-| int | 4 bytes | Almacena números enteros de -2,147,483,648 a 2,147,483,647 |
-| long | 8 bytes | Almacena números enteros de -9,223,372,036,854,775,808 a 9,223,372,036,854,775,807 |
-| float | 4 bytes | Almacena números decimales con suficiente para almacenar de 6 a 7 dígitos decimales |
-| double | 8 bytes | Almacena números decimales con suficiente para almacenar 15 dígitos decimales |
-| char | 2 bytes | Almacena un caracter o codigo ASCII |
-| boolean | 1 bit | Almacena valores verdaderos o falsos (true y false) |
+|   **Tipo de Dato**  |  **Tamaño**   |  **Descripción**    |
+| ------------------- | ------------- | ------------------- |
+| `byte`                | 1 byte        | Almacena números enteros de -128 a 127 |
+| `short` | 2 bytes | Almacena números enteros de -32,768 a 32,767 |
+| `int` | 4 bytes | Almacena números enteros de -2,147,483,648 a 2,147,483,647 |
+| `long` | 8 bytes | Almacena números enteros de -9,223,372,036,854,775,808 a 9,223,372,036,854,775,807 |
+| `float` | 4 bytes | Almacena números decimales con suficiente para almacenar de 6 a 7 dígitos decimales |
+| `double` | 8 bytes | Almacena números decimales con suficiente para almacenar 15 dígitos decimales |
+| `char` | 2 bytes | Almacena un caracter o codigo ASCII |
+| `boolean` | 1 bit | Almacena valores verdaderos o falsos (true y false) |
+
 
 Ejemplos
 --------

@@ -9,13 +9,13 @@ Tipos de variables en Java
 
 En Java, las variables son herramientas fundamentales para almacenar y manipular información. Dominar sus diferentes tipos te permite escribir código más eficiente, flexible y escalable. En este artículo, exploraremos los tres tipos principales de variables en Java: locales, de instancia y estáticas.
 
-Tabla de contenidos
+**Tabla de contenidos**
 
 - [Tipos de variables en Java](#tipos-de-variables-en-java)
   - [1. Variables locales](#1-variables-locales)
   - [2. Variables de instancia](#2-variables-de-instancia)
   - [3. Variables estáticas](#3-variables-estáticas)
-  - [Resumen:](#resumen)
+    - [Resumen:](#resumen)
 
 1\. Variables locales
 ---------------------
@@ -77,8 +77,7 @@ public class Contador {
     // La variable `numeroLlamadas` es compartida por todas las instancias de la clase `Contador`. 
 }
 ```
-Resumen:
---------
+### Resumen:
 
 *   **Variables locales:** Almacenamiento temporal dentro de un método o bloque.
 *   **Variables de instancia:** Almacenamiento específico para cada objeto.

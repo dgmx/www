@@ -39,9 +39,8 @@ Operadores aritméticos en Java
 
 Los operadores aritméticos en Java se utilizan para realizar operaciones matemáticas básicas como suma, resta, multiplicación, división y módulo. A continuación los operadores aritméticos más comunes en Java:
 
-|     |     |     |
-| --- | --- | --- |
 | Operador | Descripción | Ejemplo |
+| --- | --- | --- |
 | +   | Sumar | `a + b -> 12` |
 | –   | Restar | `a - b -> 8` |
 | \*  | Multiplicar | `a * b -> 20` |
@@ -103,9 +102,8 @@ Operadores de asignación en Java
 
 Los operadores de asignación en Java se usan para asignar un valor a una variable. A continuación los operadores de asignación más comunes en Java:
 
-|     |     |     |
-| --- | --- | --- |
 | Operador | Descripción | Ejemplo |
+| --- | --- | --- |
 | \=  | Asignar un valor | `int a;   a = 10` |
 | +=  | Suma en asignación | `a = a + 2   a += 2 -> 12` |
 | \-= | Resta en asignación | `a = a - 2   a -= 2 -> 8` |
@@ -174,9 +172,8 @@ Operadores de comparación en Java
 
 Los operadores de comparación en Java se utilizan para comparar dos valores y determinar si son iguales o diferentes. A continuación los operadores de comparación más comunes en Java:
 
-|     |     |     |
+| Nombre | Operadores | Ejemplo*|
 | --- | --- | --- |
-| **Nombre** | **Operadores** | **Ejemplo** |
 | Igualdad | \== | `a == b => false` |
 | Distintos | !=  | `a != b => true` |
 | Mayor que | \>  | `a > b => false` |
@@ -277,9 +274,8 @@ Operadores lógicos en Java
 
 Los operadores lógicos en Java se utilizan para combinar expresiones booleanas (verdaderas o falsas) y producir un resultado final booleano. Los operadores lógicos comunes en Java son:
 
-|     |     |     |
+| **Nombre** | **Operadores** | Ejemplo |
 | --- | --- | --- |
-| **Nombre** | **Operadores** | **Ejemplo** |
 | Not | **!** | `!true = false` |
 | And | **&&** | `true && true = true`   <br>`true && false = false`  <br>`false && true = false`   <br>`false && false = false` |
 | Or  | **\|** | `true **\|** true = true`   <br>`true **\|** false = true`  <br>`false **\|** true = true`   <br>`false **\|** false = false` |
@@ -300,7 +296,7 @@ else {
 }
 ```
 
-2.  **Operador OR (||):** Este operador se utiliza para combinar dos expresiones booleanas y producir un resultado verdadero si al menos una de las expresiones es verdadera. Por ejemplo:
+2.  **Operador OR (\|\|):** Este operador se utiliza para combinar dos expresiones booleanas y producir un resultado verdadero si al menos una de las expresiones es verdadera. Por ejemplo:
 
 ```java
 int a = 5; 
