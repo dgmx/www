@@ -18,7 +18,11 @@ Algunos materiales han sido extraidos de internet a modo de repositorio, con el 
 ![](palestinadelica.png)
 
 
-<button class="btn js-toggle-dark-mode">Modo Oscuro</button>
+<link rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
+      integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ=="
+      crossorigin="anonymous">
+
+<a href="https://dgmx.duckdns.org" class="btn btn-success"> Ir a Moodle TCM</a>
 
 
-[Enlace a Moodle](https://dgmx.duckdns.org) {: .btn .btn-purple }

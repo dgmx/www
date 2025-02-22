@@ -59,7 +59,7 @@ Aquí te muestro algunos ejemplos de operadores aritméticos en código Java:
 int a = 2; 
 int b = 3; 
 int sum = a + b; 
-System.out.println("La suma de " + a + " y " + b + " es: " + sum);`
+System.out.println("La suma de " + a + " y " + b + " es: " + sum);
 ```
 
 *   **Resta (-):** Se utiliza para restar dos números. Por ejemplo: `int a = 5 - 2;`
@@ -76,7 +76,7 @@ System.out.println("La diferencia entre " + x + " y " + y + " es: " + diff);
 ```java
 int p = 4; int q = 3; 
 int product = p * q; 
-System.out.println("El producto entre " + p + " y " + q + " es: " + product);`
+System.out.println("El producto entre " + p + " y " + q + " es: " + product);
 ```
 
 *   **División (/):** Se utiliza para dividir dos números. Por ejemplo: `int a = 6 / 2;`
@@ -325,7 +325,7 @@ Operadores de incremento y decremento en Java
 
 Los operadores de incremento y decremento en Java se utilizan para aumentar o disminuir el valor de una variable en una unidad. Los operadores de incremento y decremento comunes en Java son:
 
-1.  **Operador de incremento (++):** Este operador se utiliza para aumentar el valor de una variable en 1. Puede colocarse antes o después del nombre de la variable, dependiendo del uso que se le quiera dar.
+1. **Operador de incremento (++):** Este operador se utiliza para aumentar el valor de una variable en 1. Puede colocarse antes o después del nombre de la variable, dependiendo del uso que se le quiera dar.
 
 **Por ejemplo:**
 
