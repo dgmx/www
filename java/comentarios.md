@@ -99,7 +99,7 @@ Al utilizar comentarios de una línea, es importante ser conciso y claro en las 
 
 Los comentarios de varias líneas, también conocidos como multi-line comments o block comments, permiten agregar comentarios que abarcan más de una línea. Este tipo de comentarios es útil para explicar segmentos de código más extensos o para incluir descripciones más detalladas que no cabrían en una sola línea.
 
-Los comentarios de varias líneas comienzan con un delimitador de apertura (/_) y terminan con un delimitador de cierre (_/).
+Los comentarios de varias líneas comienzan con un delimitador de apertura (/*) y terminan con un delimitador de cierre (\*/).
 
 A continuación, se presenta un ejemplo de cómo utilizar comentarios de varias líneas en un programa Java:
 
@@ -216,13 +216,13 @@ En este ejemplo, se utilizan comentarios Javadoc para describir la clase Calcula
 
 #### Generación de documentación HTML:
 
-Para generar la documentación HTML utilizando Javadoc, se debe ejecutar el siguiente comando en la línea de comandos, reemplazando **“ruta\_del\_codigo”** por la ruta donde se encuentran los archivos de código fuente:
+Para generar la documentación HTML utilizando Javadoc, se debe ejecutar el siguiente comando en la línea de comandos, reemplazando `ruta_del_codigo` por la ruta donde se encuentran los archivos de código fuente:
 
 ```bash
 javadoc -d docs ruta_del_codigo`
 ```
 
-Este comando generará la documentación en la carpeta **“docs”**. Luego, se puede abrir el archivo **“index.html”** en un navegador para visualizar la documentación generada.
+Este comando generará la documentación en la carpeta `docs`. Luego, se puede abrir el archivo `index.html` en un navegador para visualizar la documentación generada.
 
 **Al utilizar comentarios Javadoc**, asegúrate de que las descripciones sean claras y precisas. Utiliza las etiquetas apropiadas para proporcionar información estructurada y útil. Mantén los comentarios actualizados con el código que describen, y evita redundancias o información innecesaria.
 

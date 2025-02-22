@@ -20,3 +20,5 @@ Algunos materiales han sido extraidos de internet a modo de repositorio, con el 
 Enlace a **[Moodle](https://dgmx.duckdns.org)**.
 
 
+<button class="btn js-toggle-dark-mode">Modo Oscuro</button>
+

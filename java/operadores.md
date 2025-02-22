@@ -391,14 +391,14 @@ String cadena = "El valor es: ";
 System.out.println(cadena + numero); //imprime "El valor es: 5"
 ```
 
-Es importante mencionar que en algunos casos es mejor utilizar **StringBuilder** o **StringBuffer** para concatenar cadenas, ya que son más eficientes en términos de rendimiento, especialmente si se está concatenando muchas cadenas en un bucle o iteración.
+Es importante mencionar que en algunos casos es mejor utilizar `StringBuilder` o `StringBuffer` para concatenar cadenas, ya que son más eficientes en términos de rendimiento, especialmente si se está concatenando muchas cadenas en un bucle o iteración.
 
 Operadores de bits en Java
 --------------------------
 
 Los operadores de bits en Java son operadores especiales que permiten realizar operaciones en los bits individuales de un número. Estos operadores incluyen:
 
-*   **Operador & (AND bit-a-bit):** Este operador realiza una operación AND bit-a-bit en dos números. El resultado es 1 solo si ambos bits son 1.
+*   **Operador & (AND bit-a-bit):** Este operador realiza una operación `AND` bit-a-bit en dos números. El resultado es 1 solo si ambos bits son 1.
 
 **Ejemplo:**
 
@@ -409,7 +409,7 @@ int result = x & y;
 System.out.println(result); // imprimirá 1
 ```
 
-*   **Operador | (OR bit-a-bit):** Este operador realiza una operación OR bit-a-bit en dos números. El resultado es 1 si al menos uno de los bits es 1.
+*   **Operador \| (OR bit-a-bit):** Este operador realiza una operación `OR` bit-a-bit en dos números. El resultado es 1 si al menos uno de los bits es 1.
 
 **Ejemplo:**
 
@@ -420,7 +420,7 @@ int result = x | y;
 System.out.println(result); // imprimirá 7
 ```
 
-*   **Operador ^ (XOR bit-a-bit):** Este operador realiza una operación XOR bit-a-bit en dos números. El resultado es 1 solo si los bits son diferentes.
+*   **Operador ^ (XOR bit-a-bit):** Este operador realiza una operación `XOR` bit-a-bit en dos números. El resultado es 1 solo si los bits son diferentes.
 
 **Ejemplo:**
 
@@ -451,7 +451,7 @@ int desplazamiento = 2;
 int resultado = num << desplazamiento;
 ```
 
-En este ejemplo, se está asignando el valor de 8 a la variable **“num”**, el valor 2 a la variable **“desplazamiento”** y se está utilizando el operador << para desplazar los bits de **“num”** 2 posiciones a la izquierda. El valor resultante se almacena en la variable **“resultado”**.
+En este ejemplo, se está asignando el valor de 8 a la variable `num`, el valor 2 a la variable `desplazamiento` y se está utilizando el operador `<<`para desplazar los bits de `num` 2 posiciones a la izquierda. El valor resultante se almacena en la variable `resultado`.
 
 En este caso el valor de resultado sería 32.
 

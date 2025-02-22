@@ -7,7 +7,7 @@ parent: "Java"
 If y else en Java
 =================
 
-En Java, las condiciones se utilizan para controlar el flujo de un programa. Se pueden utilizar las estructuras de control de flujo como **if**, **else** y **[switch](https://oregoom.com/java/switch/)** para crear condiciones en el código. El uso de estas estructuras permite ejecutar cierto código solo si se cumple una determinada condición.
+En Java, las condiciones se utilizan para controlar el flujo de un programa. Se pueden utilizar las estructuras de control de flujo como `if` `else` y **[switch](switch.md)** para crear condiciones en el código. El uso de estas estructuras permite ejecutar cierto código solo si se cumple una determinada condición.
 
 Una estructura básica de una condición en Java es la siguiente:
 
@@ -41,7 +41,7 @@ Tabla de contenidos
 Sentencia if en Java
 --------------------
 
-La sentencia **if** en Java se utiliza para evaluar una condición y ejecutar cierto código solo si la condición se cumple. La estructura básica de una sentencia **if** en Java es la siguiente:
+La sentencia `if` en Java se utiliza para evaluar una condición y ejecutar cierto código solo si la condición se cumple. La estructura básica de una sentencia `if` en Java es la siguiente:
 
 ```java
 if (condición) {     
@@ -57,12 +57,12 @@ if (x > 5) {
 }
 ```
 
-En resumen, **la sentencia if en Java** se utiliza para evaluar una condición y ejecutar cierto código solo si la condición se cumple.
+En resumen, `la sentencia if en Java` se utiliza para evaluar una condición y ejecutar cierto código solo si la condición se cumple.
 
 Sentencia else en Java
 ----------------------
 
-La sentencia **else** en Java se usa junto con la sentencia **if** para especificar un bloque de código que se ejecutará si la condición especificada en la sentencia **if** es falsa. La estructura básica de una sentencia **if-else** en Java es la siguiente:
+La sentencia `else` en Java se usa junto con la sentencia **if** para especificar un bloque de código que se ejecutará si la condición especificada en la sentencia **if** es falsa. La estructura básica de una sentencia `if-else` en Java es la siguiente:
 
 ```java
 if (condición) {     
@@ -87,9 +87,9 @@ else {
 Sentencia else-if en Java
 -------------------------
 
-La sentencia **else if** en Java es una extensión de la sentencia **if-else** que permite especificar múltiples condiciones de control de flujo en un solo bloque de código. Es similar a la sentencia **if-else**, pero permite especificar varias condiciones adicionales antes de llegar a la sentencia **else** final.
+La sentencia `else if` en Java es una extensión de la sentencia **if-else** que permite especificar múltiples condiciones de control de flujo en un solo bloque de código. Es similar a la sentencia **if-else**, pero permite especificar varias condiciones adicionales antes de llegar a la sentencia **else** final.
 
-La sintaxis para usar la sentencia **else if** es la siguiente:
+La sintaxis para usar la sentencia `else if` es la siguiente:
 
 ```java
 if (condición1) {     
