@@ -1,5 +1,5 @@
 ---
-title: "Tema 15: Sistemas Operativos. Componentes. Estructura. Funciones. Tipos
+title: "Tema 15: Sistemas Operativos. Componentes. Estructura. Funciones. Tipos"
 parent: "Maps"
 nav_exclude: true
 ---
