@@ -19,7 +19,7 @@ just_the_docs:
     "Terminal":
       url: /terminal
 
-
+footer_content: "Diego J. Gonzalez"
 remote_theme: just-the-docs/just-the-docs
 title: "Diego J. González"
 
