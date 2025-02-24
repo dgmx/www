@@ -1,4 +1,10 @@
-# Tema 15: Sistemas Operativos
+---
+title: "Tema 15: Sistemas Operativos. Componentes. Estructura. Funciones. Tipos
+parent: "Maps"
+nav_exclude: true
+---
+
+# Tema 15: Sistemas Operativos. Componentes. Estructura. Funciones. Tipos
 
 ## 1. Introducción
 - Importancia de los sistemas operativos
@@ -96,3 +102,5 @@
 - [VMware](https://www.vmware.com/)
 - [VirtualBox](https://www.virtualbox.org/)
 
+[Tema 15 Mapa Visual](tema15map.html).
+📄[Tema 15 PDF](tema15.pdf).
