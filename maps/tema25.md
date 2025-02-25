@@ -68,6 +68,7 @@ nav_exclude: true
 
 ### 5.2. Procedimientos
 - **Subprogramas que NO retornan un valor.**
+- Declaración e invocación como en las funciones.
 - **Ejemplo en pseudocódigo:**
   ```
   procedimiento mostrarMensaje() {
@@ -105,4 +106,5 @@ nav_exclude: true
 - Prieto, A. (2006). Introducción a la informática.
 - López, L. (2004). Programación Estructurada.
 
-[Tema 25 Mapa Visual](tema25map.html).
+[Mapa Visual](tema25map.html){: .btn .btn-blue }
+[Generar PDF](tema25.pdf){: .btn .btn-purple }
