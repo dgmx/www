@@ -4,7 +4,7 @@ parent: "Maps"
 nav_exclude: true
 ---
 
-# Programación Orientada a Objetos (POO)
+# Tema 27.Programación Orientada a Objetos. Objetos. Clases. Herencia. Polimorfismo
 
 ## 1. Introducción
 - Bloque tematico "Algoritmos y Programación"
