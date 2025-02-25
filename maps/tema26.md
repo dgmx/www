@@ -4,15 +4,18 @@ parent: "Maps"
 nav_exclude: true
 ---
 
-# Programación Modular, Diseño de Funciones, Recursividad, Librerías
+# Tema 26 Programación Modular, Diseño de Funciones, Recursividad, Librerías
 
 ## 1. Introducción
 - Importancia en el avance tecnológico.
 - Aplicación en ciclos formativos y desarrollo de software.
 
 ## 2. Conceptos Previos
-- Algoritmos y su traducción a lenguajes de programación.
-- Evolución hacia paradigmas estructurados y modulares.
+- **Informática:** busca soluciones a problemas mediante algoritmos.
+- **Programación:** traducción de algoritmos a un lenguaje entendible por la computadora.
+- **Lenguaje de programación:** conjunto de reglas y símbolos para escribir programas.
+- **Evolución:** de código "espagueti" a paradigmas estructurados y modulares.
+- **Paradigmas:** Programación estructurada y modular
 
 ## 3. Programación Modular
 - **Definición**: División de un programa en módulos independientes.
@@ -38,8 +41,20 @@ nav_exclude: true
 - **Tipos**: Propias del lenguaje vs definidas por el usuario.
 
 ### 4.1 Declaración
-- Cabecera y cuerpo.
+- **Cabecera**: modificadores, tipo de retorno, nombre función y parametros y tipo.
+- **Cuerpo**: Instrucciones a realizar por la función
 
+```java
+// Funcion que calcula el factoria de un numero en java
+
+public static void factoria(int n){   // Cabecera de la funcion
+    int fact = 1;                       // Cuerpo de la funcion.
+    for(int i=1; i<n; i++){
+        fact = fact * i;
+        return fact;
+    }
+}
+```
 ### 4.2 Invocación
 - Llamada con parámetros actuales.
 
@@ -87,6 +102,10 @@ nav_exclude: true
 - Ventajas de la programación modular: legibilidad, mantenimiento, y resolución de problemas.
 
 ## 10. Bibliografía
-- Referencias a autores y fuentes.
+- Joyanes, L. (2020). Fundamentos de programación.
+- Prieto, A. (2006). Introducción a la informática.
+- López, L. (2004). Programación Estructurada.
+- Hernández M. (2022). Estructiras de datos. Editoria Ra-Ma
 
-[Tema 26 Mapa Visual](tema26map.html).
+[Mapa Visual](tema26map.html){: .btn .btn-blue }
+[Generar PDF](tema26.pdf){: .btn .btn-purple }
