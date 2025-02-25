@@ -1,5 +1,5 @@
 ---
-title: "22. Ejercicios POO"
+title: "32. Ejercicios POO"
 parent: "Java"
 ---
 
