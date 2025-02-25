@@ -105,7 +105,7 @@ public static void factoria(int n){   // Cabecera de la funcion
 - Joyanes, L. (2020). Fundamentos de programación.
 - Prieto, A. (2006). Introducción a la informática.
 - López, L. (2004). Programación Estructurada.
-- Hernández M. (2022). Estructiras de datos. Editoria Ra-Ma
+- Hernández M. (2022). Estructuras de datos. Editoria Ra-Ma
 
 [Mapa Visual](tema26map.html){: .btn .btn-blue }
 [Generar PDF](tema26.pdf){: .btn .btn-purple }
