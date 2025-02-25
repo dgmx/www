@@ -44,7 +44,7 @@ Este método es muy útil cuando se quiere imprimir información de depuración,
 
 Aquí te dejo algunos ejemplos completos de cómo utilizar el método **print()** en Java:
 
-1.  Ejemplo básico:
+1. Ejemplo básico:
 
 ```java
 public class EjemploPrint {
@@ -55,7 +55,7 @@ public class EjemploPrint {
 ```
 Este ejemplo simplemente imprime **“Hola mundo!”** en la consola.
 
-2.  Imprimir varias variables en una sola línea:
+2. Imprimir varias variables en una sola línea:
 ```java
 public class EjemploPrint {
     public static void main(String[] args) {
@@ -67,10 +67,9 @@ public class EjemploPrint {
     }
 }
 ```
-
 Este ejemplo crea tres variables, `nombre`, `edad` y `peso`, y las usa para imprimir una cadena de texto en la consola. El resultado sería **“Mi nombre es Juan, tengo 30 años y peso 75.5 kg.”**
 
-3.  Imprimir una lista de números:
+3. Imprimir una lista de números:
 ```java
 public class EjemploPrint {
     public static void main(String[] args) {

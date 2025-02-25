@@ -14,7 +14,6 @@ nav_exclude: true
   - Presente en ciclos formativos de informática.
   - Relevante para entender vulnerabilidades como Meltdown y Spectre.
 
----
 
 ## 2. Ordenador Digital
 ### 2.1. Generaciones de Ordenadores
@@ -35,7 +34,6 @@ nav_exclude: true
 - Almacenamiento (tipo, capacidad).
 - Placa base y buses.
 
----
 
 ## 3. Elementos Funcionales de un Ordenador Digital
 ### 3.1. CPU
@@ -60,7 +58,6 @@ nav_exclude: true
   - Direcciones: Envía ubicaciones de memoria.
   - Control: Señales para sincronización.
 
----
 
 ## 4. Arquitectura
 - **Clasificaciones**:
@@ -68,8 +65,6 @@ nav_exclude: true
   - Conjunto de instrucciones (CISC vs. RISC).
   - Uso de memoria (Von Neumann vs. Harvard).
   - Flujo de datos (SISD, SIMD, MISD, MIMD).
-
----
 
 ## 5. Proyecto TOP500
 - Ranking de supercomputadores más potentes del mundo.
@@ -79,12 +74,9 @@ nav_exclude: true
 - Más avanzado en España (2023).
 - Usos: Medicina, cambio climático, IA.
 
----
-
 ## 7. Recursos Educativos
 - Herramientas de monitorización: HWMonitor, CPU-Z, Speccy.
 
----
 
 ## 8. Aplicaciones
 - **Contexto escolar**:
@@ -95,14 +87,10 @@ nav_exclude: true
   - Optimización de software.
   - Implementación en IA y redes.
 
----
-
 ## 9. Conclusión
 - Resumen de la evolución y clasificación de los ordenadores.
 - Descripción de los elementos funcionales (CPU, memoria, E/S).
 - Interconexión mediante buses.
-
----
 
 ## 10. Bibliografía
 - Autores destacados: Prieto, Joyanes, Stallings, Tanenbaum.
