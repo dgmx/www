@@ -141,7 +141,7 @@ Método printf en Java
 
 El método **printf()** en Java es una versión mejorada del método **print()** y **println()** que permite un mayor control sobre el formato de la salida.
 
-El método **printf()** en Java es un método estático de la clase PrintStream (y también de la clase PrintWriter) que permite imprimir una cadena de texto formateada.
+El método **printf()** en Java es un método estático de la clase `PrintStream` (y también de la clase `PrintWriter`) que permite imprimir una cadena de texto formateada.
 
 Este método toma una cadena de formato como primer argumento, seguida de los valores que se van a insertar en la cadena de formato en los lugares especificados por los marcadores de posición.
 
@@ -245,7 +245,5 @@ System.out.println("Me gusta decir 'Hola mundo'");
 ```java
 System.out.println("La ruta es C:\\Windows\\System32");
 ```
-
-
 
 En resumen, los caracteres de escape en Java son caracteres especiales que tienen un significado especial y se representan con una barra invertida **\\** seguida de otro carácter.
