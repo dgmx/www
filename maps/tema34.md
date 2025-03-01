@@ -1,3 +1,9 @@
+---
+title: "Tema 34 Sistemas Gestores de Bases de Datos"
+parent: "Maps"
+nav_exclude: true
+---
+
 # Tema 34: Sistemas Gestores de Bases de Datos. Funciones. Componentes. Arquitecturas de referencia y operacionales. Tipos de sistemas.
 
 ## 1. Introducción
