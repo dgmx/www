@@ -37,14 +37,26 @@ IPTABLES es una herramienta de firewall en sistemas Linux que permite filtrar, m
    - Un criterio de coincidencia (por ejemplo, dirección IP, puerto, protocolo).
    - Una acción (ACCEPT, DROP, REJECT).
 
+4. **Argumentos**:
+   1. `-A <CHAIN>`  : Añade regla a la cadena especificada
+   2. `-D <CHAIN>`  : Eliminar Regla 
+   3. `-s <SOURCE>` : Fuente, IP de procedencia 
+   4. `-j <ACTION>` : (jump) - Salto (ACCEPT, DROP or REJECT)
+   5. `-p <protocol>` : Protocolo 
+   6. `--dport <port>`: Destination Port
+   7. `--sport: <port>`: Puerto fuente,
+   8. `-i` :interfaz entrante
+   9. `-o` :interfaz saliente
+   10. `-s` :dirección IP origen 
+   11. `-d` :dirección IP destino
 
 ## **Diseño de un Firewall con IPTABLES**
 
 1. **Definir políticas por defecto**: Establece qué hacer con el tráfico que no coincide con ninguna regla.
-   - Ejemplo: `iptables -P INPUT DROP` (rechazar todo el tráfico entrante por defecto).
+   - Ejemplo: `iptables -P INPUT DROP` (rechazar todo el tráfico entrante por defecto). (-P: policy, --p: policy)
 
 2. **Permitir tráfico necesario**: Abre solo los puertos y servicios esenciales.
-   - Ejemplo: `iptables -A INPUT -p tcp --dport 22 -j ACCEPT` (permitir SSH).
+   - Ejemplo: `iptables -A INPUT -p tcp --dport 22 -j ACCEPT` (permitir SSH). (-A:Add, -p: protocol, --dport: Destination Port, -j: JUMP )
 
 3. **Bloquear tráfico no deseado**: Bloquea direcciones IP o rangos sospechosos.
    - Ejemplo: `iptables -A INPUT -s 192.168.1.100 -j DROP`.
@@ -63,11 +75,11 @@ iptables -L -v -n
 ```bash
 iptables -A INPUT -p tcp --dport 80 -j ACCEPT
 ```
-3. **Eliminar una regla**: Eliminar la regla de HTTP:
+1. **Eliminar una regla**: Eliminar la regla de HTTP:
 ```bash
 iptables -D INPUT -p tcp --dport 80 -j ACCEPT
 ```
-4. **Guardar reglas**:
+1. **Guardar reglas**:
 + En sistemas basados en Debian/Ubuntu:
 ```bash
 iptables-save > /etc/iptables/rules.v4
