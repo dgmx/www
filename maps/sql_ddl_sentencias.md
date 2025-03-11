@@ -1,3 +1,10 @@
+---
+title: "SQL como DDL (Lenguaje de Definición de Datos)"
+parent: "Maps"
+nav_exclude: true
+---
+
+
 # SQL como DDL (Lenguaje de Definición de Datos)
 
 ## 1. Creación y Eliminación de Bases de Datos  
