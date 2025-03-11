@@ -102,3 +102,8 @@ nav_exclude: true
 - [MySQL](https://www.mysql.com/)
 - [MongoDB](https://www.mongodb.com/)
 - [MariaDB](https://mariadb.org/)
+
+
+[Mapa Visual](tema34map.html){: .btn .btn-blue }
+
+[Generar PDF](tema34.pdf){: .btn .btn-purple }
