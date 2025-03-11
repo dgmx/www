@@ -14,6 +14,17 @@ nav_exclude: true
 - Curriculo Familia Profesional
 
 ## 2. Sistemas Gestores de Bases de Datos (SGBD)
+
+- **Base de datos**: Conjunto de datos almacenados en soporte informatico. Datos relacionados y estructurados. Persistentes. Usados por las empresas.
+- **SGDBD**: Colección de programas para crear y mantener un base de datos. Facilita la definicion, construcción y manipulación.
+  **Ventajas**
+   - Visión abstracta de los datos (ocultan la complejidad de almacenamiento y mantenimiento)
+   - Disminuyen redundancia e inconsistencia
+   - Aseguran Integridad datos
+   - Aumentan la seguridad y privacidad
+   - Permiten compartir datos y accesos concurrentes
+   - Copias de seguridad y mecanismos de recuperacion de datos
+
 - 2.1. **Funciones**
   -  A) **Definicion**: Permite definir y describir los esquemoas de la Base de Datos. Lenguaje DDL
   -  B) **Manipulación**: Operaciones de gestion mediante Lenguaje DML: Consulta o actualizar los datos. 
@@ -27,7 +38,7 @@ nav_exclude: true
     - **DCL**: Encargado del control y seguridad de los datos
     - **DML**: Gestiona la informacion de la base de datos, permite recuperar, manipular, modificar y eliminar registros.
   
-  - 2.2.2. **Diccionario de datos**: Almacena informacion sobre la totalidad de los datos que forman la base de datos. Es una metabase de datos. Caracteristicas logicas yde las estructuras que almacenan los datos
+  - 2.2.2. **Diccionario de datos**: Almacena informacion sobre la totalidad de los datos que forman la base de datos. Es una metabase de datos. Caracteristicas logicas y de las estructuras que almacenan los datos
   - 2.2.3. **Gestor de base de datos**: Proporciona interfaz entre los datos y los programas de aplicacion que los manejan. Es un interprete entre usuario y datos. Se encarga de: 
     - Garantizar privacidad, integridad y seguridad de los datos
     - Control de accesos concurrentes
@@ -40,28 +51,28 @@ nav_exclude: true
   - 2.2.5. **Herramientas de base de datos**: Conjunto de aplicaciones que permiten a los administradores la gestion de la base de datos, privaciddad (gestion de usuarios y permisos), informes, formularios, interfaces gráficas,etc
   
 - 2.3. **Arquitecturas de Referencia y Operacionales**
-   - 2.3.1. Arquitectura de referencia (ANSI-SPARC). Separar los programas de aplicacion de la base de datos.
+   - 2.3.1. **Arquitectura de referencia** (ANSI-SPARC). Separar los programas de aplicacion de la base de datos.
       - Nivel interno: Nivel mas bajo de abstracción. Estructura fisica de los datos. Dispositivos de almacenamiento fisico. Usuarios Administradores
       - Nivel lógico: Esquema conceptual. Detalla las entidades, atributos y relaciones. Integridad y confidencialidad. Usuarios Programadores
       - Nivel externo: Describe las vistas para los usuarios, dependiendo del perfil. 
-   - 2.3.2. Arquitectura operacional: Varian en relacion al SGBD.
+   - 2.3.2. **Arquitectura operacional**: Varian en relacion al SGBD.
       - Centralizada: Sistema computacional único, sin interacción. Sistemas monousuario o BD en sistemas de alto rendimiento. Sin concurrencia ni sistemas de recuperación.
       - Cliente-servidor: Cliente parte visible (formularios, informes, etc) y servidor donde se encuentran las estructuras de datos, consultas, control de concurrecia y recuperacion.
       - Paralela: Sistemas multiprocesador y discos a traves de un red de alta velocidad
       - Distribuida: Multiples computadores llamados nodos en diferentes lugares geográficos. Evitan cuellos de botella
-- 2.4. Tipos de Sistemas
+- 2.4. **Tipos de Sistemas**
   - 2.4.1. Según el modelo lógico
-      - Jerárquico. Jerarquía padre-hijo. En desuso
-      - En red. En respuesta a las limitaciones del anterior. 
+      - Jerárquico. Jerarquía relación entre entidades padre-hijo. Nodos En desuso
+      - En red. Organiza la información en registro y enlaces. En respuesta a las limitaciones del anterior. 
       - Relacional. Tablas bidimensionales (relaciones) Fila: Registro o tupla, Columna: Atributo.
-      - Orientado a objetos
-      - Objeto-relacional
+      - Orientado a objetos: relaciones entre objetos y atributos. Incluye herencia y tipos definidos. En auge.
+      - Objeto-relacional. Evolución del modelo relacinal, incorporando conceptos orientados a objetos. Oracle, SQL Server
   - 2.4.2. Según el número de usuarios
-      - Monousuario
-      - Multiusuario
+      - Monousuario: Un usuario simultaneamente
+      - Multiusuario: Varios usuarios al mismo tiempo. La mayor parte de los SGDBD son de este tipo
   - 2.4.3. Según su ubicación
-      - Centralizados
-      - Distribuidos
+      - Centralizados: BD y SGBD en el mismo equipo
+      - Distribuidos: BD y SGBD distribuidos en varios equipos conectados por red
 
 ## 3. SGBD Comerciales y Libres
 - 3.1. Comerciales
