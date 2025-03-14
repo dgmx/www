@@ -46,7 +46,7 @@ La misma cuenta con múltiples bases de datos y ejercicios.
 
 [![DER Universidad](images/Imagen1.png)]()
 
-[Instituto](actividad35.md)
+[Ir a los ejercicios de Instituto](actividad35.md)
 
 
 #### Repositorio de MariaDB SQL completo con ejercicios y scripts:
