@@ -42,6 +42,12 @@ La misma cuenta con múltiples bases de datos y ejercicios.
 
 <a href="universidad.html">Ir a los ejercicios de Universidad</a>
 
+### Base de datos N° 6 - Instituto
+
+[![DER Universidad](images/Imagen1.png)]()
+
+[Instituto](actividad35.md)
+
 
 #### Repositorio de MariaDB SQL completo con ejercicios y scripts:
 
