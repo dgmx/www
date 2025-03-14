@@ -3,7 +3,7 @@ title: "06. Buenas Prácitcas"
 parent: "IPTables"
 ---
 
-### **1\. Configuración del Firewall**
+### **1. Configuración del Firewall**
 
 *   **Habilita un firewall**: Usa `ufw` (Uncomplicated Firewall) o `firewalld` para gestionar las reglas de firewall.
     
@@ -21,25 +21,25 @@ parent: "IPTables"
         ```bash
         sudo systemctl start firewalld
         sudo systemctl enable firewalld
-        sudo firewall-cmd --add-service\=ssh \--permanent
-        sudo firewall-cmd --add-service\=http \--permanent
-        sudo firewall-cmd --add-service\=https \--permanent
-        sudo firewall-cmd \--reload
+        sudo firewall-cmd --add-service=ssh --permanent
+        sudo firewall-cmd --add-service=http --permanent
+        sudo firewall-cmd --add-service=https --permanent
+        sudo firewall-cmd --reload
         ```
 *   **Bloquea puertos innecesarios**: Cierra todos los puertos que no estén en uso.
     
     ```bash
-    sudo ufw deny <puerto\>
+    sudo ufw deny <puerto>
     ```
 
 * * *
 
-### **2\. Configuración de SSH**
+### **2. Configuración de SSH**
 
 *   **Cambia el puerto predeterminado**: Cambia el puerto SSH (22) a uno no estándar.
     
     ```bash
-    sudo nano /etc/ssh/sshd\_config
+    sudo nano /etc/ssh/sshd_config
     ```
     Cambia la línea `Port 22` a `Port <nuevo_puerto>`.
     
@@ -53,7 +53,7 @@ parent: "IPTables"
     *   Genera un par de claves SSH en el cliente:
         
          ```bash
-        ssh-keygen \-t rsa \-b 4096
+        ssh-keygen -t rsa -b 4096
          ```
     *   Copia la clave pública al servidor:
         
@@ -80,18 +80,18 @@ parent: "IPTables"
 
 * * *
 
-### **3\. Actualizaciones del sistema**
+### **3. Actualizaciones del sistema**
 
 *   **Mantén el sistema actualizado**: Instala actualizaciones de seguridad regularmente.
     
      ```bash
-    sudo apt update && sudo apt upgrade \-y  \# Debian/Ubuntu
-    sudo yum update \-y                     \# RedHat/CentOS
+    sudo apt update && sudo apt upgrade -y  # Debian/Ubuntu
+    sudo yum update -y                     # RedHat/CentOS
      ```
 *   **Habilita actualizaciones automáticas**:
     
      ```bash
-    sudo apt install unattended-upgrades   \# Debian/Ubuntu
+    sudo apt install unattended-upgrades   # Debian/Ubuntu
     sudo nano /etc/apt/apt.conf.d/20auto-upgrades
      ```
     Asegúrate de que las siguientes líneas estén presentes:
@@ -103,47 +103,47 @@ parent: "IPTables"
 
 * * *
 
-### **4\. Configuración de red**
+### **4. Configuración de red**
 
 *   **Deshabilita servicios innecesarios**: Detén y deshabilita servicios que no uses.
     
      ```bash
-    sudo systemctl stop <servicio\>
-    sudo systemctl disable <servicio\>
+    sudo systemctl stop <servicio>
+    sudo systemctl disable <servicio>
      ```
 *   **Usa IPTables o nftables para filtrar tráfico**:
     
     *   Bloquea tráfico no deseado:
         
          ```bash
-        sudo iptables \-A INPUT \-p tcp \--dport 22 \-j ACCEPT
-        sudo iptables \-A INPUT \-j DROP
+        sudo iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+        sudo iptables -A INPUT -j DROP
          ```
         
     *   Guarda las reglas:
         
          ```bash
-        sudo iptables-save \> /etc/iptables/rules.v4
+        sudo iptables-save > /etc/iptables/rules.v4
          ```
 *   **Configura un IDS/IPS**: Usa herramientas como **Snort** o **Suricata** para detectar y prevenir intrusiones.
     
 
 * * *
 
-### **5\. Monitoreo de red**
+### **5. Monitoreo de red**
 
 *   **Usa herramientas de monitoreo**:
     
     *   **`netstat` o `ss`**: Para ver conexiones activas.
         
          ```bash
-        sudo netstat \-tuln
-         ```sudo ss \-tuln
+        sudo netstat -tuln
+         ```sudo ss -tuln
         
     *   **`tcpdump`**: Para capturar y analizar tráfico de red.
         
          ```bash
-        sudo tcpdump \-i eth0
+        sudo tcpdump -i eth0
          ```
     *   **`Wireshark`**: Para análisis avanzado de paquetes.
         
@@ -155,7 +155,7 @@ parent: "IPTables"
 
 * * *
 
-### **6\. Uso de VPN**
+### **6. Uso de VPN**
 
 *   **Configura una VPN**: Usa OpenVPN o WireGuard para cifrar el tráfico de red.
     
@@ -172,7 +172,7 @@ parent: "IPTables"
 
 * * *
 
-### **7\. Configuración de DNS**
+### **7. Configuración de DNS**
 
 *   **Usa DNS seguros**: Configura servidores DNS como Cloudflare (1.1.1.1) o Google DNS (8.8.8.8).
     
@@ -188,19 +188,19 @@ parent: "IPTables"
 
 * * *
 
-### **8\. Protección contra ataques DDoS**
+### **8. Protección contra ataques DDoS**
 
 *   **Usa herramientas de mitigación**: Configura `fail2ban` o `mod_evasive` (para Apache).
     
 *   **Limita el número de conexiones**:
     
     ```bash
-    sudo iptables \-A INPUT \-p tcp \--dport 80 \-m connlimit --connlimit-above 20 \-j DROP
+    sudo iptables -A INPUT -p tcp --dport 80 -m connlimit --connlimit-above 20 -j DROP
      ```
 
 * * *
 
-### **9\. Cifrado de datos**
+### **9. Cifrado de datos**
 
 *   **Cifra el tráfico de red**: Usa HTTPS, SSH, o VPN para proteger los datos en tránsito.
     
@@ -212,7 +212,7 @@ parent: "IPTables"
 
 * * *
 
-### **10\. Auditorías y pruebas de seguridad**
+### **10. Auditorías y pruebas de seguridad**
 
 *   **Realiza escaneos de vulnerabilidades**: Usa herramientas como **Nmap**, **OpenVAS**, o **Lynis**.
     
@@ -225,25 +225,25 @@ parent: "IPTables"
 
 * * *
 
-### **11\. Políticas de seguridad**
+### **11. Políticas de seguridad**
 
 *   **Implementa políticas de contraseñas fuertes**: Usa `pam_cracklib` o `pam_pwquality`.
     
 *   **Habilita la expiración de contraseñas**:
     
     ```bash
-    sudo chage \-M 90 usuario
+    sudo chage -M 90 usuario
      ```
 *   **Usa SELinux o AppArmor**: Habilita y configura módulos de seguridad del kernel.
     
     ```bash
-    sudo setenforce 1  \# SELinux
-    sudo aa-enforce /path/to/profile  \# AppArmor
+    sudo setenforce 1  # SELinux
+    sudo aa-enforce /path/to/profile  # AppArmor
      ```
 
 * * *
 
-### **12\. Copias de seguridad**
+### **12. Copias de seguridad**
 
 Mantener copias de seguridad regulares es esencial para garantizar la recuperación de datos en caso de fallos, ataques o desastres. Aquí hay algunas recomendaciones y herramientas para implementar copias de seguridad seguras:
 
@@ -252,7 +252,7 @@ Mantener copias de seguridad regulares es esencial para garantizar la recuperaci
 *   **`rsync`**: Sincroniza archivos y directorios de manera eficiente.
     
     ```bash
-    sudo rsync \-av /ruta/origen /ruta/destino
+    sudo rsync -av /ruta/origen /ruta/destino
     ```
 *   **`BorgBackup`**: Herramienta de copias de seguridad con deduplicación y compresión.
     
@@ -264,8 +264,8 @@ Mantener copias de seguridad regulares es esencial para garantizar la recuperaci
     
     ```bash
     sudo apt install restic
-    restic \-r /ruta/backup init
-    restic \-r /ruta/backup backup /ruta/origen
+    restic -r /ruta/backup init
+    restic -r /ruta/backup backup /ruta/origen
     ```
 
 #### **Cifrado de copias de seguridad**
@@ -275,7 +275,7 @@ Mantener copias de seguridad regulares es esencial para garantizar la recuperaci
     *   Usa `gpg` para cifrar archivos:
         
         ```bash
-        gpg \-c archivo.txt
+        gpg -c archivo.txt
         ```
     *   O cifra el disco donde se almacenan las copias con LUKS:
         
@@ -288,12 +288,12 @@ Mantener copias de seguridad regulares es esencial para garantizar la recuperaci
 *   Usa `cron` para programar copias de seguridad automáticas:
     
     ```bash
-    crontab \-e
+    crontab -e
     ```
     Añade una línea como esta para ejecutar una copia diaria a las 2 AM:
     
     ```bash
-    0 2 \* \* \* /ruta/al/script/de/backup.sh
+    0 2 * * * /ruta/al/script/de/backup.sh
     ```
 
 #### **Verificación de copias de seguridad**
@@ -308,7 +308,7 @@ Mantener copias de seguridad regulares es esencial para garantizar la recuperaci
     *   Con `Restic`:
         
         ```bash
-        restic \-r /ruta/backup check
+        restic -r /ruta/backup check
         ```
 
 #### **Almacenamiento externo**
@@ -318,7 +318,7 @@ Mantener copias de seguridad regulares es esencial para garantizar la recuperaci
     *   Ejemplo con `rsync` hacia un servidor remoto:
         
         ```bash
-        rsync \-avz \-e ssh /ruta/origen usuario@servidor:/ruta/destino
+        rsync -avz -e ssh /ruta/origen usuario@servidor:/ruta/destino
         ```
 
 * * *

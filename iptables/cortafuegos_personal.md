@@ -76,10 +76,11 @@ Consultas y respuestas DNS
 
 Comprobamos su funcionamiento con una consulta DNS:
 
-    dig @1.1.1.1 www.josedomingo.org
+    dig @1.1.1.1 www.diegojgonzalez.org
     
 
-Tráfico http (que la máquina pueda navegar)-------------------------------------------------------------------
+Tráfico http (que la máquina pueda navegar)
+-------------------------------------------
 
     iptables -A OUTPUT -o eth0 -p tcp --dport 80 -m state --state NEW,ESTABLISHED -j ACCEPT
     iptables -A INPUT -i eth0 -p tcp --sport 80 -m state --state ESTABLISHED -j ACCEPT
