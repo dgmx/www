@@ -28,7 +28,8 @@ CREATE TABLE DEPARTAMENTOS(
     presu decimal(6,2),   
     depde int unsigned,   
     NOMDE varchar(50),   
-    FOREIGN KEY(numce) REFERENCES CENTROS(Numce) ON DELETE CASCADE 
+    FOREIGN KEY(numce) REFERENCES CENTROS(Numce) ON DELETE CASCADE;
+    FOREIGN KEY(depde) REFERENCES DEPARTAMENTOS(Numce)
     );  
 ```
 **Tabla EMPLEADOS**
