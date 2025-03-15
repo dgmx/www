@@ -42,12 +42,15 @@ La misma cuenta con múltiples bases de datos y ejercicios.
 
 <a href="universidad.html">Ir a los ejercicios de Universidad</a>
 
-### Base de datos N° 6 - Instituto
+### Base de datos N° 6 - Gestión de Centros
 
 [![DER Universidad](images/Imagen1.png)]()
 
-[Ir a los ejercicios de Instituto](actividad35.md)
+[Ir a los ejercicios de Gestión de Centros](actividad35.md)
 
+### Base de datos N° 7 - Gestión de Departamentos
+
+[Ir a los ejercicios de Gestión de Centros](departamentos.md)
 
 #### Repositorio de MariaDB SQL completo con ejercicios y scripts:
 

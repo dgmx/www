@@ -1,9 +1,10 @@
 ---
-title: 06. Instituto
+title: 06. Gestión de Centros
 parent: "SQL"
 ---
 
-# Ejercicios - Instituto
+# Ejercicios - Gestión de Centros
+
 
 ![Modelo](images/Imagen1.png)
 
