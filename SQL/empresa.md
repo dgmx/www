@@ -6,6 +6,42 @@ parent: "SQL"
 
 Dada la base de datos que se muestra en la figura:
 
+```mermaid
+erDiagram
+    EMPLEADO {
+        char(3) cdemp PK
+        varchar(30) nombre
+        date fecha_ingreso
+        decimal salario
+        char(3) cdjefe FK
+        char(2) cddep FK
+    }
+    
+    DEPARTAMENTO {
+        char(2) cddep PK
+        varchar(30) nombre
+        varchar(20) ciudad
+    }
+    
+    PROYECTO {
+        char(3) cdpro PK
+        varchar(30) nombre
+        char(2) cddep FK
+    }
+    
+    TRABAJA {
+        char(3) cdemp FK
+        char(3) cdpro FK
+        int nhoras
+    }
+
+    EMPLEADO ||--o{ EMPLEADO : "es jefe de"
+    EMPLEADO }|--|| DEPARTAMENTO : "pertenece a"
+    DEPARTAMENTO ||--o{ PROYECTO : "gestiona"
+    EMPLEADO ||--o{ TRABAJA : "trabaja en"
+    PROYECTO ||--o{ TRABAJA : "es asignado a"
+```
+
 ![empleados](images/empleados.png)
 
 **Implementar las siguientes consultas:**

@@ -5,7 +5,38 @@ parent: "SQL"
 
 # Ejercicios - Gestión de Ventas
 
-[![DER Gestión Ventas](images/der-gestion-ventas.png)]()
+
+```mermaid
+erDiagram
+
+    COMERCIAL ||--o{ PEDIDO : provee
+    COMERCIAL {
+        INT id PK
+        VARCHAR(100) nombre
+        VARCHAR(100) apellido1
+        VARCHAR(100) apellido2
+        VARCHAR(150) ciudad
+        FLOAT comision
+        
+    }
+    PEDIDO {
+        INT id PK
+        DOUBLE cantidad
+        DATE fecha
+        INT id_comercial FK
+        INT id_cliente FK
+    }
+    CLIENTE ||--o{ PEDIDO : hace
+    CLIENTE{
+        INT id PK
+        VARCHAR(100) nombre
+        VARCHAR(100) apellido1
+        VARCHAR(100) apellido2
+        VARCHAR(100) ciudad
+        INT categoria
+    }
+
+```
 
 **Creacion de la bases de datos, tablas e inserts de datos**
 ```sql

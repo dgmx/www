@@ -21,6 +21,7 @@ erDiagram
     }
 
 ```
+
 `FABRICANTE` tiene una clave primaria id.  
 `PRODUCTO` también tiene una clave primaria id y una clave foránea id_fabricante que referencia `FABRICANTE(id)`.  
 La relación indica que un `FABRICANTE` puede tener múltiples `PRODUCTOS`, pero cada `PRODUCTO` pertenece a un único `FABRICANTE`.
