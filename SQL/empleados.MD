@@ -3,10 +3,31 @@ title: 02. Gestión de Empleados
 parent: "SQL"
 ---
 
-
 # Ejercicios - Gestión de Empleados
 
-[![DER Gestión Empleados](images/der-gestion-empleados.png)]()
+```mermaid
+erDiagram
+    
+    
+    EMPLEADO {
+        int id PK
+        varchar(9) nif
+        varchar(100) nombre 
+        varchar(100) apellido
+        int codigo_departamento FK
+    }
+    
+    DEPARTAMENTO {
+        int id PK
+        varchar(100) nombre
+        double presupuesto
+      
+    }
+    
+    EMPLEADO  ||--o{ DEPARTAMENTO: pertenece
+    
+```
+
 
 **Creacion de la bases de datos, tablas e inserts de datos**
 ```sql
