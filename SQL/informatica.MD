@@ -7,7 +7,7 @@ parent: "SQL"
 
 ```mermaid
 erDiagram
-    direction LR
+
     FABRICANTE ||--o{ PRODUCTO : tiene
     FABRICANTE {
         INT id PK
