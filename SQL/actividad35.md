@@ -1,4 +1,9 @@
-### Dado el siguiente modelo relacional:
+---
+title: 06. Instituto
+parent: "SQL"
+---
+
+# Ejercicios - Instituto
 
 ![Modelo](images/Imagen1.png)
 
