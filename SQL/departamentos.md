@@ -570,3 +570,148 @@ SELECT
     (COUNT(DISTINCT empleado_id) * 100.0 / (SELECT COUNT(*) FROM empleados)) AS porcentaje_empleados_con_proyectos
 FROM empleados_proyectos;
 ```
+
+
+## 🔹 Consultas con Subconsultas en SQL
+### 🔥 Subconsultas en WHERE (Filtrado por Resultados de Otra Consulta)
+
+1️⃣ Obtener empleados cuyo salario sea superior al salario promedio de la empresa.
+```sql
+SELECT nombre, apellido, salario
+FROM empleados
+WHERE salario > (SELECT AVG(salario) FROM empleados);
+```
+2️⃣ Listar empleados que ganan más que cualquier empleado del departamento de 'Ventas'.
+```sql
+SELECT nombre, apellido, salario
+FROM empleados
+WHERE salario > (SELECT MAX(salario) FROM empleados WHERE departamento_id = (SELECT id FROM departamentos WHERE nombre = 'Ventas'));
+```
+3️⃣ Obtener los empleados que trabajan en el mismo departamento que ‘Juan Pérez’.
+```sql
+SELECT nombre, apellido, departamento_id
+FROM empleados
+WHERE departamento_id = (SELECT departamento_id FROM empleados WHERE nombre = 'Juan' AND apellido = 'Pérez');
+```
+4️⃣ Seleccionar empleados que no están asignados a ningún proyecto.
+```sql
+SELECT nombre, apellido
+FROM empleados
+WHERE id NOT IN (SELECT empleado_id FROM empleados_proyectos);
+```
+5️⃣ Obtener los proyectos en los que trabaja un empleado específico (‘Ana López’).
+```sql
+SELECT nombre
+FROM proyectos
+WHERE id IN (SELECT proyecto_id FROM empleados_proyectos WHERE empleado_id = (SELECT id FROM empleados WHERE nombre = 'Ana' AND apellido = 'López'));
+```
+
+### 🏗 Subconsultas en SELECT (Valores Calculados por Subconsultas)
+
+6️⃣ Mostrar los empleados con su salario y el salario promedio de su departamento.
+```sql
+SELECT e.nombre, e.apellido, e.salario,
+       (SELECT AVG(salario) FROM empleados WHERE departamento_id = e.departamento_id) AS salario_promedio_departamento
+FROM empleados e;
+```
+7️⃣ Obtener empleados junto con el nombre de su departamento.
+```sql
+SELECT e.nombre, e.apellido,
+       (SELECT nombre FROM departamentos WHERE id = e.departamento_id) AS departamento
+FROM empleados e;
+```
+8️⃣ Listar los proyectos junto con la cantidad de empleados asignados a cada uno.
+```sql
+SELECT nombre,
+       (SELECT COUNT(*) FROM empleados_proyectos WHERE proyecto_id = proyectos.id) AS total_empleados
+FROM proyectos;
+```
+9️⃣ Mostrar el nombre del departamento con más empleados.
+```sql
+SELECT nombre
+FROM departamentos
+WHERE id = (SELECT departamento_id FROM empleados GROUP BY departamento_id ORDER BY COUNT(*) DESC LIMIT 1);
+```
+🔟 Obtener el nombre del proyecto con más empleados asignados.
+```sql
+SELECT nombre
+FROM proyectos
+WHERE id = (SELECT proyecto_id FROM empleados_proyectos GROUP BY proyecto_id ORDER BY COUNT(*) DESC LIMIT 1);
+```
+
+### 🔄 Subconsultas en FROM (Creación de Tablas Temporales)
+
+1️⃣1️⃣ Obtener la cantidad de empleados por departamento y mostrar solo los que tienen más de 5 empleados.
+```sql
+SELECT departamento, total_empleados
+FROM (SELECT d.nombre AS departamento, COUNT(e.id) AS total_empleados FROM departamentos d
+      LEFT JOIN empleados e ON d.id = e.departamento_id
+      GROUP BY d.nombre) AS empleados_por_depto
+WHERE total_empleados > 5;
+```
+1️⃣2️⃣ Obtener los empleados cuyo salario es mayor que el promedio de su propio departamento.
+```sql
+SELECT nombre, apellido, salario, departamento_id
+FROM empleados e
+WHERE salario > (SELECT AVG(salario) FROM empleados WHERE departamento_id = e.departamento_id);
+```
+1️⃣3️⃣ Listar los empleados junto con la cantidad de proyectos en los que participan.
+```sql
+SELECT e.nombre, e.apellido,
+       (SELECT COUNT(*) FROM empleados_proyectos WHERE empleado_id = e.id) AS cantidad_proyectos
+FROM empleados e;
+```
+1️⃣4️⃣ Obtener el total de salario pagado en cada departamento.
+```sql
+SELECT departamento, total_salario
+FROM (SELECT d.nombre AS departamento, SUM(e.salario) AS total_salario FROM departamentos d
+      LEFT JOIN empleados e ON d.id = e.departamento_id
+      GROUP BY d.nombre) AS salarios_por_depto;
+```
+
+### 🔍 Subconsultas con HAVING y EXISTS
+
+1️⃣5️⃣ Obtener los departamentos con más de 3 empleados.
+```sql
+SELECT nombre
+FROM departamentos
+WHERE id IN (SELECT departamento_id FROM empleados GROUP BY departamento_id HAVING COUNT(*) > 3);
+```
+1️⃣6️⃣ Listar los empleados que trabajan en más de un proyecto.
+```sql
+SELECT nombre, apellido
+FROM empleados
+WHERE id IN (SELECT empleado_id FROM empleados_proyectos GROUP BY empleado_id HAVING COUNT(*) > 1);
+```
+1️⃣7️⃣ Obtener los proyectos que tienen al menos un empleado asignado.
+```sql
+SELECT nombre
+FROM proyectos
+WHERE EXISTS (SELECT 1 FROM empleados_proyectos WHERE proyecto_id = proyectos.id);
+```
+1️⃣8️⃣ Obtener los empleados cuyo salario es mayor que el de al menos un empleado del departamento de ‘Marketing’.
+```sql
+SELECT nombre, apellido, salario
+FROM empleados e
+WHERE salario > ANY (SELECT salario FROM empleados WHERE departamento_id = (SELECT id FROM departamentos WHERE nombre = 'Marketing'));
+```
+1️⃣9️⃣ Seleccionar los empleados cuyo salario es mayor que todos los empleados del departamento ‘RRHH’.
+```sql
+SELECT nombre, apellido, salario
+FROM empleados
+WHERE salario > ALL (SELECT salario FROM empleados WHERE departamento_id = (SELECT id FROM departamentos WHERE nombre = 'RRHH'));
+```
+2️⃣0️⃣ Obtener los empleados que están en el mismo proyecto que 'Carlos Gómez'.
+```sql
+SELECT nombre, apellido
+FROM empleados
+WHERE id IN (SELECT empleado_id FROM empleados_proyectos WHERE proyecto_id IN 
+             (SELECT proyecto_id FROM empleados_proyectos WHERE empleado_id = (SELECT id FROM empleados WHERE nombre = 'Carlos' AND apellido = 'Gómez')));
+```
+
+### ✅ Resumen
+Estas consultas incluyen:  
+✅ Subconsultas en WHERE, SELECT, FROM y HAVING  
+✅ Uso de funciones agregadas (AVG, SUM, COUNT, MAX, MIN)  
+✅ Condiciones avanzadas (EXISTS, IN, ANY, ALL)  
+✅ Comparaciones con valores de otras subconsultas  
