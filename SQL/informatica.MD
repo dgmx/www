@@ -15,7 +15,7 @@ erDiagram
     }
     PRODUCTO {
         INT id PK
-        VARCHAR(1000) nombre
+        VARCHAR(100) nombre
         DOUBLE precio
         INT id_fabricante FK
     }
