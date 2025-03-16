@@ -114,6 +114,7 @@ erDiagram
 
 
 1. Creación de la base de datos y las tablas:
+
 ```sql   
 CREATE TABLE empleado (
     cdemp CHAR(3) PRIMARY KEY,                       -- Código del empleado (clave primaria)
@@ -125,8 +126,7 @@ CREATE TABLE empleado (
     FOREIGN KEY (cdjefe) REFERENCES empleado(cdemp) ON DELETE SET NULL,
     FOREIGN KEY (cddep) REFERENCES departamento(cddep) ON DELETE SET NULL
 );
-```
-```sql
+
 CREATE TABLE trabaja (
     cdemp CHAR(3),                                           -- Código del empleado
     cdpro CHAR(3),                                           -- Código del proyecto
@@ -134,16 +134,13 @@ CREATE TABLE trabaja (
     PRIMARY KEY (cdemp, cdpro),                              -- Clave primaria compuesta
     FOREIGN KEY (cdemp) REFERENCES empleado(cdemp)           -- Clave foránea que referencia a la tabla empleado
 );
-```
-```sql
+
 CREATE TABLE departamento (
     cddep CHAR(2) PRIMARY KEY,                              -- Código del departamento (clave primaria)
     nombre VARCHAR(30) NOT NULL,                            -- Nombre del departamento (no nulo)
     ciudad VARCHAR(20)                                      -- Ciudad donde se ubica el departamento
 );
-```
 
-```sql
 CREATE TABLE proyecto (
     cdpro char(3) NOT NULL,
     nombre varchar(30) NOT NULL,
@@ -153,7 +150,7 @@ CREATE TABLE proyecto (
 
 ---
 
-2. Inserts de datos
+1. Inserts de datos
 
 ```sql
 INSERT INTO `departamento` (`cddep`, `nombre`, `ciudad`) VALUES
