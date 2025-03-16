@@ -213,8 +213,109 @@ ALTER table trabaja modify nhoras int(11) check (nhoras >=0);
 
 --------------------------------
 
-3. Consultas 
+## 🔹 Consultas Básicas
+1. Seleccionar todos los empleados  
+```sql
+SELECT * FROM empleado;
+```  
+2. Seleccionar nombre y salario de los empleados    
+```sql
+SELECT nombre, salario FROM empleado;
+```  
+3. Filtrar empleados con salario mayor a 3000  
+```sql
+SELECT * FROM empleado WHERE salario > 3000;
+```   
+4. Buscar empleados con nombre que empiece con 'A'  
+```sql
+SELECT * FROM empleado WHERE nombre LIKE 'A%';
+```
+5. Ordenar empleados por salario descendente  
+```sql
+SELECT * FROM empleado ORDER BY salario DESC;
+```
 
+## 🔹 Funciones Agregadas
+6. Contar el número de empleados
+```sql
+SELECT COUNT(*) AS total_empleados FROM empleado;
+```
+7. Calcular el salario promedio
+```sql
+SELECT AVG(salario) AS salario_promedio FROM empleado;
+```
+8. Obtener el salario máximo y mínimo
+```sql
+SELECT MAX(salario) AS salario_max, MIN(salario) AS salario_min FROM empleado;
+```
+9. Sumar los salarios de todos los empleados
+```sql
+SELECT SUM(salario) AS total_salarios FROM empleado;
+```
+10. Agrupar empleados por departamento y contar cuántos hay en cada uno
+```sql
+SELECT cddep, COUNT(*) AS cantidad FROM empleado GROUP BY cddep;
+```
+
+## 🔹 Subconsultas y Joins
+
+11. Encontrar empleados con el salario más alto
+```sql
+SELECT * FROM empleado WHERE salario = (SELECT MAX(salario) FROM empleado);
+```
+12. Listar empleados con su jefe (auto-relación)
+```sql
+SELECT e1.nombre AS empleado, e2.nombre AS jefe
+FROM empleado e1
+LEFT JOIN empleado e2 ON e1.cdjefe = e2.cdemp;
+```
+13. Mostrar empleados con su departamento
+```sql
+SELECT e.nombre, d.nombre AS departamento
+FROM empleado e
+JOIN departamento d ON e.cddep = d.cddep;
+```
+
+## 🔹 Consultas con Condiciones Avanzadas
+14. Empleados con salario entre 2000 y 5000
+```sql
+SELECT * FROM empleado WHERE salario BETWEEN 2000 AND 5000;
+```
+
+15. Empleados sin jefe asignado
+```sql
+SELECT * FROM empleado WHERE cdjefe IS NULL;
+```
+16. Mostrar los 5 empleados con mayor salario
+```sql
+SELECT * FROM empleado ORDER BY salario DESC LIMIT 5;
+```
+
+## 🔹 Operaciones con Modificaciones
+
+17. Aumentar el salario de todos los empleados en 10%
+```sql
+UPDATE empleado SET salario = salario * 1.10;
+```
+18. Eliminar empleados con salario menor a 1500
+```sql
+DELETE FROM empleado WHERE salario < 1500;
+```
+
+19. Insertar un nuevo empleado
+```sql
+INSERT INTO empleado (cdemp, nombre, fecha_ingreso, salario, cdjefe, cddep)
+VALUES ('E21', 'Carlos López', '2023-05-10', 3500.00, 'E05', 'D01');
+```
+20. Crear una vista de empleados y sus departamentos
+```sql
+CREATE VIEW vista_empleados AS
+SELECT e.nombre, e.salario, d.nombre AS departamento
+FROM empleado e
+JOIN departamento d ON e.cddep = d.cddep;
+```
+
+## Consultas de EXAMEN
 + Consulta 1: De la tabla `EMPLEADO`, el código, nombre y salario de los empleados ordenados por nombre ascendentemente y por salario de manera descendente.
 
     ```sql
