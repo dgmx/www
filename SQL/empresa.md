@@ -150,9 +150,10 @@ CREATE TABLE proyecto (
 
 ---
 
-1. Inserts de datos
+2. Inserts de datos
 
 ```sql
+# Tabla Departamento
 INSERT INTO `departamento` (`cddep`, `nombre`, `ciudad`) VALUES
     ('01', 'Contabilidad-1', 'Almería'),
     ('02', 'Ventas', 'Sevilla'),
@@ -161,9 +162,8 @@ INSERT INTO `departamento` (`cddep`, `nombre`, `ciudad`) VALUES
     ('05', 'Administración', 'Córdoba'),
     ('06', 'Contabilidad-2', 'Córdoba'),
     ('07', 'Marketing', 'Granada');
-```
 
-```sql
+# Tabla Empleado
 INSERT INTO `empleado` (`cdemp`, `nombre`, `fecha_ingreso`, `salario`, `cdjefe`, `cddep`) VALUES
     ('A03', 'Pedro Rojo', '1995-03-07', 2000.00, 'A11', '01'),
     ('A07', 'Elena Blanco', '1994-04-09', 2000.00, 'A11', '02'),
@@ -179,16 +179,15 @@ INSERT INTO `empleado` (`cdemp`, `nombre`, `fecha_ingreso`, `salario`, `cdjefe`,
     ('C04', 'Ana Verde', NULL, 2000.00, 'A07', '02'),
     ('C05', 'Alfonso Amarillo', '1998-12-03', 2000.00, 'B06', '02'),
     ('C08', 'Javier Naranja', NULL, 1680.00, 'B09', '03');
-```
-```sql
+
+# Tabla Proyecto
 INSERT INTO `proyecto` (`cdpro`, `nombre`, `cddep`) VALUES
     ('AEE', 'Análisis económico energías', '04'),
     ('DAG', 'Depuración de aguas', '03'),
     ('GRE', 'Gestión de residuos', '03'),
     ('MES', 'Marketing de energía solar', '02');
-```
 
-```sql
+# Tabla Trabaja
 INSERT INTO `trabaja` (`cdemp`, `cdpro`, `nhoras`) VALUES
     ('A03', 'MES', 0),
     ('A11', 'AEE', 15),
