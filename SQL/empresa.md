@@ -310,6 +310,162 @@ FROM empleado e
 JOIN departamento d ON e.cddep = d.cddep;
 ```
 
+
+## 🔹 Consultas con JOIN entre Tablas
+
+1. Listar empleados junto con su departamento
+```
+SELECT e.nombre AS empleado, d.nombre AS departamento
+FROM empleado e
+JOIN departamento d ON e.cddep = d.cddep;
+```
+2. Mostrar empleados y sus jefes (auto-relación en empleado)
+```
+SELECT e1.nombre AS empleado, e2.nombre AS jefe
+FROM empleado e1
+LEFT JOIN empleado e2 ON e1.cdjefe = e2.cdemp;
+```
+3. Listar empleados y los proyectos en los que trabajan
+```
+SELECT e.nombre AS empleado, p.nombre AS proyecto, t.nhoras
+FROM empleado e
+JOIN trabaja t ON e.cdemp = t.cdemp
+JOIN proyecto p ON t.cdpro = p.cdpro;
+```
+4. Departamentos con sus proyectos asignados
+```
+SELECT d.nombre AS departamento, p.nombre AS proyecto
+FROM departamento d
+JOIN proyecto p ON d.cddep = p.cddep;
+```
+5. Empleados, sus departamentos y los proyectos en los que trabajan
+```
+SELECT e.nombre AS empleado, d.nombre AS departamento, p.nombre AS proyecto
+FROM empleado e
+JOIN departamento d ON e.cddep = d.cddep
+JOIN trabaja t ON e.cdemp = t.cdemp
+JOIN proyecto p ON t.cdpro = p.cdpro;
+```
+
+## 🔹 Consultas con LEFT JOIN y RIGHT JOIN
+6. Mostrar empleados y proyectos, incluyendo los empleados sin proyectos asignados
+```
+SELECT e.nombre AS empleado, p.nombre AS proyecto
+FROM empleado e
+LEFT JOIN trabaja t ON e.cdemp = t.cdemp
+LEFT JOIN proyecto p ON t.cdpro = p.cdpro;
+```
+7. Mostrar proyectos y empleados, incluyendo proyectos sin empleados asignados
+```
+SELECT p.nombre AS proyecto, e.nombre AS empleado
+FROM proyecto p
+LEFT JOIN trabaja t ON p.cdpro = t.cdpro
+LEFT JOIN empleado e ON t.cdemp = e.cdemp;
+```
+8. Mostrar empleados sin departamento asignado
+```
+SELECT e.nombre
+FROM empleado e
+LEFT JOIN departamento d ON e.cddep = d.cddep
+WHERE d.cddep IS NULL;
+```
+9. Mostrar departamentos sin empleados asignados
+```
+SELECT d.nombre
+FROM departamento d
+LEFT JOIN empleado e ON d.cddep = e.cddep
+WHERE e.cdemp IS NULL;
+```
+10. Mostrar proyectos sin empleados trabajando en ellos
+```
+SELECT p.nombre
+FROM proyecto p
+LEFT JOIN trabaja t ON p.cdpro = t.cdpro
+WHERE t.cdemp IS NULL;
+```
+## 🔹 Consultas con GROUP BY y Agregaciones
+11. Contar empleados por departamento
+```
+SELECT d.nombre AS departamento, COUNT(e.cdemp) AS total_empleados
+FROM departamento d
+LEFT JOIN empleado e ON d.cddep = e.cddep
+GROUP BY d.nombre;
+```
+12. Total de horas trabajadas por cada empleado
+```
+SELECT e.nombre AS empleado, SUM(t.nhoras) AS total_horas
+FROM empleado e
+JOIN trabaja t ON e.cdemp = t.cdemp
+GROUP BY e.nombre;
+```
+13. Salario promedio por departamento
+```
+SELECT d.nombre AS departamento, AVG(e.salario) AS salario_promedio
+FROM departamento d
+JOIN empleado e ON d.cddep = e.cddep
+GROUP BY d.nombre;
+```
+14. Número de empleados que trabajan en cada proyecto
+```
+SELECT p.nombre AS proyecto, COUNT(t.cdemp) AS total_empleados
+FROM proyecto p
+JOIN trabaja t ON p.cdpro = t.cdpro
+GROUP BY p.nombre;
+```
+15. Departamento con el mayor número de empleados
+```
+SELECT d.nombre AS departamento, COUNT(e.cdemp) AS total_empleados
+FROM departamento d
+JOIN empleado e ON d.cddep = e.cddep
+GROUP BY d.nombre
+ORDER BY total_empleados DESC
+LIMIT 1;
+```
+## 🔹 Consultas con HAVING, LIMIT y ORDER BY
+16. Proyectos con más de 3 empleados asignados
+```
+SELECT p.nombre AS proyecto, COUNT(t.cdemp) AS total_empleados
+FROM proyecto p
+JOIN trabaja t ON p.cdpro = t.cdpro
+GROUP BY p.nombre
+HAVING total_empleados > 3;
+```
+17. Los 5 empleados con más horas trabajadas en proyectos
+```
+SELECT e.nombre AS empleado, SUM(t.nhoras) AS total_horas
+FROM empleado e
+JOIN trabaja t ON e.cdemp = t.cdemp
+GROUP BY e.nombre
+ORDER BY total_horas DESC
+LIMIT 5;
+```
+18. Los 3 departamentos con el salario promedio más alto
+```
+SELECT d.nombre AS departamento, AVG(e.salario) AS salario_promedio
+FROM departamento d
+JOIN empleado e ON d.cddep = e.cddep
+GROUP BY d.nombre
+ORDER BY salario_promedio DESC
+LIMIT 3;
+```
+19. Empleados que trabajan en más de un proyecto
+```
+SELECT e.nombre AS empleado, COUNT(t.cdpro) AS total_proyectos
+FROM empleado e
+JOIN trabaja t ON e.cdemp = t.cdemp
+GROUP BY e.nombre
+HAVING total_proyectos > 1;
+```
+20. Empleados que trabajan en proyectos del departamento "Ventas"
+```
+SELECT e.nombre AS empleado, p.nombre AS proyecto, d.nombre AS departamento
+FROM empleado e
+JOIN trabaja t ON e.cdemp = t.cdemp
+JOIN proyecto p ON t.cdpro = p.cdpro
+JOIN departamento d ON p.cddep = d.cddep
+WHERE d.nombre = 'Ventas';
+```
+
 ## Consultas de EXAMEN
 + Consulta 1: De la tabla `EMPLEADO`, el código, nombre y salario de los empleados ordenados por nombre ascendentemente y por salario de manera descendente.
 
