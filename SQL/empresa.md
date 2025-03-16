@@ -7,7 +7,7 @@ parent: "SQL"
 Dada la base de datos que se muestra en la figura:
 
 ```mermaid
-erDiagram
+erDiagram 
     EMPLEADO {
         char(3) cdemp PK
         varchar(30) nombre
@@ -42,7 +42,6 @@ erDiagram
     PROYECTO ||--o{ TRABAJA : "es asignado a"
 ```
 
-![empleados](images/empleados.png)
 
 **Implementar las siguientes consultas:**
 1. Creación de tablas, con las siguientes restricciones:
