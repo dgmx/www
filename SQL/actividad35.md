@@ -5,10 +5,44 @@ parent: "SQL"
 
 # Ejercicios - Gestión de Centros
 
+```mermaid
+erDiagram
+    CENTROS ||--o{ DEPARTAMENTOS : "Tiene"
+    DEPARTAMENTOS ||--o{ EMPLEADOS : "Emplea"
+    DEPARTAMENTOS ||--o{ DEPARTAMENTOS : "Depende de"
 
-![Modelo](images/Imagen1.png)
+    CENTROS {
+        int Numce PK
+        string Nomce
+        string Dirce
+    }
 
-Crear DDL y DML de las TABLAS (_En MariaDB_):
+    DEPARTAMENTOS {
+        int numde PK
+        int numce FK
+        int direc
+        char tidir
+        decimal presu
+        int depde FK
+        string NOMDE
+    }
+
+    EMPLEADOS {
+        int Numem PK
+        int Extel
+        date Fecna
+        date Fecin
+        decimal Salar
+        decimal Comis
+        int Numhi
+        string NOMEM
+        int numde FK
+    }
+
+```
+
+
+## Crear DDL y DML de las TABLAS (_En MariaDB_):
 
 **Tabla CENTROS**
 ```sql

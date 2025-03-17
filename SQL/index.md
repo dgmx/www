@@ -52,6 +52,10 @@ La misma cuenta con múltiples bases de datos y ejercicios.
 
 [Ir a los ejercicios de Gestión de Centros](departamentos.md)
 
+### Base de datos N° 8 - Tienda de Ropa
+
+[Ir a los ejercicios de GTienda de Ropa](ropatienda.md)
+
 #### Repositorio de MariaDB SQL completo con ejercicios y scripts:
 
 [Github Repositorio](https://github.com/dgmx/Bases-de-DATOS)
