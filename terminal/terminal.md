@@ -113,8 +113,17 @@ Algunas opciones:
 Los ficheros ocultos son los que comienzan por un punto en su nombre, y no se muestran por defecto en `ls`.
 
 Ejemplo de salida :
+```bash
+ls -la
+drwxr-xr-x   8 diego  staff   256 16 mar 11:19 .
+drwxr-x---+ 67 diego  staff  2144 16 mar 11:19 ..
+drwxr-xr-x   8 diego  staff   256 29 oct 18:11 .idea
+drwxr-xr-x  23 diego  staff   736 16 feb 19:35 enviroment
+-rw-r--r--   1 diego  staff     0 16 mar 11:19 file.txt
+-rw-r--r--   1 diego  staff    59 10 oct  2023 funcion1.py
+-rwxr-xr-x   1 diego  staff   235 10 oct  2023 numbers.py
+```
 
-![](https://dgmx.duckdns.org/pluginfile.php/467/mod_page/content/3/ls-alh.png)  
 
 Las columnas significan:
 
@@ -221,7 +230,7 @@ Muchos comandos como `echo` y `cat` devuelven texto como salida. Este texto se p
 
 *   Si el fichero con ese nombre no existe, se crea
 *   Si el fichero existe **se reemplazan sus contenidos**, perdiéndose irrecuperablemente lo que tuviese antes
-
+```
     # echo imprime un texto por pantalla
     $ echo "Hola Mundo"
     $ echo "Hola Mundo" > hello.txt
@@ -230,12 +239,12 @@ Muchos comandos como `echo` y `cat` devuelven texto como salida. Este texto se p
     $ cat hello.txt
     $ cat file1 > file2
     
-
+```
 Si se ponen dos ángulos seguidos, el texto redirigido se añade al final del fichero, sin reemplazarlo.
-
+```
     $ echo "Bye" >> hello.txt
     $ cat file1 >> file2
-    
+``` 
 
 ### `|` — Redirección entre comandos
 
