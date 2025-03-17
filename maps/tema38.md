@@ -1,3 +1,9 @@
+---
+title: "Modelo de Datos Relacional. Estructura. Operaciones. Algebra Relacional"
+parent: "Maps"
+nav_exclude: true
+---
+
 # Tema 38: Modelo de Datos Relacional. Estructura. Operaciones. Algebra Relacional  
 
 ## 1. Introducción  
