@@ -4,9 +4,9 @@ parent: "Maps"
 nav_exclude: true
 ---
 
-# 🌐 Modelo de Datos Relacional
+# Tema 38 Modelo de Datos Relacional
 
-## 📌 Introducción
+## 1. Introducción
 - Importancia de las bases de datos
 - Modelos tradicionales: 
   - Jerárquico
@@ -14,16 +14,16 @@ nav_exclude: true
   - Relacional
 - Aplicaciones en educación y el mercado laboral
 
-## 📌 Modelo de Datos Relacional
+## 2. Modelo de Datos Relacional
 
-### 📌 Modelo de Datos
+### 2.1 Modelo de Datos
 - **Definición** de base de datos y SGBD
 - **Niveles de abstracción**
   - Conceptual (Ej: Entidad-Relación)
   - Lógico (Ej: Modelo Relacional)
   - Físico (Estructuras internas del SGBD)
 - **Características y evolución**
-### 📌 Modelo Relacional
+### 2.2 Modelo Relacional
 - **Ventajas**
   - Evita la duplicidad de registros
   - Garantiza la integridad referencial
@@ -41,40 +41,40 @@ nav_exclude: true
   - Sencillez en el uso y administración de bases de datos
 
 
-## 📌 Estructura del Modelo Relacional
-- **Relación o Tabla**
+## 3. Estructura del Modelo Relacional
+### 3.1 **Relación o Tabla**
   - Filas (tuplas)
   - Columnas (atributos)
   - Cardinalidad y grado
-- **Dominios y atributos**
-- **Claves**
+### 3.2 **Dominios y atributos**
+### 3.3 **Claves**
   - Clave primaria, alternativa y ajena
-- **Restricciones de Integridad**
+### 3.4 **Restricciones de Integridad**
   - Inherentes
   - De usuario
   - Referencial
-- **Índices**
+### 3.5 **Índices**
 
-## 📌 Operaciones Relacionales
+## 4. Operaciones Relacionales
 - Inserción, borrado, modificación y consulta
 - Lenguajes:
   - Algebraicos
   - Predicativos
 
-## 📌 Álgebra Relacional
-### 🔹 Operadores primitivos
+## 5. Álgebra Relacional
+### Operadores primitivos
 - Unión
 - Diferencia
 - Producto cartesiano
 - Proyección
 - Selección
 
-### 🔹 Operadores derivados
+### Operadores derivados
 - Intersección
 - División
 - Join y Natural Join
 
-## 📌 Aplicaciones en Educación y Trabajo
+## 6. Aplicaciones en Educación y Trabajo
 - **Contexto escolar**: Uso en ESO, Bachillerato y Formación Profesional
 - **Contexto laboral**:
   - Banca
@@ -83,7 +83,7 @@ nav_exclude: true
   - Legislación
 - **Tendencias futuras**: IA y entornos Multicloud
 
-## 📌 Conclusión
+## 7. Conclusión
 - Relevancia del modelo relacional
 - Expansión hacia modelos objeto-relacionales
 - Ejemplos de SGBD actuales: 
