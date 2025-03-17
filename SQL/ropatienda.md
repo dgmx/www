@@ -1,4 +1,7 @@
-
+---
+title: 08. Tienda de Ropa
+parent: "SQL"
+---
 
 
 ## Tienda de Ropa
