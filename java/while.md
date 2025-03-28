@@ -21,7 +21,8 @@ La sintaxis básica de la sentencia **while en Java** es:
 
 ```java
 while (condición) {     
-// bloque de código a ejecutar mientras se cumpla la condición }
+// bloque de código a ejecutar mientras se cumpla la condición
+}
 ```
 
 La condición es una expresión booleana que se evalúa antes de cada iteración del ciclo. Si la condición es verdadera, se ejecuta el bloque de código dentro del ciclo y luego se vuelve a evaluar la condición. Si la condición es falsa, el ciclo se detiene y se continúa con la ejecución del código después del ciclo.
@@ -32,7 +33,8 @@ Es importante asegurarse de que la condición finalice en algún momento, para e
 int i = 0; 
 while (i < 10) {     
     System.out.println(i);    
-    i++; }
+    i++;
+}
 ```
 
 
@@ -46,7 +48,8 @@ Más Ejemplos
 int i = 1; 
 while (i <= 10) {     
     System.out.println(i);    
-    i++; }
+    i++;
+}
 ```
 
 
@@ -74,6 +77,7 @@ System.out.println("La suma de los números ingresados es: " + sum);
 int j = 2; 
 while (j <= 20) {     
     System.out.println(j);    
-    j += 2; }
+    j += 2;
+}
 ```
 
