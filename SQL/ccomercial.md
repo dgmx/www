@@ -197,20 +197,9 @@ INSERT INTO DetallesOrden VALUES
 
 ```
 
-### Consultas con patrones de cadena, rangos y conjuntos
 
-```sql
-SELECT * FROM Clientes where ContactoNombre Like 'E%';
-SELECT * FROM Clientes where ContactoNombre Like '%F%';
-SELECT * FROM Clientes where ContactoNombre Like '_a%';
-SELECT * FROM Productos WHERE Precio BETWEEN 15 AND 20;
-SELECT * FROM Productos WHERE Precio >=15 AND Price<=20;
-SELECT * FROM Clientes WHERE Pais IN ('UK','Spain','Austria');
-SELECT * FROM Clientes WHERE Pais='UK' OR Pais='España' OR Pais='Austria';
-SELECT * FROM Clientes WHERE ContactoNombre LIKE 'J%z';
-```
 
-# Consultas SQL con ORDER BY, IN, BETWEEN y LIKE
+## Consultas SQL con ORDER BY, IN, BETWEEN y LIKE
 
 ## 1️⃣ Ordenar clientes por ciudad en orden alfabético  
 ```sql
@@ -260,3 +249,30 @@ SELECT * FROM Ordenes WHERE TransportistaID BETWEEN 2 AND 5;
 ## 🔟 Seleccionar productos con precio entre 2 y 5 euros y ordenarlos por precio ascendente  
 ```sql
 SELECT * FROM Productos WHERE PrecioUnitario BETWEEN 2 AND 5 ORDER BY PrecioUnitario ASC;
+```
+### Otras Consultas con patrones de cadena, rangos y conjuntos
+
+```sql
+SELECT * FROM Clientes where ContactoNombre Like 'E%';
+```
+```sql
+SELECT * FROM Clientes where ContactoNombre Like '%F%';
+```
+```sql
+SELECT * FROM Clientes where ContactoNombre Like '_a%';
+```
+```sql
+SELECT * FROM Productos WHERE Precio BETWEEN 15 AND 20;
+```
+```sql
+SELECT * FROM Productos WHERE Precio >=15 AND Price<=20;
+```
+```sql
+SELECT * FROM Clientes WHERE Pais IN ('UK','Spain','Austria');
+```
+```sql
+SELECT * FROM Clientes WHERE Pais='UK' OR Pais='España' OR Pais='Austria';
+```
+```sql
+SELECT * FROM Clientes WHERE ContactoNombre LIKE 'J%z';
+```
