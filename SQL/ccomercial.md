@@ -9,7 +9,7 @@ CREATE DATABASE IF NOT EXISTS centro_comercial;
 USE centro_comercial;
 
 CREATE TABLE Clientes (
-    ClienteID INT PRIMARY KEY,
+    ClienteID INT AUTO_INCREMENT PRIMARY KEY,
     NombreEmpresa VARCHAR(255),
     ContactoNombre VARCHAR(255),
     Direccion VARCHAR(255),
@@ -19,7 +19,7 @@ CREATE TABLE Clientes (
 );
 
 CREATE TABLE Empleados (
-    EmpleadoID INT PRIMARY KEY,
+    EmpleadoID INT AUTO_INCREMENT PRIMARY KEY,
     Apellido VARCHAR(100),
     Nombre VARCHAR(100),
     FechaNacimiento DATE,
@@ -28,13 +28,13 @@ CREATE TABLE Empleados (
 );
 
 CREATE TABLE Transportistas (
-    TransportistaID INT PRIMARY KEY,
+    TransportistaID INT AUTO_INCREMENT PRIMARY KEY,
     NombreCompania VARCHAR(255),
     Telefono VARCHAR(50)
 );
 
 CREATE TABLE Ordenes (
-    OrdenID INT PRIMARY KEY,
+    OrdenID INT AUTO_INCREMENT PRIMARY KEY,
     ClienteID INT,
     EmpleadoID INT,
     FechaOrden DATE,
@@ -45,13 +45,13 @@ CREATE TABLE Ordenes (
 );
 
 CREATE TABLE Categorias (
-    CategoriaID INT PRIMARY KEY,
+    CategoriaID INT AUTO_INCREMENT PRIMARY KEY,
     CategoriaNombre VARCHAR(255),
     Descripcion TEXT
 );
 
 CREATE TABLE Suministradores (
-    SuministradorID INT PRIMARY KEY,
+    SuministradorID INT AUTO_INCREMENT PRIMARY KEY,
     NombreCompania VARCHAR(255),
     NombreContacto VARCHAR(255),
     Direccion VARCHAR(255),
@@ -62,7 +62,7 @@ CREATE TABLE Suministradores (
 );
 
 CREATE TABLE Productos (
-    ProductoID INT PRIMARY KEY,
+    ProductoID INT AUTO_INCREMENT PRIMARY KEY,
     ProductoNombre VARCHAR(255),
     SuministradorID INT,
     CategoriaID INT,
@@ -73,7 +73,7 @@ CREATE TABLE Productos (
 );
 
 CREATE TABLE DetallesOrden (
-    DetallesOrdenID INT PRIMARY KEY,
+    DetallesOrdenID INT AUTO_INCREMENT PRIMARY KEY,
     OrdenID INT,
     ProductoID INT,
     PrecioUnitario DECIMAL(10,2),
@@ -275,4 +275,8 @@ SELECT * FROM Clientes WHERE Pais='UK' OR Pais='España' OR Pais='Austria';
 ```
 ```sql
 SELECT * FROM Clientes WHERE ContactoNombre LIKE 'J%z';
+```
+Cuenta el numero de clientes de cada pais ordenados por Pais:
+```sql
+select Pais, count(Pais) as NumeroPaises from Clientes group by Pais order by Pais;
 ```

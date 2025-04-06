@@ -150,11 +150,18 @@ CREATE TABLE qualifying (
 2. **Obtener todos los datos de los circuitos alemanes.**
 3. **Obtener los países en los que se disputaron carreras en el año 2010.**
 4. **Obtener el nombre de los pilotos que han participado en al menos 1 carrera del año 2016.**
+```sql
+select distinct d.forename, d.surname 
+    from drivers d 
+    inner join qualifying q on d.driverId=q.driverId 
+    inner join races r on r.raceId=q.raceId 
+    where r.year=2016 order by d.surname;
+```
 5. **Nombre de los constructores con los que han disputado carreras más de 50 pilotos diferentes.**
 6. **Nombre y apellidos de los pilotos que nunca han ganado una carrera.**
 7. **Obtener el nombre y apellidos de los pilotos que durante el año 2017 han participado en todas las carreras.**
 8. **Obtener el nombre, localización, país y año para cada circuito de las carreras que se han disputado entre 2015 y 2017, ordenado por el ID del circuito.**
-9. **Obtener los constructores que no han participado en alguna clasificación.**
+9.  **Obtener los constructores que no han participado en alguna clasificación.**
 10. **Obtener nombres y apellidos de los pilotos que han ganado más de 30 Grandes Premios, así como el número de Grandes Premios ganados.**
 11. **Nombre y apellidos del piloto que obtuvo la vuelta con velocidad media más alta, así como el circuito y el año en el que se obtuvo.**
 12. **Obtener el nombre, apellidos y la velocidad media del piloto que obtuvo la vuelta con velocidad media más alta en el Gran Premio de Japón de 2009.**
