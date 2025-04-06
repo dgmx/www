@@ -19,7 +19,7 @@ Se pide:
 
 Dibuje un Diagrama E/R que modele la base de datos descrita, usando un conjunto de entidades para cada uno de los conceptos anteriores (es decir, su diseño debe tener 3 conjuntos de entidades).
 
-## Representación Textual del Diagrama E/R
+## Diagrama Entidad Relación
 
 
 ### Entidades y Atributos
@@ -113,13 +113,13 @@ erDiagram
     EVENTO_PROMOCION ||--o{ PARTICIPA: evento 
 ```
 
-### Explicación del Diagrama Entidad-Relación
+### Explicación del Diagrama 
 
 Este diagrama modela la estructura de datos descrita para la empresa discográfica, identificando las entidades principales, sus atributos y las relaciones entre ellas.
 
 #### Entidades
 
-Se identifican las siguientes entidades principales, tal como se solicita:
+Se identifican las siguientes entidades principales:
 
 * **`MANAGER`**:
     * Representa a los mánagers de la discográfica.
@@ -154,12 +154,12 @@ Se identifican las siguientes entidades principales, tal como se solicita:
 Se establecen las siguientes relaciones basadas en la descripción:
 
 1.  **`MANAGER` 1--N `ARTISTA`**:
-    * **Descripción**: Un mánager representa a uno o varios artistas (`||--o{` en Mermaid). Un artista es representado por exactamente un mánager.
+    * **Descripción**: Un mánager representa a uno o varios artistas. Un artista es representado por exactamente un mánager.
     * **Tipo**: Uno a Muchos.
     * **Implementación**: A través de la clave foránea `id_manager` en la tabla `ARTISTA`.
 
 2.  **`ARTISTA` N--M `EVENTO_PROMOCION`**:
-    * **Descripción**: Un artista puede participar en muchos eventos de promoción (`}o--o{` en Mermaid). Un evento de promoción puede tener la participación de varios artistas.
+    * **Descripción**: Un artista puede participar en muchos eventos de promoción. Un evento de promoción puede tener la participación de varios artistas.
     * **Tipo**: Muchos a Muchos.
     * **Implementación**: Se realiza mediante la tabla intermedia `PARTICIPA`. Esta tabla tiene una relación **Uno a Muchos** con `ARTISTA` (un artista puede estar en muchas filas de `PARTICIPA`) y una relación **Uno a Muchos** con `EVENTO_PROMOCION` (un evento puede estar en muchas filas de `PARTICIPA`).
 
