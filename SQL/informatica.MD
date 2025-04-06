@@ -22,8 +22,8 @@ erDiagram
 
 ```
 
-`FABRICANTE` tiene una clave primaria id.  
-`PRODUCTO` también tiene una clave primaria id y una clave foránea id_fabricante que referencia `FABRICANTE(id)`.  
+`FABRICANTE` tiene una **clave primaria** `id`.  
+`PRODUCTO` también tiene una **clave primaria** `id` y una **clave foránea** `id_fabricante` que referencia `FABRICANTE(id)`.  
 La relación indica que un `FABRICANTE` puede tener múltiples `PRODUCTOS`, pero cada `PRODUCTO` pertenece a un único `FABRICANTE`.
 
 
@@ -91,85 +91,69 @@ INSERT INTO producto VALUES(11, 'Impresora HP Laserjet Pro M26nw', 180, 3);
 
 4. Lista el nombre de los productos, el precio en euros y el precio en dólares estadounidenses (USD).
    ```sql
-   SELECT nombre, precio as PrecioEuros, truncate(precio*1.0470,2) as PrecioDolar from producto;
+   SELECT nombre, precio as PrecioEuros, truncate(precio*1.10,2) as PrecioDolar from producto;
     
    ```
 
 5. Lista el nombre de los productos, el precio en euros y el precio en dólares estadounidenses (USD). Utiliza los siguientes alias para las columnas: nombre de producto, euros, dólares.
    ```sql
-    SELECT nombre AS 'nombre de producto', precio * 249 AS 'euros', precio * 224 AS 'dólares' 
-    FROM producto
+    SELECT nombre AS 'nombre de producto', precio  AS 'euros', truncate(precio*1.10,2) AS 'dólares' 
+    FROM producto;
    ```
 
 6. Lista los nombres y los precios de todos los productos de la tabla producto, convirtiendo los nombres a mayúscula.
    ```sql
-    SELECT UPPER(nombre), precio
-    FROM producto
+    SELECT UPPER(nombre), precio FROM producto;
    ```
 
 7. Lista los nombres y los precios de todos los productos de la tabla producto, convirtiendo los nombres a minúscula.
    ```sql
-    SELECT LOWER(nombre), precio
-    FROM producto
+    SELECT LOWER(nombre), precio FROM producto;
    ```
 
 8. Lista el nombre de todos los fabricantes en una columna, y en otra columna obtenga en mayúsculas los dos primeros caracteres del nombre del fabricante.
    ```sql
-    SELECT f.Nombre, UPPER(SUBSTR(f.nombre, 1, 2)) AS 'Nombre 2'
-    FROM fabricante f
+    SELECT f.Nombre, UPPER(SUBSTR(f.nombre, 1, 2)) AS 'Nombre 2' FROM fabricante f;
    ```
 
 9.  Lista los nombres y los precios de todos los productos de la tabla producto, redondeando el valor del precio.
     ```sql
-    SELECT nombre, ROUND(precio) AS 'Precio'
-    FROM producto
+    SELECT nombre, ROUND(precio) AS 'Precio' FROM producto;
     ```
 
 10. Lista los nombres y los precios de todos los productos de la tabla producto, truncando el valor del precio para mostrarlo sin ninguna cifra decimal.
     ```sql
-    SELECT nombre, TRUNCATE(precio, 0) AS 'Precio'
-    FROM producto
+    SELECT nombre, TRUNCATE(precio, 0) AS 'Precio' FROM producto;
     ```
 
 11. Lista el código de los fabricantes que tienen productos en la tabla producto.
     ```sql
-    SELECT f.id 
-    FROM fabricante f, producto p
-    WHERE f.id = p.id_fabricante
+    SELECT f.id FROM fabricante f, producto p WHERE f.id = p.id_fabricante;
     ```
 
 12. Lista el código de los fabricantes que tienen productos en la tabla producto, eliminando los códigos que aparecen repetidos.
     ```sql
-    SELECT DISTINCT p.id_fabricante
-    FROM producto p
+    SELECT DISTINCT p.id_fabricante FROM producto p;
     ```
 
 13. Lista los nombres de los fabricantes ordenados de forma ascendente.
     ```sql
-    SELECT nombre 
-    FROM fabricante
-    ORDER BY nombre ASC
+    SELECT nombre FROM fabricante ORDER BY nombre ASC;
     ```
 
 14. Lista los nombres de los fabricantes ordenados de forma descendente.
     ```sql
-    SELECT nombre 
-    FROM fabricante
-    ORDER BY nombre DESC
+    SELECT nombre  FROM fabricante ORDER BY nombre DESC;
     ```
 
 15. Lista los nombres de los productos ordenados en primer lugar por el nombre de forma ascendente y en segundo lugar por el precio de forma descendente.
     ```sql
-    SELECT nombre 
-    FROM producto
-    ORDER BY nombre ASC, PRECIO DESC
+    SELECT nombre FROM producto ORDER BY nombre ASC, PRECIO DESC;
     ```
 
 16. Devuelve una lista con las 5 primeras filas de la tabla fabricante.
     ```sql
-    SELECT *
-    FROM fabricante
-    LIMIT 5
+    SELECT * FROM fabricante LIMIT 5;
     ```
 
 17. Devuelve una lista con 2 filas a partir de la cuarta fila de la tabla fabricante. La cuarta fila también se debe incluir en la respuesta.
@@ -406,7 +390,7 @@ INSERT INTO producto VALUES(11, 'Impresora HP Laserjet Pro M26nw', 180, 3);
     WHERE f.id IN (SELECT p.id_fabricante FROM producto)
     ```
 
-## <span style="color:aqua">Consultas multitabla (Composición externa)<span>
+## Consultas multitabla (Composición externa)
 
 Resuelva todas las consultas utilizando las cláusulas LEFT JOIN y RIGHT JOIN.
 
@@ -470,48 +454,48 @@ Resuelva todas las consultas utilizando las cláusulas LEFT JOIN y RIGHT JOIN.
 8. Lista el nombre y el precio del producto más caro.
     ```sql
     SELECT Nombre, MAX(precio) AS 'Precio'
-    FROM producto 
+    FROM producto;
     ```
 
 9. Calcula la suma de los precios de todos los productos.
     ```sql
     SELECT SUM(precio) AS 'Suma total'
-    FROM producto 
+    FROM producto;
     ```
 
 10. Calcula el número de productos que tiene el fabricante Asus.
     ```sql
     SELECT COUNT(*) AS 'Cantidad de productos ASUS'
     FROM producto p INNER JOIN fabricante f ON p.id_fabricante = f.id
-    WHERE f.nombre = 'Asus'
+    WHERE f.nombre = 'Asus';
     ```
 
 11. Calcula la media del precio de todos los productos del fabricante Asus.
     ```sql
     SELECT AVG(p.precio) AS 'Promedio de precio - ASUS'
     FROM producto p INNER JOIN fabricante f ON p.id_fabricante = f.id
-    WHERE f.nombre = 'Asus'
+    WHERE f.nombre = 'Asus';
     ```
 
 12. Calcula el precio más barato de todos los productos del fabricante Asus.
     ```sql
     SELECT MIN(p.precio) AS 'Precio mas barato - ASUS'
     FROM producto p INNER JOIN fabricante f ON p.id_fabricante = f.id
-    WHERE f.nombre = 'Asus'
+    WHERE f.nombre = 'Asus';
     ```
 
 13. Calcula el precio más caro de todos los productos del fabricante Asus.
     ```sql
     SELECT MAX(p.precio) AS 'Precio mas caro - ASUS'
     FROM producto p INNER JOIN fabricante f ON p.id_fabricante = f.id
-    WHERE f.nombre = 'Asus'
+    WHERE f.nombre = 'Asus';
     ```
 
 14. Calcula la suma de todos los productos del fabricante Asus.
     ```sql
     SELECT SUM(p.precio) AS 'Suma precios - ASUS'
     FROM producto p INNER JOIN fabricante f ON p.id_fabricante = f.id
-    WHERE f.nombre = 'Asus'
+    WHERE f.nombre = 'Asus';
     ```
 
 15. Muestra el precio máximo, precio mínimo, precio medio y el número total de productos que tiene el fabricante Crucial.
@@ -526,7 +510,7 @@ Resuelva todas las consultas utilizando las cláusulas LEFT JOIN y RIGHT JOIN.
     SELECT f.nombre AS 'Fabricante', COUNT(p.id_fabricante) AS 'Cantidad de productos'
     FROM producto p RIGHT JOIN fabricante f ON p.id_fabricante = f.id
     GROUP BY f.nombre
-    ORDER BY p.nombre DESC
+    ORDER BY p.nombre DESC;
     ```
 
 17. Muestra el precio máximo, precio mínimo y precio medio de los productos de cada uno de los fabricantes. El resultado mostrará el nombre del fabricante junto con los datos que se solicitan.
@@ -534,7 +518,7 @@ Resuelva todas las consultas utilizando las cláusulas LEFT JOIN y RIGHT JOIN.
     SELECT f.nombre AS 'Fabricante', IFNULL(MAX(p.precio), 0) AS Máximo, IFNULL(MIN(p.precio), 0) AS Mínimo, IFNULL(AVG(p.precio), 0) AS Promedio
     FROM producto p RIGHT JOIN fabricante f ON p.id_fabricante = f.id
     GROUP BY f.nombre
-    ORDER BY p.nombre DESC
+    ORDER BY p.nombre DESC;
     ```
 
 18. Muestra el precio máximo, precio mínimo, precio medio y el número total de productos de los fabricantes que tienen un precio medio superior a 200€. No es necesario mostrar el nombre del fabricante, con el código del fabricante es suficiente.
