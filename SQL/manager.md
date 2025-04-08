@@ -245,3 +245,37 @@ CREATE TABLE Participa (
 
 9.  **`COMMENT`**:
     * Permite añadir **comentarios descriptivos** directamente en la definición de las tablas y columnas dentro de la base de datos. Es una **buena práctica** para la documentación y comprensión del esquema.
+
+
+
+
+## Modificaciones en la estructura de las tablas
+
+* **Tabla Manager**
+
+Vamos a necesitar almacenar mas información en la tabla `Manager`, en concreto  un email y un teléfono, para ello se usa el comando **DDL** `ALTER`. Los nuevos atributos no implican ningún tipo de restricción:
+
+```sql
+alter table Manager add column email varchar(100);
+alter table Manager add column telefono varchar(10);
+```
+
+Para insertar datos en las tablas, se usa el comando **DML** `INSERT`, estos ejemplos nos van a permitir realizar consultas con los criterios de selección que se requieran.
+
+Se pueden insertar todos los valores o solo los que se especifiquen, siempre y cuando los omitidos no impliquen alguna restricción como no permitir valores nulos. En el caso siguiente, la clave primaria no es necesaria al ser auto incremental, lo que implica que se genera por si misma al introducir el resto de valores de la ocurrencia.
+
+```sql
+INSERT INTO Manager (nombre, email, telefono)
+VALUES 
+    ('Juan Pérez', 'juan@example.com', '555-1001'),
+    ('María García', 'maria@example.com', '555-1002'),
+    ('Carlos López', 'carlos@example.com', '555-1003'),
+    ('Ana Martínez', 'ana@example.com', '555-1004'),
+    ('Luis Rodríguez', 'luis@example.com', '555-1005'),
+    ('Sofía Hernández', 'sofia@example.com', '555-1006'),
+    ('Pedro Díaz', 'pedro@example.com', '555-1007'),
+    ('Laura Sánchez', 'laura@example.com', '555-1008'),
+    ('Jorge Ramírez', 'jorge@example.com', '555-1009'),
+    ('Elena Flores', 'elena@example.com', '555-1010');
+
+```
