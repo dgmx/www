@@ -19,7 +19,7 @@ Se pide:
 
 Dibuje un Diagrama E/R que modele la base de datos descrita, usando un conjunto de entidades para cada uno de los conceptos anteriores (es decir, su diseño debe tener 3 conjuntos de entidades).
 
-## Diagrama Entidad Relación
+## Modelo Entidad Relación
 
 
 ### Entidades y Atributos
@@ -45,17 +45,16 @@ Dibuje un Diagrama E/R que modele la base de datos descrita, usando un conjunto 
        |
        |----(⚫) nif  (PK)
        |----(⚪) nombre_completo
-       |----(⚪) id_manager  (FK -> MANAGER)
+
 ```
 * **(⚫) `nif`**: Clave Primaria (PK), NIF del artista.
 * **(⚪) `nombre_completo`**: Nombre completo del artista.
-* **(⚪) `id_manager`**: Clave Foránea (FK) que referencia al `MANAGER`.
 
-**Entidad: EVENTO_PROMOCION**
+**Entidad: EVENTO**
 ```
-  --------------------
- | EVENTO_PROMOCION |
-  --------------------
+  --------
+ | EVENTO |
+  --------
        |
        |----(⚫) id_evento  (PK)
        |----(⚪) fecha_celebracion
@@ -75,14 +74,14 @@ Dibuje un Diagrama E/R que modele la base de datos descrita, usando un conjunto 
     * **Visualización**: Una línea conectando `MANAGER` y `ARTISTA`, con marcas de cardinalidad (1 en el lado `MANAGER`, N en el lado `ARTISTA`).
 
 2.  **Relación: `participa`**
-    * **Entre**: `ARTISTA` y `EVENTO_PROMOCION`
+    * **Entre**: `ARTISTA` y `EVENTO`
     * **Cardinalidad**: N:M (Muchos a Muchos)
-        * Un `ARTISTA` participa en M `EVENTO_PROMOCION`.
-        * Un `EVENTO_PROMOCION` tiene N `ARTISTA` participantes.
-    * **Visualización**: Una línea (o un rombo representando la relación) conectando `ARTISTA` y `EVENTO_PROMOCION`, con marcas de cardinalidad (N en el lado `ARTISTA`, M en el lado `EVENTO_PROMOCION`).
-    * **Nota de Implementación Relacional**: Esta relación requeriría una **tabla asociativa intermedia** (ej. `PARTICIPA`) en la base de datos. Esta tabla contendría las claves foráneas `artista_nif` y `evento_id`, formando su clave primaria compuesta, y tendría relaciones 1:N con `ARTISTA` y `EVENTO_PROMOCION`.
+        * Un `ARTISTA` participa en M `EVENTO`.
+        * Un `EVENTO` tiene N `ARTISTA` participantes.
+    * **Visualización**: Una línea (o un rombo representando la relación) conectando `ARTISTA` y `EVENTO`, con marcas de cardinalidad (N en el lado `ARTISTA`, M en el lado `EVENTO`).
+    * **Nota de Implementación Relacional**: Esta relación requeriría una **tabla asociativa intermedia** (ej. `PARTICIPA`) en la base de datos. Esta tabla contendría las claves foráneas `artista_nif` y `evento_id`, formando su clave primaria compuesta, y tendría relaciones 1:N con `ARTISTA` y `EVENTO`.
 
-## Modelo Relaciónal
+## Modelo Relacional
 
 ```mermaid
 erDiagram
@@ -97,7 +96,7 @@ erDiagram
         INT id_manager FK "ID del mánager que lo representa"
     }
 
-    EVENTO_PROMOCION {
+    EVENTO {
         INT id_evento PK "Identificador único del evento"
         DATE fecha_celebracion "Fecha de celebración del evento"
         INT num_asistentes "Número de asistentes al evento"
@@ -110,7 +109,7 @@ erDiagram
 
     MANAGER ||--o{ ARTISTA: representa
     ARTISTA }o--o| PARTICIPA: partiicpa
-    EVENTO_PROMOCION ||--o{ PARTICIPA: evento 
+    EVENTO ||--o{ PARTICIPA: evento 
 ```
 
 ### Explicación del Diagrama 
@@ -132,7 +131,7 @@ Se identifican las siguientes entidades principales:
         * `nif`: Número de Identificación Fiscal del artista (se asume como Clave Primaria - **PK** por unicidad).
         * `nombre_completo`: Nombre completo del artista.
         * `id_manager`: Identificador del mánager que representa al artista (Clave Foránea - **FK** que referencia a `MANAGER`).
-* **`EVENTO_PROMOCION`**:
+* **`EVENTO`**:
     * Representa los eventos de promoción organizados.
     * Atributos principales:
         * `id_evento`: Identificador único del evento (Clave Primaria - **PK**).
@@ -142,11 +141,11 @@ Se identifican las siguientes entidades principales:
 #### Tabla Intermedia (para relación N:M)
 
 * **`PARTICIPA`**:
-    * Esta tabla es necesaria para implementar la relación "muchos a muchos" entre `ARTISTA` y `EVENTO_PROMOCION`.
+    * Esta tabla es necesaria para implementar la relación "muchos a muchos" entre `ARTISTA` y `EVENTO`.
     * Registra qué artista participa en qué evento.
     * Atributos principales:
         * `artista_nif`: NIF del artista participante (Clave Foránea - **FK** que referencia a `ARTISTA`).
-        * `evento_id`: ID del evento en el que participa (Clave Foránea - **FK** que referencia a `EVENTO_PROMOCION`).
+        * `evento_id`: ID del evento en el que participa (Clave Foránea - **FK** que referencia a `EVENTO`).
     * La combinación de `artista_nif` y `evento_id` suele formar la Clave Primaria compuesta de esta tabla para asegurar que un artista no se registre dos veces en el mismo evento.
 
 #### Relaciones
@@ -158,20 +157,20 @@ Se establecen las siguientes relaciones basadas en la descripción:
     * **Tipo**: Uno a Muchos.
     * **Implementación**: A través de la clave foránea `id_manager` en la tabla `ARTISTA`.
 
-2.  **`ARTISTA` N--M `EVENTO_PROMOCION`**:
+2.  **`ARTISTA` N--M `EVENTO`**:
     * **Descripción**: Un artista puede participar en muchos eventos de promoción. Un evento de promoción puede tener la participación de varios artistas.
     * **Tipo**: Muchos a Muchos.
-    * **Implementación**: Se realiza mediante la tabla intermedia `PARTICIPA`. Esta tabla tiene una relación **Uno a Muchos** con `ARTISTA` (un artista puede estar en muchas filas de `PARTICIPA`) y una relación **Uno a Muchos** con `EVENTO_PROMOCION` (un evento puede estar en muchas filas de `PARTICIPA`).
+    * **Implementación**: Se realiza mediante la tabla intermedia `PARTICIPA`. Esta tabla tiene una relación **Uno a Muchos** con `ARTISTA` (un artista puede estar en muchas filas de `PARTICIPA`) y una relación **Uno a Muchos** con `EVENTO` (un evento puede estar en muchas filas de `PARTICIPA`).
 
 Este modelo refleja la estructura descrita en el texto, utilizando las entidades requeridas y resolviendo la relación muchos a muchos de forma estándar para bases de datos relacionales.
 
-## Modelo Fisico
+## Modelo Físico
 
 ```sql
 -- --- TABLAS PARA LA BASE DE DATOS DE LA DISCOGRÁFICA ---
 
 -- Nota: El orden de creación es importante debido a las claves foráneas.
--- Creamos primero las tablas que no dependen de otras (Manager, EventoPromocion).
+-- Creamos primero las tablas que no dependen de otras (Manager, Evento).
 
 -- Tabla para los Mánagers
 CREATE TABLE Manager (
@@ -180,7 +179,7 @@ CREATE TABLE Manager (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Tabla de Mánagers';
 
 -- Tabla para los Eventos de Promoción
-CREATE TABLE EventoPromocion (
+CREATE TABLE Evento (
     id_evento INT AUTO_INCREMENT PRIMARY KEY,
     fecha_celebracion DATE COMMENT 'Fecha de celebración del evento',
     num_asistentes INT DEFAULT 0 COMMENT 'Número de asistentes al evento'
@@ -197,7 +196,7 @@ CREATE TABLE Artista (
         ON UPDATE CASCADE  -- Si el ID del mánager cambia, actualizarlo aquí
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Tabla de Artistas';
 
--- Tabla Intermedia para la relación N:M entre Artista y EventoPromocion (depende de Artista y EventoPromocion)
+-- Tabla Intermedia para la relación N:M entre Artista y Evento (depende de Artista y Evento)
 CREATE TABLE Participa (
     artista_nif VARCHAR(15) NOT NULL COMMENT 'FK - NIF del artista participante',
     evento_id INT NOT NULL COMMENT 'FK - ID del evento en que participa',
@@ -209,7 +208,7 @@ CREATE TABLE Participa (
         ON DELETE CASCADE -- Si se borra un artista, se borra su registro de participación
         ON UPDATE CASCADE, -- Si el NIF del artista cambia (poco probable), actualizarlo aquí
         
-    FOREIGN KEY (evento_id) REFERENCES EventoPromocion(id_evento)
+    FOREIGN KEY (evento_id) REFERENCES Evento(id_evento)
         ON DELETE CASCADE -- Si se borra un evento, se borran los registros de participación
         ON UPDATE CASCADE  -- Si el ID del evento cambia, actualizarlo aquí
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Tabla de Participación Artista-Evento (Relación N:M)';
