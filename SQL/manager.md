@@ -279,3 +279,27 @@ VALUES
     ('Elena Flores', 'elena@example.com', '555-1010');
 
 ```
+
+* **Tabla Evento**
+
+En la tabla `Evento` almacenamos información relacionada con la actividad realizada, la fecha de celebración y el número de asistentes, pero no se ha recogido información sobre el precio del mismo, lo cual nos podría facilitar el montante total generado por el mismo, asi que vamos a crear una nueva columna para guardar el precio del evento.
+
+```sql
+alter table Evento add column precio decimal(5,2) not null;
+```
+
+A continuación, los datos de 10 eventos:
+```sql
+INSERT INTO Evento (fecha_celebracion, num_asistentes, precio)
+VALUES
+    ('2024-05-15', 120, 49.99),
+    ('2024-06-22', 85, 35.50),
+    ('2024-07-04', 200, 75.00),
+    ('2024-08-12', 65, 29.99),
+    ('2024-09-30', 150, 59.99),
+    ('2024-10-18', 180, 65.00),
+    ('2024-11-05', 95, 42.50),
+    ('2024-12-15', 250, 89.99),
+    ('2025-01-20', 70, 32.00),
+    ('2025-02-14', 300, 99.99);
+```
