@@ -306,6 +306,8 @@ VALUES
     ('2025-02-14', 300, 99.99);
 ```
 
+* **Tabla Artista**
+  
 Para la tabla **Artista** vamos a realizar algunas modificaciones, el **nombre_completo** cambiará a los campos nombre y apellidos y se añadirá un nuevo campo que almacenará el nombre artistico: **nombre_artistico**, ademas le añadiremos un **telefono**. Estas modificaciones no solo no alteran el modelo conceptual, sino que lo optimizan añadiendo mas información a nuestras tablas.
 
 ```sql
@@ -333,8 +335,9 @@ VALUES
     ('34567891I', 'Elena', 4, 'Díaz Romero', '699001122', 'Elen D.'),
     ('91234567J', 'Miguel', 5, 'Moreno Alonso', '600112233', 'Migue M.');
 ```
+* **Tabla Participa**
 
-Ahora generamos 10 registros para la tabla **Participa**:
+Insertamos 10 registros en la tabla **Participa**:
 
 ```sql
 INSERT INTO Participa (artista_nif, evento_id)
@@ -350,4 +353,10 @@ VALUES
     ('34567891I', 6),
     ('91234567J', 9);
 ```
+
+🌍 [**Descarga la Base de Datos actualizada** ](images/mngmnt.sql)
+
+
+## Consultas a la base de datos
+Proximamente...
 
