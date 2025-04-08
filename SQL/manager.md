@@ -26,9 +26,9 @@ Dibuje un Diagrama E/R que modele la base de datos descrita, usando un conjunto 
 
 **Entidad: MANAGER**
 ```
-  --------------
+ +--------------+
  |   MANAGER    |
-  --------------
+ +--------------+
        |
        |----(⚫) id_manager  (PK)
        |----(⚪) nombre
@@ -256,8 +256,8 @@ CREATE TABLE Participa (
 Vamos a necesitar almacenar mas información en la tabla `Manager`, en concreto  un email y un teléfono, para ello se usa el comando **DDL** `ALTER`. Los nuevos atributos no implican ningún tipo de restricción:
 
 ```sql
-alter table Manager add column email varchar(100);
-alter table Manager add column telefono varchar(10);
+ALTER TABLE  Manager ADD COLUMN email VARCHAR(100);
+ALTER TABLE  Manager ADD COLUMN telefono VARCHAR(10);
 ```
 
 Para insertar datos en las tablas, se usa el comando **DML** `INSERT`, estos ejemplos nos van a permitir realizar consultas con los criterios de selección que se requieran.
@@ -285,8 +285,10 @@ VALUES
 En la tabla `Evento` almacenamos información relacionada con la actividad realizada, la fecha de celebración y el número de asistentes, pero no se ha recogido información sobre el precio del mismo, lo cual nos podría facilitar el montante total generado por el mismo, asi que vamos a crear una nueva columna para guardar el precio del evento.
 
 ```sql
-alter table Evento add column precio decimal(5,2) not null;
+ALTER TABLE Evento ADD COLUMN precio DECIMAL(5,2) NOT NULL;
 ```
+El tipo de dato utilizado es `DECIMAL`, de longitud 5 y con 2 cifras decimales, lo cual nos permite un numero máximo de **999.99**, mas que suficiente para el precio de un evento, y sin permitir valores nulos.
+
 
 A continuación, los datos de 10 eventos:
 ```sql
@@ -303,3 +305,49 @@ VALUES
     ('2025-01-20', 70, 32.00),
     ('2025-02-14', 300, 99.99);
 ```
+
+Para la tabla **Artista** vamos a realizar algunas modificaciones, el **nombre_completo** cambiará a los campos nombre y apellidos y se añadirá un nuevo campo que almacenará el nombre artistico: **nombre_artistico**, ademas le añadiremos un **telefono**. Estas modificaciones no solo no alteran el modelo conceptual, sino que lo optimizan añadiendo mas información a nuestras tablas.
+
+```sql
+ALTER TABLE Artista RENAME COLUMN nombre_completo TO nombre;
+
+ALTER TABLE Artista ADD COLUMN apellidos varchar(60) NOT NULL;
+ALTER TABLE Artista ADD COLUMN telefono VARCHAR(10) NOT NULL;
+ALTER TABLE Artista ADD COLUMN nombre_artistico VARCHAR(50) NOT NULL;
+
+ALTER TABLE Artista MODIFY COLUMN nombre VARCHAR(15) NOT NULL;
+```
+
+Ahora generamos 10 ocurrencias para la tabla Artista
+```sql
+INSERT INTO Artista
+VALUES
+    ('12345678A', 'María', 1, 'García López', '611223344', 'Mari G.'),
+    ('98765432B', 'Carlos', 2, 'Martínez Ruiz', '622334455', 'Carlo M.'),
+    ('45678912C', 'Ana', 3, 'Fernández Sánchez', '633445566', 'Anita F.'),
+    ('32165498D', 'Javier', 1, 'González Pérez', '644556677', 'Javi G.'),
+    ('78912345E', 'Laura', 4, 'Rodríguez Gómez', '655667788', 'Lau R.'),
+    ('65498732F', 'David', 2, 'López Martín', '666778899', 'Davi L.'),
+    ('23456789G', 'Sofía', 3, 'Sánchez Jiménez', '677889900', 'Sofi S.'),
+    ('87654321H', 'Pablo', 5, 'Hernández Castro', '688990011', 'Pablito H.'),
+    ('34567891I', 'Elena', 4, 'Díaz Romero', '699001122', 'Elen D.'),
+    ('91234567J', 'Miguel', 5, 'Moreno Alonso', '600112233', 'Migue M.');
+```
+
+Ahora generamos 10 registros para la tabla **Participa**:
+
+```sql
+INSERT INTO Participa (artista_nif, evento_id)
+VALUES
+    ('12345678A', 3),
+    ('98765432B', 7),
+    ('45678912C', 2),
+    ('32165498D', 5),
+    ('78912345E', 1),
+    ('65498732F', 8),
+    ('23456789G', 4),
+    ('87654321H', 10),
+    ('34567891I', 6),
+    ('91234567J', 9);
+```
+
