@@ -164,6 +164,15 @@ Se establecen las siguientes relaciones basadas en la descripción:
 
 Este modelo refleja la estructura descrita en el texto, utilizando las entidades requeridas y resolviendo la relación muchos a muchos de forma estándar para bases de datos relacionales.
 
+
+| Tabla | Atributos  | Foreign Key |
+|----------|----------|----------|
+| Evento     | Id, Asistentes, Fecha    |    |
+| Artista    | NIF, Nombre, N_Man   | N_Man (Manager)  |
+| Manager    | N_Man, Nombre   |   |
+| Participa  | Id_Evento, NIF_Artista |Id_Evento (Evento), NIF_Artista (Artista) | 
+
+
 ## Modelo Físico
 
 ```sql
