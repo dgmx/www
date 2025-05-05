@@ -1,5 +1,5 @@
 ---
-title: "06. Buenas Prácitcas"
+title: "06. Buenas Prácticas"
 parent: "IPTables"
 ---
 
@@ -136,9 +136,10 @@ parent: "IPTables"
     
     *   **`netstat` o `ss`**: Para ver conexiones activas.
         
-         ```bash
+        ```bash
         sudo netstat -tuln
-         ```sudo ss -tuln
+        sudo ss -tuln
+        ```
         
     *   **`tcpdump`**: Para capturar y analizar tráfico de red.
         
@@ -151,7 +152,7 @@ parent: "IPTables"
     
      ```bash
     sudo cat /var/log/syslog | grep network
-    
+    ```
 
 * * *
 
@@ -163,12 +164,12 @@ parent: "IPTables"
         
         ```bash
         sudo apt install openvpn
-         ```
+        ```
     *   **WireGuard**:
         
         ```bash
         sudo apt install wireguard
-         ```
+        ```
 
 * * *
 
@@ -178,13 +179,13 @@ parent: "IPTables"
     
     ```bash
     sudo nano /etc/resolv.conf
-     ```
+    ```
     Añade:
     
     ```bash
     nameserver 1.1.1.1
     nameserver 8.8.8.8
-     ```
+    ```
 
 * * *
 
@@ -196,7 +197,7 @@ parent: "IPTables"
     
     ```bash
     sudo iptables -A INPUT -p tcp --dport 80 -m connlimit --connlimit-above 20 -j DROP
-     ```
+    ```
 
 * * *
 
