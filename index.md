@@ -9,9 +9,8 @@ nav_order: 1
 Bienvenidos a mi sitio web, en permanente construcción. 
 :P
 
-Este espacio recogerá los materiales sobre programación que se imparten en secundaria.
+Este espacio recoge materiales sobre programación que se imparten en secundaria.
 
-Algunos materiales han sido extraidos de internet a modo de repositorio, con el objetivo de conservar dichos materiales y organizarlos en un único sitio, por multiples razones es posible que en algunos de estos materiales no este correctamente indicada su autoría, por lo que adjunto mi dirección de email para contacto:
 
 ✉️ diego@diegojgonzalez.com
 
