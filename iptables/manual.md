@@ -53,7 +53,7 @@ IPTABLES es una herramienta de firewall en sistemas Linux que permite filtrar, m
 ## **Diseño de un Firewall con IPTABLES**
 
 1. **Definir políticas por defecto**: Establece qué hacer con el tráfico que no coincide con ninguna regla.
-   - Ejemplo: `iptables -P INPUT DROP` (rechazar todo el tráfico entrante por defecto). (-P: policy, --p: policy)
+   - Ejemplo: `iptables -P INPUT DROP` (rechazar todo el tráfico entrante por defecto). (-P: policy)
 
 2. **Permitir tráfico necesario**: Abre solo los puertos y servicios esenciales.
    - Ejemplo: `iptables -A INPUT -p tcp --dport 22 -j ACCEPT` (permitir SSH). (-A:Add, -p: protocol, --dport: Destination Port, -j: JUMP )
