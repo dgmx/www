@@ -139,7 +139,7 @@ INSERT INTO EMPLEADOS VALUES(550,780,'1970-01-10','1998-01-21',600,120,0,'SANCHO
 ```
 **Actualizar Fechas:**
 
-`update EMPLEADOS set Fecna='1970/11/10' where Numem=110;`
+`update EMPLEADOS set Fecha='1970/11/10' where Numem=110;`
 
 Ejemplo Tabla Empleados con campos `Check` y `Enumerable`
 ```sql
