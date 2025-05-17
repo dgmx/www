@@ -114,3 +114,65 @@ Esto es parte del estándar IPv6 para diferenciar entre:
 ---
 
 ✅ **Resumen**: El bit U/L se invierte al generar direcciones IPv6 con EUI-64 para indicar que se trata de una dirección localmente generada, no una dirección de hardware original.
+
+
+
+# 🔍 ¿Qué significa la secuencia `FF:FE` en EUI-64?
+
+La secuencia `FF:FE` que aparece en el método EUI-64 al generar una dirección IPv6 no es aleatoria, sino que tiene un propósito específico y estándar. Vamos a verlo bien explicado:
+
+## 🧩 ¿Qué es EUI-64?
+
+**EUI-64 (Extended Unique Identifier - 64 bits)** es un método usado en IPv6 para crear un identificador de interfaz de 64 bits a partir de una dirección MAC de 48 bits.
+
+Como una dirección MAC tiene solo **48 bits**, y se necesitan **64 bits** para una dirección IPv6, se deben añadir **16 bits extra**. Esa ampliación se hace insertando la secuencia **`FF:FE`** en el medio de la MAC.
+
+---
+
+## 🔧 ¿Cómo se usa `FF:FE`?
+
+### Ejemplo:
+
+1. MAC original:  
+```
+a4:23:05:9b:cc:01
+```
+
+2. Dividir en dos partes:  
+- Primera mitad: `a4:23:05`  
+- Segunda mitad: `9b:cc:01`
+
+3. Insertar `FF:FE` en el centro:  
+
+```
+a4:23:05:FF:FE:9b:cc:01
+```
+
+
+4. Invertir el bit U/L (7º bit del primer byte)  
+- `a4` = `10100100` → se convierte en `a6` = `10100110`
+
+---
+
+## ❓ ¿Por qué se usa `FF:FE`?
+
+- Es una secuencia **reservada por el IEEE**.
+- Asegura que la nueva dirección **no coincida** con una MAC real de 64 bits.
+- Permite distinguir que la dirección IPv6 fue **generada automáticamente** usando EUI-64.
+- Mantiene la **unicidad** de las direcciones IPv6 derivadas de MACs.
+
+---
+
+## ✅ Resumen
+
+| Elemento        | Significado                                                  |
+|------------------|--------------------------------------------------------------|
+| `FF:FE`          | Secuencia fija para expandir MAC de 48 a 64 bits             |
+| ¿Por qué?        | Rellenar bits faltantes y evitar colisiones con MAC reales   |
+| ¿Dónde va?       | Entre los 3 primeros y 3 últimos bytes de la MAC             |
+| ¿Quién lo define? | Especificado por el estándar IEEE para EUI-64               |
+
+---
+
+🎓 **Nota**: Este método es parte del proceso de **SLAAC (Stateless Address Autoconfiguration)** en redes IPv6.
+

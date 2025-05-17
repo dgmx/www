@@ -43,14 +43,14 @@ A continuación se muestra una comparación de algunas diferencias clave entre I
 | Dirección de 32 bits                                        | Dirección de 128 bits                                       |
 | Admite 340 billones de billones de billones de dispositivos | Admite 340 billones de billones de billones de dispositivos |
 | Direccionamiento de red con clases complejas                | Direccionamiento jerárquico simplificado                    |
-|Priorización de tráfico limitado                             | Calidad de servicio incorporada                             |
-|Seguridad básica con NAT                                     | Seguridad de extremo a extremo con IPsec                    |
-|Configuración manual del host                                | Configuración automática de direcciones                     |
-|Opciones y extensiones limitadas |Opciones y extensiones flexibles|
-|La fragmentación es procesada por el enrutador|	La fragmentación es de extremo a extremo|
-|Redes basadas en transmisión |Redes de multidifusión|
-| Suma de comprobación en cada capa de red| 	Suma de comprobación solo en la capa de transporte|
-|Escalabilidad de enrutamiento limitada 	|Enrutamiento jerárquico para una mejor escalabilidad|
+| Priorización de tráfico limitado                            | Calidad de servicio incorporada                             |
+| Seguridad básica con NAT                                    | Seguridad de extremo a extremo con IPsec                    |
+| Configuración manual del host                               | Configuración automática de direcciones                     |
+| Opciones y extensiones limitadas | Opciones y extensiones flexibles |
+| La fragmentación es procesada por el enrutador |	La fragmentación es de extremo a extremo |
+| Redes basadas en transmisión | Redes de multidifusión |
+| Suma de comprobación en cada capa de red | 	Suma de comprobación solo en la capa de transporte |
+| Escalabilidad de enrutamiento limitada 	| Enrutamiento jerárquico para una mejor escalabilidad |
 
 ---
 
