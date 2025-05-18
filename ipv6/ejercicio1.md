@@ -1,5 +1,5 @@
 ---
-title: "5. Ejercicio de Ejemplo"
+title: "6. Ejercicio de Ejemplo"
 parent: "IPv6"
 ---
 
