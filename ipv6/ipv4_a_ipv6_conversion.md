@@ -21,10 +21,6 @@ Se utiliza el prefijo `::ffff:` seguido de la dirección IPv4.
 - IPv4: `192.168.1.1`  
 - IPv6 mapeada: `::ffff:192.168.1.1`
 
-**Equivalente hexadecimal:**
-```
-::ffff:c0a8:0101
-```
 Se convierte a binario la direccion IPv4 y transformamos a hexadecimal cogiendo grupos de 4 bits:
 
 **Ejemplo:**   
@@ -33,6 +29,11 @@ Se convierte a binario la direccion IPv4 y transformamos a hexadecimal cogiendo 
 Pasamos a Headecimal: `1100 -> C, 0000 -> 0, 1010 -> A, 0001 -> 1, 0000 -> 0, 0001 -> 1, 0000 -> 0`.   
 resultado: `C0A1:0101`
 
+
+**Equivalente hexadecimal:**
+```
+::ffff:c0a8:0101
+```
 
 
 📌 **Uso**:
