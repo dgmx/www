@@ -1,5 +1,5 @@
 ---
-title: "4. Resumen IPv6"
+title: "5. Resumen IPv6"
 parent: "IPv6"
 ---
 
