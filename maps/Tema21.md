@@ -1,3 +1,8 @@
+---
+title: "Tema 21 Sistemas Informáticos. Estructura Física y Funcional"
+parent: "Maps"
+nav_exclude: true
+---
 
 # Tema 21: Sistemas Informáticos. Estructura Física y Funcional
 
@@ -111,3 +116,7 @@
 - Tanenbaum (2013)
 - Prieto (2006)
 - Universidad de Granada (videoclases)
+
+
+
+[Mapa Visual](tema21map.html){: .btn .btn-blue }
