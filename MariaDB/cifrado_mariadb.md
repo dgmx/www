@@ -1,6 +1,6 @@
 ---
 title: 1. Cifrado en MariaDB
-parent: "MariadD"
+parent: "MariaDB"
 ---
 
 # Cifrado de columnas en MariaDB 

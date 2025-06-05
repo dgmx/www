@@ -1,6 +1,6 @@
 ---
 title: 2. Seguridad en MariaDB
-parent: "MariadD"
+parent: "MariaDB"
 ---
 
 

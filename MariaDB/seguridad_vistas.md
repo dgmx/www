@@ -1,6 +1,6 @@
 ---
 title: 3. Seguridad con Vistas
-parent: "MariadD"
+parent: "MariaDB"
 ---
 # Seguridad con Vistas en SQL 
 
