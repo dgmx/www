@@ -4,7 +4,7 @@ parent: "Maps"
 nav_exclude: true
 ---
 
-# Tema 21: Sistemas Informáticos. Estructura Física y Funcional
+## Tema 21: Sistemas Informáticos. Estructura Física y Funcional
 
 ## 1. Introducción
 + Temario oficial BOE 13 Feb 1996
