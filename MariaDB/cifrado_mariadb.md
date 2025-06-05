@@ -3,7 +3,9 @@ title: 1. Cifrado en MariaDB
 parent: "MariadD"
 ---
 
-# Cifrado de columnas en MariaDB usando AES_ENCRYPT y triggers
+# Cifrado de columnas en MariaDB 
+
+### usando AES_ENCRYPT y triggers
 
 Este documento describe cómo implementar cifrado de columnas en MariaDB utilizando la función `AES_ENCRYPT()` para almacenar datos cifrados y `AES_DECRYPT()` para recuperarlos. También incluye un ejemplo con un trigger para cifrado automático al insertar datos.
 

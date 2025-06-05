@@ -4,7 +4,7 @@ parent: "MariadD"
 ---
 
 
-# Gestión de Usuarios y Seguridad en MySQL/MariaDB
+# Gestión de Usuarios y Seguridad en MariaDB
 
 ## 1. Ejemplo de Escalado de Privilegios Mal Configurado
 
