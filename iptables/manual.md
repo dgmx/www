@@ -75,11 +75,15 @@ iptables -L -v -n
 ```bash
 iptables -A INPUT -p tcp --dport 80 -j ACCEPT
 ```
-1. **Eliminar una regla**: Eliminar la regla de HTTP:
+3. **Agregar una regla**: Permitir tráfico HTTP (puerto 80) y HTTPS (443)
+```bash
+iptables -A INPUT -p tcp -m multiport --dports 80,443 -j ACCEPT
+```
+4. **Eliminar una regla**: Eliminar la regla de HTTP:
 ```bash
 iptables -D INPUT -p tcp --dport 80 -j ACCEPT
 ```
-1. **Guardar reglas**:
+t. **Guardar reglas**:
 + En sistemas basados en Debian/Ubuntu:
 ```bash
 iptables-save > /etc/iptables/rules.v4
