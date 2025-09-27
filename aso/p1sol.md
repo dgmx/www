@@ -14,7 +14,7 @@ Estas configuraciones se realizan a través del **Editor de Directivas de Grupo 
 1.  **Abrir el Editor de Directivas de grupo:**
     * Presiona **Win + R**, escribe `gpedit.msc` y pulsa **Enter**.
 2.  **Navegar a la configuración de contraseñas:**
-    * Ve a **Configuración del equipo** $\rightarrow$ **Configuración de Windows** $\rightarrow$ **Configuración de seguridad** $\rightarrow$ **Directivas de cuenta** $\rightarrow$ **Directiva de contraseñas**.
+    * Ve a **Configuración del equipo** --> **Configuración de Windows** --> **Configuración de seguridad** --> **Directivas de cuenta** --> **Directiva de contraseñas**.
 3.  **Configurar la vigencia mínima (5 días):**
     * Doble clic en **Vigencia mínima de la contraseña**.
     * Establece el valor en **5 días**.
@@ -33,7 +33,7 @@ Utilizaremos la consola de **Administrador de equipos** para esta tarea.
 1.  **Abrir el Administrador de equipos:**
     * Presiona **Win + R**, escribe `compmgmt.msc` y pulsa **Enter**.
 2.  **Navegar y crear:**
-    * Ve a **Herramientas del sistema** $\rightarrow$ **Usuarios y grupos locales** $\rightarrow$ **Usuarios**.
+    * Ve a **Herramientas del sistema** --> **Usuarios y grupos locales** --> **Usuarios**.
 3.  **Crear el nuevo usuario:**
     * Haz clic derecho en el panel central y selecciona **Usuario nuevo...**
     * Introduce un Nombre de usuario (ej: **testuser**) y una contraseña.
@@ -85,7 +85,7 @@ Se recomienda usar la herramienta **Copia de seguridad de Windows Server** (que 
 
 1.  **Realizar la Copia de Seguridad:**
     * Abre la aplicación **Copia de seguridad de Windows Server**.
-    * Selecciona **Copia de seguridad única...** $\rightarrow$ **Copia de seguridad personalizada**.
+    * Selecciona **Copia de seguridad única...** --> **Copia de seguridad personalizada**.
     * Haz clic en **Agregar elementos** y selecciona la carpeta que contiene los datos del usuario (ej: `C:\Users`).
     * Selecciona una **ubicación de destino** para guardar la copia (debe ser un disco diferente o una ruta de red).
     * Ejecuta la copia de seguridad.

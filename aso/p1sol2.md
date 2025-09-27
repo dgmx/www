@@ -12,7 +12,7 @@ parent: "ASO"
 Modificaremos las directivas de cuenta a través del **Editor de Directivas de Grupo Local** (`gpedit.msc`).
 
 1.  **Abrir el Editor de Directivas de Grupo:** Presiona **Win + R**, escribe `gpedit.msc` y pulsa **Enter**.
-2.  **Navegar a Directivas de contraseñas:** Ve a **Configuración del equipo** $\rightarrow$ **Configuración de Windows** $\rightarrow$ **Configuración de seguridad** $\rightarrow$ **Directivas de cuenta** $\rightarrow$ **Directiva de contraseñas**.
+2.  **Navegar a Directivas de contraseñas:** Ve a **Configuración del equipo** --> **Configuración de Windows** --> **Configuración de seguridad** --> **Directivas de cuenta** --> **Directiva de contraseñas**.
 
 | Directiva | Valor Requerido | Configuración |
 | :--- | :--- | :--- |
@@ -33,7 +33,7 @@ Utilizaremos la consola de **Administración de equipos** (`compmgmt.msc`).
 ### 2.1 Crear 4 Usuarios y Deshabilitar uno
 
 1.  **Abrir Administración de equipos:** Presiona **Win + R**, escribe `compmgmt.msc`.
-2.  **Creación de Usuarios:** En **Usuarios y grupos locales** $\rightarrow$ **Usuarios**, crea:
+2.  **Creación de Usuarios:** En **Usuarios y grupos locales** --> **Usuarios**, crea:
     * **usuario\_a**
     * **usuario\_b**
     * **usuario\_c**
@@ -63,11 +63,11 @@ Crearemos una carpeta y limitaremos el acceso a solo lectura mediante permisos N
 
 1.  **Crear la Carpeta:** Crea una carpeta llamada **DatosComunes** (ej: en la unidad D:).
 2.  **Configurar Permisos NTFS (Pestaña Seguridad):**
-    * Haz clic derecho en la carpeta $\rightarrow$ **Propiedades** $\rightarrow$ **Seguridad**.
+    * Haz clic derecho en la carpeta --> **Propiedades** --> **Seguridad**.
     * Para los grupos de usuarios (ej: **Usuarios** o **Todos**), asegúrate de que solo esté marcado el permiso **Lectura** en la columna **Permitir**.
     * **Desmarca** o no concedas permisos de **Modificar** o **Escribir**.
 3.  **Configurar Permisos de Compartición (Pestaña Uso compartido):**
-    * Ve a **Uso compartido avanzado...** $\rightarrow$ **Permisos**.
+    * Ve a **Uso compartido avanzado...** --> **Permisos**.
     * Selecciona el grupo **Todos** (o los grupos específicos).
     * Marca **Permitir** solo para **Lectura**. **Desmarca** (o no marques) **Cambiar** y **Control total**.
 4.  **Comprobación:** Accede a la carpeta desde otra máquina (`\\nombre\_servidor\DatosComunes`). Podrás ver el contenido, pero cualquier intento de modificar o eliminar archivos fallará.
@@ -80,7 +80,7 @@ Utilizaremos la herramienta **Copia de seguridad de Windows Server** (que debe e
 
 1.  **Realizar la Copia:**
     * Abre **Copia de seguridad de Windows Server**.
-    * Selecciona **Copia de seguridad única...** $\rightarrow$ **Copia de seguridad personalizada**.
+    * Selecciona **Copia de seguridad única...** --> **Copia de seguridad personalizada**.
     * En **Agregar elementos**, selecciona tu carpeta de perfil de usuario (ej: `C:\Users\Administrator`).
     * Selecciona una **ubicación de destino** fuera del disco de origen (disco externo, red) y ejecuta la copia.
 
