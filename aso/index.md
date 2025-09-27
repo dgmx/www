@@ -1,6 +1,6 @@
 ---
-title: "Bash"
-nav_order: 3
+title: "ASO"
+nav_order: 13
 ---
 
 # Administración de Sistemas Operativos
