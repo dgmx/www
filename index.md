@@ -9,7 +9,7 @@ nav_order: 1
 Bienvenidos a mi sitio web, en permanente construcción. 
 :P
 
-Este espacio recoge materiales sobre programación que se imparten en secundaria.
+Este espacio recoge materiales sobre las asignatureas de programación que se imparten en los ciclos formativos de grando superior y secundaria.
 
 
 ✉️ diego@diegojgonzalez.com
