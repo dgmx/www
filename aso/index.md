@@ -4,6 +4,7 @@ nav_order: 13
 ---
 
 # Administración de Sistemas Operativos
-## ASIR
+
+### Administración de Sistemas Informáticos y Redes 
 
 
