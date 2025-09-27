@@ -26,7 +26,7 @@ Ejemplos de salidas:
      pkts bytes target     prot opt in     out     source               destination
     Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
      pkts bytes target     prot opt in     out     source               destination
-
+```
 
 El resultado de arriba indica que el firewall no está activo. La siguiente salida es la del firewall activado:
 ```bash
@@ -88,12 +88,13 @@ Salida:
     num  target     prot opt source               destination
     Chain wanout (1 references)
     num  target     prot opt source               destination
- ```   
+```   
 
 Podemos usar los números de línea para borrar o añadir nuevas reglas al firewall.
 
 1.2: Mostrar las reglas de cadena de entrada y salida:
 -------------------------------------------------------
+
 ```bash
     iptables -L INPUT -n -v
     iptables -L OUTPUT -n -v --line-numbers

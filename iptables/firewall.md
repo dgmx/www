@@ -63,15 +63,15 @@ iptables -A INPUT -i eth3 -p icmp -j ACCEPT
 iptables -A INPUT -i eth3 -p tcp --dport 22 -j ACCEPT
 
 # Permite la conexión al puerto 22 desde una determinada dirección MAC 
-#iptables -A INPUT -i eth3 -p tcp --dport 22 -m mac --mac-source 00:0F:EA:91:04:07 -j ACCEPT
+iptables -A INPUT -i eth3 -p tcp --dport 22 -m mac --mac-source 00:0F:EA:91:04:07 -j ACCEPT
 
 # Permite la conexión al puerto 22 desde direcciones MAC almacenadas en un fichero
-#for MAC in `cat fichero_direcciones_MAC`; do 
-#  iptables -A INPUT -i eth3 -p tcp --dport 22 -m mac --mac-source $MAC -j ACCEPT
-#done
+for MAC in `cat fichero_direcciones_MAC`; do 
+    iptables -A INPUT -i eth3 -p tcp --dport 22 -m mac --mac-source $MAC -j ACCEPT
+done
 
 # Deniega la conexión al puerto 22 a todos excepto una determinada dirección MAC
-#iptables -A INPUT -i eth3 -p tcp --port 22 -m mac ! --mac-source 3E:D7:88:A6:66:8E -j REJECT
+iptables -A INPUT -i eth3 -p tcp --port 22 -m mac ! --mac-source 3E:D7:88:A6:66:8E -j REJECT
 
 # Permite la redirección del puerto 3389 al 3389 de un equipo de la red interna
 iptables -t nat -A PREROUTING -i eth3 -p tcp --dport 3389 -j DNAT --to 10.0.1.10:3389
