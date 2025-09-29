@@ -1,3 +1,8 @@
+---
+title: 1. Comandos básicos Linux
+parent: "Linux"
+---
+
 
 # 📘 **Listado de Comandos Linux por Categorías**
 
