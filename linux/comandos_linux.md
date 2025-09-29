@@ -6,7 +6,8 @@ parent: "Linux"
 
 # 📘 Listado de Comandos Linux por Categorías
 
-## 1. **Navegación por el sistema de archivos** 🌳
+## 1. **Navegación por el sistema de archivos**
+
 | **Comando** | **Descripción** | **Ejemplo** |
 |-------------|----------------|-------------|
 | `pwd` | Muestra la ruta del directorio actual. | `pwd` |
@@ -16,7 +17,8 @@ parent: "Linux"
 
 ---
 
-## 2. **Gestión de archivos y directorios** 📂
+## 2. **Gestión de archivos y directorios** 
+
 | **Comando** | **Descripción** | **Ejemplo** |
 |-------------|----------------|---------------|
 | `touch` | Crea un archivo vacío. | `touch notas.txt` |
@@ -32,7 +34,8 @@ parent: "Linux"
 
 ---
 
-## 3. **Permisos y propietarios** 🔐
+## 3. **Permisos y propietarios** 
+
 | **Comando** | **Descripción** | **Ejemplo** |
 |-------------|----------------|---------------|
 | `ls -l` | Muestra permisos y detalles de archivos. | `ls -l` |
@@ -42,7 +45,8 @@ parent: "Linux"
 
 ---
 
-## 4. **Búsqueda de archivos y texto** 🔍
+## 4. **Búsqueda de archivos y texto** 
+
 | **Comando** | **Descripción** | **Ejemplo** |
 |-------------|----------------|---------------|
 | `find` | Busca archivos y directorios. | `find /home -name "notas.txt"` |
@@ -52,7 +56,8 @@ parent: "Linux"
 
 ---
 
-## 5. **Procesos y sistema** ⚙️
+## 5. **Procesos y sistema** 
+
 | **Comando** | **Descripción** | **Ejemplo** |
 |-------------|----------------|---------------|
 | `ps` | Muestra procesos activos. | `ps aux` |
@@ -66,7 +71,8 @@ parent: "Linux"
 
 ---
 
-## 6. **Red y conectividad** 🌐
+## 6. **Red y conectividad** 
+
 | **Comando** | **Descripción** | **Ejemplo** |
 |-------------|----------------|---------------|
 | `ping` | Verifica conectividad a un host. | `ping google.com` |
@@ -79,8 +85,7 @@ parent: "Linux"
 
 ---
 
-## 7. **Gestión de paquetes** 📦
-*(Varía según la distribución)*  
+## 7. **Gestión de paquetes** 
 
 | **Comando** | **Descripción** | **Ejemplo** |
 |-------------|----------------|---------------|
@@ -92,7 +97,8 @@ parent: "Linux"
 
 ---
 
-## 8. **Compresión y descompresión** 📦
+## 8. **Compresión y descompresión** 
+
 | **Comando** | **Descripción** | **Ejemplo** |
 |-------------|----------------|---------------|
 | `tar -cvf` | Crea un archivo `.tar`. | `tar -cvf backup.tar carpeta/` |
@@ -104,7 +110,8 @@ parent: "Linux"
 
 ---
 
-## 9. **Comandos para usuarios y grupos** 👥
+## 9. **Comandos para usuarios y grupos**
+
 | **Comando** | **Descripción** | **Ejemplo** |
 |-------------|----------------|---------------|
 | `whoami` | Muestra el usuario actual. | `whoami` |
@@ -116,7 +123,8 @@ parent: "Linux"
 
 ---
 
-## 10. **Superusuario y administración** 🛡️
+## 10. **Superusuario y administración** 
+
 | **Comando** | **Descripción** | **Ejemplo** |
 |-------------|----------------|---------------|
 | `sudo` | Ejecuta comandos como administrador. | `sudo apt update` |
@@ -126,7 +134,8 @@ parent: "Linux"
 
 ---
 
-## 11. **Atajos útiles en terminal** ⌨️
+## 11. **Atajos útiles en terminal** 
+
 | **Tecla** | **Función** |
 |------------|------------|
 | `Ctrl + C` | Detiene un comando en ejecución. |
