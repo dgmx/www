@@ -4,9 +4,10 @@ parent: "Linux"
 ---
 
 
-# 🌐 **Comandos Avanzados de Administración de Red en Linux**
+# 🌐 Comandos Avanzados de Administración de Red en Linux
 
-## 1. **Configuración de interfaces de red** 🖧
+## 1. **Configuración de interfaces de red** 
+
 | **Comando** | **Descripción** | **Ejemplo** |
 |-------------|----------------|-------------|
 | `ip a` | Muestra interfaces y direcciones IP. | `ip a` |
@@ -19,7 +20,8 @@ parent: "Linux"
 
 ---
 
-## 2. **Diagnóstico de conectividad** 🔍
+## 2. **Diagnóstico de conectividad** 
+
 | **Comando** | **Descripción** | **Ejemplo** |
 |-------------|----------------|-------------|
 | `ping` | Verifica la conectividad a un host. | `ping 8.8.8.8` |
@@ -34,7 +36,8 @@ parent: "Linux"
 
 ---
 
-## 3. **Monitoreo de puertos y servicios** 🕵️‍♂️
+## 3. **Monitoreo de puertos y servicios** 
+
 | **Comando** | **Descripción** | **Ejemplo** |
 |-------------|----------------|-------------|
 | `ss -tulnp` | Muestra puertos abiertos y procesos asociados. | `sudo ss -tulnp` |
@@ -45,7 +48,8 @@ parent: "Linux"
 
 ---
 
-## 4. **Gestión de Firewall (iptables/nftables)** 🔥
+## 4. **Gestión de Firewall (iptables/nftables)** 
+
 | **Comando** | **Descripción** | **Ejemplo** |
 |-------------|----------------|-------------|
 | `iptables -L -v` | Lista reglas activas de firewall. | `sudo iptables -L -v` |
@@ -58,7 +62,8 @@ parent: "Linux"
 
 ---
 
-## 5. **Pruebas y simulación de tráfico** 📡
+## 5. **Pruebas y simulación de tráfico** 
+
 | **Comando** | **Descripción** | **Ejemplo** |
 |-------------|----------------|-------------|
 | `iperf3 -s` | Inicia un servidor de prueba de velocidad. | `iperf3 -s` |
@@ -69,7 +74,8 @@ parent: "Linux"
 
 ---
 
-## 6. **Administración de DNS y resolución de nombres** 🌍
+## 6. **Administración de DNS y resolución de nombres** 
+
 | **Comando** | **Descripción** | **Ejemplo** |
 |-------------|----------------|-------------|
 | `dig` | Consulta detallada de registros DNS. | `dig openai.com ANY` |
@@ -79,7 +85,8 @@ parent: "Linux"
 
 ---
 
-## 7. **Administración de servicios de red** 🛠️
+## 7. **Administración de servicios de red** 
+
 | **Comando** | **Descripción** | **Ejemplo** |
 |-------------|----------------|-------------|
 | `systemctl status` | Verifica estado de un servicio. | `systemctl status ssh` |
@@ -89,7 +96,8 @@ parent: "Linux"
 
 ---
 
-## 8. **Escaneo y auditoría de red** 🧪
+## 8. **Escaneo y auditoría de red** 
+
 | **Comando** | **Descripción** | **Ejemplo** |
 |-------------|----------------|-------------|
 | `nmap -sP` | Descubre dispositivos en la red. | `nmap -sP 192.168.1.0/24` |
@@ -99,7 +107,8 @@ parent: "Linux"
 
 ---
 
-## 9. **Automatización y scripts de red** 🤖
+## 9. **Automatización y scripts de red** 
+
 | **Comando** | **Descripción** | **Ejemplo** |
 |-------------|----------------|-------------|
 | `watch` | Ejecuta un comando repetidamente. | `watch -n 2 ip a` |
