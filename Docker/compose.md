@@ -87,24 +87,9 @@ Place the following content into this file:
 ~/compose-demo/app/index.html
 
 ```
-
-
-
-    
-    
-    
-
-
-
     
 This is a Docker Compose Demo Page.
-
-    
-
 This content is being served by an Nginx container.
-
-
-
 
 ```
 
@@ -114,7 +99,6 @@ Next, create the `docker-compose.yml` file:
 
 ```
 nano docker-compose.yml
-
 ```
 
 Insert the following content in your `docker-compose.yml` file:
@@ -148,7 +132,6 @@ With the `docker-compose.yml` file in place, you can now execute Docker Compose 
 
 ```
 docker compose up -d
-
 ```
 
 Docker Compose will first look for the defined image on your local system, and if it can’t locate the image it will download the image from Docker Hub. You’ll see output like this:
@@ -173,7 +156,6 @@ Your environment is now up and running in the background. To verify that the con
 
 ```
 docker compose ps
-
 ```
 
 This command will show you information about the running containers and their state, as well as any port redirections currently in place:
@@ -194,7 +176,7 @@ The shared volume you’ve set up within the `docker-compose.yml` file keeps you
 
 In the next step, you’ll see how to manage your containerized environment with Docker Compose commands.
 
-## [Step 4 — Getting Familiar with Docker Compose Commands](#step-4-getting-familiar-with-docker-compose-commands)[](#step-4-getting-familiar-with-docker-compose-commands)
+## [Step 4 — Getting Familiar with Docker Compose Commands]
 
 You’ve seen how to set up a `docker-compose.yml` file and bring your environment up with `docker compose up`. You’ll now see how to use Docker Compose commands to manage and interact with your containerized environment.
 
@@ -202,7 +184,6 @@ To check the logs produced by your Nginx container, you can use the `logs` comma
 
 ```
 docker compose logs
-
 ```
 
 You’ll see output similar to this:
@@ -223,7 +204,6 @@ If you want to pause the environment execution without changing the current stat
 
 ```
 docker compose pause
-
 ```
 
 ```
@@ -234,7 +214,6 @@ To resume execution after issuing a pause:
 
 ```
 docker compose unpause
-
 ```
 
 ```
@@ -245,7 +224,6 @@ The `stop` command will terminate the container execution, but it won’t destro
 
 ```
 docker compose stop
-
 ```
 
 ```
@@ -256,7 +234,6 @@ If you want to remove the containers, networks, and volumes associated with this
 
 ```
 docker compose down
-
 ```
 
 ```
@@ -270,7 +247,6 @@ In case you want to also remove the base image from your system, you can use:
 
 ```
 docker image rm nginx:alpine
-
 ```
 
 ```
@@ -284,7 +260,7 @@ Deleted: sha256:a3efaa65ec344c882fe5d543a392a54c4ceacd1efd91662d06964211b1be4c08
 Deleted: sha256:3e207b409db364b595ba862cdc12be96dcdad8e36c59a03b7b3b61c946a5741a
 ```
 
-__Note__: Please refer to our guide on [How to Install and Use Docker](/community/tutorials/how-to-install-and-use-docker-on-ubuntu-22-04) for a more detailed reference on Docker commands.
+__Note__: Please refer to our guide on [How to Install and Use Docker](install.md) for a more detailed reference on Docker commands.
 
 ## [Conclusion](#conclusion)[](#conclusion)
 

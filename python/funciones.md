@@ -23,7 +23,7 @@ Para ejecutar el código de la función simplemente debemos realizar una llamada
 ```python
 def saludar():
     print("¡Hola!")
-    saludar()  # Salida: ¡Hola!
+saludar()  # Salida: ¡Hola!
 ```
 
 ## 3. Argumentos de funciones
