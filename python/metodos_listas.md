@@ -1,3 +1,10 @@
+---
+title: "Métodos de listas"
+parent: "Python"
+nav_exclude: true
+---
+
+
 # Ejemplos Básicos de Métodos de Listas en Python
 
 ## 1. `append()`
