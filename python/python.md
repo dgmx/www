@@ -406,7 +406,7 @@ Cada elemento de la lista ocupa una posición, llamada **índice**, a la que pod
 Las listas en Python se definen utilizando corchetes **_\[ \]_** y los elementos se separan por **comas**.
 ```python
 # Crear una lista
-frutas = ["manzana", "platano", "cereza"\]
+frutas = ["manzana", "platano", "cereza"]
 
 # Acceder a elementos de la lista
 print(frutas[0])  # Salida: manzana
