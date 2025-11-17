@@ -523,6 +523,8 @@ for valor in persona.values():
 ```
 En el primer ejemplo, el método **_keys()_** se utiliza para obtener una vista de las claves del diccionario **_persona_**. En el segundo ejemplo, el método **_values()_** se utiliza para obtener una vista de los valores del diccionario **_persona_**.
 
+[Métodos útiles de las listas »](metodos_listas.md)
+
 [Ejercicios resueltos sobre diccionarios »](ejercicios_diccionarios.md)
 
 ## 9. Funciones y módulos
