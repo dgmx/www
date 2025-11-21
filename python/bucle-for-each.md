@@ -1,3 +1,9 @@
+---
+title: "Bucle For Each"
+parent: "Python"
+nav_exclude: true
+---
+
 # 🐍 El bucle `for each` en Python
 
 
