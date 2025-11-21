@@ -371,6 +371,8 @@ while contador < 5:
     print(contador)
     contador = contador + 1
 ```
+[Bucle For Each en Python](bucle-for-each.md)
+
 ### 7.3. Estructuras de salto
 
 Permiten alterar el flujo normal de ejecución de las estructuras de control.
