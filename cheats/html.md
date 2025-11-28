@@ -58,3 +58,6 @@ Este es un listado conciso de las **etiquetas HTML más utilizadas** para dar fo
 ### 🎨 Etiqueta de Enlace a CSS
 
 * **Vincular CSS (en el `<head>`):** `<link rel="stylesheet" href="style.css">`
+
+
+[Descargar en PDF](html.pdf).
