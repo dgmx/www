@@ -1,3 +1,9 @@
+---
+title: "E5 Ejercicios resueltos sobre Funciones 2"
+parent: "Python"
+nav_exclude: true
+---
+
 
 # 10 Ejercicios de Funciones en Python
 
