@@ -89,7 +89,7 @@ def promedio():
 
 promedio()
 
-````
+```
 ## 2. Contador de palabras
 
 ```python
@@ -106,7 +106,7 @@ def contar_palabras():
 
 contar_palabras()
 
-````
+```
 
 ## 3. Lista de números pares e impares
 ```python
@@ -129,7 +129,7 @@ def pares_impares():
 
 pares_impares()
 
-````
+```
 ## 4. Registro de alumnos
 ```python
 
@@ -149,7 +149,7 @@ def registro_alumnos():
 
 registro_alumnos()
 
-````
+```
 ## 5. Buscador en diccionario
 
 ```python
@@ -166,8 +166,9 @@ def buscar_alumno():
 
 buscar_alumno()
 
-````
- 6. Conversor de temperaturas
+```
+## 6. Conversor de temperaturas
+
 ```python
 
 def conversor():
@@ -186,7 +187,7 @@ def conversor():
 
 conversor()
 
-````
+```
 ## 7. Eliminación de duplicados
 
 ```python
@@ -203,7 +204,7 @@ def eliminar_duplicados():
 
 eliminar_duplicados()
 
-````
+```
 ## 8. Menú interactivo
 ```python
 
@@ -234,7 +235,7 @@ def menu():
 
 menu()
 
-````
+```
 ## 9. Contador de vocales
 ```python
 
@@ -250,7 +251,7 @@ def contar_vocales():
 
 contar_vocales()
 
-````
+```
 ## 10. Tienda virtual
 ```python
 
