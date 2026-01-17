@@ -1,5 +1,5 @@
 ---
-title: 2. Guia de Git
+title: 3. Guia de Git
 parent: "Linux"
 ---
 # 🌱 Guía de Comandos Git – De Principiante a Avanzado
