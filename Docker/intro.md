@@ -110,6 +110,16 @@ docker --version
 | docker rm ID    | Eliminar contenedor      |
 | docker rmi ID   | Eliminar imagen          |
 
+**Otros comandos útiles**
+
+| Comando                    | Descripción                                      |
+|----------------------------|--------------------------------------------------|
+| docker ps -a               | Lista todos los contenedores                     |
+| docker logs <id>           | Muestra logs del contenedor                      |
+| docker exec -it <id> bash  | Accede a la shell del contenedor                 |
+| docker stats               | Monitoriza consumo de recursos                  |
+| docker system df           | Uso de espacio en disco Docker                  |
+
 
 Ejemplo práctico:
 
@@ -170,6 +180,35 @@ Ejecutar:
 ``` bash
 docker compose up -d
 ```
+
+**Algunos comandos básicos**
+| Comando                          | Descripción                                             |
+|----------------------------------|---------------------------------------------------------|
+| docker compose up                | Inicia los servicios definidos                          |
+| docker compose up -d             | Inicia en segundo plano (detached)                      |
+| docker compose down              | Detiene y elimina contenedores                          |
+| docker compose down -v           | Elimina también volúmenes                               |
+| docker compose ps                | Lista servicios en ejecución                            |
+| docker compose logs              | Muestra logs de todos los servicios                     |
+| docker compose logs -f           | Logs en tiempo real                                     |
+| docker compose build             | Construye las imágenes                                  |
+| docker compose pull              | Descarga imágenes                                       |
+| docker compose restart           | Reinicia servicios                                      |
+| docker compose stop              | Detiene servicios sin eliminarlos                       |
+| docker compose start             | Inicia servicios previamente detenidos                 |
+
+**Comandos avanzados**
+
+| Comando                                      | Descripción                                           |
+|----------------------------------------------|-------------------------------------------------------|
+| docker compose exec <servicio> bash          | Acceder a un contenedor                               |
+| docker compose run <servicio> <comando>      | Ejecutar comando puntual                              |
+| docker compose config                        | Validar y mostrar configuración final                |
+| docker compose top                           | Ver procesos en contenedores                          |
+| docker compose events                        | Ver eventos del sistema                               |
+| docker compose rm                            | Eliminar servicios detenidos                          |
+| docker compose pause                         | Pausar servicios                                      |
+| docker compose unpause                       | Reanudar servicios                                    |
 
 ------------------------------------------------------------------------
 
