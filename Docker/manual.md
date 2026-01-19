@@ -293,7 +293,10 @@ USER appuser
 docker stats
 ```
 
-Herramientas: - Portainer - Prometheus - Grafana
+Herramientas: 
+- Portainer 
+- Prometheus 
+- Grafana
 
 ------------------------------------------------------------------------
 
