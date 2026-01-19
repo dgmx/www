@@ -102,13 +102,14 @@ docker --version
 
 ## 4. Comandos Básicos
 
-  Comando          Descripción
-  ---------------- ----------------------
-  docker ps        Contenedores activos
-  docker images    Imágenes disponibles
-  docker stop ID   Detener contenedor
-  docker rm ID     Eliminar contenedor
-  docker rmi ID    Eliminar imagen
+| Comando         | Descripción             |
+|-----------------|--------------------------|
+| docker ps       | Contenedores activos     |
+| docker images   | Imágenes disponibles     |
+| docker stop ID  | Detener contenedor       |
+| docker rm ID    | Eliminar contenedor      |
+| docker rmi ID   | Eliminar imagen          |
+
 
 Ejemplo práctico:
 
