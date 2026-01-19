@@ -182,6 +182,7 @@ docker compose up -d
 ```
 
 **Algunos comandos básicos**
+
 | Comando                          | Descripción                                             |
 |----------------------------------|---------------------------------------------------------|
 | docker compose up                | Inicia los servicios definidos                          |
