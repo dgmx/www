@@ -6,7 +6,6 @@ parent: "Docker"
 # Manual Avanzado de Docker 
 
 Autor: Material didáctico para Administración de Sistemas Informáticos
-en Red (ASIR)
 
 ------------------------------------------------------------------------
 
