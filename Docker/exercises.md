@@ -553,5 +553,6 @@ docker cp mi-ubuntu:/root/archivo.txt ./
 - Recuerda que los contenedores son efímeros por naturaleza; usa volúmenes para datos persistentes.
 - Para producción, considera usar Docker Compose para gestionar múltiples contenedores.
 - Practica la seguridad: no uses contraseñas débiles en entornos reales.
+- [Repositorio de Docker Compose](compose_samples/docker-compose-playground-master.zip)
 
 **¡Feliz aprendizaje!**
