@@ -284,3 +284,6 @@ docker run --rm -v datos:/data -v $(pwd):/backup ubuntu tar czf /backup/copia.ta
 -   CI/CD con Docker.
 -   Seguridad avanzada.
 -   Docker Swarm.
+-   
+
+[Descargar manual en **PDF**](manual_ampliado.pdf)
