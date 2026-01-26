@@ -66,10 +66,15 @@ color rojo = color(255, 0, 0);
 
 ### Pantalla
 
--   `width`
--   `height`
+-   `width`.  Ancho de la ventana
+-   `height`. Alto de la ventana  
 -   `displayWidth`
 -   `displayHeight`
+
+**Ejemplo:**
+```java
+ellipse(width/2, height/2, 50, 50); // círculo centrado
+``` 
 
 ### Mouse
 
