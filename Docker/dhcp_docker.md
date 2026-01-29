@@ -1,5 +1,5 @@
 ---
-title: 6. DHCP con Docker
+title: 5. DHCP con Docker
 parent: "Docker"
 ---
 
