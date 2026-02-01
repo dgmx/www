@@ -52,7 +52,7 @@ apt install isc-dhcp-server nano
 ```
 ### Paso 5: Recopilar información de la red
 
-Para configurar correctamente nuestro servidor DHCP, necesitamos conocer los detalles de la red. Abra una nueva terminal y ejecute este comando en su equipo host:
+Para configurar correctamente nuestro servidor DHCP, necesitamos conocer los detalles de la red. Abra una nueva terminal y ejecute este comando en su equipo host (fuera del contenedor):
 ```
 docker network inspect dhcp-net        
 ```
@@ -60,7 +60,7 @@ Busque la información de "Subred" y "Puerta de enlace" en el resultado. La nece
 
 ### Paso 6: Configurar el DHCP Server
 
-Dentro del contenedor del servidor, navegue hasta el directorio de configuración DHCP y edite el archivo de configuración:
+Dentro del contenedor del servidor de nuevo, navegue hasta el directorio de configuración DHCP y edite el archivo de configuración:
 ```
 cd /etc/dhcp
 nano dhcpd.conf        
