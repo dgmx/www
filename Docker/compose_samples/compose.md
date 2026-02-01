@@ -1,5 +1,5 @@
 ---
-title: 7. Docker Compose repo
+title: 8. Docker Compose repo
 parent: "Docker"
 ---
 
