@@ -104,7 +104,26 @@ sudo systemctl restart ssh
 ssh -p 2222 usuario_admin@IP_SERVIDOR
 ```
 
-## 11. Conclusión
+## 11. Evitar introducir la passphrase al conectar
+
+Para evitar el uso de la frase de paso para la conexión ssh podemos usar la opción `-i` y añadiendo la ruta de la clave ssh:
+
+```bash
+ssh -i clavePrivada -p 2222 usuario_admin@IP_SERVIDOR
+```
+
+Antes iniciamos el agente SSH, con el siguiente comando:
+```bash
+eval "$(ssh-agent -s)"
+```
+
+y cargamos la clave privada
+```bash
+ssh-add clavePrivada
+```
+Nos pedirá la passphrase una única vez y nunca mas
+
+## 12. Conclusión
 
 Servidor SSH seguro con puerto alternativo, claves y sin acceso de
 usuarios estándar.
