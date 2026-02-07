@@ -1,6 +1,6 @@
 ---
 title: 3. MikroTik VLAN Lab
-parent: "Mikrotik"
+parent: "MikroTik"
 ---
 
 # Laboratorio Práctico -- Configuración de VLAN en MikroTik (RouterOS)

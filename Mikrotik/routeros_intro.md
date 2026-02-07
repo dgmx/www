@@ -1,6 +1,6 @@
 ---
 title: 1. Introducción a RouterOS
-parent: "Mikrotik"
+parent: "MikroTik"
 ---
 
 # Manual de Introducción a la Administración de Redes con RouterOS (MikroTik)

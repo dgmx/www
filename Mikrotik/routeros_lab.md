@@ -1,6 +1,6 @@
 ---
 title: 2. MikroTik RouterOS Lab
-parent: "Mikrotik"
+parent: "MikroTik"
 ---
 
 # Laboratorio Práctico -- MikroTik RouterOS

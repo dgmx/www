@@ -1,6 +1,6 @@
 ---
 title: 4. Zerotier
-parent: "Mikrotik"
+parent: "MikroTik"
 ---
 
 # Instalación de ZeroTier en MikroTik y permitir acceso a la red local
