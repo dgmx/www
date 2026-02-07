@@ -207,6 +207,7 @@ Permitir acceso a la LAN:
 ## 9. Añadir ruta en ZeroTier Central
 
 Para poder acceder a toda la LAN desde clientes ZeroTier:
+
 En **ZeroTier Central → Managed Routes** añade:
 
 ```bash
@@ -221,7 +222,7 @@ Ejemplo:
 
 Donde la dirección de red es la red local de tu router MikroTik y la dirección IP es la dirección ZeroTier del router. Esta dirección se añade manualmente en la zona de administración de la web de ZeroTier.
 
-Podemos comprobar que recibimos nuestra Ip con el comando:
+Podemos comprobar que recibimos nuestra IP con el comando:
 
 ```bash
 /ip address print where interface=zerotier1
