@@ -7,7 +7,7 @@ parent: "MikroTik"
 
 Este manual asume que ya tenemos creada una red ZeroTier y hay algunos dispositivos conectados a la misma. Si no es tu caso accede a la web de ZeroTier, registrate y crea tu red gratuita con hasta 25 dispositivos:
 
-https://www.zerotier.com
+<https://www.zerotier.com>
 
 En **MikroTik RouterOS**, los additional packages se instalan subiendo el paquete correspondiente al router y reiniciando el sistema. El procedimiento exacto depende de la versión (v6 o v7), pero el flujo general es el mismo.
 
@@ -57,7 +57,6 @@ Es decir, necesitaré el paquete ZeroTier **v7.20.7**para la arquitectura **ARM*
 
 [Mas información sobre la instalación de paquetes en dispositivos RouterOS](https://help.mikrotik.com/docs/spaces/ROS/pages/40992872/Packages)
 
-
 ## 2. Descargar paquetes
 
 Desde la página oficial de MikroTik:
@@ -68,6 +67,7 @@ Desde la página oficial de MikroTik:
 En versiones anteriores **(especialmente en RouterOS v6)** los paquetes que estaban copiados en *Files* podían aparecer en **System → Packages** como *disabled* o *not installed*.
 
 En **RouterOS v7** el comportamiento cambió:
+
 - Los `.npk` copiados ya no aparecen en Packages hasta después del reinicio.
 - Solo se muestran en Files.
 - Tras el reboot, si son compatibles, pasan a mostrarse como installed.
@@ -142,8 +142,9 @@ En terminal:
 ```bash
 /zerotier add name=zerotier1 network=<NETWORK_ID>
 ```
+
 - `zerotier1` → nombre que quieras darle a la interfaz.
-- `<NETWORK_ID>` → el ID de tu red en ZeroTier (16 caracteres hex, ejemplo `8056c2e21c000001`).
+- `<NETWORK_ID>` → el ID de tu red en ZeroTier (16 caracteres hexadecimales, ejemplo `8056c2e21c000001`).
 
 ### 2️⃣ Activar la interfaz
 
@@ -153,7 +154,6 @@ Desde la terminal, activamos la interfaz:
 /zerotier/enable zerotier1
 ```
 
-
 Luego verifica que está creada:
 
 ```bash
@@ -161,6 +161,7 @@ Luego verifica que está creada:
 ```
 
 Deberías ver algo así:
+
 ```bash
 
  #   NAME       NETWORK        STATUS
@@ -175,10 +176,9 @@ Usa la opción `detail` para ver información detallada
 /zerotier/print detail
 ```
 
-
 ## 7. Autorizar el MikroTik en ZeroTier Central
 
-En https://my.zerotier.com
+En <https://my.zerotier.com>
 
 - Entra en tu red
 - Marca Authorize en el nuevo miembro
@@ -258,12 +258,10 @@ Añadir la interfaz a una interface-list:
 
 Así heredará reglas de firewall ya existentes si tu configuración usa listas.
 
-
 ### Resultado
 
-Con esto el MikroTik actúa como gateway entre ZeroTier y tu red local, permitiendo:
+Con esto el dispositivo MikroTik actúa como gateway entre ZeroTier y tu red local, permitiendo:
 
-- acceder al router remotamente
-- acceder a cualquier equipo de la LAN
-- interconectar redes remotas mediante ZeroTier
-
+- acceder al router remotamente.
+- acceder a cualquier equipo de la LAN.
+- interconectar redes remotas mediante ZeroTier.
