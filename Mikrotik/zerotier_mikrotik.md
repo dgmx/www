@@ -140,7 +140,7 @@ Una vez que el paquete ha sido correctamente instalado, debemos crear la interfa
 En terminal:
 
 ```bash
-/interface zerotier add name=zerotier1 network=<NETWORK_ID>
+/zerotier add name=zerotier1 network=<NETWORK_ID>
 ```
 - `zerotier1` → nombre que quieras darle a la interfaz.
 - `<NETWORK_ID>` → el ID de tu red en ZeroTier (16 caracteres hex, ejemplo `8056c2e21c000001`).
