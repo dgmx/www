@@ -22,14 +22,13 @@ Los túneles SSH son canales cifrados que permiten transportar datos de protocol
 
 ### Comando
 
-`ssh -L [Puerto_Local]:[Host_Destino]:[Puerto_Destino] usuario@servidor_ssh`
+    ssh -L [Puerto_Local]:[Host_Destino]:[Puerto_Destino] usuario@servidor_ssh
 
 ### Ejemplo Práctico
 
 Acceder a un MySQL (puerto 3306) que solo escucha conexiones locales en el servidor:
-`ssh -L 3307:localhost:3306 usuario@mi-servidor.com`
 
-
+    ssh -L 3307:localhost:3306 usuario@mi-servidor.com
 
 ---
 
@@ -39,12 +38,13 @@ Acceder a un MySQL (puerto 3306) que solo escucha conexiones locales en el servi
 
 ### Comando
 
-`ssh -R [Puerto_Remoto]:[Host_Destino]:[Puerto_Local] usuario@servidor_ssh`
+    ssh -R [Puerto_Remoto]:[Host_Destino]:[Puerto_Local] usuario@servidor_ssh
 
 ### Ejemplo Práctico
 
 Compartir tu web local (puerto 8000) a través de un VPS:
-`ssh -R 9000:localhost:8000 usuario@mi-vps-publico.com`
+
+    ssh -R 9000:localhost:8000 usuario@mi-vps-publico.com
 
 ---
 
@@ -54,7 +54,7 @@ Compartir tu web local (puerto 8000) a través de un VPS:
 
 ### Comando
 
-`ssh -D [Puerto_Local] usuario@servidor_ssh`
+    ssh -D [Puerto_Local] usuario@servidor_ssh
 
 ---
 
@@ -129,7 +129,7 @@ El comando debe ejecutarse en **`filtrado.example.com`** :
 *  **`22`** : Es el puerto SSH de `filtrado.example.com` .
 *  **`9000`** : Es el puerto redirigido en `casa.example.com` .
 
-Para conectarse al puerto SSH de `filtrado.example.com` desde `casa.example.com` :
+Para conectarse al puerto SSH de `filtrado.example.com` desde `casa.example.com`:
 
     ssh -p 9000 localhost                
 
@@ -150,7 +150,7 @@ Para conectarse al túnel desde cualquier host con acceso a `casa.example.com` :
     ssh -p 9000 casa.example.com
                         
 
-##### Requisito en casa.example.com
+#### Requisito en casa.example.com
 
 Habilitar `GatewayPorts` en `/etc/ssh/sshd_config` :
 
@@ -162,10 +162,10 @@ Reinicia el servicio SSH:
 
     sudo systemctl restart sshd
 
-##### Notas de Seguridad
+#### Notas de Seguridad
 
 Si el servidor `casa.example.com` tiene una IP pública, usar firewalls para limitar el acceso al puerto `9000` y restringirlo solo a las máquinas necesarias. Para mayor seguridad, se puede especificar una interfaz específica en lugar de `0.0.0.0` .
 
-##### Troubleshooting
+#### Troubleshooting
 
 En todas las casos usar la opción `-v` para obtener realizar debugging. Recordar que dicha opcioń se puede usar múltiples veces para aumentar el detalle.
