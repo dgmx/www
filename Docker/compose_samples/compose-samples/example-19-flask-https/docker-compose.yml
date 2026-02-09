@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+    web:
+        build: ./web
+
+    redis:
+        image: redis
+        command: redis-server --appendonly yes
+        volumes:
+            - data:/data
+
+    https-portal:
+        image: steveltn/https-portal:1
+        ports:
+            - 80:80
+            - 443:443
+        environment:
+            #DOMAINS: "localhost -> http://web:80 #local"
+            DOMAINS: "${DOMAIN} -> http://web:80 #production"
+        volumes:
+            - ssl_certs_data:/var/lib/https-portal
+        depends_on:
+            - web
+        restart: always
+
+volumes:
+    data:
+    ssl_certs_data:
