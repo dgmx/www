@@ -3,7 +3,6 @@ title: 2. Comandos de red Linux
 parent: "Linux"
 ---
 
-
 # 🌐 Comandos Avanzados de Administración de Red en Linux
 
 ## 1. **Configuración de interfaces de red** 
