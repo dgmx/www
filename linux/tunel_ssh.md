@@ -3,7 +3,7 @@ title: 8. Tunel SSH
 parent: "Linux"
 ---
 
-# Manual Maestro de Túneles SSH: Conceptos y Práctica
+# Manual de creación de Túneles SSH: Conceptos y Práctica
 
 Los túneles SSH son canales cifrados que permiten transportar datos de protocolos no seguros o saltar restricciones de red de forma protegida, podemos considerarlos como "pasadizos secretos" cifrados que te permiten transportar datos de un protocolo a otro de forma segura. Es una de las herramientas más potentes para cualquier administrador de sistemas o desarrollador.
 
@@ -160,7 +160,7 @@ Comando para configurar el túnel:
 
 ```bash
 ssh  -N -f -R 0.0.0.0:9000:localhost:22 casa.example.com
-```                        
+```
 
 *   **`0.0.0.0:9000`** : Permite que el puerto redirigido esté accesible en todas las interfaces de red de `casa.example.com` .
 *   **`localhost:22`** : Redirige el tráfico al puerto SSH de `filtrado.example.com` .
@@ -169,7 +169,7 @@ Para conectarse al túnel desde cualquier host con acceso a `casa.example.com` :
 
 ```bash
 ssh -p 9000 casa.example.com
-```                        
+```
 
 #### Requisito en casa.example.com
 
