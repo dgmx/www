@@ -22,14 +22,17 @@ Los túneles SSH son canales cifrados que permiten transportar datos de protocol
 
 ### Comando
 
-    ssh -L [Puerto_Local]:[Host_Destino]:[Puerto_Destino] usuario@servidor_ssh
+```bash
+ssh -L [Puerto_Local]:[Host_Destino]:[Puerto_Destino] usuario@servidor_ssh
+```
 
 ### Ejemplo Práctico
 
 Acceder a un MySQL (puerto 3306) que solo escucha conexiones locales en el servidor:
 
-    ssh -L 3307:localhost:3306 usuario@mi-servidor.com
-
+```bash
+ssh -L 3307:localhost:3306 usuario@mi-servidor.com
+```
 ---
 
 ## 3. Túnel Remoto (Remote Port Forwarding)
@@ -38,13 +41,17 @@ Acceder a un MySQL (puerto 3306) que solo escucha conexiones locales en el servi
 
 ### Comando
 
-    ssh -R [Puerto_Remoto]:[Host_Destino]:[Puerto_Local] usuario@servidor_ssh
+```bash
+ssh -R [Puerto_Remoto]:[Host_Destino]:[Puerto_Local] usuario@servidor_ssh
+```
 
 ### Ejemplo Práctico
 
 Compartir tu web local (puerto 8000) a través de un VPS:
 
-    ssh -R 9000:localhost:8000 usuario@mi-vps-publico.com
+```bash
+ssh -R 9000:localhost:8000 usuario@mi-vps-publico.com
+```
 
 ---
 
@@ -54,7 +61,9 @@ Compartir tu web local (puerto 8000) a través de un VPS:
 
 ### Comando
 
-    ssh -D [Puerto_Local] usuario@servidor_ssh
+```bash
+ssh -D [Puerto_Local] usuario@servidor_ssh
+```
 
 ---
 
@@ -94,7 +103,9 @@ Para que los túneles remotos sean públicos, edita `/etc/ssh/sshd_config` en el
 
 > Queremos segurizar el acceso a un servidor web sin TLS.
 
-    ssh -N -f -L 10001:localhost:80 openssh-server.example.com
+```bash
+ssh -N -f -L 10001:localhost:80 openssh-server.example.com
+```
 
 * `80` : Es el puerto que tiene el servicio sin cifrar
 * `localhost` : Es la dirección en el host servicio-remoto.example.com que escucha en el puerto 80.
@@ -108,13 +119,17 @@ Para que los túneles remotos sean públicos, edita `/etc/ssh/sshd_config` en el
 
 > Queremos permitir que otros hosts de la red puedan acceder nuestro servicio encapsulado.
 
-    ssh -g -N -f -L 10001:localhost:80 openssh-server.example.com
+```bash
+ssh -g -N -f -L 10001:localhost:80 openssh-server.example.com
+```
 
 * `-g` Permite acceder a otros hosts de la red 192.0.2.0/24 acceder a el url **http://192.0.2.1:10001/**
 
 ### Caso 3: Redireccionado desde un puerto local a un puerto remoto usando otro servidor ssh para acceder a un servicio sin TLS ni ssh
 
-    ssh -N -f -L 10001:otrohost.example.com:80 openssh-server.example.com
+```bash
+ssh -N -f -L 10001:otrohost.example.com:80 openssh-server.example.com
+```
 
 * Aquí la url será **http://localhost:10001**
 
@@ -124,14 +139,18 @@ En este caso, queremos acceder al puerto SSH de `filtrado.example.com` , que no 
 
 El comando debe ejecutarse en **`filtrado.example.com`** :
 
-    ssh  -N -f -R 9000:localhost:22 casa.example.com
+```bash
+ssh  -N -f -R 9000:localhost:22 casa.example.com
+```
 
 *  **`22`** : Es el puerto SSH de `filtrado.example.com` .
 *  **`9000`** : Es el puerto redirigido en `casa.example.com` .
 
 Para conectarse al puerto SSH de `filtrado.example.com` desde `casa.example.com`:
 
-    ssh -p 9000 localhost                
+```bash
+ssh -p 9000 localhost                
+```
 
 ### Caso 5: Redireccionamiento remoto para permitir acceso compartido a un puerto filtrado
 
@@ -139,28 +158,34 @@ En este caso, queremos redirigir el puerto SSH de un servidor filtrado ( `filtra
 
 Comando para configurar el túnel:
 
-    ssh  -N -f -R 0.0.0.0:9000:localhost:22 casa.example.com
-                        
+```bash
+ssh  -N -f -R 0.0.0.0:9000:localhost:22 casa.example.com
+```                        
 
 *   **`0.0.0.0:9000`** : Permite que el puerto redirigido esté accesible en todas las interfaces de red de `casa.example.com` .
 *   **`localhost:22`** : Redirige el tráfico al puerto SSH de `filtrado.example.com` .
 
 Para conectarse al túnel desde cualquier host con acceso a `casa.example.com` :
 
-    ssh -p 9000 casa.example.com
-                        
+```bash
+ssh -p 9000 casa.example.com
+```                        
 
 #### Requisito en casa.example.com
 
 Habilitar `GatewayPorts` en `/etc/ssh/sshd_config` :
 
-    GatewayPorts clientspecified
-                          
+```bash
+GatewayPorts clientspecified
+```
+
 Con esta configuración si el cliente no especifica explícitamente 0.0.0.0 al crear el túnel, los puertos siguen siendo locales por defecto.
 
 Reinicia el servicio SSH:
 
-    sudo systemctl restart sshd
+```bash
+sudo systemctl restart sshd
+```
 
 #### Notas de Seguridad
 
