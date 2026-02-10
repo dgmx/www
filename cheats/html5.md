@@ -1,3 +1,9 @@
+---
+title: "HTML5"
+parent: "cheats"
+nav_exclude: true
+---
+
 HTML5
 =======================================
 
@@ -498,11 +504,9 @@ El HTML siguiente produce el resultado que nos piden
 </html>
 ```
 
-
-
 ### Enunciado
 
-_Crea un formulario como este_
+Crea un formulario como este
 
 ![formu3.png](images/formu3.png)
 
