@@ -141,31 +141,31 @@ También puede usar NetworkManager (GUI) como backend, dependiendo de la configu
 
 #### Flujo de funcionamiento
 
-1. Administrador edita:
+### 1️⃣ Administrador edita:
 
 ```bash
 /etc/netplan/*.yaml
 ```
 
-2. Ejecuta:
+### 2️⃣ Ejecuta:
 
 ```bash
 sudo netplan apply
 ```
 
-3. Netplan genera archivos en:
+### 3️⃣ Netplan genera archivos en:
 
 ```bash
 /run/systemd/network/
 ```
 
-4. `systemd-networkd` aplica la configuración real de red.
+### 4️⃣ `systemd-networkd` aplica la configuración real de red.
 
 **Ejemplo**
 
 Archivo Netplan:
 
-```bash
+```yaml
 network:
   version: 2
   renderer: networkd
@@ -259,7 +259,7 @@ Para probar sin riesgo (revierte si falla):
 sudo netplan try
 ```
 
-### 1. Estructura básica de un archivo Netplan
+### 1️⃣. Estructura básica de un archivo Netplan
 
 Ejemplo mínimo:
 
@@ -279,7 +279,7 @@ network:
 - `ethernets`: → interfaces cableadas
 - `wifis`: → WiFi
 
-### 2. Ejemplo DHCP automático
+### 2️⃣. Ejemplo DHCP automático
 
 ```yaml
 network:
@@ -290,7 +290,7 @@ network:
       dhcp4: true
 ```
 
-### 3. Ejemplo IP estática
+### 3️⃣. Ejemplo IP estática
 
 ```yaml
 network:
@@ -310,7 +310,7 @@ network:
           - 1.1.1.1
 ```
 
-### 4. Varias interfaces
+### 4️⃣. Varias interfaces
 
 ```yaml
 network:
@@ -325,7 +325,7 @@ network:
         - 10.0.0.2/24
 ```
 
-### 5. Bridge (muy común en virtualización)
+### 5️⃣. Bridge (muy común en virtualización)
 
 ```yaml
 network:
@@ -342,7 +342,7 @@ network:
       dhcp4: true
 ```
 
-### 6. WiFi
+### 6️⃣. WiFi
 
 ```yaml
 network:
@@ -356,7 +356,7 @@ network:
           password: "clavewifi"
 ```
 
-### 7. Comandos esenciales
+### 7️⃣. Comandos esenciales
 
 Ver interfaces:
 
@@ -382,7 +382,7 @@ Generar archivos backend:
 sudo netplan generate
 ```
 
-### 8. Buenas prácticas importantes
+### 8️⃣. Buenas prácticas importantes
 
 - Los archivos YAML dependen de la indentación (usar espacios, no tabs).
 - Confirmar nombre real de la interfaz con: `ip link`
@@ -396,11 +396,8 @@ En Netplan, cuando existen varios archivos YAML que afectan a la misma interfaz,
 
 ### Regla de precedencia
 
-1. Netplan lee todos los archivos de:
-/etc/netplan/*.yaml
-
+1. Netplan lee todos los archivos de: `/etc/netplan/*.yaml`
 2. Los procesa en orden alfabético.
-
 3. Las configuraciones del archivo que aparece después sobrescriben los valores anteriores si hay conflicto.
 
 Ejemplo de orden:
