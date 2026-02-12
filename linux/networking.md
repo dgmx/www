@@ -664,93 +664,9 @@ Canonical introdujo Netplan como:
 - Ubuntu 18.04 LTS → Netplan por defecto
 - Ubuntu moderno → Netplan + networkd (server) / NetworkManager (desktop)
 
-### Configuración IP expresada en los tres modelos de red
-
-A continuación tienes la misma configuración (IP estática) expresada en los tres modelos históricos de Ubuntu/Linux:
-
-Supongamos:
-
-- Interfaz: `eth0`
-- IP: `192.168.1.50/24`
-- Gateway: `192.168.1.1`
-- DNS: `8.8.8.8`
-
-### 1️⃣ ifupdown (Ubuntu antiguo)
-
-/etc/network/interfaces
-
-```bash
-auto eth0
-iface eth0 inet static
-    address 192.168.1.50
-    netmask 255.255.255.0
-    gateway 192.168.1.1
-    dns-nameservers 8.8.8.8
-```
-
-Modelo:
-
-- Imperativo
-- El servicio `networking` ejecuta scripts ifup/ifdown
-  
-### 2️⃣ Netplan (Ubuntu moderno)
-
-/etc/netplan/01-netcfg.yaml
-
-```yaml
-network:
-  version: 2
-  renderer: networkd
-  ethernets:
-    eth0:
-      dhcp4: false
-      addresses:
-        - 192.168.1.50/24
-      routes:
-        - to: default
-          via: 192.168.1.1
-      nameservers:
-        addresses:
-          - 8.8.8.8
-```
-
-Modelo:
-
-- Declarativo `YAML`
-- Netplan genera configuración backend
-
-### 3️⃣ systemd-networkd directo
-
-/etc/systemd/network/20-eth0.network
-
-```bash
-[Match]
-Name=eth0
-
-[Network]
-Address=192.168.1.50/24
-Gateway=192.168.1.1
-DNS=8.8.8.8
-```
-
-Modelo:
-
-- Configuración directa del backend
-- Sin capa Netplan
-
-### Diferencia conceptual
-
-| Sistema | Nivel | Configurador |
-|---|---|---|
-| ifupdown | clásico | scripts ifup/ifdown |
-| Netplan | alto nivel | genera config para networkd o NetworkManager |
-| networkd directo | bajo nivel | systemd-networkd |
-
-
-
 ## 2.3 systemd-networkd
 
-## Introducción
+### Introducción
 
 `systemd-networkd` es un servicio que configura la red directamente
 mediante archivos en:
@@ -763,7 +679,7 @@ hardware
 
 ------------------------------------------------------------------------
 
-## Activar el servicio
+### Activar el servicio
 
 ``` bash
 sudo systemctl enable systemd-networkd
@@ -779,7 +695,7 @@ sudo systemctl start systemd-resolved
 
 ------------------------------------------------------------------------
 
-## Ver interfaces disponibles
+### Ver interfaces disponibles
 
 ``` bash
 ip link
@@ -787,7 +703,7 @@ ip link
 
 ------------------------------------------------------------------------
 
-## Configuración DHCP
+### Configuración DHCP
 
 Archivo:
 
@@ -809,7 +725,7 @@ sudo systemctl restart systemd-networkd
 
 ------------------------------------------------------------------------
 
-## Configuración IP estática
+### Configuración IP estática
 
     /etc/systemd/network/20-eth0.network
 
@@ -823,7 +739,7 @@ sudo systemctl restart systemd-networkd
 
 ------------------------------------------------------------------------
 
-## Bridge básico
+### Bridge básico
 
 ### Crear dispositivo bridge
 
@@ -855,7 +771,7 @@ sudo systemctl restart systemd-networkd
 
 ------------------------------------------------------------------------
 
-## Comandos de diagnóstico
+### Comandos de diagnóstico
 
 Estado general:
 
@@ -877,7 +793,90 @@ journalctl -u systemd-networkd
 
 ------------------------------------------------------------------------
 
-## Orden de carga
+### Orden de carga
 
 Los archivos se aplican en orden alfabético (10-, 20-, 99-), donde los
 números mayores tienen prioridad.
+
+## Configuración IP expresada en los tres modelos de red
+
+A continuación tienes la misma configuración (IP estática) expresada en los tres modelos históricos de Ubuntu/Linux:
+
+Supongamos:
+
+- Interfaz: `eth0`
+- IP: `192.168.1.50/24`
+- Gateway: `192.168.1.1`
+- DNS: `8.8.8.8`
+
+### 1️⃣ ifupdown (Ubuntu antiguo)
+
+`/etc/network/interfaces`
+
+```bash
+auto eth0
+iface eth0 inet static
+    address 192.168.1.50
+    netmask 255.255.255.0
+    gateway 192.168.1.1
+    dns-nameservers 8.8.8.8
+```
+
+Modelo:
+
+- Imperativo
+- El servicio `networking` ejecuta scripts ifup/ifdown
+  
+### 2️⃣ Netplan (Ubuntu moderno)
+
+`/etc/netplan/01-netcfg.yaml`
+
+```yaml
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    eth0:
+      dhcp4: false
+      addresses:
+        - 192.168.1.50/24
+      routes:
+        - to: default
+          via: 192.168.1.1
+      nameservers:
+        addresses:
+          - 8.8.8.8
+```
+
+Modelo:
+
+- Declarativo `YAML`
+- Netplan genera configuración backend
+
+### 3️⃣ systemd-networkd directo
+
+`/etc/systemd/network/20-eth0.network`
+
+```bash
+[Match]
+Name=eth0
+
+[Network]
+Address=192.168.1.50/24
+Gateway=192.168.1.1
+DNS=8.8.8.8
+```
+
+Modelo:
+
+- Configuración directa del backend
+- Sin capa Netplan
+
+### Diferencia conceptual
+
+| Sistema | Nivel | Configurador |
+|---|---|---|
+| ifupdown | clásico | scripts ifup/ifdown |
+| Netplan | alto nivel | genera config para networkd o NetworkManager |
+| networkd directo | bajo nivel | systemd-networkd |
+
