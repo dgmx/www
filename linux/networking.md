@@ -389,3 +389,179 @@ sudo netplan generate
 - Mantener un acceso de consola cuando se cambia la red remota.
 
 [Guia de Configuración How To para Netplan](https://netplan.readthedocs.io/en/stable/howto/)
+
+
+## Archivos Netplan
+
+En Netplan, cuando existen varios archivos YAML que afectan a la misma interfaz, no existe un concepto de “archivo principal”. Netplan fusiona (merge) todos los archivos en orden lexicográfico por nombre.
+
+### Regla de precedencia
+
+1. Netplan lee todos los archivos de:
+/etc/netplan/*.yaml
+
+2. Los procesa en orden alfabético.
+
+3. Las configuraciones del archivo que aparece después sobrescriben los valores anteriores si hay conflicto.
+
+Ejemplo de orden:
+
+```bash
+01-netcfg.yaml
+50-cloud-init.yaml
+99-local.yaml
+```
+
+Aquí:
+
+- Primero se aplica `01-netcfg.yaml`
+- Luego `50-cloud-init.yaml`
+- Finalmente `99-local.yaml` → tiene prioridad final
+
+Ejemplo práctico
+
+Si en:
+
+**50-cloud-init.yaml**
+
+```yaml
+ethernets:
+  ens18:
+    dhcp4: true
+```
+
+y en:
+
+**99-local.yaml**
+
+```yaml
+ethernets:
+  ens18:
+    dhcp4: false
+    addresses:
+      - 192.168.1.10/24
+```
+
+El resultado final será **IP estática**, porque el archivo `99-*` se procesa al final.
+
+## Buenas prácticas reales de administración
+
+Usar prefijos numéricos:
+
+- `50-` → configuraciones automáticas (cloud-init)
+- `60-70-` → configuraciones del sistema
+- `99-` → overrides locales del administrador
+
+No editar archivos generados automáticamente (ej. `50-cloud-init.yaml`); crear un archivo posterior que sobrescriba.
+
+### Cómo ver la configuración final combinada
+
+Muy útil para depuración:
+
+```bash
+sudo netplan get
+```
+
+o:
+
+```bash
+sudo netplan generate
+```
+
+y revisar lo generado en:
+
+```bash
+/run/systemd/network/
+```
+
+## Procedimiento seguro estándar para cambiar una IP remota vía SSH usando Netplan sin perdida de acceso.
+
+La metodología es la siguiente:
+
+- No tocar el archivo existente
+- Crear un archivo nuevo con mayor prioridad
+- Usar `netplan try`, que revierte automáticamente si pierdes conexión
+
+## Procedimiento
+
+### 1. Ver la configuración actual
+
+```bash
+ip a
+ip r
+ls /etc/netplan
+````
+
+Supongamos que existe:
+
+```bash
+50-cloud-init.yaml
+````
+
+### 2. Crear un archivo override
+
+Ejemplo:
+
+```bash
+sudo nano /etc/netplan/99-ip-estatica.yaml
+```
+
+Contenido:
+
+```yaml
+network:
+  version: 2
+  ethernets:
+    ens18:
+      dhcp4: false
+      addresses:
+        - 192.168.1.50/24
+      routes:
+        - to: default
+          via: 192.168.1.1
+      nameservers:
+        addresses: [8.8.8.8,1.1.1.1]
+```
+
+El prefijo `99-` asegura que esta configuración prevalezca.
+
+### 3. Probar de forma segura
+
+Muy importante:
+
+```bash
+sudo netplan try
+```
+
+Funcionamiento:
+
+- Aplica la configuración temporalmente
+- Espera confirmación en consola (normalmente 120 s)
+- Si pierdes conexión SSH, revierte automáticamente
+
+Si todo funciona:
+
+```bash
+Press ENTER before timeout to accept the new configuration
+```
+
+
+### 4. Aplicar definitivamente
+
+```bash
+sudo netplan apply
+```
+
+## Buenas prácticas críticas en producción
+
+- Nunca ejecutar directamente `netplan apply` en servidores remotos críticos.
+- Siempre usar `netplan try`.
+- Mantener una segunda sesión SSH abierta mientras se cambia la red.
+- Usar archivos `99-*` para overrides locales en lugar de modificar los generados por cloud-init.
+
+### Patrón profesional muy usado
+
+Configuración típica en servidores cloud:
+
+- 50-cloud-init.yaml      (DHCP automático inicial)
+- 99-static-config.yaml   (configuración final del administrador)
