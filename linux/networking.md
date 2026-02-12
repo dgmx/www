@@ -30,7 +30,7 @@ Características principales:
   - Bridges
   - Bonds (LACP)
   - Túneles
-  - Bajo consumo de recursos (más ligero que NetworkManager)
+- Bajo consumo de recursos (más ligero que NetworkManager)
 
 #### Archivos de configuración
 
