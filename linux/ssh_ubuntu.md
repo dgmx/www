@@ -11,16 +11,16 @@ Este manual describe paso a paso cómo instalar y configurar un servidor
 **SSH (Secure Shell)** en Ubuntu Linux. Se explican dos aspectos clave
 de seguridad:
 
--   Uso de un **puerto alternativo** al puerto estándar 22.
--   Autenticación mediante **clave pública y privada**, deshabilitando
+- Uso de un **puerto alternativo** al puerto estándar 22.
+- Autenticación mediante **clave pública y privada**, deshabilitando
     el acceso por contraseña y bloqueando el inicio de sesión de
     usuarios estándar.
 
 ## 2. Requisitos previos
 
--   Ubuntu 20.04 o superior\
--   Usuario con privilegios sudo\
--   Cliente SSH instalado
+- Ubuntu 20.04 o superior\
+- Usuario con privilegios sudo\
+- Cliente SSH instalado
 
 ## 3. Instalación del servidor SSH
 
@@ -35,7 +35,7 @@ sudo systemctl status ssh
 Ruta principal:
 
 ``` bash
-/ etc / ssh / sshd_config
+/etc/ssh/sshd_config
 ```
 
 Crear copia de seguridad:
@@ -75,20 +75,20 @@ ssh-copy-id -p 2222 usuario@IP_SERVIDOR
 
 ## 7. Deshabilitar contraseña
 
-``` text
+``` bash
 PasswordAuthentication no
 UsePAM no
 ```
 
 ## 8. Bloquear usuarios estándar
 
-``` text
+``` bash
 AllowUsers usuario_admin
 ```
 
 o por grupo:
 
-``` text
+``` bash
 AllowGroups sshadmin
 ```
 
@@ -113,14 +113,17 @@ ssh -i clavePrivada -p 2222 usuario_admin@IP_SERVIDOR
 ```
 
 Antes iniciamos el agente SSH, con el siguiente comando:
+
 ```bash
 eval "$(ssh-agent -s)"
 ```
 
 y cargamos la clave privada
+
 ```bash
 ssh-add clavePrivada
 ```
+
 Nos pedirá la passphrase una única vez y nunca mas
 
 ## 12. Conclusión
