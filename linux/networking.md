@@ -1,4 +1,7 @@
-
+---
+title: 9. Networking Linux
+parent: "Linux"
+---
 
 # Configuración de red en Linux
 
