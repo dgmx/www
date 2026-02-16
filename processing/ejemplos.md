@@ -2,7 +2,7 @@
 title: "10. Ejemplos"
 parent: "Processing"
 ---
-<script src="js/processing.js"></script>
+
 
 # 10. Ejercicios Básicos de Processing (Java y Python)
 
@@ -25,8 +25,8 @@ void mousePressed() {
   fill(random(255), random(255), random(255)); // Cambia el color de relleno al hacer clic
 }
 ```
-  
-<canvas data-processing-sources="code/eje01.pde"></canvas>
+
+[Ver Ejemplo](ejemplos_pro.html)
 
 
 #### Python (Processing.py):
