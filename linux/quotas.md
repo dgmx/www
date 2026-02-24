@@ -7,7 +7,7 @@ nav_exclude: true
 ## ✅ Cuotas en SAMBA
 👉 Crear un filesystem independiente para /srv/samba/usuarios
 
-+ 1️⃣ Crear imagen o volumen
+1️⃣ Crear imagen o volumen
 
     Ejemplo con archivo loop (20GB):
 
@@ -15,7 +15,7 @@ nav_exclude: true
 
     ```mkfs.ext4 /quota_samba.img```
 
-+ 2️⃣ Mover datos actuales
+2️⃣ Mover datos actuales
   
     ```
     mkdir /mnt/temp
@@ -23,7 +23,7 @@ nav_exclude: true
     rsync -av /srv/samba/usuarios/ /mnt/temp/
     ```
 
-+ 3️⃣ Montar con cuotas activadas y Desmontar temp:
+3️⃣ Montar con cuotas activadas y Desmontar temp:
 
     ```
     umount /mnt/temp
@@ -38,14 +38,14 @@ Si quieres persistencia, añade a `/etc/fstab:`
 
 ```/quota_samba.img  /srv/samba/usuarios  ext4  loop,usrquota,grpquota  0 0```
 
-+ 4️⃣ Inicializar cuotas
+4️⃣ Inicializar cuotas
 
     ```
     quotacheck -cugm /srv/samba/usuarios
     quotaon /srv/samba/usuarios
     ```
 
-+ 5️⃣ Asignar cuota a cada usuario
+5️⃣ Asignar cuota a cada usuario
   
     ```
     edquota usuario1
@@ -123,7 +123,6 @@ Grace period before enforcing soft limits for users:
 Time units may be: days, hours, minutes, or seconds
   Filesystem             Block grace period     Inode grace period
   /dev/loop0                     7days                 7days
-
 ```
 
 
