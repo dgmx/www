@@ -1,3 +1,10 @@
+---
+title: "CSS"
+parent: "cheats"
+nav_exclude: true
+---
+
+
 Introducción a CSS
 ===================================
 
