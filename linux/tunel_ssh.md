@@ -10,6 +10,7 @@ Los túneles SSH son canales cifrados que permiten transportar datos de protocol
 ---
 
 ## 1. Glosario de Términos
+
 * **Local:** Tu máquina física (desde donde escribes el comando).
 * **Remote:** El servidor intermedio al que te conectas por SSH.
 * **Destino:** El servicio final al que quieres llegar.
