@@ -9,41 +9,45 @@ nav_exclude: true
 
 1️⃣ Crear imagen o volumen
 
-    Ejemplo con archivo loop (20GB):
+Ejemplo con archivo loop (20GB):
 
-    ```dd if=/dev/zero of=/quota_samba.img bs=1M count=20480```
-
-    ```mkfs.ext4 /quota_samba.img```
+```bash
+dd if=/dev/zero of=/quota_samba.img bs=1M count=20480
+mkfs.ext4 /quota_samba.img
+```
 
 2️⃣ Mover datos actuales
   
-    ```
-    mkdir /mnt/temp
-    mount -o loop /quota_samba.img /mnt/temp
-    rsync -av /srv/samba/usuarios/ /mnt/temp/
-    ```
+```
+mkdir /mnt/temp
+mount -o loop /quota_samba.img /mnt/temp
+rsync -av /srv/samba/usuarios/ /mnt/temp/
+```
 
 3️⃣ Montar con cuotas activadas y Desmontar temp:
 
-    ```
-    umount /mnt/temp
-    ```
+```bash
+umount /mnt/temp
+```
 
-    Montar definitivo:
-    ```
-    mount -o loop,usrquota,grpquota /quota_samba.img /srv/samba/usuarios
-    ```
+Montar definitivo:
+
+```bash
+mount -o loop,usrquota,grpquota /quota_samba.img /srv/samba/usuarios
+```
 
 Si quieres persistencia, añade a `/etc/fstab:`
 
-```/quota_samba.img  /srv/samba/usuarios  ext4  loop,usrquota,grpquota  0 0```
+```bash
+/quota_samba.img  /srv/samba/usuarios  ext4  loop,usrquota,grpquota  0 0
+```
 
 4️⃣ Inicializar cuotas
 
-    ```
-    quotacheck -cugm /srv/samba/usuarios
-    quotaon /srv/samba/usuarios
-    ```
+```bash
+quotacheck -cugm /srv/samba/usuarios
+quotaon /srv/samba/usuarios
+```
 
 5️⃣ Asignar cuota a cada usuario
   
@@ -86,9 +90,10 @@ Ejemplo:
 
 Edita el archivo así:
 
-```
+```bash
 dev/loop0 12 900000 1048576 3 0 0
 ```
+
 Esto significa:
 
 - Soft limit ≈ 900 MB  
@@ -112,7 +117,7 @@ quota -u usuario01
 
 ### Configurar periodo de gracia (opcional)
 
-```
+```bash
 edquota -t
 ```
 
@@ -124,7 +129,6 @@ Time units may be: days, hours, minutes, or seconds
   Filesystem             Block grace period     Inode grace period
   /dev/loop0                     7days                 7days
 ```
-
 
 ### Verificar que funciona
 
