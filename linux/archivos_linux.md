@@ -4,7 +4,7 @@ parent: "Linux"
 nav_exclude: true
 ---
 
-# 📂 Manual Completo: Archivos y Carpetas en Sistemas Operativos (Nivel Bachillerato)
+# 📂 Archivos y Carpetas en Sistemas Operativos Linux
 
 ![License](https://img.shields.io/badge/license-Educational-blue)
 ![Level](https://img.shields.io/badge/level-Bachillerato-green)
@@ -14,10 +14,11 @@ nav_exclude: true
 
 ## 📑 Tabla de Contenidos
 
-- [📂 Manual Completo: Archivos y Carpetas en Sistemas Operativos (Nivel Bachillerato)](#-manual-completo-archivos-y-carpetas-en-sistemas-operativos-nivel-bachillerato)
+- [📂 Archivos y Carpetas en Sistemas Operativos Linux](#-archivos-y-carpetas-en-sistemas-operativos-linux)
   - [📑 Tabla de Contenidos](#-tabla-de-contenidos)
   - [¿Qué es un archivo?](#qué-es-un-archivo)
   - [Tipos de archivos](#tipos-de-archivos)
+    - [Archivos de texto o Archivos binarios](#archivos-de-texto-o-archivos-binarios)
     - [Según su contenido](#según-su-contenido)
     - [Según Linux](#según-linux)
   - [Carpetas o directorios](#carpetas-o-directorios)
@@ -51,9 +52,9 @@ Un **archivo** es una unidad básica de almacenamiento que contiene
 información digital.\
 Está compuesto por:
 
--   **Nombre**
--   **Extensión**
--   **Ruta (path)**
+- **Nombre**
+- **Extensión**
+- **Ruta (path)**
 
 Ejemplo de ruta absoluta:
 
@@ -64,6 +65,90 @@ Ejemplo de ruta absoluta:
 ------------------------------------------------------------------------
 
 ## Tipos de archivos
+
+### Archivos de texto o Archivos binarios
+
+Esta clasificación no depende de la extensión, sino de cómo están codificados internamente los datos.
+
+**1. Archivos de Texto**
+
+Un archivo de texto almacena información usando caracteres codificados (`ASCII` o `UTF-8` normalmente), lo que permite que pueda leerse directamente por un ser humano.
+
+**Características**
+
+- Se puede abrir con un editor simple de texto como nano, gedit o Notepad
+- Contiene letras, números y símbolos interpretables
+- Es editable fácilmente
+- Suele usarse para código fuente y configuraciones
+
+**Ejemplos**
+
+- `archivo.txt`
+- `programa.py`
+- `config.conf`
+- `pagina.html`
+- `datos.csv`
+
+**Ejemplo práctico**
+
+```bash
+cat archivo.txt
+```
+
+El contenido será legible directamente en la terminal.
+
+**2. Archivos Binarios**
+
+Un archivo binario almacena información en formato binario puro (ceros y unos) que no está pensado para ser leído directamente por humanos.
+
+Aunque todo archivo es binario internamente, en este caso significa que no representa texto legible.
+
+**Características**
+
+- No es legible al abrirlo con cat
+- Puede contener imágenes, audio, ejecutables, datos comprimidos, etc.
+- Necesita un programa específico para interpretarlo
+
+**Ejemplos**
+
+- `imagen.jpg`
+- `video.mp4`
+- `programa.exe`
+- `archivo.pdf`
+- `archivo.tar.gz`
+
+**Ejemplo práctico**
+
+```bash
+cat imagen.jpg
+```
+
+El resultado será una secuencia de símbolos sin sentido visual.
+
+**Identificar el tipo en Linux**
+
+Linux dispone del comando file:
+
+```bash
+file archivo.txt
+file imagen.jpg
+```
+
+Ejemplo de salida:
+
+```bash
+archivo.txt: ASCII text
+imagen.jpg: JPEG image data
+````
+
+**Comparación directa**
+
+| Característica                   | Archivo de Texto | Archivo Binario |
+|----------------------------------|------------------|-----------------|
+| Legible por humanos              | ✅ Sí            | ❌ No           |
+| Editable con editor simple       | ✅ Sí            | ❌ No           |
+| Necesita programa específico     | ❌ No siempre    | ✅ Sí           |
+| Ejemplo                          | .txt, .py        | .jpg, .mp4      |
 
 ### Según su contenido
 
@@ -78,10 +163,10 @@ Ejemplo de ruta absoluta:
 
 ### Según Linux
 
--   Archivo regular
--   Directorio
--   Enlace simbólico
--   Archivo de dispositivo
+- Archivo regular
+- Directorio
+- Enlace simbólico
+- Archivo de dispositivo
 
 ------------------------------------------------------------------------
 
@@ -323,10 +408,10 @@ Crear carpeta `Temporal`, añadir archivo y eliminarla correctamente.
 
 # Preguntas de reflexión
 
-1.  Diferencia entre ruta absoluta y relativa.
-2.  ¿Qué sucede si ejecutas `rm -r /`?
-3.  ¿Por qué son importantes los permisos?
-4.  ¿Qué ventajas tiene la organización jerárquica?
+1. Diferencia entre ruta absoluta y relativa.
+2. ¿Qué sucede si ejecutas `rm -r /`?
+3. ¿Por qué son importantes los permisos?
+4. ¿Qué ventajas tiene la organización jerárquica?
 
 ------------------------------------------------------------------------
 
@@ -334,10 +419,10 @@ Crear carpeta `Temporal`, añadir archivo y eliminarla correctamente.
 
 Comprender la gestión de archivos y directorios permite:
 
--   Organizar información eficientemente
--   Administrar sistemas Linux
--   Mantener seguridad mediante permisos
--   Automatizar tareas básicas
+- Organizar información eficientemente
+- Administrar sistemas Linux
+- Mantener seguridad mediante permisos
+- Automatizar tareas básicas
 
 Es un conocimiento fundamental para continuar estudios en informática y
 administración de sistemas.
