@@ -1,5 +1,5 @@
 ---
-title: 2. Comandos de red Linux
+title: 02. Comandos de red Linux
 parent: "Linux"
 ---
 

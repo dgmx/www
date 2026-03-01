@@ -1,5 +1,5 @@
 ---
-title: 6. Linux como router
+title: 06. Linux como router
 parent: "Linux"
 ---
 

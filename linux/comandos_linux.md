@@ -1,5 +1,5 @@
 ---
-title: 1. Comandos básicos Linux
+title: 01. Comandos básicos Linux
 parent: "Linux"
 ---
 

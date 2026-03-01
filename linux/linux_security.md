@@ -1,5 +1,5 @@
 ---
-title: 4. Seguridad Linux
+title: 04. Seguridad Linux
 parent: "Linux"
 ---
 

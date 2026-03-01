@@ -1,5 +1,5 @@
 ---
-title: 7. SSH server
+title: 07. SSH server
 parent: "Linux"
 ---
 
