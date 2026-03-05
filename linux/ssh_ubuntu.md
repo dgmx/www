@@ -18,8 +18,8 @@ de seguridad:
 
 ## 2. Requisitos previos
 
-- Ubuntu 20.04 o superior\
-- Usuario con privilegios sudo\
+- Ubuntu 20.04 o superior
+- Usuario con privilegios sudo
 - Cliente SSH instalado
 
 ## 3. Instalación del servidor SSH
