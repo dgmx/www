@@ -1,5 +1,5 @@
 ---
-title: 10. Podman
+title: 10. Equivalencias Podman Docker
 parent: "Docker"
 ---
 

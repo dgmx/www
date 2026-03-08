@@ -1,5 +1,5 @@
 ---
-title: 7. Docker Swarm
+title: 07. Docker Swarm
 parent: "Docker"
 ---
 # Seguridad de credenciales en Docker y migración a Docker Swarm
