@@ -18,9 +18,9 @@ router.
 
 ## 1. Requisitos
 
--   Docker instalado
--   Docker Compose v2
--   Acceso a Internet desde el host
+- Docker instalado
+- Docker Compose v2
+- Acceso a Internet desde el host
 
 ------------------------------------------------------------------------
 
@@ -47,7 +47,7 @@ Crear:
 
 Comandos:
 
-``` bash
+```bash
 mkdir -p lab-router/dhcp
 touch lab-router/dhcp/dhcpd.leases
 cd lab-router
@@ -59,7 +59,7 @@ cd lab-router
 
 Crear archivo `docker-compose.yml` con el contenido:
 
-``` yaml
+```yaml
 version: "3.9"
 
 networks:
@@ -137,7 +137,7 @@ services:
 
 ## 5. Arranque
 
-``` bash
+```bash
 docker compose up -d
 docker ps
 ```
@@ -148,7 +148,7 @@ docker ps
 
 Entrar al cliente:
 
-``` bash
+```bash
 docker exec -it client bash
 ```
 

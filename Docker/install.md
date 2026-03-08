@@ -1,5 +1,5 @@
 ---
-title: 1. Instalación a Docker
+title: 01. Instalación de Docker
 parent: "Docker"
 ---
 
