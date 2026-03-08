@@ -4,6 +4,7 @@ parent: "Julia"
 ---
 
 # Estadística Computacional con Julia
+
 > **Versión Julia:** ≥ 1.9  
 > **Nivel:** Intermedio ·  Grado en Estadística  
 > **Librerías principales:** Statistics, StatsBase, Distributions, HypothesisTests, GLM, DataFrames, CSV, Plots, StatsPlots, Random, LinearAlgebra. 
