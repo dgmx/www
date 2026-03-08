@@ -1,5 +1,5 @@
 ---
-title: 2. Julia VS Python
+title: 3. Julia VS Python
 parent: "Julia"
 ---
 
