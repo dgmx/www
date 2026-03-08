@@ -4,7 +4,6 @@ parent: "cheats"
 nav_exclude: true
 ---
 
-
 Creación de tablas en HTML
 --------------------------
 
