@@ -6,18 +6,6 @@ just_the_docs:
   aux_nav:
     "Inicio":
       url: /
-    "Arduino":
-      url: /arduino
-    "Bash":
-      url: /bash/
-    "Pseudo-Codigo":
-      url: /pseudo-codigo/
-    "Processing":
-      url: /processing/
-    "Python":
-      url: /python
-    "Terminal":
-      url: /terminal
 
 footer_content: "Diego J. Gonzalez"
 remote_theme: just-the-docs/just-the-docs
