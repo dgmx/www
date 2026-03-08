@@ -1,3 +1,9 @@
+---
+title: "01. Diagramas UML Java"
+parent: "Java"
+---
+
+
 # Manual de Programación Java — Diagramas de Clases UML
 
 > **Guía Completa para Modelado Orientado a Objetos**  
@@ -7,17 +13,42 @@
 
 ## Tabla de Contenidos
 
-1. [Introducción al Diagrama de Clases UML](#1-introducción-al-diagrama-de-clases-uml)
-2. [Estructura de una Clase en UML](#2-estructura-de-una-clase-en-uml)
-3. [Herencia — extends](#3-herencia--extends)
-4. [Interfaces y Clases Abstractas](#4-interfaces-y-clases-abstractas)
-5. [Relaciones entre Clases](#5-relaciones-entre-clases)
-6. [Patrones de Diseño en UML](#6-patrones-de-diseño-en-uml)
-7. [Generics y Colecciones en UML](#7-generics-y-colecciones-en-uml)
-8. [Caso de Estudio Completo — Sistema Biblioteca](#8-caso-de-estudio-completo--sistema-biblioteca)
-9. [Referencia Rápida UML → Java](#9-referencia-rápida-uml--java)
-10. [Buenas Prácticas y Errores Comunes](#10-buenas-prácticas-y-errores-comunes)
-11. [Apéndice — Símbolos UML de Referencia](#apéndice--símbolos-uml-de-referencia)
+- [Manual de Programación Java — Diagramas de Clases UML](#manual-de-programación-java--diagramas-de-clases-uml)
+  - [Tabla de Contenidos](#tabla-de-contenidos)
+  - [1. Introducción al Diagrama de Clases UML](#1-introducción-al-diagrama-de-clases-uml)
+    - [1.1 ¿Qué es un Diagrama de Clases?](#11-qué-es-un-diagrama-de-clases)
+    - [1.2 Componentes Fundamentales](#12-componentes-fundamentales)
+  - [2. Estructura de una Clase en UML](#2-estructura-de-una-clase-en-uml)
+    - [2.1 Sintaxis de Atributos y Métodos](#21-sintaxis-de-atributos-y-métodos)
+    - [2.2 Representación de una Clase](#22-representación-de-una-clase)
+    - [2.3 Código Java Equivalente](#23-código-java-equivalente)
+  - [3. Herencia — extends](#3-herencia--extends)
+    - [3.1 Notación UML](#31-notación-uml)
+    - [3.2 Código Java](#32-código-java)
+  - [4. Interfaces y Clases Abstractas](#4-interfaces-y-clases-abstractas)
+    - [4.1 Diferencias Clave](#41-diferencias-clave)
+    - [4.2 Notación UML](#42-notación-uml)
+    - [4.3 Código Java](#43-código-java)
+  - [5. Relaciones entre Clases](#5-relaciones-entre-clases)
+    - [5.1 Tipos de Relaciones](#51-tipos-de-relaciones)
+    - [5.2 Diagrama de Relaciones](#52-diagrama-de-relaciones)
+    - [5.3 Multiplicidades](#53-multiplicidades)
+    - [5.4 Código Java para cada Relación](#54-código-java-para-cada-relación)
+  - [6. Patrones de Diseño en UML](#6-patrones-de-diseño-en-uml)
+    - [6.1 Patrón Singleton](#61-patrón-singleton)
+    - [6.2 Patrón Factory Method](#62-patrón-factory-method)
+  - [7. Generics y Colecciones en UML](#7-generics-y-colecciones-en-uml)
+    - [7.1 Clase Genérica](#71-clase-genérica)
+    - [7.2 Bounded Generics](#72-bounded-generics)
+  - [8. Caso de Estudio Completo — Sistema Biblioteca](#8-caso-de-estudio-completo--sistema-biblioteca)
+    - [8.1 Descripción del Sistema](#81-descripción-del-sistema)
+    - [8.2 Diagrama UML del Sistema](#82-diagrama-uml-del-sistema)
+    - [8.3 Código Completo](#83-código-completo)
+  - [9. Referencia Rápida UML → Java](#9-referencia-rápida-uml--java)
+  - [10. Buenas Prácticas y Errores Comunes](#10-buenas-prácticas-y-errores-comunes)
+    - [10.1 Buenas Prácticas](#101-buenas-prácticas)
+    - [10.2 Errores Comunes](#102-errores-comunes)
+  - [Apéndice — Símbolos UML de Referencia](#apéndice--símbolos-uml-de-referencia)
 
 ---
 
