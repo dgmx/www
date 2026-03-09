@@ -14,37 +14,37 @@ La misma cuenta con múltiples bases de datos y ejercicios.
 
 ### Base de datos N° 1 - Tienda de informática
 
-[![DER Tienda Informática](images/der-tienda-informatica.png)]()
+![DER Tienda Informática](images/der-tienda-informatica.png)
 
-<a href="informatica.html">Ir a los ejercicios de Tienda Informática</a>
+[Ir a los ejercicios de Tienda Informática](informatica.md)
 
 ### Base de datos N° 2 - Gestión de empleados
 
-[![DER Gestión Empleados](images/der-gestion-empleados.png)]()
+![DER Gestión Empleados](images/der-gestion-empleados.png)
 
-<a href="empleados.html">Ir a los ejercicios de Gestión de Empleados</a>
+[Ir a los ejercicios de Gestión de Empleados](empleados.md)
 
 ### Base de datos N° 3 - Gestión de ventas
 
-[![DER Gestión Ventas](images/der-gestion-ventas.png)]()
+![DER Gestión Ventas](images/der-gestion-ventas.png)
 
-<a href="ventas.html">Ir a los ejercicios de Gestión de Ventas</a>
+[Ir a los ejercicios de Gestión de Ventas](ventas.md)
 
 ### Base de datos N° 4 - Jardinería
 
-[![DER Jardinería](images/der-jardineria.png)]()
+![DER Jardinería](images/der-jardineria.png)
 
-<a href="jardineria.html">Ir a los ejercicios de Jardinería</a>
+[Ir a los ejercicios de Jardinería](jardineria.md)
 
 ### Base de datos N° 5 - Universidad
 
-[![DER Universidad](images/der-universidad.png)]()
+![DER Universidad](images/der-universidad.png)
 
-<a href="universidad.html">Ir a los ejercicios de Universidad</a>
+[Ir a los ejercicios de Universidad](universidad.md)
 
 ### Base de datos N° 6 - Gestión de Centros
 
-[![DER Universidad](images/Imagen1.png)]()
+![DER Universidad](images/Imagen1.png)
 
 [Ir a los ejercicios de Gestión de Centros](actividad35.md)
 
