@@ -3,9 +3,9 @@
 layout: home
 
 hero:
-  name: "Redes"
-  text: "Manuales y ejercicios de Redes"
-  tagline: Redes, IPTablas, Enrutamiento, IPV6, etc...
+  name: "Bases de datos"
+  text: "MariaDB, MySQL, MongoDB..."
+  tagline: Administración de bases de datos y Lenguajes de definición y manipulación de datos
   actions:
     - theme: brand
       text: IPv6

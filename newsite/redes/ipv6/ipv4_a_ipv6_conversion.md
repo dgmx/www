@@ -1,8 +1,3 @@
----
-title: "4. Conversión IPv6"
-parent: "IPv6"
----
-
 
 # 🌐 Conversión de una dirección IP privada IPv4 a IPv6
 

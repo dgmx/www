@@ -1,30 +1,6 @@
----
-title: "01. Introducción HTML"
-parent: "HTML"
----
 
 
 # 🌐 Manual de Introducción al HTML
-
-## Diseño Web
-
-*Tu primer paso hacia el mundo digital*
-
----
-
-## Índice de Contenidos
-
-1. [¿Qué es HTML?](#1-qué-es-html)
-2. [Estructura básica de un documento HTML](#2-estructura-básica-de-un-documento-html)
-3. [Textos en HTML](#3-textos-en-html)
-4. [Listas](#4-listas)
-5. [Imágenes](#5-imágenes)
-6. [Estructura de carpetas y enlaces](#6-estructura-de-carpetas-y-enlaces)
-7. [Tablas](#7-tablas)
-8. [Formularios](#8-formularios)
-9. [Proyecto final integrador](#9-proyecto-final-integrador)
-
----
 
 ## 1. ¿Qué es HTML?
 

@@ -18,7 +18,7 @@ hero:
       link: linux/index
     - theme: alt
       text: Bases de datos
-      link: sql/index
+      link: databases/index
 
 features:
   - title: Podman

@@ -1,13 +1,10 @@
----
-title: "2. Cálculo de Dirección IPv6 Link-local"
-parent: "IPv6"
----
+
 
 # 🌐 Cálculo de Dirección IPv6 Link-local usando SLAAC + EUI-64
 
 Vamos a calcular la dirección IPv6 de enlace local (`link-local`) a partir de una dirección MAC, usando **SLAAC** y el método **EUI-64**.
 
----
+
 
 ## Dirección MAC de ejemplo
 
@@ -53,7 +50,6 @@ La dirección IPv6 completa:
 fe80::d04f:23ff:fe1a:5b9c
 ```
 
----
 
 ## Resultado final
 
@@ -64,8 +60,7 @@ fe80::d04f:23ff:fe1a:5b9c
 ```
 
 
-
-# ❓ ¿Por qué el bit U/L está invertido en EUI-64?
+## ❓ Cuestiones Adicionales: ¿Por qué el bit U/L está invertido en EUI-64?
 
 ## 🧩 ¿Qué es el bit U/L?
 
@@ -79,7 +74,7 @@ Por ejemplo:
 → Primer byte `E4` = `11100100`  
 → 7º bit es `0` → **Universal**
 
----
+
 
 ## 🔄 ¿Por qué se invierte este bit al usar EUI-64?
 
@@ -90,7 +85,6 @@ Esto es parte del estándar IPv6 para diferenciar entre:
 - Direcciones generadas automáticamente (con U/L = `1`)
 - Direcciones MAC originales (con U/L = `0` si eran universales)
 
----
 
 ## 🛠 Ejemplo paso a paso
 
@@ -103,7 +97,6 @@ Esto es parte del estándar IPv6 para diferenciar entre:
 3. Insertamos `ff:fe` en el medio para formar el identificador de interfaz:  
    Resultado: `e6:7c:f9:ff:fe:db:b0:14`
 
----
 
 ## 🧠 ¿Por qué se hace esto?
 
@@ -117,7 +110,7 @@ Esto es parte del estándar IPv6 para diferenciar entre:
 
 
 
-# 🔍 ¿Qué significa la secuencia `FF:FE` en EUI-64?
+## 🔍 ¿Qué significa la secuencia `FF:FE` en EUI-64?
 
 La secuencia `FF:FE` que aparece en el método EUI-64 al generar una dirección IPv6 no es aleatoria, sino que tiene un propósito específico y estándar. Vamos a verlo bien explicado:
 
@@ -127,7 +120,6 @@ La secuencia `FF:FE` que aparece en el método EUI-64 al generar una dirección 
 
 Como una dirección MAC tiene solo **48 bits**, y se necesitan **64 bits** para una dirección IPv6, se deben añadir **16 bits extra**. Esa ampliación se hace insertando la secuencia **`FF:FE`** en el medio de la MAC.
 
----
 
 ## 🔧 ¿Cómo se usa `FF:FE`?
 
@@ -152,7 +144,7 @@ a4:23:05:FF:FE:9b:cc:01
 4. Invertir el bit U/L (7º bit del primer byte)  
 - `a4` = `10100100` → se convierte en `a6` = `10100110`
 
----
+
 
 ## ❓ ¿Por qué se usa `FF:FE`?
 
@@ -161,7 +153,7 @@ a4:23:05:FF:FE:9b:cc:01
 - Permite distinguir que la dirección IPv6 fue **generada automáticamente** usando EUI-64.
 - Mantiene la **unicidad** de las direcciones IPv6 derivadas de MACs.
 
----
+
 
 ## ✅ Resumen
 

@@ -14,6 +14,22 @@ export default defineConfig({
     /example-/,
     /\.sql$/
   ],
+  markdown: {
+    config: (md) => {
+      const fence = md.renderer.rules.fence
+      md.renderer.rules.fence = (tokens, idx, options, env, self) => {
+        const token = tokens[idx]
+        if (token.info.trim() === 'mermaid') {
+          const content = token.content
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+          return `<div class="language-mermaid mermaid-container" data-mermaid="true"><pre><code class="language-mermaid">${content}</code></pre></div>`
+        }
+        return fence(tokens, idx, options, env, self)
+      }
+    }
+  },
   
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
