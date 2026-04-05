@@ -14,7 +14,7 @@ parent: "IPv6"
 
 `IPv6` también tiene mejoras en enrutamiento, configuración de red, seguridad y rendimiento respecto a `IPv4`.
 
-### ¿Cómo funcionan las direcciones IPv6?
+## ¿Cómo funcionan las direcciones IPv6?
 
 A continuación se ofrece una breve descripción general de cómo funcionan las direcciones IPv6:
 
@@ -34,7 +34,7 @@ En resumen, el mayor espacio de direcciones, el encabezado simplificado, la segu
 Pero tanto IPv4 como IPv6 siguen utilizándose ampliamente hoy en día durante este período de transición.
 
 
-### Diferencias clave entre IPv4 e IPv6
+## Diferencias clave entre IPv4 e IPv6
 
 A continuación se muestra una comparación de algunas diferencias clave entre IPv4 e IPv6:   
 
@@ -57,7 +57,7 @@ A continuación se muestra una comparación de algunas diferencias clave entre I
 En resumen, IPv6 proporciona direccionamiento ampliado, enrutamiento mejorado, seguridad, rendimiento y gestión en comparación con IPv4.
 
 
-### Tipos de direcciones IPv6
+## Tipos de direcciones IPv6
 
 Hay varios tipos de direcciones IPv6 que se utilizan para diferentes propósitos:
 
@@ -71,7 +71,7 @@ Hay varios tipos de direcciones IPv6 que se utilizan para diferentes propósitos
 
 ![](images/iptipos.png)
 
-### Beneficios clave de IPv6
+## Beneficios clave de IPv6
 
 Estas son algunas de las principales ventajas que ofrece IPv6 sobre IPv4:
 
@@ -86,7 +86,7 @@ Estas son algunas de las principales ventajas que ofrece IPv6 sobre IPv4:
 *  Capacidades para priorizar y gestionar diferentes tipos de tráfico.
 *  Soporte para dispositivos móviles y movilidad.
 
-### Tendencias de implementación y adopción de IPv6
+## Tendencias de implementación y adopción de IPv6
 
 Si bien IPv6 se estandarizó en la década de 1990, su adopción ha cobrado impulso en la última década:
 
@@ -99,7 +99,7 @@ Si bien IPv6 se estandarizó en la década de 1990, su adopción ha cobrado impu
 Por lo tanto, el uso de IPv6 está creciendo rápidamente a medida que se agotan las direcciones IPv4. Sin embargo, se espera que IPv4 coexista con IPv6 durante un largo período durante la transición.
 
 
-### Mecanismos de transición de IPv6 a IPv4
+## Mecanismos de transición de IPv6 a IPv4
 
 Dado que IPv4 está tan ampliamente implementado, la transición no es instantánea. A continuación, se presentan algunas técnicas para una transición gradual:
 

@@ -1,9 +1,5 @@
----
-title: "6. Ejercicio de Ejemplo"
-parent: "IPv6"
----
 
-# 🧪 Ejemplo: Generación de dirección IPv6 de enlace local con SLAAC y EUI-64
+# 🧪 Ejercicio Práctico: Generación de dirección IPv6 de enlace local con SLAAC y EUI-64
 
 ## Dirección MAC de ejemplo
 

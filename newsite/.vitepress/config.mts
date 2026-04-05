@@ -195,10 +195,10 @@ export default defineConfig({
             items: [
               { text: "Inicio", link: "/ipv6/" },
               { text: "Introducción", link: "/ipv6/intro" },
-              { text: "Ejercicio 1", link: "/ipv6/ejercicio1" },
               { text: "IPv4 a IPv6", link: "/ipv6/ipv4_a_ipv6_conversion" },
               { text: "SLAAC", link: "/ipv6/ipv6_slaac" },
               { text: "IPv6 a MAC", link: "/ipv6/ipv6_to_mac" },
+              { text: "Ejercicio Práctico", link: "/ipv6/ejercicio1" },
               { text: "Resumen", link: "/ipv6/resumen" },
             ],
           },
