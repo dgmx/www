@@ -1,44 +1,6 @@
 
-# Archivos y Carpetas en Sistemas Operativos Linux
+# Archivos y Carpetas en Linux
 
-![License](https://img.shields.io/badge/license-Educational-blue)
-![Level](https://img.shields.io/badge/level-Bachillerato-green)
-![Platform](https://img.shields.io/badge/platform-Linux-orange)
-
-------------------------------------------------------------------------
-
-## Tabla de Contenidos
-
-- [Archivos y Carpetas en Sistemas Operativos Linux](#archivos-y-carpetas-en-sistemas-operativos-linux)
-  - [Tabla de Contenidos](#tabla-de-contenidos)
-  - [¿Qué es un archivo?](#qué-es-un-archivo)
-  - [Tipos de archivos](#tipos-de-archivos)
-    - [Archivos de texto o Archivos binarios](#archivos-de-texto-o-archivos-binarios)
-    - [Según su contenido](#según-su-contenido)
-    - [Según Linux](#según-linux)
-  - [Carpetas o directorios](#carpetas-o-directorios)
-  - [Sistema de archivos en Linux](#sistema-de-archivos-en-linux)
-  - [Comandos básicos de Linux](#comandos-básicos-de-linux)
-    - [Navegación](#navegación)
-    - [Creación](#creación)
-    - [Edición](#edición)
-    - [Copiar, mover y renombrar](#copiar-mover-y-renombrar)
-    - [Eliminación](#eliminación)
-  - [Permisos en Linux](#permisos-en-linux)
-  - [Rutas absolutas y relativas](#rutas-absolutas-y-relativas)
-  - [Archivos ocultos](#archivos-ocultos)
-  - [Compresión de archivos](#compresión-de-archivos)
-  - [Taller Práctico Integrador](#taller-práctico-integrador)
-    - [Parte 1 --- Estructura](#parte-1-----estructura)
-    - [Parte 2 --- Archivos](#parte-2-----archivos)
-    - [Parte 3 --- Organización](#parte-3-----organización)
-    - [Parte 4 --- Permisos](#parte-4-----permisos)
-    - [Parte 5 --- Compresión](#parte-5-----compresión)
-    - [Parte 6 --- Eliminación](#parte-6-----eliminación)
-  - [Preguntas de reflexión](#preguntas-de-reflexión)
-  - [Conclusión](#conclusión)
-
-------------------------------------------------------------------------
 
 ## ¿Qué es un archivo?
 
