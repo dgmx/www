@@ -178,10 +178,10 @@ export default defineConfig({
             text: "Terminal",
             collapsed: true,
             items: [
-              { text: "Inicio", link: "/terminal/" },
-              { text: "Terminal", link: "/terminal/terminal" },
-              { text: "Ejercicios", link: "/terminal/ejercicios" },
-              { text: "Manual Shell Script ASIR", link: "/terminal/manual_shell_script_ASIR" },
+              { text: "Inicio", link: "/linux/terminal/" },
+              { text: "Terminal", link: "/linux/terminal/terminal" },
+              { text: "Ejercicios", link: "/linux/terminal/ejercicios" },
+              { text: "Manual Shell Script ASIR", link: "/linux/terminal/manual_shell_script_ASIR" },
             ],
           },
         ]

@@ -3,6 +3,7 @@ title: "1. Introduccion a IPv6"
 parent: "IPv6"
 ---
 
+# Internet Protocol v6
 
 ## Introducción a IP v6
 

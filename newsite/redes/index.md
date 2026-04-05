@@ -8,20 +8,21 @@ hero:
   tagline: Redes, IPTablas, Enrutamiento, IPV6, etc...
   actions:
     - theme: brand
-      text: Java
-      link: programacion/java/Manual_Java_UML
+      text: IPv6
+      link: /redes/ipv6/intro
     - theme: alt
-      text: Python
-      link: /api-examples
-    - theme: alt
-      text: Processing
-      link: Kube/kube-lab-aws
+      text: IPTables
+      link: /redes/iptables/manual
+
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: IPTables
+    details: Ejemplos de reglas de IPTables
+    link: /redes/iptables/manual
+    linkText: Leer más
   - title: Feature B
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
   - title: Feature C
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 ---
+
