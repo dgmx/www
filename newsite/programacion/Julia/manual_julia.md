@@ -1690,7 +1690,7 @@ Una vez dominados los conceptos de este manual, puedes explorar:
 - **Foro oficial:** [https://discourse.julialang.org](https://discourse.julialang.org)
 - **Julia en GitHub:** [https://github.com/JuliaLang/julia](https://github.com/JuliaLang/julia)
 - **Paquetes registrados:** [https://juliahub.com](https://juliahub.com)
-- **Julia VS Python usando el método Montecarlo** [Método Montecarlo con Julia y Python](julia_montecarlo.md)
+- **Julia VS Python usando el método Montecarlo** [Método Montecarlo con Julia y Python](montecarlo)
 
 ---
 
