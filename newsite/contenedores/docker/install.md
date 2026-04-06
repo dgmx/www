@@ -1,27 +1,5 @@
----
-title: 01. Instalación de Docker
-parent: "Docker"
----
 
 # Manual de Instalación de Docker en Ubuntu
-## Utilizando los Repositorios Oficiales de Docker
-
----
-
-## Tabla de Contenidos
-
-1. [Introducción](#introducción)
-2. [Requisitos Previos](#requisitos-previos)
-3. [Verificación del Sistema](#verificación-del-sistema)
-4. [Desinstalación de Versiones Antiguas](#desinstalación-de-versiones-antiguas)
-5. [Instalación de Docker](#instalación-de-docker)
-6. [Configuración Post-Instalación](#configuración-post-instalación)
-7. [Verificación de la Instalación](#verificación-de-la-instalación)
-8. [Comandos Útiles](#comandos-útiles)
-9. [Solución de Problemas](#solución-de-problemas)
-10. [Desinstalación de Docker](#desinstalación-de-docker)
-
----
 
 ## Introducción
 
@@ -34,7 +12,6 @@ Docker es una plataforma de código abierto que permite empaquetar, distribuir y
 - ✅ Acceso a las últimas características
 - ✅ Soporte oficial de Docker Inc.
 
----
 
 ## Requisitos Previos
 
@@ -53,7 +30,7 @@ Antes de comenzar, asegúrate de tener:
 | 22.04 LTS | Jammy Jellyfish | ✅ Soportado |
 | 20.04 LTS | Focal Fossa | ✅ Soportado |
 
----
+
 
 ## Verificación del Sistema
 
@@ -81,7 +58,7 @@ Release:        24.04
 Codename:       noble
 ```
 
----
+
 
 ## Desinstalación de Versiones Antiguas
 
@@ -106,7 +83,6 @@ sudo rm -rf /var/lib/docker
 sudo rm -rf /var/lib/containerd
 ```
 
----
 
 ## Instalación de Docker
 
@@ -187,7 +163,6 @@ sudo apt-get install -y \
 - `docker-buildx-plugin`: Plugin para construcción avanzada de imágenes
 - `docker-compose-plugin`: Plugin de Docker Compose v2
 
----
 
 ## Configuración Post-Instalación
 
@@ -242,7 +217,7 @@ groups
 id -nG | grep docker
 ```
 
----
+
 
 ## Verificación de la Instalación
 
@@ -399,7 +374,7 @@ docker system prune --volumes
 docker system prune -a --volumes
 ```
 
----
+
 
 ## Solución de Problemas
 
@@ -486,7 +461,7 @@ docker system prune -a
 du -sh /var/lib/docker/*
 ```
 
----
+
 
 ## Instalación de Versión Específica de Docker
 
@@ -530,8 +505,6 @@ Para permitir actualizaciones nuevamente:
 sudo apt-mark unhold docker-ce docker-ce-cli
 ```
 
----
-
 ## Desinstalación de Docker
 
 ### Desinstalación completa
@@ -560,8 +533,6 @@ sudo groupdel docker
 sudo apt-get update
 ```
 
----
-
 ## Recursos Adicionales
 
 ### Documentación oficial
@@ -583,7 +554,6 @@ sudo apt-get update
 - **Play with Docker**: https://labs.play-with-docker.com/
 - **Docker Curriculum**: https://docker-curriculum.com/
 
----
 
 ## Comandos de Referencia Rápida
 
@@ -608,8 +578,6 @@ docker run hello-world
 docker compose version
 ```
 
----
-
 ## Notas de Seguridad
 
 ### Mejores prácticas
@@ -630,8 +598,6 @@ sudo apt-get update
 sudo apt-get upgrade docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
 
----
-
 ## Conclusión
 
 Has completado exitosamente la instalación de Docker en Ubuntu usando los repositorios oficiales. Ahora estás listo para:
@@ -644,7 +610,6 @@ Has completado exitosamente la instalación de Docker en Ubuntu usando los repos
 
 **¡Feliz containerización!** 🐳
 
----
 
 **Documento creado**: Enero 2026  
 **Versión**: 1.0  

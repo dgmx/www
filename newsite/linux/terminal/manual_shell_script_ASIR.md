@@ -5,30 +5,7 @@
 > **Nivel:** Formación Profesional  
 > **Autor:** Departamento de Informática  
 
----
 
-## Índice
-
-1. [Introducción al Shell de Linux](#1-introducción-al-shell-de-linux)
-2. [Primeros pasos: Hola Mundo](#2-primeros-pasos-hola-mundo)
-3. [Variables](#3-variables)
-4. [Entrada y Salida de Datos](#4-entrada-y-salida-de-datos)
-5. [Operadores](#5-operadores)
-6. [Estructuras Condicionales](#6-estructuras-condicionales)
-7. [Bucles](#7-bucles)
-8. [Funciones](#8-funciones)
-9. [Arrays](#9-arrays)
-10. [Manejo de Cadenas de Texto](#10-manejo-de-cadenas-de-texto)
-11. [Manejo de Ficheros y Directorios](#11-manejo-de-ficheros-y-directorios)
-12. [Redirecciones y Tuberías](#12-redirecciones-y-tuberías)
-13. [Expresiones Regulares y sed/awk](#13-expresiones-regulares-y-sedawk)
-14. [Procesos y Señales](#14-procesos-y-señales)
-15. [Scripts de Administración del Sistema](#15-scripts-de-administración-del-sistema)
-16. [Depuración de Scripts](#16-depuración-de-scripts)
-17. [Buenas Prácticas](#17-buenas-prácticas)
-18. [Ejercicios Propuestos](#18-ejercicios-propuestos)
-
----
 
 ## 1. Introducción al Shell de Linux
 

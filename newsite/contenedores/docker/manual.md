@@ -1,13 +1,6 @@
----
-title: 03. Manual avanzado
-parent: "Docker"
----
 
 # Manual Avanzado de Docker 
 
-Autor: Material didáctico para Administración de Sistemas Informáticos
-
-------------------------------------------------------------------------
 
 ## 1. Introducción Técnica
 
@@ -31,7 +24,7 @@ Docker utiliza tecnologías del kernel Linux:
 - Cgroups (control de recursos) 
 - UnionFS / OverlayFS
 
-------------------------------------------------------------------------
+
 
 ## 2. Arquitectura Docker
 
@@ -50,7 +43,6 @@ Comando:
 docker info
 ```
 
-------------------------------------------------------------------------
 
 ## 3. Gestión de Imágenes
 
@@ -92,7 +84,7 @@ Buenas prácticas:
 - Usar .dockerignore. 
 - Evitar instalar software innecesario.
 
-------------------------------------------------------------------------
+
 
 ## 4. Gestión de Contenedores
 
@@ -109,7 +101,7 @@ Límites de recursos:
 docker run -d --memory=512m --cpus=1 nginx
 ```
 
-------------------------------------------------------------------------
+
 
 ## 5. Redes Docker
 
@@ -132,7 +124,7 @@ docker run -d --name web --network red_interna nginx
 docker run -it --network red_interna busybox ping web
 ```
 
-------------------------------------------------------------------------
+
 
 ## 6. Volúmenes y Persistencia
 
@@ -181,7 +173,7 @@ docker volume inspect datos_mysql
 | Copias de seguridad automatizadas  | Volume         |
 | Edición de código en tiempo real   | Bind Mount     |
 
-------------------------------------------------------------------------
+
 
 ## 7. Servidor Web con Docker (Nginx + PHP)
 
@@ -224,7 +216,7 @@ docker compose up -d
 
 Acceso: http://localhost:8080
 
-------------------------------------------------------------------------
+
 
 ## 8. Servidor de Bases de Datos (MySQL + Adminer)
 
@@ -250,7 +242,7 @@ volumes:
 
 Acceso Adminer: http://localhost:8081
 
-------------------------------------------------------------------------
+
 
 ## 9. Docker Compose Avanzado
 
@@ -268,7 +260,7 @@ Escalado:
 docker compose up -d --scale web=3
 ```
 
-------------------------------------------------------------------------
+
 
 ## 10. Seguridad
 
@@ -285,7 +277,7 @@ RUN useradd appuser
 USER appuser
 ```
 
-------------------------------------------------------------------------
+
 
 ## 11. Monitorización
 
@@ -298,7 +290,7 @@ Herramientas:
 - Prometheus 
 - Grafana
 
-------------------------------------------------------------------------
+
 
 ## 12. Actividades Resueltas
 
@@ -312,7 +304,7 @@ Solución:
 docker run -d -p 8082:80 -v apache_data:/usr/local/apache2/htdocs httpd
 ```
 
-------------------------------------------------------------------------
+
 
 ### Actividad 2
 
@@ -327,7 +319,6 @@ docker run -d \
  mysql:8
 ```
 
-------------------------------------------------------------------------
 
 ### Actividad 3
 
@@ -342,7 +333,7 @@ docker run -d --name db --network red_app mysql:8
 docker run -d --name web --network red_app nginx
 ```
 
-------------------------------------------------------------------------
+
 
 ### Actividad 4
 
@@ -363,7 +354,6 @@ services:
       MYSQL_ROOT_PASSWORD: asir
 ```
 
-------------------------------------------------------------------------
 
 ## 13. Referencias
 

@@ -1,15 +1,6 @@
----
-title: "02. Introducción CSS"
-parent: "HTML"
----
+
 
 # 🎨 Manual de Introducción al CSS
-
-## Diseño Web
-
-*Dale estilo y vida a tus páginas web*
-
----
 
 ## Índice de Contenidos
 

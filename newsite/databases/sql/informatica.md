@@ -3,7 +3,9 @@ title: 01. Tienda informática
 parent: "SQL"
 ---
 
-# Ejercicios - Tienda informática
+# Ejercicio. Tienda informática
+## Modelo Relacional
+
 
 ```mermaid
 erDiagram

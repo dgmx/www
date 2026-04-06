@@ -67,9 +67,10 @@ Si en algún momento un comando no termina y no te devuelve al prompt, puedes pu
 
 En la terminal siempre te encuentras en un directorio concreto de todo el sistema de ficheros. Para saber en cuál estás puedes usar en cualquier momento este directorio de trabajo (_working directory_). Por ejemplo:
 
-    $ pwd
-    /home/user/hyde/Desktop
-    
+```bash
+$ pwd
+/home/user/hyde/Desktop
+```
 
 ### `cd` — Cambiar de directorio
 
@@ -82,13 +83,14 @@ Recuerda que:
 
 Ejemplos:
 
-    $ cd dir/subdir
-    $ cd ./dir/subdir  # Equivalente al anterior
-    $ cd /usr/bin
-    $ cd ..
-    $ cd ../dir
-    $ cd ../../dir
-    
+```bash
+$ cd dir/subdir
+$ cd ./dir/subdir  # Equivalente al anterior
+$ cd /usr/bin
+$ cd ..
+$ cd ../dir
+$ cd ../../dir
+```
 
 > **Truco:** comienza a escribir el nombre de algún fichero o directorio que exista, y pulsa la tecla TAB para que se **autocomplete**. Así ahorras tiempo y evitas errores.
 
@@ -103,12 +105,13 @@ Lista contenidos del directorio en el que te encuentras.
 
 Algunas opciones:
 
-    $ ls -a        # Lista ficheros ocultos
-    $ ls -l        # Muestra más información
-    $ ls -h        # Tamaños en Kb/Mb...
-    $ ls -a -l -h  # Varias opciones
-    $ ls -alh      # Opciones juntas
-    
+```bash
+$ ls -a        # Lista ficheros ocultos
+$ ls -l        # Muestra más información
+$ ls -h        # Tamaños en Kb/Mb...
+$ ls -a -l -h  # Varias opciones
+$ ls -alh      # Opciones juntas
+```
 
 Los ficheros ocultos son los que comienzan por un punto en su nombre, y no se muestran por defecto en `ls`.
 
@@ -142,16 +145,18 @@ Con este comando:
 *   Creas un fichero vacío si no existe ninguno con ese nombre
 *   Actualizas la fecha de modificación si el fichero o directorio existe
 
-    $ touch file1 file2
-    
+```bash
+$ touch file1 file2
+```
 
 ### `mkdir` — Crear directorios
 
 Crea un directorio con el nombre dado.
 
-    $ mkdir mi_directorio
-    $ mkdir dir1 dir2 dir3
-    
+```bash
+$ mkdir mi_directorio
+$ mkdir dir1 dir2 dir3
+```
 
 ### `cp` — Copiar archivos
 
@@ -159,16 +164,19 @@ Tiene varios argumentos de entrada:
 
 *   Origen: uno o varios archivos
 *   Destino: un directorio (incluyendo `.` o `..`)
+
 ```bash
-    $ cp file1 file2
-    $ cp dir/f1 dir2/
-    $ cp f1 f2 f3 dir/
+$ cp file1 file2
+$ cp dir/f1 dir2/
+$ cp f1 f2 f3 dir/
 ```
 
 La opción `-r` lo hace de forma recursiva, permitiendo copiar directorios y no sólo archivos. En este comando tiene relevancia terminar los directorios con barra `/` o sin ella:
 
-    $ cp -r dir1 dir2
-    $ cp -r dir1/ dir2
+```bash
+$ cp -r dir1 dir2
+$ cp -r dir1/ dir2
+```
     
 
 En el primer caso, `dir2` acaba conteniendo un directorio llamado `dir1`, mientras que en el segundo caso se copian los contenidos de `dir1` dentro de `dir2`.
@@ -177,17 +185,20 @@ En el primer caso, `dir2` acaba conteniendo un directorio llamado `dir1`, mientr
 
 Tiene únicamente dos argumentos:
 
-    mv file1 file2
-    mv dir1 dir2
-    
+```bash
+mv file1 file2
+mv dir1 dir2
+```
 
 ### `rm` — Borrar
 
 Borra archivos (y directorios con `-r`) de forma permanente e irrecuperable, sin papelera de reciclaje.
 
-    rm file1
-    rm file1 file2 file3
-    rm -r dir/
+```bash
+rm file1
+rm file1 file2 file3
+rm -r dir/
+```
     
 
 ### `*` — Wildcard
@@ -200,10 +211,12 @@ El wildcard `*` se puede utilizar en cualquier comando que trabaje con ficheros:
 
 Ejemplos:
 
-    $ cp *.jpg dir/
-    $ ls *.txt
-    $ ls img*.jpg
-    $ rm *          # Borra todos los ficheros!
+```bash
+$ cp *.jpg dir/
+$ ls *.txt
+$ ls img*.jpg
+$ rm *          # Borra todos los ficheros!
+```
     
 
 ### `echo` y `cat` — Imprimir por pantalla
@@ -212,16 +225,19 @@ El comando `echo` permite imprimir el texto indicado por pantalla, aunque se usa
 
 Se pueden introducir saltos de línea escribiendo `\n` si usas la opción `-e`.
 
-    $ echo "Hola Mundo"
-    Hola Mundo
-    $ echo -e "Hola\nMundo"
-    Hola
-    Mundo
-    
+```bash
+$ echo "Hola Mundo"
+Hola Mundo
+$ echo -e "Hola\nMundo"
+Hola
+Mundo
+```
 
 El comando `cat` imprime el contenido entero de un fichero. No es recomendable usarlo para ficheros muy grandes (ver tamaño con `ls -lh`) ni para ficheros binarios que no tengan únicamente texto.
 
-    $ cat fichero
+```bash
+$ cat fichero
+```
     
 
 ### `>` y `>>` — Redirección a fichero
@@ -230,20 +246,22 @@ Muchos comandos como `echo` y `cat` devuelven texto como salida. Este texto se p
 
 *   Si el fichero con ese nombre no existe, se crea
 *   Si el fichero existe **se reemplazan sus contenidos**, perdiéndose irrecuperablemente lo que tuviese antes
+
+```bash
+# echo imprime un texto por pantalla
+$ echo "Hola Mundo"
+$ echo "Hola Mundo" > hello.txt
+
+# cat imprime los contenidos de un fichero
+$ cat hello.txt
+$ cat file1 > file2
 ```
-    # echo imprime un texto por pantalla
-    $ echo "Hola Mundo"
-    $ echo "Hola Mundo" > hello.txt
-    
-    # cat imprime los contenidos de un fichero
-    $ cat hello.txt
-    $ cat file1 > file2
-    
-```
+
 Si se ponen dos ángulos seguidos, el texto redirigido se añade al final del fichero, sin reemplazarlo.
-```
-    $ echo "Bye" >> hello.txt
-    $ cat file1 >> file2
+
+```bash
+$ echo "Bye" >> hello.txt
+$ cat file1 >> file2
 ``` 
 
 ### `|` — Redirección entre comandos
@@ -252,46 +270,49 @@ Este símbolo se llama **pipe** (tubería o [pelca](https://es.wikipedia.org/wik
 
 Aquí usamos el comando `wc` (_word count_), que da estadísticas sobre el texto que recibe (también se puede usar como `wc file`).
 
-    $ echo "Hola Mundo" | wc
-    
-    # Se pueden mezclar redirecciones
-    $ echo "Hola Mundo" | wc > palabras
-    
+```bash
+$ echo "Hola Mundo" | wc
+
+# Se pueden mezclar redirecciones
+$ echo "Hola Mundo" | wc > palabras
+```
 
 ### `sort` y `uniq` — Ordenar texto
 
 El comando `sort` ordena por líneas un conjunto de datos que reciba por _pipe_ o por un fichero.
 
-    $ cat names | sort > sorted-names
-    
+```bash
+$ cat names | sort > sorted-names
+```
 
 El comando `uniq` elimina líneas duplicadas siempre que estén seguidas. Por este motivo es muy común ordenarlas antes.
 
-    $ cat names.txt | sort | uniq
-    $ sort names.txt | uniq
-    
+```bash
+$ cat names.txt | sort | uniq
+$ sort names.txt | uniq
+```
 
 ### `head` y `tail` — Partes de un texto
 
 Estos comandos permiten ver las primeras y últimas líneas de un archivo de texto. La opción `-n 3` indica que muestre sólo 3 líneas; sin esa opción muestra 10 por defecto.
 
-    $ head file
-    $ head -n 15 file
-    
-    $ cat file | head -n 25 | tail -n 1
-    
+```bash
+$ head file
+$ head -n 15 file
 
-El último comando imprime únicamente la línea número 25 del fichero.
+$ cat file | head -n 25 | tail -n 1
+```
 
 ### `wc` — Word count
 
 Este comando muestra estadísticas sobre un fichero o la entrada por tubería:
 
-    $ echo "hola mundo" | wc
-           1       2      11
-    $ wc README.md 
-          37     163    1269 README.md
-    
+```bash
+$ echo "hola mundo" | wc
+       1       2      11
+$ wc README.md
+      37     163    1269 README.md
+```
 
 Esto imprime, por orden: número de **líneas**, **palabras** y **caracteres** del texto.
 
@@ -301,18 +322,22 @@ Debes tener en cuenta que la mayoría de los comandos como `echo` añaden el car
 
 Con `grep` podemos filtrar los contenidos de texto por líneas, por ejemplo para saber si un fichero contiene cierta información, y dónde.
 
-    $ cat /etc/passwd | grep root
-    $ grep cereza recetas.txt
-    
+```bash
+$ cat /etc/passwd | grep root
+$ grep cereza recetas.txt
+```
 
 Con la opción `-v` (o `--invert-match`) se invierte la búsqueda, y devuelve las líneas que no contienen el término de búsqueda.
 
-    $ grep -v cereza recetas.txt
-    
+```bash
+$ grep -v cereza recetas.txt
+```
 
 **Ejemplo:** El comando `ps aux` muestra procesos en ejecución. Con el siguiente comando podemos filtrar por el nombre de alguno de ellos y ver información (quizás para matar ese proceso).
 
-    $ ps aux | grep bash
+```bash
+$ ps aux | grep bash
+```
     
 
 También podemos emplear patrones (llamados técnicamente _expresiones regulares_) para afinar la búsqueda:
@@ -324,27 +349,30 @@ Así, podemos filtrar por las líneas que no simplemente contengan, sino que com
 
 Usuarios del sistema cuyo nombre comienza por `root` (partiendo de que en `/etc/passwd` cada línea comienza por el nombre de usuario):
 
-    $ cat /etc/passwd | grep "^root"
-    root:x:0:0:root:/root:/bin/bash
-    
+```bash
+$ cat /etc/passwd | grep "^root"
+root:x:0:0:root:/root:/bin/bash
+```
 
 > Al usar `grep` es recomendable escribir el término entre comillas, aunque si el patrón que escribimos no contiene espacios no es necesario.
 
 **Ejemplo:** Lista únicamente los directorios (partiendo de que `ls -l` comienza por `d` sólo para directorios):
 
-    $ ls -l
-    drwxr-xr-x  1 user user    841 24 Jan 19:27 imagenes
-    -rw-r--r--  1 user user  11940  6 Dec 13:27 lista.txt
-    -rw-r--r--  1 user user   2822  6 Dec 13:27 txt_user
-    -rw-r--r--  1 user user    176 19 Jan 16:28 README.md
-    drwxr-xr-x  1 user user   4085  8 Dec 18:34 recursos
-    -rw-r--r--  1 user user    358  7 Dec 12:11 registro.txt
-    $ ls -l | grep "^d"
-    drwxr-xr-x  1 user user    841 24 Jan 19:27 imagenes
-    drwxr-xr-x  1 user user   4085  8 Dec 18:34 recursos
-    $ ls -l | grep ".txt$"
-    -rw-r--r--  1 user user  11940  6 Dec 13:27 lista.txt
-    -rw-r--r--  1 user user    358  7 Dec 12:11 registro.txt
+```bash
+$ ls -l
+drwxr-xr-x  1 user user    841 24 Jan 19:27 imagenes
+-rw-r--r--  1 user user  11940  6 Dec 13:27 lista.txt
+-rw-r--r--  1 user user   2822  6 Dec 13:27 txt_user
+-rw-r--r--  1 user user    176 19 Jan 16:28 README.md
+drwxr-xr-x  1 user user   4085  8 Dec 18:34 recursos
+-rw-r--r--  1 user user    358  7 Dec 12:11 registro.txt
+$ ls -l | grep "^d"
+drwxr-xr-x  1 user user    841 24 Jan 19:27 imagenes
+drwxr-xr-x  1 user user   4085  8 Dec 18:34 recursos
+$ ls -l | grep ".txt$"
+-rw-r--r--  1 user user  11940  6 Dec 13:27 lista.txt
+-rw-r--r--  1 user user    358  7 Dec 12:11 registro.txt
+```
     
 
 ### `cut` — Cortar porciones de texto
@@ -365,33 +393,36 @@ Puedes utilizar `cut` para tratar este fichero como una tabla y filtrar una o va
 
 Por ejemplo, partiendo del siguiente fichero llamado `Tarantino.csv`:
 
-    Pulp Fiction,1994,5
-    Reservoir Dogs,1992,4
-    Kill Bill: Volume 1,2003,4.5
-    Inglourious Basterds,2009,4.5
-    Django Unchained,2012,5
-    
+```bash
+Pulp Fiction,1994,5
+Reservoir Dogs,1992,4
+Kill Bill: Volume 1,2003,4.5
+Inglourious Basterds,2009,4.5
+Django Unchained,2012,5
+```
 
-    $ cat Tarantino.csv | cut -d',' -f2
-    1994
-    1992
-    2003
-    2009
-    2012
-    $ cat Tarantino.csv | cut -d',' -f1,3
-    Pulp Fiction,5
-    Reservoir Dogs,4
-    Kill Bill: Volume 1,4.5
-    Inglourious Basterds,4.5
-    Django Unchained,5
-    
+```bash
+$ cat Tarantino.csv | cut -d',' -f2
+1994
+1992
+2003
+2009
+2012
+$ cat Tarantino.csv | cut -d',' -f1,3
+Pulp Fiction,5
+Reservoir Dogs,4
+Kill Bill: Volume 1,4.5
+Inglourious Basterds,4.5
+Django Unchained,5
+```
 
 ### `man` — Manual de ayuda
 
 Puedes buscar información sobre lo que hace y las opciones que tiene un comando mirándolo en el manual del sistema.
 
-    $ man ls
-    
+```bash
+$ man ls
+```
 
 *   Desplázate con los cursores ↑ y ↓.
 *   Busca una palabra tecleando la barra/ y luego la palabra: `/texto`.
@@ -406,7 +437,7 @@ Además, muchos comandos incluyen una opción `-h` o `--help`, que muestra infor
 Ejercicios propuestos
 ---------------------
 
-*   En una única línea: usando `echo` escribe en cuatro nombres de persona, **uno por línea**, y haz que se guarde en el fichero `nobmres`. El resultado debería ser algo como:
+*   En una única línea: usando `echo` escribe en cuatro nombres de persona, **uno por línea**, y haz que se guarde en el fichero `nombres`. El resultado debería ser algo como:
     
           Laura
           Edward
@@ -434,31 +465,34 @@ Ejemplos resueltos
 
 Supongamos el fichero `ciudades`:
 
-    Birmingham
-    Lyon
-    Nüremberg
-    Brno
-    Panaji
-    
+```bash
+Birmingham
+Lyon
+Nüremberg
+Brno
+Panaji
+```
 
 Con el comando `head` podemos extraer las 4 primeras líneas:
 
-    $ cat ciudades | head -n4
-    Birmingham
-    Lyon
-    Nüremberg
-    Brno
-    
+```bash
+$ cat ciudades | head -n4
+Birmingham
+Lyon
+Nüremberg
+Brno
+```
 
 Y con el comando `tail` podemos extraer la última:
 
-    $ cat ciudades | head -n4 | tail -n1
-    Brno
-    
+```bash
+$ cat ciudades | head -n4 | tail -n1
+Brno
+```
 
 Para profundizar
 ----------------
 
-*   [The Art of Command Line (github)](https://github.com/jlevy/the-art-of-command-line)
+*   [The Art of Command Line (github)](https://github.com/jlevy/the-art-of-command-line/blob/master/README-es.md)
 *   [Bash guide (github)](https://github.com/Idnan/bash-guide)
 *   [Codeacademy > Learn the command line](https://www.codecademy.com/courses/learn-the-command-line/lessons/redirection/exercises/sed?action=lesson_resume&link_content_target=interstitial_undefined)

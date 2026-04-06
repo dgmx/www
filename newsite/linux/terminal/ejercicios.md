@@ -21,31 +21,32 @@ ls –r /etc/t*
 ls /dev/tty??
 ```
 5. Listar todos los archivos del directorio dev que empiecen por tty y acaben en 1,2,3 ó 4.  
-  ```
-  ls /dev/tty*[1-4]
 ```
+ls /dev/tty*[1-4]
+```
+
 6. Listar todos los archivos del directorio dev que empiecen por t y acaben en C1.  
-  ```
-  ls /dev/t*c1
-  ```
+```
+ls /dev/t*c1
+```
 7. Listar todos los archivos, incluidos los ocultos, del directorio raíz.  
-  ```
-  ls –a /
+```
+ls –a /
 ```
 
 8. Listar todos los archivos del directorio etc que no empiecen por t.  
-  ```
-  ls –d /etc/[^t]*
+```
+ls –d /etc/[^t]*
 ```
 9. Listar todos los archivos del directorio usr y sus subdirectorios.  
-  ```
-  ls –R /usr
-  ```
+```
+ls –R /usr
+```
 10. Cambiarse al directorio tmp, crear directorio PRUEBA.  
-  ```
-  cd /tmp
-  mkdir PRUEBA
-  ```
+```
+cd /tmp
+mkdir PRUEBA
+```
 11. Verificar que el directorio actual ha cambiado.  
   `pwd`
 12. Mostrar el día y la hora actual.  
@@ -66,13 +67,13 @@ rm -rf PRUEBA/*
 ```
 17. Crear los directorios dir1, dir2 y dir3 en el directorio PRUEBA. Dentro de dir1 crear el directorio dir11. Dentro del directorio dir3 crear el directorio dir31. Dentro del directorio dir31, crear los directorios dir311 y dir312.  
 ```
-  mkdir PRUEBA/dir1  
-  mkdir PRUEBA/dir1/dir11  
-  mkdir PRUEBA/dir2  
-  mkdir PRUEBA/dir3  
-  mkdir PRUEBA/dir3/dir31  
-  mkdir PRUEBA/dir3/dir31/dir311  
-  mkdir PRUEBA/dir3/dir31/dir312  
+mkdir PRUEBA/dir1  
+mkdir PRUEBA/dir1/dir11  
+mkdir PRUEBA/dir2  
+mkdir PRUEBA/dir3  
+mkdir PRUEBA/dir3/dir31  
+mkdir PRUEBA/dir3/dir31/dir311  
+mkdir PRUEBA/dir3/dir31/dir312  
 ```
 
 18. Copiar el archivo /etc/motd a un archivo llamado mensaje de vuestro directorio PRUEBA.  
@@ -236,7 +237,7 @@ rm uno
 ```
 54. Quitarle todos los permisos de paso al directorio dir2 y otorgarle todos los demás.  
 ```
- chmod = dir2
- chmod o=rwx dir2
- ```
+chmod = dir2
+chmod o=rwx dir2
+```
  

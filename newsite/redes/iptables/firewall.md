@@ -13,7 +13,8 @@ Diagrama de Red:
 
 ## Fichero de reglas de Iptables
 Recordamos que si no se especifica ninguna tabla en la regla, por defecto se aplican a la tabla filter.
-```
+
+```bash
 #!/bin/bash
 
 # Limpia las tablas de iptables
@@ -100,7 +101,8 @@ iptables -A FORWARD -i eth3 -p gre -d 10.0.1.10 -j ACCEPT
 
 ## Listando las reglas de Iptables
 Si queremos listar las reglas que tenemos actualmente aplicadas utilizaremos las siguientes opciones, donde -n hace que no se resuelvan las direcciones IP.
-```
+
+```bash
 iptables -L
 iptables -L -n
 iptables -t nat -L -n
@@ -108,7 +110,8 @@ iptables -t nat -L -n
 
 ## Limpiando las reglas de Iptables
 Si queremos eliminar todas las reglas del iptables, crearemos el fichero /etc/iptables-clean, al que debemos otorgarle permisos de ejecución:
-```
+
+```bash
 chmod 700 /etc/iptables-clean
 
 #!/bin/bash

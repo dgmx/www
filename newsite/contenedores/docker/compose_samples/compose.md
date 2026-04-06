@@ -6,27 +6,27 @@ parent: "Docker"
 
 ## Ejemplos de despligue con Docker Compose
 
-[Descarga el repositorio de Docker Compose](compose_samples/docker-compose-playground-master.zip)
+[Descarga el repositorio de Docker Compose en formato ZIP](compose_samples/docker-compose-playground-master.zip)
 
-**Contenido del ZIP:**
+**Contenido del archivo ZIP:**
 
-- [Example 01](example-01-httpd). Simple Apache HTTP server with bind mount.
-- [Example 02](example-02-php-apache). Simple Apache HTTP server with PHP.
-- [Example 03](example-03-nginx). Simple Nginx server.
-- [Example 04](example-04-nginx-php-fpm). Simple Nginx server with PHP.
-- [Example 05](example-05-mysql). Simple MySQL server with a volume.
-- [Example 06](example-06-mysql-env). MySQL credentials are set using environment variables in a `.env` file.
-- [Example 07](example-07-mysql-phpmyadmin). Two services, one with MySQL and another with phpMyAdmin.
-- [Example 08](example-08-healthcheck). MySQL with healthcheck and phpMyAdmin.
-- [Example 09](example-09-lamp). LAMP stack, using a custom image for the web server.
-- [Example 10](example-10-lamp-networks). LAMP stack, using a custom image for the web server. The web server and the database are in different networks.
-- [Example 11](example-11-lemp). LEMP stack.
-- [Example 12](example-12-wordpress). WordPress application.
-- [Example 13](example-13-moodle). Moodle application.
-- [Example 14](example-14-friendlyhello). Flask application.
-- [Example 15](example-15-mysql-phpmyadmin-native_password). Two services, one with MySQL and another with phpMyAdmin. MySQL uses `mysql_native_password` instead of `caching_sha2_password` as default authentication plugin.
-- [Example 16](example-16-wordpress-networks). WordPress application using different networks for the services.
-- [Example 17](example-17-prestashop-manual-https). PrestaShop application using SSL/TLS, installed and configured manually by the user.
-- [Example 18](example-18-prestashop-https). PrestaShop application with SSL/TLS, automatically installed and configured using environment variables.
-- [Example 19](example-19-flask-https). Flask application using SSL/TLS.
-- [Example 20](example-20-nodejs-https). Nodejs application using SSL/TLS.
+- Ejemplo 01. Simple Apache HTTP server with bind mount.
+- Ejemplo 02. Simple Apache HTTP server with PHP.
+- Ejemplo 03. Simple Nginx server.
+- Ejemplo 04. Simple Nginx server with PHP.
+- Ejemplo 05. Simple MySQL server with a volume.
+- Ejemplo 06. MySQL credentials are set using environment variables in a `.env` file.
+- Ejemplo 07. Two services, one with MySQL and another with phpMyAdmin.
+- Ejemplo 08. MySQL with healthcheck and phpMyAdmin.
+- Ejemplo 09. LAMP stack, using a custom image for the web server.
+- Ejemplo 10. LAMP stack, using a custom image for the web server. The web server and the database are in different networks.
+- Ejemplo 11. LEMP stack.
+- Ejemplo 12. WordPress application.
+- Ejemplo 13. Moodle application.
+- Ejemplo 14. Flask application.
+- Ejemplo 15. Two services, one with MySQL and another with phpMyAdmin. MySQL uses `mysql_native_password` instead of `caching_sha2_password` as default authentication plugin.
+- Ejemplo 16. WordPress application using different networks for the services.
+- Ejemplo 17. PrestaShop application using SSL/TLS, installed and configured manually by the user.
+- Ejemplo 18. PrestaShop application with SSL/TLS, automatically installed and configured using environment variables.
+- Ejemplo 19. Flask application using SSL/TLS.
+- Ejemplo 20. NodeJS application using SSL/TLS.

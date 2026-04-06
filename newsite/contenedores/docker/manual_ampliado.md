@@ -1,11 +1,7 @@
----
-title: 04. Ampliación
-parent: "Docker"
----
 
-# Manual Avanzado de Docker (Edición Ampliada)
 
-------------------------------------------------------------------------
+# Manual ampliado Docker (Continuación)
+
 
 ## 14. Balanceo de Carga con Docker (Nginx Load Balancer)
 
@@ -60,7 +56,7 @@ docker compose up -d
 
 Verificar balanceo accediendo repetidamente a: http://localhost:8080
 
-------------------------------------------------------------------------
+
 
 ## 15. Proxy Inverso con Nginx
 
@@ -83,7 +79,7 @@ server {
 }
 ```
 
-------------------------------------------------------------------------
+
 
 ## 16. HTTPS y Certificados con Let's Encrypt
 
@@ -114,7 +110,6 @@ docker run --rm certbot/certbot certonly --standalone -d midominio.com
 openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout server.key -out server.crt
 ```
 
-------------------------------------------------------------------------
 
 ## 17. Integración con Java en Docker
 
@@ -159,7 +154,7 @@ EXPOSE 8080
 ENTRYPOINT ["java","-jar","app.jar"]
 ```
 
-------------------------------------------------------------------------
+
 
 ## 18. Linux en Docker (Administración)
 
@@ -186,7 +181,7 @@ adduser alumno
 su alumno
 ```
 
-------------------------------------------------------------------------
+
 
 ## 19. Ejercicios Avanzados Resueltos
 
@@ -200,7 +195,7 @@ Solución:
 docker compose up -d --scale web=3
 ```
 
-------------------------------------------------------------------------
+
 
 ### Ejercicio 2
 
@@ -212,7 +207,7 @@ Solución:
 openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout key.pem -out cert.pem
 ```
 
-------------------------------------------------------------------------
+
 
 ### Ejercicio 3
 
@@ -225,7 +220,7 @@ docker build -t java-asir .
 docker run java-asir
 ```
 
-------------------------------------------------------------------------
+
 
 ### Ejercicio 4
 
@@ -239,7 +234,7 @@ useradd admin
 passwd admin
 ```
 
-------------------------------------------------------------------------
+
 
 ### Ejercicio 5
 
@@ -251,7 +246,6 @@ Solución:
 docker stop web1
 ```
 
-------------------------------------------------------------------------
 
 ## 20. Prácticas Linux Propuestas
 
@@ -276,14 +270,6 @@ docker run --rm -v datos:/data -v $(pwd):/backup ubuntu tar czf /backup/copia.ta
 
 5.  Simular ataque de carga con Apache Benchmark.
 
-------------------------------------------------------------------------
 
-## 21. Futuras Ampliaciones
-
--   Kubernetes.
--   CI/CD con Docker.
--   Seguridad avanzada.
--   Docker Swarm.
--   
 
 [Descargar manual en **PDF**](manual_ampliado.pdf)

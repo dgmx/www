@@ -8,10 +8,10 @@ hero:
   tagline: Administración de bases de datos y Lenguajes de definición y manipulación de datos
   actions:
     - theme: brand
-      text: IPv6
+      text: Lenguaje SQL
       link: /redes/ipv6/intro
     - theme: alt
-      text: IPTables
+      text: MariaDB
       link: /redes/iptables/manual
 
 

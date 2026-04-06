@@ -197,7 +197,7 @@ export default defineConfig({
               { text: "Inicio", link: "/linux/terminal/" },
               { text: "Terminal", link: "/linux/terminal/terminal" },
               { text: "Ejercicios", link: "/linux/terminal/ejercicios" },
-              { text: "Manual Shell Script ASIR", link: "/linux/terminal/manual_shell_script_ASIR" },
+              { text: "Manual de Shell Script", link: "/linux/terminal/manual_shell_script_ASIR" },
             ],
           },
         ]
@@ -223,12 +223,12 @@ export default defineConfig({
             collapsed: true,
             items: [
               { text: "Inicio", link: "/redes/iptables/" },
+              { text: "Manual", link: "/redes/iptables/manual" },
               { text: "Cortafuegos Perimetral", link: "/redes/iptables/cortafuegos_perimetral" },
               { text: "Cortafuegos Personal", link: "/redes/iptables/cortafuegos_personal" },
               { text: "Ejemplos", link: "/redes/iptables/ejemplos_iptables" },
               { text: "Firewall", link: "/redes/iptables/firewall" },
-              { text: "Good Policy", link: "/redes/iptables/goodpolicy" },
-              { text: "Manual", link: "/redes/iptables/manual" },
+              { text: "Buenas prácticas", link: "/redes/iptables/goodpolicy" },
               { text: "Seguridad", link: "/redes/iptables/seguridad" },
             ],
           },
