@@ -2,20 +2,6 @@
 
 # 🎨 Manual de Introducción al CSS
 
-## Índice de Contenidos
-
-1. [¿Qué es CSS?](#1-qué-es-css)
-2. [Cómo enlazar CSS con HTML](#2-cómo-enlazar-css-con-html)
-3. [Selectores](#3-selectores)
-4. [Colores y fondos](#4-colores-y-fondos)
-5. [Tipografía](#5-tipografía)
-6. [El modelo de caja (Box Model)](#6-el-modelo-de-caja-box-model)
-7. [Posicionamiento y Display](#7-posicionamiento-y-display)
-8. [Flexbox](#8-flexbox)
-9. [Diseño responsive y Media Queries](#9-diseño-responsive-y-media-queries)
-10. [Proyecto final integrador](#10-proyecto-final-integrador)
-
----
 
 ## 1. ¿Qué es CSS?
 
@@ -65,7 +51,6 @@ h1 {
 
 > 💡 **¡Recuerda!** Los comentarios en CSS se escriben así: `/* Esto es un comentario */`
 
----
 
 ## 2. Cómo Enlazar CSS con HTML
 
@@ -111,7 +96,6 @@ body {
 
 > 🚀 **Consejo PRO:** Usa siempre la hoja de estilos externa. Así, si quieres cambiar el color de todos los títulos, solo editas un archivo en vez de tocar cada página.
 
----
 
 ## 3. Selectores
 
@@ -197,7 +181,6 @@ input:focus    { border-color: blue; }   /* Campo enfocado */
 | Hijo directo | `ul > li` | Los `<li>` hijos directos de `<ul>` |
 | Pseudoclase | `a:hover` | El `<a>` cuando el ratón está encima |
 
----
 
 ## 4. Colores y Fondos
 
@@ -257,7 +240,6 @@ header {
 
 > 🎨 **Herramienta útil:** Usa [coolors.co](https://coolors.co) para generar paletas de colores armoniosas.
 
----
 
 ## 5. Tipografía
 
@@ -324,8 +306,6 @@ h2 { font-size: 1.5rem; }  /* = 24px */
 ```
 
 > 💡 Usa `rem` para tamaños de fuente: respeta la configuración de accesibilidad del usuario.
-
----
 
 ## 6. El Modelo de Caja (Box Model)
 
@@ -409,8 +389,6 @@ Por defecto, `width` solo mide el contenido. Con `border-box` incluye padding y 
   overflow: auto;    /* Barra solo si hace falta (recomendado) */
 }
 ```
-
----
 
 ## 7. Posicionamiento y Display
 
@@ -574,8 +552,6 @@ nav ul li a:hover {
 
 > 💡 La propiedad `gap` en Flexbox añade espacio entre los hijos sin necesidad de márgenes.
 
----
-
 ## 9. Diseño Responsive y Media Queries
 
 El **diseño responsive** hace que una web se vea bien en cualquier dispositivo.
@@ -659,8 +635,6 @@ img {
 ```
 
 > 🎯 **Actividad práctica:** Redimensiona la ventana de tu navegador en una web que conozcas. Observa cómo el diseño cambia al hacerla más estrecha. ¡Eso es el diseño responsive en acción!
-
----
 
 ## 10. Proyecto Final Integrador
 
@@ -915,14 +889,11 @@ footer {
 | Al menos una Media Query funcional | 1.5 puntos |
 | Creatividad y acabado visual | 0.5 puntos |
 
----
 
-> 🚀 **¡Enhorabuena! Ya tienes los conocimientos básicos de CSS.**
+
 >
 > El siguiente paso es aprender **CSS Grid** para layouts más complejos y **animaciones CSS** para añadir movimiento a tus páginas.
 
 ---
 
-*Manual de CSS — Diseño Web*
-
-- [Descargar manual en PDF](Manual_CSS.pdf)
+*Manual de CSS — Diseño Web* [Descargar manual en PDF](Manual_CSS.pdf)

@@ -5,6 +5,7 @@ parent: "SQL"
 
 # Ejercicios - Gestión de Ventas
 
+## Modelo Relacional
 
 ```mermaid
 erDiagram
@@ -38,7 +39,7 @@ erDiagram
 
 ```
 
-**Creacion de la bases de datos, tablas e inserts de datos**
+**Creación de la bases de datos, tablas e inserts de datos**
 ```sql
 
 DROP DATABASE IF EXISTS ventas;
@@ -184,7 +185,7 @@ INSERT INTO pedido VALUES(16, 2389.23, '2019-03-11', 1, 5);
     WHERE c.nombre LIKE '%el' OR c.nombre LIKE '%o'
     ```
 
-## <span style="color:aqua">Consultas multitabla (Composición interna)</span>
+## Consultas multitabla (Composición interna)
 
 1. Devuelve un listado con el identificador, nombre y los apellidos de todos los clientes que han realizado algún pedido. El listado debe estar ordenado alfabéticamente y se deben eliminar los elementos repetidos.
     ```sql
@@ -237,7 +238,7 @@ INSERT INTO pedido VALUES(16, 2389.23, '2019-03-11', 1, 5);
     WHERE co.nombre = 'Daniel' AND co.apellido1 = 'Sáez' AND co.apellido2 = 'Vega'
     ```
 
-## <span style="color:aqua">Consultas multitabla (Composición externa)</span>
+## Consultas multitabla (Composición externa)
 
 1. Devuelve un listado con todos los clientes junto con los datos de los pedidos que han realizado. Este listado también debe incluir los clientes que no han realizado ningún pedido. El listado debe estar ordenado alfabéticamente por el primer apellido, segundo apellido y nombre de los clientes.
     ```sql
@@ -289,7 +290,7 @@ INSERT INTO pedido VALUES(16, 2389.23, '2019-03-11', 1, 5);
     */ 
     ```
 
-## <span style="color:aqua">Consultas resúmen</span>
+## Consultas resumen
 
 1. Calcula la cantidad total que suman todos los pedidos que aparecen en la tabla pedido.
     ```sql
@@ -393,9 +394,9 @@ INSERT INTO pedido VALUES(16, 2389.23, '2019-03-11', 1, 5);
     GROUP BY Año
     ```
 
-## <span style="color:aqua">Subconsultas</span>
+## Subconsultas
 
-### <span style="color:palegreen">Con operadores básicos de comparación</span>
+### Con operadores básicos de comparación
 
 1. Devuelve un listado con todos los pedidos que ha realizado Adela Salas Díaz. (Sin utilizar INNER JOIN).
     ```sql
@@ -442,7 +443,7 @@ INSERT INTO pedido VALUES(16, 2389.23, '2019-03-11', 1, 5);
                                                  WHERE YEAR(p.fecha) = '2017')
     ```
 
-### <span style="color:palegreen">Subconsultas con ALL y ANY</span>
+### Subconsultas con ALL y ANY
 
 1. Devuelve el pedido más caro que existe en la tabla pedido si hacer uso de MAX, ORDER BY ni LIMIT.
     ```sql
@@ -468,7 +469,7 @@ INSERT INTO pedido VALUES(16, 2389.23, '2019-03-11', 1, 5);
                       FROM pedido p)
     ```
 
-### <span style="color:palegreen">Subconsultas con IN y NOT IN</span>
+### Subconsultas con IN y NOT IN
 
 1. Devuelve un listado de los clientes que no han realizado ningún pedido. (Utilizando IN o NOT IN).
     ```sql
@@ -486,7 +487,7 @@ INSERT INTO pedido VALUES(16, 2389.23, '2019-03-11', 1, 5);
                        FROM pedido p)
     ```
 
-### <span style="color:palegreen">Subconsultas con EXISTS y NOT EXISTS</span>
+### Subconsultas con EXISTS y NOT EXISTS
 
 1. Devuelve un listado de los clientes que no han realizado ningún pedido. (Utilizando EXISTS o NOT EXISTS).
     ```sql

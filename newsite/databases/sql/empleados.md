@@ -5,6 +5,8 @@ parent: "SQL"
 
 # Ejercicios - Gestión de Empleados
 
+## Modelo Relacional
+
 ```mermaid
 erDiagram
     
@@ -29,7 +31,8 @@ erDiagram
 ```
 
 
-**Creacion de la bases de datos, tablas e inserts de datos**
+**Creación de la bases de datos, tablas e inserts de datos**
+
 ```sql
 DROP DATABASE IF EXISTS empleados;
 CREATE DATABASE empleados CHARACTER SET utf8mb4;
@@ -323,7 +326,7 @@ INSERT INTO empleado VALUES(13, '82635162B', 'Juan Antonio','Sáez', 'Guerrero',
     WHERE e.codigo_departamento IN (2, 4, 5)
     ```
 
-## <span style="color:aqua">Consultas multitabla (Composición interna)</span>
+## Consultas multitabla (Composición interna)
 
 1. Devuelve un listado con los empleados y los datos de los departamentos donde trabaja cada uno.
     ```sql
@@ -393,7 +396,7 @@ INSERT INTO empleado VALUES(13, '82635162B', 'Juan Antonio','Sáez', 'Guerrero',
     WHERE e.apellido2 IS NULL 
     ```
 
-## <span style="color:aqua">Consultas multitabla (Composición externa)</span>
+## Consultas multitabla (Composición externa)
 
 1. Devuelve un listado con todos los empleados junto con los datos de los departamentos donde trabajan. Este listado también debe incluir los empleados que no tienen ningún departamento asociado.
     ```sql
@@ -434,7 +437,7 @@ INSERT INTO empleado VALUES(13, '82635162B', 'Juan Antonio','Sáez', 'Guerrero',
     ORDER BY nombre ASC
     ```
 
-## <span style="color:aqua">Consultas resúmen</span>
+## Consultas resumen
 
 1. Calcula la suma del presupuesto de todos los departamentos.
     ```sql
@@ -515,9 +518,9 @@ INSERT INTO empleado VALUES(13, '82635162B', 'Juan Antonio','Sáez', 'Guerrero',
     GROUP BY d.nombre
     ```
 
-## <span style="color:aqua">Subconsultas</span>
+## Subconsultas
 
-### <span style="color:palegreen">Con operadores básicos de comparación</span>
+### Con operadores básicos de comparación
 
 1. Devuelve un listado con todos los empleados que tiene el departamento de Sistemas. (Sin utilizar INNER JOIN).
     ```sql
@@ -544,7 +547,7 @@ INSERT INTO empleado VALUES(13, '82635162B', 'Juan Antonio','Sáez', 'Guerrero',
                            FROM departamento d)
     ```
 
-### <span style="color:palegreen">Subconsultas con ALL y ANY</span>
+### Subconsultas con ALL y ANY
 
 1. Devuelve el nombre del departamento con mayor presupuesto y la cantidad que tiene asignada. Sin hacer uso de MAX, ORDER BY ni LIMIT.
     ```sql
@@ -579,7 +582,7 @@ INSERT INTO empleado VALUES(13, '82635162B', 'Juan Antonio','Sáez', 'Guerrero',
                           WHERE e.codigo_departamento IS NOT NULL)
     ```
 
-### <span style="color:palegreen">Subconsultas con IN y NOT IN</span>
+### Subconsultas con IN y NOT IN
 
 1. Devuelve los nombres de los departamentos que tienen empleados asociados. (Utilizando IN o NOT IN).
     ```sql
@@ -598,7 +601,7 @@ INSERT INTO empleado VALUES(13, '82635162B', 'Juan Antonio','Sáez', 'Guerrero',
                                 WHERE e.codigo_departamento IS NOT NULL)
     ```
 
-### <span style="color:palegreen">Subconsultas con EXISTS y NOT EXISTS</span>
+### Subconsultas con EXISTS y NOT EXISTS
 
 1. Devuelve los nombres de los departamentos que tienen empleados asociados. (Utilizando EXISTS o NOT EXISTS).
     ```sql
