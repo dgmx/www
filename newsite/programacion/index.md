@@ -23,7 +23,7 @@ hero:
 features:
   - title: NodeJS
     details: Manual de administración de NodeJS 
-    link: /programacion/manual_nodejs
+    link: /programacion/node/manual_nodejs
     linkText: Leer más
   - title: HTML
     details: Manual de HTML
