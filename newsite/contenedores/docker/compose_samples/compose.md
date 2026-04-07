@@ -6,7 +6,7 @@ parent: "Docker"
 
 ## Ejemplos de despligue con Docker Compose
 
-[Descarga el repositorio de Docker Compose en formato ZIP](compose_samples/docker-compose-playground-master.zip)
+[Descarga el repositorio de Docker Compose en formato ZIP](docker-compose-playground-master.zip)
 
 **Contenido del archivo ZIP:**
 

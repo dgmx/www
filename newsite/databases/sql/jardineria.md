@@ -1,14 +1,10 @@
----
-title: 04. Jardinería
-parent: "SQL"
----
 
 
 # Ejercicios - Jardinería
 
 [![DER Jardinería](images/der-jardineria.png)]()
 
-Archivo de script para la creación de la Base de Datos [Jardineria](jardineria.sql)
+Archivo de script para la creación de la Base de Datos <a href="/jardineria.sql" download>Jardineria</a>
 
 ## Consultas sobre una tabla
 

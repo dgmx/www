@@ -68,8 +68,8 @@ export default defineConfig({
             text: "NodeJS",
             collapsed: true,
             items: [
-              { text: "Manual de Administración", link: "/programacion/manual_nodejs" },
-              { text: "Manual de Programación", link: "/programacion/manual_programacion_nodejs" },
+              { text: "Manual de Administración", link: "/programacion/node/administracion" },
+              { text: "Manual de Programación", link: "/programacion/node/programacion" },
             ],
           },
           {
@@ -80,6 +80,15 @@ export default defineConfig({
               { text: "Introducción HTML", link: "/programacion/html/Introduccion_HTML" },
               { text: "Introducción CSS", link: "/programacion/html/Introduccion_CSS" },
               { text: "CSS", link: "/programacion/html/css" },
+            ],
+          },
+          {
+            text: "Shell Scripting",
+            collapsed: true,
+            items: [
+              { text: "Manual de Shell Script", link: "/programacion/shell/manual_shell_script" },
+              { text: "Ejercicios Shell Scripting", link: "/programacion/shell/ejercicios_shell_scripting" },
+              { text: "Ejercicios Shell Scripting 2", link: "/programacion/shell/ejercicios_shell_scripting-2" },
             ],
           },
         ]
@@ -197,7 +206,6 @@ export default defineConfig({
               { text: "Inicio", link: "/linux/terminal/" },
               { text: "Terminal", link: "/linux/terminal/terminal" },
               { text: "Ejercicios", link: "/linux/terminal/ejercicios" },
-              { text: "Manual de Shell Script", link: "/linux/terminal/manual_shell_script_ASIR" },
             ],
           },
         ]

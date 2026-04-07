@@ -363,7 +363,7 @@ VALUES
     ('91234567J', 9);
 ```
 
-🌍 [**Descarga la Base de Datos actualizada** ](images/mngmnt.sql)
+🌍 <a href="/mngmnt.sql" download>**Descarga la Base de Datos actualizada**</a>
 
 
 ## Consultas a la base de datos

@@ -25,8 +25,12 @@ features:
     details: Manual de administración de NodeJS 
     link: /programacion/manual_nodejs
     linkText: Leer más
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: HTML
+    details: Manual de HTML
+    link: /programacion/html/introduccion_HTML
+    linkText: Leer más
+  - title: CSS
+    details: Manual de CSS
+    link: /programacion/html/introduccion_CSS
+    linkText: Leer más
 ---

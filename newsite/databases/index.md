@@ -16,9 +16,9 @@ hero:
 
 
 features:
-  - title: IPTables
-    details: Ejemplos de reglas de IPTables
-    link: /redes/iptables/ejemplos_iptables
+  - title: Ejemplo SQL Empresa
+    details: Definición y manipulacion de datos
+    link: /databases/sql/empresa
     linkText: Leer más
   - title: IPv6 con SLAAC + EUI-64
     details: Cálculo de Dirección IPv6 Link-local

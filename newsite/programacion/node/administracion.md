@@ -232,4 +232,4 @@ Ciclo típico de administración en producción:
 > 💡 **Nota:** Siempre usa `npm ci` en lugar de `npm install` en servidores y pipelines de CI/CD para garantizar instalaciones reproducibles y deterministas.
 
 
-[Manual Node JS](manual_programacion_nodejs)
+[Manual Node JS](programacion)

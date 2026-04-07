@@ -139,7 +139,7 @@ CREATE TABLE qualifying (
 );
 ````
 
-[Descarga la base de datos completa en formato SQL](images/formula-1.sql)
+<a href="/formula-1.sql" download>Descarga la base de datos completa en formato SQL</a>
 
 
 # Consultas SQL para Base de Datos de Fórmula 1 (FIA)
