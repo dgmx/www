@@ -483,6 +483,26 @@ else
 fi
 ```
 
+### Ejemplo 9b — Verificar si un servicio está activo pasado como argumento. 
+```bash
+#!/bin/bash
+
+# read -p "Introduce el nombre del servicio: " servicio
+if [ $# -eq 1 ]; then
+
+    if systemctl is-active --quiet "$1"; then
+        echo "✓ El servicio '$1' está ACTIVO"
+    elif systemctl is-enabled --quiet "$1"; then
+        echo "⚠ El servicio '$1' está habilitado pero INACTIVO"
+    else
+        echo "✗ El servicio '$1' está INACTIVO o no existe"
+    fi
+
+else 
+    echo "El programa $0 requiere de un argumento"
+fi
+```
+
 ### Ejemplo 10 — Validación de fichero de configuración
 
 ```bash
@@ -2180,5 +2200,3 @@ done
 > Para profundizar, consulta: `man bash`, `info bash`, y la documentación oficial en [https://www.gnu.org/software/bash/manual/](https://www.gnu.org/software/bash/manual/)
 
 ---
-
-*Manual de Programación en Shell Script para ASIR — Administración de Sistemas Operativos*
