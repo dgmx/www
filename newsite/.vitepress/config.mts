@@ -37,8 +37,15 @@ export default defineConfig({
       { text: 'Inicio', link: '/' },
       { text: 'Programación', link: '/programacion/' },
       { text: 'Bases de datos', link: '/databases/' },
-      { text: 'Linux', link: '/linux/' },
-      { text: 'Redes', link: '/redes/' }
+      { text: 'Linux', items: [
+        { text: 'Contenedores', link: '/linux/contenedores/' },
+        { text: 'Terminal', link: '/linux/terminal/' },
+        { text: 'Linux', link: '/linux/linux/' },
+      ]},
+      { text: 'Redes', items: [
+        { text: 'IPv6', link: '/redes/ipv6/' },
+        { text: 'IPTables', link: '/redes/iptables/' },
+      ]},
     ],
 
     sidebar: [

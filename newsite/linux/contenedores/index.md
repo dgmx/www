@@ -6,13 +6,15 @@ hero:
   text: "Docker y Podman"
   tagline: Contenedores, orquestación y despliegue
 
+
+
 features:
   - title: Docker
     details: Plataforma de contenedores estándar de la industria
-    link: /contenedores/docker/intro
+    link: /linux/contenedores/docker/intro
     linkText: Ir a Docker
   - title: Podman
     details: Motor de contenedores daemonless compatible con OCI
-    link: /contenedores/podman/docker_to_podman
+    link: /linux/contenedores/podman/podman_pods
     linkText: Ir a Podman
 ---
