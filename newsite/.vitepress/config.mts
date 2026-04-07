@@ -184,22 +184,6 @@ export default defineConfig({
             ],
           },
           {
-            text: "Kubernetes",
-            collapsed: true,
-            items: [
-              { text: "Kube Lab AWS", link: "/linux/kube/kube-lab-aws" },
-            ],
-          },
-          {
-            text: "OpenLDAP",
-            collapsed: true,
-            items: [
-              { text: "Comandos", link: "/linux/OpenLDAP/comandos" },
-              { text: "Manual OpenLDAP", link: "/linux/OpenLDAP/manual_openldap" },
-              { text: "Resumen LDAP", link: "/linux/OpenLDAP/resumen_ldap" },
-            ],
-          },
-          {
             text: "Terminal",
             collapsed: true,
             items: [
