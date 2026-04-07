@@ -37,7 +37,6 @@ export default defineConfig({
       { text: 'Inicio', link: '/' },
       { text: 'Programación', link: '/programacion/' },
       { text: 'Bases de datos', link: '/databases/' },
-      { text: 'Contenedores', link: '/contenedores/' },
       { text: 'Linux', link: '/linux/' },
       { text: 'Redes', link: '/redes/' }
     ],
@@ -131,39 +130,40 @@ export default defineConfig({
         ]
       },
       {
-        text: 'Contenedores',
-        items: [
-          {
-            text: "Docker",
-            collapsed: true,
-            items: [
-              { text: "Inicio", link: "/contenedores/docker/" },
-              { text: "Introducción", link: "/contenedores/docker/intro" },
-              { text: "Instalación", link: "/contenedores/docker/install" },
-              { text: "Manual", link: "/contenedores/docker/manual" },
-              { text: "Manual Ampliado", link: "/contenedores/docker/manual_ampliado" },
-              { text: "Docker Swarm", link: "/contenedores/docker/docker_swarm" },
-              { text: "Práctica Router", link: "/contenedores/docker/practica_router_docker" },
-              { text: "DHCP Docker", link: "/contenedores/docker/dhcp_docker" },
-              { text: "Ejercicios", link: "/contenedores/docker/exercises" },
-              { text: "Compose Samples", link: "/contenedores/docker/compose_samples/compose" },
-            ],
-          },
-          {
-            text: "Podman",
-            collapsed: true,
-            items: [
-              { text: "Inicio", link: "/contenedores/podman/" },
-              { text: "Docker a Podman", link: "/contenedores/podman/docker_to_podman" },
-              { text: "Podman Lab", link: "/contenedores/podman/podman_lab" },
-              { text: "Podman Pods", link: "/contenedores/podman/podman_pods" },
-            ],
-          },
-        ]
-      },
-      {
         text: 'Linux',
         items: [
+          {
+            text: "Contenedores",
+            collapsed: true,
+            items: [
+              {
+                text: "Docker",
+                collapsed: true,
+                items: [
+                  { text: "Inicio", link: "/linux/contenedores/docker/" },
+                  { text: "Introducción", link: "/linux/contenedores/docker/intro" },
+                  { text: "Instalación", link: "/linux/contenedores/docker/install" },
+                  { text: "Manual", link: "/linux/contenedores/docker/manual" },
+                  { text: "Manual Ampliado", link: "/linux/contenedores/docker/manual_ampliado" },
+                  { text: "Docker Swarm", link: "/linux/contenedores/docker/docker_swarm" },
+                  { text: "Práctica Router", link: "/linux/contenedores/docker/practica_router_docker" },
+                  { text: "DHCP Docker", link: "/linux/contenedores/docker/dhcp_docker" },
+                  { text: "Ejercicios", link: "/linux/contenedores/docker/exercises" },
+                  { text: "Compose Samples", link: "/linux/contenedores/docker/compose_samples/compose" },
+                ],
+              },
+              {
+                text: "Podman",
+                collapsed: true,
+                items: [
+                  { text: "Inicio", link: "/linux/contenedores/podman/" },
+                  { text: "Docker a Podman", link: "/linux/contenedores/podman/docker_to_podman" },
+                  { text: "Podman Lab", link: "/linux/contenedores/podman/podman_lab" },
+                  { text: "Podman Pods", link: "/linux/contenedores/podman/podman_pods" },
+                ],
+              },
+            ],
+          },
           {
             text: "Linux",
             collapsed: true,
