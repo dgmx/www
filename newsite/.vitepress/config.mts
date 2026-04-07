@@ -189,7 +189,6 @@ export default defineConfig({
               { text: "Quotas", link: "/linux/linux/quotas" },
               { text: "Seguridad Linux", link: "/linux/linux/linux_security" },
               { text: "Comandos de Seguridad", link: "/linux/linux/seguridad" },
-              { text: "Manual Shell Script", link: "/linux/linux/manual_shell_script" },
               { text: "SSH", link: "/linux/linux/ssh" },
               { text: "Túnel SSH", link: "/linux/linux/tunel_ssh" },
             ],
