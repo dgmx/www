@@ -1,9 +1,4 @@
----
-title: 09. Podman
-parent: "Docker"
----
-
-# Manual Técnico: Creación y Gestión de Pods con Podman
+# Manual de Creación y Gestión de Pods con Podman
 
 ## 1. Introducción
 
@@ -31,23 +26,23 @@ Este manual cubre:
 -   Uso de archivos declarativos
 -   Comparación con Docker Compose
 
-------------------------------------------------------------------------
 
-# 2. Conceptos Fundamentales
 
-## 2.1 ¿Qué es un Pod?
+## 2. Conceptos Fundamentales
+
+### 2.1 ¿Qué es un Pod?
 
 Un **pod en Podman** es una agrupación de contenedores que comparten
 recursos del sistema.
 
-  Recurso             Compartido
-  ------------------- --------------
-  IP                  Sí
-  Puertos             Sí
-  Network namespace   Sí
-  IPC namespace       Opcional
-  PID namespace       Opcional
-  Volúmenes           Configurable
+| Recurso             | Compartido    |
+|---------------------|---------------|
+| IP                  | Sí            |
+| Puertos             | Sí            |
+| Network namespace   | Sí            |
+| IPC namespace       | Opcional      |
+| PID namespace       | Opcional      |
+| Volúmenes           | Configurable  |
 
 Arquitectura conceptual:
 
@@ -60,11 +55,10 @@ Arquitectura conceptual:
 El **infra container** mantiene el namespace activo incluso si los demás
 contenedores se detienen.
 
-------------------------------------------------------------------------
 
-# 3. Instalación
+## 3. Instalación
 
-## Debian / Ubuntu
+### Debian / Ubuntu
 
 ``` bash
 sudo apt install podman
@@ -82,11 +76,9 @@ Verificar instalación:
 podman --version
 ```
 
-------------------------------------------------------------------------
+## 4. Creación Básica de Pods
 
-# 4. Creación Básica de Pods
-
-## Crear un Pod
+### Crear un Pod
 
 ``` bash
 podman pod create --name mi_pod -p 8080:80
@@ -99,21 +91,19 @@ Esto:
 
 Ver pods:
 
-``` bash
+```bash
 podman pod ps
 ```
 
-------------------------------------------------------------------------
-
 ## Añadir contenedores al Pod
 
-``` bash
+```bash
 podman run -dt --pod mi_pod nginx
 ```
 
 Ejemplo práctico:
 
-``` bash
+```bash
 podman pod create --name webpod -p 8080:80
 
 podman run -dt --pod webpod --name web nginx
@@ -122,37 +112,35 @@ podman run -dt --pod webpod --name redis redis
 
 Ambos contenedores comparten la misma red.
 
-------------------------------------------------------------------------
 
-# 5. Gestión del Ciclo de Vida
+## 5. Gestión del Ciclo de Vida
 
 Iniciar un pod:
 
-``` bash
+```bash
 podman pod start webpod
 ```
 
 Detener:
 
-``` bash
+```bash
 podman pod stop webpod
 ```
 
 Eliminar:
 
-``` bash
+```bash
 podman pod rm webpod
 ```
 
 Eliminar forzado:
 
-``` bash
+```bash
 podman pod rm -f webpod
 ```
 
-------------------------------------------------------------------------
 
-# 6. Redes en Pods
+## 6. Redes en Pods
 
 Por defecto Podman utiliza:
 
@@ -172,19 +160,18 @@ Si nginx y redis están en el mismo pod:
 
 No se requiere DNS interno como en Docker Compose.
 
-------------------------------------------------------------------------
 
-# 7. Volúmenes y Persistencia
+## 7. Volúmenes y Persistencia
 
 Crear volumen:
 
-``` bash
+```bash
 podman volume create datos_db
 ```
 
 Usarlo:
 
-``` bash
+```bash
 podman run -dt \
   --pod webpod \
   -v datos_db:/var/lib/mysql \
@@ -196,16 +183,15 @@ Ventajas:
 -   Persistencia de datos
 -   Separación del contenedor
 -   Compatibilidad con ejecución rootless
+¡
 
-------------------------------------------------------------------------
-
-# 8. Rootless: Seguridad Avanzada
+## 8. Rootless: Seguridad Avanzada
 
 Podman puede ejecutarse **sin privilegios de root**.
 
 Verificar:
 
-``` bash
+```bash
 podman info | grep rootless
 ```
 
@@ -215,43 +201,40 @@ Beneficios:
 -   Aislamiento multiusuario
 -   Ideal para entornos empresariales y académicos
 
-------------------------------------------------------------------------
 
-# 9. Archivos Declarativos
+## 9. Archivos Declarativos
 
-## Podman Compose
+### Podman Compose
 
 Permite utilizar archivos `docker-compose.yml`.
 
 Instalación:
 
-``` bash
+```bash
 pip install podman-compose
 ```
 
 Ejecución:
 
-``` bash
+```bash
 podman-compose up
 ```
 
-------------------------------------------------------------------------
 
-## Generar YAML tipo Kubernetes
+### Generar YAML tipo Kubernetes
 
-``` bash
+```bash
 podman generate kube webpod > webpod.yaml
 ```
 
 Esto permite migración directa hacia Kubernetes.
 
-------------------------------------------------------------------------
 
-# 10. Integración con systemd
+## 10. Integración con systemd
 
 Podman puede generar unidades systemd automáticamente.
 
-``` bash
+```bash
 podman generate systemd --name webpod --files
 ```
 
@@ -265,9 +248,7 @@ Beneficios:
 -   Supervisión mediante systemd
 -   Integración natural con servidores Linux
 
-------------------------------------------------------------------------
-
-# 11. Casos de Uso Reales
+## 11. Casos de Uso Reales
 
 -   Microservicios locales
 -   Desarrollo sin privilegios
@@ -275,23 +256,20 @@ Beneficios:
 -   Laboratorios de seguridad
 -   Migración hacia Kubernetes
 
-------------------------------------------------------------------------
+## 12. Comparación: Podman Pods vs Docker Compose
 
-# 12. Comparación: Podman Pods vs Docker Compose
+| Característica              | Podman Pods             | Docker Compose          |
+|-----------------------------|-------------------------|-------------------------|
+| Arquitectura                | Daemonless              | Requiere daemon         |
+| Seguridad                   | Rootless nativo         | Generalmente root       |
+| Unidad lógica               | Pod estilo Kubernetes   | Servicios               |
+| IP compartida               | Sí                      | No                      |
+| Compatibilidad Kubernetes   | Directa                 | Indirecta               |
+| Integración systemd         | Nativa                  | Limitada                |
+| Consumo de recursos         | Bajo                    | Mayor                   |
 
-  Característica              Podman Pods             Docker Compose
-  --------------------------- ----------------------- -------------------
-  Arquitectura                Daemonless              Requiere daemon
-  Seguridad                   Rootless nativo         Generalmente root
-  Unidad lógica               Pod estilo Kubernetes   Servicios
-  IP compartida               Sí                      No
-  Compatibilidad Kubernetes   Directa                 Indirecta
-  Integración systemd         Nativa                  Limitada
-  Consumo de recursos         Bajo                    Mayor
 
-------------------------------------------------------------------------
-
-# 13. Ventajas Estratégicas de Podman
+## 13. Ventajas Estratégicas de Podman
 
 1.  Seguridad superior
 2.  Arquitectura sin daemon
@@ -299,17 +277,16 @@ Beneficios:
 4.  Control granular por usuario
 5.  Integración fuerte con Linux empresarial
 
-------------------------------------------------------------------------
 
-# 14. Limitaciones
+## 14. Limitaciones
 
 -   Ecosistema más pequeño que Docker
 -   Menos documentación histórica
 -   Compatibilidad parcial de algunas herramientas CI/CD
 
-------------------------------------------------------------------------
 
-# 15. Flujo Profesional Recomendado
+
+## 15. Flujo Profesional Recomendado
 
 1.  Diseñar el pod
 2.  Probar contenedores con `podman run`
@@ -317,9 +294,8 @@ Beneficios:
 4.  Generar servicio systemd
 5.  Automatizar despliegue
 
-------------------------------------------------------------------------
 
-# 16. Arquitectura Avanzada: Sidecars
+## 16. Arquitectura Avanzada: Sidecars
 
 Un pod permite arquitecturas como:
 
@@ -336,9 +312,8 @@ Todos comparten:
 
 Este patrón replica la arquitectura de Kubernetes.
 
-------------------------------------------------------------------------
 
-# 17. Conclusión
+## 17. Conclusión
 
 Podman es una herramienta moderna alineada con estándares OCI y diseñada
 con seguridad en mente.

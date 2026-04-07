@@ -11,12 +11,11 @@ hero:
       text: Linux
       link: /linux/linux/comandos_linux
     - theme: alt
-      text: Kubernetes
-      link: /linux/kube/kube-lab-aws
+      text: Contenedores
+      link: /linux/contenedores/docker/index
     - theme: alt
-      text: OpenLDAP
-      link: /linux/OpenLDAP/manual_openldap
-
+      text: Terminal
+      link: /linux/terminal/index
 features:
   - title: Podman
     details: Podman es un motor de contenedores daemonless compatible con OCI (Open Container Initiative).  

@@ -1,15 +1,9 @@
----
-title: 04. Seguridad Linux
-parent: "Linux"
----
-
-# 🔍 Comprobación de Seguridad e Integridad en Linux
+# Comprobación de Seguridad e Integridad en Linux
 
 Este documento recopila comandos prácticos para auditar la seguridad y la integridad de un sistema Linux, así como un conjunto de buenas prácticas operativas orientadas especialmente a la exposición en red (servicios publicados, proxy inverso, acceso remoto, etc.). Puede utilizarse como checklist periódico de revisión o como guía de endurecimiento (hardening) inicial del sistema.
 
----
 
-## 🎯 Objetivos
+## Objetivos
 
 - Detectar accesos no autorizados o comportamientos anómalos.
 - Identificar servicios y puertos expuestos innecesariamente.
@@ -17,11 +11,10 @@ Este documento recopila comandos prácticos para auditar la seguridad y la integ
 - Reducir la superficie de ataque en redes públicas o privadas.
 - Establecer controles preventivos y correctivos.
 
----
 
-# 🔍 Comprobación de Seguridad e Integridad en Linux
+##  Comprobación de Seguridad e Integridad en Linux
 
-## 🔹 1. Verificar usuarios y accesos
+##  1. Verificar usuarios y accesos
 
 - **Listar usuarios en el sistema**
   ```bash
@@ -44,7 +37,7 @@ Este documento recopila comandos prácticos para auditar la seguridad y la integ
   who
   ```
 
-## 🔹 2. Monitorear procesos sospechosos
+##  2. Monitorear procesos sospechosos
 
 - **Listar procesos en ejecución**
   ```bash
@@ -55,7 +48,7 @@ Este documento recopila comandos prácticos para auditar la seguridad y la integ
   ps -U root -u root u
   ```
 
-## 🔹 3. Revisar puertos abiertos y conexiones de red
+##  3. Revisar puertos abiertos y conexiones de red
 
 - **Ver los puertos abiertos y las conexiones activas**
   ```bash
@@ -78,7 +71,7 @@ Este documento recopila comandos prácticos para auditar la seguridad y la integ
   sudo lsof -i -P -n
   ```
 
-## 🔹 4. Revisar la integridad del sistema
+##  4. Revisar la integridad del sistema
 
 - **Verificar la integridad de archivos clave del sistema**
   ```bash
@@ -96,7 +89,7 @@ Este documento recopila comandos prácticos para auditar la seguridad y la integ
   find / -type f -perm 777
   ```
 
-## 🔹 5. Verificar y analizar logs
+##  5. Verificar y analizar logs
 
 - **Examinar el registro de autenticación**
   ```bash
@@ -107,9 +100,9 @@ Este documento recopila comandos prácticos para auditar la seguridad y la integ
   sudo journalctl -f
   ```
 
-# 🔐 Buenas Prácticas para Asegurar un Sistema Linux
+#  Buenas Prácticas para Asegurar un Sistema Linux
 
-## 1️⃣ Asegurar conexiones de red
+## 1️ Asegurar conexiones de red
 
 ✅ Configurar el firewall con `ufw` (para sistemas basados en Ubuntu/Debian):
 
@@ -135,7 +128,7 @@ sudo systemctl list-units --type=service
 sudo systemctl disable nombre-del-servicio
 ```
 
-## 2️⃣ Asegurar SSH
+## 2️ Asegurar SSH
 
 ✅ **Cambiar el puerto por defecto de SSH (evita ataques automatizados)**\
 Editar el archivo de configuración:
@@ -170,7 +163,7 @@ PasswordAuthentication no
 PubkeyAuthentication yes
 ```
 
-## 3️⃣ Mantener el sistema actualizado
+## 3️ Mantener el sistema actualizado
 
 ```bash
 sudo apt update && sudo apt upgrade -y  # Debian/Ubuntu
@@ -178,7 +171,7 @@ sudo yum update -y                      # RHEL/CentOS
 sudo dnf update -y                      # Fedora
 ```
 
-## 4️⃣ Configurar detección de intrusos
+## 4️ Configurar detección de intrusos
 
 ✅ **Instalar y configurar Fail2Ban** (bloquea IPs sospechosas automáticamente)
 
@@ -193,7 +186,7 @@ sudo systemctl enable fail2ban
 sudo journalctl -u fail2ban
 ```
 
-## 5️⃣ Configurar SELinux o AppArmor
+## 5️ Configurar SELinux o AppArmor
 
 ✅ **Habilitar SELinux en sistemas RHEL/Fedora**
 

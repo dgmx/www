@@ -157,9 +157,9 @@ export default defineConfig({
                 collapsed: true,
                 items: [
                   { text: "Inicio", link: "/linux/contenedores/podman/" },
+                  { text: "Manual de Podman", link: "/linux/contenedores/podman/podman_pods" },
                   { text: "Docker a Podman", link: "/linux/contenedores/podman/docker_to_podman" },
                   { text: "Podman Lab", link: "/linux/contenedores/podman/podman_lab" },
-                  { text: "Podman Pods", link: "/linux/contenedores/podman/podman_pods" },
                 ],
               },
             ],
