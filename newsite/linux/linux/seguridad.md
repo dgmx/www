@@ -1,11 +1,8 @@
----
-title: "05. Seguridad e integridad"
-parent: "IPTables"
----
 
-## Lista de comandos Linux útiles para comprobar la seguridad e integridad del sistema:
 
-### 1\. **Auditoría de usuarios y permisos**
+# Lista de comandos Linux útiles para comprobar la seguridad e integridad del sistema:
+
+## 1\. **Auditoría de usuarios y permisos**
 
 *   **`cat /etc/passwd`**: Verifica los usuarios del sistema.
     
@@ -23,7 +20,7 @@ parent: "IPTables"
 *  **`journalctl -xe | grep "Failed password"`** Inicios de sesión fallidos.
 *  **`find /etc -type f -mtime -1  # Archivos modificados en las últimas 24 horas`** Cambios recientes en archivos del sistema*
 
-### 2\. **Verificación de servicios y puertos abiertos**
+## 2\. **Verificación de servicios y puertos abiertos**
 
 *   **`sudo netstat -tuln`**: Lista los puertos abiertos y los servicios asociados.
     
@@ -35,7 +32,7 @@ parent: "IPTables"
 *   **`sudo nmap localhost`**: Escanea los puertos locales (requiere instalación de `nmap`). `sudo nmap -sS -p- localhost`
     
 
-### 3\. **Monitoreo de procesos**
+## 3\. **Monitoreo de procesos**
 
 *   **`ps aux`**: Lista todos los procesos en ejecución.
     `ps aux --sort=-%cpu`: Procesos sospechosos
@@ -45,7 +42,7 @@ parent: "IPTables"
 *   **`sudo pstree`**: Muestra los procesos en forma de árbol.
     
 
-### 4\. **Verificación de integridad de archivos**
+## 4\. **Verificación de integridad de archivos**
 
 *   **`sudo debsums`** (en Debian/Ubuntu): Verifica la integridad de los paquetes instalados.
     
@@ -56,7 +53,7 @@ parent: "IPTables"
 *   **`sudo aide --check`**: Similar a Tripwire, verifica la integridad del sistema con AIDE.
     
 
-### 5\. **Revisión de logs**
+## 5\. **Revisión de logs**
 
 *   **`sudo cat /var/log/auth.log`** (o `/var/log/secure` en RedHat): Revisa intentos de autenticación.
     
@@ -67,7 +64,7 @@ parent: "IPTables"
 *   **`sudo journalctl -xe`**: Revisa logs del sistema con `systemd`.
     
 
-### 6\. **Verificación de actualizaciones y parches**
+## 6\. **Verificación de actualizaciones y parches**
 
 *   **`sudo apt list --upgradable`** (en Debian/Ubuntu): Lista paquetes que necesitan actualización.
     
@@ -76,7 +73,7 @@ parent: "IPTables"
 *   **`sudo unattended-upgrades --dry-run`**: Simula la instalación de actualizaciones de seguridad.
     
 
-### 7\. **Revisión de firewall**
+## 7\. **Revisión de firewall**
 
 *   **`sudo ufw status`**: Verifica el estado del firewall UFW (en Ubuntu).
     
@@ -85,7 +82,7 @@ parent: "IPTables"
 *   **`sudo firewall-cmd --list-all`**: Verifica las reglas de firewalld (en RedHat/CentOS).
     
 
-### 8\. **Escaneo de malware**
+## 8\. **Escaneo de malware**
 
 *   **`sudo clamscan -r /`**: Escanea el sistema en busca de malware con ClamAV.
     
@@ -94,7 +91,7 @@ parent: "IPTables"
 *   **`sudo chkrootkit`**: Busca rootkits en el sistema.
     
 
-### 9\. **Revisión de tareas programadas**
+## 9\. **Revisión de tareas programadas**
 
 *   **`crontab -l`**: Lista las tareas programadas del usuario actual.
     
@@ -103,71 +100,71 @@ parent: "IPTables"
 *   **`sudo ls -l /etc/cron.*`**: Verifica los archivos en los directorios de cron.
     
 
-### 10\. **Verificación de módulos del kernel cargados**
+## 10\. **Verificación de módulos del kernel cargados**
 
 *   **`lsmod`**: Lista los módulos del kernel cargados.
     
 *   **`sudo modprobe -r <módulo>`**: Elimina un módulo sospechoso (si es seguro hacerlo).
     
 
-### 11\. **Revisión de variables de entorno**
+## 11\. **Revisión de variables de entorno**
 
 *   **`printenv`**: Muestra las variables de entorno actuales.
     
 *   **`echo $PATH`**: Verifica la variable PATH para asegurarte de que no haya rutas sospechosas.
     
 
-### 12\. **Verificación de conexiones de red activas**
+## 12\. **Verificación de conexiones de red activas**
 
 *   **`sudo netstat -anp`**: Muestra todas las conexiones de red y los procesos asociados.
     
 *   **`sudo lsof -i -n`**: Lista las conexiones de red y los archivos abiertos.
     
 
-### 13\. **Revisión de archivos ocultos**
+## 13\. **Revisión de archivos ocultos**
 
 *   **`sudo find / -name ".*" -ls`**: Busca archivos ocultos en el sistema.
     
 
-### 14\. **Verificación de SELinux/AppArmor**
+## 14\. **Verificación de SELinux/AppArmor**
 
 *   **`sestatus`**: Verifica el estado de SELinux.
     
 *   **`aa-status`**: Verifica el estado de AppArmor.
     
 
-### 15\. **Revisión de permisos de archivos sensibles**
+## 15\. **Revisión de permisos de archivos sensibles**
 
 *   **`sudo find / -type f -perm -o+w`**: Busca archivos con permisos de escritura para otros.
     
 *   **`sudo find / -type d -perm -o+w`**: Busca directorios con permisos de escritura para otros.
     
 
-### 16\. **Verificación de la configuración SSH**
+## 16\. **Verificación de la configuración SSH**
 
 *   **`sudo cat /etc/ssh/sshd_config`**: Revisa la configuración del servidor SSH.
     
 *   **`sudo grep PermitRootLogin /etc/ssh/sshd_config`**: Verifica si el login como root está permitido.
     
 
-### 17\. **Revisión de la configuración de sudo**
+## 17\. **Revisión de la configuración de sudo**
 
 *   **`sudo cat /etc/sudoers`**: Verifica los privilegios de sudo.
     
 *   **`sudo grep -r "NOPASSWD" /etc/sudoers*`**: Busca usuarios con permisos de sudo sin contraseña.
     
 
-### 18\. **Verificación de la configuración de PAM**
+## 18\. **Verificación de la configuración de PAM**
 
 *   **`cat /etc/pam.d/common-auth`**: Revisa la configuración de autenticación PAM.
     
 
-### 19\. **Revisión de la configuración de sysctl**
+## 19\. **Revisión de la configuración de sysctl**
 
 *   **`sudo sysctl -a`**: Muestra todas las configuraciones de seguridad del kernel.
     
 
-### 20\. **Escaneo de vulnerabilidades**
+## 20\. **Escaneo de vulnerabilidades**
 
 *   **`sudo lynis audit system`**: Ejecuta un escaneo de seguridad con Lynis.
     
