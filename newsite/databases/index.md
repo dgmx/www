@@ -9,10 +9,10 @@ hero:
   actions:
     - theme: brand
       text: Lenguaje SQL
-      link: /redes/ipv6/intro
+      link: /databases/sql/index
     - theme: alt
       text: MariaDB
-      link: /redes/iptables/manual
+      link: /databases/mariadb/index
 
 
 features:
