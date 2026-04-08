@@ -34,5 +34,3 @@ features:
     link: /linux/linux/permisos-linux
     linkText: Leer más
 ---
-
-# Test
