@@ -19,6 +19,9 @@ hero:
     - theme: alt
       text: Julia
       link: /programacion/Julia/manual_julia
+    - theme: brand
+      text: Shell Scripting
+      link: /programacion/shell/manual_shell_script
 
 features:
   - title: NodeJS
