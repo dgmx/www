@@ -85,8 +85,8 @@ export default defineConfig({
             collapsed: true,
             items: [
               { text: "Inicio", link: "/programacion/html/" },
-              { text: "Introducción HTML", link: "/programacion/html/Introduccion_HTML" },
-              { text: "Introducción CSS", link: "/programacion/html/Introduccion_CSS" },
+              { text: "Introducción HTML", link: "/programacion/html/introduccion_HTML" },
+              { text: "Introducción CSS", link: "/programacion/html/introduccion_CSS" },
               { text: "CSS", link: "/programacion/html/css" },
             ],
           },
