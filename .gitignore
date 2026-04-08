@@ -2,8 +2,8 @@
 node_modules/
 
 # Archivos de build (opcional, depende de tu flujo)
-dist/
-.vitepress/dist/
+# dist/
+# .vitepress/dist/
 
 # Cache de Vite / VitePress
 .vitepress/cache/
