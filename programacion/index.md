@@ -11,11 +11,11 @@ hero:
       text: Java
       link: /programacion/java/Manual_Java_UML
     - theme: alt
-      text: Python
-      link: /api-examples
+      text: CSS
+      link: /programacion/html/introduccion_HTML
     - theme: brand
-      text: Processing
-      link: Kube/kube-lab-aws
+      text: HTML
+      link: /programacion/html/introduccion_HTML
     - theme: alt
       text: Julia
       link: /programacion/Julia/manual_julia

@@ -3,7 +3,7 @@ import { onMounted, nextTick, watch } from 'vue'
 import { useRoute, useData } from 'vitepress'
 
 export default {
-  ...DefaultTheme,
+  extends: DefaultTheme,
   setup() {
     const route = useRoute()
     const { isDark } = useData()
