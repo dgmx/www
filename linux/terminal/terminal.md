@@ -1,9 +1,7 @@
----
-title: "01. Introducción a la terminal"
-parent: "Terminal"
----
+# Introducción a la terminal de Linux / MacOS
 
-## Introducción a la terminal
+
+## 1. Introducción a la terminal
 
 *   Terminología
 *   Comandos
@@ -28,8 +26,8 @@ parent: "Terminal"
     *   Más ayuda
 *   Ejercicios propuestos
 
-Terminología
-------------
+## 2. Terminología
+
 
 Algunas aclaraciones:
 
@@ -54,8 +52,8 @@ El nombre viene de la utilización de ordenadores de tipo _mainframe_, sumamente
 
 Históricamente, era el puerto y la conexión digital en el _mainframe_ al que se conectaba una terminal, pero actualmente no hay una clara distinción con la terminal. En Linux se puede acceder a una consola virtual usando las teclas CtrlAltF1, y más consolas alternando con F2, F3… Se puede volver al entorno gráfico con F7 (puede cambiar según el sistema).
 
-Comandos
---------
+## 3. Comandos
+
 
 Es muy común en Linux que los ficheros de texto plano no tengan extensión, pero sería equivalente a la típica extensión `.txt`.
 
@@ -434,8 +432,7 @@ Además, muchos comandos incluyen una opción `-h` o `--help`, que muestra infor
 
 * * *
 
-Ejercicios propuestos
----------------------
+## 4. Ejercicios propuestos
 
 *   En una única línea: usando `echo` escribe en cuatro nombres de persona, **uno por línea**, y haz que se guarde en el fichero `nombres`. El resultado debería ser algo como:
     
@@ -454,8 +451,8 @@ Ejercicios propuestos
 *   Busca en el `man` la opción para que `ls` liste los ficheros ordenados por tamaño (en inglés, _size_).
 *   El comando `dig`, con la opción `any`, muestra todos los registros DNS de un servidor (ej: `dig twitter.com any`). Úsalo para extraer únicamente los registros de correo electrónico (`MX`).
 
-Ejemplos resueltos
-------------------
+## 5. Ejemplos resueltos
+
 
 ### Extraer la línea _n_ de un fichero
 
@@ -490,8 +487,8 @@ $ cat ciudades | head -n4 | tail -n1
 Brno
 ```
 
-Para profundizar
-----------------
+## 6. Para profundizar
+
 
 *   [The Art of Command Line (github)](https://github.com/jlevy/the-art-of-command-line/blob/master/README-es.md)
 *   [Bash guide (github)](https://github.com/Idnan/bash-guide)
