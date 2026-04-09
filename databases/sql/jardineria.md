@@ -4,7 +4,7 @@
 
 [![DER Jardinería](images/der-jardineria.png)]()
 
-Archivo de script para la creación de la Base de Datos <a href="/jardineria.sql" download>Jardineria</a>
+[Descarga la base de datos completa en formato SQL](/jardineria.sql)
 
 ## Consultas sobre una tabla
 

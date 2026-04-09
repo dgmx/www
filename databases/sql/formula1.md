@@ -139,7 +139,7 @@ CREATE TABLE qualifying (
 );
 ````
 
-[Descarga la base de datos completa en formato SQL](/public/formula-1.sql.zip)
+[Descarga la base de datos completa en formato SQL](/formula-1.sql.zip)
 
 
 # Consultas SQL para Base de Datos de Fórmula 1 (FIA)
