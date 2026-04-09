@@ -8,7 +8,7 @@ export default defineConfig({
     hostname: 'https://www.diegojgonzalez.org'
   },
   lastUpdated: true,
-  description: "Material documental de ASIR",
+  description: "Material documental",
   ignoreDeadLinks: [
     /localhost/,
     /example-/,
