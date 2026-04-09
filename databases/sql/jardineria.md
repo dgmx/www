@@ -4,7 +4,7 @@
 
 [![DER Jardinería](images/der-jardineria.png)]()
 
-[Descarga la base de datos completa en formato SQL](/jardineria.sql)
+[Descarga la base de datos completa en formato SQL](/jardineria.sql.zip)
 
 ## Consultas sobre una tabla
 
