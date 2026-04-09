@@ -7,7 +7,7 @@ parent: "SQL"
 
 [![DER Universidad](images/der-universidad.png)]()
 
-Archivo de script para la creación de la Base de Datos <a href="/universidad_a.sql" download>Universidad</a>
+[Descarga la base de datos completa en formato SQL](/universidad_a.txt)
 
 
 ## Consultas sobre una tabla
