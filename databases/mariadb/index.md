@@ -1,5 +1,4 @@
----
-title: "MariaDB"
-nav_order: 07
----
 
+MariadDB SGBDR
+
+![](img/logo.png)
