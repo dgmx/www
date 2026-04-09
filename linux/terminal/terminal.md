@@ -1,4 +1,4 @@
-# Introducción a la terminal de Linux / MacOS
+# Introducción a la terminal de Linux - MacOS
 
 
 ## 1. Introducción a la terminal
