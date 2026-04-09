@@ -12,10 +12,10 @@ hero:
       link: /programacion/java/Manual_Java_UML
     - theme: alt
       text: CSS
-      link: /programacion/html/introduccion_HTML
+      link: /programacion/html/introduccion_css
     - theme: brand
       text: HTML
-      link: /programacion/html/introduccion_HTML
+      link: /programacion/html/introduccion_html
     - theme: alt
       text: Julia
       link: /programacion/Julia/manual_julia
