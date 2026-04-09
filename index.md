@@ -21,7 +21,7 @@ hero:
 
 features:
   - title: Podman
-    details: Podman es un motor de contenedores daemonless compatible con OCI (Open Container Initiative).  
+    details: Podman es un motor de contenedores daemonless.  
     link: /linux/kube/kube-lab-aws
     linkText: Leer más
   - title: Git
