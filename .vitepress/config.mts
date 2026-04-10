@@ -141,6 +141,15 @@ export default defineConfig({
               { text: "Vistas", link: "/databases/mariadb/seguridad_vistas" },
             ],
           },
+          {
+            text: "NoSQL",
+            collapsed: true,
+            items: [
+              { text: "Inicio", link: "/databases/nosql/" },
+              { text: "Instalación", link: "/databases/nosql/install" },
+              { text: "Manual", link: "/databases/nosql/manual" },
+            ],
+          },
         ]
       },
       {
