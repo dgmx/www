@@ -10,7 +10,7 @@ parent: "SQL"
 [Descarga la base de datos completa en formato SQL](/universidad_a.txt)
 
 
-## Consultas sobre una tabla
+## 1. Consultas sobre una tabla
 
 1. Devuelve un listado con el primer apellido, segundo apellido y el nombre de todos los alumnos. El listado deberá estar ordenado alfabéticamente de menor a mayor por el primer apellido, segundo apellido y nombre.
     ```sql
@@ -47,7 +47,7 @@ parent: "SQL"
     WHERE a.cuatrimestre = 1 AND a.curso = 3 AND a.id_grado = 7
     ```
 
-## <span style="color:aqua">Consultas multitabla (Composición interna)</span>
+## 2. Consultas multitabla (Composición interna)
 
 1. Devuelve un listado con los datos de todas las alumnas que se han matriculado alguna vez en el Grado en Ingeniería Informática (Plan 2015).
     ```sql
@@ -99,7 +99,7 @@ parent: "SQL"
     WHERE ce.anyo_inicio = '2018' AND ce.anyo_fin = '2019'
     ```
 
-## <span style="color:aqua">Consultas multitabla (Composición externa)</span>
+## 3. Consultas multitabla (Composición externa)
 
 1. Devuelve un listado con los nombres de todos los profesores y los departamentos que tienen vinculados. El listado también debe mostrar aquellos profesores que no tienen ningún departamento asociado. El listado debe devolver cuatro columnas, nombre del departamento, primer apellido, segundo apellido y nombre del profesor. El resultado estará ordenado alfabéticamente de menor a mayor por el nombre del departamento, apellidos y el nombre.
     ```sql
@@ -145,7 +145,7 @@ parent: "SQL"
     WHERE asm.id_curso_escolar IS NULL
     ```
 
-## <span style="color:aqua">Consultas resúmen</span>
+## 4. Consultas resúmen
 
 1. Devuelve el número total de alumnas que hay.
     ```sql
@@ -218,7 +218,7 @@ parent: "SQL"
     ORDER BY 5 DESC
     ```
 
-## <span style="color:aqua">Subconsultas</span>
+## 5. Subconsultas
 
 1. Devuelve todos los datos del alumno más joven.
     ```sql
