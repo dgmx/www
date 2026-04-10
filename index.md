@@ -32,6 +32,10 @@ features:
     details: Guía Completa de Permisos en Linux 
     link: /linux/linux/permisos-linux
     linkText: Leer más
----
 
-[Plataforma de Formación **TCM**](https://dgmx.duckdns.org)
+actions:
+    - theme: brand
+      text: Plataforma de Formación **TCM**
+      link: https://dgmx.duckdns.org
+
+---
