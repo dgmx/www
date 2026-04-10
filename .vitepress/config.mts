@@ -120,7 +120,7 @@ export default defineConfig({
               { text: "Gestión Ventas", link: "/databases/sql/ventas" },
               { text: "Jardinería", link: "/databases/sql/jardineria" },
               { text: "Universidad", link: "/databases/sql/universidad" },
-              { text: "Gestión Centros", link: "/databases/sql/actividad35" },
+              { text: "Gestión Centros", link: "/databases/sql/gestion_centros" },
               { text: "Departamentos", link: "/databases/sql/departamentos" },
               { text: "Tienda Ropa", link: "/databases/sql/ropatienda" },
               { text: "CC Comercial", link: "/databases/sql/ccomercial" },

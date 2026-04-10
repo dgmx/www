@@ -151,3 +151,220 @@ CREATE TABLE empleados (
     salario DECIMAL(10,2) CHECK (salario > 0)  -- El salario debe ser mayor a 0
 );
 ```
+
+---
+
+## Ejercicios de Consultas
+
+### 1. Consultas sobre una tabla
+
+**1.1.** Mostrar el nombre y salario de todos los empleados.
+
+```sql
+SELECT NOMEM, Salar FROM EMPLEADOS;
+```
+
+**1.2.** Mostrar los departamentos con presupuesto mayor a 50.
+
+```sql
+SELECT NOMDE, presu FROM DEPARTAMENTOS WHERE presu > 50;
+```
+
+**1.3.** Listar los empleados nacidos antes de 1970.
+
+```sql
+SELECT NOMEM, Fecna FROM EMPLEADOS WHERE Fecna < '1970-01-01';
+```
+
+**1.4.** Mostrar los centros cuyo nombre contenga "SEDE".
+
+```sql
+SELECT Nomce, Dirce FROM CENTROS WHERE Nomce LIKE '%SEDE%';
+```
+
+**1.5.** Listar empleados ordenados por salario de forma descendente.
+
+```sql
+SELECT NOMEM, Salar FROM EMPLEADOS ORDER BY Salar DESC;
+```
+
+### 2. Consultas multitabla (Composición interna)
+
+**2.1.** Mostrar el nombre del empleado y el nombre del departamento donde trabaja.
+
+```sql
+SELECT e.NOMEM, d.NOMDE 
+FROM EMPLEADOS e 
+INNER JOIN DEPARTAMENTOS d ON e.Numde = d.numde;
+```
+
+**2.2.** Mostrar el nombre del departamento y la sede (centro) al que pertenece.
+
+```sql
+SELECT d.NOMDE, c.Nomce 
+FROM DEPARTAMENTOS d 
+INNER JOIN CENTROS c ON d.numce = c.Numce;
+```
+
+**2.3.** Listar empleados con el nombre de su departamento y el centro donde está.
+
+```sql
+SELECT e.NOMEM, d.NOMDE, c.Nomce 
+FROM EMPLEADOS e 
+INNER JOIN DEPARTAMENTOS d ON e.Numde = d.numde 
+INNER JOIN CENTROS c ON d.numce = c.Numce;
+```
+
+**2.4.** Mostrar los empleados que ganan más de 2000 y su departamento.
+
+```sql
+SELECT e.NOMEM, e.Salar, d.NOMDE 
+FROM EMPLEADOS e 
+INNER JOIN DEPARTAMENTOS d ON e.Numde = d.numde 
+WHERE e.Salar > 2000;
+```
+
+**2.5.** Listar los empleados con comisión null y el nombre de su departamento.
+
+```sql
+SELECT e.NOMEM, e.Comis, d.NOMDE 
+FROM EMPLEADOS e 
+INNER JOIN DEPARTAMENTOS d ON e.Numde = d.numde 
+WHERE e.Comis IS NULL;
+```
+
+### 3. Consultas multitabla (Composición externa)
+
+**3.1.** Mostrar todos los centros y sus departamentos (incluyendo centros sin departamentos).
+
+```sql
+SELECT c.Nomce, d.NOMDE 
+FROM CENTROS c 
+LEFT JOIN DEPARTAMENTOS d ON c.Numce = d.numce;
+```
+
+**3.2.** Mostrar todos los departamentos y sus empleados (incluyendo departamentos sin empleados).
+
+```sql
+SELECT d.NOMDE, e.NOMEM 
+FROM DEPARTAMENTOS d 
+LEFT JOIN EMPLEADOS e ON d.numde = e.Numde;
+```
+
+**3.3.** Mostrar todos los empleados aunque no tengan departamento asignado.
+
+```sql
+SELECT e.NOMEM, d.NOMDE 
+FROM EMPLEADOS e 
+LEFT JOIN DEPARTAMENTOS d ON e.Numde = d.numde;
+```
+
+**3.4.** Mostrar todos los departamentos y sus empleados (incluyendo empleados sin departamento).
+
+```sql
+SELECT d.NOMDE, e.NOMEM 
+FROM DEPARTAMENTOS d 
+RIGHT JOIN EMPLEADOS e ON d.numde = e.Numde;
+```
+
+**3.5.** Mostrar todos los centros y empleados aunque no tengan relación.
+
+```sql
+SELECT c.Nomce, e.NOMEM 
+FROM CENTROS c 
+LEFT JOIN DEPARTAMENTOS d ON c.Numce = d.numce 
+LEFT JOIN EMPLEADOS e ON d.numde = e.Numde;
+```
+
+### 4. Consultas resumen
+
+**4.1.** Mostrar el salario medio de todos los empleados.
+
+```sql
+SELECT AVG(Salar) AS SalarioMedio FROM EMPLEADOS;
+```
+
+**4.2.** Contar el número de empleados por departamento.
+
+```sql
+SELECT d.NOMDE, COUNT(e.Numem) AS NumEmpleados 
+FROM DEPARTAMENTOS d 
+LEFT JOIN EMPLEADOS e ON d.numde = e.Numde 
+GROUP BY d.NOMDE;
+```
+
+**4.3.** Mostrar el salario máximo y mínimo por departamento.
+
+```sql
+SELECT d.NOMDE, MAX(e.Salar) AS SalarioMax, MIN(e.Salar) AS SalarioMin 
+FROM DEPARTAMENTOS d 
+LEFT JOIN EMPLEADOS e ON d.numde = e.Numde 
+GROUP BY d.NOMDE;
+```
+
+**4.4.** Mostrar la suma de presupuestos por centro.
+
+```sql
+SELECT c.Nomce, SUM(d.presu) AS TotalPresupuesto 
+FROM CENTROS c 
+LEFT JOIN DEPARTAMENTOS d ON c.Numce = d.numce 
+GROUP BY c.Nomce;
+```
+
+**4.5.** Contar cuántos empleados hay en cada centro.
+
+```sql
+SELECT c.Nomce, COUNT(e.Numem) AS TotalEmpleados 
+FROM CENTROS c 
+LEFT JOIN DEPARTAMENTOS d ON c.Numce = d.numce 
+LEFT JOIN EMPLEADOS e ON d.numde = e.Numde 
+GROUP BY c.Nomce;
+```
+
+### 5. Subconsultas
+
+**5.1.** Mostrar los empleados cuyo salario sea mayor que el salario medio.
+
+```sql
+SELECT NOMEM, Salar 
+FROM EMPLEADOS 
+WHERE Salar > (SELECT AVG(Salar) FROM EMPLEADOS);
+```
+
+**5.2.** Mostrar los empleados que trabajan en el departamento con mayor presupuesto.
+
+```sql
+SELECT e.NOMEM, e.Salar 
+FROM EMPLEADOS e 
+INNER JOIN DEPARTAMENTOS d ON e.Numde = d.numde 
+WHERE d.presu = (SELECT MAX(presu) FROM DEPARTAMENTOS);
+```
+
+**5.3.** Mostrar los departamentos que tienen más de 3 empleados.
+
+```sql
+SELECT d.NOMDE 
+FROM DEPARTAMENTOS d 
+WHERE (SELECT COUNT(*) FROM EMPLEADOS WHERE Numde = d.numde) > 3;
+```
+
+**5.4.** Mostrar los empleados cuyo salario sea superior al del empleado con código 110.
+
+```sql
+SELECT NOMEM, Salar 
+FROM EMPLEADOS 
+WHERE Salar > (SELECT Salar FROM EMPLEADOS WHERE Numem = 110);
+```
+
+**5.5.** Mostrar los empleados que trabajan en centros de Madrid.
+
+```sql
+SELECT e.NOMEM 
+FROM EMPLEADOS e 
+WHERE e.Numde IN (
+    SELECT d.numde 
+    FROM DEPARTAMENTOS d 
+    INNER JOIN CENTROS c ON d.numce = c.Numce 
+    WHERE c.Dirce LIKE '%MADRID%'
+);
+```
