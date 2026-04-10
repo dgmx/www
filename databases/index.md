@@ -13,6 +13,9 @@ hero:
     - theme: alt
       text: MariaDB
       link: /databases/mariadb/index
+    - theme: brand
+      text: NoSQL
+      link: /databases/nosql/index
 
 
 features:
@@ -20,13 +23,13 @@ features:
     details: Definición y manipulacion de datos
     link: /databases/sql/empresa
     linkText: Leer más
-  - title: IPv6 con SLAAC + EUI-64
-    details: Cálculo de Dirección IPv6 Link-local
-    link: /redes/ipv6/ipv6_slaac
+  - title: Cifrado SQL
+    details: Cifrado de datos en tablas MariaDB
+    link: /databases/mariadb/cifrado_mariadb
     linkText: Leer más
-  - title: Conversión IPv4 a IPv6
-    details: Conversión de una dirección IP privada IPv4 a IPv6
-    link: /redes/ipv6/ipv4_a_ipv6_conversion
+  - title: Instalación MondoDB
+    details: Manual de instalación de MongoDB
+    link: /databases/nosql/install
     linkText: Leer más
 ---
 
