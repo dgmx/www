@@ -9,15 +9,11 @@ parent: "MariaDB"
 
 La sentencia `ALTER` en **MariaDB** se utiliza para modificar la estructura de una tabla existente. Tiene múltiples usos, desde agregar columnas hasta cambiar claves primarias.
 
----
-
 ## 🔧 1. Agregar columna
 
 ```sql
 ALTER TABLE empleados ADD columna_salario DECIMAL(10,2);
 ```
-
----
 
 ## 🧱 2. Agregar múltiples columnas
 
@@ -27,7 +23,6 @@ ADD direccion VARCHAR(100),
 ADD fecha_ingreso DATE;
 ```
 
----
 
 ## 🧾 3. Eliminar columna
 
@@ -35,7 +30,6 @@ ADD fecha_ingreso DATE;
 ALTER TABLE empleados DROP COLUMN direccion;
 ```
 
----
 
 ## ✏️ 4. Modificar una columna
 
@@ -43,7 +37,6 @@ ALTER TABLE empleados DROP COLUMN direccion;
 ALTER TABLE empleados MODIFY columna_salario DECIMAL(12,2) NOT NULL;
 ```
 
----
 
 ## 🔄 5. Cambiar el nombre de una columna
 
@@ -51,7 +44,6 @@ ALTER TABLE empleados MODIFY columna_salario DECIMAL(12,2) NOT NULL;
 ALTER TABLE empleados CHANGE columna_salario salario DECIMAL(12,2);
 ```
 
----
 
 ## 🏷️ 6. Renombrar la tabla
 
@@ -65,23 +57,17 @@ O también:
 RENAME TABLE empleados TO empleados_antiguos;
 ```
 
----
-
 ## 🔑 7. Agregar clave primaria
 
 ```sql
 ALTER TABLE empleados ADD PRIMARY KEY (id);
 ```
 
----
-
 ## 🔓 8. Eliminar clave primaria
 
 ```sql
 ALTER TABLE empleados DROP PRIMARY KEY;
 ```
-
----
 
 ## 🔒 9. Agregar clave foránea
 
@@ -91,15 +77,11 @@ ADD CONSTRAINT fk_departamento
 FOREIGN KEY (id_departamento) REFERENCES departamentos(id);
 ```
 
----
-
 ## 🗑️ 10. Eliminar clave foránea
 
 ```sql
 ALTER TABLE empleados DROP FOREIGN KEY fk_departamento;
 ```
-
----
 
 ## 🏷️ 11. Agregar índice
 
@@ -107,23 +89,17 @@ ALTER TABLE empleados DROP FOREIGN KEY fk_departamento;
 ALTER TABLE empleados ADD INDEX idx_nombre (nombre);
 ```
 
----
-
 ## 🚫 12. Eliminar índice
 
 ```sql
 ALTER TABLE empleados DROP INDEX idx_nombre;
 ```
 
----
-
 ## 📌 13. Agregar clave única
 
 ```sql
 ALTER TABLE empleados ADD UNIQUE (email);
 ```
-
----
 
 ## ❌ 14. Eliminar clave única
 
@@ -133,15 +109,11 @@ ALTER TABLE empleados DROP INDEX email;
 
 > En MariaDB, las claves únicas también son índices.
 
----
-
 ## 🧬 15. Modificar el motor de almacenamiento
 
 ```sql
 ALTER TABLE empleados ENGINE = InnoDB;
 ```
-
----
 
 ## 🛠️ 16. Cambiar el valor por defecto de una columna
 
@@ -149,15 +121,11 @@ ALTER TABLE empleados ENGINE = InnoDB;
 ALTER TABLE empleados ALTER salario SET DEFAULT 1000.00;
 ```
 
----
-
 ## 🧽 17. Eliminar valor por defecto
 
 ```sql
 ALTER TABLE empleados ALTER salario DROP DEFAULT;
 ```
-
----
 
 ## ⚠️ Consideraciones
 
