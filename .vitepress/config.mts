@@ -7,7 +7,13 @@ export default defineConfig({
   sitemap: {
     hostname: 'https://www.diegojgonzalez.org'
   },
-  lastUpdated: true,
+  lastUpdated: {
+    text: 'Última actualización',
+    formatOptions: {
+      dateStyle: 'short',
+      timeStyle: 'short'
+    }
+  },
   description: "Material documental",
   ignoreDeadLinks: [
     /localhost/,
