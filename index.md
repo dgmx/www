@@ -33,3 +33,5 @@ features:
     link: /linux/linux/permisos-linux
     linkText: Leer más
 ---
+
+[Plataforma de Formación **TCM**](https://dgmx.duckdns.org)
