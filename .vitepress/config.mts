@@ -48,7 +48,14 @@ export default defineConfig({
         { text: 'IPTables', link: '/redes/iptables/' },
       ]},
     ],
-
+    lastUpdated: {
+      text: 'Actualizado: ', 
+      formatOptions: {
+        dateStyle: 'short',
+        timeStyle: 'short',
+        hour12: false // Cambia a true si prefieres formato de 12 horas
+      }
+    },
     sidebar: [
       {
         text: 'Programación',
