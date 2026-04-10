@@ -46,7 +46,7 @@ La misma cuenta con múltiples bases de datos y ejercicios.
 
 ![DER Universidad](images/Imagen1.png)
 
-[Ir a los ejercicios de Gestión de Centros](actividad35.md)
+[Ir a los ejercicios de Gestión de Centros](gestion_centros.md)
 
 ### Base de datos N° 7 - Gestión de Departamentos
 
