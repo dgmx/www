@@ -5,7 +5,7 @@ layout: home
 hero:
   name: "Programación"
   text: "Manuales y ejercicios"
-  tagline: Programación orientada a objetos
+  tagline: POO, diseño web, shell scripting, NodeJS...
   actions:
     - theme: brand
       text: Java
