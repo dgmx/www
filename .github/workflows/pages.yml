@@ -34,7 +34,7 @@ jobs:
         run: npx vitepress build
         
       - name: Copy static files to dist
-        run: cp -r public/* .vitepress/dist/
+        run: cp -r public/. .vitepress/dist/
         
       - name: Setup Pages
         uses: actions/configure-pages@v4
