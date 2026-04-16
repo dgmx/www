@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Markmap</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+#mindmap {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.8/dist/style.css">
+</head>
+<body>
+<svg id="mindmap"></svg>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-view@0.18.8/dist/browser/index.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.8/dist/index.js"></script><script>(r => {
+              setTimeout(r);
+            })(function renderToolbar() {
+  const {
+    markmap,
+    mm
+  } = window;
+  const {
+    el
+  } = markmap.Toolbar.create(mm);
+  el.setAttribute('style', 'position:absolute;bottom:20px;right:20px');
+  document.body.append(el);
+})</script><script>((getMarkmap, getOptions, root2, jsonOptions) => {
+              const markmap = getMarkmap();
+              window.mm = markmap.Markmap.create(
+                "svg#mindmap",
+                (getOptions || markmap.deriveOptions)(jsonOptions),
+                root2
+              );
+            })(() => window.markmap,null,{"content":"🌐 Modelo de Datos Relacional","children":[{"content":"📌 Introducción","children":[{"content":"Importancia de las bases de datos","children":[],"payload":{"tag":"li","lines":"3,4"}},{"content":"Modelos tradicionales:","children":[{"content":"Jerárquico","children":[],"payload":{"tag":"li","lines":"5,6"}},{"content":"Red","children":[],"payload":{"tag":"li","lines":"6,7"}},{"content":"Relacional","children":[],"payload":{"tag":"li","lines":"7,8"}}],"payload":{"tag":"li","lines":"4,8"}},{"content":"Aplicaciones en educación y el mercado laboral","children":[],"payload":{"tag":"li","lines":"8,10"}}],"payload":{"tag":"h2","lines":"2,3"}},{"content":"📌 Modelo de Datos Relacional","children":[{"content":"📌 Modelo de Datos","children":[{"content":"<strong>Definición</strong> de base de datos y SGBD","children":[],"payload":{"tag":"li","lines":"12,13"}},{"content":"<strong>Niveles de abstracción</strong>","children":[{"content":"Conceptual (Ej: Entidad-Relación)","children":[],"payload":{"tag":"li","lines":"14,15"}},{"content":"Lógico (Ej: Modelo Relacional)","children":[],"payload":{"tag":"li","lines":"15,16"}},{"content":"Físico (Estructuras internas del SGBD)","children":[],"payload":{"tag":"li","lines":"16,17"}}],"payload":{"tag":"li","lines":"13,17"}},{"content":"<strong>Características y evolución</strong>","children":[],"payload":{"tag":"li","lines":"17,18"}}],"payload":{"tag":"h3","lines":"11,12"}},{"content":"📌 Modelo Relacional","children":[{"content":"<strong>Ventajas</strong>","children":[{"content":"Evita la duplicidad de registros","children":[],"payload":{"tag":"li","lines":"20,21"}},{"content":"Garantiza la integridad referencial","children":[],"payload":{"tag":"li","lines":"21,22"}},{"content":"Facilita la normalización","children":[],"payload":{"tag":"li","lines":"22,23"}}],"payload":{"tag":"li","lines":"19,23"}},{"content":"<strong>Inconvenientes</strong>","children":[{"content":"Dificultad en la gestión de datos multimedia y gráficos","children":[],"payload":{"tag":"li","lines":"24,25"}},{"content":"Ineficiencia en el manejo de grandes bloques de texto","children":[],"payload":{"tag":"li","lines":"25,26"}}],"payload":{"tag":"li","lines":"23,26"}},{"content":"<strong>Aspectos fundamentales</strong>","children":[{"content":"Estructuras de datos: tablas, tuplas y atributos","children":[],"payload":{"tag":"li","lines":"27,28"}},{"content":"Integridad de los datos: reglas aplicadas por el SGBD","children":[],"payload":{"tag":"li","lines":"28,29"}},{"content":"Manipulación de datos: lenguajes de consulta","children":[],"payload":{"tag":"li","lines":"29,30"}}],"payload":{"tag":"li","lines":"26,30"}},{"content":"<strong>Objetivos del modelo relacional</strong>","children":[{"content":"Independencia física y lógica de los datos","children":[],"payload":{"tag":"li","lines":"31,32"}},{"content":"Flexibilidad y uniformidad en el almacenamiento y consulta","children":[],"payload":{"tag":"li","lines":"32,33"}},{"content":"Sencillez en el uso y administración de bases de datos","children":[],"payload":{"tag":"li","lines":"33,36"}}],"payload":{"tag":"li","lines":"30,36"}}],"payload":{"tag":"h3","lines":"18,19"}}],"payload":{"tag":"h2","lines":"10,11"}},{"content":"📌 Estructura del Modelo Relacional","children":[{"content":"<strong>Relación o Tabla</strong>","children":[{"content":"Filas (tuplas)","children":[],"payload":{"tag":"li","lines":"38,39"}},{"content":"Columnas (atributos)","children":[],"payload":{"tag":"li","lines":"39,40"}},{"content":"Cardinalidad y grado","children":[],"payload":{"tag":"li","lines":"40,41"}}],"payload":{"tag":"li","lines":"37,41"}},{"content":"<strong>Dominios y atributos</strong>","children":[],"payload":{"tag":"li","lines":"41,42"}},{"content":"<strong>Claves</strong>","children":[{"content":"Clave primaria, alternativa y ajena","children":[],"payload":{"tag":"li","lines":"43,44"}}],"payload":{"tag":"li","lines":"42,44"}},{"content":"<strong>Restricciones de Integridad</strong>","children":[{"content":"Inherentes","children":[],"payload":{"tag":"li","lines":"45,46"}},{"content":"De usuario","children":[],"payload":{"tag":"li","lines":"46,47"}},{"content":"Referencial","children":[],"payload":{"tag":"li","lines":"47,48"}}],"payload":{"tag":"li","lines":"44,48"}},{"content":"<strong>Índices</strong>","children":[],"payload":{"tag":"li","lines":"48,50"}}],"payload":{"tag":"h2","lines":"36,37"}},{"content":"📌 Operaciones Relacionales","children":[{"content":"Inserción, borrado, modificación y consulta","children":[],"payload":{"tag":"li","lines":"51,52"}},{"content":"Lenguajes:","children":[{"content":"Algebraicos","children":[],"payload":{"tag":"li","lines":"53,54"}},{"content":"Predicativos","children":[],"payload":{"tag":"li","lines":"54,56"}}],"payload":{"tag":"li","lines":"52,56"}}],"payload":{"tag":"h2","lines":"50,51"}},{"content":"📌 Álgebra Relacional","children":[{"content":"🔹 Operadores primitivos","children":[{"content":"Unión","children":[],"payload":{"tag":"li","lines":"58,59"}},{"content":"Diferencia","children":[],"payload":{"tag":"li","lines":"59,60"}},{"content":"Producto cartesiano","children":[],"payload":{"tag":"li","lines":"60,61"}},{"content":"Proyección","children":[],"payload":{"tag":"li","lines":"61,62"}},{"content":"Selección","children":[],"payload":{"tag":"li","lines":"62,64"}}],"payload":{"tag":"h3","lines":"57,58"}},{"content":"🔹 Operadores derivados","children":[{"content":"Intersección","children":[],"payload":{"tag":"li","lines":"65,66"}},{"content":"División","children":[],"payload":{"tag":"li","lines":"66,67"}},{"content":"Join y Natural Join","children":[],"payload":{"tag":"li","lines":"67,69"}}],"payload":{"tag":"h3","lines":"64,65"}}],"payload":{"tag":"h2","lines":"56,57"}},{"content":"📌 Aplicaciones en Educación y Trabajo","children":[{"content":"<strong>Contexto escolar</strong>: Uso en ESO, Bachillerato y Formación Profesional","children":[],"payload":{"tag":"li","lines":"70,71"}},{"content":"<strong>Contexto laboral</strong>:","children":[{"content":"Banca","children":[],"payload":{"tag":"li","lines":"72,73"}},{"content":"Telecomunicaciones","children":[],"payload":{"tag":"li","lines":"73,74"}},{"content":"Medicina","children":[],"payload":{"tag":"li","lines":"74,75"}},{"content":"Legislación","children":[],"payload":{"tag":"li","lines":"75,76"}}],"payload":{"tag":"li","lines":"71,76"}},{"content":"<strong>Tendencias futuras</strong>: IA y entornos Multicloud","children":[],"payload":{"tag":"li","lines":"76,78"}}],"payload":{"tag":"h2","lines":"69,70"}},{"content":"📌 Conclusión","children":[{"content":"Relevancia del modelo relacional","children":[],"payload":{"tag":"li","lines":"79,80"}},{"content":"Expansión hacia modelos objeto-relacionales","children":[],"payload":{"tag":"li","lines":"80,81"}},{"content":"Ejemplos de SGBD actuales:","children":[{"content":"Oracle","children":[],"payload":{"tag":"li","lines":"82,83"}},{"content":"MySQL","children":[],"payload":{"tag":"li","lines":"83,84"}},{"content":"MongoDB","children":[],"payload":{"tag":"li","lines":"84,85"}}],"payload":{"tag":"li","lines":"81,85"}}],"payload":{"tag":"h2","lines":"78,79"}}],"payload":{"tag":"h1","lines":"0,1"}},{})</script>
+</body>
+</html>
