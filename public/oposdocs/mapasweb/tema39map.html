@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Markmap</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+#mindmap {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.8/dist/style.css">
+</head>
+<body>
+<svg id="mindmap"></svg>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-view@0.18.8/dist/browser/index.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.8/dist/index.js"></script><script>(r => {
+              setTimeout(r);
+            })(function renderToolbar() {
+  const {
+    markmap,
+    mm
+  } = window;
+  const {
+    el
+  } = markmap.Toolbar.create(mm);
+  el.setAttribute('style', 'position:absolute;bottom:20px;right:20px');
+  document.body.append(el);
+})</script><script>((getMarkmap, getOptions, root2, jsonOptions) => {
+              const markmap = getMarkmap();
+              window.mm = markmap.Markmap.create(
+                "svg#mindmap",
+                (getOptions || markmap.deriveOptions)(jsonOptions),
+                root2
+              );
+            })(() => window.markmap,null,{"content":"Tema 39 INF - Lenguajes para Definición y Manipulación de Datos en Bases de Datos Relacionales","children":[{"content":"1. Introducción","children":[{"content":"Importancia de los datos en la actualidad","children":[],"payload":{"tag":"li","lines":"3,4"}},{"content":"Relación con el currículo educativo y profesional","children":[],"payload":{"tag":"li","lines":"4,5"}},{"content":"Bases de datos y su gestión eficiente","children":[],"payload":{"tag":"li","lines":"5,7"}}],"payload":{"tag":"h2","lines":"2,3"}},{"content":"2. Conceptos Básicos","children":[{"content":"<strong>Base de datos</strong>: colección estructurada de datos","children":[],"payload":{"tag":"li","lines":"8,9"}},{"content":"<strong>SGBD (Sistema Gestor de Bases de Datos)</strong>: software para manejar bases de datos","children":[],"payload":{"tag":"li","lines":"9,10"}},{"content":"<strong>Tipos de lenguajes para bases de datos</strong>:","children":[{"content":"Definición de datos (DDL)","children":[],"payload":{"tag":"li","lines":"11,12"}},{"content":"Manipulación de datos (DML)","children":[],"payload":{"tag":"li","lines":"12,14"}}],"payload":{"tag":"li","lines":"10,14"}}],"payload":{"tag":"h2","lines":"7,8"}},{"content":"3. Lenguaje de Definición de Datos (DDL)","children":[{"content":"<strong>Definicion</strong>: Lenguaje proporcionado para defincion y consulta de datos","children":[],"payload":{"tag":"li","lines":"15,16"}},{"content":"<strong>Tipos</strong>:","children":[{"content":"Interactivo (ejecución manual)","children":[],"payload":{"tag":"li","lines":"17,18"}},{"content":"Embebido (dentro de otro lenguaje)","children":[],"payload":{"tag":"li","lines":"18,19"}}],"payload":{"tag":"li","lines":"16,19"}},{"content":"<strong>Características</strong>:","children":[{"content":"Define estructuras de datos","children":[],"payload":{"tag":"li","lines":"20,21"}},{"content":"Alto nivel, simplicidad, abstracción","children":[],"payload":{"tag":"li","lines":"21,23"}}],"payload":{"tag":"li","lines":"19,23"}}],"payload":{"tag":"h2","lines":"14,15"}},{"content":"4. Lenguaje de Manipulación de Datos (DML)","children":[{"content":"<strong>Tipos</strong>:","children":[{"content":"Procedimentales (especifican el cómo)","children":[],"payload":{"tag":"li","lines":"25,26"}},{"content":"No procedimentales (solo indican qué)","children":[],"payload":{"tag":"li","lines":"26,27"}},{"content":"Basados en álgebra y cálculo relacional","children":[],"payload":{"tag":"li","lines":"27,28"}},{"content":"Estándar o propietario","children":[],"payload":{"tag":"li","lines":"28,29"}}],"payload":{"tag":"li","lines":"24,29"}},{"content":"<strong>Características</strong>:","children":[{"content":"Dependencia de SGBD, Simplicidad y uniformidad, lenguajes formales","children":[],"payload":{"tag":"li","lines":"30,32"}}],"payload":{"tag":"li","lines":"29,32"}}],"payload":{"tag":"h2","lines":"23,24"}},{"content":"5. Lenguaje SQL","children":[{"content":"5.1 Introducción","children":[{"content":"Lenguaje estándar de bases de datos relacionales","children":[],"payload":{"tag":"li","lines":"34,35"}},{"content":"Definido por ANSI e ISO","children":[],"payload":{"tag":"li","lines":"35,37"}}],"payload":{"tag":"h3","lines":"33,34"}},{"content":"5.2 Elementos del Lenguaje SQL","children":[{"content":"<strong>Comandos</strong>:","children":[{"content":"DDL (Definición de Datos)","children":[],"payload":{"tag":"li","lines":"39,40"}},{"content":"DML (Manipulación de Datos)","children":[],"payload":{"tag":"li","lines":"40,41"}},{"content":"DCL (Control de Datos)","children":[],"payload":{"tag":"li","lines":"41,42"}}],"payload":{"tag":"li","lines":"38,42"}},{"content":"<strong>Cláusulas</strong>:","children":[{"content":"<code>WHERE</code>, <code>GROUP BY</code>, <code>HAVING</code>, etc.","children":[],"payload":{"tag":"li","lines":"43,44"}}],"payload":{"tag":"li","lines":"42,44"}},{"content":"<strong>Otros elementos</strong>:","children":[{"content":"Operadores, funciones y literales","children":[],"payload":{"tag":"li","lines":"45,47"}}],"payload":{"tag":"li","lines":"44,47"}}],"payload":{"tag":"h3","lines":"37,38"}},{"content":"5.3 SQL como DDL","children":[{"content":"Creación y eliminación de bases de datos","children":[],"payload":{"tag":"li","lines":"48,49"}},{"content":"Creación, modificación y eliminación de tablas, índices y vistas","children":[],"payload":{"tag":"li","lines":"49,51"}}],"payload":{"tag":"h3","lines":"47,48"}},{"content":"5.4 SQL como DML","children":[{"content":"<strong>Consultas</strong>: <code>SELECT</code>","children":[],"payload":{"tag":"li","lines":"52,53"}},{"content":"<strong>Manipulación de datos</strong>:","children":[{"content":"<strong>Inserción</strong>: <code>INSERT INTO</code>","children":[],"payload":{"tag":"li","lines":"54,55"}},{"content":"<strong>Modificación</strong>: <code>UPDATE</code>","children":[],"payload":{"tag":"li","lines":"55,56"}},{"content":"<strong>Eliminación</strong>: <code>DELETE</code>","children":[],"payload":{"tag":"li","lines":"56,58"}}],"payload":{"tag":"li","lines":"53,58"}}],"payload":{"tag":"h3","lines":"51,52"}}],"payload":{"tag":"h2","lines":"32,33"}},{"content":"6. Aplicaciones en el Contexto Escolar y Laboral","children":[{"content":"<strong>Educación</strong>:","children":[{"content":"ESO, Bachillerato","children":[],"payload":{"tag":"li","lines":"60,61"}},{"content":"Ciclos Formativos (DAM, DAW, ASIR)","children":[],"payload":{"tag":"li","lines":"61,62"}}],"payload":{"tag":"li","lines":"59,62"}},{"content":"<strong>Laboral</strong>:","children":[{"content":"Banca, medicina, telecomunicaciones, universidades","children":[],"payload":{"tag":"li","lines":"63,65"}}],"payload":{"tag":"li","lines":"62,65"}}],"payload":{"tag":"h2","lines":"58,59"}},{"content":"7. Conclusión","children":[{"content":"Importancia de las bases de datos y su manipulación","children":[],"payload":{"tag":"li","lines":"66,67"}},{"content":"SQL como lenguaje clave en los SGBD","children":[],"payload":{"tag":"li","lines":"67,68"}}],"payload":{"tag":"h2","lines":"65,66"}}],"payload":{"tag":"h1","lines":"0,1"}},{})</script>
+</body>
+</html>

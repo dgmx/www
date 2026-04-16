@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Markmap</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+#mindmap {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/style.css">
+</head>
+<body>
+<svg id="mindmap"></svg>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-view@0.18.10/dist/browser/index.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.18.10/dist/index.js"></script><script>(r => {
+              setTimeout(r);
+            })(function renderToolbar() {
+  const {
+    markmap,
+    mm
+  } = window;
+  const {
+    el
+  } = markmap.Toolbar.create(mm);
+  el.setAttribute('style', 'position:absolute;bottom:20px;right:20px');
+  document.body.append(el);
+})</script><script>((getMarkmap, getOptions, root2, jsonOptions) => {
+              const markmap = getMarkmap();
+              window.mm = markmap.Markmap.create(
+                "svg#mindmap",
+                (getOptions || markmap.deriveOptions)(jsonOptions),
+                root2
+              );
+            })(() => window.markmap,null,{"content":"Tema 19: Gesti&#xf3;n de Archivos y Dispositivos en Sistemas Operativos","children":[{"content":"1. Introducci&#xf3;n","children":[{"content":"Relaci&#xf3;n con el temario oficial de inform&#xe1;tica","children":[],"payload":{"tag":"li","lines":"3,4"}},{"content":"Importancia del sistema operativo en la gesti&#xf3;n de archivos y dispositivos","children":[],"payload":{"tag":"li","lines":"4,5"}},{"content":"Autores clave: Tanenbaum, Stallings, Prieto","children":[],"payload":{"tag":"li","lines":"5,6"}},{"content":"Aplicaciones en formaci&#xf3;n profesional (DAW, DAM, ASIR, SMR)","children":[],"payload":{"tag":"li","lines":"6,8"}}],"payload":{"tag":"h2","lines":"2,3"}},{"content":"2. Archivos y Directorios","children":[{"content":"a) Archivos","children":[{"content":"Definici&#xf3;n: Abstracci&#xf3;n para almacenar informaci&#xf3;n en disco","children":[],"payload":{"tag":"li","lines":"10,11"}},{"content":"Atributos:","children":[{"content":"Nombre","children":[],"payload":{"tag":"li","lines":"12,13"}},{"content":"Fecha y hora de creaci&#xf3;n/modificaci&#xf3;n","children":[],"payload":{"tag":"li","lines":"13,14"}},{"content":"Permisos","children":[],"payload":{"tag":"li","lines":"14,15"}},{"content":"Propietario","children":[],"payload":{"tag":"li","lines":"15,16"}},{"content":"Ubicaci&#xf3;n","children":[],"payload":{"tag":"li","lines":"16,17"}}],"payload":{"tag":"li","lines":"11,17"}},{"content":"Datos: Contenido del archivo","children":[],"payload":{"tag":"li","lines":"17,19"}}],"payload":{"tag":"h3","lines":"9,10"}},{"content":"b) Directorios","children":[{"content":"Organizaci&#xf3;n jer&#xe1;rquica de archivos","children":[],"payload":{"tag":"li","lines":"20,21"}},{"content":"Estructura arb&#xf3;rea (archivos en hojas, subdirectorios en nodos intermedios)","children":[],"payload":{"tag":"li","lines":"21,22"}},{"content":"M&#xe9;todos de rutas:","children":[{"content":"Absolutas: <code>/home/usuario/documento.txt</code>","children":[],"payload":{"tag":"li","lines":"23,24"}},{"content":"Relativas: <code>documento.txt</code>","children":[],"payload":{"tag":"li","lines":"24,28"}}],"payload":{"tag":"li","lines":"22,28"}}],"payload":{"tag":"h3","lines":"19,20"}}],"payload":{"tag":"h2","lines":"8,9"}},{"content":"3. Gesti&#xf3;n de Archivos y Dispositivos","children":[{"content":"3.1. Asignaci&#xf3;n de Espacio en Disco","children":[{"content":"M&#xe9;todos:","children":[{"content":"Lista de enlaces (FAT)","children":[],"payload":{"tag":"li","lines":"43,44"}},{"content":"I-nodos (UNIX)","children":[],"payload":{"tag":"li","lines":"44,45"}},{"content":"&#xc1;rboles B+ (Bases de datos, sistemas modernos)","children":[],"payload":{"tag":"li","lines":"45,47"}}],"payload":{"tag":"li","lines":"42,47"}}],"payload":{"tag":"h3","lines":"41,42"}},{"content":"3.2. Gesti&#xf3;n del Espacio Libre","children":[{"content":"Mapa de bits: Uso eficiente de memoria","children":[],"payload":{"tag":"li","lines":"48,49"}},{"content":"Lista enlazada de bloques libres: Ahorro de espacio cuando el disco est&#xe1; lleno","children":[],"payload":{"tag":"li","lines":"49,51"}}],"payload":{"tag":"h3","lines":"47,48"}},{"content":"3.3. Operaciones del Sistema de Archivos","children":[{"content":"Crear","children":[],"payload":{"tag":"li","lines":"52,53"}},{"content":"Borrar","children":[],"payload":{"tag":"li","lines":"53,54"}},{"content":"Abrir","children":[],"payload":{"tag":"li","lines":"54,55"}},{"content":"Cerrar","children":[],"payload":{"tag":"li","lines":"55,56"}},{"content":"Leer","children":[],"payload":{"tag":"li","lines":"56,57"}},{"content":"Escribir","children":[],"payload":{"tag":"li","lines":"57,58"}},{"content":"Renombrar","children":[],"payload":{"tag":"li","lines":"58,60"}}],"payload":{"tag":"h3","lines":"51,52"}},{"content":"3.4. M&#xe9;todos de Acceso","children":[{"content":"<strong>Secuencial</strong>: Lento, &#xfa;til para cintas","children":[],"payload":{"tag":"li","lines":"61,62"}},{"content":"<strong>Directo</strong>: R&#xe1;pido, utilizado en discos duros","children":[],"payload":{"tag":"li","lines":"62,63"}},{"content":"<strong>Directo indexado</strong>: Acceso optimizado para grandes vol&#xfa;menes","children":[],"payload":{"tag":"li","lines":"63,65"}}],"payload":{"tag":"h3","lines":"60,61"}}],"payload":{"tag":"h2","lines":"28,29"}},{"content":"4. Algoritmos de Planificaci&#xf3;n de Discos","children":[{"content":"Ejemplo de peticiones:","children":[{"content":"<strong>FCFS</strong> (First Come First Served)","children":[],"payload":{"tag":"li","lines":"67,68"}},{"content":"<strong>SSTF</strong> (Shortest Seek Time First)","children":[],"payload":{"tag":"li","lines":"68,69"}},{"content":"<strong>SCAN</strong> (recorrido en un sentido hasta el extremo, luego cambia)","children":[],"payload":{"tag":"li","lines":"69,70"}},{"content":"<strong>C-SCAN</strong> (igual que SCAN, pero sin atender solicitudes en el retorno)","children":[],"payload":{"tag":"li","lines":"70,71"}},{"content":"<strong>LOOK</strong> (como SCAN, pero sin llegar al extremo)","children":[],"payload":{"tag":"li","lines":"71,73"}}],"payload":{"tag":"h3","lines":"66,67"}}],"payload":{"tag":"h2","lines":"65,66"}},{"content":"5. SSD (Solid State Drive)","children":[{"content":"Diferencias con HDD:","children":[{"content":"Sin partes mec&#xe1;nicas","children":[],"payload":{"tag":"li","lines":"75,76"}},{"content":"Acceso m&#xe1;s r&#xe1;pido y menor latencia","children":[],"payload":{"tag":"li","lines":"76,77"}},{"content":"Rendimiento de lectura y escritura asim&#xe9;trico","children":[],"payload":{"tag":"li","lines":"77,78"}}],"payload":{"tag":"li","lines":"74,78"}},{"content":"No requiere algoritmos de planificaci&#xf3;n de discos tradicionales","children":[],"payload":{"tag":"li","lines":"78,80"}}],"payload":{"tag":"h2","lines":"73,74"}},{"content":"6. Aplicaci&#xf3;n al Contexto Escolar y Laboral","children":[{"content":"<strong>Escolar</strong>: Formaci&#xf3;n en administraci&#xf3;n de sistemas y desarrollo de software","children":[],"payload":{"tag":"li","lines":"81,82"}},{"content":"<strong>Laboral</strong>: Mantenimiento y optimizaci&#xf3;n de infraestructuras tecnol&#xf3;gicas","children":[],"payload":{"tag":"li","lines":"82,84"}}],"payload":{"tag":"h2","lines":"80,81"}},{"content":"7. Conclusi&#xf3;n","children":[{"content":"Importancia del sistema de archivos para la organizaci&#xf3;n y acceso eficiente a la informaci&#xf3;n","children":[],"payload":{"tag":"li","lines":"85,86"}},{"content":"Gesti&#xf3;n de archivos y dispositivos como base fundamental en inform&#xe1;tica","children":[],"payload":{"tag":"li","lines":"86,88"}}],"payload":{"tag":"h2","lines":"84,85"}},{"content":"8. Bibliograf&#xed;a","children":[{"content":"Tanenbaum, Stallings, Silberschatz, Prieto","children":[],"payload":{"tag":"li","lines":"89,90"}},{"content":"Recursos en l&#xed;nea como Universidad de Granada","children":[],"payload":{"tag":"li","lines":"90,93"}}],"payload":{"tag":"h2","lines":"88,89"}}],"payload":{"tag":"h1","lines":"0,1"}},{})</script>
+</body>
+</html>
