@@ -125,7 +125,7 @@ void inOrden(Nodo nodo) {
     }
 }
 ```
-🚀[Apendice Árboles](arboles_binarios.html).
+🚀[Apendice Árboles](arboles_binarios.md).
 
 #### 3.2.2. Grafos
 ```mermaid
@@ -144,7 +144,7 @@ class Grafo {
 }
 ```
 
-🚀[Apendice Grafos](grafos.html).
+🚀[Apendice Grafos](grafos.md).
 
 ## 4. Recursos y Herramientas Educativas
 - [SoloLearn](https://www.sololearn.com)

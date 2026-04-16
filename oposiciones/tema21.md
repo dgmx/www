@@ -119,4 +119,4 @@ nav_exclude: true
 
 
 
-[Mapa Visual](tema21map.html)
+[Mapa Visual](/oposdocs/mapasweb/tema21map.html)

@@ -85,4 +85,4 @@ nav_exclude: true
 -  74 Sistemas Multimedia.
   
 
-[Temario Global Mapa Visual](temasmap.html).
+[Temario Global Mapa Visual](/oposdocs/mapasweb/temasmap.html).

@@ -73,4 +73,4 @@ nav_exclude: true
 - Importancia de las bases de datos y su manipulación
 - SQL como lenguaje clave en los SGBD
 
-[Tema 39 Mapa Visual](tema39map.html).
+[Tema 39 Mapa Visual](/oposdocs/mapasweb/tema39map.html).

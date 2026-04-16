@@ -88,4 +88,4 @@ nav_exclude: true
 - AMD, Intel, NVIDIA, ASUS, MSI, Gigabyte, ASRock.
 - Sitios web especializados: *Tom’s Hardware, ComputerHoy*.
 
-[Tema 8 Mapa Visual](tema8map.html).
+[Tema 8 Mapa Visual](/oposdocs/mapasweb/tema8map.html).

@@ -148,7 +148,7 @@ Conjunto de datos en una secuencia que el procesador interpreta y ejecuta
 - TIOBE Index. (2024). 
 
 
-[Mapa Visual](tema24map.html)
+[Mapa Visual](/oposdocs/mapasweb/tema24map.html)
 
-[Generar PDF](tema24.pdf)
+[Generar PDF](/oposdocs/pdf/tema24.pdf)
 

@@ -97,5 +97,5 @@ nav_exclude: true
 - Recursos web: top500.org, cpuid.com.
 
 
-[Tema 2 Mapa Visual](tema2map.html).
-🌐 [Resumen Tema 2 PDF](pdf/TEMA2.pdf)
+[Tema 2 Mapa Visual](/oposdocs/mapasweb/tema2map.html).
+🌐 [Resumen Tema 2 PDF](/oposdocs/pdf/TEMA2.pdf)

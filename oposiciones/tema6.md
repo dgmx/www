@@ -112,5 +112,5 @@ nav_exclude: true
 - Referencias clave: Prieto, Stallings, Tanenbaum, Moreno.
 - Fuentes web: Xataka, ComputerHoy, Tom’s Hardware.
 
-[Tema 6 Mapa Visual](tema6map.html).
-🌐 [Resumen Tema 6 PDF](pdf/TEMA6.pdf)
+[Tema 6 Mapa Visual](/oposdocs/mapasweb/tema6map.html).
+🌐 [Resumen Tema 6 PDF](/oposdocs/pdf/TEMA6.pdf)

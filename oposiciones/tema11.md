@@ -115,4 +115,4 @@ nav_exclude: true
 - Elección de estructuras de datos según el problema a resolver.
 - Beneficio de estructuras estáticas en eficiencia y uso de memoria.
 
-[Tema 11 Mapa Visual](tema11map.html).
+[Tema 11 Mapa Visual](/oposdocs/mapasweb/tema11map.html).

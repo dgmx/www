@@ -100,4 +100,4 @@ CREATE TABLE Productos (
 ```
 
 
-[Generar PDF](sql_ddl_sentencias.pdf)
+[Generar PDF](/oposdocs/pdf/sql_ddl_sentencias.pdf)

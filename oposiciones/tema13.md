@@ -80,6 +80,6 @@ graph TD;
 - **Contexto laboral**: Gestión eficiente de información en investigación y docencia.
 
 
-[Tema 13 Mapa Visual](tema13map.html).
+[Tema 13 Mapa Visual](/oposdocs/mapasweb/tema13map.html).
 
 

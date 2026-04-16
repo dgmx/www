@@ -111,4 +111,4 @@ nav_exclude: true
 - Autores destacados: Prieto, Stallings, Tanenbaum, Moreno.
 - Recursos web: Xataka, ComputerHoy.
 
-[Tema 4 Mapa Visual](tema4map.html).
+[Tema 4 Mapa Visual](/oposdocs/mapasweb/tema4map.html).

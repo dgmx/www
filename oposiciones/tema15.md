@@ -102,5 +102,5 @@ nav_exclude: true
 - [VMware](https://www.vmware.com/)
 - [VirtualBox](https://www.virtualbox.org/)
 
-[Tema 15 Mapa Visual](tema15map.html).
-📄[Tema 15 PDF](tema15.pdf).
+[Tema 15 Mapa Visual](/oposdocs/mapasweb/tema15map.html).
+📄[Tema 15 PDF](/oposdocs/pdf/tema15.pdf).

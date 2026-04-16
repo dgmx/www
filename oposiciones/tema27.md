@@ -113,5 +113,5 @@ Referencias a autores y fuentes relevantes en POO.
 - Cox, Brad J. (1993) Programacion orientada a objetos. Ed Addison
 - Hernández M. (2022). Estructuras de datos. Editoria Ra-Ma
 
-[Mapa Visual](tema27map.html)
-[Generar PDF](tema27.pdf)
+[Mapa Visual](/oposdocs/mapasweb/tema27map.html)
+[Generar PDF](/oposdocs/pdf/tema27.pdf)

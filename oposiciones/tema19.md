@@ -116,5 +116,5 @@ graph TD;
 - Recursos en línea como Universidad de Granada
 
 
-[Tema 19 Mapa Visual](tema19map.html).
+[Tema 19 Mapa Visual](/oposdocs/mapasweb/tema19map.html).
 

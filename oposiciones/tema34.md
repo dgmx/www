@@ -115,6 +115,6 @@ nav_exclude: true
 - [MariaDB](https://mariadb.org/)
 
 
-[Mapa Visual](tema34map.html)
+[Mapa Visual](/oposdocs/mapasweb/tema34map.html)
 
-[Generar PDF](tema34.pdf)
+[Generar PDF](/oposdocs/pdf/tema34.pdf)

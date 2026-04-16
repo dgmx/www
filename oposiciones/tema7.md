@@ -107,4 +107,4 @@ Incluyen teclas para letras, numeros, simboles, de función y especiales.
 - Desarrollo de nuevas aplicaciones
 
 
-[Tema 7 Mapa Visual](tema7map.html).
+[Tema 7 Mapa Visual](/oposdocs/mapasweb/tema7map.html).
