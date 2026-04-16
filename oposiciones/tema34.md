@@ -115,6 +115,6 @@ nav_exclude: true
 - [MariaDB](https://mariadb.org/)
 
 
-[Mapa Visual](tema34map.html){: .btn .btn-blue }
+[Mapa Visual](tema34map.html)
 
-[Generar PDF](tema34.pdf){: .btn .btn-purple }
+[Generar PDF](tema34.pdf)

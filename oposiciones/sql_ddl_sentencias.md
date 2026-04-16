@@ -100,4 +100,4 @@ CREATE TABLE Productos (
 ```
 
 
-[Generar PDF](sql_ddl_sentencias.pdf){: .btn .btn-purple }
+[Generar PDF](sql_ddl_sentencias.pdf)

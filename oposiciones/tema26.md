@@ -107,5 +107,5 @@ public static void factoria(int n){   // Cabecera de la funcion
 - López, L. (2004). Programación Estructurada.
 - Hernández M. (2022). Estructuras de datos. Editoria Ra-Ma
 
-[Mapa Visual](tema26map.html){: .btn .btn-blue }
-[Generar PDF](tema26.pdf){: .btn .btn-purple }
+[Mapa Visual](tema26map.html)
+[Generar PDF](tema26.pdf)

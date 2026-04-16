@@ -91,4 +91,4 @@ Catalogo del sistema. Metabase de datos, información sobre otras bases de datos
 
 [SQL como DDL](sql_ddl_sentencias.md)  
 
-[Generar PDF](tema35.pdf){: .btn .btn-purple }
+[Generar PDF](tema35.pdf)

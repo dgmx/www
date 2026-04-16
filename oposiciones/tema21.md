@@ -119,4 +119,4 @@ nav_exclude: true
 
 
 
-[Mapa Visual](tema21map.html){: .btn .btn-blue }
+[Mapa Visual](tema21map.html)

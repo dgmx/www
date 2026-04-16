@@ -106,5 +106,5 @@ nav_exclude: true
 - Prieto, A. (2006). Introducción a la informática.
 - López, L. (2004). Programación Estructurada.
 
-[Mapa Visual](tema25map.html){: .btn .btn-blue }
-[Generar PDF](tema25.pdf){: .btn .btn-purple }
+[Mapa Visual](tema25map.html)
+[Generar PDF](tema25.pdf)
