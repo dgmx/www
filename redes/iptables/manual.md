@@ -76,6 +76,7 @@ iptables -A INPUT -p tcp --dport 443 -j ACCEPT
 ```bash
 # Bloquea una dirección específica:
 iptables -A INPUT -s 192.168.1.100 -j DROP
+
 ```
 
 1. **Habilitar NAT (si es necesario)**: 
@@ -178,7 +179,7 @@ iptables [−t tabla] comando cadena [match] −j target
 # --dport: Puerto de destino.
 
 # -i / -o: Interfaz de entrada (input) / salida (output), ej: eth0.
-````
+```
 
 ## Consejos de Seguridad
 
@@ -186,3 +187,35 @@ iptables [−t tabla] comando cadena [match] −j target
 2. Actualizar regularmente: Mantén tu sistema y aplicaciones actualizados.
 3. Monitorear registros: Revisa los logs para detectar actividades sospechosas.
 4. Usar herramientas adicionales: Combina IPTABLES con herramientas como Fail2Ban para mayor seguridad.
+
+
+
+## Ejercicios:
+
+### 1. Permitir SSH solo desde una red local específica:
+
+
+::: details  Mostrar solución {close}
+```bash
+iptables -A INPUT -p tcp -s 10.0.0.0/24 --dport 22 -j ACCEPT
+```
+
+- `-s 10.0.0.0/24`: Define el origen como todo el rango de red (máscara 24).
+
+- `--dport 22`: Puerto estándar de SSH.
+
+- `-j ACCEPT`: Permite el acceso solo si la IP viene de ese rango interno.
+
+:::
+
+
+### 2. Redirección de Puertos (NAT)
+
+Redirige el tráfico del puerto 80 al 8080 (útil para apps en Node.js, Java, etc.).
+
+::: details  Mostrar solución {close}
+```bash
+iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 8080
+```
+
+:::
