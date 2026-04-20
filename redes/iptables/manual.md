@@ -53,17 +53,37 @@ IPTABLES es una herramienta de firewall en sistemas Linux que permite filtrar, m
 ## **Diseño de un Firewall con IPTABLES**
 
 1. **Definir políticas por defecto**: Establece qué hacer con el tráfico que no coincide con ninguna regla.
-   - Ejemplo: `iptables -P INPUT DROP` (rechazar todo el tráfico entrante por defecto). (-P: policy)
+
+```bash
+# Rechazar todo el tráfico entrante por defecto). (-P: policy)
+iptables -P INPUT DROP
+```
 
 2. **Permitir tráfico necesario**: Abre solo los puertos y servicios esenciales.
-   - Ejemplo: `iptables -A INPUT -p tcp --dport 22 -j ACCEPT` (permitir SSH). (-A:Add, -p: protocol, --dport: Destination Port, -j: JUMP )
+
+```bash
+# Permitir SSH (Puerto 22)
+iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+
+# Permitir HTTP (80) y HTTPS (443)
+iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+iptables -A INPUT -p tcp --dport 443 -j ACCEPT
+```
+  
 
 3. **Bloquear tráfico no deseado**: Bloquea direcciones IP o rangos sospechosos.
-   - Ejemplo: `iptables -A INPUT -s 192.168.1.100 -j DROP`.
 
-4. **Habilitar NAT (si es necesario)**: Para permitir que los dispositivos internos accedan a Internet.
-   - Ejemplo: `iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE`.
+```bash
+# Bloquea una dirección específica:
+iptables -A INPUT -s 192.168.1.100 -j DROP
+```
 
+1. **Habilitar NAT (si es necesario)**: 
+   
+```bash
+# Para permitir que los dispositivos internos accedan a Internet.
+iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+```
 
 ## **Configuración Básica de IPTABLES**
 
@@ -100,6 +120,7 @@ service iptables save
 
 2. **Bloquear ataques**:
 - Limitar el número de conexiones por IP para evitar ataques DDoS:
+   
    ```bash
    iptables -A INPUT -p tcp --dport 80 -m limit --limit 25/minute -j ACCEPT
    ```
@@ -137,6 +158,83 @@ iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
 # Guardar reglas
 iptables-save > /etc/iptables/rules.v4
 ```
+
+¡Claro! iptables es una herramienta potente pero puede resultar intimidante al principio. Piensa en ella como el "gorila de la puerta" de tu servidor: decide quién entra, quién sale y quién se queda fuera en el frío.
+
+Aquí tienes una hoja de trucos (cheat sheet) con lo esencial para dominar las reglas básicas.
+
+1. Conceptos Fundamentales
+iptables se organiza en Tablas, Cadenas (Chains) y Reglas. La tabla más común es filter.
+
+Las 3 Cadenas Principales:
+
+INPUT: Tráfico destinado a tu servidor.
+
+FORWARD: Tráfico que pasa por tu servidor (si actúa como router).
+
+OUTPUT: Tráfico generado por tu servidor hacia el exterior.
+
+Acciones Comunes (Targets):
+
+ACCEPT: Permite el paquete.
+
+DROP: Ignora el paquete (el emisor no recibe respuesta, parece que el puerto está cerrado).
+
+REJECT: Rechaza el paquete y envía un error al emisor.
+
+2. Comandos de Gestión
+Acción	Comando
+Listar reglas	iptables -L -n -v
+Listar con números de línea	iptables -L --line-numbers
+Borrar todas las reglas (Flush)	iptables -F
+Borrar una regla específica	iptables -D INPUT [número_de_línea]
+Cambiar política por defecto	iptables -P INPUT DROP
+3. Ejemplos Prácticos de Reglas
+Aquí tienes cómo configurar lo más básico para proteger un servidor:
+
+Permitir tráfico en el Loopback (Localhost)
+
+Fundamental para que los servicios internos se comuniquen entre sí.
+
+Bash
+iptables -A INPUT -i lo -j ACCEPT
+iptables -A OUTPUT -o lo -j ACCEPT
+Permitir conexiones ya establecidas
+
+Esto asegura que si tú inicias una conexión (ej. una descarga), los paquetes de vuelta puedan entrar.
+
+Bash
+iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
+Abrir puertos específicos (SSH, HTTP, HTTPS)
+
+Bash
+# Permitir SSH (Puerto 22)
+iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+
+# Permitir HTTP (80) y HTTPS (443)
+iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+iptables -A INPUT -p tcp --dport 443 -j ACCEPT
+Bloquear una IP específica
+
+Bash
+iptables -A INPUT -s 1.2.3.4 -j DROP
+
+
+## Anatomía de un Comando
+Si quieres construir tus propias reglas, sigue esta estructura:
+```bash
+iptables [−t tabla] comando cadena [match] −j target
+
+# -A: Añadir (Append) al final de la lista.
+
+# -p: Protocolo (tcp, udp, icmp).
+
+# -s / -d: Origen (source) / Destino (destination).
+
+# --dport: Puerto de destino.
+
+# -i / -o: Interfaz de entrada (input) / salida (output), ej: eth0.
+````
 
 ## Consejos de Seguridad
 
