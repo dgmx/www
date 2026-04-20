@@ -883,3 +883,4 @@ public class Main {
 > - Oracle Java Documentation: [docs.oracle.com](https://docs.oracle.com/en/java/)
 > - *Design Patterns* — Gamma, Helm, Johnson, Vlissides (Gang of Four)
 > - *Clean Code* — Robert C. Martin
+> - Ejercicio Propuesto 01 [Enlace](ejercicio01.md)
