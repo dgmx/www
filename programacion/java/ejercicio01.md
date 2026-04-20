@@ -165,6 +165,8 @@ añadirle al resultado el valor 200.
 Compruebe el funcionamiento de todas estas clases a través de un
 programa principal de prueba.
 
+## Solución propuesta
+
 ### Clase Superhéroe
 
 ```java
