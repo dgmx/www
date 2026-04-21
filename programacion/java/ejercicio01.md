@@ -1,4 +1,4 @@
-# 01 - EJERCICIO DE PROGRAMACIÓN. Figuras de Superhéroes.
+# 01 - Ejercicio 1. Figuras de Superhéroes.
 
 _Práctica con clases básicas y composición de clases_
 

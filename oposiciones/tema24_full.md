@@ -245,10 +245,76 @@ En la actualidad, la mayoría de los lenguajes populares no pertenecen a una sol
 
 
 ### a) Según el lugar de ejecución:
--   Cliente
--   Servidor
+
+**Ejecución en el Lado del Cliente (Client-side)**:  El código se descarga desde un servidor, pero se ejecuta directamente en el dispositivo del usuario (computadora, tablet o smartphone).
+
+- Cómo funciona: El procesador local y la memoria RAM del usuario son los que realizan el trabajo.
+
+- Lenguaje Rey: JavaScript (y sus derivados como TypeScript). También lenguajes que compilan a WebAssembly (como Rust o C++ ejecutándose en el navegador).
+
+- Ventajas:
+
+  - Respuesta inmediata (no hay que esperar al servidor).
+
+  - Interactividad fluida (animaciones, validación de formularios al instante).
+
+  - Ahorra costes de procesamiento al dueño de la web.
+
+- Desventajas: Depende de la potencia del dispositivo del usuario y el código es visible para cualquiera ("Ver código fuente").
+
+**Ejecución en el Lado del Servidor (Server-side)**: El código se ejecuta en una computadora remota (servidor). El usuario solo recibe el resultado final, generalmente en forma de HTML, JSON o una imagen.
+
+- Cómo funciona: El usuario envía una petición, el servidor procesa la lógica, consulta bases de datos y devuelve solo la respuesta procesada.
+
+- Lenguajes comunes: Python, PHP, Java, Go, Ruby, C#, Node.js.
+
+- Ventajas:
+
+  - Seguridad: La lógica de negocio y las bases de datos están protegidas; el usuario no ve el código.
+
+  - Consistencia: No importa si el usuario tiene un móvil viejo o una PC potente; el servidor hace el trabajo igual de rápido.
+
+- Desventajas: Requiere una conexión a internet constante y cada acción genera una pequeña espera (latencia) mientras viajan los datos.
+
+**Ejecución en el Borde (Edge Computing)**: Es la tendencia más moderna. El código no se ejecuta ni "tan lejos" como el servidor central, ni "tan cerca" como el dispositivo del usuario.
+
+- Cómo funciona: Se ejecuta en servidores intermedios distribuidos geográficamente (nodos de una red como Cloudflare o AWS Lambda@Edge), muy cerca de la ubicación física del usuario.
+
+- Propósito: Reducir la latencia al mínimo absoluto para aplicaciones globales.
 
 ### b) Según el método de ejecución
+
+**Lenguajes Compilados:** En estos lenguajes, un programa llamado compilador traduce todo el código fuente de una sola vez y genera un archivo ejecutable (como un .exe o un binario de Linux).
+
+- Proceso: Código Fuente → Compilador → Código Máquina (Binario).
+
+- Ventajas: Son extremadamente rápidos y eficientes, ya que la traducción se hace una sola vez antes de ejecutar.
+
+- Desventajas: Si haces un cambio, debes volver a compilar todo. No son multiplataforma por defecto (un binario de Windows no sirve en Mac).
+
+- Ejemplos: C, C++, Rust, Go, Pascal.
+
+**Lenguajes Interpretados:** Aquí no hay un archivo ejecutable previo. Un programa llamado intérprete lee el código línea por línea y lo ejecuta en tiempo real.
+
+- Proceso: Código Fuente → Intérprete → Ejecución inmediata.
+
+- Ventajas: Facilitan el desarrollo y la depuración. Son altamente portátiles: el mismo código funciona en cualquier sistema que tenga el intérprete instalado.
+
+- Desventajas: Son más lentos que los compilados, ya que la máquina debe traducir el código mientras lo ejecuta.
+
+- Ejemplos: Python, Ruby, JavaScript (en su concepción original), PHP.
+
+**Lenguajes Híbridos (Intermedios):** Son una mezcla de ambos mundos. El código fuente se compila primero a un lenguaje intermedio (llamado Bytecode) y luego una Máquina Virtual lo interpreta o lo compila "al vuelo" (JIT - Just In Time) en el dispositivo del usuario.
+
+- Proceso: Código Fuente → Compilador → Bytecode → Máquina Virtual → Código Máquina.
+
+- Ventajas: Combinan la portabilidad de los interpretados con una velocidad cercana a los compilados.
+
+- Ejemplos: Java (usa la JVM), C# (usa .NET), Kotlin.
+
+**Compilación JIT (Just-In-Time)**: Es una técnica moderna utilizada principalmente por lenguajes interpretados o híbridos para ganar velocidad. En lugar de interpretar cada línea siempre, el motor identifica las partes del código que se usan mucho y las compila a código máquina real mientras el programa corre.
+
+- Ejemplo estrella: JavaScript moderno (motores como V8 de Chrome) y Julia.
 
 ## 4. Caracteristicas de los lenguajes de programación
 
