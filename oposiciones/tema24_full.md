@@ -1,3 +1,13 @@
+# Tema 24. Lenguajes de programación. Tipos. Características. 
+
+## 1. Introducción y justificación
+
+- BOE 13 Feb 1996 Temario Informatica
+- Grupo Temático Algoritmos y programación
+- Importancia de los lenguajes de programación en la era tecnológica
+- Uso en dispositivos cotidianos y sectores clave
+- Presente en currículo educativo. CFGS DAM-DAW Modulo Programación.
+
 ## 2. Lenguajes de programación
 
 ### 2.1 Concepto
