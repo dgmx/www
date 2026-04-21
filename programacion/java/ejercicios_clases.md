@@ -853,6 +853,6 @@ Estos ejercicios te proporcionarán una base sólida para trabajar con programac
 
 ::: details  Mostrar código {close}
 ```js
-console.log('Hello, VitePress!')
+('Hello, Amigos!')
 ```
 :::
