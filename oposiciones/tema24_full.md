@@ -10,7 +10,7 @@
 
 ## 2. Lenguajes de programación
 
-### 2.1 Concepto
+## 2.1 Concepto
 Un **lenguaje de programación** es un sistema de símbolos y reglas que permite dar instrucciones a una computadora.
 
 Es como un “idioma” para comunicarse con ella.
