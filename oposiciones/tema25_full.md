@@ -6,8 +6,6 @@ El presente tema forma parte del temario oficial publicado en el BOE de 13 de fe
 
 A su vez, el actual tema 25 se ubica dentro del bloque temático de "Algoritmos y Programación", como tercer tema del bloque. (párrafo para la especialidad de Informática).
 
-A su vez, el actual tema 27 se ubica dentro del bloque temático de "Algoritmos y Programación", como tercer tema del bloque. (párrafo para la especialidad de SAI).
-
 A lo largo de este tema, a través de autores como Prieto y Joyanes, se van a introducir términos tan importantes como lenguaje de programación o programa propio.
 
 El presente tema está dedicado al estudio de la técnica de programación estructurada, detallando las estructuras de control de flujo, así como la estructura y uso de las funciones y procedimientos. Con nociones de este tipo de programación se da lugar a distintos lenguajes de programación de manera que posteriormente, junto con otros tipos de lenguajes, se puedan desarrollar tecnologías que definen nuestra era, como la inteligencia artificial y la blockchain.
@@ -163,23 +161,36 @@ EXPRESIÓN →│valor2│→ ACCIÓN 2
            └──────┘
 ```
 
+```mermaid
+flowchart TD
+    A[Inicio] --> B{Valor}
+    B -->|Caso 1| C[Acción 1]
+    B -->|Caso 2| D[Acción 2]
+    B -->|Caso 3| E[Acción 3]
+    B -->|Default| F[Acción Default]
+    C --> G[Fin]
+    D --> G
+    E --> G
+    F --> G
+```
+
 **Sintaxis Java (b):**
 
 ```java
 switch(expresión)
 {
-case valor1:
-sentencia1_1;
-…
-break;
-case valor2:
-sentencia2_1;
-…
-break;
-case valorN:
-sentenciaN_1;
-…
-break;
+  case valor1:
+  sentencia1_1;
+  …
+  break;
+  case valor2:
+  sentencia2_1;
+  …
+  break;
+  case valorN:
+  sentenciaN_1;
+  …
+  break;
 }
 ```
 
