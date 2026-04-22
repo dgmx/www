@@ -889,3 +889,4 @@ public class Main {
 > - Ejercicio Propuesto 01 [Enlace](ejercicio01.md)
 > - Ejercicio Propuesto 02 [Enlace](ejercicio02.md)
 > - Ejercicio Propuesto 03 [Enlace](ejercicio03.md)
+> - Ejercicio Propuesto 04 [Enlace](ejercicio04.md)
