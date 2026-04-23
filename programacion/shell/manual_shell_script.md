@@ -2200,3 +2200,6 @@ done
 > Para profundizar, consulta: `man bash`, `info bash`, y la documentación oficial en [https://www.gnu.org/software/bash/manual/](https://www.gnu.org/software/bash/manual/)
 
 ---
+
+- [Ejericicios de examen](examen_shell.md)
+- [Ejericicios de oposiciones](ejercicios_exam.md)
