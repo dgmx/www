@@ -1,0 +1,166 @@
+# Tema 47: Instalación y explotación de aplicaciones informáticas. Compartición de datos
+## 1. Introducción
+- Temario oficial BOE 13 febrero 1996 (Informática / Sistemas y aplicaciones informáticas)
+- Bloque temático: Sistemas de información
+- Autor de referencia: Montañez F
+- Ciclos formativos
+  - CFGS Desarrollo de Aplicaciones Multiplataforma (RD 450/2010, RD 405/2023)
+    - Módulo: Sistemas informáticos
+  - CFGS Desarrollo de Aplicaciones Web (RD 686/2010, RD 405/2023)
+    - Módulo: Sistemas informáticos
+  - CFGM Sistemas Microinformáticos y Redes (RD 1691/2007)
+    - Módulo: Sistemas operativos monopuesto
+    - Módulo: Aplicaciones ofimáticas
+## 2. Concepto de aplicación
+- Programa informático diseñado como herramienta para realizar tareas
+- Pertenecen al software de aplicación
+- Contacto directo con el usuario final
+- Soluciones informáticas
+  - Aplicaciones a medida: gran potencia y rapidez, problema específico
+  - Paquetes integrados: menos adaptabilidad pero abanico variado
+    - Procesadores de texto
+    - Hojas de cálculo
+    - Manejadores de bases de datos
+- Otros ejemplos
+  - Presentaciones
+  - Diseño gráfico
+  - Cálculo
+  - Finanzas
+  - Compresión de archivos
+  - Presupuestos de obras
+  - Gestión de empresas
+## 3. Instalación de aplicaciones informáticas
+- Solicitudes básicas de los clientes
+  - Reducir costos de centralización mediante capacidades de instalación mejoradas
+  - Instalación multifuncional
+  - Facilidad para personalización total de la instalación
+  - Reducir costos de mantenimiento y soporte continuos
+  - Proporcionar diferentes estrategias de instalación
+- Antes de la instalación
+  - Comprobar requisitos mínimos del equipo
+  - Anotar incidencias durante el proceso
+  - Anotar opciones seleccionadas
+- Instalación típica
+  - Copiar archivos al disco
+  - Agregar claves de registro
+  - Crear accesos directos
+- Servicios de instalación avanzados
+  - Componentes
+    - Grupo de archivos, claves de registro y recursos instalados como unidad
+    - Archivos mutuamente dependientes se instalan/desinstalan al mismo tiempo
+    - Recurso de rastreo verifica si componente existe y está instalado adecuadamente
+    - Soluciona problemas comunes:
+      - Eliminación de recursos necesarios
+      - Dejar recursos instalados que ya no lo son
+  - Funciones
+    - Comandos de la aplicación ejecutables por el usuario (gráfica o interactivamente)
+    - Agrupamiento de componentes
+    - Instalables en diferentes formatos
+  - Productos
+    - Incluyen una o más funciones
+    - Descritos con archivo de paquete (base de datos optimizada)
+    - Describe relaciones entre funciones y componentes
+- Documentos importantes de instalación
+  - Guías y programas de instalación
+  - Manuales de configuración
+  - Manuales de administración
+## 4. Explotación de aplicaciones informáticas
+- Fase donde los programas se utilizan y se produce la información requerida
+- Características de una correcta explotación
+  - Multifuncionalidad: desempeño de diferentes tareas, cubre trabajo diario
+  - Productividad: mismos o mejores resultados en menor tiempo
+  - Flexibilidad: adaptación a evoluciones de hardware y versiones de software
+  - Facilidad de uso y aprendizaje: sin dificultad de manejo, guía de aprendizaje rápido
+### 4.1. Recursos para una correcta explotación
+- Consultoría
+  - Planificación estratégica de sistemas y tecnologías de la información
+  - Análisis y diseño de procesos de negocio
+  - Seguridad informática y de redes
+  - Gestión del conocimiento
+- Ingeniería e implantación de soluciones
+  - Construcción de sistemas de información fiables y efectivos
+  - Plan de proyecto viable y creíble
+  - Retorno de inversión rápido y rentable
+  - Análisis y diseño basados en componentes
+  - Herramientas CASE para consistencia y documentación
+- Formación
+  - Programación de cursos para clientes
+  - Asimilación de nuevas tecnologías aplicables a sistemas de información
+- La empresa "on line"
+  - Adaptación de productos a necesidades de Internet
+  - Investigación de nuevas tecnologías de comunicaciones
+  - Aplicaciones en la nube
+  - E-business y e-commerce
+- Outsourcing
+  - Transferencia de habilidades mediante subcontratación de servicios
+  - Cliente se concentra en clave de su negocio
+  - Ejemplos de servicios subcontratados
+    - Nómina
+    - Procesos contables
+    - Mantenimiento de equipo
+    - Seguridad
+    - Informática
+## 5. Compartición de datos
+- Sistemas multiusuario: varios usuarios trabajan simultáneamente
+- Sistemas multitarea: ejecución de varias aplicaciones simultáneamente
+### 5.1. Sistemas multiusuario
+- Derechos de acceso
+  - Conocimiento
+  - Ejecución
+  - Lectura
+  - Borrado
+  - Ningún derecho
+- Accesos simultáneos (protocolos)
+  - Bloquear el archivo entero durante actualización
+  - Bloquear registros individuales durante actualización
+### 5.2. Sistemas multitarea
+- Compartición de recursos: procesador, memoria, dispositivos E/S, programas, datos
+- Niveles de protección
+  - Ninguna protección
+  - Aislamiento
+  - Compartir todo o nada
+  - Compartir por limitación del acceso
+  - Compartir por capacidades dinámicas
+  - Uso limitado de un objeto
+### 5.3. Compartir datos en la nube
+- Software y servicios ejecutados en internet (red de servidores)
+- Solo requiere dispositivo con conexión a Internet
+- Aplicaciones más usadas
+  - Office 365
+    - Integrado en la nube
+    - Restricciones de pago (no totalmente gratuita)
+    - Word, Excel, PowerPoint y otras aplicaciones en tiempo real
+    - Acceso desde equipo fijo y dispositivo móvil
+    - Suite completa desde navegador web
+  - OneDrive
+    - Microsoft
+    - Gratuita
+    - Menos herramientas y utilidades que Office 365
+  - Drive
+    - Google
+    - Almacenamiento de todo tipo de archivos
+    - Creación y edición online con Google Docs
+    - Edición colaborativa en tiempo real
+    - Gestión desde navegador sin descarga
+  - Dropbox
+    - Centralización de contenido del equipo
+    - Sincronización de archivos mediante disco duro virtual
+    - Acceso remoto desde cualquier ordenador
+  - Zyncro
+    - Almacenamiento + servicio completo de comunicaciones para empresas/pymes
+    - Mensajes visibles por todos los compañeros
+    - Edición colaborativa de documentos
+    - Gestor de tareas
+    - Gestor de reuniones
+
+## 6. Conclusión
+- Importancia del uso de aplicaciones en trabajo diario
+- Empresas necesitan aplicaciones para gestiones diarias
+- Imprescindible dominar instalación y explotación de aplicaciones
+- Tendencia creciente hacia aplicaciones en la nube para compartición de datos
+- Importancia de conocer mejores servicios con garantías de seguridad y fiabilidad
+## 7. Bibliografía
+- Montañez F. (2013). Aplicaciones informáticas de propósito general. Ed. McGraw-Hill
+- Prieto A., y otros. (2006). Introducción a la informática. Editorial McGraw-Hill
+- Cohen D y Asín E. (2009). Tecnologías de información en los negocios. Ed. McGraw-Hill
+- http://tecnomundo.es/aplicaciones-informaticas/
