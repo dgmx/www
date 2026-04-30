@@ -60,7 +60,8 @@ nav_exclude: true
 
 ### BLOQUE 07 – SISTEMAS DE INFORMACIÓN
 -  45 Sistemas de información. Tipos. Características. Sistemas de información en la empresa.
--  47 Instalación y explotación de aplicaciones informáticas. Compartición de datos.
+-  [46: Aplicaciones informáticas de propósito general y para la gestión empresarial](tema46.md)
+-  [47 Instalación y explotación de aplicaciones informáticas. Compartición de datos](tema47.md)
 
 ### BLOQUE 08 – INGENIERÍA DEL SOFTWARE, ANÁLISIS Y DISEÑO
 -  50 Análisis de sistemas modelización conceptual de datos. Técnicas descriptivas. Documentación.
@@ -72,6 +73,7 @@ nav_exclude: true
 ### BLOQUE 09 – REDES Y COMUNICACIONES
 -  61 Redes y servicios de comunicaciones.
 -  62 Arquitecturas de sistemas de comunicaciones. Arquitecturas basadas en niveles. Estándares.
+- [63 Funciones y servicios del nivel físico](tema63.md)
 -  64 Funciones y servicios del nivel de enlace. Técnicas. Protocolos.
 -  65 Funciones y servicios del nivel de red y del nivel de transporte. Técnicas. Protocolos.
 -  66 Funciones y servicios en niveles sesión, presentación y aplicación. Protocolos. Estándares.
