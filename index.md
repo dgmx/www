@@ -22,7 +22,7 @@ hero:
 features:
   - title: Podman
     details: Podman es un motor de contenedores daemonless.  
-    link: /linux/kube/kube-lab-aws
+    link: /linux/contenedores/podman/index
     linkText: Leer más
   - title: Git
     details: Guía de Comandos Git – De Principiante a Avanzado 
