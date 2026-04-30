@@ -1,9 +1,3 @@
----
-title: "Tema 12. Organización Lógica de los Datos. Estructuras de Datos Dinámicas"
-parent: "Maps"
-nav_exclude: true
----
-
 
 # Tema 12 Organización Lógica de los Datos. Estructuras de Datos Dinámicas
 
@@ -13,13 +7,17 @@ nav_exclude: true
 - Relevancia en sistemas de análisis de datos y big data.
 
 ## 2. Organización Lógica de los Datos
-### 2.1. Dato
+### 2.1. Datos y variables
 - Objeto manipulable por un ordenador.
 - Tipos:
   - **Básicos**: Enteros, reales, booleanos, caracteres.
   - **Definidos por el programador**: Estructuras personalizadas.
 
-### 2.2. Estructuras de Datos
+### 2.2. Tipos de datos
+
+### 2.3. Tipado de datos
+
+### 2.4. Estructuras de Datos
 - Colección de datos organizados para su almacenamiento y manipulación.
 - Clasificación según la gestión de memoria:
   - **Estáticas**: Tamaño fijo, definido en tiempo de compilación.
