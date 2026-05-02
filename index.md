@@ -3,8 +3,8 @@ layout: home
 
 hero:
   name: "Diego J. González"
-  text: "Programación y Computación"
-  tagline: Materiales de programación y sistemas operativos para Secundaria.
+  text: "Blog de Programación y Computación"
+  tagline: Materiales de programación, Bases de datos y Sistemas Operativos.
   actions:
     - theme: brand
       text: Programación
