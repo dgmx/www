@@ -8,14 +8,129 @@
 
 ## 2. Organización Lógica de los Datos
 ### 2.1. Datos y variables
-- Objeto manipulable por un ordenador.
-- Tipos:
-  - **Básicos**: Enteros, reales, booleanos, caracteres.
-  - **Definidos por el programador**: Estructuras personalizadas.
+
+**Datos:** 
+Son representaciones simbólicas de hechos, valores o información que pueden ser procesados por una computadora. Por sí solos no tienen significado hasta que se interpretan.
+
+Características de los datos:
+- Pueden ser numéricos, textuales, lógicos, etc.
+- Son la base del procesamiento.
+- Se almacenan y manipulan mediante estructuras de datos.
+
+**Variables:**
+Son espacios de memoria que se utilizan para almacenar datos durante la ejecución de un programa. Su valor puede cambiar a lo largo del tiempo.
+
+Características de las variables:
+- Tienen un nombre identificador.
+- Almacenan un tipo de dato específico (entero, real, cadena, etc.).
+- Su valor puede modificarse durante la ejecución.
+- Ocupan un espacio en memoria.
+- Permiten realizar cálculos 
+- Facilitan la toma de decisiones.
 
 ### 2.2. Tipos de datos
 
+Los tipos de datos son clasificaciones que indican qué tipo de valor puede almacenar una variable y qué operaciones se pueden realizar con ella.
+
+Se clasifican en básicos, simples o primitivos y compuestos:
+
+**Tipos de datos simples**.  
+Son aquellos que almacenan un solo valor a la vez.   
+Ejemplos:
+- Numéricos: Entero (10) o Real (3.5)
+- Carácter (char): 'A'
+- Booleano (bool): true
+
+Características:
+- Representan datos básicos.
+- Ocupan una sola posición de memoria.
+- Son fáciles de manipular.
+
+**Tipos de datos compuestos**.   
+Son aquellos que pueden almacenar varios valores o estructuras de datos.   
+Ejemplos:
+- Arreglos (arrays)
+- Listas
+- Registros (struct)
+- Cadenas de texto (strings, en muchos lenguajes)
+
+Características:
+- Agrupan varios datos simples.
+- Permiten organizar información más compleja.
+- Son más flexibles y potentes para estructuras grandes.
+
+Dentro de los compuestos existen los llamados tipos definidos por el programador, que permiten la creación de tipos de datos que se adaptan a las necesidades de sus aplicaciones como las clases.
+
 ### 2.3. Tipado de datos
+
+El tipado de datos se refiere a la forma en que un lenguaje de programación define, controla y maneja los tipos de datos que pueden usar las variables.
+
+Clasificación del tipado de datos.  
+**1. Tipado estático.**  
+El tipo de dato de una variable se define en tiempo de compilación y no puede cambiar.   
+Ejemplos de lenguajes: Java, C, C++
+Características:
+   - Requiere declarar el tipo de variable.
+   - Detecta errores antes de ejecutar el programa.
+   - Más control y eficiencia.    
+  
+**2. Tipado dinámico.**  
+El tipo de dato se define en tiempo de ejecución y puede cambiar.   
+Ejemplos de lenguajes: Python, JavaScript, PHP.  
+Características:
+   - No siempre es necesario declarar tipos.
+   - Más flexible.
+Los errores de tipo aparecen en ejecución.
+
+**3. Tipado fuerte.**  
+No permite mezclar tipos de datos sin conversión explícita.
+Ejemplos: Python, Java.  
+Características:
+   - Estricto con las operaciones entre tipos.
+   - Evita errores inesperados.
+  
+**4. Tipado débil.**  
+Permite conversiones automáticas entre tipos de datos.   
+Ejemplos: JavaScript, PHP.  
+Características:
+   - Más flexible, pero menos seguro.
+   - Puede causar resultados inesperados.
+
+
+El tipado de datos clasifica los lenguajes según cómo manejan los tipos de variables: pueden ser estáticos o dinámicos, y fuertes o débiles, dependiendo del nivel de control y flexibilidad que ofrecen.
+
+Ademas, dependiendo si se declaran directamente o se infieren en tiempo de ejecución:
+
+**Tipado explícito**
+El programador declara directamente el tipo de dato de la variable.   
+Ejemplo (Java):
+```java
+int numero = 10;
+String nombre = "Ana";
+````
+Características:
+- El tipo se especifica manualmente.
+- Mayor control sobre el programa.
+- Reduce ambigüedades.
+- Más común en lenguajes de tipado estático.
+
+**Inferencia de tipos**
+El lenguaje deduce automáticamente el tipo de dato a partir del valor asignado.   
+Ejemplos:
+```java
+// var en Java
+var numero = 10;   // el compilador infiere que es int
+```
+```python
+# Python
+nombre = "Ana"     # Python infiere que es string
+```
+Características:
+- No es necesario declarar el tipo.
+- Código más corto y legible.
+- Depende del valor asignado.
+- Puede ocurrir en lenguajes estáticamente tipados con inferencia o dinámicos.
+
 
 ### 2.4. Estructuras de Datos
 - Colección de datos organizados para su almacenamiento y manipulación.
