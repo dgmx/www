@@ -100,18 +100,19 @@
   public enum Dia {LUNES, MARTES, MIERCOLES, JUEVES, VIERNES, SABADO, DOMINGO}
   ```
 
-## 4. Recursos y Herramientas Educativas
-- [SoloLearn](https://www.sololearn.com)
-- [VisuAlgo](https://visualgo.net)
+## 4. Conclusión
 
-## 5. Aplicaciones en Contexto Escolar y Laboral
-- **Escuela**: Enseñanza en ciclos formativos de informática.
-- **Trabajo**:
-  - Desarrollo de software.
-  - Optimización del almacenamiento y acceso a datos.
+Las estructuras estáticas son especialmente útiles cuando el tamaño de los datos es conocido de antemano y no cambia durante la ejecución del programa. Su principal ventaja es que permiten un acceso muy eficiente a los elementos (generalmente en tiempo constante, O(1)) y un uso de memoria simple y predecible, ya que se asigna de forma contigua desde el inicio.
 
-## 6. Conclusión
-- Elección de estructuras de datos según el problema a resolver.
-- Beneficio de estructuras estáticas en eficiencia y uso de memoria.
+Se utilizan cuando se prioriza:
+- Rapidez de acceso
+- Bajo coste computacional
+- Simplicidad en la implementación
+
+Sin embargo, su limitación principal es la falta de flexibilidad, ya que no pueden adaptarse fácilmente a cambios en la cantidad de datos.
+
+En resumen, son ideales para escenarios donde los datos son estables, conocidos y no crecen dinámicamente.
 
 [Tema 11 Mapa Visual](/oposdocs/mapasweb/tema11map.html).
+
+![Estructuras de datos](img/est_dinamicas.png)

@@ -166,8 +166,7 @@ flowchart LR
     B2 --> C2["(key3, value3)"]
     B3 --> C3["(key4, value4)"]
     B4 --> C4["(key5, value5)"]
-````
-
+```
 
 **Gestión de Colisiones**
 
@@ -198,16 +197,14 @@ Es el modelo que usan los lenguajes modernos (como los diccionarios de Python o 
 - Ventaja: Permite que la estructura se adapte al volumen de información en tiempo de ejecución, optimizando el uso de la memoria y manteniendo la velocidad
 
 
-## 4. Recursos y Herramientas Educativas
-- [SoloLearn](https://www.sololearn.com)
-- [VisuAlgo](https://visualgo.net)
-  
-## 5. Aplicaciones en Contexto Escolar y Laboral
-- **Escuela**: Enseñanza en ciclos formativos de informática.
-- **Trabajo**:
-  - Desarrollo de software.
-  - Optimización del almacenamiento y acceso a datos.
+## 4. Conclusión
+Las estructuras dinámicas son fundamentales en programación porque permiten gestionar datos de manera flexible, adaptándose en tiempo de ejecución al crecimiento o reducción de la información, a diferencia de las estructuras estáticas.
 
-## 6. Conclusión
-- Las estructuras dinámicas optimizan la gestión de memoria.
-- Son esenciales en la resolución de problemas complejos.
+Son especialmente útiles cuando no se conoce de antemano la cantidad de datos que se van a manejar, como en listas de elementos, colas, pilas o árboles en aplicaciones reales (gestión de procesos, bases de datos, grafos, etc.). 
+
+Su principal ventaja es que optimizan el uso de memoria, ya que se asigna y libera espacio según sea necesario, evitando desperdicios o limitaciones fijas.
+
+En conclusión, se utilizan porque aportan eficiencia, escalabilidad y flexibilidad en la gestión de datos, lo que las hace imprescindibles en sistemas donde los requisitos cambian dinámicamente.
+
+
+![Estructuras de datos](img/est_dinamicas.png)
