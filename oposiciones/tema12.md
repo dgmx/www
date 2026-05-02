@@ -157,6 +157,8 @@ graph TD
 ```
 
 ### 3.1 Estructuras Lineales
+- Conjunto de elementos organizados secuencialmente.
+- Orden lineal, cada nodo se conecta con el siguiente.
 
 #### 3.1. Listas Enlazadas
 ```mermaid
@@ -217,6 +219,9 @@ cola.poll();
 
 ### 3.2 Estructuras No Lineales
 
+- Organizadas de forma compleja, multidimensional y jerárquica.
+- Sin orden secuencial.
+
 #### 3.2.1. Árboles
 ```mermaid
 graph TD
@@ -260,9 +265,11 @@ class Grafo {
 
 #### 3.2.3 Tablas hash
 
-Una tabla hash (o tabla de dispersión) es una estructura de datos dinámica no lineal que organiza la información en pares de clave-valor, permitiendo encontrar, insertar y eliminar datos de forma extremadamente rápida. Su gran ventaja es que, en promedio, estas operaciones toman un tiempo constante, lo que significa que la velocidad no depende de cuántos datos haya almacenados
+- Organiza la información en pares de clave-valor
+- Permite encontrar, insertar y eliminar datos de forma extremadamente rápida.
+- Las operaciones toman un tiempo constante O(1), la velocidad no depende de cuántos datos haya almacenados
 
-El secreto de su eficiencia reside en tres componentes principales:
+Tres componentes principales:
 - Clave (Key): Es el identificador único usado para buscar un dato (por ejemplo, un nombre en una agenda).
 - Función Hash: Es un algoritmo matemático que toma la clave y la transforma en un número entero. Este número sirve como el índice exacto de un arreglo donde se guardará el valor.
 - Cubo o Ranura (Bucket/Slot): Es la posición física en la memoria (dentro de un array) donde se almacena el valor asociado a la clave. 
@@ -281,12 +288,6 @@ flowchart LR
     B3 --> C3["(key4, value4)"]
     B4 --> C4["(key5, value5)"]
 ```
-
-**Gestión de Colisiones**
-
-A veces, dos claves diferentes pueden generar el mismo índice tras pasar por la función hash; esto se conoce como colisión. Existen dos métodos comunes para resolverlas:
-- Encadenamiento (Chaining): Cada posición de la tabla contiene una lista enlazada con todos los elementos que tienen el mismo índice.
-- Direccionamiento Abierto: Si una posición está ocupada, se busca la siguiente ranura libre mediante una secuencia de prueba.
   
 **Ejemplos de uso común**
 
@@ -295,20 +296,6 @@ Estas estructuras son fundamentales en:
 - Sistemas de caché: Para recuperar datos web guardados rápidamente.
 - Bases de datos: Para indexar información y acelerar las consultas.
 - Diccionarios en programación: Como los tipos dict en Python o HashMap en Java.
-
-Dependiendo de su implementación, esta estructura de datos puede ser estática o dinámica. Aunque su base interna suele ser un array (estático), la mayoría de los lenguajes de programación y bases de datos permiten que la tabla "crezca" o "se encoja" según sea necesario
-
-**Hashing Estático:**
-   
-En este enfoque, el tamaño de la tabla (el número de "buckets" o cubos) se fija al principio y no cambia.   
-- Limitación: Si los datos superan el tamaño inicial, ocurren muchas colisiones y el rendimiento cae drásticamente.   
-- Uso: Se utiliza cuando se conoce de antemano el número exacto de elementos y estos no van a variar (como en un conjunto de palabras clave de un lenguaje de programación).
-
-**Hashing Dinámico (Extendible)**
-
-Es el modelo que usan los lenguajes modernos (como los diccionarios de Python o los HashMap de Java).   
-- Redimensionamiento: Cuando la tabla se llena demasiado (supera un "factor de carga"), la estructura automáticamente crea un array más grande y reubica los elementos (rehashing).
-- Ventaja: Permite que la estructura se adapte al volumen de información en tiempo de ejecución, optimizando el uso de la memoria y manteniendo la velocidad
 
 
 ## 4. Conclusión
