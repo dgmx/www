@@ -25,7 +25,7 @@ nav_exclude: true
 - [14 Utilización de ficheros según su organización](tema14.md)
 
 ### BLOQUE 03 – GESTIÓN DE SISTEMAS
-- 15 Sistemas operativos. Componentes. Estructura. Funciones. Tipos.
+- [15 Sistemas operativos. Componentes. Estructura. Funciones. Tipos.](tema15.md)
 - 16 Sistemas operativos Gestión de procesos.
 - 17 Sistemas operativos Gestión de memoria.
 - 18 Sistemas operativos Gestión de entrada-salida.
