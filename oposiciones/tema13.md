@@ -35,7 +35,7 @@ graph TD
 
 ```
 
-**3.1. Según su duracíon en el sistema**
+**3.1. Según su duración en el sistema**
 
 **Ficheros permanentes**: 
 
@@ -97,14 +97,6 @@ Principales características:
 
 La organización de ficheros se refiere a la forma en que los datos se estructuran y almacenan dentro de un fichero para facilitar su acceso y manejo.
 
-```mermaid
-graph TD;
-    A["Organización de Ficheros"] --> B["Secuencial"]
-    A --> C["Directa"]
-    B["Secuencial"] --> B1["Encadenada"]
-    B --> B2["Indexada"]
-    B --> B3["Indexada-Encadenada"]
-```
 **5.1. Secuencial**: 
 
 Los registros se almacenan en orden consecutivo. 
