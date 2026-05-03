@@ -35,7 +35,7 @@ graph TD
 
 ```
 
-**3.1. Según su duración en el sistema**
+### 3.1. Según su duración en el sistema
 
 **Ficheros permanentes**: 
 
@@ -59,7 +59,7 @@ Su exsitencia en el sistema es limitada
    - **De maniobras**: Almacenan datos no retenidos en memoria principal.
    - **De resultados**: Generados para dispositivos de salida.
 
-**3.2. Según su contenido**
+### 3.2. Según su contenido
 
 Esta clasificación atiende a la forma en que los ficheros almacenan y representan la información. 
 
@@ -97,7 +97,7 @@ Principales características:
 
 La organización de ficheros se refiere a la forma en que los datos se estructuran y almacenan dentro de un fichero para facilitar su acceso y manejo.
 
-**5.1. Secuencial**: 
+### 5.1. Secuencial
 
 Los registros se almacenan en orden consecutivo. 
 Características:
@@ -105,7 +105,7 @@ Características:
 - Simple de implementar.
 - Poco eficiente para búsquedas específicas.
 
-**5.2. Directa**: 
+### 5.2. Directa
 
 Los registros se acceden por su dirección, no por orden físico.
 Permite acceder a cualquier dato sin recorrer todo el fichero.   
@@ -114,7 +114,7 @@ Características:
 - Usa direcciones o posiciones (índices).
 - Más compleja de gestionar.
 
-**5.3 Indexada**
+### 5.3 Indexada
 
 Utiliza una estructura adicional (índice) para localizar los datos.   
 Características:
