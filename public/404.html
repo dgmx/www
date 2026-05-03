@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>404 - Página no encontrada | Diego J. González</title>
+  <meta name="description" content="La página que buscas no existe o ha sido movida">
+  <style>
+    :root {
+      --bg-primary: #ffffff;
+      --text-primary: #1f2937;
+      --text-secondary: #6b7280;
+      --text-tertiary: #9ca3af;
+      --bg-soft: #f9fafb;
+      --bg-mute: #f3f4f6;
+      --divider: #e5e7eb;
+      --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --primary-shadow: rgba(102, 126, 234, 0.4);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-primary: #1a1a2e;
+        --text-primary: #f9fafb;
+        --text-secondary: #d1d5db;
+        --text-tertiary: #9ca3af;
+        --bg-soft: #252542;
+        --bg-mute: #2d2d52;
+        --divider: #3f3f6f;
+      }
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+
+    .error-content {
+      text-align: center;
+      max-width: 500px;
+    }
+
+    .error-code {
+      font-size: 8rem;
+      font-weight: 900;
+      line-height: 1;
+      background: var(--primary-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1rem;
+    }
+
+    .error-title {
+      font-size: 1.8rem;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+    }
+
+    .error-message {
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    .error-path {
+      color: var(--text-tertiary);
+      font-size: 0.85rem;
+      margin-bottom: 2rem;
+      font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+    }
+
+    .error-path code {
+      background: var(--bg-soft);
+      padding: 0.2em 0.4em;
+      border-radius: 4px;
+    }
+
+    .error-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .error-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .error-button.primary {
+      background: var(--primary-gradient);
+      color: white;
+    }
+
+    .error-button.primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px var(--primary-shadow);
+    }
+
+    .error-button.secondary {
+      background: var(--bg-soft);
+      color: var(--text-primary);
+      border: 1px solid var(--divider);
+    }
+
+    .error-button.secondary:hover {
+      background: var(--bg-mute);
+    }
+
+    @media (max-width: 480px) {
+      .error-code { font-size: 5rem; }
+      .error-actions { flex-direction: column; }
+      .error-button { width: 100%; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+  <div class="error-content">
+    <div class="error-code">404</div>
+    <h1 class="error-title">¡Vaya! Página no encontrada</h1>
+    <p class="error-message">Lo sentimos, la página que buscas no existe o ha sido movida.</p>
+    <p class="error-path">Ruta solicitada: <code id="path"></code></p>
+    <div class="error-actions">
+      <a href="/" class="error-button primary">🏠 Volver al inicio</a>
+      <a href="/programacion/" class="error-button secondary">📚 Ver documentación</a>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('path').textContent = window.location.pathname;
+  </script>
+</body>
+</html>
