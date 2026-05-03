@@ -1,6 +1,6 @@
----
-title: "Mapas"
-nav_order: 12
----
+
 
 # ZONA RESTRINGIDA #
+
+
+![Palestina](../public/img/fromthriver.jpg)
