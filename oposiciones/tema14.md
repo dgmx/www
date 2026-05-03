@@ -1,4 +1,6 @@
-# Tema 13 - Ficheros. Tipos. Características. Organizaciones
+# Tema 14 - Utilización de ficheros según su organización
+
+> Igual que el tema 13. Solo cambia el índice
 
 ## 1. Introducción
 - Evolución del almacenamiento: De sistemas manuales a bases de datos y big data.
@@ -15,13 +17,26 @@
 - La información contenida en los dispositivos de almacenamiento se estructura en unidades denominadas ficheros
 - Ficheros conjuntos de datos estructurados en registros y campos.
 
-### 2.2. Operaciones
+### 2.2 Características
 
+Las características de los ficheros definen cómo se almacenan, organizan y gestionan dentro de un sistema.   
+Principales características:
+- Nombre: identificador del fichero dentro del sistema.
+- Extensión: indica el tipo de fichero (`.txt, .jpg, .exe`).
+- Tamaño: cantidad de espacio que ocupa en memoria.
+- Ubicación (ruta): lugar donde está almacenado.
+- Formato: estructura interna (texto o binario).
+- Permisos: controlan quién puede leer, escribir o ejecutar el fichero.
+- Fecha y hora: creación, modificación y último acceso.
+- Propietario: usuario o sistema que lo creó o posee.
+- Organización: forma en que se estructuran los datos (secuencial, indexada, etc.).
+
+### 2.3. Operaciones
 - La vida del fichero comienza con la creación y termina al eliminarlo
 - Las operaciones se realizan a nivel de registro por programas específicos:
   - Creación, modificación, eliminación, inserción y consulta de registros.
 
-## 3. Tipos de ficheros
+### 2.4. Tipos de ficheros
 
 ```mermaid
 graph TD
@@ -38,7 +53,7 @@ graph TD
 
 ```
 
-### 3.1. Según su duración en el sistema
+#### 2.4.1 Según su duración en el sistema
 
 **a) Ficheros permanentes**: 
 
@@ -62,7 +77,7 @@ Su exsitencia en el sistema es limitada
    - **De maniobras**: Almacenan datos no retenidos en memoria principal.
    - **De resultados**: Generados para dispositivos de salida.
 
-### 3.2. Según su contenido
+#### 2.4.2 Según su contenido
 
 Esta clasificación atiende a la forma en que los ficheros almacenan y representan la información. 
 
@@ -82,25 +97,12 @@ Ejemplos: `.exe, .dat, .pdf, .bin, .mp3`
 - Solo se pueden abrir por programas específicos
 - Permiten manejar datos complejos: audio, imágenes, video, documentos, etc.
 
-## 4. Características
 
-Las características de los ficheros definen cómo se almacenan, organizan y gestionan dentro de un sistema.   
-Principales características:
-- Nombre: identificador del fichero dentro del sistema.
-- Extensión: indica el tipo de fichero (`.txt, .jpg, .exe`).
-- Tamaño: cantidad de espacio que ocupa en memoria.
-- Ubicación (ruta): lugar donde está almacenado.
-- Formato: estructura interna (texto o binario).
-- Permisos: controlan quién puede leer, escribir o ejecutar el fichero.
-- Fecha y hora: creación, modificación y último acceso.
-- Propietario: usuario o sistema que lo creó o posee.
-- Organización: forma en que se estructuran los datos (secuencial, indexada, etc.).
-
-## 5. Organización de ficheros
+## 3. Organización de ficheros
 
 La organización de ficheros se refiere a la forma en que los datos se estructuran y almacenan dentro de un fichero para facilitar su acceso y manejo.
 
-### 5.1. Secuencial
+### 3.1. Secuencial
 
 Los registros se almacenan en orden consecutivo. 
 Características:
@@ -108,7 +110,7 @@ Características:
 - Simple de implementar.
 - Poco eficiente para búsquedas específicas.
 
-### 5.2. Directa
+### 3.2. Directa
 
 Los registros se acceden por su dirección, no por orden físico.
 Permite acceder a cualquier dato sin recorrer todo el fichero.   
@@ -117,7 +119,7 @@ Características:
 - Usa direcciones o posiciones (índices).
 - Más compleja de gestionar.
 
-### 5.3 Indexada
+### 3.3 Indexada
 
 Utiliza una estructura adicional (índice) para localizar los datos.   
 Características:
