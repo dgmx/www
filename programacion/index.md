@@ -30,10 +30,10 @@ features:
     linkText: Leer más
   - title: HTML
     details: Manual de HTML
-    link: /programacion/html/introduccion_HTML
+    link: /programacion/html/introduccion_html
     linkText: Leer más
   - title: CSS
     details: Manual de CSS
-    link: /programacion/html/introduccion_CSS
+    link: /programacion/html/introduccion_css
     linkText: Leer más
 ---
