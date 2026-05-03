@@ -9,6 +9,7 @@ export default defineConfig({
   },
   lastUpdated: true,
   description: "Material documental",
+  srcExclude: ['AGENTS.md'],
   ignoreDeadLinks: [
     /localhost/,
     /example-/,
