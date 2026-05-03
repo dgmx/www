@@ -1,9 +1,15 @@
 import DefaultTheme from 'vitepress/theme'
-import { onMounted, nextTick, watch } from 'vue'
+import { onMounted, nextTick, watch, h } from 'vue'
 import { useRoute, useData } from 'vitepress'
+import NotFound from './components/NotFound.vue'
 
 export default {
   extends: DefaultTheme,
+  Layout: () => {
+    return h(DefaultTheme.Layout, null, {
+      'not-found': () => h(NotFound)
+    })
+  },
   setup() {
     const route = useRoute()
     const { isDark } = useData()
