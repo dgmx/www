@@ -152,3 +152,4 @@ Conjunto de datos en una secuencia que el procesador interpreta y ejecuta
 
 [Generar PDF](/oposdocs/pdf/tema24.pdf)
 
+[Tema 24 Completo](tema24_full.md)
