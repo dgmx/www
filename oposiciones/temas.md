@@ -1,12 +1,8 @@
----
-title: "Temario General."
-parent: "Maps"
-nav_exclude: true
----
+# Material Oposiciones Informática Secundaria
 
 ## PES Informatica
 
-### BLOQUE 01 - HARDWARE
+## BLOQUE 01 - HARDWARE
 - 01 Representación y comunicación de la información.
 - [02 Elementos funcionales de un ordenador digital.](tema2.md)
 - 03 Componentes, estructura y funcionamiento de la Unidad Central de Proceso.
@@ -17,14 +13,14 @@ nav_exclude: true
 - [08 Hardware comercial de un ordenador. Placa base. Tarjetas controladoras de dispositivos y de entrada-salida.](tema8.md)
 - 09 Lógica de circuitos. Circuitos combinacionales y secuenciales.
 
-### BLOQUE 02 – REPRESENTACIÓN Y ORGANIZACIÓN DE DATOS
+## BLOQUE 02 – REPRESENTACIÓN Y ORGANIZACIÓN DE DATOS
 - 10 Representación interna de los datos.
 - [11 Organización Lógica de los Datos. Estructuras estáticas](tema11.md)
 - [12 Organización Lógica de los Datos. Estructuras dinámicas](tema12.md)
 - [13 Ficheros. Tipos. Características. Organizaciones](tema13.md)
 - [14 Utilización de ficheros según su organización](tema14.md)
 
-### BLOQUE 03 – GESTIÓN DE SISTEMAS
+## BLOQUE 03 – GESTIÓN DE SISTEMAS
 - [15 Sistemas operativos. Componentes. Estructura. Funciones. Tipos.](tema15.md)
 - 16 Sistemas operativos Gestión de procesos.
 - 17 Sistemas operativos Gestión de memoria.
@@ -32,10 +28,10 @@ nav_exclude: true
 - 19 Sistemas operativos Gestión de archivos y dispositivos.
 - 20 Explotación y administración de sistemas operativos monousuario y multiusuario.
 
-### BLOQUE 04 – SISTEMAS INFORMÁTICOS
+## BLOQUE 04 – SISTEMAS INFORMÁTICOS
 - 21 Sistemas informáticos. Estructura física y funcional.
 
-### BLOQUE 05 – ALGORITMOS Y PROGRAMACIÓN
+## BLOQUE 05 – ALGORITMOS Y PROGRAMACIÓN
 -  23 Diseño de algoritmos. Técnicas descriptivas.
 -  24 Lenguajes de programación. Tipos. Características.
 -  [25 Programación estructurada. Estructuras básicas. Funciones y procedimientos.](tema25.md)
@@ -46,7 +42,7 @@ nav_exclude: true
 -  30 Prueba y documentación de programas. Técnicas.
 -  33 Programación en lenguaje ensamblador. Instrucciones básicas. Formatos. Direccionamientos.
 
-### BLOQUE 06 – BASES DE DATOS
+## BLOQUE 06 – BASES DE DATOS
 -  35 La definición de datos. Niveles de descripción. Lenguajes. Diccionario de datos.
 -  36 La manipulación de datos. Operaciones. Lenguajes. Optimización de consultas.
 -  37 Modelo de datos jerárquico y en red. Estructuras. Operaciones.
@@ -58,19 +54,19 @@ nav_exclude: true
 -  43 Administración de sistemas de bases de datos.
 -  44 Técnicas y procedimientos para la seguridad de los datos.
 
-### BLOQUE 07 – SISTEMAS DE INFORMACIÓN
+## BLOQUE 07 – SISTEMAS DE INFORMACIÓN
 -  45 Sistemas de información. Tipos. Características. Sistemas de información en la empresa.
 -  [46: Aplicaciones informáticas de propósito general y para la gestión empresarial](tema46.md)
 -  [47 Instalación y explotación de aplicaciones informáticas. Compartición de datos](tema47.md)
 
-### BLOQUE 08 – INGENIERÍA DEL SOFTWARE, ANÁLISIS Y DISEÑO
+## BLOQUE 08 – INGENIERÍA DEL SOFTWARE, ANÁLISIS Y DISEÑO
 -  50 Análisis de sistemas modelización conceptual de datos. Técnicas descriptivas. Documentación.
 -  55 Diseño físico de datos y funciones. Criterios de diseño. Documentación.
 -  56 Análisis y diseño orientado a objetos.
 -  57 Calidad del software. Factores y métricas. Estrategias de prueba.
 -  58 Ayudas automatizadas para el desarrollo de software.
 
-### BLOQUE 09 – REDES Y COMUNICACIONES
+## BLOQUE 09 – REDES Y COMUNICACIONES
 -  61 Redes y servicios de comunicaciones.
 -  62 Arquitecturas de sistemas de comunicaciones. Arquitecturas basadas en niveles. Estándares.
 - [63 Funciones y servicios del nivel físico](tema63.md)
