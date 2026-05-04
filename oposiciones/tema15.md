@@ -104,3 +104,5 @@ nav_exclude: true
 
 [Tema 15 Mapa Visual](/oposdocs/mapasweb/tema15map.html).
 📄[Tema 15 PDF](/oposdocs/pdf/tema15.pdf).
+
+[Tema 15](tema15-sistemas-operativos.md)
