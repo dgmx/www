@@ -49,21 +49,21 @@ Las razones de este dominio son claras: **estabilidad**, **seguridad**, **rendim
 
 La evolución reciente más transformadora en la gestión de sistemas operativos ha sido la **virtualización** y la **contenedorización**:
 
-### Virtualización
+- **Virtualización**
 
-Permite ejecutar múltiples sistemas operativos completos sobre un único hardware físico mediante un **hipervisor**. Cada máquina virtual tiene su propio kernel aislado.
+    Permite ejecutar múltiples sistemas operativos completos sobre un único hardware físico mediante un **hipervisor**. Cada máquina virtual tiene su propio kernel aislado.
 
-- **Tecnologías**: VMware, KVM, Hyper-V, VirtualBox.
-- **Ventajas**: aislamiento total, ejecución de diferentes SO, snapshots.
-- **Inconvenientes**: overhead significativo (cada VM ejecuta un SO completo).
+    - **Tecnologías**: VMware, KVM, Hyper-V, VirtualBox.
+    - **Ventajas**: aislamiento total, ejecución de diferentes SO, snapshots.
+    - **Inconvenientes**: overhead significativo (cada VM ejecuta un SO completo).
 
-### Contenedores
+- **Contenedores**
 
-Los contenedores representan una evolución más ligera. En lugar de virtualizar el hardware completo, **comparten el kernel del SO host** y aíslan los procesos y recursos a nivel de sistema operativo.
+    Los contenedores representan una evolución más ligera. En lugar de virtualizar el hardware completo, **comparten el kernel del SO host** y aíslan los procesos y recursos a nivel de sistema operativo.
 
-- **Tecnologías**: Docker (estándar de facto), Kubernetes (orquestación), Podman, LXC.
-- **Ventajas**: arranque en segundos, consumo mínimo de recursos, portabilidad, densidad muy superior a las VMs.
-- **Ecosistema**: imágenes reutilizables, registros (Docker Hub, GHCR), CI/CD integrado, microservicios.
+    - **Tecnologías**: Docker (estándar de facto), Kubernetes (orquestación), Podman, LXC.
+    - **Ventajas**: arranque en segundos, consumo mínimo de recursos, portabilidad, densidad muy superior a las VMs.
+    - **Ecosistema**: imágenes reutilizables, registros (Docker Hub, GHCR), CI/CD integrado, microservicios.
 
 La combinación de **Linux + contenedores + Kubernetes** se ha convertido en el estándar de la industria para el despliegue de aplicaciones modernas, permitiendo arquitecturas de microservicios escalables y portables entre cualquier entorno (desarrollo, pruebas, producción, nube, on-premise).
 
