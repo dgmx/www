@@ -144,7 +144,7 @@ else
 
 #### C) ESTRUCTURA MULTIPLE 
 
-En una estructura selectiva múltiple se evalúa una expresión que puede tomar n valores distintos (por ejemplo 1, 2, …n) y según sea el valor que de como resultado se ejecuta una de las n acciones.
+En una estructura selectiva múltiple se evalúa una expresión que puede tomar n valores distintos (por ejemplo 1, 2, ... , n) y según sea el valor que de como resultado se ejecuta una de las n acciones. Si no tomara ninguno de esos valores, se ejecutaría la opción por defecto.
 
 **Diagrama de flujo (a):**
 
@@ -180,17 +180,18 @@ flowchart TD
 switch(expresión)
 {
   case valor1:
-  sentencia1_1;
-  …
-  break;
+    sentencia1_1;
+    ...
+    break;
   case valor2:
-  sentencia2_1;
-  …
-  break;
+    sentencia2_1;
+    ...
+    break;
+  ...
   case valorN:
-  sentenciaN_1;
-  …
-  break;
+    sentenciaN_1;
+    ...
+    break;
 }
 ```
 
