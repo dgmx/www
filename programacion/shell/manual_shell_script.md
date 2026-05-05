@@ -2157,6 +2157,30 @@ sort "$fichero"
 
 **Ejercicio 5.** Desarrolla un script que compruebe si una dirección IP introducida por el usuario tiene formato válido (IPv4). El script debe aceptar la IP como argumento o pedirla de forma interactiva.
 
+::: details  Mostrar solución {close}
+```bash
+#!/bin/bash
+if [ $# -eq 1 ]; then
+    ip="$1"
+else
+    read -p "Introduce la dirección IP: " ip
+fi
+if [[ "$ip" =~ ^([0-9]{1,3})\.([0-9]{1,3})\.([0-9]{1,3})\.([0-9]{1,3})$ ]]; then
+    for i in {1..4}; do
+        octeto="${BASH_REMATCH[$i]}"
+        if [ "$octeto" -gt 255 ]; then
+            echo "IP no válida: el octeto $octeto supera 255"
+            exit 1
+        fi
+    done
+    echo "La dirección IP $ip es válida"
+else
+    echo "La dirección IP $ip no tiene formato IPv4 válido"
+    exit 1
+fi
+```
+:::
+
 **Ejercicio 6.** Crea un script que analice el fichero `/etc/passwd` y genere un informe indicando:
 - Número total de usuarios
 - Número de usuarios con acceso a shell
