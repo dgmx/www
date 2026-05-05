@@ -13,6 +13,63 @@
 
 ## 1. Introducción
 
+### Evolución Histórica
+
+Los sistemas operativos han recorrido un largo camino desde sus orígenes en la década de 1950. Los primeros computadores no tenían SO; los programas se cargaban directamente mediante interruptores o tarjetas perforadas. La aparición de los **sistemas por lotes** (batch) automatizó la transición entre trabajos, eliminando los tiempos muertos del operador humano.
+
+En los años 60 surgieron los **sistemas de tiempo compartido** (como CTSS y Multics), que permitieron la interactividad y el acceso multiusuario por primera vez. Unix, desarrollado en Bell Labs en 1969, estableció los principios de diseño que dominan hasta hoy: filosofía de herramientas pequeñas, texto plano como interfaz universal, y jerarquía de archivos.
+
+Los años 80 trajeron los SO personales: **MS-DOS** dominó el mercado del PC, mientras que **Mac OS** popularizó la interfaz gráfica. La década de 1990 fue revolucionaria con la aparición de **Linux** (1991), desarrollado por Linus Torvalds, que democratizó el acceso a un SO tipo Unix de código abierto. Simultáneamente, **Windows NT** sentó las bases de los sistemas Windows modernos.
+
+El siglo XXI ha estado marcado por la diversificación: **Android** e **iOS** dominaron la revolución móvil, mientras la virtualización y los contenedores transformaron la infraestructura de servidores.
+
+### Importancia en los Dispositivos Actuales
+
+Hoy no existe un dispositivo electrónico sin un sistema operativo, desde los más evidentes hasta los más invisibles:
+
+- **Computadores personales y portátiles**: Windows, macOS, Linux.
+- **Dispositivos móviles**: Android (basado en Linux) con más del 70% del mercado global, iOS.
+- **Dispositivos empotrados e IoT**: Smart TVs, routers, electrodomésticos, vehículos. Un coche moderno ejecuta decenas de SO embebidos.
+- **Wearables y dispositivos médicos**: relojes inteligentes, marcapasos, monitores.
+
+El SO es el **cimiento de toda la computación moderna**: sin él, el hardware sería inútil. Gestiona la seguridad, la conectividad, la eficiencia energética y la experiencia del usuario en cada dispositivo.
+
+### Linux y su Dominio en Servidores
+
+Linux es, sin duda, el sistema operativo más importante de la infraestructura tecnológica mundial:
+
+- **Servidores web**: más del 96% de los servidores web del mundo ejecutan Linux.
+- **Supercomputadoras**: el 100% de las 500 supercomputadoras más potentes del mundo (TOP500) usan Linux.
+- **Nube**: AWS, Google Cloud, Azure y todas las grandes plataformas cloud se ejecutan sobre Linux.
+- **Entornos corporativos**: la mayoría de la infraestructura backend de empresas como Google, Facebook, Amazon y Netflix funciona con Linux.
+
+Las razones de este dominio son claras: **estabilidad**, **seguridad**, **rendimiento**, **gratuidad**, **flexibilidad** y un **ecosistema de código abierto** que permite personalizar cada aspecto del sistema.
+
+### Virtualización y Contenedores
+
+La evolución reciente más transformadora en la gestión de sistemas operativos ha sido la **virtualización** y la **contenedorización**:
+
+### Virtualización
+
+Permite ejecutar múltiples sistemas operativos completos sobre un único hardware físico mediante un **hipervisor**. Cada máquina virtual tiene su propio kernel aislado.
+
+- **Tecnologías**: VMware, KVM, Hyper-V, VirtualBox.
+- **Ventajas**: aislamiento total, ejecución de diferentes SO, snapshots.
+- **Inconvenientes**: overhead significativo (cada VM ejecuta un SO completo).
+
+### Contenedores
+
+Los contenedores representan una evolución más ligera. En lugar de virtualizar el hardware completo, **comparten el kernel del SO host** y aíslan los procesos y recursos a nivel de sistema operativo.
+
+- **Tecnologías**: Docker (estándar de facto), Kubernetes (orquestación), Podman, LXC.
+- **Ventajas**: arranque en segundos, consumo mínimo de recursos, portabilidad, densidad muy superior a las VMs.
+- **Ecosistema**: imágenes reutilizables, registros (Docker Hub, GHCR), CI/CD integrado, microservicios.
+
+La combinación de **Linux + contenedores + Kubernetes** se ha convertido en el estándar de la industria para el despliegue de aplicaciones modernas, permitiendo arquitecturas de microservicios escalables y portables entre cualquier entorno (desarrollo, pruebas, producción, nube, on-premise).
+
+
+
+
 ## 2. Sistemas Operativos
 
 Un **Sistema Operativo (SO)** es un conjunto de programas que actúa como intermediario entre el usuario y el hardware de un computador. Sus objetivos principales son:
@@ -368,6 +425,12 @@ No son un tipo convencional, sino SO optimizados para entornos de virtualizació
 ---
 
 ## 7. Conclusión
+
+Los sistemas operativos han pasado de ser simples gestores de lotes a convertirse en la plataforma fundamental sobre la que se construye toda la tecnología moderna. Su evolución continúa con la nube, los contenedores, la computación en el borde (edge computing) y los sistemas embebidos inteligentes. Comprender los SO es comprender los cimientos de la informática actual.
+
+En el tema actual hemos realizado una presentación global de los sistemas operativos describiendo sus componentes mas importantes, estructuras, funciones que desarrollan y los diferentes tipos que existen.
+
+El sistema operativo es pues el software más importante de un sistema informático y la habilidad de administrarlo de forma eficiente y segura proporciona una ventaja competitiva en el mundo laboral, especialmente en sector de la informática.
 
 ## 8. Bibliografía
 
