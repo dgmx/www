@@ -2086,12 +2086,71 @@ done
 
 **Ejercicio 1.** Crea un script que solicite al usuario su nombre y apellidos, y muestre un saludo personalizado con la fecha y hora actual.
 
+::: details  Mostrar solución {close}
+```bash
+#!/bin/bash
+
+read -p "Introduce tu nombre: " nombre
+read -p "Introduce tus apellidos: " apellidos
+
+fecha_hora=$(date "+%d/%m/%Y %H:%M:%S")
+
+echo "Hola $nombre $apellidos, la fecha y hora actual es: $fecha_hora"
+```
+:::
+
 **Ejercicio 2.** Crea un script que reciba dos números como argumentos y muestre el resultado de las cuatro operaciones básicas (suma, resta, multiplicación y división).
+
+::: details  Mostrar solución {close}
+```bash
+#!/bin/bash
+
+if [ $# -ne 2 ]; then
+    echo "Uso: $0 num1 num2"
+    exit 1
+fi
+
+num1=$1
+num2=$2
+
+echo "Suma: $((num1 + num2))"
+echo "Resta: $((num1 - num2))"
+echo "Multiplicación: $((num1 * num2))"
+
+if [ "$num2" -eq 0 ]; then
+    echo "División: Indefinida (división por cero)"
+else
+    echo "División: $((num1 / num2))"
+fi
+```
+:::
 
 **Ejercicio 3.** Escribe un script que muestre todos los números del 1 al 100 que sean divisibles por 3 y por 5 simultáneamente.
 
+::: details  Mostrar solución {close}
+```bash
+#!/bin/bash
+for i in {1..100}; do
+    if (( i % 3 == 0 && i % 5 == 0 )); then
+        echo "$i"
+    fi
+done
+```
+:::
 **Ejercicio 4.** Crea un script que lea una lista de nombres desde un fichero (uno por línea) y los muestre ordenados alfabéticamente.
 
+::: details  Mostrar solución {close}
+```bash
+#!/bin/bash
+read -p "Introduce la ruta del fichero: " fichero
+if [ ! -f "$fichero" ]; then
+    echo "El fichero no existe"
+    exit 1
+fi
+sort "$fichero"
+
+```
+:::
 ---
 
 ### Ejercicios de nivel intermedio
