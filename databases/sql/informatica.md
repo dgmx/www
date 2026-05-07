@@ -1,8 +1,3 @@
----
-title: 01. Tienda informática
-parent: "SQL"
----
-
 # Ejercicio. Tienda informática
 ## Modelo Relacional
 
@@ -388,8 +383,7 @@ INSERT INTO producto VALUES(11, 'Impresora HP Laserjet Pro M26nw', 180, 3);
 13. Devuelve un listado con el código y el nombre de fabricante, solamente de aquellos fabricantes que tienen productos asociados en la base de datos.
     ```sql
     SELECT DISTINCT f.id, f.nombre
-    FROM producto p INNER JOIN fabricante f ON p.id_fabricante = f.id
-    WHERE f.id IN (SELECT p.id_fabricante FROM producto)
+    FROM fabricante f INNER JOIN producto p ON p.id_fabricante = f.id;
     ```
 
 ## Consultas multitabla (Composición externa)
