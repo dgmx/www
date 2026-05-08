@@ -858,7 +858,9 @@ Estos ejercicios te proporcionarán una base sólida para trabajar con programac
 
 >
 > **Mas ejercicios:**
-> 1. [Figuras de Superhéroes](ejercicio1.md)
-> 2. [Electrodomésticos](ejercicio02.md).  
+> 1. [Figuras de Superhéroes](ejercicio01)
+> 2. [Electrodomésticos](ejercicio02)
+> 3. [Supermercado](ejercicio03)
+> 4. [Servicios](ejercicio04)
 > 
 > 
