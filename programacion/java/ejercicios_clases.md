@@ -856,3 +856,10 @@ Estos ejercicios te proporcionarán una base sólida para trabajar con programac
 ('Hello, Amigos!')
 ```
 :::
+
+>
+> **Mas ejercicios:**
+> 1. [Figuras de Superhéroes](ejercicio1.md)
+> 2. [Electrodomésticos](ejercicio02.md).  
+> 
+> 

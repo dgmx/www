@@ -215,6 +215,7 @@ graph TD
 Queue<Integer> cola = new LinkedList<>();
 cola.add(10);
 cola.poll();
+cola.peek();
 ```
 
 ### 3.2 Estructuras No Lineales
