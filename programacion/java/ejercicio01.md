@@ -4,9 +4,7 @@ _Práctica con clases básicas y composición de clases_
 
 **Figuras de Superhéroes**
 
-Se pide realizar una aplicación para una empresa que vende figuras de
-superhéroes. Para ello, tendrá que modelar todos los datos relativos a
-estas figuras. Así pues, se pide que programe las siguientes clases:
+Se pide realizar una aplicación para una empresa que vende figuras de superhéroes. Para ello, tendrá que modelar todos los datos relativos a estas figuras. Así pues, se pide que programe las siguientes clases:
 
 ## Clase Superhéroe
 
@@ -24,9 +22,7 @@ Sus propiedades serán:
 
 _Constructores_
 
-Haga un constructor con parámetros que reciba solo el nombre del
-superhéroe. La descripción se inicializará a vacío (cadena vacía) y la capa
-se inicializará al valor false (sin capa)
+Haga un constructor con parámetros que reciba solo el nombre del superhéroe. La descripción se inicializará a vacío (cadena vacía) y la capa se inicializará al valor false (sin capa)
 
 _Métodos get y set_
 
@@ -75,7 +71,7 @@ Esta clase representará una figura de un superhéroe.
 
 _Propiedades_
 
-- Código. Cada figura tiene un código identificativo formado por letras y números. Dos  figuras distintas no tendrán el mismo código.
+- Código. Cada figura tiene un código identificativo formado por letras y números. Dos figuras distintas no tendrán el mismo código.
 - Precio. Un double con el precio de la figura.
 
 Además, puesto que la figura representa a un superhéroe, será necesario que la clase figura contenga un objeto de la clase Superhéroe que describa las características de este.

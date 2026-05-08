@@ -69,7 +69,6 @@ La clase Lavadora tendrá los mismos set y get que la clase Electrodoméstico, y
 
 La clase Lavadora tendrá un método toString que devuelva una cadena con todas las características de la lavadora.
 
-
 **Método getConsumo(int horas)**
 
 Este método debe reprogramarse, ya que el cálculo del consumo de una lavadora depende no solo de las horas de funcionamiento, sino también del modo de funcionamiento. Así pues:

@@ -62,7 +62,6 @@ _Métodos set y get_
 
 Programe métodos set y get para la marca y el precio.
 
-
 _Métodos de las interfaces_
 
 Programe los métodos de las interfaces.

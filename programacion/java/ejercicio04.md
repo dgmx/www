@@ -8,8 +8,6 @@ Se va a realizar una aplicación que controle los servicios que realiza una empr
 
 Así pues, se pide que programe una clase abstracta llamada **Servicio** que especificará esas características comunes y que servirá para crear, a través de herencia, las distintas clases de servicios que ofrece la empresa.
 
----
-
 ## Clase Abstracta Servicio
 
 Un servicio siempre tendrá las siguientes propiedades:
