@@ -503,26 +503,28 @@ Resuelva todas las consultas utilizando las cláusulas LEFT JOIN y RIGHT JOIN.
 
 16. Muestra el número total de productos que tiene cada uno de los fabricantes. El listado también debe incluir los fabricantes que no tienen ningún producto. El resultado mostrará dos columnas, una con el nombre del fabricante y otra con el número de productos que tiene. Ordene el resultado descendentemente por el número de productos.
     ```sql
-    SELECT f.nombre AS 'Fabricante', COUNT(p.id_fabricante) AS 'Cantidad de productos'
-    FROM producto p RIGHT JOIN fabricante f ON p.id_fabricante = f.id
+    SELECT COUNT(p.id) as num_prod, f.nombre
+    FROM fabricante f
+    LEFT JOIN producto p ON f.id = p.id_fabricante
     GROUP BY f.nombre
-    ORDER BY p.nombre DESC;
+    ORDER BY num_prod DESC;
     ```
 
 17. Muestra el precio máximo, precio mínimo y precio medio de los productos de cada uno de los fabricantes. El resultado mostrará el nombre del fabricante junto con los datos que se solicitan.
     ```sql
-    SELECT f.nombre AS 'Fabricante', IFNULL(MAX(p.precio), 0) AS Máximo, IFNULL(MIN(p.precio), 0) AS Mínimo, IFNULL(AVG(p.precio), 0) AS Promedio
-    FROM producto p RIGHT JOIN fabricante f ON p.id_fabricante = f.id
-    GROUP BY f.nombre
-    ORDER BY p.nombre DESC;
+    SELECT MAX(p.precio) AS MAX, MIN(p.precio) AS MIN, AVG(p.precio) AS AVG, f.nombre AS FABRICANTE
+    FROM producto p
+    INNER JOIN fabricante f ON f.id = p.id_fabricante
+    GROUP BY FABRICANTE
+    ORDER BY AVG; 
     ```
 
 18. Muestra el precio máximo, precio mínimo, precio medio y el número total de productos de los fabricantes que tienen un precio medio superior a 200€. No es necesario mostrar el nombre del fabricante, con el código del fabricante es suficiente.
     ```sql
-    SELECT f.id AS 'Código Fabricante', MAX(p.precio) AS Máximo, MIN(p.precio) AS Mínimo, AVG(p.precio) AS 'Promedio', COUNT(p.id_fabricante) AS 'Cantidad'
+    SELECT f.id AS Fabricante, MAX(p.precio) AS MAX, MIN(p.precio) AS MIN, AVG(p.precio) AS AVG, COUNT(p.id_fabricante) AS 'Cantidad'
     FROM producto p RIGHT JOIN fabricante f ON p.id_fabricante = f.id
     GROUP BY f.id
-    HAVING Promedio > 200
+    HAVING AVG > 200
     ```
 
 19. Muestra el nombre de cada fabricante, junto con el precio máximo, precio mínimo, precio medio y el número total de productos de los fabricantes que tienen un precio medio superior a 200€. Es necesario mostrar el nombre del fabricante.
