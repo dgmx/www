@@ -522,7 +522,7 @@ Resuelva todas las consultas utilizando las cláusulas LEFT JOIN y RIGHT JOIN.
 18. Muestra el precio máximo, precio mínimo, precio medio y el número total de productos de los fabricantes que tienen un precio medio superior a 200€. No es necesario mostrar el nombre del fabricante, con el código del fabricante es suficiente.
     ```sql
     SELECT f.id AS Fabricante, MAX(p.precio) AS MAX, MIN(p.precio) AS MIN, AVG(p.precio) AS AVG, COUNT(p.id_fabricante) AS 'Cantidad'
-    FROM producto p RIGHT JOIN fabricante f ON p.id_fabricante = f.id
+    FROM producto p INNER JOIN fabricante f ON p.id_fabricante = f.id
     GROUP BY f.id
     HAVING AVG > 200
     ```
@@ -530,7 +530,7 @@ Resuelva todas las consultas utilizando las cláusulas LEFT JOIN y RIGHT JOIN.
 19. Muestra el nombre de cada fabricante, junto con el precio máximo, precio mínimo, precio medio y el número total de productos de los fabricantes que tienen un precio medio superior a 200€. Es necesario mostrar el nombre del fabricante.
     ```sql
     SELECT f.nombre, MAX(p.precio) AS Máximo, MIN(p.precio) AS Mínimo, AVG(p.precio) AS Promedio, COUNT(p.id_fabricante) AS Cantidad
-    FROM producto p RIGHT JOIN fabricante f ON p.id_fabricante = f.id
+    FROM producto p INNER JOIN fabricante f ON p.id_fabricante = f.id
     GROUP BY f.id
     HAVING Promedio > 200
     ```
@@ -545,29 +545,29 @@ Resuelva todas las consultas utilizando las cláusulas LEFT JOIN y RIGHT JOIN.
 21. Calcula el número de productos que tiene cada fabricante con un precio mayor o igual a 180€.
     ```sql
     SELECT f.Nombre, COUNT(p.nombre) AS 'Cantidad'
-    FROM producto p RIGHT JOIN fabricante f ON p.id_fabricante = f.id
+    FROM producto p INNER JOIN fabricante f ON p.id_fabricante = f.id
     WHERE p.precio >= 180
     GROUP BY f.nombre
     ```
 
 22. Lista el precio medio los productos de cada fabricante, mostrando solamente el código del fabricante.
     ```sql
-    SELECT f.id, IFNULL(AVG(p.precio), 0) AS 'Promedio'
-    FROM producto p RIGHT JOIN fabricante f ON p.id_fabricante = f.id
+    SELECT f.id, AVG(p.precio) AS 'Promedio'
+    FROM producto p INNER JOIN fabricante f ON p.id_fabricante = f.id
     GROUP BY f.nombre
     ```
 
 23. Lista el precio medio de los productos de cada fabricante, mostrando solamente el nombre del fabricante.
     ```sql
-    SELECT f.Nombre, IFNULL(AVG(p.precio), 0) AS 'Promedio'
-    FROM producto p RIGHT JOIN fabricante f ON p.id_fabricante = f.id
+    SELECT f.Nombre, AVG(p.precio) AS 'Promedio'
+    FROM producto p INNER JOIN fabricante f ON p.id_fabricante = f.id
     GROUP BY f.nombre
     ```
 
 24. Lista los nombres de los fabricantes cuyos productos tienen un precio medio mayor o igual a 150€.
     ```sql
-    SELECT f.Nombre, IFNULL(AVG(p.precio), 0) AS 'Promedio'
-    FROM producto p RIGHT JOIN fabricante f ON p.id_fabricante = f.id
+    SELECT f.Nombre, AVG(p.precio) AS 'Promedio'
+    FROM producto p INNER JOIN fabricante f ON p.id_fabricante = f.id
     GROUP BY f.nombre
     HAVING Promedio >= 150
     ```
@@ -590,10 +590,10 @@ Resuelva todas las consultas utilizando las cláusulas LEFT JOIN y RIGHT JOIN.
 
 27. Devuelve un listado con los nombres de los fabricantes y el número de productos que tiene cada uno con un precio superior o igual a 220 €. El listado debe mostrar el nombre de todos los fabricantes, es decir, si hay algún fabricante que no tiene productos con un precio superior o igual a 220€ deberá aparecer en el listado con un valor igual a 0 en el número de productos.
     ```sql
-    SELECT f.Nombre, COUNT(CASE WHEN p.precio >= 220 THEN f.nombre ELSE NULL END) AS 'Cantidad'
-    FROM fabricante f 
-    LEFT JOIN producto p ON p.id_fabricante = f.id
-    GROUP BY f.nombre
+    SELECT f.Nombre, COUNT(p.id) AS Cantidad
+    FROM fabricante f
+    LEFT JOIN producto p ON p.id_fabricante = f.id AND p.precio >= 220
+    GROUP BY f.nombre;
     ```
 
 28. Devuelve un listado con los nombres de los fabricantes donde la suma del precio de todos sus productos es superior a 1000 €.
