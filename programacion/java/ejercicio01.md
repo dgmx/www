@@ -163,6 +163,79 @@ programa principal de prueba.
 
 ## Solución propuesta
 
+### Diagrama UML de clases Mermaid:
+
+```mermaid
+classDiagram
+    class Superheroe {
+        - nombre: String
+        - descripcion: String
+        - capa: boolean
+        + Superheroe(nombre: String)
+        + getNombre() String
+        + setNombre(nombre: String) void
+        + getDescripcion() String
+        + setDescripcion(descripcion: String) void
+        + isCapa() boolean
+        + setCapa(capa: boolean) void
+        + toString() String
+    }
+
+    class Dimension {
+        - alto: double
+        - ancho: double
+        - profundidad: double
+        + Dimension()
+        + Dimension(alto: double, ancho: double, profundidad: double)
+        + getAlto() double
+        + setAlto(alto: double) void
+        + getAncho() double
+        + setAncho(ancho: double) void
+        + getProfundidad() double
+        + setProfundidad(profundidad: double) void
+        + getVolumen() double
+        + toString() String
+    }
+
+    class Figura {
+        - codigo: String
+        - precio: double
+        - dimensiones: Dimension
+        - superheroe: Superheroe
+        + Figura(codigo: String, precio: double, dimensiones: Dimension, superheroe: Superheroe)
+        + getCodigo() String
+        + setCodigo(codigo: String) void
+        + getPrecio() double
+        + setPrecio(precio: double) void
+        + getDimensiones() Dimension
+        + setDimensiones(dimensiones: Dimension) void
+        + getSuperheroe() Superheroe
+        + setSuperheroe(superheroe: Superheroe) void
+        + subirPrecio(cantidad: double) void
+        + toString() String
+    }
+
+    class Coleccion {
+        - nombreColeccion: String
+        - listaFiguras: ArrayList~Figura~
+        + Coleccion(nombreColeccion: String)
+        + getNombreColeccion() String
+        + setNombreColeccion(nombre: String) void
+        + anadirFigura(fig: Figura) void
+        + subirPrecio(cantidad: double, id: String) void
+        + toString() String
+        + conCapa() String
+        + masValioso() Figura
+        + getValorColeccion() double
+        + getVolumenColeccion() double
+    }
+
+    Figura "1" *--> "1" Superheroe : contiene
+    Figura "1" *--> "1" Dimension : contiene
+    Coleccion "1" o--> "*" Figura : agrupa
+```
+
+
 ### Clase Superhéroe
 
 ```java
