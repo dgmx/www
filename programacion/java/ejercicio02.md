@@ -82,6 +82,49 @@ Este método no necesita ser sobreescrito, por lo que debería funcionar correct
 
 **NOTA. Compruebe el funcionamiento de la clase Lavadora en un programa de prueba.**
 
+### Diagrama UML de Clases en mermaid:
+
+Las relaciones clave:
+- Electrodomestico → Lavadora (herencia, triángulo abierto)
+- Lavadora sobrescribe getConsumo() (polimorfismo)
+- getCosteConsumo() se hereda tal cual
+
+
+```mermaid
+classDiagram
+    class Electrodomestico {
+        # tipo: String
+        # marca: String
+        # potencia: double
+        + Electrodomestico(tipo: String, marca: String, potencia: double)
+        + getTipo() String
+        + setTipo(tipo: String) void
+        + getMarca() String
+        + setMarca(marca: String) void
+        + getPotencia() double
+        + setPotencia(potencia: double) void
+        + toString() String
+        + getConsumo(horas: int) double
+        + getCosteConsumo(horas: int, costeHora: double) double
+    }
+
+    class Lavadora {
+        - precio: double
+        - aguaCaliente: boolean
+        + Lavadora(marca: String, potencia: double)
+        + Lavadora(marca: String, precio: double, potencia: double, aguaCaliente: boolean)
+        + getPrecio() double
+        + setPrecio(precio: double) void
+        + isAguaCaliente() boolean
+        + setAguaCaliente(aguaCaliente: boolean) void
+        + toString() String
+        + getConsumo(horas: int) double
+    }
+
+    Electrodomestico <|-- Lavadora
+```
+
+
 ## Solución propuesta
 
 ### Clase Electrodomestico
