@@ -127,6 +127,8 @@ classDiagram
 
 ## Solución propuesta
 
+A continuación se muestran las clases en Java:
+
 ## Clase Electrodomestico en Java
 
 ```java

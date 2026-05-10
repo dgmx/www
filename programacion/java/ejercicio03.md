@@ -103,10 +103,99 @@ A tener en cuenta: las calorías se calcularán multiplicando por 10 la graduaci
 
 Realice un programa de prueba dónde cree varios productos de cada clase. Haga un ejemplo de polimorfismo creando un ArrayList de productos alimenticios y calculando la suma de sus calorías.
 
+## Diagrama UML de clases
+
+
+```mermaid
+classDiagram
+    class EsLiquido {
+        <<interface>>
+        + setVolumen(v: double) void
+        + getVolumen() double
+        + setTipoEnvase(env: String) void
+        + getTipoEnvase() String
+    }
+
+    class EsAlimento {
+        <<interface>>
+        + setCaducidad(fc: LocalDate) void
+        + getCaducidad() LocalDate
+        + getCalorias() int
+    }
+
+    class ConDescuento {
+        <<interface>>
+        + setDescuento(des: double) void
+        + getDescuento() double
+        + getPrecioDescuento() double
+    }
+
+    class Detergente {
+        - marca: String
+        - precio: double
+        - volumen: double
+        - tipoEnvase: String
+        - descuento: double
+        + Detergente(marca: String, precio: double)
+        + getMarca() String
+        + setMarca(marca: String) void
+        + getPrecio() double
+        + setPrecio(precio: double) void
+        + toString() String
+    }
+
+    class Cereales {
+        - marca: String
+        - precio: double
+        - tipoCereal: String
+        - fcCaducidad: LocalDate
+        + Cereales(marca: String, precio: double, tipoCereal: String)
+        + getMarca() String
+        + setMarca(marca: String) void
+        + getPrecio() double
+        + setPrecio(precio: double) void
+        + getTipoCereal() String
+        + setTipoCereal(tipo: String) void
+        + toString() String
+    }
+
+    class Vino {
+        - marca: String
+        - tipoVino: String
+        - gradosAlcohol: double
+        - precio: double
+        - volumen: double
+        - tipoEnvase: String
+        - fcCaducidad: LocalDate
+        - descuento: double
+        + Vino(marca: String, tipoVino: String, gradosAlcohol: double, precio: double)
+        + getMarca() String
+        + setMarca(marca: String) void
+        + getTipoVino() String
+        + setTipoVino(tipo: String) void
+        + getGradosAlcohol() double
+        + setGradosAlcohol(g: double) void
+        + getPrecio() double
+        + setPrecio(precio: double) void
+        + toString() String
+    }
+
+    EsLiquido <|.. Detergente : implements
+    ConDescuento <|.. Detergente : implements
+
+    EsAlimento <|.. Cereales : implements
+
+    EsLiquido <|.. Vino : implements
+    EsAlimento <|.. Vino : implements
+    ConDescuento <|.. Vino : implements
+```
+
 
 ## Solución propuesta
 
-### Interfaz EsLiquido
+A continuación se muestran las clases en Java:
+
+## Interfaz EsLiquido
 ```java
 public interface EsLiquido {
     public void setVolumen(double v);
@@ -117,7 +206,7 @@ public interface EsLiquido {
 ```
 
 
-### Interfaz EsAlimento
+## Interfaz EsAlimento
 
 ```java
 public interface EsAlimento {
@@ -127,7 +216,7 @@ public interface EsAlimento {
 }
 ```
 
-### Interfaz ConDescuento
+## Interfaz ConDescuento
 
 ```java
 public interface ConDescuento {
@@ -137,7 +226,7 @@ public interface ConDescuento {
 }
 ```
 
-### Clase Detergente
+## Clase Detergente
 
 ```java
 public class Detergente implements EsLiquido, ConDescuento {
@@ -215,7 +304,7 @@ public class Detergente implements EsLiquido, ConDescuento {
 ```
 
 
-### Clase Cereales
+## Clase Cereales
 ```java
 public class Cereales implements EsAlimento {
 
@@ -287,7 +376,7 @@ public class Cereales implements EsAlimento {
     }
 }
 ```
-### Clase Vino
+## Clase Vino
 ```java
 public class Vino implements EsLiquido, EsAlimento, ConDescuento {
 
