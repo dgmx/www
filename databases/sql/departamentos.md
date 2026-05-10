@@ -1,7 +1,3 @@
----
-title: 07. Gestión de Departamentos
-parent: "SQL"
----
 
 # Ejercicios - Gestión de Departamentos
 
@@ -41,33 +37,39 @@ erDiagram
 ```
 **Tablas**
 ```sql
-CREATE TABLE empleados (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    nombre VARCHAR(100),
-    apellido VARCHAR(100),
-    salario DECIMAL(10,2),
-    departamento_id INT,
-    fecha_contratacion DATE
-);
-
 CREATE TABLE departamentos (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    nombre VARCHAR(100),
-    ubicacion VARCHAR(100)
-);
+    id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(100) NOT NULL,
+    ubicacion VARCHAR(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE empleados (
+    id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(100) NOT NULL,
+    apellido VARCHAR(100) NOT NULL,
+    salario DECIMAL(10,2) NOT NULL,
+    departamento_id INT UNSIGNED NOT NULL,
+    fecha_contratacion DATE NOT NULL,
+    FOREIGN KEY (departamento_id) REFERENCES departamentos(id)
+        ON DELETE RESTRICT ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE proyectos (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    nombre VARCHAR(100),
-    fecha_inicio DATE,
-    fecha_fin DATE
-);
+    id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(100) NOT NULL,
+    fecha_inicio DATE NOT NULL,
+    fecha_fin DATE NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE empleados_proyectos (
-    empleado_id INT,
-    proyecto_id INT,
+    empleado_id INT UNSIGNED NOT NULL,
+    proyecto_id INT UNSIGNED NOT NULL,
     PRIMARY KEY (empleado_id, proyecto_id),
-    FOREIGN KEY (empleado_id) REFERENCES
+    FOREIGN KEY (empleado_id) REFERENCES empleados(id)
+        ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (proyecto_id) REFERENCES proyectos(id)
+        ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 ```
 **Inserts**
 ```sql

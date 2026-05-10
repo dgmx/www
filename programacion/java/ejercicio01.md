@@ -416,11 +416,10 @@ import java.util.ArrayList;
 
 public class Coleccion {
     private String nombreColeccion;
-    private ArrayList<Figura> listaFiguras;
+    private ArrayList<Figura> listaFiguras = new ArrayList<>();
 
     public Coleccion(String nombreColeccion) {
         this.nombreColeccion = nombreColeccion;
-        listaFiguras = new ArrayList<>();
     }
 
     public String getNombreColeccion() {
