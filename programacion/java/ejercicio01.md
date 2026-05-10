@@ -161,9 +161,7 @@ añadirle al resultado el valor 200.
 Compruebe el funcionamiento de todas estas clases a través de un
 programa principal de prueba.
 
-## Solución propuesta
-
-### Diagrama UML de Clases en mermaid:
+## Diagrama UML de Clases en mermaid:
 
 - Figura → Superheroe (composición 1 a 1)
 - Figura → Dimension (composición 1 a 1)
@@ -241,8 +239,11 @@ classDiagram
     Coleccion "1" o--> "*" Figura : agrupa
 ```
 
+## Solución propuesta
 
-### Clase Superhéroe
+A continuiación se muestran las clases en Java:
+
+## Clase Superhéroe en Java
 
 ```java
 public class Superheroe {
@@ -290,7 +291,7 @@ public class Superheroe {
     } 
 }
 ```
-### Clase Dimensión
+## Clase Dimensión en Java
 
 ```java
 public class Dimension {
@@ -349,7 +350,7 @@ public class Dimension {
 ```
 
 
-### Clase Figura
+## Clase Figura en Java
 
 ```java
 public class Figura {
@@ -408,7 +409,7 @@ public class Figura {
 }
 ```
 
-### Clase Colección
+## Clase Colección en Java
 
 ```java
 import java.util.ArrayList;
@@ -497,7 +498,7 @@ public class Coleccion {
 }
 ```
 
-### Clase Principal
+## Clase Principal en Java
 
 ```java
 public class Principal {

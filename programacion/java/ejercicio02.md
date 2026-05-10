@@ -82,7 +82,7 @@ Este método no necesita ser sobreescrito, por lo que debería funcionar correct
 
 **NOTA. Compruebe el funcionamiento de la clase Lavadora en un programa de prueba.**
 
-### Diagrama UML de Clases en mermaid:
+## Diagrama UML de Clases en mermaid:
 
 Las relaciones clave:
 - Electrodomestico → Lavadora (herencia, triángulo abierto)
@@ -127,7 +127,7 @@ classDiagram
 
 ## Solución propuesta
 
-### Clase Electrodomestico
+## Clase Electrodomestico en Java
 
 ```java
 public class Electrodomestico {
@@ -182,7 +182,7 @@ public class Electrodomestico {
 ```
 
 
-### Clase Lavadora
+## Clase Lavadora en Java
 
 ```java
 public class Lavadora extends Electrodomestico {
@@ -236,7 +236,7 @@ public class Lavadora extends Electrodomestico {
 }
 ```
 
-### Clase ProgramaPrueba 
+## ProgramaPrueba en Java
 ```java
 public class ProgramaPrueba {
 
