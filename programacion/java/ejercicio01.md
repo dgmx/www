@@ -163,7 +163,13 @@ programa principal de prueba.
 
 ## Solución propuesta
 
-### Diagrama UML de clases Mermaid:
+### Diagrama UML de Clases en mermaid:
+
+- Figura → Superheroe (composición 1 a 1)
+- Figura → Dimension (composición 1 a 1)
+- Coleccion → Figura (agregación 1 a muchos, listaFiguras).  
+
+
 
 ```mermaid
 classDiagram
