@@ -1,9 +1,6 @@
----
-title: "06. Buenas Prácticas"
-parent: "IPTables"
----
+# Buenas Prácticas de Seguridad Linux
 
-### **1. Configuración del Firewall**
+## 1. Configuración del Firewall
 
 *   **Habilita un firewall**: Usa `ufw` (Uncomplicated Firewall) o `firewalld` para gestionar las reglas de firewall.
     
@@ -32,9 +29,8 @@ parent: "IPTables"
     sudo ufw deny <puerto>
     ```
 
-* * *
 
-### **2. Configuración de SSH**
+## 2. Configuración de SSH
 
 *   **Cambia el puerto predeterminado**: Cambia el puerto SSH (22) a uno no estándar.
     
@@ -78,9 +74,8 @@ parent: "IPTables"
     sudo systemctl start fail2ban
      ```
 
-* * *
 
-### **3. Actualizaciones del sistema**
+## 3. Actualizaciones del sistema
 
 *   **Mantén el sistema actualizado**: Instala actualizaciones de seguridad regularmente.
     
@@ -103,7 +98,7 @@ parent: "IPTables"
 
 * * *
 
-### **4. Configuración de red**
+## 4. Configuración de red
 
 *   **Deshabilita servicios innecesarios**: Detén y deshabilita servicios que no uses.
     
@@ -128,9 +123,7 @@ parent: "IPTables"
 *   **Configura un IDS/IPS**: Usa herramientas como **Snort** o **Suricata** para detectar y prevenir intrusiones.
     
 
-* * *
-
-### **5. Monitoreo de red**
+##  5. Monitoreo de red
 
 *   **Usa herramientas de monitoreo**:
     
@@ -154,9 +147,9 @@ parent: "IPTables"
     sudo cat /var/log/syslog | grep network
     ```
 
-* * *
 
-### **6. Uso de VPN**
+
+## 6. Uso de VPN
 
 *   **Configura una VPN**: Usa OpenVPN o WireGuard para cifrar el tráfico de red.
     
@@ -171,9 +164,8 @@ parent: "IPTables"
         sudo apt install wireguard
         ```
 
-* * *
 
-### **7. Configuración de DNS**
+## 7. Configuración de DNS
 
 *   **Usa DNS seguros**: Configura servidores DNS como Cloudflare (1.1.1.1) o Google DNS (8.8.8.8).
     
@@ -187,9 +179,7 @@ parent: "IPTables"
     nameserver 8.8.8.8
     ```
 
-* * *
-
-### **8. Protección contra ataques DDoS**
+## 8. Protección contra ataques DDoS
 
 *   **Usa herramientas de mitigación**: Configura `fail2ban` o `mod_evasive` (para Apache).
     
@@ -198,10 +188,7 @@ parent: "IPTables"
     ```bash
     sudo iptables -A INPUT -p tcp --dport 80 -m connlimit --connlimit-above 20 -j DROP
     ```
-
-* * *
-
-### **9. Cifrado de datos**
+## 9. Cifrado de datos
 
 *   **Cifra el tráfico de red**: Usa HTTPS, SSH, o VPN para proteger los datos en tránsito.
     
@@ -211,9 +198,7 @@ parent: "IPTables"
     sudo cryptsetup luksFormat /dev/sdX
      ```
 
-* * *
-
-### **10. Auditorías y pruebas de seguridad**
+## 10. Auditorías y pruebas de seguridad
 
 *   **Realiza escaneos de vulnerabilidades**: Usa herramientas como **Nmap**, **OpenVAS**, o **Lynis**.
     
@@ -226,7 +211,7 @@ parent: "IPTables"
 
 * * *
 
-### **11. Políticas de seguridad**
+## 11. Políticas de seguridad 
 
 *   **Implementa políticas de contraseñas fuertes**: Usa `pam_cracklib` o `pam_pwquality`.
     
@@ -244,11 +229,11 @@ parent: "IPTables"
 
 * * *
 
-### **12. Copias de seguridad**
+## 12. Copias de seguridad 
 
 Mantener copias de seguridad regulares es esencial para garantizar la recuperación de datos en caso de fallos, ataques o desastres. Aquí hay algunas recomendaciones y herramientas para implementar copias de seguridad seguras:
 
-#### **Herramientas de copias de seguridad**
+### Herramientas de copias de seguridad
 
 *   **`rsync`**: Sincroniza archivos y directorios de manera eficiente.
     
@@ -269,7 +254,7 @@ Mantener copias de seguridad regulares es esencial para garantizar la recuperaci
     restic -r /ruta/backup backup /ruta/origen
     ```
 
-#### **Cifrado de copias de seguridad**
+### Cifrado de copias de seguridad
 
 *   **Cifra tus copias de seguridad**: Asegúrate de que los datos estén protegidos.
     
@@ -284,7 +269,7 @@ Mantener copias de seguridad regulares es esencial para garantizar la recuperaci
         sudo cryptsetup luksFormat /dev/sdX
         ```
 
-#### **Automatización de copias de seguridad**
+### Automatización de copias de seguridad 
 
 *   Usa `cron` para programar copias de seguridad automáticas:
     
@@ -297,7 +282,7 @@ Mantener copias de seguridad regulares es esencial para garantizar la recuperaci
     0 2 * * * /ruta/al/script/de/backup.sh
     ```
 
-#### **Verificación de copias de seguridad**
+### Verificación de copias de seguridad 
 
 *   **Verifica la integridad de las copias**: Asegúrate de que los datos se puedan restaurar.
     
@@ -312,7 +297,7 @@ Mantener copias de seguridad regulares es esencial para garantizar la recuperaci
         restic -r /ruta/backup check
         ```
 
-#### **Almacenamiento externo**
+### Almacenamiento externo 
 
 *   **Guarda copias en ubicaciones externas**: Usa discos duros externos, servicios en la nube (como AWS S3, Google Cloud Storage) o servidores remotos.
     
