@@ -7,7 +7,7 @@ En sistemas Linux y Unix, cada archivo y directorio tiene permisos que determina
 
 ![Permisos](permisos.png)
 
-## Conceptos Básicos
+## 1. Conceptos Básicos
 
 ### Tipos de Usuarios
 
@@ -22,9 +22,7 @@ En sistemas Linux y Unix, cada archivo y directorio tiene permisos que determina
 - **w** (write): Permiso de escritura - permite modificar el archivo
 - **x** (execute): Permiso de ejecución - permite ejecutar el archivo como programa
 
----
-
-## Modo Simbólico
+## 2. Modo Simbólico
 
 El modo simbólico utiliza letras y símbolos para modificar permisos de forma intuitiva.
 
@@ -71,9 +69,7 @@ chmod u=rwx,g=rx,o=r archivo.txt
 ```
 El propietario tiene todos los permisos, el grupo puede leer y ejecutar, otros solo pueden leer.
 
----
-
-## Modo Numérico
+## 3 .Modo Numérico
 
 El modo numérico representa los permisos mediante números octales (0-7). Cada permiso tiene un valor:
 
@@ -149,9 +145,7 @@ chmod 600 privado.txt
 - Grupo: --- (0 = sin permisos)
 - Otros: --- (0 = sin permisos)
 
----
-
-## Comandos Relacionados
+## 4. Comandos Relacionados
 
 ### Cambiar Propietario y Grupo
 
@@ -189,9 +183,7 @@ Muestra información detallada de los cambios:
 chmod -v 644 archivo.txt
 ```
 
----
-
-## Ver Permisos Actuales
+## 5. Ver Permisos Actuales
 
 ### Comando ls -l
 ```bash
@@ -211,9 +203,7 @@ Desglose:
 - `usuario` : propietario del archivo
 - `grupo` : grupo del archivo
 
----
-
-## Permisos Comunes y Sus Usos
+## 6. Permisos Comunes y Sus Usos
 
 | Permiso | Numérico | Uso típico |
 |---------|----------|------------|
@@ -224,9 +214,8 @@ Desglose:
 | rw-r--r-- | 644 | Archivos de lectura pública |
 | rwxrwxrwx | 777 | Acceso total (⚠️ inseguro) |
 
----
 
-## Consejos de Seguridad
+## 7. Consejos de Seguridad
 
 1. **Nunca uses 777** a menos que sea absolutamente necesario y temporal
 2. **Protege archivos sensibles** con permisos 600 o 400
@@ -234,9 +223,7 @@ Desglose:
 4. **Archivos de configuración** típicamente usan 644
 5. **Scripts ejecutables** generalmente necesitan 755 o 700
 
----
-
-## Ejemplos Prácticos Completos
+## 8. Ejemplos Prácticos Completos
 
 ### Crear un script ejecutable
 ```bash
@@ -268,9 +255,7 @@ chmod 600 secreto.txt
 ls -l secreto.txt
 ```
 
----
-
-## Resumen Rápido
+## 9. Resumen Rápido
 
 **Modo Simbólico:**
 - Intuitivo y fácil de leer
@@ -283,7 +268,3 @@ ls -l secreto.txt
 - Ejemplo: `chmod 644 archivo.txt`
 
 **Elige el método que te resulte más cómodo según la situación. Ambos son igualmente válidos y poderosos.**
-
----
-
-*Última actualización: Enero 2026*
