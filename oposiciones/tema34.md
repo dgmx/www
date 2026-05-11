@@ -27,11 +27,13 @@ nav_exclude: true
 
 ## 3. Funciones
 
-  -  A) **Definicion**: Permite definir y describir los esquemoas de la Base de Datos. Lenguaje DDL
-  -  B) **Manipulación**: Operaciones de gestion mediante Lenguaje DML: Consulta o actualizar los datos. 
+a) **Definicion**: Permite definir y describir los esquemas de la Base de Datos. Lenguaje DDL
+
+b) **Manipulación**: Operaciones de gestion mediante Lenguaje DML: Consulta o actualizar los datos. 
      - Recuperar información: Consultas a la totalidad o selectivas
      - Actualizar: Inserción, modificación o borrado.
-  -  C) **Control**: Lenguaje DCL, permisos de usuario, ademas de copia de seguridad, carga de ficheros, auditoria, configuracion...
+
+c) **Control**: Lenguaje DCL, permisos de usuario, ademas de copia de seguridad, carga de ficheros, auditoria, configuracion...
 
 ## 4. Componentes
  Son los lenguajes de la BD, el diccionario de datos, el gestor de la BD, los usuarios y las herramientas de la BD.
@@ -106,11 +108,15 @@ flowchart TD
 
 ### 5.2. Arquitectura operacional.
 
-Varian en relacion al SGBD.
-- **Centralizada**: Sistema computacional único, sin interacción. Sistemas monousuario o BD en sistemas de alto rendimiento. Sin concurrencia ni sistemas de recuperación.
-- **Cliente-servidor**: Cliente parte visible (formularios, informes, etc) y servidor donde se encuentran las estructuras de datos, consultas, control de concurrecia y recuperacion.
-- **Paralela**: Sistemas multiprocesador y discos a traves de un red de alta velocidad
-- **Distribuida**: Multiples computadores llamados nodos en diferentes lugares geográficos. Evitan cuellos de botella
+Arquitectura operacional (también llamada a veces arquitectura de implementación) se refiere a cómo funciona el sistema realmente en la práctica, es decir, la implementación concreta del SGBD, incluyendo hardware, software, procesos y flujos de datos.
+- **1 Nivel o Centralizada**: Sistema computacional único, sin interacción. Sistemas monousuario o BD en sistemas de alto rendimiento. Sin concurrencia ni sistemas de recuperación.   
+Ejemplo: Aplicación de escritorio que usa base de datos Access o SQLite
+- **2 Niveles o Cliente-servidor**: Cliente parte visible (formularios, informes, etc) y servidor donde se encuentran las estructuras de datos, consultas, control de concurrecia y recuperacion.   
+Ejemplo: Aplicación Java con PostgreSQL o MySQL remoto.
+- **3 Niveles**: Añade servidor de aplicaciones entre el cliente y la base de datos. Más segura y facil de mantener y escalar.  
+Ejemplo: Aplicaciones web con frontend, backend y base de datos.
+- **4 niveles o Distribuida**: Extiende el modelo de tres niveles agregando capas adicionales como balanceo, caché, autenticación, auditoria...   
+Ejemplo: Aplicaciones web modernas con microservicios y bases de datos distribuidas.
 
 
 ## 6. Tipos de Sistemas
@@ -121,13 +127,15 @@ a) Según el modelo lógico
 - **Relacional**. Tablas bidimensionales (relaciones) Fila: Registro o tupla, Columna: Atributo.
 - **Orientado a objetos**: relaciones entre objetos y atributos. Incluye herencia y tipos definidos. En auge.
 - **Objeto-relacional**. Evolución del modelo relacional, incorporando conceptos orientados a objetos. Oracle, SQL Server
+- **Orientado a documentos**
+- **Clave-Valor**
 
 b) Según el número de usuarios
 - **Monousuario**: Un usuario simultaneamente
 - **Multiusuario**: Varios usuarios al mismo tiempo. La mayor parte de los SGDBD son de este tipo
 
 c) Según su ubicación
-- **Centralizadosv: BD y SGBD en el mismo equipo
+- **Centralizado**: BD y SGBD en el mismo equipo
 - **Distribuidos**: BD y SGBD distribuidos en varios equipos conectados por red
 
 d) Según licencia:
