@@ -6,41 +6,46 @@
 - Tema incluido en el temario oficial de acceso a la especialidad de Informática.  
 - Forma parte del bloque temático "Bases de Datos".  
 - Importancia de las bases de datos y los SGBD en la gestión de información. 
-- Mayor activo de las organizaciones son los datos y su gestion eficaz y segura
-- Curriculo Familia Profesional. DAM, DAW, ASIR (Modulo Bases de Datos)
+- Mayor activo de las organizaciones son los datos y su gestión eficaz y segura
+- Currículo Familia Profesional. DAM, DAW, ASIR (Modulo Bases de Datos)
 
 ## 2. La Definición de Datos
-- **Base de datos**: Conjunto de datos almacenados en soporte informatico. Datos relacionados y estructurados. Persistentes. Usados por las empresas.
-- **SGDBD**: Colección de programas para crear y mantener un base de datos. Facilita la definicion, construcción y manipulación.
-  - Funciones de definicion, manipulación y control.
+- **Base de datos**: Conjunto de datos almacenados en soporte informático. Datos relacionados y estructurados. Persistentes. Usados por las empresas.
+- **SGDBD**: Colección de programas para crear y mantener un base de datos. Facilita la definición, construcción y manipulación.
+  - Funciones de definición, manipulación y control.
 - Función de definición de datos permite especificar estructuras, relaciones y restricciones.  Se realiza mediante el DDL.
 
 ## 3. Niveles de Descripción
-Ansi propone arquitectura de 3 niveles de abstracción. Fisica, logica y externa. El SGBD se encarga de las correspondencias entre los 3 niveles:
+ANSI propone arquitectura de 3 niveles de abstracción. Física, lógica y externa. El SGBD se encarga de las correspondencias entre los 3 niveles:
 
-### 3.1. **Nivel Interno o Físico:**  
+### 3.1. Nivel Interno o Físico:
 - Define la estructura de almacenamiento físico (dispositivos, índices, estrategias de acceso).  Administradores
 
-### 3.2. **Nivel Lógico o Conceptual:**  
+### 3.2. Nivel Lógico o Conceptual:
 - Representa la estructura global de la BD, incluyendo entidades, atributos y relaciones. Programadores
 
-### 3.3. **Nivel Externo o de Visión del Usuario:**  
+### 3.3. Nivel Externo o de Visión del Usuario:
 - Define diferentes vistas según el usuario o aplicación.  
 
-### 3.4. **Correspondencias:**  
-   - Conceptual - Interna: Relaciona el esquema conceptual con el almacenamiento físico.  
-   - Externa - Conceptual: Relaciona las vistas de usuario con el esquema conceptual.  
+### 3.4. Correspondencias:
+- **Conceptual - Interna**: Relaciona el esquema conceptual con el almacenamiento físico.  
+- **Externa - Conceptual:** Relaciona las vistas de usuario con el esquema conceptual.  
+  
+#### Analogía
+**Nivel Externo**: Lo que tú ves cuando abres una aplicación (vistas).   
+**Nivel Conceptual**: El plano arquitectónico de toda la base de datos.   
+**Nivel Interno**: Cómo está construida físicamente la base de datos en el servidor.   
 
 ## 4. Lenguajes de Definición de Datos (DDL)
-Los lenguajes de lSGBD son el DDL, DCL y DML.
+Los lenguajes de los SGBD son el DDL, DCL y DML.
 
 ### 4.1.Definición:
-- Lenguaje del SGBD para definir estructuras de datos y procedimientos de consulta.  
+- Lenguaje del SGBD para definir estructuras de datos y procedimientos de consulta.  Incluye creación inicial y el mantenimiento de la estructura. Las tablas generadas se almacenarán en el diccionario de datos.
 
 ### 4.2.Tipos:
 - Interactivo: Mediante consola.  
 - Embebido: Integrado en un lenguaje anfitrión. 
-- 
+
 ### 4.3.Características:
 - Dependiente del SGBD.  
 - Lenguaje simple. Mismos verbos para objetos diferentes: Create, Drop, Alter
@@ -58,7 +63,7 @@ Sentencias básicas:
 [SQL como DDL](sql_ddl_sentencias.md)  
 
 ## 5. Diccionario de Datos
-Catalogo del sistema. Metabase de datos, información sobre otras bases de datos. Contiene las caracteristicas logicas de las estructuras que almacenand datos: nombre, descripcion, contenido y organizacion.
+Catalogo del sistema. Metabase de datos, información sobre otras bases de datos. Contiene las características lógicas de las estructuras que almacenan datos: nombre, descripción, contenido y organización.
 
 - Definición:
 Base de datos que almacena información sobre la estructura de otra BD (metadatos).  
