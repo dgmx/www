@@ -1,22 +1,10 @@
----
-title: 09. Networking Linux
-parent: "Linux"
----
+
 
 # Configuración de red en Linux
 
-**Tabla de contenidos**
-
-1. Networkd y Network Manager
-2. Configuración de la interfaz
-   1. Neplan
-   2. Interfaces (ifupdown)
-   3. Network directo
-3. Diferencias entre sistemas Debian, ubuntu y Enterprise
-
 ## 1. Networkd y Network Manager
 
-### Networkd
+## Networkd
 
 En Linux, **networkd** normalmente se refiere a `systemd-networkd`, un servicio de systemd encargado de la configuración de red de bajo nivel (interfaces, direcciones IP, rutas, VLANs, bridges, bonding, etc.). Es común en servidores y sistemas minimalistas donde no se usa _NetworkManager_.
 
@@ -127,7 +115,7 @@ NetworkManager soporta:
 
 ## 2. Configuración de la Interfaz
 
-### 2.1 Netplan
+## 2.1 Netplan
 
 **Netplan** es la nueva capa de configuración para `systemd-networkd` desarrollada por Ubuntu, funciona como una relación de frontend → backend.
 
@@ -229,7 +217,7 @@ Escenarios típicos:
   - túneles
 - Sistemas donde Netplan no existe o no se desea
 
-### Conclusión:
+### Resumen:
 
 - **Ubuntu Server estándar** → usar Netplan (renderer: networkd)
 - **Distribuciones minimalistas o setups muy técnicos** → usar directamente networkd
@@ -478,9 +466,9 @@ La metodología es la siguiente:
 - Crear un archivo nuevo con mayor prioridad
 - Usar `netplan try`, que revierte automáticamente si pierdes conexión
 
-## Procedimiento
+### Procedimientos
 
-### 1. Ver la configuración actual
+#### 1. Ver la configuración actual
 
 ```bash
 ip a
@@ -492,9 +480,9 @@ Supongamos que existe:
 
 ```bash
 50-cloud-init.yaml
-````
+```
 
-### 2. Crear un archivo override
+#### 2. Crear un archivo override
 
 Ejemplo:
 
@@ -521,7 +509,7 @@ network:
 
 El prefijo `99-` asegura que esta configuración prevalezca.
 
-### 3. Probar de forma segura
+#### 3. Probar de forma segura
 
 Muy importante:
 
@@ -542,7 +530,7 @@ Press ENTER before timeout to accept the new configuration
 ```
 
 
-### 4. Aplicar definitivamente
+#### 4. Aplicar definitivamente
 
 ```bash
 sudo netplan apply
@@ -555,7 +543,7 @@ sudo netplan apply
 - Mantener una segunda sesión SSH abierta mientras se cambia la red.
 - Usar archivos `99-*` para overrides locales en lugar de modificar los generados por cloud-init.
 
-### Patrón profesional muy usado
+#### Patrón profesional muy usado
 
 Configuración típica en servidores cloud:
 

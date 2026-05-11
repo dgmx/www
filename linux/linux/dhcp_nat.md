@@ -19,7 +19,7 @@
 
 Los nombres de interfaces pueden ser distintos en tu sistema (`ip a` para verificarlos).
 
-## ✅ Paso 1 – Identificar interfaces
+##  1 – Identificar interfaces
 
 En el servidor:
 
@@ -37,7 +37,7 @@ En el resto del ejemplo se usará:
   
 Adapta los nombres si es necesario.
 
-## ✅ Paso 2 – Asignar IP estática a la interfaz privada
+##  2 – Asignar IP estática a la interfaz privada
 
 Edita netplan:
 
@@ -72,7 +72,7 @@ ip a
 ```
 Debes ver `192.168.50.1` en la interfaz privada.
 
-### ✅ Paso 3 – Instalar y configurar DHCP Server
+## 3 – Instalar y configurar DHCP Server
 Instala:
 
 ```bash
@@ -122,7 +122,7 @@ sudo systemctl status isc-dhcp-server
 ```
 Debe estar **active (running)**.
 
-### ✅ Paso 4 – Habilitar forwarding de IP (enrutamiento)
+## 4 – Habilitar forwarding de IP (enrutamiento)
 
 Temporal (para probar):
 
@@ -145,7 +145,7 @@ Aplicamos con:
 sudo sysctl -p
 ```
 
-## ✅ Paso 5 – Configurar NAT con iptables
+## 5 – Configurar NAT con iptables
 Esto permitirá que los clientes salgan a Internet usando la IP pública del server.
 
 Ejecuta:
@@ -169,7 +169,7 @@ sudo apt install iptables-persistent
 sudo netfilter-persistent save
 ```
 
-## ✅ Paso 6 – Configurar los clientes
+## 6 – Configurar los clientes
 En los Ubuntu Desktop:
 
 - Configura la red como DHCP automático.
