@@ -41,7 +41,7 @@ ALTER TABLE empleados MODIFY columna_salario DECIMAL(12,2) NOT NULL;
 ## 🔄 5. Cambiar el nombre de una columna
 
 ```sql
-ALTER TABLE empleados CHANGE columna_salario salario DECIMAL(12,2);
+ALTER TABLE empleados RENAME COLUMN columna_salario TO salario;
 ```
 
 
