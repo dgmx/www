@@ -77,6 +77,13 @@ fi
 tar -czf Copia.tar.gz "$@"
 ```
 
+El comando crea un archivo comprimido llamado Copia.tar.gz que contiene todos los ficheros pasados como parámetros:
+
+- `-c` — crea un nuevo archivo tar
+- `-z` — comprime con gzip
+- `-f Copia.tar.gz` — nombre del fichero de salida
+- `"$@"` — todos los parámetros recibidos por el script
+
 ## Ejercicio 4
 ```bash
 #!/bin/bash
