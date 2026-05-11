@@ -144,23 +144,21 @@ d) Según licencia:
    - MariaDB
 
 
-## 5. Conclusión
+## 7. Conclusión
 - Importancia de las bases de datos en la actualidad
 - Evolución hacia bases de datos NoSQL y Big Data
 - Factores clave en la elección de un SGBD
 
-## 6. Bibliografía
+## 8. Bibliografía
 - Date C.J (2000). *Introducción a los sistemas de bases de datos*. Editorial Addison-Wesley.
 - Korth H. y Silberschatz (2002). *Fundamentos de bases de datos*. Editorial McGraw-Hill.
 - De Miguel A, y Piattini M (1999). *Fundamentos y modelos de BBDD*. Editorial Ra-Ma.
 - Núñez, R (2023). *Gestión de bases de datos*. Editorial Ra-Ma.
 - Hueso L (2016). *Administración de sistemas gestores de bases de datos*. Editorial Ra-Ma.
-- [Oracle](https://www.oracle.com/)
-- [MySQL](https://www.mysql.com/)
-- [MongoDB](https://www.mongodb.com/)
-- [MariaDB](https://mariadb.org/)
 
+- Sitios web oficiales de los distintos SGBD:
+  - [Oracle](https://www.oracle.com/)
+  - [MySQL](https://www.mysql.com/)
+  - [MongoDB](https://www.mongodb.com/)
+  - [MariaDB](https://mariadb.org/)
 
-[Mapa Visual](/oposdocs/mapasweb/tema34map.html)
-
-[Generar PDF](/oposdocs/pdf/tema34.pdf)
