@@ -67,6 +67,10 @@ export default defineConfig({
             items: [
               { text: "Manual Java UML", link: "/programacion/java/Manual_Java_UML" },
               { text: "Ejercicios Clases", link: "/programacion/java/ejercicios_clases" },
+              { text: "Ejercicio 1: Figuras", link: "/programacion/java/ejercicio01" },
+              { text: "Ejercicio 2: Electrodomésticos", link: "/programacion/java/ejercicio02" },
+              { text: "Ejercicio 3: Supermercado", link: "/programacion/java/ejercicio03" },
+              { text: "Ejercicio 4: Servicios", link: "/programacion/java/ejercicio04" },
               { text: "Ejercicios UML", link: "/programacion/java/uml" },
             ],
           },
@@ -104,6 +108,8 @@ export default defineConfig({
               { text: "Manual de Shell Script", link: "/programacion/shell/manual_shell_script" },
               { text: "Ejercicios Shell Scripting", link: "/programacion/shell/ejercicios_shell_scripting" },
               { text: "Ejercicios Shell Scripting 2", link: "/programacion/shell/ejercicios_shell_scripting-2" },
+              { text: "ExamBash", link: "/programacion/shell/ejercicios_exam" },
+              { text: "Ejercicios ASIR", link: "/programacion/shell/examen_shell" },
             ],
           },
         ]
