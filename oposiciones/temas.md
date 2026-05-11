@@ -43,7 +43,8 @@
 -  33 Programación en lenguaje ensamblador. Instrucciones básicas. Formatos. Direccionamientos.
 
 ## BLOQUE 06 – BASES DE DATOS
--  35 La definición de datos. Niveles de descripción. Lenguajes. Diccionario de datos.
+-  [34 Sistemas gestores de bases de datos. Funciones. Componentes](tema34.md)
+-  [35 La definición de datos. Niveles de descripción. Lenguajes. Diccionario de datos.](tema35.md)
 -  36 La manipulación de datos. Operaciones. Lenguajes. Optimización de consultas.
 -  37 Modelo de datos jerárquico y en red. Estructuras. Operaciones.
 -  [38 Modelo de datos relacional. Estructuras. Operaciones. Álgebra relacional.](tema38.md)
