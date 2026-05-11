@@ -1,12 +1,5 @@
 # Programación en Shell Script para Linux
 
-> **Asignatura:** Administración de Sistemas Operativos  
-> **Ciclo:** Grado Superior — Administración de Sistemas Informáticos en Red (ASIR)  
-> **Nivel:** Formación Profesional  
-> **Autor:** Departamento de Informática  
-
-
-
 ## 1. Introducción al Shell de Linux
 
 ### ¿Qué es el Shell?
