@@ -43,8 +43,10 @@ Los lenguajes de lSGBD son el DDL, DCL y DML.
 - 
 ### 4.3.Características:
 - Dependiente del SGBD.  
-- Lenguaje simple y de alto nivel.  
+- Lenguaje simple. Mismos verbos para objetos diferentes: Create, Drop, Alter
+- Alto nivel.  Paradigma declarativo. 4ª generación
 - Permite definir datos a nivel externo, lógico e interno.  
+
 
 ### 4.4.SQL como DDL
 Sentencias básicas:  
