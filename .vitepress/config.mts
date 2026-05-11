@@ -143,6 +143,7 @@ export default defineConfig({
             items: [
               { text: "Inicio", link: "/databases/mariadb/" },
               { text: "Manual DDL", link: "/databases/mariadb/manual_ddl" },
+              { text: "Manual DML", link: "/databases/mariadb/manual_dml" },
               { text: "Alter Table", link: "/databases/mariadb/alter_table_mariadb" },
               { text: "Cifrado", link: "/databases/mariadb/cifrado_mariadb" },
               { text: "Seguridad", link: "/databases/mariadb/seguridad_mariadb" },
