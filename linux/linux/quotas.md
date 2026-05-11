@@ -1,10 +1,6 @@
----
-title: 11. Cuotas
-parent: "Linux"
-nav_exclude: true
----
+# Cuotas de Disco en Samba / Linux
 
-## ✅ Cuotas en SAMBA
+## 1. Cuotas en SAMBA
 👉 Crear un filesystem independiente para /srv/samba/usuarios
 
 1️⃣ Crear imagen o volumen
@@ -62,8 +58,8 @@ Este comando inicia el archivo de configuración de cuotas:
 Disk quotas for user usuario01 (uid 1002):
   Filesystem                   blocks       soft       hard     inodes     soft     hard
   /dev/loop0                       12          0          0          3        0        0
-````
 
+```
 | Campo             | Significado                                           |
 |------------------|-------------------------------------------------------|
 | blocks           | Espacio usado actualmente                             |
@@ -73,9 +69,8 @@ Disk quotas for user usuario01 (uid 1002):
 | soft/hard inodes | Límite de cantidad de archivos                       |
 
 
----
 
-# 📌 Importante
+### Importante
 
 Los valores están en **bloques de 1 KB**, no en MB o GB.
 
@@ -86,7 +81,7 @@ Ejemplo:
 
 ---
 
-# 🎯 Ejemplo práctico: limitar a 1GB
+## 2. Ejemplo práctico: limitar a 1GB
 
 Edita el archivo así:
 
@@ -103,7 +98,7 @@ Guarda y cierra Nano.
 
 ---
 
-# 🔎 Qué ocurre después
+## 3. Resultados
 
 - El usuario podrá superar 900MB temporalmente  
 - No podrá superar 1GB bajo ninguna circunstancia  
@@ -115,7 +110,7 @@ Puedes ver el periodo con:
 quota -u usuario01
 ```
 
-### Configurar periodo de gracia (opcional)
+## 4. Configurar periodo de gracia (opcional)
 
 ```bash
 edquota -t
@@ -130,7 +125,7 @@ Time units may be: days, hours, minutes, or seconds
   /dev/loop0                     7days                 7days
 ```
 
-### Verificar que funciona
+## 5. Verificar funcionamiento
 
 Desde el servidor:
 

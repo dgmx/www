@@ -1,8 +1,4 @@
----
-title: 10. Puertos
-parent: "Linux"
-nav_exclude: true
----
+# Puertos de red en Linux
 
 ## 1. Introducción. Puertos de red
 
