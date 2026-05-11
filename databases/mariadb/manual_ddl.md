@@ -91,7 +91,7 @@ COMMENT='Descripción de la tabla'
 ```sql
 ALTER TABLE empleados ADD COLUMN telefono VARCHAR(20);
 ALTER TABLE empleados ADD COLUMN telefono VARCHAR(20) AFTER nombre;
-ALTER TABLE empleados ADD COLUMENTO telefono VARCHAR(20) FIRST;
+ALTER TABLE empleados ADD COLUMN telefono VARCHAR(20) FIRST;
 ```
 
 ### 5.2 Eliminar columna
