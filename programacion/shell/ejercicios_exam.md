@@ -8,26 +8,13 @@
 
 4. Realizar un script que muestre el nombre de cada uno de los ficheros pasados por parámetro y el tipo de fichero que es. 
 
+5. Contar líneas de un archivo pasado como parámetro, solo uno
 
+6. Buscar palabra en archivos de un directorio
+   
+7. Suma de números pasados como argumentos
+8. Copia de seguridad incremental por fecha de carpeta pasada por parámetro
 
-
-## Descripción de Scripts
-
-| Script | Función |
-|--------|---------|
-| `copiarFicheros.sh` | Copia ficheros a `misDatos` (lo crea si no existe) |
-| `mostrarContenido.sh` | Muestra nombre y contenido de cada fichero |
-| `comprimirFicheros.sh` | Crea `Copia.tar.gz` con los ficheros |
-| `tipoFichero.sh` | Muestra nombre y tipo de cada fichero |
-
-## Uso
-
-```bash
-./copiarFicheros.sh param1 param2 ...
-./mostrarContenido.sh param1 param2 ...
-./comprimirFicheros.sh param1 param2 ...
-./tipoFichero.sh param1 param2 ...
-```
 
 
 ## Ejercicio 1
@@ -37,11 +24,11 @@
 
 directorio="misDatos"
 
-if [ ! -d "$directorio" ]; then
+if [ ! -d "$directorio" ]; then.  # ! -d comprueba si el directorio no existe, si es true lo crea
     mkdir "$directorio"
 fi
 
-for fichero in "$@"; do
+for fichero in "$@"; do.  # Recorre cada fichero en el array de ficheros $@ pasados como parámetros y los copia en directorio
     if [ -e "$fichero" ]; then
         cp "$fichero" "$directorio/"
     fi
@@ -53,12 +40,12 @@ done
 ```bash
 #!/bin/bash
 
-if [ $# -eq 0 ]; then
+if [ $# -eq 0 ]; then.  # Comprueba si se han pasado parámetros
     echo "Error: No se han pasado ficheros por parámetro."
     exit 1
 fi
 
-for fichero in "$@"; do
+for fichero in "$@"; do. # Recorre todos los ficheros pasados por parámetro y los muestra con cat
     if [ -e "$fichero" ]; then
         echo "=== Fichero: $fichero ==="
         cat "$fichero"
@@ -88,6 +75,10 @@ El comando crea un archivo comprimido llamado Copia.tar.gz que contiene todos lo
 ```bash
 #!/bin/bash
 
+if [ $# -eq 0 ]; then
+    echo "Error: No se han pasado ficheros por parámetro."
+    exit 1
+fi
 for fichero in "$@"; do
     if [ -e "$fichero" ]; then
         tipo=$(file -b "$fichero")
@@ -95,4 +86,50 @@ for fichero in "$@"; do
     fi
 done
 ```
+El comando file -b muestra el tipo de fichero en modo reducido (brief)
 
+
+## Ejercicio 5
+```bash
+if [ $# -ne 1 ]; then
+    echo "Uso: $0 <archivo>"
+    exit 1
+fi
+wc -l < "$1"
+```
+
+
+## Ejercicio 6
+
+```bash
+if [ $# -ne 2 ]; then
+    echo "Uso: $0 <directorio> <palabra>"
+    exit 1
+fi
+grep -rl "$2" "$1"
+```
+
+- `-r`: búsqueda recursiva en directorios
+- `-l`: solo muestra nombres de archivo que contienen la coincidencia (no el contenido)
+
+
+## Ejercicio 7
+
+```bash
+sum=0
+for n in "$@"; do
+    ((sum += n))
+done
+echo $sum
+```
+
+
+## Ejercicio 8
+
+```bash
+if [ $# -ne 1 ]; then
+    echo "Uso: $0 <directorio>"
+    exit 1
+fi
+tar -czf "backup_$(date +%Y%m%d).tar.gz" "$1"
+```

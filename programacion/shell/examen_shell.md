@@ -56,20 +56,20 @@ echo "Uptime: $(uptime)"
 ## Nivel Intermedio
 
 ### Ejercicio 4: Backup de Directorio
-Crea un script que haga backup de un directorio comprimiéndolo con tar.
+Crea un script que haga backup de un directorio comprimiendo con tar.
 
 ```bash
 #!/bin/bash
 
-DIRECTORIO=$1
+DIRECTORIO=$1. # El argumento 1 se asocia a la variable Directorio
 FECHA=$(date +%Y%m%d_%H%M%S)
 
-if [ -z "$DIRECTORIO" ]; then
+if [ -z "$DIRECTORIO" ]; then.  # -z comprueba que la cadena $directorio no está vacía, es decir, se usó un argumento con el script
     echo "Uso: $0 <directorio>"
     exit 1
 fi
 
-if [ ! -d "$DIRECTORIO" ]; then
+if [ ! -d "$DIRECTORIO" ]; then. # -d comprueba que existe el directorio, la ! 
     echo "Error: El directorio no existe"
     exit 1
 fi
@@ -78,7 +78,7 @@ NOMBRE_BACKUP="backup_$(basename $DIRECTORIO)_$FECHA.tar.gz"
 
 tar -czf "$NOMBRE_BACKUP" "$DIRECTORIO"
 
-if [ $? -eq 0 ]; then
+if [ $? -eq 0 ]; then # $? es el código de error del comando, si devuelve 0 es que no hay error
     echo "Backup creado: $NOMBRE_BACKUP"
 else
     echo "Error al crear el backup"
