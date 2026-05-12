@@ -108,7 +108,7 @@ export default defineConfig({
               { text: "Manual de Shell Script", link: "/programacion/shell/manual_shell_script" },
               { text: "Ejercicios Shell Scripting", link: "/programacion/shell/ejercicios_shell_scripting" },
               { text: "Ejercicios Shell Scripting 2", link: "/programacion/shell/ejercicios_shell_scripting-2" },
-              { text: "ExamBash", link: "/programacion/shell/ejercicios_exam" },
+              { text: "Examen Bash", link: "/programacion/shell/ejercicios_exam" },
               { text: "Ejercicios ASIR", link: "/programacion/shell/examen_shell" },
             ],
           },

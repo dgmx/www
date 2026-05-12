@@ -1,4 +1,4 @@
-# Scripts Bash - ExamBash
+# Scripts en Bash - Examen
 
 1. Realizar un script que copie todos los ficheros que se le pasen por parámetro, al directorio misDatos. Si el directorio misDatos no existe, se deberá crear.
 
@@ -131,5 +131,8 @@ if [ $# -ne 1 ]; then
     echo "Uso: $0 <directorio>"
     exit 1
 fi
-tar -czf "backup_$(date +%Y%m%d).tar.gz" "$1"
+fecha=$(date +%Y%m%d)
+tar -czf "backup_${fecha}.tar.gz" "$1"
+
+# tar -czf "backup_$(date +%Y%m%d).tar.gz" "$1" Todo en la misma linea
 ```
