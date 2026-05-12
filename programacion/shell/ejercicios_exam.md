@@ -24,11 +24,12 @@
 
 directorio="misDatos"
 
-if [ ! -d "$directorio" ]; then.  # ! -d comprueba si el directorio no existe, si es true lo crea
+# ! -d comprueba si el directorio no existe, si es true lo crea
+if [ ! -d "$directorio" ]; then  
     mkdir "$directorio"
 fi
-
-for fichero in "$@"; do.  # Recorre cada fichero en el array de ficheros $@ pasados como parámetros y los copia en directorio
+# Recorre cada fichero en el array de ficheros $@ pasados como parámetros y los copia en directorio
+for fichero in "$@"; do  
     if [ -e "$fichero" ]; then
         cp "$fichero" "$directorio/"
     fi
@@ -39,13 +40,13 @@ done
 
 ```bash
 #!/bin/bash
-
-if [ $# -eq 0 ]; then.  # Comprueba si se han pasado parámetros
+# Comprueba si se han pasado parámetros
+if [ $# -eq 0 ]; then  
     echo "Error: No se han pasado ficheros por parámetro."
     exit 1
 fi
-
-for fichero in "$@"; do. # Recorre todos los ficheros pasados por parámetro y los muestra con cat
+# Recorre todos los ficheros pasados por parámetro y los muestra con cat
+for fichero in "$@"; do  
     if [ -e "$fichero" ]; then
         echo "=== Fichero: $fichero ==="
         cat "$fichero"
@@ -91,6 +92,8 @@ El comando file -b muestra el tipo de fichero en modo reducido (brief)
 
 ## Ejercicio 5
 ```bash
+
+# Comprueba que se pasa un único parámetro
 if [ $# -ne 1 ]; then
     echo "Uso: $0 <archivo>"
     exit 1
@@ -102,6 +105,8 @@ wc -l < "$1"
 ## Ejercicio 6
 
 ```bash
+
+# Comprueba que se pasan 2 parámetros
 if [ $# -ne 2 ]; then
     echo "Uso: $0 <directorio> <palabra>"
     exit 1
@@ -117,6 +122,7 @@ grep -rl "$2" "$1"
 
 ```bash
 sum=0
+# Recorre el array que forman todos los parámetros
 for n in "$@"; do
     ((sum += n))
 done
