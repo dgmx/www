@@ -100,9 +100,9 @@ Debe aparecer una línea por cada libro que cumpla dicho requisito, sin repetici
 ```sql
 SELECT l.Titulo, l.Autor, COUNT(*) AS Total_Lecturas
 FROM LEIDO ld
-JOIN LIBRO l ON ld.id_Libro = l.id_Libro
-JOIN GENERO g ON l.id_Genero = g.id_Genero
-JOIN LECTOR le ON ld.id_Lector = le.id_Lector
+INNER JOIN LIBRO l ON ld.id_Libro = l.id_Libro
+INNER JOIN GENERO g ON l.id_Genero = g.id_Genero
+INNER JOIN LECTOR le ON ld.id_Lector = le.id_Lector
 WHERE g.Nombre = 'Terror'
   AND ld.Fecha_Comienzo BETWEEN '2024-01-01' AND '2024-12-31'
   AND le.Nacionalidad = 'Italia'
