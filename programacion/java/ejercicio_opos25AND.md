@@ -321,3 +321,13 @@ public class Main {
     }
 }
 ```
+
+Comprobamos que compila correctamente:
+```bash
+
+ ~/java/opos2025/ java Main
+Alejandro Fernández Nota Media = 7,5, promociona: Si
+Daniel Travieso Nota Media = 6,0, promociona: No
+
+```
+Perfecto...
