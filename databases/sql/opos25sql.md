@@ -39,16 +39,23 @@ erDiagram
 
 
 Tenga en cuenta las siguientes definiciones y restricciones:
-- id_Lector: Entero.
-- Nombre_Y_Apellidos: Cadena de 50 caracteres. No puede estar vacío.
-- Nacionalidad: Cadena de 20 caracteres. No puede estar vacío.
-- Fecha_Comienzo: Fecha. No puede estar vacío. Representa la fecha en que un lector comienza a leer un determinado libro.
-- id_Libro: Entero.
-- Título: Cadena de 40 caracteres. No puede estar vacío.
-- Autor: Cadena de 40 caracteres. No puede estar vacío.
-- id_Genero: Entero.
-- Nombre: Cadena de 40 caracteres. No puede estar vacío.
+- `id_Lector`: Entero.
+- `Nombre_Y_Apellidos`: Cadena de 50 caracteres. No puede estar vacío.
+- `Nacionalidad`: Cadena de 20 caracteres. No puede estar vacío.
+- `Fecha_Comienzo`: Fecha. No puede estar vacío. Representa la fecha en que un lector comienza a leer un determinado libro.
+- `id_Libro`: Entero.
+- `Título`: Cadena de 40 caracteres. No puede estar vacío.
+- `Autor`: Cadena de 40 caracteres. No puede estar vacío.
+- `id_Genero`: Entero.
+- `Nombre`: Cadena de 40 caracteres. No puede estar vacío.
 
+**Paso a tablas:**
+- Lector(`id_Lector, Nombre_Y_Apellidos, Nacionalidad`)
+- Leido(`id_Lector, id_Libro, Fecha_Comienzo`)
+- Libro(`id_Libro, Título, Autor, id_Genero`)
+- Genero(`id_Genero, Nombre`).  
+
+### DDL
 
 ```sql
 CREATE TABLE Genero (
@@ -82,18 +89,13 @@ CREATE TABLE Leido (
 
 
 ## EJERCICIO 1.2. CONSULTA (1.25 puntos).
-Dadas las tablas que ha realizado en el apartado anterior, detalle las sentencias
-SQL necesarias para realizar la siguiente consulta:
+Dadas las tablas que ha realizado en el apartado anterior, detalle las sentencias SQL necesarias para realizar la siguiente consulta:
 
-Todos los libros de género ‘Terror’ que se leyeron en 2024 por lectores italianos
-(Nacionalidad = ‘Italia’) con las cantidades de lecturas acumuladas en dicho
-período. Se considerarán leídos en 2024 todos los libros que se comenzaron a leer
-entre el 1 de enero y el 31 de diciembre de 2024.
+Todos los libros de género ‘Terror’ que se leyeron en 2024 por lectores italianos (Nacionalidad = ‘Italia’) con las cantidades de lecturas acumuladas en dicho período. Se considerarán leídos en 2024 todos los libros que se comenzaron a leer entre el 1 de enero y el 31 de diciembre de 2024.
 
-Debe aparecer una línea por cada libro que cumpla dicho requisito, sin
-repeticiones. Cada línea contendrá los siguientes campos: Título, Autor y
-Total_Lecturas
+Debe aparecer una línea por cada libro que cumpla dicho requisito, sin repeticiones. Cada línea contendrá los siguientes campos: Título, Autor y Total_Lecturas
 
+### DML
 
 ```sql
 SELECT l.Titulo, l.Autor, COUNT(*) AS Total_Lecturas
