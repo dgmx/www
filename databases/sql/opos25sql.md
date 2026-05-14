@@ -99,9 +99,9 @@ CREATE TABLE Leido (
 ## EJERCICIO 1.2. CONSULTA (1.25 puntos).
 Dadas las tablas que ha realizado en el apartado anterior, detalle las sentencias SQL necesarias para realizar la siguiente consulta:
 
-Todos los libros de género ‘Terror’ que se leyeron en 2024 por lectores italianos (Nacionalidad = ‘Italia’) con las cantidades de lecturas acumuladas en dicho período. Se considerarán leídos en 2024 todos los libros que se comenzaron a leer entre el 1 de enero y el 31 de diciembre de 2024.
+Todos los libros de género `Terror` que se leyeron en `2024` por lectores italianos `(Nacionalidad = ‘Italia’)` con las cantidades de lecturas acumuladas en dicho período. Se considerarán leídos en 2024 todos los libros que se comenzaron a leer entre el 1 de enero y el 31 de diciembre de 2024.
 
-Debe aparecer una línea por cada libro que cumpla dicho requisito, sin repeticiones. Cada línea contendrá los siguientes campos: Título, Autor y Total_Lecturas
+Debe aparecer una línea por cada libro que cumpla dicho requisito, sin repeticiones. Cada línea contendrá los siguientes campos: `Título`, `Autor` y `Total_Lecturas`
 
 ### DML
 
