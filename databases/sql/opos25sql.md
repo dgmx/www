@@ -215,3 +215,72 @@ INSERT INTO Leido (id_Lector, id_Libro, Fecha_Comienzo) VALUES
 (13, 12, '2024-10-01'),
 (17, 11, '2024-08-12');
 ```
+
+
+## Otro ejercicio (CANTABRIA 2018):
+
+Partiendo del esquema de Base de Datos, realizar las siguientes operaciones:
+
+![ModeloEE](images/can18.png)
+
+### Mermaid: 
+
+```mermaid
+erDiagram
+    DEPARTAMENTOS {
+        int P_DEPARTAMENTO PK
+        string NOMBRE
+        string LOC
+    }
+
+    EMPLEADOS {
+        int P_EMPLEADO PK
+        int A_DEPARTAMENTO FK
+        string APELLIDOS
+        string OFICIO
+        date FECHA_ALTA
+        decimal SALARIO
+        decimal COMISION
+    }
+
+    DEPARTAMENTOS ||--o{ EMPLEADOS : tiene
+
+```
+
+- Nombre de departamento, apellidos de empleado y salario de los empleados del departamento cuyo p_departamento=10.
+- Obtener: Nombre de departamento y suma de salarios teniendo en cuenta sólo los empleados con sueldo > 1111.
+
+**Consulta 1**
+
+```sql
+SELECT d.NOMBRE, e.APELLIDOS, e.SALARIO
+FROM DEPARTAMENTOS d
+INNER JOIN EMPLEADOS e ON d.P_DEPARTAMENTO = e.A_DEPARTAMENTO
+WHERE d.P_DEPARTAMENTO = 10;
+```
+
+**Consulta 2**
+```sql
+SELECT d.NOMBRE, SUM(e.SALARIO) AS Suma_Salarios
+FROM DEPARTAMENTOS d
+JOIN EMPLEADOS e ON d.P_DEPARTAMENTO = e.A_DEPARTAMENTO
+WHERE e.SALARIO > 1111
+GROUP BY d.P_DEPARTAMENTO;
+```
+
+
+> Con `HAVING SALARIO > 1111` te daría error porque SALARIO no está en el `GROUP BY` ni es una función de agregación. El filtro correcto para descartar empleados con salario bajo antes de sumar es `WHERE`.
+
+Para usar HAVING la condición debía ser sobre la suma, no sobre el salario individual:
+- Con `WHERE`: "teniendo en cuenta sólo los empleados con sueldo > 1111" → filtra empleados antes de sumar.
+- Con `HAVING`: "mostrando solo los departamentos cuya suma de salarios sea > 1111" → filtra departamentos después de sumar.
+
+La consulta con HAVING:
+
+```sql
+SELECT d.NOMBRE, SUM(e.SALARIO) AS Suma_Salarios
+FROM DEPARTAMENTOS d
+JOIN EMPLEADOS e ON d.P_DEPARTAMENTO = e.A_DEPARTAMENTO
+GROUP BY d.P_DEPARTAMENTO
+HAVING SUM(e.SALARIO) > 1111;
+```
