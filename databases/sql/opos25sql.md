@@ -4,6 +4,10 @@
 
 Observe el siguiente diagrama entidad/relación:
 
+![ModeloEE](images/opos25.png)
+
+### Modelo Mermaid
+
 ```mermaid
 erDiagram
 
@@ -48,6 +52,10 @@ Tenga en cuenta las siguientes definiciones y restricciones:
 - `Autor`: Cadena de 40 caracteres. No puede estar vacío.
 - `id_Genero`: Entero.
 - `Nombre`: Cadena de 40 caracteres. No puede estar vacío.
+
+## EJERCICIO 1.1. CREACIÓN DE TABLAS (1.25 puntos).
+
+Detalle las sentencias SQL necesarias para crear las tablas de la base de datos que implemente el modelo anterior en tercera forma normal.
 
 **Paso a tablas:**
 - Lector(`id_Lector, Nombre_Y_Apellidos, Nacionalidad`)
