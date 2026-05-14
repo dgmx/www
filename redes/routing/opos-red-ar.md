@@ -1,4 +1,4 @@
-# Oposisicones 2018 Aragón
+# Oposiciones 2018 Aragón
 
 ## Ejercicio de Enrutamiento
 
