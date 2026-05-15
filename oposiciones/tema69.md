@@ -1,27 +1,28 @@
-**TEMA 69\. INTEGRACIÓN DE SISTEMAS. MEDIOS DE INTERCONEXIÓN. ESTÁNDARES. PROTOCOLOS DE ACCESO A REDES DE ÁREA EXTENSA.**
+# TEMA 69\ INTEGRACIÓN DE SISTEMAS. MEDIOS DE INTERCONEXIÓN. ESTÁNDARES. PROTOCOLOS DE ACCESO A REDES DE ÁREA EXTENSA.
 
-1\. Introducción   
-2\. Integración de sistemas 
+1. Introducción   
+2. Integración de sistemas 
 
-3\. Medios de interconexión   
-3.1.Medios guiados  
-3.2.Medios no guiados (inalámbricos)  
-3.3.Dispositivos de interconexión
+3. Medios de interconexión   
+   - 3.1.Medios guiados  
+   - 3.2.Medios no guiados (inalámbricos)  
+   - 3.3.Dispositivos de interconexión
 
-4\. Estándares de interconexión   
-4.1.Estándares de red de área local (LAN)  
-4.2.Estándares de red de área extensa (WAN)
+4. Estándares de interconexión   
+   - 4.1.Estándares de red de área local (LAN)  
+   - 4.2.Estándares de red de área extensa (WAN)
 
-5\. Protocolos de acceso a redes de área extensa (WAN)   
-5.1 Protocolos clásicos de acceso WAN  
-5.2 Protocolos de nivel de enlace y red para WAN modernas  
-5.3 Protocolos de acceso inalámbrico WAN
+5. Protocolos de acceso a redes de área extensa (WAN)   
+- 5.1 Protocolos clásicos de acceso WAN  
+- 5.2 Protocolos de nivel de enlace y red para WAN modernas  
+- 5.3 Protocolos de acceso inalámbrico WAN
+- 5.4 Protocolos de enrutamiento WAN
 
-6\. Conclusión
+6. Conclusión
 
-7.Bibliografía y referencias normativas
+7. Bibliografía y referencias normativas
 
-**1\. INTRODUCCIÓN Y JUSTIFICACIÓN**
+## 1. INTRODUCCIÓN Y JUSTIFICACIÓN
 
 El presente tema forma parte del temario de la especialidad de Informática aprobado en el BOE de 13 de febrero de 1996\. A su vez, el actual tema 69 se ubica dentro del bloque temático de redes.
 
@@ -47,7 +48,7 @@ CFGM de Sistemas Microinformáticos y Redes (**Real Decreto 1691/2007 )**
 
 * Módulo: Sistemas operativos en red
 
-**2\. INTEGRACIÓN DE SISTEMAS**
+## 2. INTEGRACIÓN DE SISTEMAS
 
 Cuando se habla de integración de sistemas nos referimos a redes mixtas que combinan distintos tipos de dispositivos, sistemas operativos y tecnologías de conexión, como redes cableadas e inalámbricas o diferentes plataformas (Windows, Linux, macOS). Compartir recursos en este tipo de redes requiere atención a la compatibilidad, la seguridad y la configuración adecuada.
 
@@ -57,7 +58,7 @@ Entre las ventajas que se logran con la integración de sistemas están principa
 
 Según el ámbito de aplicación se habla de interconexión de área local o de área extensa. En el caso de la interconexión de área local se conectan redes que están geográficamente cerca, creando una red metropolitana (MAN). En el caso de la interconexión de área extensa se refiere a conectar redes geográficamente dispersas.
 
-## **3\. MEDIOS DE INTERCONEXIÓN**
+## 3. MEDIOS DE INTERCONEXIÓN
 
 El soporte físico por el que viaja la señal es determinante para la velocidad y la distancia.
 
@@ -77,8 +78,6 @@ Formado por un conductor central de cobre rodeado por un dieléctrico, una malla
 
 Transmite información mediante pulsos de luz a través de un núcleo de vidrio o plástico de muy bajo índice de absorción. Sus ventajas sobre el cobre son radicales: inmunidad total a interferencias electromagnéticas, atenuación muy baja (lo que permite alcances de decenas de kilómetros sin repetidores), ancho de banda potencialmente ilimitado y seguridad intrínseca (interceptar la fibra produce pérdida de señal detectable).
 
-### 
-
 ### **3.2. Medios no guiados (inalámbricos)**
 
 La señal viaja por el espacio mediante ondas electromagnéticas:
@@ -88,6 +87,8 @@ La señal viaja por el espacio mediante ondas electromagnéticas:
 La familia **IEEE 802.11** define los estándares Wi-Fi. La evolución va desde 802.11b (11 Mbps, 2.4 GHz, 1999\) hasta el actual 802.11ax (Wi-Fi 6/6E).
 
 Wi-Fi 7 (802.11be) incorpora la banda de 6 GHz como canal principal y MLO (Multi-Link Operation). El mecanismo de acceso al medio es CSMA/CA, a diferencia de Ethernet que usa CSMA/CD.
+
+WPAN Bluetooth esta definido por la IEEE 802.15 (Baja potencia y corto alcance)
 
 * **Microondas:** Terrestres o Satelitales (Starlink, VSAT).
 
@@ -117,7 +118,7 @@ El router es el dispositivo que interconecta redes distintas tomando decisiones 
 
 La pasarela o **gateway** es el dispositivo más complejo de interconexión: opera en las capas superiores del modelo OSI (transporte, sesión, presentación, aplicación) y puede traducir entre protocolos completamente heterogéneos. Un gateway de correo electrónico convierte entre formatos SMTP y X.400; un gateway VoIP convierte entre telefonía clásica RTC y VoIP sobre IP. Conceptualmente, un gateway realiza una conversión semántica del tráfico, no solo un reenvío.
 
-## **4\. ESTÁNDARES DE INTERCONEXIÓN**
+## 4. ESTÁNDARES DE INTERCONEXIÓN
 
 Un **estándar** es un conjunto de reglas, especificaciones técnicas o procedimientos aceptados oficialmente (por un organismo reconocido) o de facto (por la industria) que garantizan la interoperabilidad entre sistemas de diferentes fabricantes.
 
@@ -133,7 +134,7 @@ En el contexto de las WAN, los estándares son esenciales porque:
 Dominados por el comité **IEEE 802**:
 
 * **802.3 (Ethernet):** El estándar de cableado.  
-* **802.11 (Wi-Fi):** Estándares inalámbricos (a, b, g, n, ac, ax).  
+* **802.11 (Wi-Fi):** Estándares inalámbricos (a, b, g, n, ac, ax, be).  Bandas de 2.4, 5 y 6 GHz
 * **802.1Q VLANs y 802.1D Spanning Tree**
 
 ### **4.2. Estándares de red de área extensa (WAN)**
@@ -145,7 +146,7 @@ Emitidos por organismos como la **ITU-T** y el **IETF**. Se centran en la transm
 * **Frame Relay: Eficiencia mediante circuitos virtuales:** Surgió en los 90 como una evolución simplificada de X.25 para líneas digitales de mayor calidad (T1/E1).  
 * **ATM (Asynchronous Transfer Mode):** Alta velocidad y celdas fijas. Diseñado para transportar voz, video y datos de forma simultánea en redes de alta velocidad
 
-## **5\. PROTOCOLOS DE ACCESO A REDES DE ÁREA EXTENSA** 
+## 5. PROTOCOLOS DE ACCESO A REDES DE ÁREA EXTENSA
 
 Un **protocolo de acceso WAN** es un conjunto de reglas que define cómo un dispositivo (generalmente un router o conmutador) se conecta y transmite datos a través de una red de área extensa proporcionada por un operador de telecomunicaciones.
 
@@ -171,13 +172,23 @@ Hay 2 tipos, los orientados a conexión: X.25, Frame Relay, ATM, MPLS y sin cone
 * **MPLS (Multiprotocol Label Switching).** Protocolo de nivel 2.5 (entre enlace y red) que acelera el reenvío mediante etiquetas. No usa direcciones IP en cada salto (solo en los bordes).  
 * **DSL: (ADSL, VDSL)** Familia de protocolos que permiten transmisión digital de alta velocidad sobre par trenzado de cobre (línea telefónica tradicional), utilizando frecuencias superiores a la voz.  
 * **SD-WAN (Software-Defined WAN).** La evolución moderna de las WAN. Separa el **plano de control** del **plano de datos**. Permite gestionar múltiples conexiones (MPLS, Fibra, 5G) de forma centralizada mediante software, optimizando el tráfico según la aplicación (ej. priorizar Zoom sobre descargas de archivos).
+* **PPPoE (PPP over Ethernet)**. Encapsula PPP sobre tramas Ethernet, permitiendo autenticar, gestionar y facturar a los usuarios en redes modernas como DSL y fibra.
 
 ### **5.3. Protocolos de acceso inalámbrico WAN**
 
 * **Tecnologías celulares (GSM, GPRS, UMTS, LTE, 5G).** Los niveles superiores (IP, TCP, UDP) son estándar.   
 * **WiMAX (Worldwide Interoperability for Microwave Access). 802.16.** Estándar inalámbrico de área extensa (MAN/WAN) para acceso de última milla, con alcance típico de 10-50 km.
 
-**6\. CONCLUSIÓN**
+### **5.4. Protocolos de enrutamiento WAN**
+
+Internet no es una red única, está formada por unas 70.000 redes individuales gestionadas por ISP, Universidades y grandes empresas tecnológicas, cada una con un número de identificación de sistema autónomo ASN, que gestionan su propia política de enrutamiento en internet, utilizando el protocolo BGP para intercambiar información con otros sistemas.
+
+Permiten la comunicación entre redes geográficas dispersas:
+* **BGP (Puerta de enlace de frontera)** Conecta sistemas autónomos.
+* **OSPF o EIGRP** Conecta sucursales.
+
+
+## 6. CONCLUSIÓN
 
 La necesidad de intercambiar información entre equipos, ubicados a distancias que van desde unos pocos metros a decenas e incluso centenares de kilómetros, ha dado lugar a la aparición de diversas tecnologías que pretenden satisfacerla. 
 
@@ -185,11 +196,11 @@ Conforme ha ido evolucionando la tecnología, las fronteras entre LAN, MAN Y WAN
 
 La integración de sistemas sobre WAN no es un concepto estático, sino una disciplina en continua evolución impulsada por el crecimiento de datos, la movilidad, la nube y la inteligencia artificial. Comprender los medios, estándares y protocolos actuales es la base para diseñar y operar las redes del futuro.
 
-**7\. BIBLIOGRAFÍA**
+## 7. BIBLIOGRAFÍA
 
-\- Tanenbaum, A. (2021). *Computer Networks.* Editorial Pearson  
-\- Stallings, W. (2017). *Data and Computer Communications*. Ed. Pearson.  
-\- Prieto, A. (2006). *Introducción a la informática.* Editorial McGraw-Hill  
-\- Núñez, M. (2019) *Sistemas operativos en red*. Editorial Síntesis.  
-\- Martinez, E. (2022) Planificación y administración de redes. Editorial Síntesis
+- Tanenbaum, A. (2021). *Computer Networks.* Editorial Pearson  
+- Stallings, W. (2017). *Data and Computer Communications*. Ed. Pearson.  
+- Prieto, A. (2006). *Introducción a la informática.* Editorial McGraw-Hill  
+- Núñez, M. (2019) *Sistemas operativos en red*. Editorial Síntesis.  
+- Martinez, E. (2022) Planificación y administración de redes. Editorial Síntesis
 
