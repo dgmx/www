@@ -8,10 +8,13 @@
   * { box-sizing: border-box; margin: 0; padding: 0; }
   :root { --bg: #f5f5f5; --card: #fff; --text: #333; --label: #555; --border: #ccc; --row-border: #eee; --label-color: #666; --val-color: #222; }
   [data-theme="dark"] { --bg: #1a1a1a; --card: #2a2a2a; --text: #e0e0e0; --label: #aaa; --border: #555; --row-border: #3a3a3a; --label-color: #999; --val-color: #eee; }
-  body { font-family: system-ui, sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; background: var(--bg); transition: background .2s; }
+  body { font-family: system-ui, sans-serif; display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 100vh; background: var(--bg); transition: background .2s; }
   .card { background: var(--card); padding: 2rem; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,.1); width: 480px; transition: background .2s; }
   .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
   h1 { font-size: 1.5rem; color: var(--text); }
+  .nav-links { display: flex; gap: .5rem; }
+  .nav-link { color: #0066cc; text-decoration: none; font-size: .8rem; font-weight: 600; padding: .3rem .6rem; border-radius: 6px; border: 1px solid var(--border); }
+  .nav-link:hover { background: var(--border); }
   .theme-btn { background: none; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; font-size: 1.2rem; width: 40px; height: 36px; display: flex; align-items: center; justify-content: center; margin-top: 0; color: var(--text); transition: background .2s; }
   .theme-btn:hover { background: var(--border); }
   .field { margin-bottom: 1rem; }
@@ -28,13 +31,19 @@
   .result-row .label { color: var(--label-color); }
   .result-row .value { font-family: monospace; font-weight: 600; color: var(--val-color); }
   .error { color: #cc0000; margin-top: .8rem; font-size: .9rem; }
+  .footer { margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--row-border); text-align: center; font-size: .8rem; color: var(--label-color); }
+  .footer a { color: var(--label-color); text-decoration: none; }
+  .footer a:hover { color: #0066cc; }
 </style>
 </head>
 <body>
 <div class="card">
   <div class="header">
     <h1>Calculadora IP / CIDR</h1>
-    <button class="theme-btn" id="themeBtn" aria-label="Cambiar modo">☀️</button>
+    <div class="nav-links">
+      <a class="nav-link" href="vlsm.html">VLSM</a>
+      <button class="theme-btn" id="themeBtn" aria-label="Cambiar modo">☀️</button>
+    </div>
   </div>
   <div class="row">
     <div class="field">
@@ -49,6 +58,7 @@
   <button id="calc">Calcular</button>
   <div id="error" class="error"></div>
   <div class="results" id="results"></div>
+  <div class="footer"><a href="https://diegojgonzalez.org">diegojgonzalez.org</a></div>
 </div>
 <script>
 const themeBtn = document.getElementById('themeBtn');

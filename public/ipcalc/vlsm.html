@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VLSM Calc</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root { --bg: #f5f5f5; --card: #fff; --text: #333; --label: #555; --border: #ccc; --row-border: #eee; --label-color: #666; --val-color: #222; --del: #cc0000; }
+  [data-theme="dark"] { --bg: #1a1a1a; --card: #2a2a2a; --text: #e0e0e0; --label: #aaa; --border: #555; --row-border: #3a3a3a; --label-color: #999; --val-color: #eee; --del: #ff4444; }
+  body { font-family: system-ui, sans-serif; display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 100vh; background: var(--bg); transition: background .2s; padding: 1rem; }
+  .card { background: var(--card); padding: 2rem; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,.1); width: 900px; transition: background .2s; }
+  .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
+  h1 { font-size: 1.5rem; color: var(--text); }
+  .hint { color: var(--label-color); font-size: .8rem; margin-top: .2rem; }
+  .nav-links { display: flex; gap: .5rem; }
+  .nav-link { color: #0066cc; text-decoration: none; font-size: .8rem; font-weight: 600; padding: .3rem .6rem; border-radius: 6px; border: 1px solid var(--border); }
+  .nav-link:hover { background: var(--border); }
+  .theme-btn { background: none; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; font-size: 1.2rem; width: 40px; height: 36px; display: flex; align-items: center; justify-content: center; margin-top: 0; color: var(--text); transition: background .2s; }
+  .theme-btn:hover { background: var(--border); }
+  .field { margin-bottom: .8rem; }
+  label { display: block; margin-bottom: .3rem; font-weight: 600; color: var(--label); font-size: .9rem; }
+  input { width: 100%; padding: .6rem .8rem; font-size: 1rem; border: 1px solid var(--border); border-radius: 6px; background: var(--card); color: var(--text); transition: background .2s; }
+  input:focus { outline: 2px solid #0066cc; border-color: transparent; }
+  .row { display: flex; gap: 1rem; }
+  .row .field { flex: 1; }
+  .sub-header { display: flex; justify-content: space-between; align-items: center; margin: 1rem 0 .5rem; }
+  .sub-header h2 { font-size: 1.1rem; color: var(--text); }
+  .btn-sm { background: #0066cc; color: #fff; border: none; border-radius: 6px; cursor: pointer; font-size: .85rem; padding: .4rem .8rem; font-weight: 600; }
+  .btn-sm:hover { background: #0052a3; }
+  .btn-add { background: #28a745; }
+  .btn-add:hover { background: #1e8a38; }
+  .subnet-list { margin-bottom: .8rem; }
+  .subnet-row { display: flex; gap: .5rem; align-items: center; margin-bottom: .4rem; }
+  .subnet-row input { flex: 1; font-size: .9rem; padding: .45rem .6rem; }
+  .subnet-row input.sname { flex: 0 0 150px; }
+  .subnet-row input.scount { flex: 0 0 100px; }
+  .btn-del { background: var(--del); color: #fff; border: none; border-radius: 6px; cursor: pointer; font-size: 1rem; width: 34px; height: 34px; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0; }
+  .btn-del:hover { opacity: .8; }
+  #calc { width: 100%; padding: .7rem; font-size: 1rem; font-weight: 600; color: #fff; background: #0066cc; border: none; border-radius: 6px; cursor: pointer; }
+  #calc:hover { background: #0052a3; }
+  .error { color: #cc0000; margin-top: .8rem; font-size: .9rem; }
+  .results { margin-top: 1.2rem; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  table { width: 100%; border-collapse: collapse; font-size: .85rem; }
+  th, td { padding: .5rem .6rem; text-align: left; border-bottom: 1px solid var(--row-border); color: var(--text); white-space: nowrap; }
+  th { font-weight: 600; color: var(--label); font-size: .8rem; text-transform: uppercase; letter-spacing: .03em; }
+  td { font-family: monospace; }
+  td.name-cell { font-family: system-ui, sans-serif; }
+  tr:last-child td { border-bottom: none; }
+  .summary { margin-top: 1rem; padding: .6rem; background: var(--bg); border-radius: 6px; font-size: .85rem; color: var(--text); display: flex; justify-content: space-between; }
+  .summary .used { color: #28a745; }
+  .summary .wasted { color: var(--del); }
+  .footer { margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--row-border); text-align: center; font-size: .8rem; color: var(--label-color); }
+  .footer a { color: var(--label-color); text-decoration: none; }
+  .footer a:hover { color: #0066cc; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="header">
+    <h1>Calculadora VLSM</h1>
+    <div class="nav-links">
+      <a class="nav-link" href="index.html">IP/CIDR</a>
+      <button class="theme-btn" id="themeBtn" aria-label="Cambiar modo">☀️</button>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field">
+      <label for="ip">Dirección IP base</label>
+      <input id="ip" type="text" placeholder="192.168.1.0" value="192.168.1.0">
+    </div>
+    <div class="field">
+      <label for="cidr">Máscara CIDR</label>
+      <input id="cidr" type="text" placeholder="24" value="24">
+    </div>
+  </div>
+
+  <div class="sub-header">
+    <h2>Redes hijas</h2>
+    <button class="btn-sm btn-add" id="addBtn">+ Añadir red</button>
+  </div>
+
+  <div class="subnet-list" id="subnetList"></div>
+
+  <button id="calc">Calcular VLSM</button>
+  <div id="error" class="error"></div>
+  <div id="results"></div>
+  <div class="footer"><a href="https://diegojgonzalez.org">diegojgonzalez.org</a></div>
+</div>
+
+<script>
+// ── Theme ──
+const themeBtn = document.getElementById('themeBtn');
+function setTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  themeBtn.textContent = theme === 'dark' ? '🌙' : '☀️';
+  localStorage.setItem('theme', theme);
+}
+function toggleTheme() {
+  setTheme(document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+}
+setTheme(localStorage.getItem('theme') || 'light');
+themeBtn.addEventListener('click', toggleTheme);
+
+// ── IP utils ──
+function parseIP(ip) {
+  const parts = ip.trim().split('.');
+  if (parts.length !== 4) return null;
+  const nums = parts.map(Number);
+  if (nums.some(n => isNaN(n) || n < 0 || n > 255)) return null;
+  return nums;
+}
+function toUint32(octets) {
+  return ((octets[0] << 24) | (octets[1] << 16) | (octets[2] << 8) | octets[3]) >>> 0;
+}
+function toOctets(n) {
+  return [(n >>> 24) & 0xff, (n >>> 16) & 0xff, (n >>> 8) & 0xff, n & 0xff];
+}
+function fmt(n) {
+  return toOctets(n).join('.');
+}
+function maskFromCIDR(c) {
+  if (c === 0) return 0;
+  return (~0 << (32 - c)) >>> 0;
+}
+
+// ── Subnet list management ──
+let subnets = [{ name: '', hosts: '' }];
+
+const subnetListEl = document.getElementById('subnetList');
+const addBtn = document.getElementById('addBtn');
+
+function renderSubnetInputs() {
+  subnetListEl.innerHTML = subnets.map((s, i) =>
+    `<div class="subnet-row">
+      <input class="sname" type="text" placeholder="Nombre (ej: Ventas)" value="${s.name}" data-idx="${i}" data-field="name">
+      <input class="scount" type="text" placeholder="Hosts" value="${s.hosts}" data-idx="${i}" data-field="hosts">
+      ${subnets.length > 1 ? `<button class="btn-del" data-idx="${i}">✕</button>` : ''}
+    </div>`
+  ).join('');
+
+  subnetListEl.querySelectorAll('input[data-field]').forEach(el => {
+    el.addEventListener('input', () => {
+      const idx = parseInt(el.dataset.idx, 10);
+      subnets[idx][el.dataset.field] = el.value;
+    });
+  });
+
+  subnetListEl.querySelectorAll('.btn-del').forEach(el => {
+    el.addEventListener('click', () => {
+      const idx = parseInt(el.dataset.idx, 10);
+      subnets.splice(idx, 1);
+      renderSubnetInputs();
+    });
+  });
+}
+
+addBtn.addEventListener('click', () => {
+  subnets.push({ name: '', hosts: '' });
+  renderSubnetInputs();
+});
+
+renderSubnetInputs();
+
+// ── VLSM calculation ──
+function neededCIDR(hosts) {
+  const n = parseInt(hosts, 10);
+  if (isNaN(n) || n < 0) return null;
+  if (n <= 1) return 32;
+  const total = n + 2;
+  let block = 1;
+  let cidr = 32;
+  while (block < total) {
+    block *= 2;
+    cidr--;
+  }
+  return Math.max(0, cidr);
+}
+
+function calcVLSM(ipStr, cidrStr, requests) {
+  const ip = parseIP(ipStr);
+  if (!ip) return { error: 'IP inválida. Formato: x.x.x.x' };
+
+  const baseCIDR = parseInt(cidrStr, 10);
+  if (isNaN(baseCIDR) || baseCIDR < 0 || baseCIDR > 32) return { error: 'CIDR inválido. Debe ser 0-32' };
+
+  if (requests.length === 0) return { error: 'Debe añadir al menos una red' };
+
+  const baseIP = toUint32(ip);
+  const baseMask = maskFromCIDR(baseCIDR);
+  const baseNetwork = baseIP & baseMask;
+  const baseBroadcast = baseNetwork | (~baseMask >>> 0);
+
+  // Parse and validate each request
+  const parsed = [];
+  for (let i = 0; i < requests.length; i++) {
+    const name = requests[i].name.trim() || `Red ${i + 1}`;
+    const hosts = parseInt(requests[i].hosts, 10);
+    if (isNaN(hosts) || hosts < 0) return { error: `"${name}" tiene un número de hosts inválido` };
+    const cidr = neededCIDR(hosts);
+    if (cidr === null || cidr < 0) return { error: `"${name}" tiene un número de hosts inválido` };
+    if (cidr < baseCIDR) return { error: `"${name}" necesita ${cidr}, que es mayor que la red base /${baseCIDR}` };
+    parsed.push({ name, hosts, cidr });
+  }
+
+  // Sort by CIDR (most restrictive / smallest block first)
+  parsed.sort((a, b) => a.cidr - b.cidr);
+
+  // Assign subnets
+  let current = baseNetwork;
+  const results = [];
+  for (const p of parsed) {
+    const block = 2 ** (32 - p.cidr);
+    // Align to block boundary
+    if (current % block !== 0) {
+      current = (Math.floor(current / block) + 1) * block;
+    }
+    const network = current;
+    const broadcast = current + block - 1;
+
+    if (broadcast > baseBroadcast) {
+      return { error: `No hay espacio para "${p.name}" (/${p.cidr}, ${block} direcciones). El bloque base es /${baseCIDR}` };
+    }
+
+    const mask32 = maskFromCIDR(p.cidr);
+    const usable =
+      p.cidr >= 31
+        ? block
+        : Math.max(0, block - 2);
+
+    results.push({
+      name: p.name,
+      requested: p.hosts,
+      network: fmt(network),
+      broadcast: fmt(broadcast),
+      mask: fmt(mask32),
+      cidr: p.cidr,
+      block,
+      usable,
+    });
+
+    current = broadcast + 1;
+  }
+
+  // Calculate utilization
+  const totalAddrs = 2 ** (32 - baseCIDR);
+  const usedAddrs = results.reduce((s, r) => s + r.block, 0);
+  const wasted = totalAddrs - usedAddrs;
+
+  return { results, totalAddrs, usedAddrs, wasted, base: fmt(baseNetwork), baseCIDR };
+}
+
+// ── Render ──
+const ipInput = document.getElementById('ip');
+const cidrInput = document.getElementById('cidr');
+const errorEl = document.getElementById('error');
+const resultsEl = document.getElementById('results');
+
+function render() {
+  const requests = subnets.filter(s => s.hosts !== '' && parseInt(s.hosts, 10) > 0);
+  if (requests.length === 0) {
+    errorEl.textContent = 'Debe añadir al menos una red con hosts > 0';
+    resultsEl.innerHTML = '';
+    return;
+  }
+
+  const r = calcVLSM(ipInput.value, cidrInput.value, requests);
+  if (r.error) {
+    errorEl.textContent = r.error;
+    resultsEl.innerHTML = '';
+    return;
+  }
+  errorEl.textContent = '';
+
+  const pct = ((r.usedAddrs / r.totalAddrs) * 100).toFixed(1);
+
+  resultsEl.innerHTML = `
+    <table>
+      <thead><tr>
+        <th>Red</th>
+        <th>Hosts req.</th>
+        <th>CIDR</th>
+        <th>Dirección de red</th>
+        <th>Broadcast</th>
+        <th>Máscara</th>
+        <th>Hosts útiles</th>
+      </tr></thead>
+      <tbody>
+        ${r.results.map(rr => `
+          <tr>
+            <td class="name-cell">${rr.name}</td>
+            <td>${rr.requested}</td>
+            <td>/${rr.cidr}</td>
+            <td>${rr.network}</td>
+            <td>${rr.broadcast}</td>
+            <td>${rr.mask}</td>
+            <td>${rr.usable}</td>
+          </tr>
+        `).join('')}
+      </tbody>
+    </table>
+    <div class="summary">
+      <span>Red base: ${r.base}/${r.baseCIDR}</span>
+      <span class="used">Usado: ${r.usedAddrs} / ${r.totalAddrs} (${pct}%)</span>
+      <span class="wasted">Libre: ${r.wasted}</span>
+    </div>
+  `;
+}
+
+document.getElementById('calc').addEventListener('click', render);
+ipInput.addEventListener('keydown', e => { if (e.key === 'Enter') render(); });
+cidrInput.addEventListener('keydown', e => { if (e.key === 'Enter') render(); });
+</script>
+</body>
+</html>
