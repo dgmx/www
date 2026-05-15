@@ -164,3 +164,5 @@
 - Prieto A., y otros. (2006). Introducción a la informática. Editorial McGraw-Hill
 - Cohen D y Asín E. (2009). Tecnologías de información en los negocios. Ed. McGraw-Hill
 - http://tecnomundo.es/aplicaciones-informaticas/
+
+[Tema Completo](tema47_full.md)
