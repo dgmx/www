@@ -75,7 +75,7 @@
 -  65 Funciones y servicios del nivel de red y del nivel de transporte. Técnicas. Protocolos.
 -  66 Funciones y servicios en niveles sesión, presentación y aplicación. Protocolos. Estándares.
 -  67 Redes de área local. Componentes. Topologías. Estándares. Protocolos.
--  68 Software de sistemas en red. Componentes. Funciones. Estructura.
+-  [68 Software de sistemas en red. Componentes. Funciones. Estructura.](tema68.md)
 -  [69 Integración de sistemas. Medios de interconexión. Estándares. Protocolos de acceso a redes de área extensa.](tema69.md)
 -  70 Diseño de sistemas en red local. Parámetros de diseño. Instalación y configuración de sistemas en red local.
 -  71 Explotación y administración de sistemas en red local. Facilidades de gestión.
