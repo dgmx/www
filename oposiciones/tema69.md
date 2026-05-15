@@ -160,7 +160,7 @@ Hay 2 tipos, los orientados a conexión: X.25, Frame Relay, ATM, MPLS y sin cone
 
 ### **5.1. Protocolos clásicos de acceso WAN**
 
-*  **PPP (Point-to-Point Protocol):** Protocolo de nivel de enlace (capa 2\) para enlaces punto a punto, como líneas serie (RS-232, T1/E1, módems DSL, etc.). Reemplazó a SLIP.
+*  **PPP (Point-to-Point Protocol):** Protocolo de nivel de enlace (capa 2\) para enlaces punto a punto, como líneas serie (RS-232, T1/E1, módems DSL, etc.). Reemplazó a SLIP. Enlaces serie y marcado telefónico.
 
 *  **HDLC (High-Level Data Link Control):** Protocolo de nivel de enlace de la ISO, Existe una variante propietaria de Cisco (Cisco HDLC)
 
