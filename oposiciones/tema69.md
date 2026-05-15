@@ -1,4 +1,4 @@
-# TEMA 69\ INTEGRACIÓN DE SISTEMAS. MEDIOS DE INTERCONEXIÓN. ESTÁNDARES. PROTOCOLOS DE ACCESO A REDES DE ÁREA EXTENSA.
+# TEMA 69. INTEGRACIÓN DE SISTEMAS. MEDIOS DE INTERCONEXIÓN. ESTÁNDARES. PROTOCOLOS DE ACCESO A REDES DE ÁREA EXTENSA.
 
 1. Introducción   
 2. Integración de sistemas 
@@ -13,10 +13,10 @@
    - 4.2.Estándares de red de área extensa (WAN)
 
 5. Protocolos de acceso a redes de área extensa (WAN)   
-- 5.1 Protocolos clásicos de acceso WAN  
-- 5.2 Protocolos de nivel de enlace y red para WAN modernas  
-- 5.3 Protocolos de acceso inalámbrico WAN
-- 5.4 Protocolos de enrutamiento WAN
+   - 5.1 Protocolos clásicos de acceso WAN  
+   - 5.2 Protocolos de nivel de enlace y red para WAN modernas  
+   - 5.3 Protocolos de acceso inalámbrico WAN
+   - 5.4 Protocolos de enrutamiento WAN
 
 6. Conclusión
 

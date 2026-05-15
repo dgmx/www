@@ -49,9 +49,9 @@ CFGS de Administración de Sistemas Informáticos y Redes (**Real Decreto 500/20
 
 ## 2. Software de sistemas en red
 
-**E**l software de sistemas en red es el conjunto de programas, protocolos y servicios que gestionan los recursos de un sistema informático distribuido, permitiendo la comunicación, la compartición de recursos y la administración centralizada entre múltiples nodos interconectados.
+El software de sistemas en red es el conjunto de programas, protocolos y servicios que gestionan los recursos de un sistema informático distribuido, permitiendo la comunicación, la compartición de recursos y la administración centralizada entre múltiples nodos interconectados.
 
-**R**eside en la frontera entre el hardware de red y las aplicaciones de usuario. Actúa como intermediario que abstrae la complejidad física de la red y ofrece interfaces de programación estables (sockets, llamadas al sistema) a las capas superiores. Se extiende desde los drivers de dispositivo en el kernel hasta los demonios de sistema (DNS, DHCP, LDAP) que corren en espacio de usuario.
+Reside en la frontera entre el hardware de red y las aplicaciones de usuario. Actúa como intermediario que abstrae la complejidad física de la red y ofrece interfaces de programación estables (sockets, llamadas al sistema) a las capas superiores. Se extiende desde los drivers de dispositivo en el kernel hasta los demonios de sistema (DNS, DHCP, LDAP) que corren en espacio de usuario.
 
 El software de sistemas en red gestiona y proporciona infraestructura, opera de forma invisible para el usuario final y suele requerir privilegios elevados porque interactúa con el hardware o gestiona recursos compartidos críticos.
 
