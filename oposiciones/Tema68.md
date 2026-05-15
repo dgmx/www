@@ -14,7 +14,6 @@
 
 4. Funciones del software de sistemas en red  
 
-
 5. Estructura del software de sistemas en red  
    - 5.1.Arquitectura cliente-servidor  
    - 5.2.Arquitectura peer-to-peer (P2P)  

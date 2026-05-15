@@ -1,198 +1,195 @@
-# Tema 69. Integración de sistemas. Medios de interconexión. Estándares. Protocolos de acceso a redes de área extensa
+**TEMA 69\. INTEGRACIÓN DE SISTEMAS. MEDIOS DE INTERCONEXIÓN. ESTÁNDARES. PROTOCOLOS DE ACCESO A REDES DE ÁREA EXTENSA.**
 
-## Índice
-1. Introducción
-2. Integración de sistemas
-   
-   2.1 Concepto
+1\. Introducción   
+2\. Integración de sistemas 
 
-   2.2 Tipos de integración
+3\. Medios de interconexión   
+3.1.Medios guiados  
+3.2.Medios no guiados (inalámbricos)  
+3.3.Dispositivos de interconexión
 
-   2.3 Tecnologías actuales
+4\. Estándares de interconexión   
+4.1.Estándares de red de área local (LAN)  
+4.2.Estándares de red de área extensa (WAN)
 
-   2.4 Tecnologías en desuso o legado
+5\. Protocolos de acceso a redes de área extensa (WAN)   
+5.1 Protocolos clásicos de acceso WAN  
+5.2 Protocolos de nivel de enlace y red para WAN modernas  
+5.3 Protocolos de acceso inalámbrico WAN
 
-3. Medios de interconexión
+6\. Conclusión
 
-   3.1 Clasificación
-   
-   3.2 Dispositivos de interconexión
-4. Estándares en redes
+7.Bibliografía y referencias normativas
 
-   4.1 Importancia
-   
-   4.2 Organismos de estandarización
-   
-   4.3 Principales estándares
-5. Redes de área extensa (WAN)
-   
-   5.1 Concepto
-   
-   5.2 Características
-   
-   5.3 Tecnologías WAN
-6. Protocolos de acceso a redes de área extensa
+**1\. INTRODUCCIÓN Y JUSTIFICACIÓN**
 
-   6.1 Protocolos clásicos
+El presente tema forma parte del temario de la especialidad de Informática aprobado en el BOE de 13 de febrero de 1996\. A su vez, el actual tema 69 se ubica dentro del bloque temático de redes.
 
-   6.2 Protocolos modernos
-   
-   6.3 Protocolos de acceso remoto
-7. Tendencias actuales
-8. Conclusión
-9. Bibliografía orientativa
+A lo largo de este tema, a través de autores como Stallings, Tanenbaum y Prieto,se realizará una presentación general sobre la integración de sistemas y medios de interconexión estándares.
 
+La evolución tecnológica ha desplazado el foco desde equipos aislados hacia ecosistemas hiperconectados. La **integración de sistemas** y el uso de redes de área extensa (**WAN**) son los pilares que permiten la globalización de la información, garantizando que datos y aplicaciones fluyan de forma segura y eficiente entre ubicaciones geográficamente distantes.
 
-## 1. Introducción
-La integración de sistemas constituye un pilar fundamental en los entornos informáticos modernos, permitiendo la interoperabilidad entre plataformas heterogéneas, aplicaciones y redes. En el contexto de redes, esta integración se materializa mediante el uso de medios de interconexión, estándares y protocolos que garantizan la comunicación eficiente, segura y escalable, especialmente en redes de área extensa (WAN).
+La **integración de sistemas** es el proceso de conectar diferentes subsistemas informáticos, dispositivos, redes y aplicaciones, que en origen fueron diseñados de manera independiente, para que funcionen de forma coordinada y compartan información de manera eficiente y transparente para el usuario final.
 
-El desarrollo histórico de estos elementos ha estado marcado por la evolución tecnológica, desde soluciones propietarias y circuitos dedicados hasta arquitecturas abiertas basadas en Internet.
+Las redes de área extensa conectan sistemas de diferentes organizaciones, países e incluso continentes. Sin interoperabilidad:
 
----
+* No sería posible enviar un correo electrónico desde Gmail a Outlook.  
+* No funcionaría la banca online entre entidades distintas.  
+* Las redes móviles no permitirían roaming internacional.
 
-## 2. Integración de sistemas
+Lo expuesto anteriormente justifica la importancia del tema y es por ello que el estudio de la integración de sistemas y medios de interconexión está presente dentro del currículo de la familia profesional de Informática y Comunicaciones. Concretamente se pueden ubicar dentro de los siguientes ciclos formativos de grado superior (en adelante CFGS) y grado medio (en adelante CFGM):
 
-### 2.1 Concepto
-La integración de sistemas consiste en el proceso de conectar distintos subsistemas físicos o lógicos para que funcionen como un todo coherente. Incluye hardware, software, redes y datos.
+GFGS de Administración de Sistemas Informáticos en Red (**Real Decreto 1629/2009 )**
 
-### 2.2 Tipos de integración
-- **Integración horizontal**: conexión entre sistemas similares.
-- **Integración vertical**: conexión entre distintos niveles de una organización.
-- **Integración mediante middleware**: uso de software intermedio.
-- **Integración basada en servicios (SOA / microservicios)**: arquitectura moderna basada en APIs.
+* Módulo: Administración de sistemas operativos
 
-### 2.3 Tecnologías actuales
-- APIs REST y GraphQL
-- Contenedores (Docker) y orquestación (Kubernetes)
-- Mensajería (Kafka, RabbitMQ)
+CFGM de Sistemas Microinformáticos y Redes (**Real Decreto 1691/2007 )**
 
-### 2.4 Tecnologías en desuso o legado
-- CORBA (en desuso)
-- DCOM (en desuso)
-- Integración basada en EDI clásico (uso reducido)
+* Módulo: Sistemas operativos en red
 
----
+**2\. INTEGRACIÓN DE SISTEMAS**
 
-## 3. Medios de interconexión
+Cuando se habla de integración de sistemas nos referimos a redes mixtas que combinan distintos tipos de dispositivos, sistemas operativos y tecnologías de conexión, como redes cableadas e inalámbricas o diferentes plataformas (Windows, Linux, macOS). Compartir recursos en este tipo de redes requiere atención a la compatibilidad, la seguridad y la configuración adecuada.
 
-### 3.1 Clasificación
+La integración de sistemas está justificada por la enorme cantidad de arquitecturas de red diferentes que existen.
 
-#### 3.1.1 Medios guiados
-- Par trenzado (actual)
-- Cable coaxial (en desuso en LAN modernas)
-- Fibra óptica (muy actual y en expansión)
+Entre las ventajas que se logran con la integración de sistemas están principalmente: reducir costes al usar y compartir recursos de otras redes y facilitar la ampliación de la cobertura geográfica.
 
-#### 3.1.2 Medios no guiados
-- Radiofrecuencia (WiFi, LTE, 5G)
-- Microondas
-- Satélite (actual en entornos remotos)
+Según el ámbito de aplicación se habla de interconexión de área local o de área extensa. En el caso de la interconexión de área local se conectan redes que están geográficamente cerca, creando una red metropolitana (MAN). En el caso de la interconexión de área extensa se refiere a conectar redes geográficamente dispersas.
 
-### 3.2 Dispositivos de interconexión
+## **3\. MEDIOS DE INTERCONEXIÓN**
 
-#### 3.2.1 Nivel físico y enlace
-- Repetidores (en desuso)
-- Hubs (obsoletos)
-- Switches (actuales)
+El soporte físico por el que viaja la señal es determinante para la velocidad y la distancia.
 
-#### 3.2.2 Nivel de red
-- Routers (esenciales en WAN)
+### **3.1. Medios guiados**
 
-#### 3.2.3 Nivel superior
-- Gateways
-- Firewalls
-- Balanceadores de carga
+Utilizan cables para conducir la señal:
 
----
+* **Par trenzado (UTP/STP):** Económico, muy común en LAN (Categorías 6, 6a, 7).
 
-## 4. Estándares en redes
+Es el medio guiado más extendido en redes de área local por su equilibrio entre prestaciones, coste y facilidad de instalación. Consiste en pares de conductores de cobre trenzados entre sí: el trenzado reduce la diafonía (crosstalk) y la interferencia electromagnética por cancelación de campos magnéticos opuestos.
 
-### 4.1 Importancia
-Los estándares garantizan la interoperabilidad entre dispositivos de distintos fabricantes.
+* **Cable Coaxial:** Mayor blindaje, usado en redes de TV por cable (HFC).
 
-### 4.2 Organismos de estandarización
-- ISO (modelo OSI)
-- IEEE (familia 802)
-- IETF (protocolos de Internet)
-- ITU-T (telecomunicaciones)
+Formado por un conductor central de cobre rodeado por un dieléctrico, una malla metálica y una cubierta exterior. Esta estructura coaxial le otorga mayor ancho de banda y mejor inmunidad EMI que el par trenzado, pero a costa de mayor rigidez y coste.
 
-### 4.3 Principales estándares
+* **Fibra Óptica:** El estándar de oro. Utiliza pulsos de luz. Es el medio de interconexión más usado en las WAN. La fibra monomando alcanza desde 400 Gbps a 1.2 Tbps
 
-#### 4.3.1 Modelo OSI
-Define 7 capas: física, enlace, red, transporte, sesión, presentación y aplicación.
+Transmite información mediante pulsos de luz a través de un núcleo de vidrio o plástico de muy bajo índice de absorción. Sus ventajas sobre el cobre son radicales: inmunidad total a interferencias electromagnéticas, atenuación muy baja (lo que permite alcances de decenas de kilómetros sin repetidores), ancho de banda potencialmente ilimitado y seguridad intrínseca (interceptar la fibra produce pérdida de señal detectable).
 
-#### 4.3.2 IEEE 802
-- 802.3 (Ethernet) – actual
-- 802.11 (WiFi) – actual
+### 
 
-#### 4.3.3 TCP/IP
-Modelo de referencia práctico de Internet.
+### **3.2. Medios no guiados (inalámbricos)**
 
----
+La señal viaja por el espacio mediante ondas electromagnéticas:
 
-## 5. Redes de área extensa (WAN)
+* **Radiofrecuencia:** Wi-Fi, Bluetooth.
 
-### 5.1 Concepto
-Una WAN permite la interconexión de redes a gran escala geográfica.
+La familia **IEEE 802.11** define los estándares Wi-Fi. La evolución va desde 802.11b (11 Mbps, 2.4 GHz, 1999\) hasta el actual 802.11ax (Wi-Fi 6/6E).
 
-### 5.2 Características
-- Alta latencia respecto a LAN
-- Uso de infraestructuras públicas
-- Dependencia de operadores
+Wi-Fi 7 (802.11be) incorpora la banda de 6 GHz como canal principal y MLO (Multi-Link Operation). El mecanismo de acceso al medio es CSMA/CA, a diferencia de Ethernet que usa CSMA/CD.
 
-### 5.3 Tecnologías WAN
+* **Microondas:** Terrestres o Satelitales (Starlink, VSAT).
 
-#### 5.3.1 Tecnologías actuales
-- MPLS
-- VPN (IPsec, SSL)
-- SD-WAN
-- 5G
+Las microondas terrestres operan en la banda de 1 GHz a 40 GHz con propagación en línea de visión directa (LOS). Enlazan puntos fijos separados decenas de kilómetros mediante antenas parabólicas directivas. Se usan como alternativa al cableado en enlaces punto a punto entre edificios o entre torres de telecomunicaciones.
 
-#### 5.3.2 Tecnologías en desuso
-- Frame Relay (obsoleto)
-- ATM (uso residual)
-- X.25 (obsoleto)
+* **Infrarrojos:** Corto alcance, línea de visión directa.
 
----
+La transmisión por infrarrojo (IrDA, Infrared Data Association) fue el primer estándar de comunicación inalámbrica de corto alcance, con velocidades de hasta 16 Mbps pero exigiendo línea de visión directa y alcances inferiores a 1 metro. Ha sido completamente desplazado por Bluetooth y Wi-Fi en las comunicaciones entre dispositivos.
 
-## 6. Protocolos de acceso a redes de área extensa
+### **3.3. Dispositivos de interconexión**
 
-### 6.1 Protocolos clásicos
-- PPP (aún en uso en ciertos entornos)
-- HDLC (uso limitado)
+Actúan en diferentes capas del modelo OSI:
 
-### 6.2 Protocolos modernos
-- IP (protocolo base)
-- TCP/UDP
-- BGP (enrutamiento entre sistemas autónomos)
-- OSPF (uso interno)
+* **Repetidores/Hubs:** Capa 1 (Física).
 
-### 6.3 Protocolos de acceso remoto
-- PPPoE
-- L2TP
-- IPsec
-- SSL/TLS
+El repetidor es el dispositivo de interconexión más elemental: recibe una señal eléctrica degradada, la regenera y la retransmite. Opera exclusivamente en la capa física del modelo OSI, sin ninguna noción de direcciones ni protocolos. Su función es ampliar el alcance de un segmento de red más allá del límite impuesto por la atenuación del medio.
 
----
+* **Bridges/Switches:** Capa 2 (Enlace). Segmentan el tráfico mediante direcciones MAC.
 
-## 7. Tendencias actuales
+El puente (bridge) segmenta el dominio de colisión dividiendo la red en dos segmentos con tráfico independiente. Aprende las direcciones MAC de los dispositivos de cada segmento y solo reenvía las tramas cuyo destino está en el segmento opuesto, filtrando el tráfico local. Esta capacidad de aprendizaje y filtrado lo eleva a la capa de enlace de datos.
 
-- Virtualización de redes (NFV)
-- Redes definidas por software (SDN)
-- Edge Computing
-- Seguridad Zero Trust
+* **Routers:** Capa 3 (Red). Encaminan paquetes basándose en direcciones IP.
 
----
+El router es el dispositivo que interconecta redes distintas tomando decisiones de enrutamiento basadas en las direcciones IP de los paquetes, no en las direcciones MAC de las tramas. Opera en la capa de red del modelo OSI y constituye la frontera entre dominios de broadcast: ningún tráfico de broadcast cruza un router.
 
-## 8. Conclusión
+* **Gateways:** Capas superiores. Traductores entre protocolos distintos.
 
-La integración de sistemas y redes WAN ha evolucionado hacia modelos abiertos, virtualizados y definidos por software. Aunque muchas tecnologías tradicionales han quedado obsoletas, su comprensión sigue siendo clave para entender los sistemas actuales.
+La pasarela o **gateway** es el dispositivo más complejo de interconexión: opera en las capas superiores del modelo OSI (transporte, sesión, presentación, aplicación) y puede traducir entre protocolos completamente heterogéneos. Un gateway de correo electrónico convierte entre formatos SMTP y X.400; un gateway VoIP convierte entre telefonía clásica RTC y VoIP sobre IP. Conceptualmente, un gateway realiza una conversión semántica del tráfico, no solo un reenvío.
 
----
+## **4\. ESTÁNDARES DE INTERCONEXIÓN**
 
-## 9. Bibliografía orientativa
+Un **estándar** es un conjunto de reglas, especificaciones técnicas o procedimientos aceptados oficialmente (por un organismo reconocido) o de facto (por la industria) que garantizan la interoperabilidad entre sistemas de diferentes fabricantes.
 
-- Tanenbaum, A. - Redes de Computadores
-- Kurose & Ross - Computer Networking
-- RFCs del IETF
-- Documentación IEEE
+En el contexto de las WAN, los estándares son esenciales porque:
+
+* Permiten la comunicación entre redes de distintas organizaciones o países.  
+* Reducen la dependencia de un único proveedor (interoperabilidad).  
+* Facilitan la evolución tecnológica sin romper la compatibilidad.  
+* Disminuyen los costes al fomentar la competencia.
+
+### **4.1. Estándares de red de área local (LAN)**
+
+Dominados por el comité **IEEE 802**:
+
+* **802.3 (Ethernet):** El estándar de cableado.  
+* **802.11 (Wi-Fi):** Estándares inalámbricos (a, b, g, n, ac, ax).  
+* **802.1Q VLANs y 802.1D Spanning Tree**
+
+### **4.2. Estándares de red de área extensa (WAN)**
+
+Emitidos por organismos como la **ITU-T** y el **IETF**. Se centran en la transmisión a larga distancia y la gestión de la congestión.
+
+* **X.25:** Desarrollado en los años 70 por la CCITT (actual ITU-T), fue el primer estándar global para redes de datos de conmutación de paquetes.  
+* **X.75 (1980)**: Define interconexión entre redes X.25 (gateways). Permite roaming entre redes de distintos países/operadores.  
+* **Frame Relay: Eficiencia mediante circuitos virtuales:** Surgió en los 90 como una evolución simplificada de X.25 para líneas digitales de mayor calidad (T1/E1).  
+* **ATM (Asynchronous Transfer Mode):** Alta velocidad y celdas fijas. Diseñado para transportar voz, video y datos de forma simultánea en redes de alta velocidad
+
+## **5\. PROTOCOLOS DE ACCESO A REDES DE ÁREA EXTENSA** 
+
+Un **protocolo de acceso WAN** es un conjunto de reglas que define cómo un dispositivo (generalmente un router o conmutador) se conecta y transmite datos a través de una red de área extensa proporcionada por un operador de telecomunicaciones.
+
+**Funciones principales:**
+
+* Establecer, mantener y finalizar la conexión física/lógica con el operador.  
+* Encapsular los datos de niveles superiores (generalmente datagramas IP) dentro de tramas adecuadas para la WAN.  
+* Detectar y corregir errores (según el protocolo).
+
+Hay 2 tipos, los orientados a conexión: X.25, Frame Relay, ATM, MPLS y sin conexión: HDLC o PPP
+
+### **5.1. Protocolos clásicos de acceso WAN**
+
+* #### **PPP (Point-to-Point Protocol):** Protocolo de nivel de enlace (capa 2\) para enlaces punto a punto, como líneas serie (RS-232, T1/E1, módems DSL, etc.). Reemplazó a SLIP.
+
+* #### **HDLC (High-Level Data Link Control):** Protocolo de nivel de enlace de la ISO, Existe una variante propietaria de Cisco (Cisco HDLC)
+
+* #### **Frame Relay:** Tecnología WAN de conmutación de tramas orientada a conexión (circuitos virtuales), optimizada para alta velocidad, baja latencia y control de congestión.
+
+### **5.2. Protocolos de nivel de enlace y red para WAN modernas**
+
+* **ATM (Asynchronous Transfer Mode):** Tecnología WAN orientada a conexión, basada en **células de tamaño fijo.**Diseñada para integrar voz, vídeo y datos (triple play) con calidad de servicio (QoS).  
+* **MPLS (Multiprotocol Label Switching).** Protocolo de nivel 2.5 (entre enlace y red) que acelera el reenvío mediante etiquetas. No usa direcciones IP en cada salto (solo en los bordes).  
+* **DSL: (ADSL, VDSL)** Familia de protocolos que permiten transmisión digital de alta velocidad sobre par trenzado de cobre (línea telefónica tradicional), utilizando frecuencias superiores a la voz.  
+* **SD-WAN (Software-Defined WAN).** La evolución moderna de las WAN. Separa el **plano de control** del **plano de datos**. Permite gestionar múltiples conexiones (MPLS, Fibra, 5G) de forma centralizada mediante software, optimizando el tráfico según la aplicación (ej. priorizar Zoom sobre descargas de archivos).
+
+### **5.3. Protocolos de acceso inalámbrico WAN**
+
+* **Tecnologías celulares (GSM, GPRS, UMTS, LTE, 5G).** Los niveles superiores (IP, TCP, UDP) son estándar.   
+* **WiMAX (Worldwide Interoperability for Microwave Access). 802.16.** Estándar inalámbrico de área extensa (MAN/WAN) para acceso de última milla, con alcance típico de 10-50 km.
+
+**6\. CONCLUSIÓN**
+
+La necesidad de intercambiar información entre equipos, ubicados a distancias que van desde unos pocos metros a decenas e incluso centenares de kilómetros, ha dado lugar a la aparición de diversas tecnologías que pretenden satisfacerla. 
+
+Conforme ha ido evolucionando la tecnología, las fronteras entre LAN, MAN Y WAN se han ido difuminando paulatinamente. Las redes de área metropolitana comparten en la actualidad campo de aplicación con las redes de área local y de área extensa. Las tecnologías de red de área local, en especial Ethernet, tratan de abarcar alcances cada vez más amplios e imponer su presencia en todos los ámbitos. Dentro de las tecnologías de área extensa, los nuevos desarrollos basados en MPLS tienden a integrarse con el nivel de red de las redes locales de las organizaciones, para proporcionar un tránsito más sencillo del entorno local al nacional e incluso global, todo ello al abrigo de la tecnología IP.
+
+La integración de sistemas sobre WAN no es un concepto estático, sino una disciplina en continua evolución impulsada por el crecimiento de datos, la movilidad, la nube y la inteligencia artificial. Comprender los medios, estándares y protocolos actuales es la base para diseñar y operar las redes del futuro.
+
+**7\. BIBLIOGRAFÍA**
+
+\- Tanenbaum, A. (2021). *Computer Networks.* Editorial Pearson  
+\- Stallings, W. (2017). *Data and Computer Communications*. Ed. Pearson.  
+\- Prieto, A. (2006). *Introducción a la informática.* Editorial McGraw-Hill  
+\- Núñez, M. (2019) *Sistemas operativos en red*. Editorial Síntesis.  
+\- Martinez, E. (2022) Planificación y administración de redes. Editorial Síntesis
 
