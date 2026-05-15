@@ -13,18 +13,13 @@
    - 3.6.Aplicaciones cliente de red
 
 4. Funciones del software de sistemas en red  
-   - 4.1.Gestión de recursos compartidos  
-   - 4.2.Gestión de usuarios, permisos y autenticación  
-   - 4.3.Administración y configuración de la red  
-   - 4.4.Enrutamiento y conmutación de paquetes  
-   - 4.5.Seguridad y monitorización
+
 
 5. Estructura del software de sistemas en red  
    - 5.1.Arquitectura cliente-servidor  
    - 5.2.Arquitectura peer-to-peer (P2P)  
    - 5.3.Arquitectura orientada a servicios y microservicios  
-   - 5.4.Estructura en capas del software de red  
-   - 5.5.Infraestructura en la nube e híbrida
+   - 5.4.Infraestructura en la nube e híbrida
 
 6. Conclusión
 
@@ -142,49 +137,46 @@ Las aplicaciones cliente de red son software que se ejecuta en dispositivos fina
 
 ## 4. Funciones
 
-### **4.1. Gestión de recursos compartidos**
+Un sistema operativo en red presta varios servicios esenciales para facilitar la
+comunicación y el uso compartido de recursos entre diferentes dispositivos en
+una red. Los servicios más habituales incluyen (Núñez, 2019):
 
-Es la función primordial y razón de ser histórica de las redes. El software de sistemas permite que múltiples usuarios accedan de forma simultánea y controlada a recursos físicos y lógicos que de otro modo serían exclusivos de un solo equipo.
+- **Gestión de archivos compartidos:** Permite que múltiples usuarios
+accedan, lean y escriban archivos en un servidor desde sus
+computadoras o dispositivos. Servicios como NFS (Network File System)
+o SMB/CIFS permiten compartir archivos entre distintos sistemas.
 
-En cuanto a la compartición de sistemas de archivos, los protocolos más relevantes son NFS (Network File System), estándar en entornos Unix/Linux, y SMB/CIFS (Server Message Block / Common Internet File System), utilizado por Windows. Ambos permiten montar unidades remotas como si fueran locales, abstrayendo la red de cara al usuario. El software gestiona la concurrencia de accesos, la coherencia de caché y los bloqueos de archivo.
+- **Gestión de impresoras y recursos compartidos:** Facilita el acceso a
+impresoras y otros dispositivos periféricos en red, para que varios
+usuarios puedan utilizarlos sin estar directamente conectados.
 
-Respecto a los periféricos, el software implementa colas de impresión (spooling) que secuencian los trabajos, evitan conflictos y notifican el estado al usuario. Esta lógica aplica también a escáneres, plotters y almacenamiento en red (NAS/SAN).
+- **Autenticación y control de acceso:** Servicios como LDAP (Lightweight
+Directory Access Protocol) o Active Directory (AD) permiten gestionar
+usuarios, contraseñas y permisos en la red, garantizando que solo los
+usuarios autorizados puedan acceder a ciertos recursos.
 
-### **4.2. Gestión de usuarios, permisos y autenticación**
+- **Servicios de comunicación:** Un sistema operativo en red puede incluir
+servicios como correo electrónico, mensajería instantánea o telefonía IP
+(VoIP), facilitando la comunicación entre usuarios.
 
-El software de sistemas es el guardián del acceso a la red. Distingue quién puede entrar, a qué puede acceder y qué operaciones puede realizar.
+- **Servicio DHCP (Dynamic Host Configuration Protocol):** Asigna
+automáticamente direcciones IP a los dispositivos conectados a la red,
+simplificando la administración de la misma.
 
-La autenticación verifica la identidad del usuario. Los mecanismos van desde contraseñas simples hasta Kerberos (protocolo de autenticación por tickets, base de Active Directory), certificados digitales X.509 y autenticación multifactor (MFA). El SSO (Single Sign-On) permite que una única autenticación dé acceso a todos los servicios de la organización.
+- **Servicio DNS (Domain Name System):** Traduce nombres de dominio a
+direcciones IP, facilitando la navegación y la resolución de nombres en
+una red (Stallings, 2017).
 
-La autorización se implementa a través de modelos de control de acceso: el DAC (Discretionary Access Control) deja que el propietario del recurso otorgue permisos; el MAC (Mandatory Access Control) los impone el sistema según etiquetas de seguridad; y el RBAC (Role-Based Access Control) asigna permisos por roles, el modelo dominante en entornos empresariales. Las listas de control de acceso (ACL) son el mecanismo técnico concreto con el que se materializan estos modelos en el sistema de archivos y los recursos de red.
+- **Servidor web:** Permite que el servidor aloje sitios web o aplicaciones
+accesibles a través de internet o de una red interna (intranet).
 
-### **4.3. Administración y configuración de la red**
-
-El software automatiza tareas que manualmente serían inviables a escala. Dos servicios son centrales:
-
-El DHCP (Dynamic Host Configuration Protocol) asigna dinámicamente parámetros de red a cada dispositivo que se conecta: dirección IP, máscara de subred, puerta de enlace predeterminada y servidores DNS. Evita conflictos de direccionamiento y facilita la administración centralizada. Opera con un mecanismo de arrendamiento temporal que libera IPs no utilizadas.
-
-El DNS (Domain Name System) resuelve nombres de dominio a direcciones IP. Sin él, los usuarios deberían memorizar IPs numéricas. El proceso de resolución sigue una jerarquía: servidor local → servidor raíz → servidor TLD → servidor autoritativo. El software de sistemas puede alojar servidores DNS primarios, secundarios (redundancia) y de caché.
-
-### **4.4. Enrutamiento y conmutación de paquetes**
-
-El software de sistemas determina el camino óptimo que deben seguir los paquetes desde el origen al destino. Los protocolos de enrutamiento dinámico (RIP, OSPF, BGP) calculan y actualizan las tablas de enrutamiento automáticamente según el estado de la red.
-
-La conmutación opera a nivel de capa 2 (enlace), distribuyendo tramas dentro de una misma red local según las tablas MAC. El software gestiona mecanismos de calidad de servicio (QoS) que priorizan tráfico crítico (voz, vídeo) sobre tráfico de menor importancia.
-
-### **4.5. Seguridad, control de acceso a la red y monitorización**
-
-Esta función ha adquirido una importancia central en los últimos años. El software implementa múltiples capas de defensa:
-
-Los cortafuegos (firewalls) filtran el tráfico según reglas definidas por el administrador. Los modernos son de inspección de estado (stateful), analizando el contexto de cada conexión, no solo paquete a paquete. Los sistemas IDS/IPS (Intrusion Detection/Prevention System) monitorizan el tráfico en busca de patrones anómalos o firmas de ataques conocidos, reaccionando de forma pasiva (IDS, solo alerta) o activa (IPS, bloquea el tráfico). Las VPN (Virtual Private Network) cifran las comunicaciones entre nodos remotos creando un túnel seguro sobre redes públicas, usando protocolos como IPsec y OpenVPN.
-
-El modelo Zero Trust, cada vez más extendido, parte de la premisa de que ninguna entidad, ni interna ni externa, debe ser confiada por defecto: toda solicitud de acceso es verificada explícitamente.
-
-Con respecto a la monitorización, el software recoge continuamente métricas de rendimiento (ancho de banda, latencia, uso de CPU y memoria, número de conexiones activas) y las pone a disposición del administrador. El protocolo SNMP es el estándar para la consulta y configuración remota de dispositivos de red. Los logs del sistema registran eventos relevantes: inicios de sesión, accesos denegados, cambios de configuración y errores. La auditoría permite reconstruir qué ocurrió, cuándo y quién lo realizó.
+- **Servidores de bases de datos:** Sistemas operativos en red también
+gestionan servicios de bases de datos, permitiendo el acceso y la
+manipulación de datos desde múltiples clientes de forma simultánea.
 
 ## 5. Estructura
 
-### **5.1. Arquitectura cliente-servidor**
+**5.1. Arquitectura cliente-servidor**
 
 Es el paradigma dominante en las redes corporativas y en Internet. La idea central es la **especialización de roles**: el servidor concentra recursos, procesamiento y lógica; el cliente proporciona la interfaz al usuario y realiza peticiones.
 
@@ -196,7 +188,7 @@ Es el paradigma dominante en las redes corporativas y en Internet. La idea centr
 
 El software de sistemas en red implementa esta arquitectura proporcionando los servicios de red, el sistema operativo de red (NOS), los protocolos de comunicación y los mecanismos de gestión de conexiones simultáneas 
 
-**2\. Arquitectura peer-to-peer (P2P)**
+**2. Arquitectura peer-to-peer (P2P)**
 
 En la arquitectura P2P cada nodo (par) actúa simultáneamente como cliente y como servidor. No existe un punto central de control, lo que elimina el cuello de botella del modelo cliente-servidor y aporta robustez ante fallos: si un nodo cae, el sistema continúa funcionando.
 
@@ -204,7 +196,7 @@ Se distinguen tres variantes. En el **P2P puro** (Gnutella) no hay ningún servi
 
 El software de sistemas en entornos P2P gestiona el descubrimiento de pares, el encaminamiento de peticiones, la replicación de contenido y los mecanismos de incentivo para evitar el problema de nodos que consumen sin aportar. La comparativa con cliente-servidor es un punto habitual en los tribunales: el P2P escala mejor horizontalmente y es más tolerante a fallos, pero es más difícil de administrar, de securizar y de garantizar la calidad de servicio.
 
-### **5.3. Arquitectura orientada a servicios y microservicios**
+**5.3. Arquitectura orientada a servicios y microservicios**
 
 Ambas arquitecturas responden al mismo principio: descomponer el software en unidades funcionales independientes con interfaces bien definidas, de forma que puedan desarrollarse, desplegarse y escalarse de forma autónoma.
 
@@ -214,15 +206,8 @@ Ambas arquitecturas responden al mismo principio: descomponer el software en uni
 
 Desde el punto de vista del software de sistemas en red, tanto SOA como microservicios implican una infraestructura de red sofisticada: balanceo de carga, service mesh , descubrimiento de servicios, etc
 
-**5.4. Estructura en capas del software de red**
 
-La organización en capas es el principio arquitectónico fundamental del software de sistemas en red. Permite que cada capa se ocupe de un problema bien delimitado, que los cambios en una capa no afecten a las demás y que diferentes implementaciones puedan interoperar si respetan las interfaces.
-
-El **modelo OSI** define siete capas. Las tres inferiores (física, enlace de datos, red) se ocupan del transporte de bits, tramas y paquetes entre nodos. La capa de transporte (TCP, UDP) garantiza la entrega extremo a extremo. Las tres superiores (sesión, presentación, aplicación) gestionan el diálogo entre procesos, el formato de los datos y los servicios de usuario. Este modelo es de referencia conceptual; en la práctica, el software de sistemas se implementa según TCP/IP.
-
-El **modelo TCP/IP** consolida las siete capas OSI en cuatro: acceso a la red (equivale a físico \+ enlace), internet (IP, ICMP, ARP), transporte (TCP, UDP) y aplicación (HTTP, FTP, SMTP, DNS…). El software de sistemas en red implementa principalmente las capas de internet y transporte en el núcleo del sistema operativo (el stack de red del kernel), mientras que los protocolos de aplicación se implementan en espacio de usuario. 
-
-**5.5. Infraestructura en la nube e híbrida**
+**5.4. Infraestructura en la nube e híbrida**
 
 La estructura del software de sistemas en red ya no puede entenderse sin el paradigma cloud. Los modelos de servicio determinan qué parte del software gestiona el proveedor y cuál el usuario:
 
