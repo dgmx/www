@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IPCalc</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root { --bg: #f5f5f5; --card: #fff; --text: #333; --label: #555; --border: #ccc; --row-border: #eee; --label-color: #666; --val-color: #222; }
+  [data-theme="dark"] { --bg: #1a1a1a; --card: #2a2a2a; --text: #e0e0e0; --label: #aaa; --border: #555; --row-border: #3a3a3a; --label-color: #999; --val-color: #eee; }
+  body { font-family: system-ui, sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; background: var(--bg); transition: background .2s; }
+  .card { background: var(--card); padding: 2rem; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,.1); width: 480px; transition: background .2s; }
+  .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
+  h1 { font-size: 1.5rem; color: var(--text); }
+  .theme-btn { background: none; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; font-size: 1.2rem; width: 40px; height: 36px; display: flex; align-items: center; justify-content: center; margin-top: 0; color: var(--text); transition: background .2s; }
+  .theme-btn:hover { background: var(--border); }
+  .field { margin-bottom: 1rem; }
+  label { display: block; margin-bottom: .3rem; font-weight: 600; color: var(--label); font-size: .9rem; }
+  input { width: 100%; padding: .6rem .8rem; font-size: 1rem; border: 1px solid var(--border); border-radius: 6px; background: var(--card); color: var(--text); transition: background .2s; }
+  input:focus { outline: 2px solid #0066cc; border-color: transparent; }
+  .row { display: flex; gap: 1rem; }
+  .row .field { flex: 1; }
+  button { width: 100%; padding: .7rem; font-size: 1rem; font-weight: 600; color: #fff; background: #0066cc; border: none; border-radius: 6px; cursor: pointer; margin-top: .5rem; }
+  button:hover { background: #0052a3; }
+  .results { margin-top: 1.5rem; }
+  .result-row { display: flex; justify-content: space-between; padding: .5rem 0; border-bottom: 1px solid var(--row-border); font-size: .95rem; transition: border-color .2s; }
+  .result-row:last-child { border-bottom: none; }
+  .result-row .label { color: var(--label-color); }
+  .result-row .value { font-family: monospace; font-weight: 600; color: var(--val-color); }
+  .error { color: #cc0000; margin-top: .8rem; font-size: .9rem; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="header">
+    <h1>Calculadora IP / CIDR</h1>
+    <button class="theme-btn" id="themeBtn" aria-label="Cambiar modo">☀️</button>
+  </div>
+  <div class="row">
+    <div class="field">
+      <label for="ip">Dirección IP</label>
+      <input id="ip" type="text" placeholder="192.168.1.0" value="192.168.1.0">
+    </div>
+    <div class="field">
+      <label for="cidr">CIDR</label>
+      <input id="cidr" type="text" placeholder="24" value="24">
+    </div>
+  </div>
+  <button id="calc">Calcular</button>
+  <div id="error" class="error"></div>
+  <div class="results" id="results"></div>
+</div>
+<script>
+const themeBtn = document.getElementById('themeBtn');
+function setTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  themeBtn.textContent = theme === 'dark' ? '🌙' : '☀️';
+  localStorage.setItem('theme', theme);
+}
+function toggleTheme() {
+  setTheme(document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+}
+setTheme(localStorage.getItem('theme') || 'light');
+themeBtn.addEventListener('click', toggleTheme);
+
+function parseIP(ip) {
+  const parts = ip.trim().split('.');
+  if (parts.length !== 4) return null;
+  const nums = parts.map(Number);
+  if (nums.some(n => isNaN(n) || n < 0 || n > 255)) return null;
+  return nums;
+}
+
+function toUint32(octets) {
+  return ((octets[0] << 24) | (octets[1] << 16) | (octets[2] << 8) | octets[3]) >>> 0;
+}
+
+function toOctets(n) {
+  return [(n >>> 24) & 0xff, (n >>> 16) & 0xff, (n >>> 8) & 0xff, n & 0xff];
+}
+
+function fmt(n) {
+  return toOctets(n).join('.');
+}
+
+function calc(ipStr, cidrStr) {
+  const ip = parseIP(ipStr);
+  if (!ip) return { error: 'IP inválida. Formato: x.x.x.x' };
+
+  const cidr = parseInt(cidrStr, 10);
+  if (isNaN(cidr) || cidr < 0 || cidr > 32) return { error: 'CIDR inválido. Debe ser 0-32' };
+
+  const ip32 = toUint32(ip);
+  const mask = cidr === 0 ? 0 : (~0 << (32 - cidr)) >>> 0;
+  const network = ip32 & mask;
+  const broadcast = network | (~mask >>> 0);
+  const first = cidr >= 31 ? network : network + 1;
+  const last = cidr >= 31 ? broadcast : broadcast - 1;
+
+  return {
+    network: fmt(network),
+    broadcast: fmt(broadcast),
+    first: fmt(first),
+    last: fmt(last),
+    mask: fmt(mask),
+    cidr,
+  };
+}
+
+const ipInput = document.getElementById('ip');
+const cidrInput = document.getElementById('cidr');
+const errorEl = document.getElementById('error');
+const resultsEl = document.getElementById('results');
+
+function render() {
+  const r = calc(ipInput.value, cidrInput.value);
+  if (r.error) {
+    errorEl.textContent = r.error;
+    resultsEl.innerHTML = '';
+    return;
+  }
+  errorEl.textContent = '';
+  resultsEl.innerHTML = [
+    ['Máscara de red', r.mask],
+    ['Dirección de red', r.network],
+    ['Dirección de broadcast', r.broadcast],
+    ['Primer equipo', r.first],
+    ['Último equipo', r.last],
+  ].map(([label, value]) =>
+    `<div class="result-row"><span class="label">${label}</span><span class="value">${value}</span></div>`
+  ).join('');
+}
+
+document.getElementById('calc').addEventListener('click', render);
+ipInput.addEventListener('keydown', e => { if (e.key === 'Enter') render(); });
+cidrInput.addEventListener('keydown', e => { if (e.key === 'Enter') render(); });
+render();
+</script>
+</body>
+</html>
