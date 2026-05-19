@@ -6,6 +6,8 @@ _Práctica con clases básicas y composición de clases_
 
 Se pide realizar una aplicación para una empresa que vende figuras de superhéroes. Para ello, tendrá que modelar todos los datos relativos a estas figuras. Así pues, se pide que programe las siguientes clases:
 
+![UML](img/uml_superheroe.png)
+
 ## Clase Superhéroe
 
 Esta clase definirá las características de un superhéroe.
