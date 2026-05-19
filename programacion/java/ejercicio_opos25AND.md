@@ -4,6 +4,10 @@
 
 Desarrollar en lenguaje Java la estructura representada en el siguiente Diagrama de Clases. En dicho diagrama se describe la estructura para representar los alumnos de un Ciclo Formativo con sus módulos y calificaciones.
 
+Se deben desarrollar las clases Alumno y Calificacion. Suponemos el resto de clases ya desarrolladas previamente. A continuación se describe la funcionalidad de los métodos más importantes.  
+
+![UML](img/uml_opos25.png)
+
 ```mermaid
 classDiagram
 
@@ -59,7 +63,7 @@ Alumno "1" --> "*" Calificacion
 Calificacion "*" --> "1" Modulo
 ```
 
-Se deben desarrollar las clases Alumno y Calificacion. Suponemos el resto de clases ya desarrolladas previamente. A continuación se describe la funcionalidad de los métodos más importantes.  
+
 
 
 - En la clase Alumno, el método `matricular()` añadirá un módulo y su calificación al alumno. La calificación inicial será 0, indicando que aún está sin calificar. El método `calificar()` servirá para asignarle una calificación numérica (1- 10) al alumno en el módulo especificado. Si el alumno ya estaba matriculado de ese módulo, el método no hará nada.   
