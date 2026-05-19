@@ -23,12 +23,15 @@ El diagrama de clases representa las entidades principales: Libro, Usuario y Bib
 
 classDiagram
     class Libro {
-        - titulo: String
-        - autor: String
-        - ISBN: String
-        - disponible: boolean
-        + prestar(): void
-        + devolver(): void
+        -titulo: String
+        -autor: String
+        -ISBN: String
+        -disponible: boolean
+        +Libro(titulo: String, autor: String, ISBN: String)
+        +prestar() void
+        +devolver() void
+        +estaDisponible() boolean
+        +getTitulo() String
     }
 
     class Usuario {
