@@ -1,23 +1,20 @@
 # Scripts en Bash - Examen
 
-1. Realizar un script que copie todos los ficheros que se le pasen por parámetro, al directorio misDatos. Si el directorio misDatos no existe, se deberá crear.
 
-2. Realizar un script que muestre el nombre de cada uno de los ficheros pasados por parámetro y visualice su contenido por pantalla. En caso de no pasar ningún parámetro se mostrará un mensaje de error.
 
-3. Realizar un script que cree un fichero de nombre Copia.tar.gz, donde se almacenen comprimidos todos los ficheros que se pasen por parámetro. En caso de no pasar ningún parámetro se mostrará un mensaje de error.
 
-4. Realizar un script que muestre el nombre de cada uno de los ficheros pasados por parámetro y el tipo de fichero que es. 
 
-5. Contar líneas de un archivo pasado como parámetro, solo uno
 
-6. Buscar palabra en archivos de un directorio
-   
-7. Suma de números pasados como argumentos
-8. Copia de seguridad incremental por fecha de carpeta pasada por parámetro
+
+
+
+
 
 
 
 ## Ejercicio 1
+
+1. Realizar un script que copie todos los ficheros que se le pasen por parámetro, al directorio misDatos. Si el directorio misDatos no existe, se deberá crear.
 
 ```bash
 #!/bin/bash
@@ -38,6 +35,8 @@ done
 
 ## Ejercicio 2
 
+2. Realizar un script que muestre el nombre de cada uno de los ficheros pasados por parámetro y visualice su contenido por pantalla. En caso de no pasar ningún parámetro se mostrará un mensaje de error.
+
 ```bash
 #!/bin/bash
 # Comprueba si se han pasado parámetros
@@ -56,6 +55,9 @@ done
 ```
 
 ## Ejercicio 3
+
+3. Realizar un script que cree un fichero de nombre Copia.tar.gz, donde se almacenen comprimidos todos los ficheros que se pasen por parámetro. En caso de no pasar ningún parámetro se mostrará un mensaje de error.
+
 ```bash
 if [ $# -eq 0 ]; then
     echo "Error: No se han pasado ficheros por parámetro."
@@ -73,6 +75,9 @@ El comando crea un archivo comprimido llamado Copia.tar.gz que contiene todos lo
 - `"$@"` — todos los parámetros recibidos por el script
 
 ## Ejercicio 4
+
+4. Realizar un script que muestre el nombre de cada uno de los ficheros pasados por parámetro y el tipo de fichero que es. 
+
 ```bash
 #!/bin/bash
 
@@ -91,6 +96,9 @@ El comando file -b muestra el tipo de fichero en modo reducido (brief)
 
 
 ## Ejercicio 5
+
+5. Contar líneas de un archivo pasado como parámetro, solo uno
+
 ```bash
 
 # Comprueba que se pasa un único parámetro
@@ -103,6 +111,8 @@ wc -l < "$1"
 
 
 ## Ejercicio 6
+
+6. Buscar palabra en archivos de un directorio
 
 ```bash
 
@@ -120,6 +130,9 @@ grep -rl "$2" "$1"
 
 ## Ejercicio 7
 
+7. Suma de números pasados como argumentos
+
+
 ```bash
 sum=0
 # Recorre el array que forman todos los parámetros
@@ -131,6 +144,8 @@ echo $sum
 
 
 ## Ejercicio 8
+
+8. Copia de seguridad incremental por fecha de carpeta pasada por parámetro
 
 ```bash
 
