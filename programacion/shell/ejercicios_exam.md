@@ -133,13 +133,18 @@ echo $sum
 ## Ejercicio 8
 
 ```bash
-if [ $# -ne 1 ]; then
+
+function f_Uso(){
     echo "Uso: $0 <directorio>"
     exit 1
+}
+if [ $# -eq 1 ]; then
+    fecha=$(date +%Y%m%d)
+    tar -czf "backup_${fecha}.tar.gz" "$1"
+else
+    echo "Error: Número de parámetros incorrecto"
+    f_Uso
 fi
-fecha=$(date +%Y%m%d)
-tar -czf "backup_${fecha}.tar.gz" "$1"
-
 # tar -czf "backup_$(date +%Y%m%d).tar.gz" "$1" Todo en la misma linea
 ```
 
@@ -297,11 +302,11 @@ then
     #Comprobamos si existe un fichero o directorio con el
     #nombre que se ha pasado como parámetro
     if [ -f $1 -o -d $1 ]; then
-            if [ ! -d TRASHDIR ]; then
-                mkdir TRASHDIR && echo "Directorio TRASHDIR creado"
+            if [ ! -d ~/TRASHDIR ]; then
+                mkdir ~/TRASHDIR && echo "Directorio TRASHDIR creado"
             fi
 
-            mv $1 TRASHDIR && echo ""$1" se ha movido al directorio TRASHDIR"
+            mv $1 ~/TRASHDIR && echo ""$1" se ha movido al directorio TRASHDIR"
     #Si no es un archivo o directorio se muestra un mensaje
     else
         echo "No existe ningún fichero o directorio llamado "$1""
