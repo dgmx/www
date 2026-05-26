@@ -138,6 +138,8 @@ for i in {1..100}; do
         echo "$i"
     fi
 done
+```
+:::
 
 ## 6. Funciones (Media)
 **Ejercicio:** Función que calcule el cuadrado.
