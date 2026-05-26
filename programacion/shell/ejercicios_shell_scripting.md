@@ -67,13 +67,47 @@ fi
 ---
 
 ## 5. Bucles (Fácil)
-**Ejercicio:** Imprime del 1 al 10.
+**Ejercicio 1 :** Imprime del 1 al 10.
 
 ::: details  Mostrar solución {close}
 ```bash
 #!/bin/bash
 for i in {1..10}; do
   echo $i
+done
+```
+:::
+
+::: details  Mostrar solución Tipo C {close}
+```bash
+echo -e "\n=== Estilo C (0 al 9) ===\n"
+for ((i=0; i<10; i++)); do
+    echo -n "$i "
+done
+```
+:::
+
+**Ejercicio 2 :** Imprime múltiplos de 5 entre 0 y 50
+
+::: details  Mostrar solución {close}
+```bash
+echo "=== Múltiplos de 5 (0 al 50) ==="
+for i in {0..50..5}; do
+    echo -n "$i "
+done
+```
+:::
+
+**Ejercicio 3 :** Tabla de multiplicar
+
+::: details  Mostrar solución {close}
+```bash
+
+#!/usr/bin/bash
+echo "* Introduce la tabla de multiplicar: "
+read tabla
+for i in {1..10}; do
+	echo "$tabla x $i = $(( tabla * i ))"
 done
 ```
 :::
