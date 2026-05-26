@@ -115,7 +115,9 @@ done
 **Ejercicio 4 :** Buscando ficheros que empiezan por s en home
 
 ::: details  Mostrar solución {close}
+
 ```bash
+#!/bin/bash
 echo "=== Ficheros en /etc que empiezan por 'h' ==="
 for fichero in ~/s*; do
     if [ -f "$fichero" ]; then
@@ -124,6 +126,18 @@ for fichero in ~/s*; do
 done
 ```
 :::
+
+
+**Ejercicio 5 :** Buscando divisibles de 3 y 5 entre 0 y 100
+
+::: details  Mostrar solución {close}
+```bash
+#!/bin/bash
+for i in {1..100}; do
+    if (( i % 3 == 0 && i % 5 == 0 )); then
+        echo "$i"
+    fi
+done
 
 ## 6. Funciones (Media)
 **Ejercicio:** Función que calcule el cuadrado.
