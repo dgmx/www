@@ -102,7 +102,6 @@ done
 
 ::: details  Mostrar solución {close}
 ```bash
-
 #!/usr/bin/bash
 echo "* Introduce la tabla de multiplicar: "
 read tabla
@@ -112,7 +111,19 @@ done
 ```
 :::
 
----
+
+**Ejercicio 4 :** Buscando ficheros que empiezan por s en home
+
+::: details  Mostrar solución {close}
+```bash
+echo "=== Ficheros en /etc que empiezan por 'h' ==="
+for fichero in ~/s*; do
+    if [ -f "$fichero" ]; then
+        echo "  Fichero: $fichero"
+    fi
+done
+```
+:::
 
 ## 6. Funciones (Media)
 **Ejercicio:** Función que calcule el cuadrado.
