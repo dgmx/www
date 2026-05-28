@@ -1,0 +1,450 @@
+{
+  "name": "Jardinería",
+  "key": "jardineria",
+  "schema": [],
+  "total": 86,
+  "sections": {
+    "Consultas sobre una tabla": [
+      {
+        "id": 1,
+        "question": "Devuelve un listado con el código de oficina y la ciudad donde hay oficinas.",
+        "answer": "SELECT codigo_oficina, ciudad\n    FROM oficina"
+      },
+      {
+        "id": 2,
+        "question": "Devuelve un listado con la ciudad y el teléfono de las oficinas de España.",
+        "answer": "SELECT ciudad, telefono\n    FROM oficina\n    WHERE pais = 'España'"
+      },
+      {
+        "id": 3,
+        "question": "Devuelve un listado con el nombre, apellidos y email de los empleados cuyo jefe tiene un código de jefe igual a 7.",
+        "answer": "SELECT nombre, apellido1, apellido2, email\n    FROM empleado e\n    WHERE e.codigo_jefe = 7"
+      },
+      {
+        "id": 4,
+        "question": "Devuelve el nombre del puesto, nombre, apellidos y email del jefe de la empresa.",
+        "answer": "SELECT puesto, nombre, apellido1, apellido2, email\n    FROM empleado e\n    WHERE e.codigo_jefe IS NULL"
+      },
+      {
+        "id": 5,
+        "question": "Devuelve un listado con el nombre, apellidos y puesto de aquellos empleados que no sean representantes de ventas.",
+        "answer": "SELECT nombre, apellido1, apellido2, puesto\n    FROM empleado e\n    WHERE e.puesto <> 'Representante Ventas'"
+      },
+      {
+        "id": 6,
+        "question": "Devuelve un listado con el nombre de los todos los clientes españoles.",
+        "answer": "SELECT c.nombre_cliente\n    FROM cliente c\n    WHERE c.pais = 'Spain'"
+      },
+      {
+        "id": 7,
+        "question": "Devuelve un listado con los distintos estados por los que puede pasar un pedido.",
+        "answer": "SELECT DISTINCT p.estado\n    FROM pedido p"
+      },
+      {
+        "id": 8,
+        "question": "Devuelve un listado con el código de cliente de aquellos clientes que realizaron algún pago en 2008. Tenga en cuenta que deberá eliminar aquellos códigos de cliente que aparezcan repetidos. Resuelva la consulta: * Utilizando la función YEAR de MySQL. * Utilizando la función DATE_FORMAT de MySQL. * Sin utilizar ninguna de las funciones anteriores.",
+        "answer": "/*\n    Utilizando la función YEAR\n    */\n    SELECT DISTINCT p.codigo_cliente\n    FROM pago p\n    WHERE YEAR(p.fecha_pago) = 2008\n\n    /*\n    Utilizando la función DATE_FORMAT\n    */\n    SELECT DISTINCT p.codigo_cliente\n    FROM pago p\n    WHERE DATE_FORMAT(p.fecha_pago, '%Y') = 2008\n\n    /*\n    Sin utilizar ninguna de las funciones\n    */\n    SELECT DISTINCT p.codigo_cliente\n    FROM pago p\n    WHERE p.fecha_pago BETWEEN '2008-01-01' AND '2008-12-31'"
+      },
+      {
+        "id": 9,
+        "question": "Devuelve un listado con el código de pedido, código de cliente, fecha esperada y fecha de entrega de los pedidos que no han sido entregados a tiempo.",
+        "answer": "SELECT p.codigo_pedido, p.codigo_cliente, p.fecha_esperada, p.fecha_entrega\n    FROM pedido p\n    WHERE p.fecha_entrega > p.fecha_esperada"
+      },
+      {
+        "id": 10,
+        "question": "Devuelve un listado con el código de pedido, código de cliente, fecha esperada y fecha de entrega de los pedidos cuya fecha de entrega ha sido al menos dos días antes de la fecha esperada. * Utilizando la función ADDDATE de MySQL. * Utilizando la función DATEDIFF de MySQL. * ¿Sería posible resolver esta consulta utilizando el operador de suma + o resta -?",
+        "answer": "/*\n    Utilizando la función ADDDATE()\n    */\n    SELECT p.codigo_pedido, p.codigo_cliente, p.fecha_esperada, p.fecha_entrega\n    FROM pedido p\n    WHERE ADDDATE(p.fecha_entrega, 2) <= p.fecha_esperada\n    /*\n    Utilizando la función DATEDIFF()\n    */\n    SELECT p.codigo_pedido, p.codigo_cliente, p.fecha_esperada, p.fecha_entrega\n    FROM pedido p\n    WHERE DATEDIFF(p.fecha_esperada, p.fecha_entrega) >= 2\n    /*\n    Utilizando operador de suma (+)\n    */\n    SELECT p.codigo_pedido, p.codigo_cliente, p.fecha_esperada, p.fecha_entrega\n    FROM pedido p\n    WHERE p.fecha_entrega + 2 <= p.fecha_esperada"
+      },
+      {
+        "id": 11,
+        "question": "Devuelve un listado de todos los pedidos que fueron rechazados en 2009.",
+        "answer": "SELECT *\n    FROM pedido p\n    WHERE p.estado = 'Rechazado' AND YEAR(p.fecha_pedido) = 2009"
+      },
+      {
+        "id": 12,
+        "question": "Devuelve un listado de todos los pedidos que han sido entregados en el mes de enero de cualquier año.",
+        "answer": "SELECT *\n    FROM pedido p \n    WHERE MONTH(p.fecha_entrega) = 01"
+      },
+      {
+        "id": 13,
+        "question": "Devuelve un listado con todos los pagos que se realizaron en el año 2008 mediante Paypal. Ordene el resultado de mayor a menor.",
+        "answer": "SELECT *\n    FROM pago p\n    WHERE YEAR(p.fecha_pago) = 2008 AND p.forma_pago = 'Paypal'"
+      },
+      {
+        "id": 14,
+        "question": "Devuelve un listado con todas las formas de pago que aparecen en la tabla pago. Tenga en cuenta que no deben aparecer formas de pago repetidas.",
+        "answer": "SELECT DISTINCT p.forma_pago\n    FROM pago p"
+      },
+      {
+        "id": 15,
+        "question": "Devuelve un listado con todos los productos que pertenecen a la gama Ornamentales y que tienen más de 100 unidades en stock. El listado deberá estar ordenado por su precio de venta, mostrando en primer lugar los de mayor precio.",
+        "answer": "SELECT *\n    FROM producto p\n    WHERE p.gama = 'Ornamentales' AND p.cantidad_en_stock > 100\n    ORDER BY p.precio_venta DESC"
+      },
+      {
+        "id": 16,
+        "question": "Devuelve un listado con todos los clientes que sean de la ciudad de Madrid y cuyo representante de ventas tenga el código de empleado 11 o 30.",
+        "answer": "SELECT *\n    FROM cliente c\n    WHERE c.ciudad = 'Madrid' AND c.codigo_empleado_rep_ventas IN (11, 30)"
+      }
+    ],
+    "Consultas multitabla (Composición interna)": [
+      {
+        "id": 1,
+        "question": "Obtén un listado con el nombre de cada cliente y el nombre y apellido de su representante de ventas.",
+        "answer": "SELECT c.nombre_cliente, e.nombre, e.apellido1, e.apellido2\n    FROM cliente c INNER JOIN empleado e ON e.codigo_empleado = c.codigo_empleado_rep_ventas"
+      },
+      {
+        "id": 2,
+        "question": "Muestra el nombre de los clientes que hayan realizado pagos junto con el nombre de sus representantes de ventas.",
+        "answer": "SELECT c.nombre_cliente, e.nombre, e.apellido1, e.apellido2\n    FROM cliente c INNER JOIN pago p ON c.codigo_cliente = p.codigo_cliente\n                   INNER JOIN empleado e ON c.codigo_empleado_rep_ventas = e.codigo_empleado"
+      },
+      {
+        "id": 3,
+        "question": "Muestra el nombre de los clientes que no hayan realizado pagos junto con el nombre de sus representantes de ventas.",
+        "answer": "SELECT c.nombre_cliente, e.nombre, e.apellido1, e.apellido2\n    FROM cliente c LEFT JOIN pago p ON c.codigo_cliente = p.codigo_cliente\n                   INNER JOIN empleado e ON c.codigo_empleado_rep_ventas = e.codigo_empleado\n    WHERE p.codigo_cliente IS NULL"
+      },
+      {
+        "id": 4,
+        "question": "Devuelve el nombre de los clientes que han hecho pagos y el nombre de sus representantes junto con la ciudad de la oficina a la que pertenece el representante.",
+        "answer": "SELECT c.nombre_cliente, e.nombre, e.apellido1, e.apellido2, o.ciudad\n    FROM cliente c INNER JOIN pago p ON c.codigo_cliente = p.codigo_cliente\n                   INNER JOIN empleado e ON c.codigo_empleado_rep_ventas = e.codigo_empleado\n                   INNER JOIN oficina o ON e.codigo_oficina = o.codigo_oficina"
+      },
+      {
+        "id": 5,
+        "question": "Devuelve el nombre de los clientes que no hayan hecho pagos y el nombre de sus representantes junto con la ciudad de la oficina a la que pertenece el representante.",
+        "answer": "SELECT c.codigo_cliente, c.nombre_cliente, e.nombre, e.apellido1, e.apellido2, o.ciudad\n    FROM cliente c LEFT JOIN pago p ON c.codigo_cliente = p.codigo_cliente\n                   INNER JOIN empleado e ON c.codigo_empleado_rep_ventas = e.codigo_empleado\n                   INNER JOIN oficina o ON e.codigo_oficina = o.codigo_oficina\n    WHERE p.codigo_cliente IS NULL"
+      },
+      {
+        "id": 6,
+        "question": "Lista la dirección de las oficinas que tengan clientes en Fuenlabrada.",
+        "answer": "SELECT DISTINCT o.linea_direccion1, o.linea_direccion2\n    FROM cliente c INNER JOIN pago p ON c.codigo_cliente = p.codigo_cliente\n                   INNER JOIN empleado e ON c.codigo_empleado_rep_ventas = e.codigo_empleado\n                   INNER JOIN oficina o ON e.codigo_oficina = o.codigo_oficina\n    WHERE c.ciudad = 'Fuenlabrada'"
+      },
+      {
+        "id": 7,
+        "question": "Devuelve el nombre de los clientes y el nombre de sus representantes junto con la ciudad de la oficina a la que pertenece el representante.",
+        "answer": "SELECT c.nombre_cliente, CONCAT(e.nombre, ' ', e.apellido1, ' ', e.apellido2) AS 'Representante', o.ciudad\n    FROM cliente c INNER JOIN empleado e ON e.codigo_empleado = c.codigo_empleado_rep_ventas\n                   INNER JOIN oficina o ON o.codigo_oficina = e.codigo_oficina"
+      },
+      {
+        "id": 8,
+        "question": "Devuelve un listado con el nombre de los empleados junto con el nombre de sus jefes.",
+        "answer": "SELECT CONCAT(e.nombre, ' ', e.apellido1, ' ', e.apellido2) AS 'Empleado', CONCAT(j.nombre, ' ', j.apellido1, ' ', j.apellido2) AS 'Jefe'\n    FROM empleado e INNER JOIN empleado j ON e.codigo_jefe = j.codigo_empleado"
+      },
+      {
+        "id": 9,
+        "question": "Devuelve un listado que muestre el nombre de cada empleados, el nombre de su jefe y el nombre del jefe de sus jefe.",
+        "answer": "SELECT CONCAT(e.nombre, ' ', e.apellido1, ' ', e.apellido2) AS 'Empleado',\n           CONCAT(j.nombre, ' ', j.apellido1, ' ', j.apellido2) AS 'Jefe',\n           CONCAT(m.nombre, ' ', m.apellido1, ' ', m.apellido2) AS 'Jefe del Jefe'\n    FROM empleado e INNER JOIN empleado j ON e.codigo_jefe = j.codigo_empleado\n                    INNER JOIN empleado m ON j.codigo_jefe = m.codigo_empleado"
+      },
+      {
+        "id": 10,
+        "question": "Devuelve el nombre de los clientes a los que no se les ha entregado a tiempo un pedido.",
+        "answer": "SELECT *\n    FROM cliente c INNER JOIN pedido p ON c.codigo_cliente = p.codigo_cliente\n    WHERE p.fecha_entrega > p.fecha_esperada"
+      },
+      {
+        "id": 11,
+        "question": "Devuelve un listado de las diferentes gamas de producto que ha comprado cada cliente.",
+        "answer": "SELECT DISTINCT c.nombre_cliente, pr.gama\n    FROM cliente c INNER JOIN pedido pe ON c.codigo_cliente = pe.codigo_cliente\n                   INNER JOIN detalle_pedido dp ON dp.codigo_pedido = pe.codigo_pedido\n                   INNER JOIN producto pr ON pr.codigo_producto = dp.codigo_producto"
+      }
+    ],
+    "Consultas multitabla (Composición externa)": [
+      {
+        "id": 1,
+        "question": "Devuelve un listado que muestre solamente los clientes que no han realizado ningún pago.",
+        "answer": "SELECT c.nombre_cliente\n    FROM cliente c LEFT JOIN pago p ON c.codigo_cliente = p.codigo_cliente\n    WHERE p.codigo_cliente IS NULL"
+      },
+      {
+        "id": 2,
+        "question": "Devuelve un listado que muestre solamente los clientes que no han realizado ningún pedido.",
+        "answer": "SELECT c.nombre_cliente\n    FROM cliente c LEFT JOIN pedido p ON c.codigo_cliente = p.codigo_cliente\n    WHERE p.codigo_cliente IS NULL"
+      },
+      {
+        "id": 3,
+        "question": "Devuelve un listado que muestre los clientes que no han realizado ningún pago y los que no han realizado ningún pedido.",
+        "answer": "SELECT c.nombre_cliente\n    FROM pedido pe RIGHT JOIN cliente c ON c.codigo_cliente = pe.codigo_cliente\n                   LEFT JOIN pago pa ON c.codigo_cliente = pa.codigo_cliente\n    WHERE pe.codigo_cliente IS NULL AND pa.codigo_cliente IS NULL"
+      },
+      {
+        "id": 4,
+        "question": "Devuelve un listado que muestre solamente los empleados que no tienen una oficina asociada.",
+        "answer": "SELECT CONCAT(e.nombre, ' ', e.apellido1, ' ', e.apellido2) AS 'Empleado'\n    FROM empleado e LEFT JOIN oficina o ON e.codigo_oficina = o.codigo_oficina\n    WHERE e.codigo_oficina IS NULL"
+      },
+      {
+        "id": 5,
+        "question": "Devuelve un listado que muestre solamente los empleados que no tienen un cliente asociado.",
+        "answer": "SELECT CONCAT(e.nombre, ' ', e.apellido1, ' ', e.apellido2) AS 'Empleado'\n    FROM empleado e LEFT JOIN cliente c ON e.codigo_empleado = c.codigo_empleado_rep_ventas\n    WHERE c.codigo_empleado_rep_ventas IS NULL"
+      },
+      {
+        "id": 6,
+        "question": "Devuelve un listado que muestre solamente los empleados que no tienen un cliente asociado junto con los datos de la oficina donde trabajan.",
+        "answer": "SELECT DISTINCT CONCAT(e.nombre, ' ', e.apellido1, ' ', e.apellido2) AS 'Empleado', o.linea_direccion1, o.linea_direccion2, o.ciudad, o.region, o.pais\n    FROM empleado e LEFT JOIN cliente c ON e.codigo_empleado = c.codigo_empleado_rep_ventas\n                    INNER JOIN oficina o ON e.codigo_oficina = o.codigo_oficina\n    WHERE c.codigo_empleado_rep_ventas IS NULL"
+      },
+      {
+        "id": 7,
+        "question": "Devuelve un listado que muestre los empleados que no tienen una oficina asociada y los que no tienen un cliente asociado.",
+        "answer": "SELECT DISTINCT CONCAT(e.nombre, ' ', e.apellido1, ' ', e.apellido2) AS 'Empleado'\n    FROM (empleado e LEFT JOIN cliente c ON e.codigo_empleado = c.codigo_empleado_rep_ventas)\n                     LEFT JOIN oficina o ON e.codigo_oficina = o.codigo_oficina\n    WHERE e.codigo_oficina IS NULL OR c.codigo_empleado_rep_ventas IS NULL"
+      },
+      {
+        "id": 8,
+        "question": "Devuelve un listado de los productos que nunca han aparecido en un pedido.",
+        "answer": "SELECT p.nombre\n    FROM producto p LEFT JOIN detalle_pedido dp ON p.codigo_producto = dp.codigo_producto\n                    LEFT JOIN pedido pe ON dp.codigo_pedido = pe.codigo_pedido\n    WHERE dp.codigo_producto IS NULL"
+      },
+      {
+        "id": 9,
+        "question": "Devuelve un listado de los productos que nunca han aparecido en un pedido. El resultado debe mostrar el nombre, la descripción y la imagen del producto.",
+        "answer": "SELECT p.nombre, p.descripcion, pe.comentarios\n    FROM producto p LEFT JOIN detalle_pedido dp ON p.codigo_producto = dp.codigo_producto\n                    LEFT JOIN pedido pe ON dp.codigo_pedido = pe.codigo_pedido\n    WHERE dp.codigo_producto IS NULL"
+      },
+      {
+        "id": 10,
+        "question": "Devuelve las oficinas donde no trabajan ninguno de los empleados que hayan sido los representantes de ventas de algún cliente que haya realizado la compra de algún producto de la gama Frutales.",
+        "answer": "SELECT *\n    FROM oficina o \n    WHERE o.codigo_oficina NOT IN (SELECT DISTINCT ofi.codigo_oficina\n                                   FROM oficina ofi INNER JOIN empleado emp USING(codigo_oficina)\n                                                    INNER JOIN cliente cli ON cli.codigo_empleado_rep_ventas = emp.codigo_empleado\n                                                    INNER JOIN pedido pe USING(codigo_cliente)\n                                                    INNER JOIN detalle_pedido dp USING(codigo_pedido)\n                                                    INNER JOIN producto prod USING(codigo_producto)\n                                   WHERE prod.gama = 'Frutales')"
+      },
+      {
+        "id": 11,
+        "question": "Devuelve un listado con los clientes que han realizado algún pedido pero no han realizado ningún pago.",
+        "answer": "SELECT DISTINCT c.codigo_cliente, c.nombre_cliente, c.nombre_contacto, c.apellido_contacto, c.telefono\n    FROM (cliente c INNER JOIN pedido pe USING(codigo_cliente)) \n                    LEFT JOIN pago pa ON c.codigo_cliente = pa.codigo_cliente\n    WHERE pa.codigo_cliente IS NULL"
+      },
+      {
+        "id": 12,
+        "question": "Devuelve un listado con los datos de los empleados que no tienen clientes asociados y el nombre de su jefe asociado.",
+        "answer": "SELECT CONCAT(e.nombre, ' ', e.apellido1, ' ', e.apellido2) AS 'Empleado', e.Email, e.Puesto, \n           CONCAT(j.nombre, ' ', j.apellido1, ' ', j.apellido2) AS 'Jefe'\n    FROM empleado e LEFT JOIN cliente c ON e.codigo_empleado = c.codigo_empleado_rep_ventas\n                    INNER JOIN empleado j ON e.codigo_jefe = j.codigo_empleado\n    WHERE c.codigo_empleado_rep_ventas IS NULL"
+      }
+    ],
+    "Consultas resumen": [
+      {
+        "id": 1,
+        "question": "¿Cuántos empleados hay en la compañía?",
+        "answer": "SELECT COUNT(e.codigo_empleado) as 'Cantidad de empleados'\n    FROM empleado e"
+      },
+      {
+        "id": 2,
+        "question": "¿Cuántos clientes tiene cada país?",
+        "answer": "SELECT c.pais, COUNT(c.pais) \n    FROM cliente c\n    GROUP BY c.pais"
+      },
+      {
+        "id": 3,
+        "question": "¿Cuál fue el pago medio en 2009?",
+        "answer": "SELECT AVG(p.total) AS 'Promedio de pago en 2009'\n    FROM pago p\n    WHERE YEAR(p.fecha_pago) = 2009"
+      },
+      {
+        "id": 4,
+        "question": "¿Cuántos pedidos hay en cada estado? Ordena el resultado de forma descendente por el número de pedidos.",
+        "answer": "SELECT p.estado, COUNT(p.estado)\n    FROM pedido p\n    GROUP BY p.estado"
+      },
+      {
+        "id": 5,
+        "question": "Calcula el precio de venta del producto más caro y más barato en una misma consulta.",
+        "answer": "SELECT MIN(p.precio_venta) AS 'Producto mas barato', MAX(p.precio_venta) AS 'Producto mas caro'\n    FROM producto p"
+      },
+      {
+        "id": 6,
+        "question": "Calcula el número de clientes que tiene la empresa.",
+        "answer": "SELECT COUNT(c.nombre_cliente)\n    FROM cliente c"
+      },
+      {
+        "id": 7,
+        "question": "¿Cuántos clientes existen con domicilio en la ciudad de Madrid?",
+        "answer": "SELECT COUNT(c.codigo_cliente) AS 'Clientes de Madrid'\n    FROM cliente c\n    WHERE c.ciudad = 'Madrid'"
+      },
+      {
+        "id": 8,
+        "question": "¿Calcula cuántos clientes tiene cada una de las ciudades que empiezan por M?",
+        "answer": "SELECT COUNT(c.codigo_cliente)\n    FROM cliente c\n    WHERE ciudad LIKE 'M%'"
+      },
+      {
+        "id": 9,
+        "question": "Devuelve el nombre de los representantes de ventas y el número de clientes al que atiende cada uno.",
+        "answer": "SELECT c.codigo_empleado_rep_ventas AS 'Id Empleado', COUNT(c.codigo_empleado_rep_ventas) AS 'Cantidad de Clientes'\n    FROM cliente c \n    GROUP BY c.codigo_empleado_rep_ventas"
+      },
+      {
+        "id": 10,
+        "question": "Calcula el número de clientes que no tiene asignado representante de ventas.",
+        "answer": "SELECT COUNT(c.codigo_cliente) AS 'Clientes sin Rep. Ventas'\n    FROM cliente c INNER JOIN empleado e ON e.codigo_empleado = c.codigo_empleado_rep_ventas\n    WHERE c.codigo_empleado_rep_ventas IS NULL"
+      },
+      {
+        "id": 11,
+        "question": "Calcula la fecha del primer y último pago realizado por cada uno de los clientes. El listado deberá mostrar el nombre y los apellidos de cada cliente.",
+        "answer": "SELECT c.nombre_contacto, c.apellido_contacto, MIN(p.fecha_pago) AS 'Primer pago', MAX(p.fecha_pago) AS 'Último pago'\n    FROM pago p INNER JOIN cliente c ON p.codigo_cliente = c.codigo_cliente\n    GROUP BY c.codigo_cliente"
+      },
+      {
+        "id": 12,
+        "question": "Calcula el número de productos diferentes que hay en cada uno de los pedidos.",
+        "answer": "SELECT pe.codigo_pedido, COUNT(DISTINCT pr.codigo_producto) AS 'Cantidad de productos distintos'\n    FROM (producto pr INNER JOIN detalle_pedido dp ON pr.codigo_producto = dp.codigo_producto)\n                      INNER JOIN pedido pe ON dp.codigo_pedido = pe.codigo_pedido\n    GROUP BY pe.codigo_pedido"
+      },
+      {
+        "id": 13,
+        "question": "Calcula la suma de la cantidad total de todos los productos que aparecen en cada uno de los pedidos.",
+        "answer": "SELECT pe.codigo_pedido, SUM(pr.precio_venta) AS 'Suma de total de productos'\n    FROM (producto pr INNER JOIN detalle_pedido dp ON pr.codigo_producto = dp.codigo_producto)\n                      INNER JOIN pedido pe ON dp.codigo_pedido = pe.codigo_pedido\n    GROUP BY pe.codigo_pedido"
+      },
+      {
+        "id": 14,
+        "question": "Devuelve un listado de los 20 productos más vendidos y el número total de unidades que se han vendido de cada uno. El listado deberá estar ordenado por el número total de unidades vendidas.",
+        "answer": "SELECT dp.codigo_producto, p.nombre, COUNT(dp.cantidad) AS Unidades\n    FROM producto p INNER JOIN detalle_pedido dp ON p.codigo_producto = dp.codigo_producto\n    GROUP BY dp.codigo_producto\n    ORDER BY Unidades DESC\n    LIMIT 20"
+      },
+      {
+        "id": 15,
+        "question": "La facturación que ha tenido la empresa en toda la historia, indicando la base imponible, el IVA y el total facturado. La base imponible se calcula sumando el coste del producto por el número de unidades vendidas de la tabla detalle_pedido. El IVA es el 21 % de la base imponible, y el total la suma de los dos campos anteriores.",
+        "answer": "SELECT SUM(dp.precio_unidad * dp.cantidad) AS 'Base Imponible', \n           SUM((dp.precio_unidad * dp.cantidad) * 0.21) AS 'IVA', \n           SUM(dp.precio_unidad * dp.cantidad + ((dp.precio_unidad * dp.cantidad) * 0.21)) AS 'Total'\n    FROM ((((producto pr INNER JOIN detalle_pedido dp ON pr.codigo_producto = dp.codigo_producto)\n                         INNER JOIN pedido pe ON dp.codigo_pedido = pe.codigo_pedido)\n                         INNER JOIN cliente c ON c.codigo_cliente = pe.codigo_cliente)\n                         INNER JOIN pago pa ON pa.codigo_cliente = c.codigo_cliente)"
+      },
+      {
+        "id": 16,
+        "question": "La misma información que en la pregunta anterior, pero agrupada por código de producto.",
+        "answer": "SELECT pr.codigo_producto, \n           SUM(dp.precio_unidad * dp.cantidad) AS 'Base Imponible', \n           SUM((dp.precio_unidad * dp.cantidad) * 0.21) AS 'IVA', \n           SUM(dp.precio_unidad * dp.cantidad + ((dp.precio_unidad * dp.cantidad) * 0.21)) AS 'Total'\n    FROM ((((producto pr INNER JOIN detalle_pedido dp ON pr.codigo_producto = dp.codigo_producto)\n                         INNER JOIN pedido pe ON dp.codigo_pedido = pe.codigo_pedido)\n                         INNER JOIN cliente c ON c.codigo_cliente = pe.codigo_cliente)\n                         INNER JOIN pago pa ON pa.codigo_cliente = c.codigo_cliente)\n    GROUP BY pr.codigo_producto"
+      },
+      {
+        "id": 17,
+        "question": "La misma información que en la pregunta anterior, pero agrupada por código de producto filtrada por los códigos que empiecen por OR.",
+        "answer": "SELECT pr.codigo_producto, \n           SUM(dp.precio_unidad * dp.cantidad) AS 'Base Imponible', \n           SUM((dp.precio_unidad * dp.cantidad) * 0.21) AS 'IVA', \n           SUM(dp.precio_unidad * dp.cantidad + ((dp.precio_unidad * dp.cantidad) * 0.21)) AS 'Total'\n    FROM ((((producto pr INNER JOIN detalle_pedido dp ON pr.codigo_producto = dp.codigo_producto)\n                         INNER JOIN pedido pe ON dp.codigo_pedido = pe.codigo_pedido)\n                         INNER JOIN cliente c ON c.codigo_cliente = pe.codigo_cliente)\n                         INNER JOIN pago pa ON pa.codigo_cliente = c.codigo_cliente)\n    GROUP BY pr.codigo_producto\n    HAVING pr.codigo_producto LIKE 'OR%'"
+      },
+      {
+        "id": 18,
+        "question": "Lista las ventas totales de los productos que hayan facturado más de 3000 euros. Se mostrará el nombre, unidades vendidas, total facturado y total facturado con impuestos (21% IVA).",
+        "answer": "SELECT pr.codigo_producto, \n           dp.cantidad AS 'Unidades Vendidas',\n           SUM(dp.precio_unidad * dp.cantidad) AS 'Total',\n           SUM(dp.precio_unidad * dp.cantidad + ((dp.precio_unidad * dp.cantidad) * 0.21)) AS 'Total con impuestos'\n    FROM ((((producto pr INNER JOIN detalle_pedido dp ON pr.codigo_producto = dp.codigo_producto)\n                         INNER JOIN pedido pe ON dp.codigo_pedido = pe.codigo_pedido)\n                         INNER JOIN cliente c ON c.codigo_cliente = pe.codigo_cliente)\n                         INNER JOIN pago pa ON pa.codigo_cliente = c.codigo_cliente)\n    GROUP BY pr.codigo_producto\n    HAVING Total > 3000"
+      },
+      {
+        "id": 19,
+        "question": "Muestre la suma total de todos los pagos que se realizaron para cada uno de los años que aparecen en la tabla pagos.",
+        "answer": "SELECT YEAR(p.fecha_pago) AS 'Año', SUM(p.total) AS 'Total'\n    FROM pago p\n    GROUP BY Año\n    ORDER BY Año ASC"
+      }
+    ],
+    "Subconsultas": [
+      {
+        "id": 1,
+        "question": "Devuelve el nombre del cliente con mayor límite de crédito.",
+        "answer": "SELECT c.nombre_cliente\n    FROM cliente c\n    WHERE c.limite_credito = (SELECT MAX(c.limite_credito)           \n                              FROM cliente c)"
+      },
+      {
+        "id": 2,
+        "question": "Devuelve el nombre del producto que tenga el precio de venta más caro.",
+        "answer": "SELECT p.nombre\n    FROM producto p\n    WHERE p.precio_venta = (SELECT MAX(p.precio_venta) \n                            FROM producto p)"
+      },
+      {
+        "id": 3,
+        "question": "Devuelve el nombre del producto del que se han vendido más unidades. (Tenga en cuenta que tendrá que calcular cuál es el número total de unidades que se han vendido de cada producto a partir de los datos de la tabla detalle_pedido)",
+        "answer": "SELECT p.nombre\n    FROM producto p INNER JOIN detalle_pedido dp ON p.codigo_producto = dp.codigo_producto\n    WHERE dp.cantidad = (SELECT MAX(dp.cantidad)\n                         FROM detalle_pedido dp)"
+      },
+      {
+        "id": 4,
+        "question": "Los clientes cuyo límite de crédito sea mayor que los pagos que haya realizado. (Sin utilizar INNER JOIN).",
+        "answer": "SELECT c.Nombre_cliente, c.Limite_credito, p.Total\n    FROM cliente c, pago p \n    WHERE p.total = (SELECT MAX(p2.total)\n                     FROM pago p2\n                     WHERE c.limite_credito > p2.total)"
+      },
+      {
+        "id": 5,
+        "question": "Devuelve el producto que más unidades tiene en stock.",
+        "answer": "SELECT p.nombre\n    FROM producto p\n    WHERE p.cantidad_en_stock = (SELECT MAX(p.cantidad_en_stock) \n                                 FROM producto p)"
+      },
+      {
+        "id": 6,
+        "question": "Devuelve el producto que menos unidades tiene en stock.",
+        "answer": "SELECT p.nombre\n    FROM producto p\n    WHERE p.cantidad_en_stock = (SELECT MIN(p.cantidad_en_stock) \n                                 FROM producto p)"
+      },
+      {
+        "id": 7,
+        "question": "Devuelve el nombre, los apellidos y el email de los empleados que están a cargo de Alberto Soria.",
+        "answer": "SELECT CONCAT(e.nombre, ' ', e.apellido1, ' ', e.apellido2) AS 'Empleados a cargo de Alberto Soria'\n    FROM empleado e\n    WHERE e.codigo_jefe = (SELECT e.codigo_empleado \n                           FROM empleado e\n                           WHERE e.nombre = 'Alberto' AND e.apellido1 = 'Soria')"
+      },
+      {
+        "id": 1,
+        "question": "Devuelve el nombre del cliente con mayor límite de crédito.",
+        "answer": "SELECT c.nombre_cliente\n    FROM cliente c\n    WHERE c.limite_credito >= ALL(SELECT MAX(c.limite_credito) \n                                  FROM cliente c)"
+      },
+      {
+        "id": 2,
+        "question": "Devuelve el nombre del producto que tenga el precio de venta más caro.",
+        "answer": "SELECT p.nombre\n    FROM producto p\n    WHERE p.precio_venta >= ALL(SELECT MAX(p.precio_venta)\n                                FROM producto p)"
+      },
+      {
+        "id": 3,
+        "question": "Devuelve el producto que menos unidades tiene en stock.",
+        "answer": "SELECT p.nombre\n    FROM producto p\n    WHERE p.cantidad_en_stock <= ALL(SELECT MIN(p.cantidad_en_stock)\n                                     FROM producto p)"
+      },
+      {
+        "id": 1,
+        "question": "Devuelve el nombre, apellido1 y cargo de los empleados que no representen a ningún cliente.",
+        "answer": "SELECT e.nombre, e.apellido1, e.apellido2\n    FROM empleado e\n    WHERE e.codigo_empleado NOT IN (SELECT c.codigo_empleado_rep_ventas\n                                    FROM cliente c)"
+      },
+      {
+        "id": 2,
+        "question": "Devuelve un listado que muestre solamente los clientes que no han realizado ningún pago.",
+        "answer": "SELECT c.nombre_cliente\n    FROM cliente c\n    WHERE c.codigo_cliente NOT IN (SELECT p.codigo_cliente \n                                   FROM pago p)"
+      },
+      {
+        "id": 3,
+        "question": "Devuelve un listado que muestre solamente los clientes que sí han realizado algún pago.",
+        "answer": "SELECT c.nombre_cliente\n    FROM cliente c \n    WHERE c.codigo_cliente IN (SELECT p.codigo_cliente \n                               FROM pago p)"
+      },
+      {
+        "id": 4,
+        "question": "Devuelve un listado de los productos que nunca han aparecido en un pedido.",
+        "answer": "SELECT p.nombre\n    FROM producto p\n    WHERE p.codigo_producto NOT IN (SELECT dp.codigo_producto \n                                    FROM detalle_pedido dp)"
+      },
+      {
+        "id": 5,
+        "question": "Devuelve el nombre, apellidos, puesto y teléfono de la oficina de aquellos empleados que no sean representante de ventas de ningún cliente.",
+        "answer": "SELECT e.nombre, e.apellido1, e.apellido2, e.puesto, o.telefono\n    FROM empleado e INNER JOIN oficina o ON e.codigo_oficina = o.codigo_oficina\n    WHERE e.codigo_empleado NOT IN (SELECT c.codigo_empleado_rep_ventas \n                                    FROM cliente c)"
+      },
+      {
+        "id": 6,
+        "question": "Devuelve las oficinas donde no trabajan ninguno de los empleados que hayan sido los representantes de ventas de algún cliente que haya realizado la compra de algún producto de la gama Frutales.",
+        "answer": "SELECT o.codigo_oficina, o.ciudad, o.region, o.pais, o.codigo_postal, o.telefono, o.linea_direccion1, o.linea_direccion2\n    FROM oficina o\n    WHERE o.codigo_oficina NOT IN \n            (SELECT DISTINCT o.codigo_oficina \n             FROM oficina o INNER JOIN empleado e USING(codigo_oficina)\n                            INNER JOIN cliente c ON c.codigo_empleado_rep_ventas = e.codigo_empleado\n                            INNER JOIN pedido pe USING(codigo_cliente)\n                            INNER JOIN detalle_pedido dp USING(codigo_pedido)\n                            INNER JOIN producto pr USING(codigo_producto)\n             WHERE pr.gama = 'Frutales')"
+      },
+      {
+        "id": 7,
+        "question": "Devuelve un listado con los clientes que han realizado algún pedido pero no han realizado ningún pago.",
+        "answer": "SELECT c.nombre_cliente\n    FROM cliente c \n    WHERE c.codigo_cliente IN (SELECT p.codigo_cliente \n                               FROM pedido p)  AND \n          c.codigo_cliente NOT IN (SELECT p.codigo_cliente\n                                   FROM pago p)"
+      },
+      {
+        "id": 1,
+        "question": "Devuelve un listado que muestre solamente los clientes que no han realizado ningún pago.",
+        "answer": "SELECT *\n    FROM cliente c\n    WHERE NOT EXISTS (SELECT *\n                      FROM pago p\n                      WHERE c.codigo_cliente = p.codigo_cliente)"
+      },
+      {
+        "id": 2,
+        "question": "Devuelve un listado que muestre solamente los clientes que sí han realizado algún pago.",
+        "answer": "SELECT \n    FROM cliente c\n    WHERE EXISTS (SELECT *\n                  FROM pago p\n                  WHERE c.codigo_cliente = p.codigo_cliente)"
+      },
+      {
+        "id": 3,
+        "question": "Devuelve un listado de los productos que nunca han aparecido en un pedido.",
+        "answer": "SELECT * \n    FROM cliente c\n    WHERE NOT EXISTS (SELECT * \n                      FROM pedido p\n                      WHERE p.codigo_cliente = c.codigo_cliente)"
+      },
+      {
+        "id": 4,
+        "question": "Devuelve un listado de los productos que han aparecido en un pedido alguna vez.",
+        "answer": "SELECT * \n    FROM cliente c\n    WHERE EXISTS (SELECT * \n                  FROM pedido p\n                  WHERE p.codigo_cliente = c.codigo_cliente)"
+      }
+    ],
+    "Consultas variadas": [
+      {
+        "id": 1,
+        "question": "Devuelve el listado de clientes indicando el nombre del cliente y cuántos pedidos ha realizado. Tenga en cuenta que pueden existir clientes que no han realizado ningún pedido.",
+        "answer": "SELECT c.nombre_cliente, COUNT(p.codigo_cliente) AS 'Cantidad de pedidos realizados'\n    FROM cliente c LEFT JOIN pedido p ON c.codigo_cliente = p.codigo_cliente\n    GROUP BY c.nombre_cliente"
+      },
+      {
+        "id": 2,
+        "question": "Devuelve un listado con los nombres de los clientes y el total pagado por cada uno de ellos. Tenga en cuenta que pueden existir clientes que no han realizado ningún pago.",
+        "answer": "SELECT c.nombre_cliente, IFNULL(SUM(p.total), 0) AS 'Total pagado'\n    FROM cliente c LEFT JOIN pago p ON c.codigo_cliente = p.codigo_cliente\n    GROUP BY c.nombre_cliente"
+      },
+      {
+        "id": 3,
+        "question": "Devuelve el nombre de los clientes que hayan hecho pedidos en 2008 ordenados alfabéticamente de menor a mayor.",
+        "answer": "SELECT DISTINCT c.nombre_cliente\n    FROM cliente c INNER JOIN pedido p USING(codigo_cliente)\n    WHERE YEAR(p.fecha_pedido) = 2008\n    ORDER BY c.nombre_cliente ASC"
+      },
+      {
+        "id": 4,
+        "question": "Devuelve el nombre del cliente, el nombre y primer apellido de su representante de ventas y el número de teléfono de la oficina del representante de ventas, de aquellos clientes que no hayan realizado ningún pago.",
+        "answer": "SELECT DISTINCT c.codigo_cliente, c.nombre_cliente, e.nombre, e.apellido1, e.apellido2, o.telefono\n    FROM (((cliente c LEFT JOIN empleado e ON c.codigo_empleado_rep_ventas = e.codigo_empleado)\n                      INNER JOIN oficina o ON e.codigo_oficina = o.codigo_oficina)\n                      LEFT JOIN pago pa ON pa.codigo_cliente = c.codigo_cliente)\n    WHERE c.codigo_cliente NOT IN (SELECT DISTINCT pa.codigo_cliente \n                                   FROM pago pa)"
+      },
+      {
+        "id": 5,
+        "question": "Devuelve el listado de clientes donde aparezca el nombre del cliente, el nombre y primer apellido de su representante de ventas y la ciudad donde está su oficina.",
+        "answer": "SELECT c.nombre_cliente, e.nombre, e.apellido1, o.ciudad\n    FROM cliente c INNER JOIN empleado e ON c.codigo_empleado_rep_ventas = e.codigo_empleado\n                   INNER JOIN oficina o ON o.codigo_oficina = e.codigo_oficina"
+      },
+      {
+        "id": 6,
+        "question": "Devuelve el nombre, apellidos, puesto y teléfono de la oficina de aquellos empleados que no sean representante de ventas de ningún cliente.",
+        "answer": "SELECT e.nombre, e.apellido1, e.apellido2, e.puesto, o.telefono\n    FROM empleado e INNER JOIN oficina o USING(codigo_oficina)\n    WHERE e.codigo_empleado NOT IN (SELECT DISTINCT c.codigo_empleado_rep_ventas \n                                    FROM cliente c)"
+      },
+      {
+        "id": 7,
+        "question": "Devuelve un listado indicando todas las ciudades donde hay oficinas y el número de empleados que tiene.",
+        "answer": "SELECT o.ciudad, COUNT(e.codigo_oficina) AS 'Cantidad de empleados'\n    FROM oficina o INNER JOIN empleado e USING(codigo_oficina)\n    GROUP BY o.ciudad"
+      }
+    ]
+  }
+}

@@ -1,0 +1,517 @@
+{
+  "name": "Tienda Informática",
+  "key": "informatica",
+  "schema": [
+    {
+      "table": "fabricante",
+      "columns": "id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,\n  nombre VARCHAR(100) NOT NULL"
+    },
+    {
+      "table": "producto",
+      "columns": "id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,\n  nombre VARCHAR(100) NOT NULL,\n  precio DOUBLE NOT NULL,\n  id_fabricante INT UNSIGNED NOT NULL,\n  FOREIGN KEY (id_fabricante) REFERENCES fabricante(id)"
+    }
+  ],
+  "total": 98,
+  "sections": {
+    "Consultas sobre una tabla": [
+      {
+        "id": 1,
+        "question": "Lista el nombre de todos los productos que hay en la tabla producto.",
+        "answer": "SELECT nombre \n    FROM producto;"
+      },
+      {
+        "id": 2,
+        "question": "Lista los nombres y los precios de todos los productos de la tabla producto.",
+        "answer": "SELECT nombre, precio \n   FROM producto;"
+      },
+      {
+        "id": 3,
+        "question": "Lista todas las columnas de la tabla producto.",
+        "answer": "SELECT * \n    FROM producto;"
+      },
+      {
+        "id": 4,
+        "question": "Lista el nombre de los productos, el precio en euros y el precio en dólares estadounidenses (USD).",
+        "answer": "SELECT nombre, precio as PrecioEuros, truncate(precio*1.10,2) as PrecioDolar from producto;"
+      },
+      {
+        "id": 5,
+        "question": "Lista el nombre de los productos, el precio en euros y el precio en dólares estadounidenses (USD). Utiliza los siguientes alias para las columnas: nombre de producto, euros, dólares.",
+        "answer": "SELECT nombre AS 'nombre de producto', precio  AS 'euros', truncate(precio*1.10,2) AS 'dólares' \n    FROM producto;"
+      },
+      {
+        "id": 6,
+        "question": "Lista los nombres y los precios de todos los productos de la tabla producto, convirtiendo los nombres a mayúscula.",
+        "answer": "SELECT UPPER(nombre), precio FROM producto;"
+      },
+      {
+        "id": 7,
+        "question": "Lista los nombres y los precios de todos los productos de la tabla producto, convirtiendo los nombres a minúscula.",
+        "answer": "SELECT LOWER(nombre), precio FROM producto;"
+      },
+      {
+        "id": 8,
+        "question": "Lista el nombre de todos los fabricantes en una columna, y en otra columna obtenga en mayúsculas los dos primeros caracteres del nombre del fabricante.",
+        "answer": "SELECT f.Nombre, UPPER(SUBSTR(f.nombre, 1, 2)) AS 'Nombre 2' FROM fabricante f;"
+      },
+      {
+        "id": 9,
+        "question": "Lista los nombres y los precios de todos los productos de la tabla producto, redondeando el valor del precio.",
+        "answer": "SELECT nombre, ROUND(precio) AS 'Precio' FROM producto;"
+      },
+      {
+        "id": 10,
+        "question": "Lista los nombres y los precios de todos los productos de la tabla producto, truncando el valor del precio para mostrarlo sin ninguna cifra decimal.",
+        "answer": "SELECT nombre, TRUNCATE(precio, 0) AS 'Precio' FROM producto;"
+      },
+      {
+        "id": 11,
+        "question": "Lista el código de los fabricantes que tienen productos en la tabla producto.",
+        "answer": "SELECT f.id FROM fabricante f, producto p WHERE f.id = p.id_fabricante;"
+      },
+      {
+        "id": 12,
+        "question": "Lista el código de los fabricantes que tienen productos en la tabla producto, eliminando los códigos que aparecen repetidos.",
+        "answer": "SELECT DISTINCT p.id_fabricante FROM producto p;"
+      },
+      {
+        "id": 13,
+        "question": "Lista los nombres de los fabricantes ordenados de forma ascendente.",
+        "answer": "SELECT nombre FROM fabricante ORDER BY nombre ASC;"
+      },
+      {
+        "id": 14,
+        "question": "Lista los nombres de los fabricantes ordenados de forma descendente.",
+        "answer": "SELECT nombre  FROM fabricante ORDER BY nombre DESC;"
+      },
+      {
+        "id": 15,
+        "question": "Lista los nombres de los productos ordenados en primer lugar por el nombre de forma ascendente y en segundo lugar por el precio de forma descendente.",
+        "answer": "SELECT nombre FROM producto ORDER BY nombre ASC, PRECIO DESC;"
+      },
+      {
+        "id": 16,
+        "question": "Devuelve una lista con las 5 primeras filas de la tabla fabricante.",
+        "answer": "SELECT * FROM fabricante LIMIT 5;"
+      },
+      {
+        "id": 17,
+        "question": "Devuelve una lista con 2 filas a partir de la cuarta fila de la tabla fabricante. La cuarta fila también se debe incluir en la respuesta.",
+        "answer": "SELECT *\n    FROM fabricante\n    LIMIT 3, 2"
+      },
+      {
+        "id": 18,
+        "question": "Lista el nombre y el precio del producto más barato. (Utilice solamente las cláusulas ORDER BY y LIMIT)",
+        "answer": "SELECT nombre, precio\n    FROM producto\n    ORDER BY precio ASC\n    LIMIT 1"
+      },
+      {
+        "id": 19,
+        "question": "Lista el nombre y el precio del producto más caro. (Utilice solamente las cláusulas ORDER BY y LIMIT)",
+        "answer": "SELECT nombre, precio\n    FROM producto\n    ORDER BY precio DESC\n    LIMIT 1"
+      },
+      {
+        "id": 20,
+        "question": "Lista el nombre de todos los productos del fabricante cuyo código de fabricante es igual a 2.",
+        "answer": "SELECT nombre \n    FROM fabricante f\n    WHERE f.id = 2"
+      },
+      {
+        "id": 21,
+        "question": "Lista el nombre de los productos que tienen un precio menor o igual a 120€.",
+        "answer": "SELECT nombre\n    FROM producto\n    WHERE precio <= 120"
+      },
+      {
+        "id": 22,
+        "question": "Lista el nombre de los productos que tienen un precio mayor o igual a 400€.",
+        "answer": "SELECT nombre\n    FROM producto\n    WHERE precio >= 400"
+      },
+      {
+        "id": 23,
+        "question": "Lista el nombre de los productos que no tienen un precio mayor o igual a 400€.",
+        "answer": "SELECT nombre\n    FROM producto\n    WHERE NOT (precio >= 400)"
+      },
+      {
+        "id": 24,
+        "question": "Lista todos los productos que tengan un precio entre 80€ y 300€. Sin utilizar el operador BETWEEN.",
+        "answer": "SELECT nombre\n    FROM producto\n    WHERE precio > 80 AND precio < 300"
+      },
+      {
+        "id": 25,
+        "question": "Lista todos los productos que tengan un precio entre 60€ y 200€. Utilizando el operador BETWEEN.",
+        "answer": "SELECT nombre\n    FROM producto\n    WHERE precio BETWEEN 60 AND 200"
+      },
+      {
+        "id": 26,
+        "question": "Lista todos los productos que tengan un precio mayor que 200€ y que el código de fabricante sea igual a 6.",
+        "answer": "SELECT p.nombre\n    FROM producto p\n    WHERE p.precio > 200 AND p.id_fabricante = 6"
+      },
+      {
+        "id": 27,
+        "question": "Lista todos los productos donde el código de fabricante sea 1, 3 o 5. Sin utilizar el operador IN.",
+        "answer": "SELECT p.nombre\n    FROM producto p\n    WHERE p.id_fabricante = 1 OR p.id_fabricante = 3 OR p.id_fabricante = 5"
+      },
+      {
+        "id": 28,
+        "question": "Lista todos los productos donde el código de fabricante sea 1, 3 o 5. Utilizando el operador IN.",
+        "answer": "SELECT p.nombre\n    FROM producto p\n    WHERE p.id_fabricante IN (1, 3, 5)"
+      },
+      {
+        "id": 29,
+        "question": "Lista el nombre y el precio de los productos en céntimos (Habrá que multiplicar por 100 el valor del precio). Cree un alias para la columna que contiene el precio que se llame céntimos.",
+        "answer": "SELECT nombre, (precio * 100) AS Céntimos\n    FROM producto"
+      },
+      {
+        "id": 30,
+        "question": "Lista los nombres de los fabricantes cuyo nombre empiece por la letra S.",
+        "answer": "SELECT nombre \n    FROM fabricante \n    WHERE nombre LIKE \"s%\""
+      },
+      {
+        "id": 31,
+        "question": "Lista los nombres de los fabricantes cuyo nombre termine por la vocal e.",
+        "answer": "SELECT nombre \n    FROM fabricante \n    WHERE nombre LIKE \"%e\""
+      },
+      {
+        "id": 32,
+        "question": "Lista los nombres de los fabricantes cuyo nombre contenga el carácter w.",
+        "answer": "SELECT nombre \n    FROM fabricante \n    WHERE nombre LIKE \"%w%\""
+      },
+      {
+        "id": 33,
+        "question": "Lista los nombres de los fabricantes cuyo nombre sea de 4 caracteres.",
+        "answer": "SELECT nombre \n    FROM fabricante \n    WHERE LENGTH(nombre) = 4"
+      },
+      {
+        "id": 34,
+        "question": "Devuelve una lista con el nombre de todos los productos que contienen la cadena Portátil en el nombre.",
+        "answer": "SELECT nombre \n    FROM producto \n    WHERE nombre LIKE \"%Portátil%\""
+      },
+      {
+        "id": 35,
+        "question": "Devuelve una lista con el nombre de todos los productos que contienen la cadena Monitor en el nombre y tienen un precio inferior a 215 €.",
+        "answer": "SELECT nombre \n    FROM producto \n    WHERE nombre LIKE \"%Monitor%\" AND precio < 215"
+      },
+      {
+        "id": 36,
+        "question": "Lista el nombre y el precio de todos los productos que tengan un precio mayor o igual a 180€. Ordene el resultado en primer lugar por el precio (en orden descendente) y en segundo lugar por el nombre (en orden ascendente).",
+        "answer": "SELECT nombre, precio\n    FROM producto\n    WHERE precio >= 180\n    ORDER BY precio DESC, nombre ASC"
+      }
+    ],
+    "Consultas multitabla (Composición interna)": [
+      {
+        "id": 1,
+        "question": "Devuelve una lista con el nombre del producto, precio y nombre de fabricante de todos los productos de la base de datos.",
+        "answer": "SELECT p.nombre AS 'Nombre producto', p.Precio, f.nombre AS 'Nombre Fabricante'\n    FROM producto p INNER JOIN fabricante f ON p.id_fabricante = f.id"
+      },
+      {
+        "id": 2,
+        "question": "Devuelve una lista con el nombre del producto, precio y nombre de fabricante de todos los productos de la base de datos. Ordene el resultado por el nombre del fabricante, por orden alfabético.",
+        "answer": "SELECT p.Nombre AS 'Nombre producto', p.Precio, f.nombre AS 'Nombre Fabricante'\n    FROM producto p INNER JOIN fabricante f ON p.id_fabricante = f.id\n    ORDER BY f.nombre ASC"
+      },
+      {
+        "id": 3,
+        "question": "Devuelve una lista con el código del producto, nombre del producto, código del fabricante y nombre del fabricante, de todos los productos de la base de datos.",
+        "answer": "SELECT p.id AS 'Código producto', p.nombre AS 'Nombre producto', f.id AS 'Código Fabricante', f.nombre AS 'Nombre Fabricante'\n    FROM producto p INNER JOIN fabricante f ON p.id_fabricante = f.id"
+      },
+      {
+        "id": 4,
+        "question": "Devuelve el nombre del producto, su precio y el nombre de su fabricante, del producto más barato.",
+        "answer": "SELECT p.nombre AS 'Nombre producto', MIN(p.precio) AS Precio, f.nombre AS 'Nombre Fabricante'\n    FROM producto p INNER JOIN fabricante f ON p.id_fabricante = f.id\n    ORDER BY p.precio"
+      },
+      {
+        "id": 5,
+        "question": "Devuelve el nombre del producto, su precio y el nombre de su fabricante, del producto más caro.",
+        "answer": "SELECT p.nombre AS 'Nombre producto', MAX(p.precio) AS Precio, f.nombre AS 'Nombre Fabricante'\n    FROM producto p INNER JOIN fabricante f ON p.id_fabricante = f.id\n    ORDER BY p.precio"
+      },
+      {
+        "id": 6,
+        "question": "Devuelve una lista de todos los productos del fabricante Lenovo.",
+        "answer": "SELECT p.nombre\n    FROM producto p INNER JOIN fabricante f ON p.id_fabricante = f.id\n    WHERE f.nombre = 'Lenovo'"
+      },
+      {
+        "id": 7,
+        "question": "Devuelve una lista de todos los productos del fabricante Crucial que tengan un precio mayor que 200€.",
+        "answer": "SELECT p.nombre\n    FROM producto p INNER JOIN fabricante f ON p.id_fabricante = f.id\n    WHERE f.nombre = 'Crucial' AND p.precio > 200"
+      },
+      {
+        "id": 8,
+        "question": "Devuelve un listado con todos los productos de los fabricantes Asus, Hewlett-Packard y Seagate. Sin utilizar el operador IN.",
+        "answer": "SELECT p.nombre\n    FROM producto p INNER JOIN fabricante f ON p.id_fabricante = f.id\n    WHERE f.nombre = 'Asus' OR f.nombre = 'Hewlett-Packard' OR f.nombre = 'Seagate'"
+      },
+      {
+        "id": 9,
+        "question": "Devuelve un listado con todos los productos de los fabricantes Asus, Hewlett-Packard y Seagate. Utilizando el operador IN.",
+        "answer": "SELECT p.nombre\n    FROM producto p INNER JOIN fabricante f ON p.id_fabricante = f.id\n    WHERE f.nombre IN ('Asus', 'Hewlett-Packard', 'Seagate')"
+      },
+      {
+        "id": 10,
+        "question": "Devuelve un listado con el nombre y el precio de todos los productos de los fabricantes cuyo nombre termine por la vocal e.",
+        "answer": "SELECT p.nombre, p.precio\n    FROM producto p INNER JOIN fabricante f ON p.id_fabricante = f.id\n    WHERE f.nombre LIKE '%e'"
+      },
+      {
+        "id": 11,
+        "question": "Devuelve un listado con el nombre y el precio de todos los productos cuyo nombre de fabricante contenga el carácter w en su nombre.",
+        "answer": "SELECT p.nombre, p.precio\n    FROM producto p INNER JOIN fabricante f ON p.id_fabricante = f.id\n    WHERE f.nombre LIKE '%w%'"
+      },
+      {
+        "id": 12,
+        "question": "Devuelve un listado con el nombre de producto, precio y nombre de fabricante, de todos los productos que tengan un precio mayor o igual a 180€. Ordene el resultado en primer lugar por el precio (en orden descendente) y en segundo lugar por el nombre (en orden ascendente)",
+        "answer": "SELECT p.nombre, p.precio, f.nombre\n    FROM producto p INNER JOIN fabricante f ON p.id_fabricante = f.id\n    WHERE p.precio > 180\n    ORDER BY p.precio DESC, p.nombre ASC"
+      },
+      {
+        "id": 13,
+        "question": "Devuelve un listado con el código y el nombre de fabricante, solamente de aquellos fabricantes que tienen productos asociados en la base de datos.",
+        "answer": "SELECT DISTINCT f.id, f.nombre\n    FROM fabricante f INNER JOIN producto p ON p.id_fabricante = f.id;"
+      }
+    ],
+    "Consultas multitabla (Composición externa)": [
+      {
+        "id": 1,
+        "question": "Devuelva un listado de todos los fabricantes que existen en la base de datos, junto con los productos que tiene cada uno de ellos. El listado deberá mostrar también aquellos fabricantes que no tienen productos asociados.",
+        "answer": "SELECT f.nombre, p.nombre\n    FROM producto p RIGHT JOIN fabricante f ON p.id_fabricante = f.id"
+      },
+      {
+        "id": 2,
+        "question": "Devuelva un listado donde sólo aparezcan aquellos fabricantes que no tienen ningún producto asociado.",
+        "answer": "SELECT f.nombre\n    FROM producto p RIGHT JOIN fabricante f ON p.id_fabricante = f.id\n    WHERE p.id_fabricante IS NULL"
+      }
+    ],
+    "Consultas resumen": [
+      {
+        "id": 1,
+        "question": "Calcula el número total de productos que hay en la tabla productos.",
+        "answer": "SELECT COUNT(*) AS 'Cantidad de productos'\n    FROM producto"
+      },
+      {
+        "id": 2,
+        "question": "Calcula el número total de fabricantes que hay en la tabla fabricante.",
+        "answer": "SELECT COUNT(*) AS 'Cantidad de fabricantes'\n    FROM fabricante"
+      },
+      {
+        "id": 3,
+        "question": "Calcula el número de valores distintos de código de fabricante aparecen en la tabla productos.",
+        "answer": "SELECT COUNT(DISTINCT id_fabricante)\n    FROM producto"
+      },
+      {
+        "id": 4,
+        "question": "Calcula la media del precio de todos los productos.",
+        "answer": "SELECT AVG(precio) AS Promedio\n    FROM producto"
+      },
+      {
+        "id": 5,
+        "question": "Calcula el precio más barato de todos los productos.",
+        "answer": "SELECT MIN(precio) AS 'Precio mas barato'\n    FROM producto"
+      },
+      {
+        "id": 6,
+        "question": "Calcula el precio más caro de todos los productos.",
+        "answer": "SELECT MAX(precio) AS 'Precio mas caro'\n    FROM producto"
+      },
+      {
+        "id": 7,
+        "question": "Lista el nombre y el precio del producto más barato.",
+        "answer": "SELECT Nombre, MIN(precio) AS 'Precio'\n    FROM producto"
+      },
+      {
+        "id": 8,
+        "question": "Lista el nombre y el precio del producto más caro.",
+        "answer": "SELECT Nombre, MAX(precio) AS 'Precio'\n    FROM producto;"
+      },
+      {
+        "id": 9,
+        "question": "Calcula la suma de los precios de todos los productos.",
+        "answer": "SELECT SUM(precio) AS 'Suma total'\n    FROM producto;"
+      },
+      {
+        "id": 10,
+        "question": "Calcula el número de productos que tiene el fabricante Asus.",
+        "answer": "SELECT COUNT(*) AS 'Cantidad de productos ASUS'\n    FROM producto p INNER JOIN fabricante f ON p.id_fabricante = f.id\n    WHERE f.nombre = 'Asus';"
+      },
+      {
+        "id": 11,
+        "question": "Calcula la media del precio de todos los productos del fabricante Asus.",
+        "answer": "SELECT AVG(p.precio) AS 'Promedio de precio - ASUS'\n    FROM producto p INNER JOIN fabricante f ON p.id_fabricante = f.id\n    WHERE f.nombre = 'Asus';"
+      },
+      {
+        "id": 12,
+        "question": "Calcula el precio más barato de todos los productos del fabricante Asus.",
+        "answer": "SELECT MIN(p.precio) AS 'Precio mas barato - ASUS'\n    FROM producto p INNER JOIN fabricante f ON p.id_fabricante = f.id\n    WHERE f.nombre = 'Asus';"
+      },
+      {
+        "id": 13,
+        "question": "Calcula el precio más caro de todos los productos del fabricante Asus.",
+        "answer": "SELECT MAX(p.precio) AS 'Precio mas caro - ASUS'\n    FROM producto p INNER JOIN fabricante f ON p.id_fabricante = f.id\n    WHERE f.nombre = 'Asus';"
+      },
+      {
+        "id": 14,
+        "question": "Calcula la suma de todos los productos del fabricante Asus.",
+        "answer": "SELECT SUM(p.precio) AS 'Suma precios - ASUS'\n    FROM producto p INNER JOIN fabricante f ON p.id_fabricante = f.id\n    WHERE f.nombre = 'Asus';"
+      },
+      {
+        "id": 15,
+        "question": "Muestra el precio máximo, precio mínimo, precio medio y el número total de productos que tiene el fabricante Crucial.",
+        "answer": "SELECT MAX(p.precio) AS Máximo, MIN(p.precio) AS Mínimo, AVG(p.precio) AS Promedio, COUNT(*) AS 'Cantidad de productos'  \n    FROM producto p INNER JOIN fabricante f ON p.id_fabricante = f.id\n    WHERE f.nombre = 'Asus'"
+      },
+      {
+        "id": 16,
+        "question": "Muestra el número total de productos que tiene cada uno de los fabricantes. El listado también debe incluir los fabricantes que no tienen ningún producto. El resultado mostrará dos columnas, una con el nombre del fabricante y otra con el número de productos que tiene. Ordene el resultado descendentemente por el número de productos.",
+        "answer": "SELECT COUNT(p.id) as num_prod, f.nombre\n    FROM fabricante f\n    LEFT JOIN producto p ON f.id = p.id_fabricante\n    GROUP BY f.nombre\n    ORDER BY num_prod DESC;"
+      },
+      {
+        "id": 17,
+        "question": "Muestra el precio máximo, precio mínimo y precio medio de los productos de cada uno de los fabricantes. El resultado mostrará el nombre del fabricante junto con los datos que se solicitan.",
+        "answer": "SELECT MAX(p.precio) AS MAX, MIN(p.precio) AS MIN, AVG(p.precio) AS AVG, f.nombre AS FABRICANTE\n    FROM producto p\n    INNER JOIN fabricante f ON f.id = p.id_fabricante\n    GROUP BY FABRICANTE\n    ORDER BY AVG;"
+      },
+      {
+        "id": 18,
+        "question": "Muestra el precio máximo, precio mínimo, precio medio y el número total de productos de los fabricantes que tienen un precio medio superior a 200€. No es necesario mostrar el nombre del fabricante, con el código del fabricante es suficiente.",
+        "answer": "SELECT f.id AS Fabricante, MAX(p.precio) AS MAX, MIN(p.precio) AS MIN, AVG(p.precio) AS AVG, COUNT(p.id_fabricante) AS 'Cantidad'\n    FROM producto p INNER JOIN fabricante f ON p.id_fabricante = f.id\n    GROUP BY f.id\n    HAVING AVG > 200"
+      },
+      {
+        "id": 19,
+        "question": "Muestra el nombre de cada fabricante, junto con el precio máximo, precio mínimo, precio medio y el número total de productos de los fabricantes que tienen un precio medio superior a 200€. Es necesario mostrar el nombre del fabricante.",
+        "answer": "SELECT f.nombre, MAX(p.precio) AS Máximo, MIN(p.precio) AS Mínimo, AVG(p.precio) AS Promedio, COUNT(p.id_fabricante) AS Cantidad\n    FROM producto p INNER JOIN fabricante f ON p.id_fabricante = f.id\n    GROUP BY f.id\n    HAVING Promedio > 200"
+      },
+      {
+        "id": 20,
+        "question": "Calcula el número de productos que tienen un precio mayor o igual a 180€.",
+        "answer": "SELECT COUNT(*) AS 'Cantidad de productos con Precio > $180'\n    FROM producto p RIGHT JOIN fabricante f ON p.id_fabricante = f.id\n    WHERE p.precio > 180"
+      },
+      {
+        "id": 21,
+        "question": "Calcula el número de productos que tiene cada fabricante con un precio mayor o igual a 180€.",
+        "answer": "SELECT f.Nombre, COUNT(p.nombre) AS 'Cantidad'\n    FROM producto p INNER JOIN fabricante f ON p.id_fabricante = f.id\n    WHERE p.precio >= 180\n    GROUP BY f.nombre"
+      },
+      {
+        "id": 22,
+        "question": "Lista el precio medio los productos de cada fabricante, mostrando solamente el código del fabricante.",
+        "answer": "SELECT f.id, AVG(p.precio) AS 'Promedio'\n    FROM producto p INNER JOIN fabricante f ON p.id_fabricante = f.id\n    GROUP BY f.nombre"
+      },
+      {
+        "id": 23,
+        "question": "Lista el precio medio de los productos de cada fabricante, mostrando solamente el nombre del fabricante.",
+        "answer": "SELECT f.Nombre, AVG(p.precio) AS 'Promedio'\n    FROM producto p INNER JOIN fabricante f ON p.id_fabricante = f.id\n    GROUP BY f.nombre"
+      },
+      {
+        "id": 24,
+        "question": "Lista los nombres de los fabricantes cuyos productos tienen un precio medio mayor o igual a 150€.",
+        "answer": "SELECT f.Nombre, AVG(p.precio) AS 'Promedio'\n    FROM producto p INNER JOIN fabricante f ON p.id_fabricante = f.id\n    GROUP BY f.nombre\n    HAVING Promedio >= 150"
+      },
+      {
+        "id": 25,
+        "question": "Devuelve un listado con los nombres de los fabricantes que tienen 2 o más productos.",
+        "answer": "SELECT f.Nombre, COUNT(p.id_fabricante) AS 'Cantidad'\n    FROM producto p INNER JOIN fabricante f ON p.id_fabricante = f.id\n    GROUP BY f.nombre\n    HAVING Cantidad >= 2"
+      },
+      {
+        "id": 26,
+        "question": "Devuelve un listado con los nombres de los fabricantes y el número de productos que tiene cada uno con un precio superior o igual a 220 €. No es necesario mostrar el nombre de los fabricantes que no tienen productos que cumplan la condición.",
+        "answer": "SELECT f.Nombre, COUNT(p.id_fabricante) AS 'Cantidad'\n    FROM producto p INNER JOIN fabricante f ON p.id_fabricante = f.id\n    WHERE p.precio > 220\n    GROUP BY f.nombre"
+      },
+      {
+        "id": 27,
+        "question": "Devuelve un listado con los nombres de los fabricantes y el número de productos que tiene cada uno con un precio superior o igual a 220 €. El listado debe mostrar el nombre de todos los fabricantes, es decir, si hay algún fabricante que no tiene productos con un precio superior o igual a 220€ deberá aparecer en el listado con un valor igual a 0 en el número de productos.",
+        "answer": "SELECT f.Nombre, COUNT(p.id) AS Cantidad\n    FROM fabricante f\n    LEFT JOIN producto p ON p.id_fabricante = f.id AND p.precio >= 220\n    GROUP BY f.nombre;"
+      },
+      {
+        "id": 28,
+        "question": "Devuelve un listado con los nombres de los fabricantes donde la suma del precio de todos sus productos es superior a 1000 €.",
+        "answer": "SELECT f.Nombre, SUM(p.precio) AS 'Suma'\n    FROM producto p INNER JOIN fabricante f ON p.id_fabricante = f.id\n    GROUP BY f.nombre\n    HAVING Suma > 1000"
+      },
+      {
+        "id": 29,
+        "question": "Devuelve un listado con el nombre del producto más caro que tiene cada fabricante. El resultado debe tener tres columnas: nombre del producto, precio y nombre del fabricante. El resultado tiene que estar ordenado alfabéticamente de menor a mayor por el nombre del fabricante.",
+        "answer": "SELECT p.nombre, MAX(p.precio) AS 'producto mas caro', f.nombre\n    FROM producto p INNER JOIN fabricante f ON p.id_fabricante = f.id\n    GROUP BY f.nombre\n    ORDER BY f.nombre ASC"
+      }
+    ],
+    "Subconsultas": [
+      {
+        "id": 1,
+        "question": "Devuelve todos los productos del fabricante Lenovo. (Sin utilizar INNER JOIN).",
+        "answer": "SELECT p.nombre\n    FROM producto p\n    WHERE p.id_fabricante = (SELECT f.id \n                                 FROM fabricante f \n                                 WHERE f.nombre = 'Lenovo')"
+      },
+      {
+        "id": 1,
+        "question": "Devuelve todos los datos de los productos que tienen el mismo precio que el producto más caro del fabricante Lenovo. (Sin utilizar INNER JOIN).",
+        "answer": "SELECT *\n    FROM producto p\n    WHERE p.precio = (SELECT MAX(p.precio)\n                      FROM fabricante f, producto p \n                      WHERE f.id = p.id_fabricante AND f.nombre = 'Lenovo')"
+      },
+      {
+        "id": 2,
+        "question": "Lista el nombre del producto más caro del fabricante Lenovo.",
+        "answer": "SELECT nombre\n    FROM producto p\n    WHERE p.precio = (SELECT MAX(p.precio)\n                      FROM fabricante f, producto p\n                      WHERE p.id_fabricante = f.id AND f.nombre= 'Lenovo')"
+      },
+      {
+        "id": 3,
+        "question": "Lista el nombre del producto más barato del fabricante Hewlett-Packard.",
+        "answer": "SELECT nombre\n    FROM producto p\n    WHERE p.precio = (SELECT MIN(p.precio)\n                      FROM fabricante f, producto p \n                      WHERE f.id = p.id_fabricante AND f.nombre = 'Hewlett-Packard')"
+      },
+      {
+        "id": 4,
+        "question": "Devuelve todos los productos de la base de datos que tienen un precio mayor o igual al producto más caro del fabricante Lenovo.",
+        "answer": "SELECT nombre\n    FROM producto p\n    WHERE p.precio >= (SELECT MAX(p.precio)\n                       FROM fabricante f, producto p\n                       WHERE p.id_fabricante = f.id AND f.nombre= 'Lenovo')"
+      },
+      {
+        "id": 5,
+        "question": "Lista todos los productos del fabricante Asus que tienen un precio superior al precio medio de todos sus productos.",
+        "answer": "SELECT nombre\n    FROM producto p\n    WHERE p.precio > (SELECT AVG(p.precio)\n                      FROM fabricante f, producto p\n                      WHERE p.id_fabricante = f.id AND f.nombre= 'Asus')"
+      },
+      {
+        "id": 1,
+        "question": "Devuelve el producto más caro que existe en la tabla producto sin hacer uso de MAX, ORDER BY ni LIMIT.",
+        "answer": "SELECT p.nombre\n    FROM producto p \n    WHERE p.precio >= ALL(SELECT p2.precio \n                          FROM producto p2);"
+      },
+      {
+        "id": 2,
+        "question": "Devuelve el producto más barato que existe en la tabla producto sin hacer uso de MIN, ORDER BY ni LIMIT.",
+        "answer": "SELECT p.nombre\n    FROM producto p \n    WHERE p.precio <= ALL(SELECT p2.precio \n                          FROM producto p2);"
+      },
+      {
+        "id": 3,
+        "question": "Devuelve los nombres de los fabricantes que tienen productos asociados. (Utilizando ALL o ANY).",
+        "answer": "SELECT f.nombre\n    FROM fabricante f\n    WHERE f.id = ANY (SELECT p2.id_fabricante\n                          FROM producto p2);"
+      },
+      {
+        "id": 4,
+        "question": "Devuelve los nombres de los fabricantes que no tienen productos asociados. (Utilizando ALL o ANY).",
+        "answer": "SELECT f.nombre\n    FROM fabricante f\n    WHERE f.id <> ALL (SELECT p2.id_fabricante\n                           FROM producto p2);"
+      },
+      {
+        "id": 1,
+        "question": "Devuelve los nombres de los fabricantes que tienen productos asociados. (Utilizando IN o NOT IN).",
+        "answer": "SELECT f.nombre\n    FROM fabricante f\n    WHERE f.id IN (SELECT p.id_fabricante \n                       FROM producto p)"
+      },
+      {
+        "id": 2,
+        "question": "Devuelve los nombres de los fabricantes que no tienen productos asociados. (Utilizando IN o NOT IN).",
+        "answer": "SELECT f.nombre\n    FROM fabricante f\n    WHERE f.id NOT IN (SELECT p.id_fabricante \n                           FROM producto p)"
+      },
+      {
+        "id": 1,
+        "question": "Devuelve los nombres de los fabricantes que tienen productos asociados. (Utilizando EXISTS o NOT EXISTS).",
+        "answer": "SELECT DISTINCT f.nombre\n    FROM fabricante f INNER JOIN producto p ON p.id_fabricante = f.id\n    WHERE EXISTS (SELECT DISTINCT p.id_fabricante\n                  FROM producto p)"
+      },
+      {
+        "id": 2,
+        "question": "Devuelve los nombres de los fabricantes que no tienen productos asociados. (Utilizando EXISTS o NOT EXISTS).",
+        "answer": "SELECT DISTINCT f.nombre\n    FROM fabricante f LEFT JOIN producto p ON p.id_fabricante = f.id\n    WHERE NOT EXISTS (SELECT DISTINCT p.id_fabricante\n                      FROM producto p INNER JOIN fabricante ON f.id = p.id_fabricante)"
+      },
+      {
+        "id": 1,
+        "question": "Lista el nombre de cada fabricante con el nombre y el precio de su producto más caro.",
+        "answer": "SELECT f.nombre, p.nombre, MAX(p.precio) AS Precio\n    FROM producto p INNER JOIN fabricante f ON p.id_fabricante = f.id \n    GROUP BY f.nombre"
+      },
+      {
+        "id": 2,
+        "question": "Devuelve un listado de todos los productos que tienen un precio mayor o igual a la media de todos los productos de su mismo fabricante.",
+        "answer": "SELECT Nombre AS 'Nombre Fabricante', Promedio AS 'Promedio Fabricante', Precio AS 'Precio producto' \n    FROM producto h\n    INNER JOIN (SELECT p.id_fabricante, AVG(p.precio) AS 'Promedio'\n                FROM producto p\n                GROUP BY p.id_fabricante) w ON h.id_fabricante = w.id_fabricante\n    WHERE precio > Promedio"
+      },
+      {
+        "id": 3,
+        "question": "Lista el nombre del producto más caro del fabricante Lenovo.",
+        "answer": "SELECT p.nombre \n    FROM fabricante f INNER JOIN producto p ON p.id_fabricante = f.id\n    WHERE f.nombre = (SELECT f.nombre \n                      FROM fabricante f\n                      WHERE f.nombre = 'Lenovo') \n      AND p.precio = (SELECT MAX(p.precio) \n                      FROM fabricante f INNER JOIN producto p ON p.id_fabricante = f.id\n                      WHERE f.nombre = 'Lenovo')"
+      },
+      {
+        "id": 1,
+        "question": "Devuelve un listado con todos los nombres de los fabricantes que tienen el mismo número de productos que el fabricante Lenovo.",
+        "answer": "SELECT f.nombre\n    FROM fabricante f INNER JOIN producto p ON p.id_fabricante = f.id\n    GROUP BY f.nombre\n    HAVING COUNT(p.id_fabricante) = (SELECT COUNT(*) \n                                         FROM producto p INNER JOIN fabricante f ON p.id_fabricante = f.id\n                                         WHERE f.nombre = 'Lenovo')"
+      }
+    ]
+  }
+}

@@ -136,6 +136,7 @@ export default defineConfig({
               { text: "Fórmula 1", link: "/databases/sql/formula1" },
               { text: "Gestión", link: "/databases/sql/gestion" },
               { text: "Manager", link: "/databases/sql/manager" },
+              { text: "SQL Playground", link: "/databases/sql/playground" },
             ],
           },
           {
