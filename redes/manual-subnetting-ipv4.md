@@ -273,4 +273,4 @@ Calcula red, broadcast, primer y último host útil para cada IP:
 
 ---
 
-🔗 **Calculadora IP:** [/ipcalc/](https://diegojgonzalez.org/ipcalc/index.html)
+🔗 **Calculadora IP:** [/redes/calc/ipcalc](/redes/calc/ipcalc)

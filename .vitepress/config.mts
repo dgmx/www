@@ -47,6 +47,7 @@ export default defineConfig({
         { text: 'General', link: '/redes/' },
         { text: 'IPv6', link: '/redes/ipv6/' },
         { text: 'IPTables', link: '/redes/iptables/' },
+        { text: 'Calculadoras', link: '/redes/calc/ipcalc' },
       ]},
     ],
     lastUpdated: {
@@ -253,6 +254,15 @@ export default defineConfig({
               { text: "Cortafuegos Personal", link: "/redes/iptables/cortafuegos_personal" },
               { text: "Ejemplos", link: "/redes/iptables/ejemplos_iptables" },
               { text: "Firewall", link: "/redes/iptables/firewall" },
+            ],
+          },
+          {
+            text: "Calculadoras",
+            collapsed: false,
+            items: [
+              { text: "IP / CIDR", link: "/redes/calc/ipcalc" },
+              { text: "VLSM", link: "/redes/calc/vlsm" },
+              { text: "IPv6 SLAAC", link: "/redes/calc/ipv6-slaac" },
             ],
           },
         ]
