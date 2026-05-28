@@ -13,9 +13,16 @@ hero:
     - theme: alt
       text: IPTables
       link: /redes/iptables/manual
+    - theme: alt
+      text: Subnetting IPv4
+      link: /redes/manual-subnetting-ipv4
 
 
 features:
+  - title: Subnetting IPv4
+    details: Manual completo de subredes IPv4 con consejos prácticos y ejercicios
+    link: /redes/manual-subnetting-ipv4
+    linkText: Leer más
   - title: IPTables
     details: Ejemplos de reglas de IPTables
     link: /redes/iptables/ejemplos_iptables
