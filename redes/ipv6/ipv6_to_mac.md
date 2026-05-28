@@ -1,9 +1,5 @@
----
-title: "3. Cálculo de Dirección MAC a partir de IPv6"
-parent: "IPv6"
----
 
-# 🔄 Proceso Inverso: IPv6 (EUI-64) → MAC Address
+#  Proceso Inverso: IPv6 (EUI-64) → MAC Address
 
 A partir de una **dirección IPv6 link-local** generada con **SLAAC + EUI-64**, podemos obtener la **dirección MAC original** siguiendo estos pasos:
 

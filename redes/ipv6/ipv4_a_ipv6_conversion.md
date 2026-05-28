@@ -1,13 +1,13 @@
 
-# 🌐 Conversión de una dirección IP privada IPv4 a IPv6
+# Conversión de una dirección IP privada IPv4 a IPv6
 
 Convertir una dirección IPv4 privada a una dirección IPv6 no es una simple traducción, pero existen formas estandarizadas de **representar direcciones IPv4 dentro del espacio IPv6**. Aquí explicamos las más comunes.
 
 ---
 
-## 🛠️ Métodos comunes de conversión o representación
+###  Métodos comunes de conversión o representación
 
-### 🔹 1. Dirección IPv4-mapeada en IPv6
+## 1. Dirección IPv4-mapeada en IPv6
 
 Se utiliza el prefijo `::ffff:` seguido de la dirección IPv4.
 
@@ -31,14 +31,14 @@ resultado: `C0A1:0101`
 ```
 
 
-📌 **Uso**:
+ **Uso**:
 - Para compatibilidad con IPv4 en sistemas dual-stack.
 - No es enrutable en redes IPv6 puras.
 - Utilizado por aplicaciones o sistemas operativos.
 
 ---
 
-### 🔹 2. Conversión manual con prefijo local `fd00::/8`
+## 2. Conversión manual con prefijo local `fd00::/8`
 
 Puedes usar el prefijo reservado `fd00::/8` (para redes internas) y codificar la IPv4 en hexadecimal.
 
@@ -47,11 +47,11 @@ Puedes usar el prefijo reservado `fd00::/8` (para redes internas) y codificar la
 - IPv4: `192.168.0.10` → Hex: `c0a8:000a`
 - IPv6 resultante: `fd00::c0a8:000a`
 
-✅ Útil en redes privadas para representar direcciones IPv4 en formato IPv6.
+Útil en redes privadas para representar direcciones IPv4 en formato IPv6.
 
 ---
 
-### 🔹 3. Método 6rd (IPv6 Rapid Deployment)
+## 3. Método 6rd (IPv6 Rapid Deployment)
 
 Encapsula una IPv4 dentro de un prefijo IPv6 asignado por el ISP.
 
@@ -61,11 +61,11 @@ Encapsula una IPv4 dentro de un prefijo IPv6 asignado por el ISP.
 - IPv4: `192.0.2.33` = `c000:0221`
 - Resultado IPv6: `2001:db8:c000:0221::/64`
 
-📌 Este método requiere configuración específica por parte del proveedor de servicios.
+Este método requiere configuración específica por parte del proveedor de servicios.
 
 ---
 
-## ✅ Resumen
+## Resumen
 
 | Método                    | Ejemplo IPv6                         | Usos                              |
 |--------------------------|--------------------------------------|-----------------------------------|
@@ -75,4 +75,4 @@ Encapsula una IPv4 dentro de un prefijo IPv6 asignado por el ISP.
 
 ---
 
-🧠 **Nota**: Estas representaciones no cambian el protocolo IP subyacente, sino que permiten coexistencia y transición entre IPv4 e IPv6.
+>**Nota**: Estas representaciones no cambian el protocolo IP subyacente, sino que permiten coexistencia y transición entre IPv4 e IPv6.
