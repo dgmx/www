@@ -263,6 +263,8 @@ export default defineConfig({
               { text: "IP / CIDR", link: "/redes/calc/ipcalc" },
               { text: "VLSM", link: "/redes/calc/vlsm" },
               { text: "IPv6 SLAAC", link: "/redes/calc/ipv6-slaac" },
+              { text: "Tabla de puertos", link: "/redes/calc/puertos" },
+              { text: "Modelo OSI", link: "/redes/calc/modelo-osi" },
             ],
           },
         ]
