@@ -13,7 +13,7 @@ hero:
     - theme: alt
       text: Contenedores
       link: /linux/contenedores/docker/index
-    - theme: alt
+    - theme: brand
       text: Terminal
       link: /linux/terminal/index
     - theme: alt
