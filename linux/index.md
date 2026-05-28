@@ -16,6 +16,9 @@ hero:
     - theme: alt
       text: Terminal
       link: /linux/terminal/index
+    - theme: alt
+      text: Terminal interactiva
+      link: /linux/terminal-interactiva
 features:
   - title: Podman
     details: Podman es un motor de contenedores daemonless compatible con OCI (Open Container Initiative).  
