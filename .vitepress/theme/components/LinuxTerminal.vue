@@ -560,7 +560,7 @@ function scrollDown() {
 }
 
 onMounted(() => {
-  lines.value.push({ type: 'out', text: '\x1b[32mBienvenido al terminal Linux simulado\x1b[0m' })
+  lines.value.push({ type: 'out', text: '\x1b[32mBienvenido al terminal interactivo\x1b[0m' })
   lines.value.push({ type: 'out', text: 'Escribe \x1b[33mhelp\x1b[0m para ver los comandos disponibles.\n' })
   nextTick(() => inputRef.value?.focus())
 })
