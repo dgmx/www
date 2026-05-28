@@ -64,7 +64,7 @@ contenedores se detienen.
 sudo apt install podman
 ```
 
-## Fedora
+### Fedora
 
 ``` bash
 sudo dnf install podman
