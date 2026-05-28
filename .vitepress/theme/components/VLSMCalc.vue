@@ -24,7 +24,7 @@
       </div>
     </div>
 
-    <button @click="calc">Calcular VLSM</button>
+    <button class="btn-calc" @click="calc">Calcular VLSM</button>
     <p v-if="error" class="error">{{ error }}</p>
 
     <div v-if="results.length" class="results">
@@ -236,8 +236,8 @@ input:focus { outline: 2px solid var(--vp-c-brand-1); border-color: transparent;
 .subnet-row .shosts { flex: 0 0 100px; }
 .btn-del { background: var(--vp-c-danger-1); color: #fff; border: none; border-radius: 6px; cursor: pointer; font-size: 1rem; width: 34px; height: 34px; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0; }
 .btn-del:hover { opacity: .8; }
-button[type="button"]:not(.btn-sm):not(.btn-del) { width: 100%; padding: .7rem; font-size: 1rem; font-weight: 600; color: #fff; background: var(--vp-c-brand-1); border: none; border-radius: 6px; cursor: pointer; }
-button[type="button"]:not(.btn-sm):not(.btn-del):hover { opacity: .9; }
+.btn-calc { width: 100%; padding: .7rem; font-size: 1rem; font-weight: 600; color: #fff; background: var(--vp-c-brand-1); border: none; border-radius: 6px; cursor: pointer; }
+.btn-calc:hover { opacity: .9; }
 .error { color: var(--vp-c-danger-1); margin-top: .8rem; font-size: .9rem; }
 .results { margin-top: 1.2rem; overflow-x: auto; }
 table { width: 100%; border-collapse: collapse; font-size: .85rem; }
