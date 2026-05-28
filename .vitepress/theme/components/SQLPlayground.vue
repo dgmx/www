@@ -23,9 +23,19 @@
 
       <div class="q-text">{{ currentQuestion.question }}</div>
 
+      <div class="field">
+        <label>Tu consulta SQL</label>
+        <textarea v-model="userSql" class="sql-editor" rows="5" placeholder="Escribe aquí tu consulta SQL..." spellcheck="false"></textarea>
+      </div>
+
       <div class="q-actions">
+        <button class="btn-sm btn-check" @click="checkQuery">Comprobar consulta</button>
         <button v-if="!showAnswer" class="btn-sm btn-reveal" @click="showAnswer = true">Mostrar solución</button>
         <button v-else class="btn-sm btn-hide" @click="showAnswer = false">Ocultar solución</button>
+      </div>
+
+      <div v-if="checkResult !== null" :class="['check-msg', checkResult ? 'msg-ok' : 'msg-err']">
+        {{ checkResult ? '✅ ¡Correcto!' : '❌ Error, prueba de nuevo' }}
       </div>
 
       <div v-if="showAnswer" class="q-answer">
@@ -60,12 +70,68 @@ const dbKey = ref('informatica')
 const sectionKey = ref('Consultas sobre una tabla')
 const qIndex = ref(0)
 const showAnswer = ref(false)
+const userSql = ref('')
+const checkResult = ref(null)
 
 const db = computed(() => dbMap[dbKey.value])
 const availableSections = computed(() => Object.keys(db.value.sections))
 
 const currentList = computed(() => db.value.sections[sectionKey.value] || [])
 const currentQuestion = computed(() => currentList.value[qIndex.value] || null)
+
+const sqlKeywords = new Set([
+  'SELECT', 'FROM', 'WHERE', 'AND', 'OR', 'NOT', 'IN', 'IS', 'NULL',
+  'AS', 'ON', 'JOIN', 'INNER', 'LEFT', 'RIGHT', 'OUTER', 'FULL', 'CROSS',
+  'GROUP', 'BY', 'HAVING', 'ORDER', 'ASC', 'DESC', 'LIMIT', 'OFFSET',
+  'INSERT', 'INTO', 'VALUES', 'UPDATE', 'SET', 'DELETE', 'CREATE', 'TABLE',
+  'DROP', 'ALTER', 'ADD', 'COLUMN', 'INDEX', 'VIEW', 'DISTINCT', 'ALL',
+  'UNION', 'EXCEPT', 'INTERSECT', 'EXISTS', 'ANY', 'SOME', 'BETWEEN',
+  'LIKE', 'COUNT', 'SUM', 'AVG', 'MIN', 'MAX', 'CASE', 'WHEN', 'THEN', 'ELSE', 'END',
+  'TRUE', 'FALSE', 'PRIMARY', 'KEY', 'FOREIGN', 'REFERENCES', 'UNIQUE',
+  'CAST', 'CONVERT', 'COALESCE', 'NULLIF',
+])
+
+function normalizeSQL(sql) {
+  let s = sql.trim()
+  // remove trailing semicolons
+  s = s.replace(/;+$/, '')
+  // remove inline comments
+  s = s.replace(/--.*$/gm, '')
+  s = s.replace(/\/\*[\s\S]*?\*\//g, '')
+  // collapse whitespace
+  s = s.replace(/\s+/g, ' ').trim()
+  // Tokenize and rebuild, uppercasing keywords
+  const tokens = []
+  let i = 0
+  while (i < s.length) {
+    if (s[i] === "'" || s[i] === '"') {
+      const quote = s[i]
+      let j = i + 1
+      while (j < s.length && s[j] !== quote) j++
+      tokens.push(s.substring(i, j + 1))
+      i = j + 1
+    } else if (/\s/.test(s[i])) {
+      i++
+    } else {
+      let j = i
+      while (j < s.length && !/\s/.test(s[j]) && s[j] !== "'" && s[j] !== '"') j++
+      let token = s.substring(i, j)
+      token = sqlKeywords.has(token.toUpperCase()) ? token.toUpperCase() : token
+      tokens.push(token)
+      i = j
+    }
+  }
+  return tokens.join(' ')
+}
+
+function checkQuery() {
+  checkResult.value = null
+  if (!userSql.value.trim()) return
+
+  const userNormalized = normalizeSQL(userSql.value)
+  const answerNormalized = normalizeSQL(currentQuestion.value.answer)
+  checkResult.value = userNormalized === answerNormalized
+}
 
 function sectionLabel(sec) {
   return sectionLabels[sec] || sec
@@ -74,6 +140,8 @@ function sectionLabel(sec) {
 function resetQuestions() {
   qIndex.value = 0
   showAnswer.value = false
+  userSql.value = ''
+  checkResult.value = null
 }
 
 function nextQuestion() {
@@ -83,6 +151,8 @@ function nextQuestion() {
   if (next >= list.length) next = 0
   qIndex.value = next
   showAnswer.value = false
+  userSql.value = ''
+  checkResult.value = null
 }
 </script>
 
@@ -103,14 +173,23 @@ select:focus { outline: 2px solid var(--vp-c-brand-1); border-color: transparent
 .q-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: .8rem; }
 .q-count { font-size: .85rem; color: var(--vp-c-text-3); font-weight: 600; }
 .q-text { background: var(--vp-c-bg); border: 1px solid var(--vp-c-border); border-radius: 8px; padding: 1rem; font-size: 1rem; line-height: 1.6; color: var(--vp-c-text-1); margin-bottom: 1rem; }
-.q-actions { margin-bottom: .8rem; }
+.sql-editor { width: 100%; padding: .8rem; font-size: .9rem; font-family: monospace; border: 1px solid var(--vp-c-border); border-radius: 6px; background: var(--vp-c-bg); color: var(--vp-c-text-1); resize: vertical; line-height: 1.5; tab-size: 2; }
+.sql-editor:focus { outline: 2px solid var(--vp-c-brand-1); border-color: transparent; }
+.q-actions { display: flex; gap: .5rem; margin-bottom: .8rem; flex-wrap: wrap; }
 .btn-sm { padding: .4rem .8rem; font-size: .85rem; font-weight: 600; border: none; border-radius: 6px; cursor: pointer; }
 .btn-next { background: var(--vp-c-brand-1); color: #fff; }
 .btn-next:hover { opacity: .9; }
+.btn-check { background: var(--vp-c-brand-1); color: #fff; }
+.btn-check:hover { opacity: .9; }
 .btn-reveal { background: #22c55e; color: #fff; }
 .btn-reveal:hover { opacity: .9; }
 .btn-hide { background: var(--vp-c-text-3); color: #fff; }
 .btn-hide:hover { opacity: .9; }
+.check-msg { padding: .6rem 1rem; border-radius: 6px; font-weight: 600; font-size: .95rem; margin-bottom: .8rem; }
+.msg-ok { background: #e8f5e9; color: #2e7d32; }
+[data-theme="dark"] .msg-ok { background: #1b3a1b; color: #66bb6a; }
+.msg-err { background: #fbe9e7; color: #c62828; }
+[data-theme="dark"] .msg-err { background: #3a1b1b; color: #ef9a9a; }
 .q-answer { background: #1e293b; border-radius: 8px; padding: 1rem; overflow-x: auto; }
 [data-theme="dark"] .q-answer { background: #0f172a; }
 .q-answer pre { margin: 0; }
