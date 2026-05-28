@@ -56,7 +56,7 @@ En el tercero haríamos esto:
 Debe recordarse lo siguiente:
 
 * Escribir CSS para cada etiqueta es **MUY POCO PRÁCTICO** y difícil de cambiar en el futuro.
-* Si hay definiciones contradictorias prevalece siempre el CSS de la etiqueta, despues el del estilo de la cabecera y despues el del archivo externo.
+* Si hay definiciones contradictorias prevalece siempre el CSS de la etiqueta, después el del estilo de la cabecera y después el del archivo externo.
 * Lo habitual es definirlo todo en estilos externos.
 
 Recordatorio: el modelo DOM
@@ -114,7 +114,7 @@ div + p{
     background-color: blue;
 }
 
-/* Selecciona todos los elementos li que estén dentro de algun ul,
+/* Selecciona todos los elementos li que estén dentro de algún ul,
 INCLUSO AUNQUE NO SEAN HIJOS DIRECTOS, sino "nietos", "bisnietos"...*/
 ul li {
     background-color: blue;
@@ -195,7 +195,7 @@ a:visited{
 
 Los atributos `class` e `id`
 --------------------------------
-A menudo tendremos que hacer ambios en un grupo de elementos, pero a veces no serán todos los elementos de una misma clase. Por ejemplo, puede que queramos cambiar un elemento en concreto. Para poder hacer cambios _a un solo elemento_ tendremos que haber puesto el atributo `id` como muestra el ejemplo siguiente:
+A menudo tendremos que hacer cambios en un grupo de elementos, pero a veces no serán todos los elementos de una misma clase. Por ejemplo, puede que queramos cambiar un elemento en concreto. Para poder hacer cambios _a un solo elemento_ tendremos que haber puesto el atributo `id` como muestra el ejemplo siguiente:
 
 ```html
 <h1>Encabezamiento</h1>
@@ -393,7 +393,7 @@ En CSS **todo es una caja** y el navegador va colocando las distintas «cajas» 
 El modelo de cajas CSS (imagen tomada de la web del W3C)
 
 * Algunos elementos **no generan una línea nueva** sino que se mantienen dentro de la misma línea. Como por ejemplo `<b>`, `<span>` o `<img>`. A estos elementos se les llama _elementos inline_ y no se les puede cambiar la altura o la anchura. Si intentamos cambiar altura o anchura el navegador ignorará el cambio.
-* Otros elementos **generan su propia línea antes y despues.** Esta línea puede ser más alta o menos pero forma su propio bloque o línea. Ejemplo de estas etiquetas son `<div>` , `<p>` o `<ul>.`
+* Otros elementos **generan su propia línea antes y después.** Esta línea puede ser más alta o menos pero forma su propio bloque o línea. Ejemplo de estas etiquetas son `<div>` , `<p>` o `<ul>.`
 
 Podemos conseguir que un inline se porte como un block o viceverse usando el CSS siguiente:
 
@@ -443,7 +443,7 @@ Para posicionar los elementos se suelen utilizar dos etiquetas que no hacen nada
 
 En cualquier etiqueta puede ocurrir que deseemos que el estilo no se aplique a todos los elementos o que queramos que se aplique a unos cuantos (pero no a todos). En ese caso, recordemos que se deben utilizar los atributos `class` e `id`
 
-* El `class` es un atributo que puede llevar el mismo valor en muchos elementos HTML y que nos permitirá despues seleccionarlos a todos.
+* El `class` es un atributo que puede llevar el mismo valor en muchos elementos HTML y que nos permitirá después seleccionarlos a todos.
 * El `id` es un atributo que debe tener distinto valor en todos los casos, no se puede repetir.
 
 Para posicionar correctamente un span o un div, se deben tener en cuenta varias cosas:

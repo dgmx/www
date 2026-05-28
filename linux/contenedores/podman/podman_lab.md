@@ -1,9 +1,5 @@
----
-title: 11. Podman Labs
-parent: "Docker"
----
 
-# Laboratorio práctico y de despligue en producción con Podman 
+# Laboratorio práctico y de despliegue en producción con Podman  
 
 ## Introducción
 

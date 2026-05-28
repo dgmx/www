@@ -3,7 +3,7 @@
 
 En esta guía, explicaremos el proceso de configuración de un servidor y un cliente DHCP (Protocolo de Configuración Dinámica de Host) mediante contenedores Docker. Esta configuración es útil para aprender sobre DHCP, probar configuraciones de red o simular entornos de red.
 
-Prerequisitos
+Prerrequisitos
 -------------
 
 * Docker instalado en su sistema.
@@ -74,7 +74,7 @@ cd /etc/dhcp
 nano dhcpd.conf        
 ```
 
-Agregue la siguiente configuración, reemplazando la subred y la IP del enrutador con los valores de Subred y Puerta de enlace respectivamente que encontró en el Paso 5:
+Agregue la siguiente configuración, reemplazando la subred y la IP del enrutador con los valores de subred y Puerta de enlace respectivamente que encontró en el Paso 5:
 
 ```bash
 default-lease-time 600;

@@ -1,7 +1,3 @@
----
-title: 10. Equivalencias Podman Docker
-parent: "Docker"
----
 
 # Mapa equivalencias Docker → Podman
 
