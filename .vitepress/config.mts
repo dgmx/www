@@ -47,7 +47,7 @@ export default defineConfig({
         { text: 'General', link: '/redes/' },
         { text: 'IPv6', link: '/redes/ipv6/' },
         { text: 'IPTables', link: '/redes/iptables/' },
-        { text: 'Calculadoras', link: '/redes/calc/ipcalc' },
+        { text: 'Herramientas', link: '/redes/calc/ipcalc' },
       ]},
     ],
     lastUpdated: {
@@ -266,7 +266,7 @@ export default defineConfig({
             ],
           },
           {
-            text: "Calculadoras",
+            text: "Herramientas",
             collapsed: false,
             items: [
               { text: "IP / CIDR", link: "/redes/calc/ipcalc" },
