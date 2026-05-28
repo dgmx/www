@@ -157,7 +157,7 @@
     WHERE c.ciudad = 'Madrid' AND c.codigo_empleado_rep_ventas IN (11, 30)
     ```
 
-## <span style="color:aqua">Consultas multitabla (Composición interna)</span>
+## Consultas multitabla (Composición interna)
 
 1. Obtén un listado con el nombre de cada cliente y el nombre y apellido de su representante de ventas.
     ```sql
@@ -243,7 +243,7 @@
                    INNER JOIN producto pr ON pr.codigo_producto = dp.codigo_producto
     ```
 
-## <span style="color:aqua">Consultas multitabla (Composición externa)</span>
+## Consultas multitabla (Composición externa)
 
 1. Devuelve un listado que muestre solamente los clientes que no han realizado ningún pago.
     ```sql
@@ -343,7 +343,7 @@
     WHERE c.codigo_empleado_rep_ventas IS NULL 
     ```
 
-## <span style="color:aqua">Consultas resúmen</span>
+## Consultas resúmen
 
 1. ¿Cuántos empleados hay en la compañía?
     ```sql
@@ -504,9 +504,9 @@
     ORDER BY Año ASC
     ```
 
-## <span style="color:aqua">Subconsultas</span>
+## Subconsultas
 
-### <span style="color:palegreen">Con operadores básicos de comparación</span>
+### Con operadores básicos de comparación
 
 1. Devuelve el nombre del cliente con mayor límite de crédito.
     ```sql
@@ -566,7 +566,7 @@
                            WHERE e.nombre = 'Alberto' AND e.apellido1 = 'Soria')
     ```
 
-### <span style="color:palegreen">Subconsultas con ALL y ANY</span>
+### Subconsultas con ALL y ANY
 
 1. Devuelve el nombre del cliente con mayor límite de crédito.
     ```sql
@@ -592,7 +592,7 @@
                                      FROM producto p)
     ```
 
-### <span style="color:palegreen">Subconsultas con IN y NOT IN</span>
+### Subconsultas con IN y NOT IN
 
 1. Devuelve el nombre, apellido1 y cargo de los empleados que no representen a ningún cliente.
     ```sql
@@ -658,7 +658,7 @@
                                    FROM pago p)
     ```
 
-### <span style="color:palegreen">Subconsultas con EXISTS y NOT EXISTS</span>
+### Subconsultas con EXISTS y NOT EXISTS
 
 1. Devuelve un listado que muestre solamente los clientes que no han realizado ningún pago.
     ```sql
@@ -696,7 +696,7 @@
                   WHERE p.codigo_cliente = c.codigo_cliente)
     ```
 
-## <span style="color:aqua">Consultas variadas</span>
+## Consultas variadas
 
 1. Devuelve el listado de clientes indicando el nombre del cliente y cuántos pedidos ha realizado. Tenga en cuenta que pueden existir clientes que no han realizado ningún pedido.
     ```sql
