@@ -270,3 +270,7 @@ Calcula red, broadcast, primer y último host útil para cada IP:
 7. **198.51.100.128/27** — Red: .128, Broadcast: .159, Hosts: .129–.158
 
 </details>
+
+---
+
+🔗 **Calculadora IP:** [/ipcalc/](/ipcalc/)
