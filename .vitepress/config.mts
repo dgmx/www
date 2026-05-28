@@ -216,6 +216,7 @@ export default defineConfig({
               { text: "Comandos de Seguridad", link: "/linux/linux/seguridad" },
               { text: "SSH", link: "/linux/linux/ssh" },
               { text: "Túnel SSH", link: "/linux/linux/tunel_ssh" },
+              { text: "Terminal interactiva", link: "/linux/terminal-interactiva" },
             ],
           },
           {
