@@ -16,6 +16,9 @@ hero:
     - theme: brand
       text: NoSQL
       link: /databases/nosql/index
+    - theme: alt
+      text: SQL Playground
+      link: /databases/sql/playground
 
 
 features:
