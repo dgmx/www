@@ -48,6 +48,7 @@ export default defineConfig({
         { text: 'IPv6', link: '/redes/ipv6/' },
         { text: 'IPTables', link: '/redes/iptables/' },
         { text: 'Herramientas', link: '/redes/calc/ipcalc' },
+        { text: 'Explorador IPv6', link: '/redes/calc/ipv6-explorador' },
       ]},
     ],
     lastUpdated: {
@@ -244,6 +245,7 @@ export default defineConfig({
               { text: "IPv6 a MAC", link: "/redes/ipv6/ipv6_to_mac" },
               { text: "Ejercicio Práctico", link: "/redes/ipv6/ejercicio1" },
               { text: "Resumen", link: "/redes/ipv6/resumen" },
+              { text: "Explorador IPv6", link: "/redes/calc/ipv6-explorador" },
             ],
           },
           {
