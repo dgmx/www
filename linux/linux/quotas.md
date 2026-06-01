@@ -47,10 +47,10 @@ quotaon /srv/samba/usuarios
 
 5️⃣ Asignar cuota a cada usuario
   
-    ```
-    edquota usuario1
-    edquota usuario2
-    ``` 
+```
+edquota usuario1
+edquota usuario2
+``` 
 
 Este comando inicia el archivo de configuración de cuotas:
 
