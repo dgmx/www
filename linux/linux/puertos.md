@@ -431,4 +431,9 @@ Sí, puedes permitir varios puertos usando los siguientes métodos:
         sudo ufw allow 22/tcp
         sudo ufw allow 80/tcp
         
-[Descargar en PDF](puertos.pdf)
+>📄[ Descargar en PDF](puertos.pdf)
+
+>🌍 [Tabla interactiva de puertos conocidos](https://diegojgonzalez.org/redes/calc/puertos.html)
+
+
+ 
