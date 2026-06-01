@@ -1,13 +1,9 @@
----
-title: 08. Tunel SSH
-parent: "Linux"
----
+
 
 # Manual de creación de Túneles SSH: Conceptos y Práctica
 
 Los túneles SSH son canales cifrados que permiten transportar datos de protocolos no seguros o saltar restricciones de red de forma protegida, podemos considerarlos como "pasadizos secretos" cifrados que te permiten transportar datos de un protocolo a otro de forma segura. Es una de las herramientas más potentes para cualquier administrador de sistemas o desarrollador.
 
----
 
 ## 1. Glosario de Términos
 
@@ -15,7 +11,7 @@ Los túneles SSH son canales cifrados que permiten transportar datos de protocol
 * **Remote:** El servidor intermedio al que te conectas por SSH.
 * **Destino:** El servicio final al que quieres llegar.
 
----
+
 
 ## 2. Túnel Local (Local Port Forwarding)
 
@@ -34,7 +30,7 @@ Acceder a un MySQL (puerto 3306) que solo escucha conexiones locales en el servi
 ```bash
 ssh -L 3307:localhost:3306 usuario@mi-servidor.com
 ```
----
+
 
 ## 3. Túnel Remoto (Remote Port Forwarding)
 
@@ -54,7 +50,7 @@ Compartir tu web local (puerto 8000) a través de un VPS:
 ssh -R 9000:localhost:8000 usuario@mi-vps-publico.com
 ```
 
----
+
 
 ## 4. Túnel Dinámico (SOCKS Proxy)
 
@@ -66,8 +62,6 @@ ssh -R 9000:localhost:8000 usuario@mi-vps-publico.com
 ssh -D [Puerto_Local] usuario@servidor_ssh
 ```
 
----
-
 ## 5. Banderas (Flags) de Optimización
 
 | Flag | Descripción |
@@ -76,7 +70,6 @@ ssh -D [Puerto_Local] usuario@servidor_ssh
 | -f | Envía el proceso al fondo (background). |
 | -C | Comprime los datos. |
 
----
 
 ## 6. Notas de Seguridad
 
@@ -194,4 +187,4 @@ Si el servidor `casa.example.com` tiene una IP pública, usar firewalls para lim
 
 #### Troubleshooting
 
-En todas las casos usar la opción `-v` para obtener realizar debugging. Recordar que dicha opcioń se puede usar múltiples veces para aumentar el detalle.
+En todas las casos usar la opción `-v` para obtener realizar debugging. Recordar que dicha opción se puede usar múltiples veces para aumentar el detalle.
