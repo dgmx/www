@@ -22,7 +22,7 @@ erDiagram
     }
     PEDIDO {
         INT id PK
-        DOUBLE cantidad
+        DOUBLE total
         DATE fecha
         INT id_comercial FK
         INT id_cliente FK
