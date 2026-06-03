@@ -4,7 +4,7 @@
 
 Desarrollar en lenguaje Java la estructura representada en el siguiente Diagrama de Clases. En dicho diagrama se describe la estructura para representar los alumnos de un Ciclo Formativo con sus módulos y calificaciones.
 
-Se deben desarrollar las clases Alumno y Calificacion. Suponemos el resto de clases ya desarrolladas previamente. A continuación se describe la funcionalidad de los métodos más importantes.  
+Se deben desarrollar las clases Alumno y Calificación. Suponemos el resto de clases ya desarrolladas previamente. A continuación se describe la funcionalidad de los métodos más importantes.  
 
 ![UML](img/uml_opos25.png)
 

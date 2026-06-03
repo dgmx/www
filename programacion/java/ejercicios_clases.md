@@ -850,11 +850,6 @@ Conclusión
 Estos ejercicios te proporcionarán una base sólida para trabajar con programación orientada a objetos en Java. Practicar estos conceptos es esencial para desarrollar tus habilidades de programación y te permitirá abordar problemas más complejos en el futuro. ¡Sigue practicando y explorando más sobre Java para convertirte en un programador más competente!
 
 
-::: details  Mostrar código {close}
-```js
-('Hello, Amigos!')
-```
-:::
 
 >
 > **Mas ejercicios:**
@@ -862,5 +857,5 @@ Estos ejercicios te proporcionarán una base sólida para trabajar con programac
 > 2. [Electrodomésticos](ejercicio02)
 > 3. [Supermercado](ejercicio03)
 > 4. [Servicios](ejercicio04)
-> 
+> 5. [Oposiciones Andalucía 2025](ejercicio_opos25AND.md)
 > 
