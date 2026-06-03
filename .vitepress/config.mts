@@ -108,6 +108,7 @@ export default defineConfig({
             collapsed: true,
             items: [
               { text: "Manual de Shell Script", link: "/programacion/shell/manual_shell_script" },
+              { text: "Bash Cheatsheet", link: "/programacion/shell/chuleta_bash" },
               { text: "Ejercicios Shell Scripting", link: "/programacion/shell/ejercicios_shell_scripting" },
               { text: "Ejercicios Shell Scripting 2", link: "/programacion/shell/ejercicios_shell_scripting-2" },
               { text: "Examen Bash", link: "/programacion/shell/ejercicios_exam" },
