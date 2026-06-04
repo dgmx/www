@@ -320,8 +320,9 @@ CREATE TABLE MATRICULADO (
 
 ### CONSULTA. (1,25 puntos)
 
-Se pide: Dadas las tablas que ha realizado en el apartado anterior, detalle a
-continuación las sentencias SQL necesarias para realizar la siguiente consulta:
+**Se pide: Dadas las tablas que ha realizado en el apartado anterior, detalle a
+continuación las sentencias SQL necesarias para realizar la siguiente consulta:**
+
 Todos los alumnos que en el curso 2021/22 hayan aprobado al menos un módulo de
 algún ciclo de la familia de “Informática y comunicaciones”. Debe aparecer una línea por
 cada alumno que cumpla dicho requisito, sin repeticiones. Cada línea contendrá los
