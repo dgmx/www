@@ -10,7 +10,7 @@
 ## SQL
 
 - [Andalucía 2025 - Bases de Datos](/databases/sql/opos25sql.md)
-- [Andalucía 2008 SAI - Bases de Datos](/databases/sql/opos08sai.mdmd)
+- [Andalucía 2008 SAI - Bases de Datos](/databases/sql/opos08sai.md)
 
 ## Java
 
