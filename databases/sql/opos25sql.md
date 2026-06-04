@@ -1,10 +1,29 @@
 
-# PES INFORMÁTICA ANDALUCÍA 2025
+# PES INFORMÁTICA ANDALUCÍA 
+
+## EXAMEN 2025
 ## EJERCICIO 1: BASES DE DATOS (Total: 2.5 puntos).
 
 Observe el siguiente diagrama entidad/relación:
 
 ![ModeloEE](images/opos25.png)
+
+
+Tenga en cuenta las siguientes definiciones y restricciones:
+- `id_Lector`: Entero.
+- `Nombre_Y_Apellidos`: Cadena de 50 caracteres. No puede estar vacío.
+- `Nacionalidad`: Cadena de 20 caracteres. No puede estar vacío.
+- `Fecha_Comienzo`: Fecha. No puede estar vacío. Representa la fecha en que un lector comienza a leer un determinado libro.
+- `id_Libro`: Entero.
+- `Título`: Cadena de 40 caracteres. No puede estar vacío.
+- `Autor`: Cadena de 40 caracteres. No puede estar vacío.
+- `id_Genero`: Entero.
+- `Nombre`: Cadena de 40 caracteres. No puede estar vacío.
+
+## EJERCICIO 1.1. CREACIÓN DE TABLAS (1.25 puntos).
+
+Detalle las sentencias SQL necesarias para crear las tablas de la base de datos que implemente el modelo anterior en tercera forma normal.
+
 
 ### Modelo Mermaid
 
@@ -40,22 +59,6 @@ erDiagram
     GENERO ||--|{ LIBRO : clasifica
 ```
 
-
-
-Tenga en cuenta las siguientes definiciones y restricciones:
-- `id_Lector`: Entero.
-- `Nombre_Y_Apellidos`: Cadena de 50 caracteres. No puede estar vacío.
-- `Nacionalidad`: Cadena de 20 caracteres. No puede estar vacío.
-- `Fecha_Comienzo`: Fecha. No puede estar vacío. Representa la fecha en que un lector comienza a leer un determinado libro.
-- `id_Libro`: Entero.
-- `Título`: Cadena de 40 caracteres. No puede estar vacío.
-- `Autor`: Cadena de 40 caracteres. No puede estar vacío.
-- `id_Genero`: Entero.
-- `Nombre`: Cadena de 40 caracteres. No puede estar vacío.
-
-## EJERCICIO 1.1. CREACIÓN DE TABLAS (1.25 puntos).
-
-Detalle las sentencias SQL necesarias para crear las tablas de la base de datos que implemente el modelo anterior en tercera forma normal.
 
 **Paso a tablas:**
 - Lector(`id_Lector, Nombre_Y_Apellidos, Nacionalidad`)
@@ -93,7 +96,6 @@ CREATE TABLE Leido (
         ON DELETE CASCADE
 );
 ```
-
 
 
 ## EJERCICIO 1.2. CONSULTA (1.25 puntos).
@@ -216,6 +218,126 @@ INSERT INTO Leido (id_Lector, id_Libro, Fecha_Comienzo) VALUES
 (17, 11, '2024-08-12');
 ```
 
+## Andalucía EXAMEN 2023
+
+![ModeloEE](images/opos23bd.png)
+
+Tenga en cuenta las siguientes definiciones y restricciones: 
+- Cod_Alu: Entero. 
+- Dni: Cadena de 9 caracteres. No puede estar vacío 
+- Nombre: Cadena de 25 caracteres. No puede estar vacío
+- Apellidos: Cadena de 40 caracteres. No puede estar vacío 
+- Fecha_Nac: Tipo fecha. 
+- Año: Entero. No puede estar vacío. Es el año en que se realiza la matrícula. Por ejemplo, si una persona se matricula en un módulo en el curso 2019/2020, el Año será 2019. 
+- Nota_Final: Entero. Entre 1 y 10, pero puede estar vacío. 
+- Cod_Modulo: Entero. 
+- Nombre_Mod: Cadena de 40 caracteres. No puede estar vacío. 
+- Horas: Entero. Mayor que 1, pero puede estar vacío. 
+- Cod_Titulo: Entero. Nombre_Titulo: Cadena de 40 caracteres. No puede estar vacío. 
+- Grado: Character. Puede tomar los valores “B”, “M”, “S” o “E”. No puede estar vacío. 
+- Cod_Familia: Entero. 
+- Nombre_Familia: Cadena de 40 caracteres. No puede estar vacío. 
+- Un alumno no puede estar matriculado en un mismo módulo y en un mismo año más de una vez. 
+- Esta estructura de base de datos no tiene por qué coincidir con la realidad normativa actual.
+
+```mermaid
+erDiagram
+    FAMILIA {
+        INT Cod_Familia PK
+        VARCHAR Nombre_Familia
+    }
+    TITULO {
+        INT Cod_Titulo PK
+        VARCHAR Nombre_Titulo
+        ENUM Grado
+        INT Cod_Familia FK
+    }
+    MODULO {
+        INT Cod_Modulo PK
+        VARCHAR Nombre_Mod
+        INT Horas
+        INT Cod_Titulo FK
+    }
+    ALUMNO {
+        INT Cod_Alu PK
+        VARCHAR Dni UK
+        VARCHAR Nombre
+        VARCHAR Apellidos
+        DATE Fecha_Nac
+    }
+    MATRICULADO {
+        INT Cod_Alu FK
+        INT Cod_Modulo FK
+        INT Anio
+        DECIMAL Nota_Final
+    }
+    FAMILIA ||--o{ TITULO : tiene
+    TITULO ||--o{ MODULO : contiene
+    ALUMNO ||--o{ MATRICULADO : se_matricula
+    MODULO ||--o{ MATRICULADO : es_matriculado
+```
+
+### CREACIÓN DE TABLAS (1,25 puntos).
+
+Se pide: Detalle a continuación las sentencias SQL necesarias para crear las tablas de la base de datos que implemente el modelo anterior en tercera forma normal.
+
+```sql
+CREATE TABLE FAMILIA (
+    Cod_Familia INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    Nombre_Familia VARCHAR(40) NOT NULL
+);
+CREATE TABLE TITULO (
+    Cod_Titulo INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    Nombre_Titulo VARCHAR(40) NOT NULL,
+    Grado ENUM('B', 'M', 'S', 'E') NOT NULL,
+    Cod_Familia INT UNSIGNED NOT NULL,
+    FOREIGN KEY (Cod_Familia) REFERENCES FAMILIA(Cod_Familia)
+);
+CREATE TABLE MODULO (
+    Cod_Modulo INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    Nombre_Mod VARCHAR(40) NOT NULL,
+    Horas INT CHECK (Horas > 1),
+    Cod_Titulo INT UNSIGNED NOT NULL,
+    FOREIGN KEY (Cod_Titulo) REFERENCES TITULO(Cod_Titulo)
+);
+CREATE TABLE ALUMNO (
+    Cod_Alu INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    Dni VARCHAR(9) UNIQUE NOT NULL,
+    Nombre VARCHAR(25) NOT NULL,
+    Apellidos VARCHAR(40) NOT NULL,
+    Fecha_Nac DATE
+);
+CREATE TABLE MATRICULADO (
+    Cod_Alu INT UNSIGNED NOT NULL,
+    Cod_Modulo INT UNSIGNED NOT NULL,
+    Anio INT NOT NULL,
+    Nota_Final INT CHECK (Nota_Final BETWEEN 1 AND 10),
+    PRIMARY KEY (Cod_Alu, Cod_Modulo, Anio),
+    FOREIGN KEY (Cod_Alu) REFERENCES ALUMNO(Cod_Alu),
+    FOREIGN KEY (Cod_Modulo) REFERENCES MODULO(Cod_Modulo)
+);
+```
+
+### CONSULTA. (1,25 puntos)
+
+Se pide: Dadas las tablas que ha realizado en el apartado anterior, detalle a
+continuación las sentencias SQL necesarias para realizar la siguiente consulta:
+Todos los alumnos que en el curso 2021/22 hayan aprobado al menos un módulo de
+algún ciclo de la familia de “Informática y comunicaciones”. Debe aparecer una línea por
+cada alumno que cumpla dicho requisito, sin repeticiones. Cada línea contendrá los
+siguientes campos: Dni, Nombre y Apellidos.
+
+```sql
+SELECT DISTINCT a.Dni, a.Nombre, a.Apellidos
+FROM ALUMNO a
+JOIN MATRICULADO m ON a.Cod_Alu = m.Cod_Alu
+JOIN MODULO mo ON m.Cod_Modulo = mo.Cod_Modulo
+JOIN TITULO t ON mo.Cod_Titulo = t.Cod_Titulo
+JOIN FAMILIA f ON t.Cod_Familia = f.Cod_Familia
+WHERE m.Anio = 2021
+  AND m.Nota_Final >= 5
+  AND f.Nombre_Familia = 'Informática y comunicaciones';
+```
 
 ## Otro ejercicio (CANTABRIA 2018):
 
