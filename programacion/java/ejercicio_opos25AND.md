@@ -1,6 +1,6 @@
-# OPOSICIONES INFORMÁTICA ANDALUCÍA
+# OPOSICIONES INFORMÁTICA ANDALUCÍA. Programación en Java
 
-## Ejercicio de programación en Java 2025
+## Ejercicio 2025
 
 Desarrollar en lenguaje Java la estructura representada en el siguiente Diagrama de Clases. En dicho diagrama se describe la estructura para representar los alumnos de un Ciclo Formativo con sus módulos y calificaciones.
 
@@ -336,7 +336,7 @@ Perfecto...
 
 
 
-## Ejercicio de programación en Java 2023
+## Ejercicio 2023
 
 ![Opos23](img/opos23.png)
 
