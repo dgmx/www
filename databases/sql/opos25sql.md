@@ -20,7 +20,7 @@ Tenga en cuenta las siguientes definiciones y restricciones:
 - `id_Genero`: Entero.
 - `Nombre`: Cadena de 40 caracteres. No puede estar vacío.
 
-## EJERCICIO 1.1. CREACIÓN DE TABLAS (1.25 puntos).
+### EJERCICIO 1.1. CREACIÓN DE TABLAS (1.25 puntos).
 
 Detalle las sentencias SQL necesarias para crear las tablas de la base de datos que implemente el modelo anterior en tercera forma normal.
 
@@ -98,7 +98,7 @@ CREATE TABLE Leido (
 ```
 
 
-## EJERCICIO 1.2. CONSULTA (1.25 puntos).
+### EJERCICIO 1.2. CONSULTA (1.25 puntos).
 Dadas las tablas que ha realizado en el apartado anterior, detalle las sentencias SQL necesarias para realizar la siguiente consulta:
 
 Todos los libros de género `Terror` que se leyeron en `2024` por lectores italianos `(Nacionalidad = ‘Italia’)` con las cantidades de lecturas acumuladas en dicho período. Se considerarán leídos en 2024 todos los libros que se comenzaron a leer entre el 1 de enero y el 31 de diciembre de 2024.
@@ -341,7 +341,7 @@ WHERE m.Anio = 2021
 ```
 > El año utilizado es 2021 porque según la definición: *"El Año será el año en que se realiza la matrícula. Si una persona se matricula en el curso **2019/2020**, el Año será **2019**"*. Para el curso 2021/2022, el año almacenado es 2021.
 
-## Otro ejercicio (CANTABRIA 2018):
+## CANTABRIA 2018
 
 Partiendo del esquema de Base de Datos, realizar las siguientes operaciones:
 
