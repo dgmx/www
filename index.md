@@ -4,7 +4,7 @@ layout: home
 hero:
   name: "Diego J. González"
   text: "Blog de Programación y Computación"
-  tagline: Materiales de programación, Bases de datos y Sistemas Operativos.
+  tagline: Programación, Bases de datos, Redes y Sistemas Operativos.
   actions:
     - theme: brand
       text: Programación
