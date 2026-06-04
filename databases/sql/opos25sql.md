@@ -339,6 +339,7 @@ WHERE m.Anio = 2021
   AND m.Nota_Final >= 5
   AND f.Nombre_Familia = 'Informática y comunicaciones';
 ```
+> El año utilizado es 2021 porque según la definición: *"El Año será el año en que se realiza la matrícula. Si una persona se matricula en el curso **2019/2020**, el Año será **2019**"*. Para el curso 2021/2022, el año almacenado es 2021.
 
 ## Otro ejercicio (CANTABRIA 2018):
 
