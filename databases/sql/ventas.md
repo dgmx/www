@@ -299,7 +299,7 @@ INSERT INTO pedido VALUES(16, 2389.23, '2019-03-11', 1, 5);
     /*
     No se podría utilizar NATURAL LEFT JOIN o NATURAL RIGHT JOIN ya que los nombres de los campos no coinciden en ambas tablas.
     En la tabla Comercial, su Id se llama "Id", mientras que en la tabla Pedido, el campo que es la clave foránea se llama "Id_Comercial".
-    Lo mismo sucede con la tabla Clientem donde su PK se llama "Id", mientras que en la tabla Pedido, el campo se llama "Id_Cliente".
+    Lo mismo sucede con la tabla Cliente donde su PK se llama "Id", mientras que en la tabla Pedido, el campo se llama "Id_Cliente".
     */ 
     ```
 
