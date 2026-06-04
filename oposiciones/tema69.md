@@ -28,7 +28,7 @@ El presente tema forma parte del temario de la especialidad de Informática apro
 
 A lo largo de este tema, a través de autores como Stallings, Tanenbaum y Prieto,se realizará una presentación general sobre la integración de sistemas y medios de interconexión estándares.
 
-La evolución tecnológica ha desplazado el foco desde equipos aislados hacia ecosistemas hiperconectados. La **integración de sistemas** y el uso de redes de área extensa (**WAN**) son los pilares que permiten la globalización de la información, garantizando que datos y aplicaciones fluyan de forma segura y eficiente entre ubicaciones geográficamente distantes.
+La evolución tecnológica ha desplazado el foco desde equipos aislados hacia ecosistemas hiperconectados y distribuidos. La **integración de sistemas** y el uso de redes de área extensa (**WAN**) son los pilares que permiten la globalización de la información, garantizando que datos y aplicaciones fluyan de forma segura y eficiente entre ubicaciones geográficamente distantes.
 
 La **integración de sistemas** es el proceso de conectar diferentes subsistemas informáticos, dispositivos, redes y aplicaciones, que en origen fueron diseñados de manera independiente, para que funcionen de forma coordinada y compartan información de manera eficiente y transparente para el usuario final.
 
@@ -104,7 +104,7 @@ Actúan en diferentes capas del modelo OSI:
 
 * **Repetidores/Hubs:** Capa 1 (Física).
 
-El repetidor es el dispositivo de interconexión más elemental: recibe una señal eléctrica degradada, la regenera y la retransmite. Opera exclusivamente en la capa física del modelo OSI, sin ninguna noción de direcciones ni protocolos. Su función es ampliar el alcance de un segmento de red más allá del límite impuesto por la atenuación del medio.
+El repetidor es el dispositivo de interconexión más elemental: recibe una señal eléctrica degradada, la regenera y la retransmite. Opera exclusivamente en la capa física del modelo OSI, sin ninguna noción de direcciones ni protocolos. Su función es ampliar el alcance de un segmento de red más allá del límite impuesto por la atenuación del medio. Obsoletos
 
 * **Bridges/Switches:** Capa 2 (Enlace). Segmentan el tráfico mediante direcciones MAC.
 
@@ -133,9 +133,9 @@ En el contexto de las WAN, los estándares son esenciales porque:
 
 Dominados por el comité **IEEE 802**:
 
-* **802.3 (Ethernet):** El estándar de cableado.  
+* **802.3 (Ethernet):** El estándar de cableado. `1GBASE-T`
 * **802.11 (Wi-Fi):** Estándares inalámbricos (a, b, g, n, ac, ax, be).  Bandas de 2.4, 5 y 6 GHz
-* **802.1Q VLANs y 802.1D Spanning Tree**
+* **802.1Q VLANs y 802.1W Rapid Spanning Tree**
 
 ### **4.2. Estándares de red de área extensa (WAN)**
 
@@ -161,31 +161,35 @@ Hay 2 tipos, los orientados a conexión: X.25, Frame Relay, ATM, MPLS y sin cone
 ### **5.1. Protocolos clásicos de acceso WAN**
 
 *  **PPP (Point-to-Point Protocol):** Protocolo de nivel de enlace (capa 2\) para enlaces punto a punto, como líneas serie (RS-232, T1/E1, módems DSL, etc.). Reemplazó a SLIP. Enlaces serie y marcado telefónico.
-
 *  **HDLC (High-Level Data Link Control):** Protocolo de nivel de enlace de la ISO, Existe una variante propietaria de Cisco (Cisco HDLC)
-
 *  **Frame Relay:** Tecnología WAN de conmutación de tramas orientada a conexión (circuitos virtuales), optimizada para alta velocidad, baja latencia y control de congestión.
+*  **ATM (Asynchronous Transfer Mode)** — celdas fijas de 53 bytes, QoS, usado en redes backbone
 
 ### **5.2. Protocolos de nivel de enlace y red para WAN modernas**
 
-* **ATM (Asynchronous Transfer Mode):** Tecnología WAN orientada a conexión, basada en **células de tamaño fijo.**Diseñada para integrar voz, vídeo y datos (triple play) con calidad de servicio (QoS).  
 * **MPLS (Multiprotocol Label Switching).** Protocolo de nivel 2.5 (entre enlace y red) que acelera el reenvío mediante etiquetas. No usa direcciones IP en cada salto (solo en los bordes).  
 * **DSL: (ADSL, VDSL)** Familia de protocolos que permiten transmisión digital de alta velocidad sobre par trenzado de cobre (línea telefónica tradicional), utilizando frecuencias superiores a la voz.  
 * **SD-WAN (Software-Defined WAN).** La evolución moderna de las WAN. Separa el **plano de control** del **plano de datos**. Permite gestionar múltiples conexiones (MPLS, Fibra, 5G) de forma centralizada mediante software, optimizando el tráfico según la aplicación (ej. priorizar Zoom sobre descargas de archivos).
 * **PPPoE (PPP over Ethernet)**. Encapsula PPP sobre tramas Ethernet, permitiendo autenticar, gestionar y facturar a los usuarios en redes modernas como DSL y fibra.
+* **Ethernet WAN** (Carrier Ethernet / VPLS / EVPN) — extensión de Ethernet sobre infraestructura del operador
+* **VXLAN / GENEVE** — túneles de capa 2 sobre capa 3 para sobrelays
 
 ### **5.3. Protocolos de acceso inalámbrico WAN**
 
-* **Tecnologías celulares (GSM, GPRS, UMTS, LTE, 5G).** Los niveles superiores (IP, TCP, UDP) son estándar.   
-* **WiMAX (Worldwide Interoperability for Microwave Access). 802.16.** Estándar inalámbrico de área extensa (MAN/WAN) para acceso de última milla, con alcance típico de 10-50 km.
+- **LTE / 5G NR** — acceso celular como enlace WAN primario o respaldo
+- **WiMAX (IEEE 802.16)** — banda ancha inalámbrica metropolitana (menos usado hoy)
+- **Satélite (Starlink, VSAT)** — enlaces WAN vía satélite con protocolos como TCP PEP para mitigar latencia
+- **LoRaWAN / NB-IoT** — WAN de baja potencia para IoT (LPWAN)
 
 ### **5.4. Protocolos de enrutamiento WAN**
 
 Internet no es una red única, está formada por unas 70.000 redes individuales gestionadas por ISP, Universidades y grandes empresas tecnológicas, cada una con un número de identificación de sistema autónomo ASN, que gestionan su propia política de enrutamiento en internet, utilizando el protocolo BGP para intercambiar información con otros sistemas.
 
 Permiten la comunicación entre redes geográficas dispersas:
-* **BGP (Puerta de enlace de frontera)** Conecta sistemas autónomos.
-* **OSPF o EIGRP** Conecta sucursales.
+* **BGP (Puerta de enlace de frontera)** Conecta sistemas autónomos, estándar en WAN/Internet
+* **OSPF** (Open Shortest Path First) — protocolo de estado de enlace (LS), convergencia rápida, jerárquico (áreas)
+* **IS-IS** — similar a OSPF, usado en ISPs y grandes redes
+* **EIGRP** — protocolo híbrido Cisco (distancia vector + estado de enlace), propietario
 
 
 ## 6. CONCLUSIÓN
