@@ -1,8 +1,8 @@
 # Ejercicios resueltos de POO en Java
 
-## Ejercicios usando modelado diagrama UML
+**Ejercicios usando modelado diagrama UML**
 
-**Actividad 1. Sistema de Gestión de Biblioteca**
+## Actividad 1. Sistema de Gestión de Biblioteca
 
 Una biblioteca necesita un sistema para gestionar su catálogo de libros y el préstamo de estos a los usuarios.
 
@@ -204,7 +204,7 @@ Libros en la biblioteca:
 Este código sigue el modelo UML y muestra cómo interactúan las clases.
 
 
-**Actividad 2. Sistema de Gestión de Empleados**
+## Actividad 2. Sistema de Gestión de Empleados
 
 Una empresa necesita un sistema para gestionar el pago de sus empleados, considerando diferentes tipos de contratación.
 
@@ -222,7 +222,7 @@ El sistema debe garantizar que cada empleado pueda calcular su salario de manera
 
 La clase empleado debe ser abstracta y debe implementar la interfaz Pagable que será un metodo abstracto que deben implementar las clases derivadas.
 
-## Diagrama UML
+### Diagrama UML
 
 El diagrama de clases representa los siguientes elementos:
 
