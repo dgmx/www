@@ -213,7 +213,7 @@ public class Alumno extends Persona {
     }
 
     public String toString() {
-        return super.toString() + " Nota Media = " + String.format("%.1f", getNotaMedia());
+        return super.toString() + " Nota Media = " + String.format("%.2f", getNotaMedia());
     }
 }
 ```
