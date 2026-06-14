@@ -3,4 +3,5 @@
 # ZONA RESTRINGIDA #
 
 
-![Palestina](../public/img/fromthriver.jpg)
+[![Palestina](../public/img/fromthriver.jpg)](temas.md)
+
