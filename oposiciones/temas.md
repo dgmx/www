@@ -52,8 +52,8 @@
 -  [40 Diseño de bases de datos relacionales.](tema40.md)
 -  41 Utilidades de los sistemas gestores de base de datos para el desarrollo de aplicaciones. Tipos. Características.(tema40.md)
 -  42 Sistemas de bases de datos distribuidos.
--  43 Administración de sistemas de bases de datos.
-- [44 Técnicas y procedimientos para la seguridad de los datos](tema44.md)
+-  [43 Administración de sistemas de bases de datos.](Tema43.md)
+-  [44 Técnicas y procedimientos para la seguridad de los datos](tema44.md)
 
 ## BLOQUE 07 – SISTEMAS DE INFORMACIÓN
 -  45 Sistemas de información. Tipos. Características. Sistemas de información en la empresa.
