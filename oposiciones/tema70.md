@@ -37,16 +37,16 @@ estudio de la instalación y configuración de sistemas en red loca l está pres
 
 dentro del currículo de la familia profesional de Informática y Comunicaciones.
 Concretamente se pueden ubicar dentro de los siguientes ciclos formativos:  
-- CFGM de Sistemas Microinformáticos y Redes ( Real Decreto 1691/2007 
+- **CFGM de Sistemas Microinformáticos y Redes** (Real Decreto 1691/2007 
 y Orden/Decreto autonómico)  
   - Módulo: Redes locales  
-- CFGS de Administración de Sistemas Informáticos en Red ( Real Decreto 
+- C**FGS de Administración de Sistemas Informáticos en Red** ( Real Decreto 
 1629/2009 y Orden/Decreto autonómico)  
   - Módulo: Planificación y administración de redes  
-- CFGS de Desarrollo de Aplicaciones Multiplataforma ( Real Decreto 
+- **CFGS de Desarrollo de Aplicaciones Multiplataforma** ( Real Decreto 
 450/2010, Real Decreto 405/2023 y  Orden/Decreto autonómico ) 
   - Módulo: Sistemas informáticos  
-- CFGS de Desarrollo de Aplicaciones Web ( Real Decreto 686/2010, Real 
+- **CFGS de Desarrollo de Aplicaciones Web** ( Real Decreto 686/2010, Real 
 Decreto 405/2023 y  Orden/Decreto autonómico ) 
   - Módulo: Sistemas informáticos  
  
@@ -60,8 +60,8 @@ fibra óptica y ondas de radio (por ejemplo, microondas, infrarrojos, satélites
 comunicación)  (Tanenbaum, 2021).  
 
 Las arquitecturas y componentes básicos de un sistema en red son los siguientes:
-- Arquitectura: Principalmente Cliente / Servidor o P2P
-- Componentes básicos:
+- **Arquitectura:** Principalmente Cliente / Servidor o P2P
+- **Componentes básicos:**
   - Hardware de red: NICs, dispositivos de interconexión (switches, routers) y estaciones de trabajo y servidores
   - Software de red: Sistemas operativos de red como Windows Server o Linux
   - Medios de transmisión: Cableados o inalámbricos.
@@ -78,7 +78,7 @@ la red desde diferentes nodos.
 
 El diseño de un sistema en red debe seguir un enfoque jerárquico y estructurado para garantizar la escalabilidad.
  
-**Análisis de la situación de partida** Donde se analizarán los siguientes aspectos:  
+**Análisis de la situación de partida**. Donde se analizarán los siguientes aspectos:  
 - Servicios de red proporcionados por la instalación actual y sus problemas 
 asociados  
 - Hardware de la instalación actual: características de los servidores, de los 
@@ -89,7 +89,7 @@ sistemas operativos de equipos clientes, aplicaciones, etc.
 - Número actual de usuarios: servicios que demandan y tráfico que generan  
 - Etc. 
  
-**Análisis de necesidades detectadas** A tener en cuenta los siguientes aspectos:
+**Análisis de necesidades detectadas**. A tener en cuenta los siguientes aspectos:
 
 - Uso de la red : habrá que determinar el tipo  de aplicaciones que van a 
 hacer uso de la red y qué servicios va a ofrecer la red.  
@@ -107,14 +107,14 @@ los dispositivos de cada subred dentro de la red y con el exterior.
 la disponibilidad de la información y los servicios, confidencialidad, calidad 
 de servicio (QoS), etc.  
  
-**Diseño lógico** : dentro del diseño lógico se ubican las siguientes tareas:  
+**Diseño lógico**: dentro del diseño lógico se ubican las siguientes tareas:  
 - Diseño de la topología lógica de red . 
 - Diseño de direccionamientos y nombres . 
 - Segmentación VLAN y enrutamiento.  
 - Estrategias de seguridad de la red . 
 - Estrategias para el mantenimiento de la red.  
 
-**Diseño físico** : implementación del diseño lógico.  
+**Diseño físico**: implementación del diseño lógico.  
 
 - Ubicación de los armarios de comunicaciones
 - Canalizaciones
@@ -125,16 +125,16 @@ de servicio (QoS), etc.
 
 Para que la red sea eficiente, se tendrán en cuenta los siguientes factores técnicos:
 
-- Topología: La topología en estrella extendida es el estándar actual en las redes de área local.
-- Medios de transmisión: Se emplean medios guiados (cable) para la estructura básica de la red y no guiados para los dispositivos móviles o portátiles.
-- Ancho de banda: Se tendrá en cuenta para evitar cuellos de botella en la red. Cableado categoría 6 o 7 1000BASE-T
-- Latencia: Crucial para VoIP y videoconferencias.
-- Seguridad: Implementación de cortafuegos, listas de control de acceso (ACL) y cifrado.
-- Escalabilidad: Para crecimiento de la red sin modificar la estructura base.
-- Disponibilidad y redundancia: Enlaces de respaldo y uso de protocolos STP para evitar bucles.
-- Servidores y estaciones de trabajo, número de equipos necesarios.
-- Sistemas operativos de red. Software libre o propietario.
-- Conexión al exterior. Salida a Internet, teniendo en cuenta las políticas de seguridad.
+- **Topología:** La topología en estrella extendida es el estándar actual en las redes de área local.
+- **Medios de transmisión: **Se emplean medios guiados (cable) para la estructura básica de la red y no guiados para los dispositivos móviles o portátiles.
+- **Ancho de banda:** Se tendrá en cuenta para evitar cuellos de botella en la red. Cableado categoría 6 o 7 1000BASE-T
+- **Latencia:** Crucial para VoIP y videoconferencias. Políticas de QoS
+- **Seguridad:** Implementación de cortafuegos, listas de control de acceso (ACL) y cifrado.
+- **Escalabilidad:** Para crecimiento de la red sin modificar la estructura base.
+- **Disponibilidad y redundancia:** Enlaces de respaldo y uso de protocolos STP para evitar bucles.
+- **Servidores y estaciones de trabajo**, número de equipos necesarios.
+- **Sistemas operativos de red.** Software libre o propietario.
+- **Conexión al exterior**. Salida a Internet, VPN, teniendo en cuenta las políticas de seguridad.
 
 
 
@@ -152,7 +152,7 @@ La instalación y configuración de la red se llevará a cabo en varios pasos:
 - Instalación de la infraestructura de red  
 - Interconexión de equipos  
 - Instalación y configuración de equipos  
- 
+- Diagnóstico de incidencias
  
  
  
@@ -161,23 +161,23 @@ La instalación y configuración de la red se llevará a cabo en varios pasos:
 
 Se basa en el cableado estructurado (Normas ANSI 586)
 
-- Subsistemas: Cableado horizontal (hasta el puesto de trabajo), cableado vertical (cableado entre plantas) y el cuarto de telecomunicaciones
-- Categoría: Uso de cableado UTP/FTP categorías 6 y 7 para velocidades de 1Gigabit a 10 Gigabits
-- Instalación física: Montaje de armarios rack, paneles de parcheo y etiquetado bajo norma
+- **Subsistemas: **Cableado horizontal (hasta el puesto de trabajo), cableado vertical (cableado entre plantas) y el cuarto de telecomunicaciones
+- **Categoría:** Uso de cableado UTP/FTP categorías 6 y 7 para velocidades de 1Gigabit a 10 Gigabits
+- **Instalación física:** Montaje de armarios rack, paneles de parcheo y etiquetado bajo norma
  
 ## 5.2. INTERCONEXIÓN DE EQUIPOS  
 
 Se realiza mediante dispositivos de capa 2 (enlace) y capa 3 (red) del modelo OSI.
-- Conmutadores: (Switches) Segmentan dominios de colisión. Configuración de puertos, agregación de enlaces y gestión de VLANs. Gestionables para administración web o ssh.
-- Encaminadores: (routers) Interconectan diferentes redes, configuración de rutas estáticas o protocolos de enrutamiento dinámico.  DHCP para configuración dinámimica de host.
-- Puntos de acceso. Para conexiones inalámbricas.
+- **Conmutadores:** (Switches) Segmentan dominios de colisión. Configuración de puertos, agregación de enlaces y gestión de VLANs. Gestionables para administración web o ssh.
+- **Encaminadores:** (routers) Interconectan diferentes redes, configuración de rutas estáticas o protocolos de enrutamiento dinámico.  DHCP para configuración dinámimica de host.
+- **Puntos de acceso.** Para conexiones inalámbricas.
   
 ## 5.3. INSTALACIÓN Y CONFIGURACIÓN DE LOS EQUIPOS  
 
 Incluye tanto los servidores como las estaciones de trabajo
-- Configuración IP: Asignación estática para servidores e impresoras, dinámica para clientes
-- Sistemas operativos de red: Instalación de roles y características. Gestión de usuarios AD/LDAP, archivos NFS/SMB, bases de datos, servidores web, etc.
-- Seguridad de host; Configuración de firewall locales, antivirus y políticas de grupo (GPO)
+- **Configuración IP:** Asignación estática para servidores e impresoras, dinámica para clientes
+- **Sistemas operativos de red**: Instalación de roles y características. Gestión de usuarios AD/LDAP, archivos NFS/SMB, bases de datos, servidores web, etc.
+- **Seguridad de host;** Configuración de firewall locales, antivirus y políticas de grupo (GPO)
 
 ## 5.4. DIAGNÓSTICO DE INCIDENCIAS  
 
