@@ -212,303 +212,484 @@ ALTER table trabaja modify nhoras int(11) check (nhoras >=0);
 
 ##  Consultas Básicas
 1. Seleccionar todos los empleados  
-```sql
-SELECT * FROM empleado;
-```  
+    ::: details Mostrar solución {close}
+    
+    ```sql
+    SELECT * FROM empleado;
+    ```
+    
+    :::
 2. Seleccionar nombre y salario de los empleados    
-```sql
-SELECT nombre, salario FROM empleado;
-```  
+    ::: details Mostrar solución {close}
+    
+    ```sql
+    SELECT nombre, salario FROM empleado;
+    ```
+    
+    :::
 3. Filtrar empleados con salario mayor a 3000  
-```sql
-SELECT * FROM empleado WHERE salario > 3000;
-```   
+    ::: details Mostrar solución {close}
+    
+    ```sql
+    SELECT * FROM empleado WHERE salario > 3000;
+    ```
+    
+    :::
 4. Buscar empleados con nombre que empiece con 'A'  
-```sql
-SELECT * FROM empleado WHERE nombre LIKE 'A%';
-```
+    ::: details Mostrar solución {close}
+    
+    ```sql
+    SELECT * FROM empleado WHERE nombre LIKE 'A%';
+    ```
+    
+    :::
 5. Ordenar empleados por salario descendente  
-```sql
-SELECT * FROM empleado ORDER BY salario DESC;
-```
+    ::: details Mostrar solución {close}
+    
+    ```sql
+    SELECT * FROM empleado ORDER BY salario DESC;
+    ```
+    
+    :::
 
 ##  Funciones Agregadas
 6. Contar el número de empleados
-```sql
-SELECT COUNT(*) AS total_empleados FROM empleado;
-```
+    ::: details Mostrar solución {close}
+    
+    ```sql
+    SELECT COUNT(*) AS total_empleados FROM empleado;
+    ```
+    
+    :::
 7. Calcular el salario promedio
-```sql
-SELECT AVG(salario) AS salario_promedio FROM empleado;
-```
+    ::: details Mostrar solución {close}
+    
+    ```sql
+    SELECT AVG(salario) AS salario_promedio FROM empleado;
+    ```
+    
+    :::
 8. Obtener el salario máximo y mínimo
-```sql
-SELECT MAX(salario) AS salario_max, MIN(salario) AS salario_min FROM empleado;
-```
+    ::: details Mostrar solución {close}
+    
+    ```sql
+    SELECT MAX(salario) AS salario_max, MIN(salario) AS salario_min FROM empleado;
+    ```
+    
+    :::
 9. Sumar los salarios de todos los empleados
-```sql
-SELECT SUM(salario) AS total_salarios FROM empleado;
-```
+    ::: details Mostrar solución {close}
+    
+    ```sql
+    SELECT SUM(salario) AS total_salarios FROM empleado;
+    ```
+    
+    :::
 10. Agrupar empleados por departamento y contar cuántos hay en cada uno
-```sql
-SELECT cddep, COUNT(*) AS cantidad FROM empleado GROUP BY cddep;
-```
+    ::: details Mostrar solución {close}
+    
+    ```sql
+    SELECT cddep, COUNT(*) AS cantidad FROM empleado GROUP BY cddep;
+    ```
+    
+    :::
 
 ##  Subconsultas y Joins
 
 11. Encontrar empleados con el salario más alto
-```sql
-SELECT * FROM empleado WHERE salario = (SELECT MAX(salario) FROM empleado);
-```
+    ::: details Mostrar solución {close}
+    
+    ```sql
+    SELECT * FROM empleado WHERE salario = (SELECT MAX(salario) FROM empleado);
+    ```
+    
+    :::
 12. Listar empleados con su jefe (auto-relación)
-```sql
-SELECT e1.nombre AS empleado, e2.nombre AS jefe
-FROM empleado e1
-LEFT JOIN empleado e2 ON e1.cdjefe = e2.cdemp;
-```
+    ::: details Mostrar solución {close}
+    
+    ```sql
+    SELECT e1.nombre AS empleado, e2.nombre AS jefe
+    FROM empleado e1
+    LEFT JOIN empleado e2 ON e1.cdjefe = e2.cdemp;
+    ```
+    
+    :::
 13. Mostrar empleados con su departamento
-```sql
-SELECT e.nombre, d.nombre AS departamento
-FROM empleado e
-JOIN departamento d ON e.cddep = d.cddep;
-```
+    ::: details Mostrar solución {close}
+    
+    ```sql
+    SELECT e.nombre, d.nombre AS departamento
+    FROM empleado e
+    JOIN departamento d ON e.cddep = d.cddep;
+    ```
+    
+    :::
 
 ##  Consultas con Condiciones Avanzadas
 14. Empleados con salario entre 2000 y 5000
-```sql
-SELECT * FROM empleado WHERE salario BETWEEN 2000 AND 5000;
-```
-
+    ::: details Mostrar solución {close}
+    
+    ```sql
+    SELECT * FROM empleado WHERE salario BETWEEN 2000 AND 5000;
+    ```
+    
+    :::
 15. Empleados sin jefe asignado
-```sql
-SELECT * FROM empleado WHERE cdjefe IS NULL;
-```
+    ::: details Mostrar solución {close}
+    
+    ```sql
+    SELECT * FROM empleado WHERE cdjefe IS NULL;
+    ```
+    
+    :::
 16. Mostrar los 5 empleados con mayor salario
-```sql
-SELECT * FROM empleado ORDER BY salario DESC LIMIT 5;
-```
+    ::: details Mostrar solución {close}
+    
+    ```sql
+    SELECT * FROM empleado ORDER BY salario DESC LIMIT 5;
+    ```
+    
+    :::
 
 ##  Operaciones con Modificaciones
 
 17. Aumentar el salario de todos los empleados en 10%
-```sql
-UPDATE empleado SET salario = salario * 1.10;
-```
+    ::: details Mostrar solución {close}
+    
+    ```sql
+    UPDATE empleado SET salario = salario * 1.10;
+    ```
+    
+    :::
 18. Eliminar empleados con salario menor a 1500
-```sql
-DELETE FROM empleado WHERE salario < 1500;
-```
-
+    ::: details Mostrar solución {close}
+    
+    ```sql
+    DELETE FROM empleado WHERE salario < 1500;
+    ```
+    
+    :::
 19. Insertar un nuevo empleado
-```sql
-INSERT INTO empleado (cdemp, nombre, fecha_ingreso, salario, cdjefe, cddep)
-VALUES ('E21', 'Carlos López', '2023-05-10', 3500.00, 'E05', 'D01');
-```
+    ::: details Mostrar solución {close}
+    
+    ```sql
+    INSERT INTO empleado (cdemp, nombre, fecha_ingreso, salario, cdjefe, cddep)
+    VALUES ('E21', 'Carlos López', '2023-05-10', 3500.00, 'E05', 'D01');
+    ```
+    
+    :::
 20. Crear una vista de empleados y sus departamentos
-```sql
-CREATE VIEW vista_empleados AS
-SELECT e.nombre, e.salario, d.nombre AS departamento
-FROM empleado e
-JOIN departamento d ON e.cddep = d.cddep;
-```
-
+    ::: details Mostrar solución {close}
+    
+    ```sql
+    CREATE VIEW vista_empleados AS
+    SELECT e.nombre, e.salario, d.nombre AS departamento
+    FROM empleado e
+    JOIN departamento d ON e.cddep = d.cddep;
+    ```
+    
+    :::
 
 ##  Consultas con JOIN entre Tablas
 
 1. Listar empleados junto con su departamento
-```sql
-SELECT e.nombre AS empleado, d.nombre AS departamento
-FROM empleado e
-JOIN departamento d ON e.cddep = d.cddep;
-```
+    ::: details Mostrar solución {close}
+    
+    ```sql
+    SELECT e.nombre AS empleado, d.nombre AS departamento
+    FROM empleado e
+    JOIN departamento d ON e.cddep = d.cddep;
+    ```
+    
+    :::
 2. Mostrar empleados y sus jefes (auto-relación en empleado)
-```sql
-SELECT e1.nombre AS empleado, e2.nombre AS jefe
-FROM empleado e1
-LEFT JOIN empleado e2 ON e1.cdjefe = e2.cdemp;
-```
+    ::: details Mostrar solución {close}
+    
+    ```sql
+    SELECT e1.nombre AS empleado, e2.nombre AS jefe
+    FROM empleado e1
+    LEFT JOIN empleado e2 ON e1.cdjefe = e2.cdemp;
+    ```
+    
+    :::
 3. Listar empleados y los proyectos en los que trabajan
-```sql
-SELECT e.nombre AS empleado, p.nombre AS proyecto, t.nhoras
-FROM empleado e
-JOIN trabaja t ON e.cdemp = t.cdemp
-JOIN proyecto p ON t.cdpro = p.cdpro;
-```
+    ::: details Mostrar solución {close}
+    
+    ```sql
+    SELECT e.nombre AS empleado, p.nombre AS proyecto, t.nhoras
+    FROM empleado e
+    JOIN trabaja t ON e.cdemp = t.cdemp
+    JOIN proyecto p ON t.cdpro = p.cdpro;
+    ```
+    
+    :::
 4. Departamentos con sus proyectos asignados
-```sql
-SELECT d.nombre AS departamento, p.nombre AS proyecto
-FROM departamento d
-JOIN proyecto p ON d.cddep = p.cddep;
-```
+    ::: details Mostrar solución {close}
+    
+    ```sql
+    SELECT d.nombre AS departamento, p.nombre AS proyecto
+    FROM departamento d
+    JOIN proyecto p ON d.cddep = p.cddep;
+    ```
+    
+    :::
 5. Empleados, sus departamentos y los proyectos en los que trabajan
-```sql
-SELECT e.nombre AS empleado, d.nombre AS departamento, p.nombre AS proyecto
-FROM empleado e
-JOIN departamento d ON e.cddep = d.cddep
-JOIN trabaja t ON e.cdemp = t.cdemp
-JOIN proyecto p ON t.cdpro = p.cdpro;
-```
+    ::: details Mostrar solución {close}
+    
+    ```sql
+    SELECT e.nombre AS empleado, d.nombre AS departamento, p.nombre AS proyecto
+    FROM empleado e
+    JOIN departamento d ON e.cddep = d.cddep
+    JOIN trabaja t ON e.cdemp = t.cdemp
+    JOIN proyecto p ON t.cdpro = p.cdpro;
+    ```
+    
+    :::
 
 ##  Consultas con LEFT JOIN y RIGHT JOIN
 6. Mostrar empleados y proyectos, incluyendo los empleados sin proyectos asignados
-```sql
-SELECT e.nombre AS empleado, p.nombre AS proyecto
-FROM empleado e
-LEFT JOIN trabaja t ON e.cdemp = t.cdemp
-LEFT JOIN proyecto p ON t.cdpro = p.cdpro;
-```
+    ::: details Mostrar solución {close}
+    
+    ```sql
+    SELECT e.nombre AS empleado, p.nombre AS proyecto
+    FROM empleado e
+    LEFT JOIN trabaja t ON e.cdemp = t.cdemp
+    LEFT JOIN proyecto p ON t.cdpro = p.cdpro;
+    ```
+    
+    :::
 7. Mostrar proyectos y empleados, incluyendo proyectos sin empleados asignados
-```sql
-SELECT p.nombre AS proyecto, e.nombre AS empleado
-FROM proyecto p
-LEFT JOIN trabaja t ON p.cdpro = t.cdpro
-LEFT JOIN empleado e ON t.cdemp = e.cdemp;
-```
+    ::: details Mostrar solución {close}
+    
+    ```sql
+    SELECT p.nombre AS proyecto, e.nombre AS empleado
+    FROM proyecto p
+    LEFT JOIN trabaja t ON p.cdpro = t.cdpro
+    LEFT JOIN empleado e ON t.cdemp = e.cdemp;
+    ```
+    
+    :::
 8. Mostrar empleados sin departamento asignado
-```sql
-SELECT e.nombre
-FROM empleado e
-LEFT JOIN departamento d ON e.cddep = d.cddep
-WHERE d.cddep IS NULL;
-```
+    ::: details Mostrar solución {close}
+    
+    ```sql
+    SELECT e.nombre
+    FROM empleado e
+    LEFT JOIN departamento d ON e.cddep = d.cddep
+    WHERE d.cddep IS NULL;
+    ```
+    
+    :::
 9. Mostrar departamentos sin empleados asignados
-```sql
-SELECT d.nombre
-FROM departamento d
-LEFT JOIN empleado e ON d.cddep = e.cddep
-WHERE e.cdemp IS NULL;
-```
+    ::: details Mostrar solución {close}
+    
+    ```sql
+    SELECT d.nombre
+    FROM departamento d
+    LEFT JOIN empleado e ON d.cddep = e.cddep
+    WHERE e.cdemp IS NULL;
+    ```
+    
+    :::
 10. Mostrar proyectos sin empleados trabajando en ellos
-```sql
-SELECT p.nombre
-FROM proyecto p
-LEFT JOIN trabaja t ON p.cdpro = t.cdpro
-WHERE t.cdemp IS NULL;
-```
+    ::: details Mostrar solución {close}
+    
+    ```sql
+    SELECT p.nombre
+    FROM proyecto p
+    LEFT JOIN trabaja t ON p.cdpro = t.cdpro
+    WHERE t.cdemp IS NULL;
+    ```
+    
+    :::
+
 ##  Consultas con GROUP BY y Agregaciones
 11. Contar empleados por departamento
-```sql
-SELECT d.nombre AS departamento, COUNT(e.cdemp) AS total_empleados
-FROM departamento d
-LEFT JOIN empleado e ON d.cddep = e.cddep
-GROUP BY d.nombre;
-```
+    ::: details Mostrar solución {close}
+    
+    ```sql
+    SELECT d.nombre AS departamento, COUNT(e.cdemp) AS total_empleados
+    FROM departamento d
+    LEFT JOIN empleado e ON d.cddep = e.cddep
+    GROUP BY d.nombre;
+    ```
+    
+    :::
 12. Total de horas trabajadas por cada empleado
-```sql
-SELECT e.nombre AS empleado, SUM(t.nhoras) AS total_horas
-FROM empleado e
-JOIN trabaja t ON e.cdemp = t.cdemp
-GROUP BY e.nombre;
-```
+    ::: details Mostrar solución {close}
+    
+    ```sql
+    SELECT e.nombre AS empleado, SUM(t.nhoras) AS total_horas
+    FROM empleado e
+    JOIN trabaja t ON e.cdemp = t.cdemp
+    GROUP BY e.nombre;
+    ```
+    
+    :::
 13. Salario promedio por departamento
-```sql
-SELECT d.nombre AS departamento, AVG(e.salario) AS salario_promedio
-FROM departamento d
-JOIN empleado e ON d.cddep = e.cddep
-GROUP BY d.nombre;
-```
+    ::: details Mostrar solución {close}
+    
+    ```sql
+    SELECT d.nombre AS departamento, AVG(e.salario) AS salario_promedio
+    FROM departamento d
+    JOIN empleado e ON d.cddep = e.cddep
+    GROUP BY d.nombre;
+    ```
+    
+    :::
 14. Número de empleados que trabajan en cada proyecto
-```sql
-SELECT p.nombre AS proyecto, COUNT(t.cdemp) AS total_empleados
-FROM proyecto p
-JOIN trabaja t ON p.cdpro = t.cdpro
-GROUP BY p.nombre;
-```
+    ::: details Mostrar solución {close}
+    
+    ```sql
+    SELECT p.nombre AS proyecto, COUNT(t.cdemp) AS total_empleados
+    FROM proyecto p
+    JOIN trabaja t ON p.cdpro = t.cdpro
+    GROUP BY p.nombre;
+    ```
+    
+    :::
 15. Departamento con el mayor número de empleados
-```sql
-SELECT d.nombre AS departamento, COUNT(e.cdemp) AS total_empleados
-FROM departamento d
-JOIN empleado e ON d.cddep = e.cddep
-GROUP BY d.nombre
-ORDER BY total_empleados DESC
-LIMIT 1;
-```
+    ::: details Mostrar solución {close}
+    
+    ```sql
+    SELECT d.nombre AS departamento, COUNT(e.cdemp) AS total_empleados
+    FROM departamento d
+    JOIN empleado e ON d.cddep = e.cddep
+    GROUP BY d.nombre
+    ORDER BY total_empleados DESC
+    LIMIT 1;
+    ```
+    
+    :::
+
 ##  Consultas con HAVING, LIMIT y ORDER BY
 16. Proyectos con más de 3 empleados asignados
-```sql
-SELECT p.nombre AS proyecto, COUNT(t.cdemp) AS total_empleados
-FROM proyecto p
-JOIN trabaja t ON p.cdpro = t.cdpro
-GROUP BY p.nombre
-HAVING total_empleados > 3;
-```
+    ::: details Mostrar solución {close}
+    
+    ```sql
+    SELECT p.nombre AS proyecto, COUNT(t.cdemp) AS total_empleados
+    FROM proyecto p
+    JOIN trabaja t ON p.cdpro = t.cdpro
+    GROUP BY p.nombre
+    HAVING total_empleados > 3;
+    ```
+    
+    :::
 17. Los 5 empleados con más horas trabajadas en proyectos
-```
-SELECT e.nombre AS empleado, SUM(t.nhoras) AS total_horas
-FROM empleado e
-JOIN trabaja t ON e.cdemp = t.cdemp
-GROUP BY e.nombre
-ORDER BY total_horas DESC
-LIMIT 5;
-```
+    ::: details Mostrar solución {close}
+    
+    ```sql
+    SELECT e.nombre AS empleado, SUM(t.nhoras) AS total_horas
+    FROM empleado e
+    JOIN trabaja t ON e.cdemp = t.cdemp
+    GROUP BY e.nombre
+    ORDER BY total_horas DESC
+    LIMIT 5;
+    ```
+    
+    :::
 18. Los 3 departamentos con el salario promedio más alto
-```sql
-SELECT d.nombre AS departamento, AVG(e.salario) AS salario_promedio
-FROM departamento d
-JOIN empleado e ON d.cddep = e.cddep
-GROUP BY d.nombre
-ORDER BY salario_promedio DESC
-LIMIT 3;
-```
+    ::: details Mostrar solución {close}
+    
+    ```sql
+    SELECT d.nombre AS departamento, AVG(e.salario) AS salario_promedio
+    FROM departamento d
+    JOIN empleado e ON d.cddep = e.cddep
+    GROUP BY d.nombre
+    ORDER BY salario_promedio DESC
+    LIMIT 3;
+    ```
+    
+    :::
 19. Empleados que trabajan en más de un proyecto
-```sql
-SELECT e.nombre AS empleado, COUNT(t.cdpro) AS total_proyectos
-FROM empleado e
-JOIN trabaja t ON e.cdemp = t.cdemp
-GROUP BY e.nombre
-HAVING total_proyectos > 1;
-```
+    ::: details Mostrar solución {close}
+    
+    ```sql
+    SELECT e.nombre AS empleado, COUNT(t.cdpro) AS total_proyectos
+    FROM empleado e
+    JOIN trabaja t ON e.cdemp = t.cdemp
+    GROUP BY e.nombre
+    HAVING total_proyectos > 1;
+    ```
+    
+    :::
 20. Empleados que trabajan en proyectos del departamento "Ventas"
-```sql
-SELECT e.nombre AS empleado, p.nombre AS proyecto, d.nombre AS departamento
-FROM empleado e
-JOIN trabaja t ON e.cdemp = t.cdemp
-JOIN proyecto p ON t.cdpro = p.cdpro
-JOIN departamento d ON p.cddep = d.cddep
-WHERE d.nombre = 'Ventas';
-```
+    ::: details Mostrar solución {close}
+    
+    ```sql
+    SELECT e.nombre AS empleado, p.nombre AS proyecto, d.nombre AS departamento
+    FROM empleado e
+    JOIN trabaja t ON e.cdemp = t.cdemp
+    JOIN proyecto p ON t.cdpro = p.cdpro
+    JOIN departamento d ON p.cddep = d.cddep
+    WHERE d.nombre = 'Ventas';
+    ```
+    
+    :::
 
 ## Consultas de EXAMEN
 + Consulta 1: De la tabla `EMPLEADO`, el código, nombre y salario de los empleados ordenados por nombre ascendentemente y por salario de manera descendente.
-
-    ```sql
-    SELECT nombre FROM departamento WHERE ciudad NOT IN ('Sevilla', 'Granada');
-    ```
-+ Consulta 2: Todos los nombres de departamentos menos los de `Sevilla` o `Granada`.
+    ::: details Mostrar solución {close}
+    
     ```sql
     SELECT cdemp, nombre, salario FROM empleado ORDER BY nombre ASC, salario DESC;
     ```
-
+    
+    :::
++ Consulta 2: Todos los nombres de departamentos menos los de `Sevilla` o `Granada`.
+    ::: details Mostrar solución {close}
+    
+    ```sql
+    SELECT nombre FROM departamento WHERE ciudad NOT IN ('Sevilla', 'Granada');
+    ```
+    
+    :::
 + Consulta 3: Número de empleados con departamento asignado.
-
+    ::: details Mostrar solución {close}
+    
     ```sql
     SELECT COUNT(*) AS num_empl_dep FROM empleado WHERE cddep IS NOT NULL;
     ```
-
+    
+    :::
 + Consulta 4: Media de horas trabajadas en proyectos de la tabla `trabaja`:
+    ::: details Mostrar solución {close}
+    
     ```sql
     SELECT AVG(nhoras) AS media_horas_trabajadas FROM trabaja;
     SELECT AVG(nhoras) AS media_horas_trabajadas FROM trabaja WHERE nhoras > 0; --Excluimos los que trabajan 0 horas
     ```
-
-+ Consulta 5: Total de empleados de cada departamento que ganan un salario superior a 1500€, pero que sólo se mostraran los epartamentos con más de 2 empleados con salario superior a 1500€.
+    
+    :::
++ Consulta 5: Total de empleados de cada departamento que ganan un salario superior a 1500€, pero que sólo se mostraran los departamentos con más de 2 empleados con salario superior a 1500€.
+    ::: details Mostrar solución {close}
+    
     ```sql
     SELECT cddep, COUNT(*) AS total_empleados FROM empleado WHERE salario > 1500
-    GROUP BY cddepHAVING COUNT(*) > 2;
-    ``` 
-+ Consulta 6: Nombre de cada empleado de la base de datos junto al nombre de su jefe.
-    ```sql
-    SELECT e.nombre AS nombre_empleado, j.nombre AS nombre_jefe FROM empleado e INNER JOIN empleado j ON e.cdjefe = j.cdemp; -- Si queremos ver los q no tienen jefe usamos LEFT JOIN
+    GROUP BY cddep HAVING COUNT(*) > 2;
     ```
-
+    
+    :::
++ Consulta 6: Nombre de cada empleado de la base de datos junto al nombre de su jefe.
+    ::: details Mostrar solución {close}
+    
+    ```sql
+    SELECT e.nombre AS nombre_empleado, j.nombre AS nombre_jefe FROM empleado e INNER JOIN empleado j ON e.cdjefe = j.cdemp;
+    ```
+    
+    :::
 + Consulta 7: Nombre del departamento con más empleados.
+    ::: details Mostrar solución {close}
+    
     ```sql
     SELECT d.nombre FROM departamento d JOIN empleado e ON d.cddep = e.cddep
-    GROUP BY d.nombre HAVING COUNT(*) = (SELECT COUNT(*)FROM empleado GROUP BY cddep ORDER BY COUNT(*) DESC LIMIT 1);
+    GROUP BY d.nombre HAVING COUNT(*) = (SELECT COUNT(*) FROM empleado GROUP BY cddep ORDER BY COUNT(*) DESC LIMIT 1);
     ```
-
+    
+    :::
 + Consulta 8: Empleado que más horas ha trabajado en cada proyecto.
-
+    ::: details Mostrar solución {close}
+    
     ```sql
     SELECT 
         t.cdpro,
@@ -527,9 +708,12 @@ WHERE d.nombre = 'Ventas';
         ) max_horas_por_proyecto ON t.cdpro = max_horas_por_proyecto.cdpro 
                                 AND t.nhoras = max_horas_por_proyecto.max_horas;
     ```
-
+    
+    :::
 + Consulta 9: Nombre de los departamentos que NO tienen empleados que ingresaron antes de 2005.
   - **Opcion 1**: Usando una subconsulta con la cláusula `NOT EXISTS`
+    ::: details Mostrar solución {close}
+    
     ```sql
     SELECT d.nombre
     FROM departamento d
@@ -540,9 +724,11 @@ WHERE d.nombre = 'Ventas';
         AND e.fecha_ingreso < '2005-01-01'
     );
     ```
-
+    
+    :::
   - **Opcion 2**: Otra forma de resolverlo es usando un `LEFT JOIN` y filtrando los departamentos que no tienen coincidencias en la subconsulta:
-
+    ::: details Mostrar solución {close}
+    
     ```sql
     SELECT d.nombre
     FROM departamento d
@@ -553,8 +739,13 @@ WHERE d.nombre = 'Ventas';
     ) empleados_antes_2005 ON d.cddep = empleados_antes_2005.cddep
     WHERE empleados_antes_2005.cddep IS NULL;
     ```
-
+    
+    :::
 + Consulta 10: Datos de los empleados cuyo nombre comienza por "A"
+    ::: details Mostrar solución {close}
+    
     ```sql
     SELECT * FROM empleado WHERE LOWER(nombre) LIKE 'a%';
     ```
+    
+    :::

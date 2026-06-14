@@ -260,305 +260,384 @@ SET
 ## Consultas Básicas
 1. Consulta básica SELECT con filtro WHERE  
  Obtener todos los productos de la categoría "Camisetas"
-```sql
-SELECT
-producto_id,
-nombre,
-talla,
-color,
-precio_venta
-FROM
-Productos
-WHERE
-categoria = 'Camisetas';
-```
+    ::: details Mostrar solución {close}
+
+    ```sql
+    SELECT
+    producto_id,
+    nombre,
+    talla,
+    color,
+    precio_venta
+    FROM
+    Productos
+    WHERE
+    categoria = 'Camisetas';
+    ```
+
+    :::
 2. Consulta con ORDER BY para ordenar resultados  
-Listar productos ordenados por precio de mayor a menor
-```sql
-SELECT
-nombre,
-categoria,
-talla,
-color,
-precio_venta
-FROM
-Productos
-ORDER BY
-precio_venta DESC;
-```
+ Listar productos ordenados por precio de mayor a menor
+    ::: details Mostrar solución {close}
+
+    ```sql
+    SELECT
+    nombre,
+    categoria,
+    talla,
+    color,
+    precio_venta
+    FROM
+    Productos
+    ORDER BY
+    precio_venta DESC;
+    ```
+
+    :::
 3. Consulta con LIMIT para limitar el número de resultados
 -- Mostrar los 5 productos más caros
-```sql
-SELECT
-nombre,
-categoria,
-precio_venta
-FROM
-Productos
-ORDER BY
-precio_venta DESC
-LIMIT 5;
-```
+    ::: details Mostrar solución {close}
+
+    ```sql
+    SELECT
+    nombre,
+    categoria,
+    precio_venta
+    FROM
+    Productos
+    ORDER BY
+    precio_venta DESC
+    LIMIT 5;
+    ```
+
+    :::
 4. Consulta con funciones de agregación  
-Calcular el precio promedio, mínimo y máximo por categoría
-```sql
-SELECT
-categoria,
-COUNT(*) AS total_productos,
-AVG(precio_venta) AS precio_promedio,
-MIN(precio_venta) AS precio_minimo,
-MAX(precio_venta) AS precio_maximo
-FROM
-Productos
-GROUP BY
-categoria;
-```
+ Calcular el precio promedio, mínimo y máximo por categoría
+    ::: details Mostrar solución {close}
+
+    ```sql
+    SELECT
+    categoria,
+    COUNT(*) AS total_productos,
+    AVG(precio_venta) AS precio_promedio,
+    MIN(precio_venta) AS precio_minimo,
+    MAX(precio_venta) AS precio_maximo
+    FROM
+    Productos
+    GROUP BY
+    categoria;
+    ```
+
+    :::
 5. Consulta con LIKE para búsqueda de patrones  
-Encontrar productos cuyo nombre contenga "Básica"
-```sql
-SELECT
-producto_id,
-nombre,
-categoria,
-talla,
-color
-FROM
-Productos
-WHERE
-nombre LIKE '%Básica%';
-```
+ Encontrar productos cuyo nombre contenga "Básica"
+    ::: details Mostrar solución {close}
+
+    ```sql
+    SELECT
+    producto_id,
+    nombre,
+    categoria,
+    talla,
+    color
+    FROM
+    Productos
+    WHERE
+    nombre LIKE '%Básica%';
+    ```
+
+    :::
 6. Consulta con IN para múltiples posibles valores  
-Encontrar productos de tallas específicas
-```sql
-SELECT
-nombre,
-categoria,
-talla,
-color,
-precio_venta
-FROM
-Productos
-WHERE
-talla IN ('S', 'M', 'L');
-```
+ Encontrar productos de tallas específicas
+    ::: details Mostrar solución {close}
+
+    ```sql
+    SELECT
+    nombre,
+    categoria,
+    talla,
+    color,
+    precio_venta
+    FROM
+    Productos
+    WHERE
+    talla IN ('S', 'M', 'L');
+    ```
+
+    :::
 7. Consulta con BETWEEN para rangos de valores  
-Listar productos con precios entre 40 y 60 euros
-```sql
-SELECT
-nombre,
-categoria,
-talla,
-color,
-precio_venta
-FROM
-Productos
-WHERE
-precio_venta BETWEEN 40 AND 60;
-```
+ Listar productos con precios entre 40 y 60 euros
+    ::: details Mostrar solución {close}
+
+    ```sql
+    SELECT
+    nombre,
+    categoria,
+    talla,
+    color,
+    precio_venta
+    FROM
+    Productos
+    WHERE
+    precio_venta BETWEEN 40 AND 60;
+    ```
+
+    :::
 8. Consulta con HAVING para filtrar grupos  
-Encontrar categorías con más de 5 productos
-```sql
-SELECT
-categoria,
-COUNT() AS total_productos
-FROM
-Productos
-GROUP BY
-categoria
-HAVING
-COUNT() > 5;
-```
+ Encontrar categorías con más de 5 productos
+    ::: details Mostrar solución {close}
+
+    ```sql
+    SELECT
+    categoria,
+    COUNT(*) AS total_productos
+    FROM
+    Productos
+    GROUP BY
+    categoria
+    HAVING
+    COUNT(*) > 5;
+    ```
+
+    :::
 9. Consulta con CASE para resultados condicionales  
-Clasificar productos por rango de precios
-```sql
-SELECT
-nombre,
-categoria,
-precio_venta,
-CASE
-WHEN precio_venta < 30 THEN 'Económico'
-WHEN precio_venta BETWEEN 30 AND 60 THEN 'Precio medio'
-ELSE 'Premium'
-END AS rango_precio
-FROM
-Productos;
-```
+ Clasificar productos por rango de precios
+    ::: details Mostrar solución {close}
+
+    ```sql
+    SELECT
+    nombre,
+    categoria,
+    precio_venta,
+    CASE
+    WHEN precio_venta < 30 THEN 'Económico'
+    WHEN precio_venta BETWEEN 30 AND 60 THEN 'Precio medio'
+    ELSE 'Premium'
+    END AS rango_precio
+    FROM
+    Productos;
+    ```
+
+    :::
 10.  Consulta con subconsulta  
-Encontrar productos con precio mayor al promedio
-```sql
-SELECT
-nombre,
-categoria,
-talla,
-color,
-precio_venta
-FROM
-Productos
-WHERE
-precio_venta > (SELECT AVG(precio_venta) FROM Productos);
-```
+ Encontrar productos con precio mayor al promedio
+    ::: details Mostrar solución {close}
+
+    ```sql
+    SELECT
+    nombre,
+    categoria,
+    talla,
+    color,
+    precio_venta
+    FROM
+    Productos
+    WHERE
+    precio_venta > (SELECT AVG(precio_venta) FROM Productos);
+    ```
+
+    :::
 
 
 ## Consultas Complejas
 
 1. Obtener todos los productos con stock bajo (por debajo del mínimo)
-```sql
-SELECT producto_id, nombre, talla, color, stock_actual stock_minimo
-FROM Productos WHERE stock_actual < stock_minimo
-ORDER BY stock_actual ASC;
-```
-2. Listar los 5 productos más vendidos
-```sql
-SELECT
-p.producto_id,
-p.nombre,
-p.categoria,
-SUM(dv.cantidad) AS total_vendido
-FROM
-Productos p
-JOIN
-Detalle_Ventas dv ON p.producto_id = dv.producto_id
-GROUP BY
-p.producto_id, p.nombre, p.categoria
-ORDER BY
-total_vendido DESC
-LIMIT 5;
-```
-3. Calcular el margen de beneficio por producto
-```sql
-SELECT
-producto_id,
-nombre,
-categoria,
-talla,
-color,
-precio_venta,
-costo,
-(precio_venta - costo) AS margen_beneficio,
-ROUND(((precio_venta - costo) / precio_venta * 100), 2) AS porcentaje_beneficio
-FROM
-Productos
-ORDER BY
-porcentaje_beneficio DESC;
-```
+    ::: details Mostrar solución {close}
 
+    ```sql
+    SELECT producto_id, nombre, talla, color, stock_actual, stock_minimo
+    FROM Productos WHERE stock_actual < stock_minimo
+    ORDER BY stock_actual ASC;
+    ```
+
+    :::
+2. Listar los 5 productos más vendidos
+    ::: details Mostrar solución {close}
+
+    ```sql
+    SELECT
+    p.producto_id,
+    p.nombre,
+    p.categoria,
+    SUM(dv.cantidad) AS total_vendido
+    FROM
+    Productos p
+    JOIN
+    Detalle_Ventas dv ON p.producto_id = dv.producto_id
+    GROUP BY
+    p.producto_id, p.nombre, p.categoria
+    ORDER BY
+    total_vendido DESC
+    LIMIT 5;
+    ```
+
+    :::
+3. Calcular el margen de beneficio por producto
+    ::: details Mostrar solución {close}
+
+    ```sql
+    SELECT
+    producto_id,
+    nombre,
+    categoria,
+    talla,
+    color,
+    precio_venta,
+    costo,
+    (precio_venta - costo) AS margen_beneficio,
+    ROUND(((precio_venta - costo) / precio_venta * 100), 2) AS porcentaje_beneficio
+    FROM
+    Productos
+    ORDER BY
+    porcentaje_beneficio DESC;
+    ```
+
+    :::
 4. Obtener las ventas totales por mes
-```sql
-SELECT
-YEAR(fecha_venta) AS año,
-MONTH(fecha_venta) AS mes,
-COUNT(*) AS numero_ventas,
-SUM(total) AS ventas_totales
-FROM
-Ventas
-GROUP BY
-YEAR(fecha_venta), MONTH(fecha_venta)
-ORDER BY
-año, mes;
-```
+    ::: details Mostrar solución {close}
+
+    ```sql
+    SELECT
+    YEAR(fecha_venta) AS año,
+    MONTH(fecha_venta) AS mes,
+    COUNT(*) AS numero_ventas,
+    SUM(total) AS ventas_totales
+    FROM
+    Ventas
+    GROUP BY
+    YEAR(fecha_venta), MONTH(fecha_venta)
+    ORDER BY
+    año, mes;
+    ```
+
+    :::
 5. Listar los clientes que han realizado más de 2 compras
-```sql
-SELECT
-c.cliente_id,
-c.nombre,
-c.apellidos,
-COUNT(v.venta_id) AS total_compras,
-SUM(v.total) AS importe_total
-FROM
-Clientes c
-JOIN
-Ventas v ON c.cliente_id = v.cliente_id
-GROUP BY
-c.cliente_id, c.nombre, c.apellidos
-HAVING
-COUNT(v.venta_id) > 2
-ORDER BY
-total_compras DESC;
-```
+    ::: details Mostrar solución {close}
+
+    ```sql
+    SELECT
+    c.cliente_id,
+    c.nombre,
+    c.apellidos,
+    COUNT(v.venta_id) AS total_compras,
+    SUM(v.total) AS importe_total
+    FROM
+    Clientes c
+    JOIN
+    Ventas v ON c.cliente_id = v.cliente_id
+    GROUP BY
+    c.cliente_id, c.nombre, c.apellidos
+    HAVING
+    COUNT(v.venta_id) > 2
+    ORDER BY
+    total_compras DESC;
+    ```
+
+    :::
 6. Encontrar productos que nunca se han vendido
-```sql
-SELECT
-p.producto_id,
-p.nombre,
-p.categoria,
-p.talla,
-p.color,
-p.stock_actual
-FROM
-Productos p
-LEFT JOIN
-Detalle_Ventas dv ON p.producto_id = dv.producto_id
-WHERE
-dv.detalle_id IS NULL;
-```
+    ::: details Mostrar solución {close}
+
+    ```sql
+    SELECT
+    p.producto_id,
+    p.nombre,
+    p.categoria,
+    p.talla,
+    p.color,
+    p.stock_actual
+    FROM
+    Productos p
+    LEFT JOIN
+    Detalle_Ventas dv ON p.producto_id = dv.producto_id
+    WHERE
+    dv.detalle_id IS NULL;
+    ```
+
+    :::
 7. Obtener el valor total del inventario actual
-```sql
-SELECT
-SUM(stock_actual * precio_venta) AS valor_inventario_pvp,
-SUM(stock_actual * costo) AS valor_inventario_costo
-FROM
-Productos;
-```
+    ::: details Mostrar solución {close}
+
+    ```sql
+    SELECT
+    SUM(stock_actual * precio_venta) AS valor_inventario_pvp,
+    SUM(stock_actual * costo) AS valor_inventario_costo
+    FROM
+    Productos;
+    ```
+
+    :::
 8. Calcular el ticket medio por cliente
-```sql
-SELECT
-c.cliente_id,
-c.nombre,
-c.apellidos,
-COUNT(v.venta_id) AS numero_compras,
-SUM(v.total) AS importe_total,
-ROUND(AVG(v.total), 2) AS ticket_medio
-FROM
-Clientes c
-JOIN
-Ventas v ON c.cliente_id = v.cliente_id
-GROUP BY
-c.cliente_id, c.nombre, c.apellidos
-ORDER BY
-ticket_medio DESC;
-```
+    ::: details Mostrar solución {close}
+
+    ```sql
+    SELECT
+    c.cliente_id,
+    c.nombre,
+    c.apellidos,
+    COUNT(v.venta_id) AS numero_compras,
+    SUM(v.total) AS importe_total,
+    ROUND(AVG(v.total), 2) AS ticket_medio
+    FROM
+    Clientes c
+    JOIN
+    Ventas v ON c.cliente_id = v.cliente_id
+    GROUP BY
+    c.cliente_id, c.nombre, c.apellidos
+    ORDER BY
+    ticket_medio DESC;
+    ```
+
+    :::
 9. Listar los productos agrupados por proveedor
-```sql
-SELECT
-prov.proveedor_id,
-prov.nombre_empresa,
-COUNT(prod.producto_id) AS total_productos,
-SUM(prod.stock_actual) AS stock_total,
-GROUP_CONCAT(DISTINCT prod.categoria) AS categorias
-FROM
-Proveedores prov
-LEFT JOIN
-Productos prod ON prov.proveedor_id = prod.proveedor_id
-GROUP BY
-prov.proveedor_id, prov.nombre_empresa
-ORDER BY
-total_productos DESC;
-```
+    ::: details Mostrar solución {close}
+
+    ```sql
+    SELECT
+    prov.proveedor_id,
+    prov.nombre_empresa,
+    COUNT(prod.producto_id) AS total_productos,
+    SUM(prod.stock_actual) AS stock_total,
+    GROUP_CONCAT(DISTINCT prod.categoria) AS categorias
+    FROM
+    Proveedores prov
+    LEFT JOIN
+    Productos prod ON prov.proveedor_id = prod.proveedor_id
+    GROUP BY
+    prov.proveedor_id, prov.nombre_empresa
+    ORDER BY
+    total_productos DESC;
+    ```
+
+    :::
 10. Encontrar las ventas con descuentos aplicados
-```sql
-SELECT
-v.venta_id,
-v.fecha_venta,
-c.nombre AS nombre_cliente,
-c.apellidos AS apellidos_cliente,
-p.nombre AS producto,
-p.talla,
-p.color,
-dv.precio_unitario,
-dv.cantidad,
-dv.descuento,
-dv.subtotal,
-ROUND((dv.descuento / dv.precio_unitario * 100), 2) AS porcentaje_descuento
-FROM
-Ventas v
-JOIN
-Clientes c ON v.cliente_id = c.cliente_id
-JOIN
-Detalle_Ventas dv ON v.venta_id = dv.venta_id
-JOIN
-Productos p ON dv.producto_id = p.producto_id
-WHERE
-dv.descuento > 0
-ORDER BY
-porcentaje_descuento DESC;
-```
+    ::: details Mostrar solución {close}
+
+    ```sql
+    SELECT
+    v.venta_id,
+    v.fecha_venta,
+    c.nombre AS nombre_cliente,
+    c.apellidos AS apellidos_cliente,
+    p.nombre AS producto,
+    p.talla,
+    p.color,
+    dv.precio_unitario,
+    dv.cantidad,
+    dv.descuento,
+    dv.subtotal,
+    ROUND((dv.descuento / dv.precio_unitario * 100), 2) AS porcentaje_descuento
+    FROM
+    Ventas v
+    JOIN
+    Clientes c ON v.cliente_id = c.cliente_id
+    JOIN
+    Detalle_Ventas dv ON v.venta_id = dv.venta_id
+    JOIN
+    Productos p ON dv.producto_id = p.producto_id
+    WHERE
+    dv.descuento > 0
+    ORDER BY
+    porcentaje_descuento DESC;
+    ```
+
+    :::

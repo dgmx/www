@@ -4,7 +4,7 @@ parent: "SQL"
 ---
 ## Centro Comercial
 
-```sql 
+```sql
 CREATE DATABASE IF NOT EXISTS centro_comercial;
 USE centro_comercial;
 
@@ -202,81 +202,174 @@ INSERT INTO DetallesOrden VALUES
 ## Consultas SQL con ORDER BY, IN, BETWEEN y LIKE
 
 ## 1️⃣ Ordenar clientes por ciudad en orden alfabético  
-```sql
-SELECT * FROM Clientes ORDER BY Ciudad ASC;
-```
+    ::: details Mostrar solución {close}
+    
+    ```sql
+    SELECT * FROM Clientes ORDER BY Ciudad ASC;
+    ```
+    
+    :::
 
 ## 2️⃣ Ordenar productos por precio de mayor a menor  
-```sql
-SELECT * FROM Productos ORDER BY PrecioUnitario DESC;
-```
+    ::: details Mostrar solución {close}
+    
+    ```sql
+    SELECT * FROM Productos ORDER BY PrecioUnitario DESC;
+    ```
+    
+    :::
 
 ## 3️⃣ Seleccionar empleados nacidos entre 1980 y 1990  
-```sql
-SELECT * FROM Empleados WHERE FechaNacimiento BETWEEN '1980-01-01' AND '1990-12-31';
-```
+    ::: details Mostrar solución {close}
+    
+    ```sql
+    SELECT * FROM Empleados WHERE FechaNacimiento BETWEEN '1980-01-01' AND '1990-12-31';
+    ```
+    
+    :::
 
 ## 4️⃣ Seleccionar pedidos con ID entre 3 y 8  
-```sql
-SELECT * FROM Ordenes WHERE OrdenID BETWEEN 3 AND 8;
-```
+    ::: details Mostrar solución {close}
+    
+    ```sql
+    SELECT * FROM Ordenes WHERE OrdenID BETWEEN 3 AND 8;
+    ```
+    
+    :::
 
 ## 5️⃣ Seleccionar productos cuyo nombre empiece con 'C'  
-```sql
-SELECT * FROM Productos WHERE ProductoNombre LIKE 'C%';
-```
+    ::: details Mostrar solución {close}
+    
+    ```sql
+    SELECT * FROM Productos WHERE ProductoNombre LIKE 'C%';
+    ```
+    
+    :::
 
 ## 6️⃣ Seleccionar clientes de ciudades específicas (Madrid, Barcelona y Valencia)  
-```sql
-SELECT * FROM Clientes WHERE Ciudad IN ('Madrid', 'Barcelona', 'Valencia');
-```
+    ::: details Mostrar solución {close}
+    
+    ```sql
+    SELECT * FROM Clientes WHERE Ciudad IN ('Madrid', 'Barcelona', 'Valencia');
+    ```
+    
+    :::
 
 ## 7️⃣ Seleccionar transportistas cuyo nombre contenga 'Express'  
-```sql
-SELECT * FROM Transportistas WHERE NombreCompania LIKE '%Express%';
-```
+    ::: details Mostrar solución {close}
+    
+    ```sql
+    SELECT * FROM Transportistas WHERE NombreCompania LIKE '%Express%';
+    ```
+    
+    :::
 
 ## 8️⃣ Ordenar suministradores por país y nombre de compañía  
-```sql
-SELECT * FROM Suministradores ORDER BY Pais ASC, NombreCompania ASC;
-```
+    ::: details Mostrar solución {close}
+    
+    ```sql
+    SELECT * FROM Suministradores ORDER BY Pais ASC, NombreCompania ASC;
+    ```
+    
+    :::
 
 ## 9️⃣ Seleccionar órdenes enviadas por transportistas con ID entre 2 y 5  
-```sql
-SELECT * FROM Ordenes WHERE TransportistaID BETWEEN 2 AND 5;
-```
+    ::: details Mostrar solución {close}
+    
+    ```sql
+    SELECT * FROM Ordenes WHERE TransportistaID BETWEEN 2 AND 5;
+    ```
+    
+    :::
 
 ## 🔟 Seleccionar productos con precio entre 2 y 5 euros y ordenarlos por precio ascendente  
-```sql
-SELECT * FROM Productos WHERE PrecioUnitario BETWEEN 2 AND 5 ORDER BY PrecioUnitario ASC;
-```
+    ::: details Mostrar solución {close}
+    
+    ```sql
+    SELECT * FROM Productos WHERE PrecioUnitario BETWEEN 2 AND 5 ORDER BY PrecioUnitario ASC;
+    ```
+    
+    :::
+
 ### Otras Consultas con patrones de cadena, rangos y conjuntos
 
-```sql
-SELECT * FROM Clientes where ContactoNombre Like 'E%';
-```
-```sql
-SELECT * FROM Clientes where ContactoNombre Like '%F%';
-```
-```sql
-SELECT * FROM Clientes where ContactoNombre Like '_a%';
-```
-```sql
-SELECT * FROM Productos WHERE Precio BETWEEN 15 AND 20;
-```
-```sql
-SELECT * FROM Productos WHERE Precio >=15 AND Price<=20;
-```
-```sql
-SELECT * FROM Clientes WHERE Pais IN ('UK','Spain','Austria');
-```
-```sql
-SELECT * FROM Clientes WHERE Pais='UK' OR Pais='España' OR Pais='Austria';
-```
-```sql
-SELECT * FROM Clientes WHERE ContactoNombre LIKE 'J%z';
-```
-Cuenta el numero de clientes de cada pais ordenados por Pais:
-```sql
-select Pais, count(Pais) as NumeroPaises from Clientes group by Pais order by Pais;
-```
+Clientes cuyo nombre de contacto empieza por 'E'
+    ::: details Mostrar solución {close}
+    
+    ```sql
+    SELECT * FROM Clientes where ContactoNombre Like 'E%';
+    ```
+    
+    :::
+
+Clientes cuyo nombre de contacto contiene 'F'
+    ::: details Mostrar solución {close}
+    
+    ```sql
+    SELECT * FROM Clientes where ContactoNombre Like '%F%';
+    ```
+    
+    :::
+
+Clientes cuyo nombre de contacto tiene 'a' como segunda letra
+    ::: details Mostrar solución {close}
+    
+    ```sql
+    SELECT * FROM Clientes where ContactoNombre Like '_a%';
+    ```
+    
+    :::
+
+Productos con precio entre 15 y 20
+    ::: details Mostrar solución {close}
+    
+    ```sql
+    SELECT * FROM Productos WHERE PrecioUnitario BETWEEN 15 AND 20;
+    ```
+    
+    :::
+
+Productos con precio mayor o igual a 15 y menor o igual a 20
+    ::: details Mostrar solución {close}
+    
+    ```sql
+    SELECT * FROM Productos WHERE PrecioUnitario >=15 AND PrecioUnitario<=20;
+    ```
+    
+    :::
+
+Clientes de Reino Unido, España o Austria (IN)
+    ::: details Mostrar solución {close}
+    
+    ```sql
+    SELECT * FROM Clientes WHERE Pais IN ('UK','Spain','Austria');
+    ```
+    
+    :::
+
+Clientes de Reino Unido, España o Austria (OR)
+    ::: details Mostrar solución {close}
+    
+    ```sql
+    SELECT * FROM Clientes WHERE Pais='UK' OR Pais='España' OR Pais='Austria';
+    ```
+    
+    :::
+
+Clientes cuyo nombre de contacto empieza por 'J' y termina en 'z'
+    ::: details Mostrar solución {close}
+    
+    ```sql
+    SELECT * FROM Clientes WHERE ContactoNombre LIKE 'J%z';
+    ```
+    
+    :::
+
+Número de clientes por país
+    ::: details Mostrar solución {close}
+    
+    ```sql
+    SELECT Pais, count(Pais) as NumeroPaises FROM Clientes group by Pais order by Pais;
+    ```
+    
+    :::

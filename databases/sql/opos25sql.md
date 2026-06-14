@@ -106,18 +106,21 @@ Todos los libros de género `Terror` que se leyeron en `2024` por lectores itali
 Debe aparecer una línea por cada libro que cumpla dicho requisito, sin repeticiones. Cada línea contendrá los siguientes campos: `Título`, `Autor` y `Total_Lecturas`
 
 ### DML
+   ::: details Mostrar solución {close}
 
-```sql
-SELECT l.Titulo, l.Autor, COUNT(*) AS Total_Lecturas
-FROM Leido ld
-INNER JOIN Libro l ON ld.id_Libro = l.id_Libro
-INNER JOIN Genero g ON l.id_Genero = g.id_Genero
-INNER JOIN Lector le ON ld.id_Lector = le.id_Lector
-WHERE g.Nombre = 'Terror'
-  AND ld.Fecha_Comienzo BETWEEN '2024-01-01' AND '2024-12-31'
-  AND le.Nacionalidad = 'Italia'
-GROUP BY l.id_Libro;
-```
+   ```sql
+   SELECT l.Titulo, l.Autor, COUNT(*) AS Total_Lecturas
+   FROM Leido ld
+   INNER JOIN Libro l ON ld.id_Libro = l.id_Libro
+   INNER JOIN Genero g ON l.id_Genero = g.id_Genero
+   INNER JOIN Lector le ON ld.id_Lector = le.id_Lector
+   WHERE g.Nombre = 'Terror'
+     AND ld.Fecha_Comienzo BETWEEN '2024-01-01' AND '2024-12-31'
+     AND le.Nacionalidad = 'Italia'
+   GROUP BY l.id_Libro;
+   ```
+
+   :::
 
 
 ### Inserts para pruebas
@@ -328,17 +331,22 @@ algún ciclo de la familia de “Informática y comunicaciones”. Debe aparecer
 cada alumno que cumpla dicho requisito, sin repeticiones. Cada línea contendrá los
 siguientes campos: Dni, Nombre y Apellidos.
 
-```sql
-SELECT DISTINCT a.Dni, a.Nombre, a.Apellidos
-FROM ALUMNO a
-JOIN MATRICULADO m ON a.Cod_Alu = m.Cod_Alu
-JOIN MODULO mo ON m.Cod_Modulo = mo.Cod_Modulo
-JOIN TITULO t ON mo.Cod_Titulo = t.Cod_Titulo
-JOIN FAMILIA f ON t.Cod_Familia = f.Cod_Familia
-WHERE m.Anio = 2021
-  AND m.Nota_Final >= 5
-  AND f.Nombre_Familia = 'Informática y comunicaciones';
-```
+   ::: details Mostrar solución {close}
+
+   ```sql
+   SELECT DISTINCT a.Dni, a.Nombre, a.Apellidos
+   FROM ALUMNO a
+   JOIN MATRICULADO m ON a.Cod_Alu = m.Cod_Alu
+   JOIN MODULO mo ON m.Cod_Modulo = mo.Cod_Modulo
+   JOIN TITULO t ON mo.Cod_Titulo = t.Cod_Titulo
+   JOIN FAMILIA f ON t.Cod_Familia = f.Cod_Familia
+   WHERE m.Anio = 2021
+     AND m.Nota_Final >= 5
+     AND f.Nombre_Familia = 'Informática y comunicaciones';
+   ```
+
+   :::
+
 > El año utilizado es 2021 porque según la definición: *"El Año será el año en que se realiza la matrícula. Si una persona se matricula en el curso **2019/2020**, el Año será **2019**"*. Para el curso 2021/2022, el año almacenado es 2021.
 
 ## CANTABRIA 2018
@@ -375,22 +383,29 @@ erDiagram
 - Obtener: Nombre de departamento y suma de salarios teniendo en cuenta sólo los empleados con sueldo > 1111.
 
 **Consulta 1**
+   ::: details Mostrar solución {close}
 
-```sql
-SELECT d.NOMBRE, e.APELLIDOS, e.SALARIO
-FROM DEPARTAMENTOS d
-INNER JOIN EMPLEADOS e ON d.P_DEPARTAMENTO = e.A_DEPARTAMENTO
-WHERE d.P_DEPARTAMENTO = 10;
-```
+   ```sql
+   SELECT d.NOMBRE, e.APELLIDOS, e.SALARIO
+   FROM DEPARTAMENTOS d
+   INNER JOIN EMPLEADOS e ON d.P_DEPARTAMENTO = e.A_DEPARTAMENTO
+   WHERE d.P_DEPARTAMENTO = 10;
+   ```
+
+   :::
 
 **Consulta 2**
-```sql
-SELECT d.NOMBRE, SUM(e.SALARIO) AS Suma_Salarios
-FROM DEPARTAMENTOS d
-JOIN EMPLEADOS e ON d.P_DEPARTAMENTO = e.A_DEPARTAMENTO
-WHERE e.SALARIO > 1111
-GROUP BY d.P_DEPARTAMENTO;
-```
+   ::: details Mostrar solución {close}
+
+   ```sql
+   SELECT d.NOMBRE, SUM(e.SALARIO) AS Suma_Salarios
+   FROM DEPARTAMENTOS d
+   JOIN EMPLEADOS e ON d.P_DEPARTAMENTO = e.A_DEPARTAMENTO
+   WHERE e.SALARIO > 1111
+   GROUP BY d.P_DEPARTAMENTO;
+   ```
+
+   :::
 
 
 > Con `HAVING SALARIO > 1111` te daría error porque SALARIO no está en el `GROUP BY` ni es una función de agregación. El filtro correcto para descartar empleados con salario bajo antes de sumar es `WHERE`.
@@ -400,11 +415,14 @@ Para usar HAVING la condición debía ser sobre la suma, no sobre el salario ind
 - Con `HAVING`: "mostrando solo los departamentos cuya suma de salarios sea > 1111" → filtra departamentos después de sumar.
 
 La consulta con HAVING:
+   ::: details Mostrar solución {close}
 
-```sql
-SELECT d.NOMBRE, SUM(e.SALARIO) AS Suma_Salarios
-FROM DEPARTAMENTOS d
-JOIN EMPLEADOS e ON d.P_DEPARTAMENTO = e.A_DEPARTAMENTO
-GROUP BY d.P_DEPARTAMENTO
-HAVING SUM(e.SALARIO) > 1111;
-```
+   ```sql
+   SELECT d.NOMBRE, SUM(e.SALARIO) AS Suma_Salarios
+   FROM DEPARTAMENTOS d
+   JOIN EMPLEADOS e ON d.P_DEPARTAMENTO = e.A_DEPARTAMENTO
+   GROUP BY d.P_DEPARTAMENTO
+   HAVING SUM(e.SALARIO) > 1111;
+   ```
+
+   :::

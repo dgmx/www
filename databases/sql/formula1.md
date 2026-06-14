@@ -150,13 +150,17 @@ CREATE TABLE qualifying (
 2. **Obtener todos los datos de los circuitos alemanes.**
 3. **Obtener los países en los que se disputaron carreras en el año 2010.**
 4. **Obtener el nombre de los pilotos que han participado en al menos 1 carrera del año 2016.**
-```sql
-select distinct d.forename, d.surname 
-    from drivers d 
-    inner join qualifying q on d.driverId=q.driverId 
-    inner join races r on r.raceId=q.raceId 
-    where r.year=2016 order by d.surname;
-```
+    ::: details Mostrar solución {close}
+    
+    ```sql
+    select distinct d.forename, d.surname 
+        from drivers d 
+        inner join qualifying q on d.driverId=q.driverId 
+        inner join races r on r.raceId=q.raceId 
+        where r.year=2016 order by d.surname;
+    ```
+    
+    :::
 5. **Nombre de los constructores con los que han disputado carreras más de 50 pilotos diferentes.**
 6. **Nombre y apellidos de los pilotos que nunca han ganado una carrera.**
 7. **Obtener el nombre y apellidos de los pilotos que durante el año 2017 han participado en todas las carreras.**
