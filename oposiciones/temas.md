@@ -83,7 +83,9 @@
 -  73 Evaluación y Mejora de Prestaciones en un Sistema en Red. Técnicas y Procedimientos de Medida.
 -  74 Sistemas Multimedia.
   
+- [Ejercicios Prácticos](practico/index.md)
 
 [Temario Global Mapa Visual](/oposdocs/mapasweb/temasmap.html).
 
+- **Normativa actualizada**
 ![Normativa Actualizada](img/normativa.png)
