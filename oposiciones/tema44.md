@@ -34,7 +34,12 @@ Todos los sistemas informatizados son susceptibles de sufrir vulnerabilidades, f
 
 Lo expuesto anteriormente justifica la importancia y es por ello que el estudio de las bases de datos y las técnicas y procedimientos de seguridad de las mismas está presente dentro del currículo de la familia profesional de Informática y Comunicaciones. Concretamente se pueden ubicar dentro del siguiente ciclo formativo:
 
-- CFGS de Administración de Sistemas Informáticos en Red (Real Decreto 1629/2009, Real Decreto 500/2024 y Orden/Decreto autonómico)
+- **CFGS de Desarrollo de Aplicaciones Multiplataforma** (Real Decreto 450/2010, Real Decreto 405/2023 y Orden/Decreto autonómico)
+  - Módulo: Bases de datos
+- **CFGS de Desarrollo de Aplicaciones Web** (Real Decreto 686/2010, Real Decreto 405/2023 y Orden/Decreto autonómico)
+  - Módulo: Bases de datos
+- **CFGS de Administración de Sistemas Informáticos en Red** (Real Decreto 1629/2009, Real Decreto 500/2024 y Orden/Decreto autonómico)
+  - Módulo: Gestión de bases de datos
   - Módulo: Administración de SGBD.
 
 En el presente tema vamos a empezar definiendo una base de datos y un sistema gestor de base de datos para posteriormente centrarnos en los conceptos más importantes relacionados con la seguridad de datos.
@@ -45,9 +50,11 @@ Podemos definir una base de datos como un conjunto, colección o depósito de da
 
 Las bases son utilizadas por los sistemas de aplicación de las empresas
 
-Un sistema gestor de base de datos o SGBD es una colección de programas de aplicación que permite a los usuarios la creación y el mantenimiento de una base de datos, facilitando la definición, construcción y manipulación de la información contenida en ésta.
+Un **sistema gestor de base de datos o SGBD** es una colección de programas de aplicación que permite a los usuarios la creación y el mantenimiento de una base de datos, facilitando la definición, construcción y manipulación de la información contenida en ésta.
 
 En la actualidad debido al gran volumen de datos que manejamos se requiere de sistemas gestores de bases de datos robustos, que nos permitan acceder y gestionar los datos de un modo eficaz y eficiente. Los sistemas gestores de bases de datos (SGBD) más extendidos son los relacionales.
+
+Para gestionar adecuadamente los SGBD surge la figura del Administrador de la base de datos o DBA, cuyas funciones conlleva proteger la integridad, seguridad, disponibilidad y el mantenimiento de la base de datos
 
 El problema de la seguridad consiste en lograr que los recursos de un sistema sean, bajo toda circunstancia, utilizados para los fines previstos. Los datos de la base de datos deben estar protegidos contra los accesos no autorizados, de la destrucción o alteración malintencionada y de la introducción de inconsistencias.
 

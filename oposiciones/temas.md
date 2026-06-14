@@ -85,3 +85,5 @@
   
 
 [Temario Global Mapa Visual](/oposdocs/mapasweb/temasmap.html).
+
+![Normativa Actualizada](img/normativa.png)
