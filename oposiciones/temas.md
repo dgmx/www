@@ -1,6 +1,6 @@
 # Material Oposiciones Informática Secundaria
 
-## PES Informatica
+## PES Informática
 
 ## BLOQUE 01 - HARDWARE
 - 01 Representación y comunicación de la información.
@@ -37,7 +37,7 @@
 -  [25 Programación estructurada. Estructuras básicas. Funciones y procedimientos.](tema25.md)
 -  [26 Programación modular. Diseño de funciones. Recursividad. Librerías.](tema26.md)
 -  [27 Programación Orientada a Objetos. Clases. Herencia. Polimorfismo. Lenguajes.](tema27.md)
--  28 Programación en tiempo real. Interrupciones. Sincronización y comunicación entretareas. Lenguajes.
+-  28 Programación en tiempo real. Interrupciones. Sincronización y comunicación entre tareas. Lenguajes.
 -  29 Utilidades para el desarrollo y prueba de programas. Compiladores. Interpretes. Depuradores.
 -  30 Prueba y documentación de programas. Técnicas.
 -  33 Programación en lenguaje ensamblador. Instrucciones básicas. Formatos. Direccionamientos.
@@ -53,7 +53,7 @@
 -  41 Utilidades de los sistemas gestores de base de datos para el desarrollo de aplicaciones. Tipos. Características.(tema40.md)
 -  42 Sistemas de bases de datos distribuidos.
 -  43 Administración de sistemas de bases de datos.
--  44 Técnicas y procedimientos para la seguridad de los datos.
+- [44 Técnicas y procedimientos para la seguridad de los datos](tema44.md)
 
 ## BLOQUE 07 – SISTEMAS DE INFORMACIÓN
 -  45 Sistemas de información. Tipos. Características. Sistemas de información en la empresa.

@@ -1,18 +1,18 @@
-# TEMA 44 INF: TÉCNICAS Y PROCEDIMIENTOS PARA LA SEGURIDAD DE LOS DATOS
+# TEMA 44. TÉCNICAS Y PROCEDIMIENTOS PARA LA SEGURIDAD DE LOS DATOS
 
 1. INTRODUCCIÓN
 2. TÉCNICAS Y PROCEDIMIENTOS PARA LA SEGURIDAD DE LOS DATOS. CONCEPTOS BÁSICOS
 3. SEGURIDAD DE LAS BASES DE DATOS. CONFIDENCIALIDAD
-   3.1. GESTIÓN DE USUARIOS Y PERMISOS
-   3.2. VISTAS
-   3.3. ENCRIPTACIÓN DE DATOS
-   3.4. PROGRAMAS DE APLICACIÓN
-   3.5. AUDITORÍA
+- 3.1. GESTIÓN DE USUARIOS Y PERMISOS
+- 3.2. VISTAS
+- 3.3. ENCRIPTACIÓN DE DATOS
+- 3.4. PROGRAMAS DE APLICACIÓN
+- 3.5. AUDITORÍA
 4. INTEGRIDAD DE LAS BASES DE DATOS
-   4.1. RESTRICCIONES
-   4.2. TRANSACCIONES
-   4.3. RECUPERACIÓN DEL SISTEMA
-   4.4. PROBLEMAS DE CONCURRENCIA
+- 4.1. RESTRICCIONES
+- 4.2. TRANSACCIONES
+- 4.3. RECUPERACIÓN DEL SISTEMA
+- 4.4. PROBLEMAS DE CONCURRENCIA
 5. CONCLUSIÓN
 6. BIBLIOGRAFÍA
 
@@ -26,15 +26,13 @@ A su vez, el actual tema 44 se ubica dentro del bloque temático de "Bases de Da
 
 A lo largo de este tema, a través de autores como Date C.J, Korth H. y Silberschatz, De Miguel A, y Piattini M se van a introducir términos tan importantes como base de datos, sistema gestor de base de datos así como todo lo relacionado con la seguridad de los datos en estos sistemas gestores de bases de datos.
 
-Antes de aparecer los sistemas gestores de bases de datos (SGBD), la información se trataba y se gestionaba utilizando los típicos sistemas de gestión de archivos que iban soportados sobre un sistema operativo. Estos consistían en un conjunto de programas que definían y trabajaban sus propios datos. Los datos se almacenaban en archivos y los programas manejaban esos archivos para obtener la información. Si la estructura de los datos de los archivos cambiaba, todos los programas que los manejaban debían modificarse.
-
-Los sistemas gestores de bases de datos aparecen ante la ineficacia de los sistemas de gestión antiguos que utilizaban ficheros para almacenar los datos, ya que eran propensos a errores como redundancia, falta de integridad, seguridad y concurrencia.
+Los sistemas gestores de bases de datos (SGBD) aparecen ante la ineficacia de los sistemas de gestión antiguos que utilizaban ficheros para almacenar los datos, ya que eran propensos a errores como redundancia, falta de integridad, seguridad y concurrencia.
 
 Los SGBD separan las bases de datos de las aplicaciones permitiendo estructurar los datos de forma que se pueda acceder a ellos con independencia de los programas que las gestionan. Para administrar los SGBD surge la figura del administrador (DBA), cuyas funciones son la de mantener la integridad, seguridad y disponibilidad de la base de datos.
 
 Todos los sistemas informatizados son susceptibles de sufrir vulnerabilidades, fallos o abusos, por ello en el diseño de la base de datos es esencial preparar la forma de tratar situaciones que impliquen pérdida de datos.
 
-Lo expuesto anteriormente justifica la importancia del tema ya que cada vez es más importante conocer y manejar adecuadamente las técnicas y procedimientos para la seguridad de los datos porque en la actualidad es cada vez más habitual tener todo informatizado y nuestros datos están constantemente amenazados por personas externas para su uso fraudulento. Y es por ello que el estudio de las bases de datos y esta seguridad de los datos en concreto está presente dentro del currículo de la familia profesional de Informática y Comunicaciones. Concretamente se pueden ubicar dentro del siguiente ciclo formativo:
+Lo expuesto anteriormente justifica la importancia y es por ello que el estudio de las bases de datos y las técnicas y procedimientos de seguridad de las mismas está presente dentro del currículo de la familia profesional de Informática y Comunicaciones. Concretamente se pueden ubicar dentro del siguiente ciclo formativo:
 
 - CFGS de Administración de Sistemas Informáticos en Red (Real Decreto 1629/2009, Real Decreto 500/2024 y Orden/Decreto autonómico)
   - Módulo: Administración de SGBD.
@@ -65,7 +63,7 @@ Las principales áreas de trabajo para garantizar la seguridad de los datos son 
 
 ## 3. SEGURIDAD DE LAS BASES DE DATOS. CONFIDENCIALIDAD
 
-La información almacenada en ordenadores es un recurso valioso y este valor suele estar relacionado directamente con la capacidad para mantener la confidencialidad, y el nivel que debe alcanzar la protección depende hasta cierto punto de cómo sea de sensible. Existe la gran necesidad de proteger la información contra intentos malintencionados, por parte de los hackers o delincuentes informáticos. Para todo ello podemos, entre otras cosas, tomar medidas de seguridad como se explica en los siguientes apartados.
+La información almacenada en ordenadores es un recurso valioso y debe ser mantenido de manera confidencial. Existe la gran necesidad de proteger la información contra accesos no permitidos y malintencionados, por parte de los hackers o delincuentes informáticos. Para todo ello podemos se deben tomar medidas de seguridad como se explica en los siguientes apartados.
 
 ### 3.1. GESTIÓN DE USUARIOS Y PERMISOS
 
@@ -111,7 +109,7 @@ Para controlar los usuarios que acceden a la base de datos y los tipos de operac
   REVOKE ALL PRIVILEGES ON * FROM administrador@localhost;
   ```
 
-- **Roles**: Gestionar usuarios y permisos de manera individual en sistemas donde existen numerosos usuarios puede ser una labor muy tediosa. Para facilitar esto existe el concepto de rol. Los roles permiten definir tipos de usuarios en base a los permisos que éstos tendrán sobre la BD, de forma que para cada tipo de usuario se crearía un rol y en lugar de asignar los permisos a los usuarios se asignarían los permisos al rol y el rol a los usuarios.
+- **Roles**: Los roles permiten definir tipos de usuarios en base a una serie de permisos comunes, para crear un rol se utiliza:
 
   ```sql
   CREATE ROLE <rol>;
@@ -144,6 +142,8 @@ En este caso, la vista `vista_empleados_activos` sólo permite ver y modificar f
 
 Las vistas son, junto con los sinónimos, las herramientas principales para la definición de los esquemas externos de los usuarios de la BD.
 
+El uso de la clausula "WITH CHECK OPTION" garantiza que se puedan insertar registros en la tabla a través de la vista, siempre que se cumpla la condición de la subconsulta.
+
 ### 3.3. ENCRIPTACIÓN DE DATOS
 
 Los SGBD implementan diferentes formas de cifrar la información que almacenan, haciendo que dicha información resulte ininteligible sin las claves de cifrado. El cifrado protege los datos sensibles ante accesos no autorizados, ya sea por ciberataques, filtraciones o robo de dispositivos
@@ -156,20 +156,26 @@ Existen 3 tipos de cifrado:
 
 ### 3.4. PROGRAMAS DE APLICACIÓN
 
-El uso de programas de aplicación es una técnica bastante común de proporcionar seguridad a una base de datos. La mayoría de los sistemas soportan el empleo de programas de aplicación. Si un sistema de bases de datos no soporta mecanismos de protección mediante contraseñas, o si la cantidad de protección incorporada es poco adecuada, las deficiencias pueden ser corregidas mediante programas de protección escritos por el usuario. Así, un programa puede actuar como interfaz entre una persona que está introduciendo datos y la base de datos, incorporando al mismo tiempo a ésta una seguridad adicional. Esencialmente, un programa de aplicación puede realizar virtualmente cualquier tipo de protección mediante contraseñas.
+El uso de programas de aplicación proporciona seguridad adicional a la base de datos. La mayoría de los sistemas soportan el empleo de programas de aplicación. Establece mecanismos avanzados al interactuar con la base de datos ya que los lenguajes de programación pueden establecer filtros avanzados para el acceso y manipulación de la información
+
+Los programas de aplicación se utilizan como interfaz entre los usuarios y la base de datos.
 
 ### 3.5. AUDITORÍA
 
-La auditoría de la BD permitirá al administrador de ella conocer detalles acerca del uso de la BD por parte de los usuarios. Existen dos niveles de auditoría:
+La auditoría de la BD permitirá al administrador de ella conocer detalles acerca del uso de la BD por parte de los usuarios. Los datos generados por las auditorias se almacenan en otra base de datos, por lo que controlar el impacto que este genera en la base de datos tanto en almacenamiento como en rendimiento es responsabilidad del administrador.
 
-- **A nivel de sesión o sistema**: Nos permite conocer detalles propios de la sesión (usuarios conectados a la BD, tablas a las que accede, etc.). Muy bajo impacto en el rendimiento del SGBD
+Existen dos niveles de auditoría:
+
+- **A nivel de sesión o sistema**: Nos permite conocer detalles propios de la sesión (usuarios conectados a la BD, bases de datos o tablas a las que accede, etc.). Muy bajo impacto en el rendimiento del SGBD
 - **A nivel de objeto (DDL)**: Audita los objetos y las operaciones sobre ellos. Cambios en la estructura de la base de datos. Obligatorio en producción. Bajo impacto.
 - **Nivel de dato (DML)**: Cambios en el contenido, solo para tablas críticas, muy alto impacto 
 
 
 ## 4. INTEGRIDAD DE LAS BASES DE DATOS
 
-Además de proteger nuestra base de datos ante accesos no deseado también es necesario protegerlas contra la corrupción originada por la presencia de información de poca calidad como datos no válidos o inconsistentes. Estos errores de datos pueden aparecer en cualquier momento, pero afortunadamente es posible proteger la base de datos contra muchos de estos errores mediante técnicas adecuadas de validación.
+Además de proteger nuestra base de datos ante accesos no deseado también es necesario protegerlas contra la corrupción originada por la presencia de información de poca calidad como datos no válidos o inconsistentes.
+
+Las siguientes técnicas nos permitirán protegernos antes estas incidencias.
 
 ### 4.1. RESTRICCIONES
 
@@ -177,23 +183,18 @@ Una condición impuesta sobre un conjunto determinado de datos se suele denomina
 
 Cuando se intente introducir una nueva fila de datos que viole las condiciones especificadas por alguna restricción, se negará la entrada de la misma en la base de datos.
 
-Los SGBD nos permiten tener verificación de restricciones de manera automática sólo requiriendo que el diseñador introduzca las líneas apropiadas dentro de la definición de la base de datos. Pero la mayoría de los SGBD tienen capacidades muy limitadas en esta área. Por eso existe otro mecanismo para la especificación de restricciones que es el uso de programas de aplicación para el control de la entrada de toda la información de una base de datos. Aunque este mecanismo es mucho más seguro tiene como desventaja el gasto considerable de trabajo por parte de los diseñadores e implementadores de la base de datos.
+Los SGBD permiten establecer restricciones de manera automática en la definición de la base de datos. 
 
-Por todo esto la solución más frecuente suele ser la combinación de los dos tipos de mecanismos de comprobación.
+Algunas de las restricciones son: `NOT NULL`, `UNIQUE`, `CHECK`. 
+
 
 ### 4.2. TRANSACCIONES
 
-Una transacción es una unidad lógica de trabajo. Es una secuencia de operaciones en una base de datos mediante la cual un estado consistente de la base de datos se transforma en otro estado consistente, sin conservar por fuerza la consistencia en todos los estados intermedios.
+Una transacción se define como una unidad de trabajo que consiste en un bloque de operaciones que se ejecuta como una unidad indivisible. O se ejecuta de forma completa o no se ejecuta nada, evitando que el sistema pueda quedar inconsistente
 
-Por definición, la base de datos se encuentra en un estado consistente antes de que se empiece a ejecutar una transacción, y también lo deberá estar cuando la transacción termine de ejecutarse. (De Miguel A, y Piattini M, 1999)
-
-Para ello tenemos un componente del sistema encargado de este propósito denominado "gestor de transacciones", y las operaciones en SQL son COMMIT y ROLLBACK.
+Para ello el SGBD proporciona el TCL o "control de transacciones", y las operaciones en SQL son COMMIT y ROLLBACK.
 
 La mayoría de los SGBD incluyen las funciones rollback, commit y autocommit.
-
-Supongamos que queremos borrar una fila de una tabla, pero, al teclear la orden SQL, se nos olvida la cláusula WHERE y borramos todas las filas de la tabla. Esto no es problema pues podemos dar marcha atrás a un trabajo realizado mediante la orden ROLLBACK, siempre y cuando no hayamos validado los cambios en la base de datos mediante la orden COMMIT.
-
-Cuando hacemos transacciones sobre la base de datos, es decir, cuando insertamos, actualizamos y eliminamos datos en las tablas, los cambios no se aplicarán a la base de datos hasta que no hagamos un COMMIT. Esto significa que, si durante el tiempo que hemos estado realizando transacciones, no hemos hecho ningún COMMIT y de pronto se va la luz, todo el trabajo se habrá perdido, y nuestras tablas estarán en la situación de partida.
 
 Para validar los cambios que se hagan en la base de datos tenemos que ejecutar la orden COMMIT:
 
@@ -207,13 +208,6 @@ La orden ROLLBACK aborta la transacción volviendo a la situación de las tablas
 ROLLBACK;
 ```
 
-Para asegurar la integridad de los datos se necesita que el sistema de base de datos mantenga las siguientes propiedades en las transacciones:
-
-- Atomicidad.
-- Consistencia.
-- Aislamiento.
-- Durabilidad.
-
 ### 4.3. RECUPERACIÓN DEL SISTEMA
 
 El sistema debe estar preparado para recuperarse no solo de fallos puramente locales, sino también de fallos globales. Un fallo local afecta sólo a la transacción en la que se presentó el fallo, mientras que un fallo global afecta a todas las transacciones que se estaban realizando en el momento del fallo.
@@ -225,15 +219,12 @@ Ante un fallo global, el sistema deberá recuperarse de dos tipos de fallos:
 
 ### 4.4. PROBLEMAS DE CONCURRENCIA
 
-La mayoría de los SGBD son multiusuario. En estos sistemas se necesita un mecanismo de control de concurrencia para asegurar que ninguna transacción concurrente interfiera con las operaciones de las demás.
+La mayoría de los SGBD son multiusuario. En los sistemas concurrentes múltiples usuarios pueden acceder de forma simultanea a los mismos objetos. En estos sistemas se necesita un mecanismo de control de concurrencia para asegurar que ninguna transacción concurrente interfiera con las operaciones de las demás.
 
-Son tres las situaciones en las que una transacción, aunque correcta en sí, puede producir de todos modos un resultado incorrecto debido a una interferencia por parte de alguna otra transacción:
+La técnica mas habitual para estas controlar estas situaciones es el bloqueo, cuando una transacción toca un dato es bloqueado y el resto debe esperar a su término. Se suelen producir 2 tipos de bloqueos:
 
-- El problema de la modificación perdida.
-- El problema de la dependencia no comprometida.
-- El problema del análisis inconsistente.
-
-El bloqueo es la técnica más usual que se utiliza para resolver problemas de concurrencia. La noción básica de bloqueo es simple: cuando una transacción requiere la seguridad de que algún objeto en la cual está interesada no cambiará de alguna manera no predecible sin que ella se dé cuenta, adquiere un bloqueo sobre ese objeto, con lo que ninguna transacción podrá leer ni modificar dicho objeto.
+- Exclusivo: Nadie lee ni escribe. Solo `UPDATE` y `DELETE`
+- Compartido: Lectura permitida, escritura bloqueada: `SELECT`
 
 
 ## 5. CONCLUSIÓN

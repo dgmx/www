@@ -1,17 +1,5 @@
 # Scripts en Bash - Examen
 
-
-
-
-
-
-
-
-
-
-
-
-
 ## Ejercicio 1
 
 1. Realizar un script que copie todos los ficheros que se le pasen por parámetro, al directorio misDatos. Si el directorio misDatos no existe, se deberá crear.
