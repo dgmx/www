@@ -77,7 +77,7 @@
 -  [67 Redes de área local. Componentes. Topologías. Estándares. Protocolos.](tema67.md)
 -  [68 Software de sistemas en red. Componentes. Funciones. Estructura.](tema68.md)
 -  [69 Integración de sistemas. Medios de interconexión. Estándares. Protocolos de acceso a redes de área extensa.](tema69.md)
--  70 Diseño de sistemas en red local. Parámetros de diseño. Instalación y configuración de sistemas en red local.
+-  [70 Diseño de sistemas en red local. Parámetros de diseño. Instalación y configuración de sistemas en red local.](tema70.md)
 -  71 Explotación y administración de sistemas en red local. Facilidades de gestión.
 -  72 La seguridad en sistemas en red. Servicios de seguridad. Técnicas y sistemas de protección. Estándares.
 -  73 Evaluación y Mejora de Prestaciones en un Sistema en Red. Técnicas y Procedimientos de Medida.
