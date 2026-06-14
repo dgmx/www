@@ -1,27 +1,28 @@
 # TEMA 69. INTEGRACIÓN DE SISTEMAS. MEDIOS DE INTERCONEXIÓN. ESTÁNDARES. PROTOCOLOS DE ACCESO A REDES DE ÁREA EXTENSA.
-
+```
 1. Introducción   
 2. Integración de sistemas 
 
 3. Medios de interconexión   
-   - 3.1.Medios guiados  
-   - 3.2.Medios no guiados (inalámbricos)  
-   - 3.3.Dispositivos de interconexión
+   3.1.Medios guiados  
+   3.2.Medios no guiados (inalámbricos)  
+   3.3.Dispositivos de interconexión
 
 4. Estándares de interconexión   
-   - 4.1.Estándares de red de área local (LAN)  
-   - 4.2.Estándares de red de área extensa (WAN)
+   4.1.Estándares de red de área local (LAN)  
+   4.2.Estándares de red de área extensa (WAN)
 
 5. Protocolos de acceso a redes de área extensa (WAN)   
-   - 5.1 Protocolos clásicos de acceso WAN  
-   - 5.2 Protocolos de nivel de enlace y red para WAN modernas  
-   - 5.3 Protocolos de acceso inalámbrico WAN
-   - 5.4 Protocolos de enrutamiento WAN
+   5.1 Protocolos clásicos de acceso WAN  
+   5.2 Protocolos de nivel de enlace y red para WAN modernas  
+   5.3 Protocolos de acceso inalámbrico WAN
+   5.4 Protocolos de enrutamiento WAN
 
 6. Conclusión
 
 7. Bibliografía y referencias normativas
 
+```
 ## 1. INTRODUCCIÓN Y JUSTIFICACIÓN
 
 El presente tema forma parte del temario de la especialidad de Informática aprobado en el BOE de 13 de febrero de 1996\. A su vez, el actual tema 69 se ubica dentro del bloque temático de redes.
@@ -183,7 +184,7 @@ Hay 2 tipos, los orientados a conexión: X.25, Frame Relay, ATM, MPLS y sin cone
 
 ### **5.4. Protocolos de enrutamiento WAN**
 
-Internet no es una red única, está formada por unas 70.000 redes individuales gestionadas por ISP, Universidades y grandes empresas tecnológicas, cada una con un número de identificación de sistema autónomo ASN, que gestionan su propia política de enrutamiento en internet, utilizando el protocolo BGP para intercambiar información con otros sistemas.
+Internet no es una red única, está formada por unas 70.000 redes individuales gestionadas por ISP, universidades y grandes empresas tecnológicas, cada una con un número de identificación de sistema autónomo o ASN, que gestionan su propia política de enrutamiento en internet, utilizando el protocolo BGP para intercambiar información con otros sistemas.
 
 Permiten la comunicación entre redes geográficas dispersas:
 * **BGP (Puerta de enlace de frontera)** Conecta sistemas autónomos, estándar en WAN/Internet
