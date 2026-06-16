@@ -9,7 +9,7 @@
 
 directorio="misDatos"
 
-# ! -d comprueba si el directorio no existe, si es true lo crea
+# ! -d comprueba si el directorio existe, si no, lo crea
 if [ ! -d "$directorio" ]; then  
     mkdir "$directorio"
 fi

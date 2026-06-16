@@ -1,4 +1,4 @@
-# Andalucía 2026 PES Informática
+# Andalucía 2025 PES Informática
 
 ## EJERCICIO 3: REDES. (2.5 puntos).
 
