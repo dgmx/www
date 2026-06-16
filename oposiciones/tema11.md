@@ -133,10 +133,11 @@ Características:
 
 
 ### 2.4. Estructuras de Datos
-- Colección de datos organizados para su almacenamiento y manipulación.
-- Clasificación según la gestión de memoria:
-  - **Estáticas**: Tamaño fijo, definido en tiempo de compilación.
-  - **Dinámicas**: Tamaño variable, asignado en tiempo de ejecución.
+Colección de datos organizados para su almacenamiento y manipulación. Se caracterizan por su organización y por el tipo de operaciones que se pueden realizar con ellas.
+
+Se clasificación según como gestionan la memoria:
+- **Estáticas**: Tamaño fijo, definido en tiempo de compilación.
+- **Dinámicas**: Tamaño variable, asignado en tiempo de ejecución.
 
 ## 3. Estructuras Estáticas
 ### 3.1. Arrays
