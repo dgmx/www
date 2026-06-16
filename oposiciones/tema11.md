@@ -142,7 +142,11 @@ Se clasificación según como gestionan la memoria:
 ## 3. Estructuras Estáticas
 ### 3.1. Arrays
 #### 3.1.1. Arrays Unidimensionales
-- Definición: Colección lineal de elementos del mismo tipo.
+Definición: Colección lineal de elementos del mismo tipo los cuales tienen asociado un índice que determina de forna unívoca la posición de dicho dato en el array. 
+- Al número de indices del array se le denomina tamaño del array
+- Hay arrays de 1 dimensión o vector, de 2 dimensiones o matriz, de 3 o más denominados tensores.
+- El número de índices necesarios para determinar un elemento del array indica la dimensión del array.
+  
 - **Ejemplo de declaración**:
   ```cpp
   float notas[5]; // C++
