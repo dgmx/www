@@ -11,7 +11,7 @@
 
 - [Andalucía 2025 - Bases de Datos](/databases/sql/opos25sql.md)
 - [Andalucía 2023 - Bases de Datos](https://diegojgonzalez.org/databases/sql/opos25sql.html#andalucia-examen-2023)
-- [Cantabría 2018 - Bases de datos](https://diegojgonzalez.org/databases/sql/opos25sql.html#cantabria-2018)
+- [Cantabria 2018 - Bases de datos](https://diegojgonzalez.org/databases/sql/opos25sql.html#cantabria-2018)
 - [Andalucía 2008 SAI - Bases de Datos](/databases/sql/opos08sai.md)
 
 ## Java
