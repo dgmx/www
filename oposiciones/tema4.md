@@ -7,6 +7,25 @@ nav_exclude: true
 
 # Tema 4: Memoria Interna - Tipos, Direccionamiento, Características y Funciones
 
+## ÍNDICE 
+```bash
+1. Introducción
+2. Características y Funciones
+3. Tipos de Memoria Interna
+    3.1. Registros
+    3.2. Memoria Caché
+    3.3. Memoria RAM
+    3.4. Memoria ROM
+4. Direccionamiento
+5. Recursos Educativos
+6. Principales Fabricantes de RAM
+7. Aplicaciones en Contexto Escolar y Laboral
+8. Conclusión
+9. Bibliografía
+```
+
+---
+
 ## 1. Introducción
 - **Arquitectura Von Neumann**:
   - Elementos: memoria, CPU, entrada/salida y buses.

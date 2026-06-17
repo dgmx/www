@@ -6,6 +6,20 @@ nav_exclude: true
 
 # Tema 7. Dispositivos Periféricos de Entrada/Salida
 
+## ÍNDICE 
+```bash
+1. Introducción
+2. Definición de Dispositivo Periferico
+3. Clasificación de Periféricos
+4. Periféricos de Entrada
+5. Periféricos de Salida
+6. Periféricos de Entrada/Salida
+7. Tendencias Actuales
+8. Aplicaciones
+```
+
+---
+
 ## 1. Introducción
 - **Basado en la arquitectura de Von Neumann (1946)**
   - Componentes principales: Unidad de memoria, CPU, Unidad de E/S, Buses

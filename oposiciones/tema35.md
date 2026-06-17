@@ -2,6 +2,27 @@
 
 # Tema 35: Definición de Datos, Niveles de Descripción, Lenguajes y Diccionario de Datos
 
+## ÍNDICE 
+```bash
+1. Introducción
+2. La Definición de Datos
+3. Niveles de Descripción
+    3.1. Nivel Interno o Físico
+    3.2. Nivel Lógico o Conceptual
+    3.3. Nivel Externo o de Visión del Usuario
+    3.4. Correspondencias
+4. Lenguajes de Definición de Datos (DDL)
+    4.1. Definición
+    4.2. Tipos
+    4.3. Características
+    4.4. SQL como DDL
+5. Diccionario de Datos
+6. Conclusión
+7. Bibliografía
+```
+
+---
+
 ## 1. Introducción
 - Tema incluido en el temario oficial de acceso a la especialidad de Informática.  
 - Forma parte del bloque temático "Bases de Datos".  

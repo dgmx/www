@@ -1,5 +1,23 @@
 # Tema 13 - Ficheros. Tipos. Características. Organizaciones
 
+## ÍNDICE 
+```bash
+1. Introducción
+2. Ficheros
+    2.1. Definición
+    2.2. Operaciones
+3. Tipos de ficheros
+    3.1. Según su duración en el sistema
+    3.2. Según su contenido
+4. Características
+5. Organización de ficheros
+    5.1. Secuencial
+    5.2. Directa
+    5.3. Indexada
+```
+
+---
+
 ## 1. Introducción
 - Evolución del almacenamiento: De sistemas manuales a bases de datos y big data.
 - Necesidad de informatizar. Datos estructurados, mayor velocidad de acceso y consulta.

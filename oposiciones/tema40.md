@@ -6,6 +6,29 @@ nav_exclude: true
 
 # Tema 40 - Diseño de Bases de Datos Relacionales
 
+## ÍNDICE 
+```bash
+1. Introducción
+2. Diseño de Bases de Datos Relacionales
+3. Diseño Conceptual: Modelo Entidad-Relación (E/R)
+    3.1. Entidades
+    3.2. Relaciones
+    3.3. Atributos
+    3.4. Modelo E/R Extendido
+4. Diseño Lógico
+    4.1. Simplificación de Diagramas E/R
+    4.2. Paso del Modelo E/R al Modelo Relacional
+    4.3. Normalización y Formas Normales
+5. Diseño Físico
+6. Aplicación en Contexto Escolar y Laboral
+    6.1. Contexto Escolar
+    6.2. Contexto Laboral
+7. Conclusión
+8. Bibliografía
+```
+
+---
+
 ## 1. Introducción
 - Importancia del diseño de bases de datos relacionales.
 - Decisiones clave en el diseño de bases de datos:

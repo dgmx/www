@@ -1,28 +1,18 @@
 # TEMA 69. INTEGRACIÓN DE SISTEMAS. MEDIOS DE INTERCONEXIÓN. ESTÁNDARES. PROTOCOLOS DE ACCESO A REDES DE ÁREA EXTENSA.
+
+## ÍNDICE 
+```bash
+1. INTRODUCCIÓN Y JUSTIFICACIÓN
+2. INTEGRACIÓN DE SISTEMAS
+3. MEDIOS DE INTERCONEXIÓN
+4. ESTÁNDARES DE INTERCONEXIÓN
+5. PROTOCOLOS DE ACCESO A REDES DE ÁREA EXTENSA
+6. CONCLUSIÓN
+7. BIBLIOGRAFÍA
 ```
-1. Introducción   
-2. Integración de sistemas 
 
-3. Medios de interconexión   
-   3.1.Medios guiados  
-   3.2.Medios no guiados (inalámbricos)  
-   3.3.Dispositivos de interconexión
+---
 
-4. Estándares de interconexión   
-   4.1.Estándares de red de área local (LAN)  
-   4.2.Estándares de red de área extensa (WAN)
-
-5. Protocolos de acceso a redes de área extensa (WAN)   
-   5.1 Protocolos clásicos de acceso WAN  
-   5.2 Protocolos de nivel de enlace y red para WAN modernas  
-   5.3 Protocolos de acceso inalámbrico WAN
-   5.4 Protocolos de enrutamiento WAN
-
-6. Conclusión
-
-7. Bibliografía y referencias normativas
-
-```
 ## 1. INTRODUCCIÓN Y JUSTIFICACIÓN
 
 El presente tema forma parte del temario de la especialidad de Informática aprobado en el BOE de 13 de febrero de 1996\. A su vez, el actual tema 69 se ubica dentro del bloque temático de redes.

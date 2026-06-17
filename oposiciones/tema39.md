@@ -6,6 +6,23 @@ nav_exclude: true
 
 # Tema 39 - Lenguajes para Definición y Manipulación de Datos en Bases de Datos Relacionales
 
+## ÍNDICE 
+```bash
+1. Introducción
+2. Conceptos Básicos
+3. Lenguaje de Definición de Datos (DDL)
+4. Lenguaje de Manipulación de Datos (DML)
+5. Lenguaje SQL
+    5.1. Introducción
+    5.2. Elementos del Lenguaje SQL
+    5.3. SQL como DDL
+    5.4. SQL como DML
+6. Aplicaciones en el Contexto Escolar y Laboral
+7. Conclusión
+```
+
+---
+
 ## 1. Introducción
 - Importancia de los datos en la actualidad
 - Relación con el currículo educativo y profesional

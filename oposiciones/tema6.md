@@ -7,6 +7,25 @@ nav_exclude: true
 
 # Tema 6: Sistemas de Almacenamiento Externo, Tipos, Características y Funcionamiento
 
+## ÍNDICE 
+```bash
+1. Introducción
+2. Sistemas de Almacenamiento Externo
+3. Tipos
+4. Características y Funcionamiento
+    4.1. Memorias Magnéticas
+    4.2. Memorias Ópticas
+    4.3. Memorias Flash
+5. Medidas y Magnitudes Relacionadas
+6. Almacenamiento en Red
+7. Recursos Educativos
+8. Aplicaciones
+9. Conclusión
+10. Bibliografía
+```
+
+---
+
 ## 1. Introducción
 - **Memoria externa (secundaria)**:
   - Incluye discos duros, SSD, USB, CDs, DVDs.

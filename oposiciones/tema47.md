@@ -1,4 +1,22 @@
 # Tema 47: Instalación y explotación de aplicaciones informáticas. Compartición de datos
+
+## ÍNDICE 
+```bash
+1. Introducción
+2. Concepto de aplicación
+3. Instalación de aplicaciones informáticas
+4. Explotación de aplicaciones informáticas
+    4.1. Recursos para una correcta explotación
+5. Compartición de datos
+    5.1. Sistemas multiusuario
+    5.2. Sistemas multitarea
+    5.3. Compartir datos en la nube
+6. Conclusión
+7. Bibliografía
+```
+
+---
+
 ## 1. Introducción
 - Temario oficial BOE 13 febrero 1996 (Informática / Sistemas y aplicaciones informáticas)
 - Bloque temático: Sistemas de información

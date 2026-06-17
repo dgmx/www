@@ -1,5 +1,25 @@
 # TEMA 25. PROGRAMACIÓN ESTRUCTURADA.  ESTRUCTURAS BÁSICAS. FUNCIONES Y PROCEDIMIENTOS 
 
+## ÍNDICE 
+```bash
+1. INTRODUCCIÓN
+2. CONCEPTOS PREVIOS
+3. PROGRAMACIÓN ESTRUCTURADA
+4. ESTRUCTURAS BÁSICAS
+    4.1. ESTRUCTURAS SECUENCIALES
+    4.2. ESTRUCTURAS SELECTIVAS
+    4.3. ESTRUCTURAS REPETITIVAS
+5. FUNCIONES Y PROCEDIMIENTOS
+    5.1. FUNCIONES
+    5.2. PROCEDIMIENTOS
+    5.3. PASO DE PARÁMETROS
+    5.4. ÁMBITO DE UN IDENTIFICADOR
+6. CONCLUSIÓN
+7. BIBLIOGRAFÍA
+```
+
+---
+
 ## 1. INTRODUCCIÓN 
 
 El presente tema forma parte del temario oficial publicado en el BOE de 13 de febrero de 1996, donde se aprueba el temario de acceso a la especialidad de Informática / Sistemas y aplicaciones informáticas (indicar la especialidad a la que te presentas).

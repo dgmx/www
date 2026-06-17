@@ -1,6 +1,22 @@
 
 # Tema 12 Organización Lógica de los Datos. Estructuras de Datos Dinámicas
 
+## ÍNDICE 
+```bash
+1. Introducción
+2. Organización Lógica de los Datos
+    2.1. Datos y variables
+    2.2. Tipos de datos
+    2.3. Tipado de datos
+    2.4. Estructuras de Datos
+3. Estructuras Dinámicas
+    3.1. Estructuras Lineales
+    3.2. Estructuras No Lineales
+4. Conclusión
+```
+
+---
+
 ## 1. Introducción
 - Importancia de la organización de datos en informática.
 - Relación con la eficiencia del procesamiento de información.

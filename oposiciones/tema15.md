@@ -6,6 +6,22 @@ nav_exclude: true
 
 # Tema 15: Sistemas Operativos. Componentes. Estructura. Funciones. Tipos
 
+## ÍNDICE 
+```bash
+1. Introducción
+2. Sistemas Operativos
+    2.1. Componentes
+    2.2. Estructura
+    2.3. Funciones
+    2.4. Tipos de SO
+3. Sistemas Operativos Actuales
+4. Aplicación en Contexto Escolar y Laboral
+5. Conclusión
+6. Bibliografía
+```
+
+---
+
 ## 1. Introducción
 - Importancia de los sistemas operativos
 - Relación con la evolución del hardware

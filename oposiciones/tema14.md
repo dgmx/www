@@ -1,6 +1,20 @@
 # Tema 14 - Utilización de ficheros según su organización
 
-> Igual que el tema 13. Solo cambia el índice
+## ÍNDICE 
+```bash
+1. Introducción
+2. Ficheros
+    2.1. Definición
+    2.2. Características
+    2.3. Operaciones
+    2.4. Tipos de ficheros
+3. Organización de ficheros
+    3.1. Secuencial
+    3.2. Directa
+    3.3. Indexada
+```
+
+---
 
 ## 1. Introducción
 - Evolución del almacenamiento: De sistemas manuales a bases de datos y big data.

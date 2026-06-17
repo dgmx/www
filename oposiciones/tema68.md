@@ -1,28 +1,17 @@
 # Tema 68. Software de sistemas en red. Componentes. Funciones. Estructura
 
+## ÍNDICE 
+```bash
 1. Introducción y justificación
-
-2. Software de sistemas en red 
-
-3. Componentes del software de sistemas en red  
-   - 3.1.Sistema operativo de red (NOS)  
-   - 3.2.Controladores y firmware de dispositivos de red  
-   - 3.3.Protocolos de comunicación  
-   - 3.4.Servicios de red  
-   - 3.5.Software de gestión y monitorización de red  
-   - 3.6.Aplicaciones cliente de red
-
-4. Funciones del software de sistemas en red  
-
-5. Estructura del software de sistemas en red  
-   - 5.1.Arquitectura cliente-servidor  
-   - 5.2.Arquitectura peer-to-peer (P2P)  
-   - 5.3.Arquitectura orientada a servicios y microservicios  
-   - 5.4.Infraestructura en la nube e híbrida
-
+2. Software de sistemas en red
+3. Componentes
+4. Funciones
+5. Estructura
 6. Conclusión
+7. Bibliografía
+```
 
-7. Bibliografía 
+---
 
 ## 1 Introducción y justificación
    

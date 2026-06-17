@@ -7,6 +7,28 @@ nav_exclude: true
 
 # Tema 25: Programación Estructurada Estructuras básicas. Funciones y procedimientos
 
+## ÍNDICE 
+```bash
+1. Introducción
+2. Conceptos Previos
+3. Programación Estructurada
+4. Estructuras Básicas
+    4.1. Estructuras Secuenciales
+    4.2. Estructuras Selectivas
+    4.3. Estructuras Repetitivas
+5. Funciones y Procedimientos
+    5.1. Funciones
+    5.2. Procedimientos
+    5.3. Paso de Parámetros
+    5.4. Ámbito de un Identificador
+6. Recursos y Herramientas
+7. Aplicaciones en el Contexto Escolar y Laboral
+8. Conclusión
+9. Bibliografía
+```
+
+---
+
 ## 1. Introducción
 - Programación Estructurada: paradigma de programación que utiliza estructuras de control de flujo para organizar y manejar la ejecución de un programa.
 - Fundamental para tecnologías modernas, dispositivos mobiles y ordenadores actuales

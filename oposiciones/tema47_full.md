@@ -1,5 +1,33 @@
 # Tema 47: Instalación y Explotación de Aplicaciones Informáticas
 
+## ÍNDICE 
+```bash
+1. INTRODUCCION Y JUSTIFICACIÓN
+2. CONCEPTO DE APLICACIÓN
+3. INSTALACIÓN DE APLICACIONES INFORMÁTICAS
+    3.1. Concepto y objetivo
+    3.2. Fases del proceso de instalación
+3.3. Instaladores y tecnologías de empaquetado
+3.4. Instalación avanzada: servicios de Windows Installer
+3.5. Desinstalación y gestión del ciclo de vida
+4. EXPLOTACIÓN DE APLICACIONES INFORMÁTICAS
+4.1. Concepto y objetivo
+4.2. Características de una correcta explotación
+4.3. Recursos para una correcta explotación
+4.4. Operaciones diarias de explotación
+4.5. Métricas e indicadores de explotación (KPIs)
+4.6. Buenas prácticas en la explotación
+5. COMPARTICIÓN DE DATOS
+5.1. Concepto y contexto
+5.2. Sistemas multiusuario
+5.3. Sistemas multitarea
+5.4. Compartición de datos en la nube
+6. CONCLUSIÓN
+7. BIBLIOGRAFÍA
+```
+
+---
+
 ## 1. INTRODUCCION Y JUSTIFICACIÓN
 
 ## 2. CONCEPTO DE APLICACIÓN

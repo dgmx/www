@@ -1,5 +1,30 @@
 # Tema 24. Lenguajes de programación. Tipos. Características. 
 
+## ÍNDICE 
+```bash
+1. Introducción y justificación
+2. Lenguajes de programación
+2.1. Concepto
+2.2. Características principales
+2.3. Elementos de los lenguajes de programación por niveles
+2.4. Instrucciones
+3. Tipos de lenguajes de programación
+3.1. Clasificación por nivel de abstracción
+3.2. Clasificación cronológica
+    1. ª generación (1GL) – Lenguaje máquina
+    2. ª generación (2GL) – Lenguaje ensamblador
+    3. ª generación (3GL) – Lenguajes de alto nivel
+    4. ª generación (4GL) – Lenguajes orientados a problemas
+    5. ª generación (5GL) – Inteligencia artificial
+3.3. Clasificación por Paradigmas
+3.4. Otras clasificiiones
+4. Caracteristicas de los lenguajes de programación
+5. Lenguajes más utilizados
+6. Conclusión
+```
+
+---
+
 ## 1. Introducción y justificación
 
 - BOE 13 Feb 1996 Temario Informatica

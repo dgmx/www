@@ -1,10 +1,29 @@
----
-title: "Tema 21 Sistemas Informáticos. Estructura Física y Funcional"
-parent: "Maps"
-nav_exclude: true
----
+## ÍNDICE 
+```bash
+1. Introducción
+2. Sistemas Informáticos
+    2.1. Definición de Sistema Informático
+    2.2. Evolución Histórica de los Sistemas Informáticos
+    2.3. Estructura Básica de un Sistema Informático
+3. Estructura Física de un Sistema Informático
+    3.1. Chasis
+    3.2. Placa Base y Dispositivos Internos
+    3.3. Unidades de Almacenamiento Secundario
+    3.4. Tarjetas de Expansión
+    3.5. Periféricos
+4. Estructura Funcional de un Sistema Informático
+    4.1. Unidad Central de Proceso (UCP)
+    4.2. Memoria
+    4.3. Unidad de Entrada/Salida
+    4.4. Buses
+5. Aplicación de los Contenidos al Contexto Escolar y Laboral
+    5.1. Contexto Escolar
+    5.2. Contexto Laboral
+6. Conclusión
+7. Bibliografía
+```
 
-## Tema 21: Sistemas Informáticos. Estructura Física y Funcional
+---
 
 ## 1. Introducción
 + Temario oficial BOE 13 Feb 1996

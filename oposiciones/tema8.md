@@ -6,6 +6,28 @@ nav_exclude: true
 
 # Tema 8: Hardware Comercial de un Ordenador. Placa Base. Tarjetas Controladoras de dispositivos de E/S
 
+## ÍNDICE 
+```bash
+1. Introducción
+2. Hardware Comercial de un Ordenador
+3. Placa Base
+    3.1. Factores de Forma
+    3.2. Componentes
+    3.3. Sockets
+4. Tarjetas Controladoras
+    4.1. Tarjetas de Almacenamiento
+    4.2. Tarjetas de Red
+    4.3. Tarjetas Gráficas (GPU)
+    4.4. Tarjetas de Sonido
+    4.5. Otras Tarjetas
+5. Recursos y Herramientas Educativas
+6. Aplicaciones en Educación y Trabajo
+7. Conclusión
+8. Bibliografía
+```
+
+---
+
 ## 1. Introducción
 - Importancia de la placa base en la configuración del hardware.
 - Parte del currículo de Informática y Comunicaciones.

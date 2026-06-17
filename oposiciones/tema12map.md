@@ -1,6 +1,20 @@
 
 # Mapa Mental: Las 8 Estructuras de Datos Universales
 
+## ÍNDICE 
+```bash
+1. Array (Arreglo)
+2. Linked List (Lista Enlazada)
+3. Stack (Pila)
+4. Queue (Cola)
+5. Hash Table (Tabla Hash / Diccionario)
+6. Binary Search Tree (Árbol Binario de Búsqueda)
+7. Heap (Montículo)
+8. Graph (Grafo)
+```
+
+---
+
 ## 1. Array (Arreglo)
 - **Analogía:** Estacionamiento de un centro comercial.
 - **Funcionamiento:** Los elementos se guardan en bloques contiguos de memoria del mismo tamaño.

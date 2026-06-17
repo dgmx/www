@@ -1,4 +1,24 @@
 # Tema 63: Funciones y servicios del nivel físico
+
+## ÍNDICE 
+```bash
+1. Introducción
+2. Funciones y servicios del nivel físico
+3. Tipos y medios de transmisión
+    3.1. Tipos de transmisión
+    3.2. Medios de transmisión
+4. Adaptación al medio de transmisión
+    4.1. Modulación
+    4.2. Codificación
+    4.3. Multiplexación
+5. Limitaciones a la transmisión
+6. Estándares
+7. Conclusión
+8. Bibliografía
+```
+
+---
+
 ## 1. Introducción
 - Temario oficial BOE 13 febrero 1996 (Informática)
 - Bloque temático de redes

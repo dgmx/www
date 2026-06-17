@@ -7,6 +7,24 @@ nav_exclude: true
 
 # Tema 19: Gestión de Archivos y Dispositivos en Sistemas Operativos
 
+## ÍNDICE 
+```bash
+1. Introducción
+2. Archivos y Directorios
+3. Gestión de Archivos y Dispositivos
+    3.1. Asignación de Espacio en Disco
+    3.2. Gestión del Espacio Libre
+    3.3. Operaciones del Sistema de Archivos
+    3.4. Métodos de Acceso
+4. Algoritmos de Planificación de Discos
+5. SSD (Solid State Drive)
+6. Aplicación al Contexto Escolar y Laboral
+7. Conclusión
+8. Bibliografía
+```
+
+---
+
 ## 1. Introducción
 - Relación con el temario oficial de informática
 - Importancia del sistema operativo en la gestión de archivos y dispositivos

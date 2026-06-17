@@ -1,6 +1,24 @@
 
 # Tema 11: Organización Lógica de los Datos. Estructuras Estáticas
 
+## ÍNDICE 
+```bash
+1. Introducción
+2. Organización Lógica de los Datos
+    2.1. Datos y variables
+    2.2. Tipos de datos
+    2.3. Tipado de datos
+    2.4. Estructuras de Datos
+3. Estructuras Estáticas
+    3.1. Arrays
+    3.2. Cadenas de Caracteres
+    3.3. Registros
+    3.4. Enumeraciones
+4. Conclusión
+```
+
+---
+
 ## 1. Introducción
 - Importancia de la organización de datos en informática.
 - Relación con la eficiencia del procesamiento de información.

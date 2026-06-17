@@ -6,6 +6,42 @@ nav_exclude: true
 
 # Tema 24: Lenguajes de Programación. Tipos. Caracteristicas
 
+## ÍNDICE 
+```bash
+1. Introducción
+2. Lenguajes de Programación
+    2.1. Concepto
+    2.2. Características
+    2.3. Elementos
+    2.4. Instrucciones
+3. Tipos de Lenguajes de Programación
+    3.1. Clasificación por Nivel de Abstracción
+    3.2. Clasificación Cronológica
+    3.3. Clasificación por Aplicación
+    3.4. Clasificación por Paradigmas
+    3.5. Otras Clasificaciones
+4. Características de los Lenguajes de Programación más Importantes
+    4.1. Fortran (1957)
+    4.2. Lisp (1958)
+    4.3. Cobol (1960)
+    4.4. C (1972)
+    4.5. Pascal (1970)
+    4.6. C++ (1983)
+    4.7. Java (1995)
+    4.8. Python (1991)
+    4.9. JavaScript (1995)
+    4.10. PHP (1995)
+5. Ranking de Lenguajes Más Usados (TIOBE 2024)
+6. Recursos y Herramientas
+7. Aplicación en Contexto Escolar y Laboral
+    7.1. En educación
+    7.2. En la industria
+8. Conclusión
+9. Bibliografía
+```
+
+---
+
 ## 1. Introducción
 - Importancia de los lenguajes de programación en la era tecnológica
 - Uso en dispositivos cotidianos y sectores clave

@@ -6,6 +6,27 @@ nav_exclude: true
 
 # Tema 34: Sistemas Gestores de Bases de Datos. Funciones. Componentes. Arquitecturas de referencia y operacionales. Tipos de sistemas.
 
+## ÍNDICE 
+```bash
+1. Introducción
+2. Sistemas Gestores de Bases de Datos (SGBD)
+3. Funciones
+4. Componentes
+    4.1. **Lenguajes de base de datos**
+    4.2. Diccionario de datos
+    4.3. Gestor de base de datos
+    4.4. Usuarios de la base de datos
+    4.5. Herramientas de base de datos
+5. Arquitecturas de Referencia y Operacionales
+    5.1. Arquitectura de referencia
+    5.2. Arquitectura operacional.
+6. Tipos de Sistemas
+7. Conclusión
+8. Bibliografía
+```
+
+---
+
 ## 1. Introducción
 - BOE 13 FEB 1996. Bloque Tematico: Bases de Datos.  
 - Definiciones de bases de datos, SGBDR

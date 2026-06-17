@@ -1,15 +1,48 @@
 # Tema 15: Sistemas Operativos. Componentes. Estructura. Funciones. Tipos
 
-## Índice
+## ÍNDICE 
+```bash
+1. Introducción
+2. Sistemas Operativos
+3. Componentes de un Sistema Operativo
+    3.1. Núcleo (Kernel)
+    3.2. Gestor de Procesos
+    3.3. Gestor de Memoria
+    3.4. Sistema de Archivos
+    3.5. Gestor de Dispositivos (E/S)
+    3.6. Intérprete de Comandos (Shell)
+4. Estructura de un Sistema Operativo
+    4.1. Estructura Monolítica
+    4.2. Estructura por Capas
+    4.3. Microkernel
+    4.4. Estructura Híbrida
+    4.5. Máquinas Virtuales
+5. Funciones de un Sistema Operativo
+    5.1. Gestión del Procesador
+    5.2. Gestión de la Memoria
+    5.3. Gestión de Dispositivos de E/S
+    5.4. Gestión del Sistema de Archivos
+    5.5. Gestión de Procesos
+    5.6. Seguridad y Protección
+    5.7. Interfaz con el Usuario
+    5.8. Gestión de Red
+6. Tipos de Sistemas Operativos
+    6.1. Según el Número de Usuarios
+    6.2. Según el Número de Tareas
+    6.3. Según la Gestión de Procesadores
+    6.4. Sistemas Operativos por Lotes (Batch)
+    6.5. Sistemas Operativos de Tiempo Compartido
+    6.6. Sistemas Operativos de Tiempo Real
+    6.7. Sistemas Operativos Distribuidos
+    6.8. Sistemas Operativos en Red (NOS)
+    6.9. Sistemas Operativos para Dispositivos Móviles
+    6.10. Sistemas Operativos Empotrados (Embedded)
+    6.11. Sistemas Operativos en la Nube
+7. Conclusión
+8. Bibliografía
+```
 
-1. [Introducción](#1-introducción)
-2. [Sistemas Operativos](#2-sistemas-operativos)
-3. [Componentes de un Sistema Operativo](#3-componentes-de-un-sistema-operativo)
-4. [Estructura de un Sistema Operativo](#4-estructura-de-un-sistema-operativo)
-5. [Funciones de un Sistema Operativo](#5-funciones-de-un-sistema-operativo)
-6. [Tipos de Sistemas Operativos](#6-tipos-de-sistemas-operativos)
-7. [Conclusión](#7-conclusión)
-8. [Bibliografía](#8-bibliografía)
+---
 
 ## 1. Introducción
 

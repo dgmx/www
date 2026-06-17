@@ -6,6 +6,33 @@ nav_exclude: true
 
 # Tema 26 Programación Modular, Diseño de Funciones, Recursividad, Librerías
 
+## ÍNDICE 
+```bash
+1. Introducción
+2. Conceptos Previos
+3. Programación Modular
+    3.1. Programa Principal y Subprogramas
+    3.2. Ámbito de un Identificador
+4. Diseño de Funciones
+    4.1. Declaración
+    4.2. Invocación
+    4.3. Paso de Parámetros
+5. Recursividad
+    5.1. Estructura
+    5.2. Características
+    5.3. Tipos
+6. Librerías
+    6.1. Estructura
+    6.2. Características
+    6.3. Tipos
+7. Recursos y Herramientas de Interés
+8. Aplicación de los Contenidos al Contexto Escolar y Laboral
+9. Conclusión
+10. Bibliografía
+```
+
+---
+
 ## 1. Introducción
 - Importancia en el avance tecnológico.
 - Aplicación en ciclos formativos y desarrollo de software.

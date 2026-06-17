@@ -6,6 +6,29 @@ nav_exclude: true
 
 # Tema 38: Modelo de Datos Relacional. Estructura. Operaciones. Algebra Relacional  
 
+## ÍNDICE 
+```bash
+1. Introducción
+2. Modelo de Datos Relacional
+    2.1. Modelo de Datos
+    2.2. Modelo Relacional
+3. Estructura del Modelo Relacional
+    3.1. Relación o Tabla
+    3.2. Dominio y Atributo
+    3.3. Tipos de Claves
+    3.4. Restricciones
+    3.5. Índices
+4. Operaciones en el Modelo Relacional
+5. Álgebra Relacional
+    5.1. Operadores Primitivos
+    5.2. Operadores Derivados
+6. Aplicación al Contexto Escolar y Laboral
+7. Conclusión
+8. Bibliografía
+```
+
+---
+
 ## 1. Introducción  
 - Forma parte del temario oficial de acceso a la especialidad de Informática.  13 Feb 96
 - Pertenece al bloque "Bases de Datos".  

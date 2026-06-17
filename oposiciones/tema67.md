@@ -1,24 +1,21 @@
 # TEMA 67. REDES DE ÁREA LOCAL. COMPONENTES . TOPOLOGÍAS. ESTÁNDARES. PROTOCOLOS.  
+
+## ÍNDICE 
+```bash
+1. INTRODUCCIÓN Y JUSTIFICACIÓN
+2. REDES DE ÁREA LOCAL
+3. COMPONENTES
+    3.1. Dispositivos de red
+    3.2. Estaciones de trabajo y servidores
+    3.3. Medios de transmisión
+4. TOPOLOGÍAS
+5. ESTÁNDARES
+6. PROTOCOLOS
+7. CONCLUSIÓN
+8. BIBLIOGRAFÍA
 ```
-1. INTRODUCCIÓN  
 
-2. REDES DE ÁREA LOCAL  
-
-3. COMPONENTES  
-    3.1. DISPOSITIVOS DE RED
-    3.2. ESTACIONES DE TRABAJO Y SERVIDORES
-    3.3. MEDIOS DE TRANSMISIÓN
-
-4. TOPOLOGÍAS  
-
-5. ESTÁNDARES  
-
-6. PROTOCOLOS  
-
-7. CONCLUSIÓN  
-
-8. BIBLIOGRAFÍA  
-```
+---
 
 ## 1. INTRODUCCIÓN Y JUSTIFICACIÓN 
 El presente tema forma parte del temario oficial publicado en el BOE de 13 de 

@@ -1,4 +1,30 @@
 # Tema 46: Aplicaciones informáticas de propósito general y para la gestión empresarial
+
+## ÍNDICE 
+```bash
+1. Introducción
+2. Concepto de aplicación
+3. Aplicaciones informáticas de propósito general
+    3.1. Procesadores de texto
+    3.2. Hojas de cálculo
+    3.3. Sistemas gestores de bases de datos (SGBD)
+    3.4. Comunicaciones
+    3.5. Presentaciones
+    3.6. Diseño gráfico
+    3.7. Paquete integrado
+4. Aplicaciones informáticas para la gestión empresarial
+    4.1. Gestión financiero-contable
+    4.2. Gestión de personal
+    4.3. Gestión comercial
+    4.4. Control de stock y almacén
+5. Aplicaciones en la nube
+6. Aplicación al contexto escolar y laboral
+7. Conclusión
+8. Bibliografía
+```
+
+---
+
 ## 1. Introducción
 - Temario oficial BOE 13 febrero 1996
 - Bloque temático: Sistemas de información

@@ -2,6 +2,23 @@
  
   
 
+## ÍNDICE 
+```bash
+1. INTRODUCCIÓN
+2. SISTEMAS EN RED
+3. PLANIFICACIÓN Y DISEÑO  DE UN SISTEMA EN RED
+4. PARÁMETROS DE DISEÑO
+5. INSTALACIÓN Y CONFIGURACIÓN  DE UN SISTEMA EN RED  LOCAL
+5.1. INSTALACIÓN DE LA INFRAESTRUCTURA DE RED
+5.2. INTERCONEXIÓN DE EQUIPOS
+5.3. INSTALACIÓN Y CONFIGURACIÓN DE LOS EQUIPOS
+5.4. DIAGNÓSTICO DE INCIDENCIAS
+6. CONCLUSIÓN
+7. BIBLIOGRAFÍA
+```
+
+---
+
 ## 1. INTRODUCCIÓN
 El presente tema forma parte del temario oficial publicado en el BOE de 13 de 
 febrero de 1996, donde se aprueban el temario de acceso a la especialidad de 

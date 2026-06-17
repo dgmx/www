@@ -6,6 +6,29 @@ nav_exclude: true
 
 # Tema 2: Elementos Funcionales de un Ordenador Digital
 
+## ÍNDICE 
+```bash
+1. Introducción
+2. Ordenador Digital
+    2.1. Generaciones de Ordenadores
+    2.2. Clasificación
+    2.3. Factores que Determinan la Potencia
+3. Elementos Funcionales de un Ordenador Digital
+    3.1. CPU
+    3.2. Memoria
+    3.3. Unidad de Entrada/Salida
+    3.4. Buses
+4. Arquitectura
+5. Proyecto TOP500
+6. Supercomputador MareNostrum 5
+7. Recursos Educativos
+8. Aplicaciones
+9. Conclusión
+10. Bibliografía
+```
+
+---
+
 ## 1. Introducción
 - **Arquitectura Von Neumann**:
   - Introducida por John von Neumann en 1949.
