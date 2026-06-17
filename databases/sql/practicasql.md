@@ -262,9 +262,9 @@ USE universidad;
 
 ### c) Crea las tablas anteriores en SQL con todas las restricciones inherentes del modelo y además con las siguientes consideraciones:
 
-I. Opción tomará los valores A, B, C ó D.
-II. La nota de corte ha de ser mayor que 5.
-III. El atributo "admitido" tomará los valores S ó N.
+- I. Opción tomará los valores A, B, C ó D.
+- II. La nota de corte ha de ser mayor que 5.
+- III. El atributo "admitido" tomará los valores S ó N.
 
 ```sql
 CREATE TABLE alumno (
