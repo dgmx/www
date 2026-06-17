@@ -125,6 +125,7 @@ export default defineConfig({
             collapsed: true,
             items: [
               { text: "Inicio", link: "/databases/sql/" },
+              { text: "Práctica SQL", link: "/databases/sql/practicasql" },
               { text: "Tienda Informática", link: "/databases/sql/informatica" },
               { text: "Gestión Empleados", link: "/databases/sql/empleados" },
               { text: "Gestión Ventas", link: "/databases/sql/ventas" },
