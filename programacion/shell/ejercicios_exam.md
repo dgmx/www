@@ -80,7 +80,7 @@ for fichero in "$@"; do
     fi
 done
 ```
-El comando file -b muestra el tipo de fichero en modo reducido (brief)
+El comando `file -b` muestra el tipo de fichero en modo reducido (brief)
 
 
 ## Ejercicio 5
