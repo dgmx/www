@@ -1,8 +1,4 @@
----
-title: "Tema 8 Hardware Comercial de un Ordenador."
-parent: "Maps"
-nav_exclude: true
----
+
 
 # Tema 8: Hardware Comercial de un Ordenador. Placa Base. Tarjetas Controladoras de dispositivos de E/S
 

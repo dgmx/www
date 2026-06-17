@@ -1,9 +1,3 @@
----
-title: "Tema 4 Memoria Interna - Tipos, Direccionamiento, Características y Funciones"
-parent: "Maps"
-nav_exclude: true
----
-
 
 # Tema 4: Memoria Interna - Tipos, Direccionamiento, Características y Funciones
 

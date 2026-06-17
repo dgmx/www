@@ -1,8 +1,3 @@
----
-title: "Tema 2 Elementos Funcionales de un Ordenador Digital"
-parent: "Maps"
-nav_exclude: true
----
 
 # Tema 2: Elementos Funcionales de un Ordenador Digital
 

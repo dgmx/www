@@ -1,8 +1,3 @@
----
-title: "Tema 7 Dispositivos Periféricos de Entrada/Salida"
-parent: "Maps"
-nav_exclude: true
----
 
 # Tema 7. Dispositivos Periféricos de Entrada/Salida
 
