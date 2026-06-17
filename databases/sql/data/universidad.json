@@ -7,171 +7,171 @@
     "Consultas sobre una tabla": [
       {
         "id": 1,
-        "question": "Devuelve un listado con el primer apellido, segundo apellido y el nombre de todos los alumnos. El listado deberá estar ordenado alfabéticamente de menor a mayor por el primer apellido, segundo apellido y nombre.",
-        "answer": "SELECT a.apellido1, a.apellido2, a.nombre\n    FROM alumno a\n    ORDER BY 1, 2, 3 ASC"
+        "question": "Devuelve un listado con el primer apellido, segundo apellido y el nombre de todos los alumnos. El listado deberá estar ordenado alfabéticamente de menor a mayor por el primer apellido, segundo apellido y nombre. ::: details Mostrar solución {close}",
+        "answer": "SELECT a.apellido1, a.apellido2, a.nombre\n    FROM alumno a\n    ORDER BY 1, 2, 3 ASC;"
       },
       {
         "id": 2,
-        "question": "Averigua el nombre y los dos apellidos de los alumnos que no han dado de alta su número de teléfono en la base de datos.",
-        "answer": "SELECT a.nombre, a.apellido1, a.apellido2\n    FROM alumno a\n    WHERE a.telefono IS NULL"
+        "question": "Averigua el nombre y los dos apellidos de los alumnos que no han dado de alta su número de teléfono en la base de datos. ::: details Mostrar solución {close}",
+        "answer": "SELECT a.nombre, a.apellido1, a.apellido2\n    FROM alumno a\n    WHERE a.telefono IS NULL;"
       },
       {
         "id": 3,
-        "question": "Devuelve el listado de los alumnos que nacieron en 1999.",
-        "answer": "SELECT *\n    FROM alumno a\n    WHERE YEAR(a.fecha_nacimiento) = '1999'"
+        "question": "Devuelve el listado de los alumnos que nacieron en 1999. ::: details Mostrar solución {close}",
+        "answer": "SELECT *\n    FROM alumno a\n    WHERE YEAR(a.fecha_nacimiento) = '1999';"
       },
       {
         "id": 4,
-        "question": "Devuelve el listado de profesores que no han dado de alta su número de teléfono en la base de datos y además su nif termina en K.",
-        "answer": "SELECT *\n    FROM profesor p \n    WHERE p.telefono IS NULL AND p.nif LIKE '%K'"
+        "question": "Devuelve el listado de profesores que no han dado de alta su número de teléfono en la base de datos y además su nif termina en K. ::: details Mostrar solución {close}",
+        "answer": "SELECT *\n    FROM profesor p \n    WHERE p.telefono IS NULL AND p.nif LIKE '%K';"
       },
       {
         "id": 5,
-        "question": "Devuelve el listado de las asignaturas que se imparten en el primer cuatrimestre, en el tercer curso del grado que tiene el identificador 7.",
-        "answer": "SELECT *\n    FROM asignatura a\n    WHERE a.cuatrimestre = 1 AND a.curso = 3 AND a.id_grado = 7"
+        "question": "Devuelve el listado de las asignaturas que se imparten en el primer cuatrimestre, en el tercer curso del grado que tiene el identificador 7. ::: details Mostrar solución {close}",
+        "answer": "SELECT *\n    FROM asignatura a\n    WHERE a.cuatrimestre = 1 AND a.curso = 3 AND a.id_grado = 7;"
       }
     ],
     "Consultas multitabla (Composición interna)": [
       {
         "id": 1,
-        "question": "Devuelve un listado con los datos de todas las alumnas que se han matriculado alguna vez en el Grado en Ingeniería Informática (Plan 2015).",
-        "answer": "SELECT DISTINCT al.nombre, al.apellido1, al.apellido2\n    FROM alumno al INNER JOIN alumno_se_matricula_asignatura asm ON al.id = asm.id_alumno\n                   INNER JOIN asignatura asig ON asig.id = asm.id_asignatura\n                   INNER JOIN grado g ON g.id = asig.id_grado\n    WHERE g.nombre = 'Grado en Ingeniería Informática (Plan 2015)' AND al.sexo = 'M'"
+        "question": "Devuelve un listado con los datos de todas las alumnas que se han matriculado alguna vez en el Grado en Ingeniería Informática (Plan 2015). ::: details Mostrar solución {close}",
+        "answer": "SELECT DISTINCT al.nombre, al.apellido1, al.apellido2\n    FROM alumno al INNER JOIN alumno_se_matricula_asignatura asm ON al.id = asm.id_alumno\n                   INNER JOIN asignatura asig ON asig.id = asm.id_asignatura\n                   INNER JOIN grado g ON g.id = asig.id_grado\n    WHERE g.nombre = 'Grado en Ingeniería Informática (Plan 2015)' AND al.sexo = 'M';"
       },
       {
         "id": 1,
-        "question": "Devuelve un listado con todas las asignaturas ofertadas en el Grado en Ingeniería Informática (Plan 2015).",
-        "answer": "SELECT a.nombre\n    FROM asignatura a INNER JOIN grado g ON a.id_grado = g.id\n    WHERE g.nombre = 'Grado en Ingeniería Informática (Plan 2015)'"
+        "question": "Devuelve un listado con todas las asignaturas ofertadas en el Grado en Ingeniería Informática (Plan 2015). ::: details Mostrar solución {close}",
+        "answer": "SELECT a.nombre\n    FROM asignatura a INNER JOIN grado g ON a.id_grado = g.id\n    WHERE g.nombre = 'Grado en Ingeniería Informática (Plan 2015)';"
       },
       {
         "id": 2,
-        "question": "Devuelve un listado de los profesores junto con el nombre del departamento al que están vinculados. El listado debe devolver cuatro columnas, primer apellido, segundo apellido, nombre y nombre del departamento. El resultado estará ordenado alfabéticamente de menor a mayor por los apellidos y el nombre.",
-        "answer": "SELECT p.apellido1, p.apellido2, p.nombre, d.nombre\n    FROM profesor p INNER JOIN departamento d ON p.id_departamento = d.id\n    ORDER BY 1, 2, 3 ASC"
+        "question": "Devuelve un listado de los profesores junto con el nombre del departamento al que están vinculados. El listado debe devolver cuatro columnas, primer apellido, segundo apellido, nombre y nombre del departamento. El resultado estará ordenado alfabéticamente de menor a mayor por los apellidos y el nombre. ::: details Mostrar solución {close}",
+        "answer": "SELECT p.apellido1, p.apellido2, p.nombre, d.nombre\n    FROM profesor p INNER JOIN departamento d ON p.id_departamento = d.id\n    ORDER BY 1, 2, 3 ASC;"
       },
       {
         "id": 3,
-        "question": "Devuelve un listado con el nombre de las asignaturas, año de inicio y año de fin del curso escolar del alumno con nif 26902806M.",
-        "answer": "SELECT a.nombre, ce.anyo_inicio, ce.anyo_fin\n    FROM asignatura a INNER JOIN alumno_se_matricula_asignatura asm ON a.id = asm.id_asignatura\n                      INNER JOIN curso_escolar ce ON asm.id_curso_escolar = ce.id\n                      INNER JOIN alumno al ON al.id = asm.id_alumno\n    WHERE al.nif = '26902806M'"
+        "question": "Devuelve un listado con el nombre de las asignaturas, año de inicio y año de fin del curso escolar del alumno con nif 26902806M. ::: details Mostrar solución {close}",
+        "answer": "SELECT a.nombre, ce.anyo_inicio, ce.anyo_fin\n    FROM asignatura a INNER JOIN alumno_se_matricula_asignatura asm ON a.id = asm.id_asignatura\n                      INNER JOIN curso_escolar ce ON asm.id_curso_escolar = ce.id\n                      INNER JOIN alumno al ON al.id = asm.id_alumno\n    WHERE al.nif = '26902806M';"
       },
       {
         "id": 4,
-        "question": "Devuelve un listado con el nombre de todos los departamentos que tienen profesores que imparten alguna asignatura en el Grado en Ingeniería Informática (Plan 2015).",
-        "answer": "SELECT DISTINCT d.nombre\n    FROM departamento d INNER JOIN profesor p ON d.id = p.id_departamento\n                        INNER JOIN asignatura a ON p.id = a.id_profesor\n                        INNER JOIN grado g ON g.id = a.id_grado\n    WHERE g.nombre = 'Grado en Ingeniería Informática (Plan 2015)'"
+        "question": "Devuelve un listado con el nombre de todos los departamentos que tienen profesores que imparten alguna asignatura en el Grado en Ingeniería Informática (Plan 2015). ::: details Mostrar solución {close}",
+        "answer": "SELECT DISTINCT d.nombre\n    FROM departamento d INNER JOIN profesor p ON d.id = p.id_departamento\n                        INNER JOIN asignatura a ON p.id = a.id_profesor\n                        INNER JOIN grado g ON g.id = a.id_grado\n    WHERE g.nombre = 'Grado en Ingeniería Informática (Plan 2015)';"
       },
       {
         "id": 5,
-        "question": "Devuelve un listado con todos los alumnos que se han matriculado en alguna asignatura durante el curso escolar 2018/2019.",
-        "answer": "SELECT *\n    FROM alumno al INNER JOIN alumno_se_matricula_asignatura asm ON al.id = asm.id_alumno\n                   INNER JOIN asignatura a ON asm.id_asignatura = a.id\n                   INNER JOIN curso_escolar ce ON ce.id = asm.id_curso_escolar\n    WHERE ce.anyo_inicio = '2018' AND ce.anyo_fin = '2019'"
+        "question": "Devuelve un listado con todos los alumnos que se han matriculado en alguna asignatura durante el curso escolar 2018/2019. ::: details Mostrar solución {close}",
+        "answer": "SELECT *\n    FROM alumno al INNER JOIN alumno_se_matricula_asignatura asm ON al.id = asm.id_alumno\n                   INNER JOIN asignatura a ON asm.id_asignatura = a.id\n                   INNER JOIN curso_escolar ce ON ce.id = asm.id_curso_escolar\n    WHERE ce.anyo_inicio = '2018' AND ce.anyo_fin = '2019';"
       }
     ],
     "Consultas multitabla (Composición externa)": [
       {
         "id": 1,
-        "question": "Devuelve un listado con los nombres de todos los profesores y los departamentos que tienen vinculados. El listado también debe mostrar aquellos profesores que no tienen ningún departamento asociado. El listado debe devolver cuatro columnas, nombre del departamento, primer apellido, segundo apellido y nombre del profesor. El resultado estará ordenado alfabéticamente de menor a mayor por el nombre del departamento, apellidos y el nombre.",
-        "answer": "SELECT d.nombre, p.apellido1, p.apellido2, p.nombre\n    FROM profesor p LEFT JOIN departamento d ON p.id_departamento = d.id\n    ORDER BY 1, 2, 3, 4 ASC"
+        "question": "Devuelve un listado con los nombres de todos los profesores y los departamentos que tienen vinculados. El listado también debe mostrar aquellos profesores que no tienen ningún departamento asociado. El listado debe devolver cuatro columnas, nombre del departamento, primer apellido, segundo apellido y nombre del profesor. El resultado estará ordenado alfabéticamente de menor a mayor por el nombre del departamento, apellidos y el nombre. ::: details Mostrar solución {close}",
+        "answer": "SELECT d.nombre, p.apellido1, p.apellido2, p.nombre\n    FROM profesor p LEFT JOIN departamento d ON p.id_departamento = d.id\n    ORDER BY 1, 2, 3, 4 ASC;"
       },
       {
         "id": 2,
-        "question": "Devuelve un listado con los profesores que no están asociados a un departamento.",
-        "answer": "SELECT d.nombre, p.apellido1, p.apellido2, p.nombre\n    FROM profesor p LEFT JOIN departamento d ON p.id_departamento = d.id\n    WHERE p.id_departamento IS NULL"
+        "question": "Devuelve un listado con los profesores que no están asociados a un departamento. ::: details Mostrar solución {close}",
+        "answer": "SELECT d.nombre, p.apellido1, p.apellido2, p.nombre\n    FROM profesor p LEFT JOIN departamento d ON p.id_departamento = d.id\n    WHERE p.id_departamento IS NULL;"
       },
       {
         "id": 3,
-        "question": "Devuelve un listado con los departamentos que no tienen profesores asociados.",
-        "answer": "SELECT d.nombre\n    FROM profesor p RIGHT JOIN departamento d ON p.id_departamento = d.id\n    WHERE p.id_departamento IS NULL"
+        "question": "Devuelve un listado con los departamentos que no tienen profesores asociados. ::: details Mostrar solución {close}",
+        "answer": "SELECT d.nombre\n    FROM profesor p RIGHT JOIN departamento d ON p.id_departamento = d.id\n    WHERE p.id_departamento IS NULL;"
       },
       {
         "id": 4,
-        "question": "Devuelve un listado con los profesores que no imparten ninguna asignatura.",
-        "answer": "SELECT p.nombre, p.apellido1, p.apellido2\n    FROM profesor p LEFT JOIN asignatura a ON a.id_profesor = p.id\n    WHERE a.id_profesor IS NULL"
+        "question": "Devuelve un listado con los profesores que no imparten ninguna asignatura. ::: details Mostrar solución {close}",
+        "answer": "SELECT p.nombre, p.apellido1, p.apellido2\n    FROM profesor p LEFT JOIN asignatura a ON a.id_profesor = p.id\n    WHERE a.id_profesor IS NULL;"
       },
       {
         "id": 5,
-        "question": "Devuelve un listado con las asignaturas que no tienen un profesor asignado.",
-        "answer": "SELECT a.nombre\n    FROM profesor p RIGHT JOIN asignatura a ON a.id_profesor = p.id\n    WHERE a.id_profesor IS NULL"
+        "question": "Devuelve un listado con las asignaturas que no tienen un profesor asignado. ::: details Mostrar solución {close}",
+        "answer": "SELECT a.nombre\n    FROM profesor p RIGHT JOIN asignatura a ON a.id_profesor = p.id\n    WHERE a.id_profesor IS NULL;"
       },
       {
         "id": 6,
-        "question": "Devuelve un listado con todos los departamentos que tienen alguna asignatura que no se haya impartido en ningún curso escolar. El resultado debe mostrar el nombre del departamento y el nombre de la asignatura que no se haya impartido nunca.",
-        "answer": "SELECT d.nombre as 'Departamento', a.nombre as 'Asignatura'\n    FROM ((departamento d INNER JOIN profesor p ON d.id = p.id_departamento)\n                          INNER JOIN asignatura a ON p.id = a.id_profesor)\n                          LEFT JOIN alumno_se_matricula_asignatura asm ON a.id = asm.id_asignatura\n    WHERE asm.id_curso_escolar IS NULL"
+        "question": "Devuelve un listado con todos los departamentos que tienen alguna asignatura que no se haya impartido en ningún curso escolar. El resultado debe mostrar el nombre del departamento y el nombre de la asignatura que no se haya impartido nunca. ::: details Mostrar solución {close}",
+        "answer": "SELECT d.nombre as 'Departamento', a.nombre as 'Asignatura'\n    FROM ((departamento d INNER JOIN profesor p ON d.id = p.id_departamento)\n                          INNER JOIN asignatura a ON p.id = a.id_profesor)\n                          LEFT JOIN alumno_se_matricula_asignatura asm ON a.id = asm.id_asignatura\n    WHERE asm.id_curso_escolar IS NULL;"
       }
     ],
     "Consultas resumen": [
       {
         "id": 1,
-        "question": "Devuelve el número total de alumnas que hay.",
-        "answer": "SELECT COUNT(a.id)\n    FROM alumno a\n    WHERE a.sexo = 'M'"
+        "question": "Devuelve el número total de alumnas que hay. ::: details Mostrar solución {close}",
+        "answer": "SELECT COUNT(a.id)\n    FROM alumno a\n    WHERE a.sexo = 'M';"
       },
       {
         "id": 2,
-        "question": "Calcula cuántos alumnos nacieron en 1999.",
-        "answer": "SELECT COUNT(*)\n    FROM alumno a\n    WHERE YEAR(a.fecha_nacimiento) = '1999'"
+        "question": "Calcula cuántos alumnos nacieron en 1999. ::: details Mostrar solución {close}",
+        "answer": "SELECT COUNT(*)\n    FROM alumno a\n    WHERE YEAR(a.fecha_nacimiento) = '1999';"
       },
       {
         "id": 3,
-        "question": "Calcula cuántos profesores hay en cada departamento. El resultado sólo debe mostrar dos columnas, una con el nombre del departamento y otra con el número de profesores que hay en ese departamento. El resultado sólo debe incluir los departamentos que tienen profesores asociados y deberá estar ordenado de mayor a menor por el número de profesores.",
-        "answer": "SELECT d.nombre, COUNT(*) AS 'Cantidad de profesores'\n    FROM departamento d INNER JOIN profesor p ON p.id_departamento = d.id\n    GROUP BY d.nombre\n    ORDER BY 2 DESC"
+        "question": "Calcula cuántos profesores hay en cada departamento. El resultado sólo debe mostrar dos columnas, una con el nombre del departamento y otra con el número de profesores que hay en ese departamento. El resultado sólo debe incluir los departamentos que tienen profesores asociados y deberá estar ordenado de mayor a menor por el número de profesores. ::: details Mostrar solución {close}",
+        "answer": "SELECT d.nombre, COUNT(*) AS 'Cantidad de profesores'\n    FROM departamento d INNER JOIN profesor p ON p.id_departamento = d.id\n    GROUP BY d.nombre\n    ORDER BY 2 DESC;"
       },
       {
         "id": 4,
-        "question": "Devuelve un listado con todos los departamentos y el número de profesores que hay en cada uno de ellos. Tenga en cuenta que pueden existir departamentos que no tienen profesores asociados. Estos departamentos también tienen que aparecer en el listado.",
-        "answer": "SELECT d.nombre, COUNT(p.id_departamento) AS 'Cantidad de profesores'\n    FROM departamento d LEFT JOIN profesor p ON p.id_departamento = d.id\n    GROUP BY d.nombre\n    ORDER BY 2 DESC"
+        "question": "Devuelve un listado con todos los departamentos y el número de profesores que hay en cada uno de ellos. Tenga en cuenta que pueden existir departamentos que no tienen profesores asociados. Estos departamentos también tienen que aparecer en el listado. ::: details Mostrar solución {close}",
+        "answer": "SELECT d.nombre, COUNT(p.id_departamento) AS 'Cantidad de profesores'\n    FROM departamento d LEFT JOIN profesor p ON p.id_departamento = d.id\n    GROUP BY d.nombre\n    ORDER BY 2 DESC;"
       },
       {
         "id": 5,
-        "question": "Devuelve un listado con el nombre de todos los grados existentes en la base de datos y el número de asignaturas que tiene cada uno. Tenga en cuenta que pueden existir grados que no tienen asignaturas asociadas. Estos grados también tienen que aparecer en el listado. El resultado deberá estar ordenado de mayor a menor por el número de asignaturas.",
-        "answer": "SELECT g.nombre, COUNT(a.id) AS 'Cantidad de Asignaturas'\n    FROM grado g INNER JOIN asignatura a ON g.id = a.id_grado\n    GROUP BY g.nombre\n    ORDER BY 2 DESC"
+        "question": "Devuelve un listado con el nombre de todos los grados existentes en la base de datos y el número de asignaturas que tiene cada uno. Tenga en cuenta que pueden existir grados que no tienen asignaturas asociadas. Estos grados también tienen que aparecer en el listado. El resultado deberá estar ordenado de mayor a menor por el número de asignaturas. ::: details Mostrar solución {close}",
+        "answer": "SELECT g.nombre, COUNT(a.id) AS 'Cantidad de Asignaturas'\n    FROM grado g INNER JOIN asignatura a ON g.id = a.id_grado\n    GROUP BY g.nombre\n    ORDER BY 2 DESC;"
       },
       {
         "id": 6,
-        "question": "Devuelve un listado con el nombre de todos los grados existentes en la base de datos y el número de asignaturas que tiene cada uno, de los grados que tengan más de 40 asignaturas asociadas.",
-        "answer": "SELECT g.nombre, COUNT(a.id) AS 'Cantidad de asignaturas'\n    FROM grado g INNER JOIN asignatura a ON g.id = a.id_grado\n    GROUP BY g.nombre\n    HAVING COUNT(a.id) > 40"
+        "question": "Devuelve un listado con el nombre de todos los grados existentes en la base de datos y el número de asignaturas que tiene cada uno, de los grados que tengan más de 40 asignaturas asociadas. ::: details Mostrar solución {close}",
+        "answer": "SELECT g.nombre, COUNT(a.id) AS 'Cantidad de asignaturas'\n    FROM grado g INNER JOIN asignatura a ON g.id = a.id_grado\n    GROUP BY g.nombre\n    HAVING COUNT(a.id) > 40;"
       },
       {
         "id": 7,
-        "question": "Devuelve un listado que muestre el nombre de los grados y la suma del número total de créditos que hay para cada tipo de asignatura. El resultado debe tener tres columnas: nombre del grado, tipo de asignatura y la suma de los créditos de todas las asignaturas que hay de ese tipo. Ordene el resultado de mayor a menor por el número total de crédidos.",
-        "answer": "SELECT g.nombre, a.tipo, SUM(a.creditos) AS 'Cantidad de créditos'\n    FROM grado g INNER JOIN asignatura a ON g.id = a.id_grado\n    GROUP BY a.tipo, g.nombre\n    ORDER BY 3 DESC"
+        "question": "Devuelve un listado que muestre el nombre de los grados y la suma del número total de créditos que hay para cada tipo de asignatura. El resultado debe tener tres columnas: nombre del grado, tipo de asignatura y la suma de los créditos de todas las asignaturas que hay de ese tipo. Ordene el resultado de mayor a menor por el número total de crédidos. ::: details Mostrar solución {close}",
+        "answer": "SELECT g.nombre, a.tipo, SUM(a.creditos) AS 'Cantidad de créditos'\n    FROM grado g INNER JOIN asignatura a ON g.id = a.id_grado\n    GROUP BY a.tipo, g.nombre\n    ORDER BY 3 DESC;"
       },
       {
         "id": 8,
-        "question": "Devuelve un listado que muestre cuántos alumnos se han matriculado de alguna asignatura en cada uno de los cursos escolares. El resultado deberá mostrar dos columnas, una columna con el año de inicio del curso escolar y otra con el número de alumnos matriculados.",
-        "answer": "SELECT ce.anyo_inicio, COUNT(DISTINCT asm.id_alumno)\n    FROM alumno a INNER JOIN alumno_se_matricula_asignatura asm ON a.id = asm.id_alumno\n                  INNER JOIN asignatura asig ON asig.id = asm.id_asignatura\n                  INNER JOIN curso_escolar ce ON ce.id = asm.id_curso_escolar\n    GROUP BY ce.anyo_inicio"
+        "question": "Devuelve un listado que muestre cuántos alumnos se han matriculado de alguna asignatura en cada uno de los cursos escolares. El resultado deberá mostrar dos columnas, una columna con el año de inicio del curso escolar y otra con el número de alumnos matriculados. ::: details Mostrar solución {close}",
+        "answer": "SELECT ce.anyo_inicio, COUNT(DISTINCT asm.id_alumno)\n    FROM alumno a INNER JOIN alumno_se_matricula_asignatura asm ON a.id = asm.id_alumno\n                  INNER JOIN asignatura asig ON asig.id = asm.id_asignatura\n                  INNER JOIN curso_escolar ce ON ce.id = asm.id_curso_escolar\n    GROUP BY ce.anyo_inicio;"
       },
       {
         "id": 9,
-        "question": "Devuelve un listado con el número de asignaturas que imparte cada profesor. El listado debe tener en cuenta aquellos profesores que no imparten ninguna asignatura. El resultado mostrará cinco columnas: id, nombre, primer apellido, segundo apellido y número de asignaturas. El resultado estará ordenado de mayor a menor por el número de asignaturas.",
-        "answer": "SELECT p.id, p.nombre, p.apellido1, p.apellido2, COUNT(a.id_profesor)\n    FROM asignatura a RIGHT JOIN profesor p ON a.id_profesor = p.id\n    GROUP BY p.id\n    ORDER BY 5 DESC"
+        "question": "Devuelve un listado con el número de asignaturas que imparte cada profesor. El listado debe tener en cuenta aquellos profesores que no imparten ninguna asignatura. El resultado mostrará cinco columnas: id, nombre, primer apellido, segundo apellido y número de asignaturas. El resultado estará ordenado de mayor a menor por el número de asignaturas. ::: details Mostrar solución {close}",
+        "answer": "SELECT p.id, p.nombre, p.apellido1, p.apellido2, COUNT(a.id_profesor)\n    FROM asignatura a RIGHT JOIN profesor p ON a.id_profesor = p.id\n    GROUP BY p.id\n    ORDER BY 5 DESC;"
       }
     ],
     "Subconsultas": [
       {
         "id": 1,
-        "question": "Devuelve todos los datos del alumno más joven.",
-        "answer": "SELECT *\n    FROM alumno a \n    WHERE a.fecha_nacimiento = (SELECT MAX(a.fecha_nacimiento)\n                                FROM alumno a)"
+        "question": "Devuelve todos los datos del alumno más joven. ::: details Mostrar solución {close}",
+        "answer": "SELECT *\n    FROM alumno a \n    WHERE a.fecha_nacimiento = (SELECT MAX(a.fecha_nacimiento)\n                                FROM alumno a);"
       },
       {
         "id": 2,
-        "question": "Devuelve un listado con los profesores que no están asociados a un departamento.",
-        "answer": "SELECT p.nombre, p.apellido1, p.apellido2\n    FROM profesor p \n    WHERE p.id_departamento NOT IN (SELECT d.id\n                                    FROM departamento d)"
+        "question": "Devuelve un listado con los profesores que no están asociados a un departamento. ::: details Mostrar solución {close}",
+        "answer": "SELECT p.nombre, p.apellido1, p.apellido2\n    FROM profesor p \n    WHERE p.id_departamento NOT IN (SELECT d.id\n                                    FROM departamento d);"
       },
       {
         "id": 3,
-        "question": "Devuelve un listado con los departamentos que no tienen profesores asociados.",
-        "answer": "SELECT d.nombre\n    FROM departamento d \n    WHERE d.id NOT IN (SELECT DISTINCT p.id_departamento \n                       FROM profesor p)"
+        "question": "Devuelve un listado con los departamentos que no tienen profesores asociados. ::: details Mostrar solución {close}",
+        "answer": "SELECT d.nombre\n    FROM departamento d \n    WHERE d.id NOT IN (SELECT DISTINCT p.id_departamento \n                       FROM profesor p);"
       },
       {
         "id": 4,
-        "question": "Devuelve un listado con los profesores que tienen un departamento asociado y que no imparten ninguna asignatura.",
-        "answer": "SELECT p.nombre, p.apellido1, p.apellido2\n    FROM profesor p \n    WHERE p.id_departamento IN (SELECT d.id\n                                FROM departamento d)\n            AND NOT EXISTS (SELECT DISTINCT a.id_profesor\n                            FROM asignatura a\n                            WHERE a.id_profesor = p.id)"
+        "question": "Devuelve un listado con los profesores que tienen un departamento asociado y que no imparten ninguna asignatura. ::: details Mostrar solución {close}",
+        "answer": "SELECT p.nombre, p.apellido1, p.apellido2\n    FROM profesor p \n    WHERE p.id_departamento IN (SELECT d.id\n                                FROM departamento d)\n            AND NOT EXISTS (SELECT DISTINCT a.id_profesor\n                            FROM asignatura a\n                            WHERE a.id_profesor = p.id);"
       },
       {
         "id": 5,
-        "question": "Devuelve un listado con las asignaturas que no tienen un profesor asignado.",
-        "answer": "SELECT a.nombre\n    FROM asignatura a \n    WHERE NOT EXISTS (SELECT p.id \n                      FROM profesor p\n                      WHERE p.id = a.id_profesor)"
+        "question": "Devuelve un listado con las asignaturas que no tienen un profesor asignado. ::: details Mostrar solución {close}",
+        "answer": "SELECT a.nombre\n    FROM asignatura a \n    WHERE NOT EXISTS (SELECT p.id \n                      FROM profesor p\n                      WHERE p.id = a.id_profesor);"
       },
       {
         "id": 6,
-        "question": "Devuelve un listado con todos los departamentos que no han impartido asignaturas en ningún curso escolar.",
-        "answer": "SELECT * \n    FROM departamento \n    WHERE id NOT IN \n        (SELECT id_departamento \n        FROM profesor p \n        WHERE EXISTS (SELECT id_profesor \n                      FROM asignatura a\n                      WHERE p.id = a.id_profesor \n                            AND NOT EXISTS (SELECT id_asignatura \n                                            FROM alumno_se_matricula_asignatura asm\n                                            WHERE a.id = asm.id_asignatura) \n                     ) \n        )"
+        "question": "Devuelve un listado con todos los departamentos que no han impartido asignaturas en ningún curso escolar. ::: details Mostrar solución {close}",
+        "answer": "SELECT * \n    FROM departamento \n    WHERE id NOT IN \n        (SELECT id_departamento \n        FROM profesor p \n        WHERE EXISTS (SELECT id_profesor \n                      FROM asignatura a\n                      WHERE p.id = a.id_profesor \n                            AND NOT EXISTS (SELECT id_asignatura \n                                            FROM alumno_se_matricula_asignatura asm\n                                            WHERE a.id = asm.id_asignatura) \n                     ) \n        );"
       }
     ]
   }
