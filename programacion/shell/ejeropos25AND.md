@@ -98,3 +98,32 @@ chmod 700 $FIREWALL
 echo "iptables -A INPUT -i 10 -j ACCEPT" >> $FIREWALL
 echo "iptables -A OUTPUT -o 10 -j ACCEPT" >> $FIREWALL
 ```
+
+
+Ejemplo realizado en un entorno de prueba:
+```bash
+ 2239  mkdir pruebas
+ 2240  mkdir pruebas/etc/
+ 2241  mkdir pruebas/etc/iptables
+ 2242  cd pruebas
+
+ 2253  DIR=etc/iptables
+ 2254  BASE=etc/iptables/base_iptables.sh
+ 2255  FIREWALL=$DIR/firewall.sh
+ 2256  cat $BASE>$FIREWALL
+ 2257  ls etc/iptables
+ 2258  chmod 700 $FIREWALL
+ 2259  ls etc/iptables
+ 2260  echo "iptables -A INPUT -i lo -j ACCEPT" >> $FIREWALL
+ 2261  ls etc/iptables
+ 2262  cat $BASE>$FIREWALL
+ 2263  ls etc/iptables
+ 2264  echo "iptables -A INPUT -i lo -j ACCEPT" >> $FIREWALL
+ 2265  cat $FIREWALL
+
+ 2269  echo "iptables -A OUTPUT -o lo -j ACCEPT" >> $FIREWALL
+ 2270  cat $FIREWALL
+ 2271  nano $FIREWALL
+```
+
+> La instrucción `chown root:root $FIREWALL` no se ha realizado al estar en una máquina macOS.
