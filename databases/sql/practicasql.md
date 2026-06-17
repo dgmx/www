@@ -27,11 +27,11 @@ CREATE TABLE Departamento (
 CREATE TABLE Empleado (
   codEmp INT UNSIGNED PRIMARY KEY,
   nomEmp VARCHAR(30) NOT NULL,
-  sexEmp CHAR(1) NOT NULL CHECK (sexEmp IN ('F', 'M')),
+  sexEmp ENUM('F', 'M') NOT NULL,
   fecNac DATE NOT NULL,
   fecIncorporacion DATE NOT NULL,
-  salEmp DECIMAL(10,2) NOT NULL,
-  comisionE DECIMAL(10,2) NOT NULL,
+  salEmp DECIMAL(7,2) NOT NULL,
+  comisionE DECIMAL(7,2) NOT NULL,
   cargoE VARCHAR(15) NOT NULL,
   nroDpto INT UNSIGNED NOT NULL,
   FOREIGN KEY (nroDpto) REFERENCES Departamento(codDpto)
@@ -142,7 +142,7 @@ CREATE TABLE fabricante (
 CREATE TABLE producto (
   codigo INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
   nombre VARCHAR(100) NOT NULL,
-  precio DOUBLE NOT NULL,
+  precio DECIMAL(6,2) NOT NULL,
   codigo_fabricante INT UNSIGNED NOT NULL,
   FOREIGN KEY (codigo_fabricante) REFERENCES fabricante(codigo)
 );
@@ -271,7 +271,7 @@ CREATE TABLE alumno (
   DNI INT UNSIGNED PRIMARY KEY,
   nombre VARCHAR(100) NOT NULL,
   nota DOUBLE NOT NULL,
-  opcion CHAR(1) NOT NULL CHECK (opcion IN ('A', 'B', 'C', 'D'))
+  opcion ENUM('A', 'B', 'C', 'D') NOT NULL
 );
 
 CREATE TABLE estudio (
@@ -283,7 +283,7 @@ CREATE TABLE estudio (
 CREATE TABLE preinscripcion (
   DNIAlumno INT UNSIGNED,
   CodEstudio VARCHAR(10),
-  admitido CHAR(1) NOT NULL CHECK (admitido IN ('S', 'N')),
+  admitido ENUM('S', 'N') NOT NULL,
   orden INT UNSIGNED NOT NULL,
   PRIMARY KEY (DNIAlumno, CodEstudio),
   FOREIGN KEY (DNIAlumno) REFERENCES alumno(DNI),
