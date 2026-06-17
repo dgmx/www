@@ -4,8 +4,8 @@
 
 Dadas las siguientes tablas:
 
-- **Empleado** (codEmp, nomEmp, sexEmp, fecNac, fecIncorporacion, salEmp, comis, cargo, nroDpto)
-- **Departamento** (codDpto, nombreDpto, ciudad, director)
+- **Empleado** (codEmp, nomEmp, sexEmp, fecNac, fecIncorporacion, salEmp, comisionE, cargoE, nroDpto)
+- **Departamento** (codDpto, nombreDpto, ciudad, codDirector)
 
 ### a) Crea la base de datos Empresa para trabajar sobre ella.
 
@@ -63,7 +63,7 @@ INSERT INTO Departamento (codDpto, nombreDpto, ciudad, codDirector) VALUES
 
 **Inserción de datos en la tabla Empleado:**
 
-| codEmp   | nomEmp           | sexEmp | fecNac     | fecIncorporacion | salEmp | comis | cargo     | nroDpto |
+| codEmp   | nomEmp           | sexEmp | fecNac     | fecIncorporacion | salEmp | comisionE | cargoE     | nroDpto |
 |----------|------------------|--------|------------|------------------|--------|-------|-----------|---------|
 | 31.840.269 | María Rojas    | F      | 15/01/1985 | 16/05/2000       | 1500   | 200   | Gerente   | 1000    |
 | 74.758.963 | Juan Martín    | M      | 23/04/1980 | 29/04/2019       | 1000   | 50    | Comercial | 2500    |
@@ -379,15 +379,15 @@ CREATE TABLE pedido (
 | 8  | Pepe   | Ruiz      | Santana   | Huelva | 200       |
 
 ```sql
-INSERT INTO cliente VALUES
-(1, 'Aarón',  'Rivero', 'Gómez',   'Almería', 100),
-(2, 'Adela',  'Sala',   'Díaz',    'Granada', 200),
-(3, 'Adolfo', 'Rubio',  'Flores',  'Sevilla', NULL),
-(4, 'Adrián', 'Suárez', NULL,      'Jaén',    300),
-(5, 'Marcos', 'Loyola', 'Mendez',  'Almería', 200),
-(6, 'María',  'Santana','Moreno',  'Cádiz',   100),
-(7, 'Pilar',  'Ruiz',   NULL,      'Sevilla', 300),
-(8, 'Pepe',   'Ruiz',   'Santana', 'Huelva',  200);
+INSERT INTO cliente (nombre, apellido1, apellido2, ciudad, categoria) VALUES
+('Aarón',  'Rivero', 'Gómez',   'Almería', 100),
+('Adela',  'Sala',   'Díaz',    'Granada', 200),
+('Adolfo', 'Rubio',  'Flores',  'Sevilla', NULL),
+('Adrián', 'Suárez', NULL,      'Jaén',    300),
+('Marcos', 'Loyola', 'Mendez',  'Almería', 200),
+('María',  'Santana','Moreno',  'Cádiz',   100),
+('Pilar',  'Ruiz',   NULL,      'Sevilla', 300),
+('Pepe',   'Ruiz',   'Santana', 'Huelva',  200);
 ```
 
 **Tabla COMERCIAL:**
@@ -401,12 +401,12 @@ INSERT INTO cliente VALUES
 | 5  | Antonio | Carretero  | Ortega    | 0.12     |
 
 ```sql
-INSERT INTO comercial VALUES
-(1, 'Daniel',  'Sáez',      'Vega',   0.15),
-(2, 'Juan',    'Gómez',     'López',  0.13),
-(3, 'Diego',   'Flores',    'Salas',  0.11),
-(4, 'Marta',   'Herrera',   'Gil',    0.14),
-(5, 'Antonio', 'Carretero', 'Ortega', 0.12);
+INSERT INTO comercial (nombre, apellido1, apellido2, comision) VALUES
+('Daniel',  'Sáez',      'Vega',   0.15),
+('Juan',    'Gómez',     'López',  0.13),
+('Diego',   'Flores',    'Salas',  0.11),
+('Marta',   'Herrera',   'Gil',    0.14),
+('Antonio', 'Carretero', 'Ortega', 0.12);
 ```
 
 **Tabla PEDIDOS:**
@@ -425,17 +425,17 @@ INSERT INTO comercial VALUES
 | 10 | 369.36  | 06/07/1986 | 2         | 5           |
 
 ```sql
-INSERT INTO pedido VALUES
-(1,  150.5,   '2019-10-05', 5, 2),
-(2,  270,     '2016-09-10', 1, 5),
-(3,  65.25,   '2017-10-05', 2, 1),
-(4,  110.5,   '2019-08-17', 8, 3),
-(5,  950,     '2019-05-25', 5, 2),
-(6,  2010.50, '2019-01-10', 3, 4),
-(7,  5000,    '2019-01-01', 7, 3),
-(8,  1983,    '2015-08-05', 6, 4),
-(9,  250.36,  '1983-09-05', 1, 1),
-(10, 369.36,  '1986-07-06', 2, 5);
+INSERT INTO pedido (total, fecha, id_cliente, id_comercial) VALUES
+(150.5,   '2019-10-05', 5, 2),
+(270,     '2016-09-10', 1, 5),
+(65.25,   '2017-10-05', 2, 1),
+(110.5,   '2019-08-17', 8, 3),
+(950,     '2019-05-25', 5, 2),
+(2010.50, '2019-01-10', 3, 4),
+(5000,    '2019-01-01', 7, 3),
+(1983,    '2015-08-05', 6, 4),
+(250.36,  '1983-09-05', 1, 1),
+(369.36,  '1986-07-06', 2, 5);
 ```
 
 ### d) Realiza las siguientes actualizaciones:
@@ -443,7 +443,7 @@ INSERT INTO pedido VALUES
 - Añade a la tabla cliente las columnas email y el teléfono.
 
 ```sql
-ALTER TABLE cliente ADD (email VARCHAR(100), telefono INT);
+ALTER TABLE cliente ADD email VARCHAR(100), ADD telefono INT;
 ```
 
 - Añade también teléfono para la tabla comercial.
@@ -492,7 +492,7 @@ erDiagram
     RECIBE {
         int id_Alumno PK, FK
         varchar Cod_Asignatura PK, FK
-        varchar curso
+        varchar curso PK
     }
     PROFESOR ||--o{ ASIGNATURA : imparte
     ALUMNO ||--o{ RECIBE : cursa
