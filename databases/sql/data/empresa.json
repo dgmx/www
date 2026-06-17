@@ -1,0 +1,265 @@
+{
+  "name": "Empresa",
+  "key": "empresa",
+  "schema": [
+    {
+      "table": "departamento",
+      "columns": "cddep CHAR(2) PRIMARY KEY,\n  nombre VARCHAR(30) NOT NULL,\n  ciudad VARCHAR(20)"
+    },
+    {
+      "table": "empleado",
+      "columns": "cdemp CHAR(3) PRIMARY KEY,\n  nombre VARCHAR(30) NOT NULL,\n  fecha_ingreso DATE DEFAULT NULL,\n  salario DECIMAL(6,2) UNSIGNED,\n  cdjefe CHAR(3) DEFAULT NULL,\n  cddep CHAR(2),\n  FOREIGN KEY (cdjefe) REFERENCES empleado(cdemp),\n  FOREIGN KEY (cddep) REFERENCES departamento(cddep)"
+    },
+    {
+      "table": "proyecto",
+      "columns": "cdpro CHAR(3) PRIMARY KEY,\n  nombre VARCHAR(30) NOT NULL,\n  cddep CHAR(2),\n  FOREIGN KEY (cddep) REFERENCES departamento(cddep)"
+    },
+    {
+      "table": "trabaja",
+      "columns": "cdemp CHAR(3),\n  cdpro CHAR(3),\n  nhoras INT,\n  PRIMARY KEY (cdemp, cdpro),\n  FOREIGN KEY (cdemp) REFERENCES empleado(cdemp),\n  FOREIGN KEY (cdpro) REFERENCES proyecto(cdpro)"
+    }
+  ],
+  "total": 52,
+  "sections": {
+    "Consultas sobre una tabla": [
+      {
+        "id": 1,
+        "question": "Seleccionar todos los empleados.",
+        "answer": "SELECT * FROM empleado;"
+      },
+      {
+        "id": 2,
+        "question": "Seleccionar nombre y salario de los empleados.",
+        "answer": "SELECT nombre, salario FROM empleado;"
+      },
+      {
+        "id": 3,
+        "question": "Filtrar empleados con salario mayor a 3000.",
+        "answer": "SELECT * FROM empleado WHERE salario > 3000;"
+      },
+      {
+        "id": 4,
+        "question": "Buscar empleados con nombre que empiece con 'A'.",
+        "answer": "SELECT * FROM empleado WHERE nombre LIKE 'A%';"
+      },
+      {
+        "id": 5,
+        "question": "Ordenar empleados por salario descendente.",
+        "answer": "SELECT * FROM empleado ORDER BY salario DESC;"
+      },
+      {
+        "id": 6,
+        "question": "De la tabla EMPLEADO, el código, nombre y salario de los empleados ordenados por nombre ascendentemente y por salario de manera descendente.",
+        "answer": "SELECT cdemp, nombre, salario FROM empleado ORDER BY nombre ASC, salario DESC;"
+      },
+      {
+        "id": 7,
+        "question": "Todos los nombres de departamentos menos los de Sevilla o Granada.",
+        "answer": "SELECT nombre FROM departamento WHERE ciudad NOT IN ('Sevilla', 'Granada');"
+      },
+      {
+        "id": 8,
+        "question": "Empleados con salario entre 2000 y 5000.",
+        "answer": "SELECT * FROM empleado WHERE salario BETWEEN 2000 AND 5000;"
+      },
+      {
+        "id": 9,
+        "question": "Empleados sin jefe asignado.",
+        "answer": "SELECT * FROM empleado WHERE cdjefe IS NULL;"
+      },
+      {
+        "id": 10,
+        "question": "Mostrar los 5 empleados con mayor salario.",
+        "answer": "SELECT * FROM empleado ORDER BY salario DESC LIMIT 5;"
+      },
+      {
+        "id": 11,
+        "question": "Datos de los empleados cuyo nombre comienza por \"A\".",
+        "answer": "SELECT * FROM empleado WHERE LOWER(nombre) LIKE 'a%';"
+      },
+      {
+        "id": 12,
+        "question": "Mostrar empleados sin departamento asignado.",
+        "answer": "SELECT e.nombre FROM empleado e LEFT JOIN departamento d ON e.cddep = d.cddep WHERE d.cddep IS NULL;"
+      },
+      {
+        "id": 13,
+        "question": "Mostrar departamentos sin empleados asignados.",
+        "answer": "SELECT d.nombre FROM departamento d LEFT JOIN empleado e ON d.cddep = e.cddep WHERE e.cdemp IS NULL;"
+      },
+      {
+        "id": 14,
+        "question": "Mostrar proyectos sin empleados trabajando en ellos.",
+        "answer": "SELECT p.nombre FROM proyecto p LEFT JOIN trabaja t ON p.cdpro = t.cdpro WHERE t.cdemp IS NULL;"
+      }
+    ],
+    "Consultas multitabla (Composición interna)": [
+      {
+        "id": 1,
+        "question": "Listar empleados junto con su departamento.",
+        "answer": "SELECT e.nombre AS empleado, d.nombre AS departamento FROM empleado e JOIN departamento d ON e.cddep = d.cddep;"
+      },
+      {
+        "id": 2,
+        "question": "Mostrar empleados y sus jefes (auto-relación en empleado).",
+        "answer": "SELECT e1.nombre AS empleado, e2.nombre AS jefe FROM empleado e1 LEFT JOIN empleado e2 ON e1.cdjefe = e2.cdemp;"
+      },
+      {
+        "id": 3,
+        "question": "Listar empleados y los proyectos en los que trabajan.",
+        "answer": "SELECT e.nombre AS empleado, p.nombre AS proyecto, t.nhoras FROM empleado e JOIN trabaja t ON e.cdemp = t.cdemp JOIN proyecto p ON t.cdpro = p.cdpro;"
+      },
+      {
+        "id": 4,
+        "question": "Departamentos con sus proyectos asignados.",
+        "answer": "SELECT d.nombre AS departamento, p.nombre AS proyecto FROM departamento d JOIN proyecto p ON d.cddep = p.cddep;"
+      },
+      {
+        "id": 5,
+        "question": "Empleados, sus departamentos y los proyectos en los que trabajan.",
+        "answer": "SELECT e.nombre AS empleado, d.nombre AS departamento, p.nombre AS proyecto FROM empleado e JOIN departamento d ON e.cddep = d.cddep JOIN trabaja t ON e.cdemp = t.cdemp JOIN proyecto p ON t.cdpro = p.cdpro;"
+      },
+      {
+        "id": 6,
+        "question": "Mostrar empleados con su departamento.",
+        "answer": "SELECT e.nombre, d.nombre AS departamento FROM empleado e JOIN departamento d ON e.cddep = d.cddep;"
+      },
+      {
+        "id": 7,
+        "question": "Nombre de cada empleado de la base de datos junto al nombre de su jefe.",
+        "answer": "SELECT e.nombre AS nombre_empleado, j.nombre AS nombre_jefe FROM empleado e INNER JOIN empleado j ON e.cdjefe = j.cdemp;"
+      }
+    ],
+    "Consultas multitabla (Composición externa)": [
+      {
+        "id": 1,
+        "question": "Mostrar empleados y proyectos, incluyendo los empleados sin proyectos asignados.",
+        "answer": "SELECT e.nombre AS empleado, p.nombre AS proyecto FROM empleado e LEFT JOIN trabaja t ON e.cdemp = t.cdemp LEFT JOIN proyecto p ON t.cdpro = p.cdpro;"
+      },
+      {
+        "id": 2,
+        "question": "Mostrar proyectos y empleados, incluyendo proyectos sin empleados asignados.",
+        "answer": "SELECT p.nombre AS proyecto, e.nombre AS empleado FROM proyecto p LEFT JOIN trabaja t ON p.cdpro = t.cdpro LEFT JOIN empleado e ON t.cdemp = e.cdemp;"
+      }
+    ],
+    "Consultas resumen": [
+      {
+        "id": 1,
+        "question": "Contar el número de empleados.",
+        "answer": "SELECT COUNT(*) AS total_empleados FROM empleado;"
+      },
+      {
+        "id": 2,
+        "question": "Calcular el salario promedio.",
+        "answer": "SELECT AVG(salario) AS salario_promedio FROM empleado;"
+      },
+      {
+        "id": 3,
+        "question": "Obtener el salario máximo y mínimo.",
+        "answer": "SELECT MAX(salario) AS salario_max, MIN(salario) AS salario_min FROM empleado;"
+      },
+      {
+        "id": 4,
+        "question": "Sumar los salarios de todos los empleados.",
+        "answer": "SELECT SUM(salario) AS total_salarios FROM empleado;"
+      },
+      {
+        "id": 5,
+        "question": "Agrupar empleados por departamento y contar cuántos hay en cada uno.",
+        "answer": "SELECT cddep, COUNT(*) AS cantidad FROM empleado GROUP BY cddep;"
+      },
+      {
+        "id": 6,
+        "question": "Número de empleados con departamento asignado.",
+        "answer": "SELECT COUNT(*) AS num_empl_dep FROM empleado WHERE cddep IS NOT NULL;"
+      },
+      {
+        "id": 7,
+        "question": "Media de horas trabajadas en proyectos de la tabla trabaja.",
+        "answer": "SELECT AVG(nhoras) AS media_horas_trabajadas FROM trabaja;"
+      },
+      {
+        "id": 8,
+        "question": "Contar empleados por departamento (incluye departamentos sin empleados).",
+        "answer": "SELECT d.nombre AS departamento, COUNT(e.cdemp) AS total_empleados FROM departamento d LEFT JOIN empleado e ON d.cddep = e.cddep GROUP BY d.nombre;"
+      },
+      {
+        "id": 9,
+        "question": "Total de horas trabajadas por cada empleado.",
+        "answer": "SELECT e.nombre AS empleado, SUM(t.nhoras) AS total_horas FROM empleado e JOIN trabaja t ON e.cdemp = t.cdemp GROUP BY e.nombre;"
+      },
+      {
+        "id": 10,
+        "question": "Salario promedio por departamento.",
+        "answer": "SELECT d.nombre AS departamento, AVG(e.salario) AS salario_promedio FROM departamento d JOIN empleado e ON d.cddep = e.cddep GROUP BY d.nombre;"
+      },
+      {
+        "id": 11,
+        "question": "Número de empleados que trabajan en cada proyecto.",
+        "answer": "SELECT p.nombre AS proyecto, COUNT(t.cdemp) AS total_empleados FROM proyecto p JOIN trabaja t ON p.cdpro = t.cdpro GROUP BY p.nombre;"
+      },
+      {
+        "id": 12,
+        "question": "Departamento con el mayor número de empleados.",
+        "answer": "SELECT d.nombre AS departamento, COUNT(e.cdemp) AS total_empleados FROM departamento d JOIN empleado e ON d.cddep = e.cddep GROUP BY d.nombre ORDER BY total_empleados DESC LIMIT 1;"
+      },
+      {
+        "id": 13,
+        "question": "Total de empleados de cada departamento que ganan un salario superior a 1500€, pero que sólo se mostrarán los departamentos con más de 2 empleados con salario superior a 1500€.",
+        "answer": "SELECT cddep, COUNT(*) AS total_empleados FROM empleado WHERE salario > 1500 GROUP BY cddep HAVING COUNT(*) > 2;"
+      },
+      {
+        "id": 14,
+        "question": "Nombre del departamento con más empleados.",
+        "answer": "SELECT d.nombre FROM departamento d JOIN empleado e ON d.cddep = e.cddep GROUP BY d.nombre HAVING COUNT(*) = (SELECT COUNT(*) FROM empleado GROUP BY cddep ORDER BY COUNT(*) DESC LIMIT 1);"
+      },
+      {
+        "id": 15,
+        "question": "Proyectos con más de 3 empleados asignados.",
+        "answer": "SELECT p.nombre AS proyecto, COUNT(t.cdemp) AS total_empleados FROM proyecto p JOIN trabaja t ON p.cdpro = t.cdpro GROUP BY p.nombre HAVING total_empleados > 3;"
+      },
+      {
+        "id": 16,
+        "question": "Los 5 empleados con más horas trabajadas en proyectos.",
+        "answer": "SELECT e.nombre AS empleado, SUM(t.nhoras) AS total_horas FROM empleado e JOIN trabaja t ON e.cdemp = t.cdemp GROUP BY e.nombre ORDER BY total_horas DESC LIMIT 5;"
+      },
+      {
+        "id": 17,
+        "question": "Los 3 departamentos con el salario promedio más alto.",
+        "answer": "SELECT d.nombre AS departamento, AVG(e.salario) AS salario_promedio FROM departamento d JOIN empleado e ON d.cddep = e.cddep GROUP BY d.nombre ORDER BY salario_promedio DESC LIMIT 3;"
+      },
+      {
+        "id": 18,
+        "question": "Empleados que trabajan en más de un proyecto.",
+        "answer": "SELECT e.nombre AS empleado, COUNT(t.cdpro) AS total_proyectos FROM empleado e JOIN trabaja t ON e.cdemp = t.cdemp GROUP BY e.nombre HAVING total_proyectos > 1;"
+      },
+      {
+        "id": 19,
+        "question": "Empleados que trabajan en proyectos del departamento \"Ventas\".",
+        "answer": "SELECT e.nombre AS empleado, p.nombre AS proyecto, d.nombre AS departamento FROM empleado e JOIN trabaja t ON e.cdemp = t.cdemp JOIN proyecto p ON t.cdpro = p.cdpro JOIN departamento d ON p.cddep = d.cddep WHERE d.nombre = 'Ventas';"
+      }
+    ],
+    "Subconsultas": [
+      {
+        "id": 1,
+        "question": "Encontrar empleados con el salario más alto (usando subconsulta).",
+        "answer": "SELECT * FROM empleado WHERE salario = (SELECT MAX(salario) FROM empleado);"
+      },
+      {
+        "id": 2,
+        "question": "Nombre de los departamentos que NO tienen empleados que ingresaron antes de 2005 (usando NOT EXISTS).",
+        "answer": "SELECT d.nombre FROM departamento d WHERE NOT EXISTS (SELECT 1 FROM empleado e WHERE e.cddep = d.cddep AND e.fecha_ingreso < '2005-01-01');"
+      },
+      {
+        "id": 3,
+        "question": "Nombre de los departamentos que NO tienen empleados que ingresaron antes de 2005 (usando LEFT JOIN).",
+        "answer": "SELECT d.nombre FROM departamento d LEFT JOIN (SELECT DISTINCT cddep FROM empleado WHERE fecha_ingreso < '2005-01-01') empleados_antes_2005 ON d.cddep = empleados_antes_2005.cddep WHERE empleados_antes_2005.cddep IS NULL;"
+      },
+      {
+        "id": 4,
+        "question": "Empleado que más horas ha trabajado en cada proyecto.",
+        "answer": "SELECT t.cdpro, t.cdemp, e.nombre AS nombre_empleado, t.nhoras FROM trabaja t JOIN empleado e ON t.cdemp = e.cdemp JOIN (SELECT cdpro, MAX(nhoras) AS max_horas FROM trabaja WHERE nhoras > 0 GROUP BY cdpro) max_horas_por_proyecto ON t.cdpro = max_horas_por_proyecto.cdpro AND t.nhoras = max_horas_por_proyecto.max_horas;"
+      }
+    ]
+  }
+}

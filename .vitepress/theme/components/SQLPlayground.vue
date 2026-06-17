@@ -54,8 +54,9 @@ import empleados from '../../../databases/sql/data/empleados.json'
 import ventas from '../../../databases/sql/data/ventas.json'
 import jardineria from '../../../databases/sql/data/jardineria.json'
 import universidad from '../../../databases/sql/data/universidad.json'
+import empresa from '../../../databases/sql/data/empresa.json'
 
-const databases = [informatica, empleados, ventas, jardineria, universidad]
+const databases = [informatica, empleados, ventas, jardineria, universidad, empresa]
 const dbMap = Object.fromEntries(databases.map(d => [d.key, d]))
 const sectionLabels = {
   'Consultas sobre una tabla': 'Consultas sobre una tabla',
