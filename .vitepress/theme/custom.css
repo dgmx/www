@@ -1,0 +1,196 @@
+/* === Ghostty-inspired Dark Theme for VitePress === */
+
+:root {
+  --gh-brand: #3551f3;
+  --gh-gray-0: #0f0f11;
+  --gh-gray-1: #16161a;
+  --gh-gray-2: #242428;
+  --gh-gray-3: #4c4c50;
+  --gh-gray-4: #828286;
+  --gh-gray-5: #959597;
+  --gh-gray-6: #c3c3c4;
+  --gh-gray-7: #dbdbdc;
+  --gh-gray-8: #eaeaeb;
+  --gh-gray-9: #f0f0f4;
+  --gh-atom-blue: #61aeee;
+  --gh-atom-green: #98c379;
+  --gh-atom-yellow: #e6c07b;
+  --gh-atom-purple: #c678dd;
+  --gh-atom-red: #e06c75;
+  --gh-atom-orange: #d19a66;
+  --gh-atom-teal: #56b6c2;
+  --gh-atom-gray: #5c6370;
+  --gh-atom-white: #abb2bf;
+
+  --vp-c-brand-1: var(--gh-brand);
+  --vp-c-brand-2: #4a66ff;
+  --vp-c-brand-3: #2a44e0;
+
+  --vp-c-bg: var(--gh-gray-0);
+  --vp-c-bg-alt: var(--gh-gray-1);
+  --vp-c-bg-elv: var(--gh-gray-1);
+  --vp-c-bg-soft: var(--gh-gray-2);
+  --vp-c-text-1: var(--gh-gray-9);
+  --vp-c-text-2: var(--gh-gray-5);
+  --vp-c-text-3: var(--gh-gray-4);
+  --vp-c-border: var(--gh-gray-2);
+  --vp-c-divider: var(--gh-gray-2);
+  --vp-c-gutter: var(--gh-gray-2);
+
+  --vp-c-link: var(--gh-gray-9);
+  --vp-c-link-hover: var(--gh-gray-9);
+
+  --vp-c-code: var(--gh-atom-white);
+  --vp-c-code-bg: var(--gh-gray-1);
+
+  --vp-font-family-base: 'Pretendard Std Variable', 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --vp-font-family-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+}
+
+html {
+  color-scheme: dark;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--gh-brand) 60%, transparent);
+}
+
+.vp-doc h1, .vp-doc h2, .vp-doc h3, .vp-doc h4 {
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.vp-doc p {
+  color: var(--gh-gray-5);
+  line-height: 1.6;
+}
+
+.vp-doc a {
+  color: var(--gh-gray-9);
+  font-weight: 400;
+  text-underline-offset: 2px;
+}
+.vp-doc a:hover {
+  color: var(--gh-gray-9);
+}
+
+.vp-doc code {
+  font-family: var(--vp-font-family-mono);
+  border: 1px solid var(--gh-gray-3);
+  background: var(--gh-gray-2);
+  color: var(--gh-gray-9);
+  border-radius: 4px;
+  padding: 1px 6px;
+  font-size: 0.9em;
+}
+
+.vp-doc div[class*='language-'] {
+  border: 1px solid var(--gh-gray-3);
+  border-radius: 5px;
+  font-size: 15px;
+  background: var(--gh-gray-1);
+}
+
+.vp-doc div[class*='language-'] pre {
+  background: var(--gh-gray-1);
+}
+
+.vp-doc div[class*='language-'] code {
+  border: none;
+  background: transparent;
+  color: var(--gh-atom-white);
+  padding: 0;
+}
+
+.vp-doc .lang {
+  display: none;
+}
+
+.vp-doc blockquote {
+  border-left: 3px solid var(--gh-gray-9);
+  margin: 32px 0;
+  padding: 6px 20px;
+  color: var(--gh-gray-5);
+}
+
+.vp-doc hr {
+  border: none;
+  border-bottom: 1px solid var(--gh-gray-2);
+  margin: 42px 0;
+}
+
+.vp-doc table {
+  border-collapse: collapse;
+  margin: 32px 0;
+}
+
+.VPTable th {
+  color: var(--gh-gray-7);
+  font-weight: 600;
+}
+.VPTable td {
+  color: var(--gh-gray-5);
+}
+.VPTable tr {
+  border-bottom: 1px solid var(--gh-gray-2);
+}
+
+.VPNav {
+  border-bottom: 1px solid var(--gh-gray-2);
+}
+
+.VPNavBar {
+  background: var(--gh-gray-0);
+}
+
+.VPSidebar {
+  background: var(--gh-gray-0);
+  border-right: 1px solid var(--gh-gray-2);
+}
+
+.VPSidebarItem .VPLink {
+  color: var(--gh-gray-5);
+  font-weight: 400;
+}
+.VPSidebarItem .VPLink:hover {
+  background: var(--gh-gray-2);
+  color: var(--gh-gray-9);
+}
+
+.vp-doc .custom-block {
+  border-left: 3px solid;
+  border-radius: 0;
+}
+.vp-doc .custom-block.tip {
+  border-color: var(--gh-atom-green);
+}
+.vp-doc .custom-block.warning {
+  border-color: var(--gh-atom-yellow);
+}
+.vp-doc .custom-block.danger {
+  border-color: var(--gh-atom-red);
+}
+
+.vp-doc .vp-c-tip {
+  color: var(--gh-atom-green);
+}
+.vp-doc .vp-c-warning {
+  color: var(--gh-atom-yellow);
+}
+.vp-doc .vp-c-danger {
+  color: var(--gh-atom-red);
+}
+
+.VPContent.has-sidebar .VPDoc {
+  padding-left: 0;
+}
+
+.VPFooter {
+  border-top: 1px solid var(--gh-gray-2);
+  background: var(--gh-gray-0);
+}
+
+.VPButton.brand {
+  background: var(--gh-brand);
+  border-color: var(--gh-brand);
+}
