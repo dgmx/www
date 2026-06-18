@@ -254,7 +254,7 @@ export default defineConfig({
             text: "IPv4",
             collapsed: false,
             items: [
-              { text: "Manual de Subnetting", link: "/redes/manual-subnetting-ipv4" },
+              { text: "Manual de Subnetting", link: "/redes/ipv4/manual-subnetting-ipv4" },
               { text: "Tabla de puertos", link: "/redes/calc/puertos" },
               { text: "Modelo OSI", link: "/redes/calc/modelo-osi" },
             ],
