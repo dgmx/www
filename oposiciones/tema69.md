@@ -1,16 +1,24 @@
 # TEMA 69. INTEGRACIÓN DE SISTEMAS. MEDIOS DE INTERCONEXIÓN. ESTÁNDARES. PROTOCOLOS DE ACCESO A REDES DE ÁREA EXTENSA.
 
 ## ÍNDICE 
-```bash
+```
 1. INTRODUCCIÓN Y JUSTIFICACIÓN
 2. INTEGRACIÓN DE SISTEMAS
 3. MEDIOS DE INTERCONEXIÓN
+   3.1. Medios guiados
+   3.2. Medios no guiados (inalámbricos)
+   3.3. Dispositivos de interconexión
 4. ESTÁNDARES DE INTERCONEXIÓN
+   4.1. Estándares de red de área local (LAN)
+   4.2. Estándares de red de área extensa (WAN)
 5. PROTOCOLOS DE ACCESO A REDES DE ÁREA EXTENSA
+   5.1. Protocolos clásicos de acceso WAN
+   5.2. Protocolos de nivel de enlace y red para WAN modernas
+   5.3. Protocolos de acceso inalámbrico WAN
+   5.4. Protocolos de enrutamiento WAN
 6. CONCLUSIÓN
 7. BIBLIOGRAFÍA
 ```
-
 ---
 
 ## 1. INTRODUCCIÓN Y JUSTIFICACIÓN
@@ -53,27 +61,27 @@ Según el ámbito de aplicación se habla de interconexión de área local o de 
 
 El soporte físico por el que viaja la señal es determinante para la velocidad y la distancia.
 
-### **3.1. Medios guiados**
+### 3.1. Medios guiados
 
 Utilizan cables para conducir la señal:
 
-* **Par trenzado (UTP/STP):** Económico, muy común en LAN (Categorías 6, 6a, 7).
+**Par trenzado (UTP/STP):** Económico, muy común en LAN (Categorías 6, 6a, 7).
 
 Es el medio guiado más extendido en redes de área local por su equilibrio entre prestaciones, coste y facilidad de instalación. Consiste en pares de conductores de cobre trenzados entre sí: el trenzado reduce la diafonía (crosstalk) y la interferencia electromagnética por cancelación de campos magnéticos opuestos.
 
-* **Cable Coaxial:** Mayor blindaje, usado en redes de TV por cable (HFC).
+**Cable Coaxial:** Mayor blindaje, usado en redes de TV por cable (HFC).
 
 Formado por un conductor central de cobre rodeado por un dieléctrico, una malla metálica y una cubierta exterior. Esta estructura coaxial le otorga mayor ancho de banda y mejor inmunidad EMI que el par trenzado, pero a costa de mayor rigidez y coste.
 
-* **Fibra Óptica:** El estándar de oro. Utiliza pulsos de luz. Es el medio de interconexión más usado en las WAN. La fibra monomando alcanza desde 400 Gbps a 1.2 Tbps
+**Fibra Óptica:** El estándar de oro. Utiliza pulsos de luz. Es el medio de interconexión más usado en las WAN. La fibra monomando alcanza desde 400 Gbps a 1.2 Tbps
 
 Transmite información mediante pulsos de luz a través de un núcleo de vidrio o plástico de muy bajo índice de absorción. Sus ventajas sobre el cobre son radicales: inmunidad total a interferencias electromagnéticas, atenuación muy baja (lo que permite alcances de decenas de kilómetros sin repetidores), ancho de banda potencialmente ilimitado y seguridad intrínseca (interceptar la fibra produce pérdida de señal detectable).
 
-### **3.2. Medios no guiados (inalámbricos)**
+### 3.2. Medios no guiados (inalámbricos)
 
 La señal viaja por el espacio mediante ondas electromagnéticas:
 
-* **Radiofrecuencia:** Wi-Fi, Bluetooth.
+**Radiofrecuencia:** Wi-Fi, Bluetooth.
 
 La familia **IEEE 802.11** define los estándares Wi-Fi. La evolución va desde 802.11b (11 Mbps, 2.4 GHz, 1999\) hasta el actual 802.11ax (Wi-Fi 6/6E).
 
@@ -81,31 +89,31 @@ Wi-Fi 7 (802.11be) incorpora la banda de 6 GHz como canal principal y MLO (Multi
 
 WPAN Bluetooth esta definido por la IEEE 802.15 (Baja potencia y corto alcance)
 
-* **Microondas:** Terrestres o Satelitales (Starlink, VSAT).
+**Microondas:** Terrestres o Satelitales (Starlink, VSAT).
 
 Las microondas terrestres operan en la banda de 1 GHz a 40 GHz con propagación en línea de visión directa (LOS). Enlazan puntos fijos separados decenas de kilómetros mediante antenas parabólicas directivas. Se usan como alternativa al cableado en enlaces punto a punto entre edificios o entre torres de telecomunicaciones.
 
-* **Infrarrojos:** Corto alcance, línea de visión directa.
+**Infrarrojos:** Corto alcance, línea de visión directa.
 
 La transmisión por infrarrojo (IrDA, Infrared Data Association) fue el primer estándar de comunicación inalámbrica de corto alcance, con velocidades de hasta 16 Mbps pero exigiendo línea de visión directa y alcances inferiores a 1 metro. Ha sido completamente desplazado por Bluetooth y Wi-Fi en las comunicaciones entre dispositivos.
 
-### **3.3. Dispositivos de interconexión**
+### 3.3. Dispositivos de interconexión
 
 Actúan en diferentes capas del modelo OSI:
 
-* **Repetidores/Hubs:** Capa 1 (Física).
+**Repetidores/Hubs:** Capa 1 (Física).
 
 El repetidor es el dispositivo de interconexión más elemental: recibe una señal eléctrica degradada, la regenera y la retransmite. Opera exclusivamente en la capa física del modelo OSI, sin ninguna noción de direcciones ni protocolos. Su función es ampliar el alcance de un segmento de red más allá del límite impuesto por la atenuación del medio. Obsoletos
 
-* **Bridges/Switches:** Capa 2 (Enlace). Segmentan el tráfico mediante direcciones MAC.
+**Bridges/Switches:** Capa 2 (Enlace). Segmentan el tráfico mediante direcciones MAC.
 
 El puente (bridge) segmenta el dominio de colisión dividiendo la red en dos segmentos con tráfico independiente. Aprende las direcciones MAC de los dispositivos de cada segmento y solo reenvía las tramas cuyo destino está en el segmento opuesto, filtrando el tráfico local. Esta capacidad de aprendizaje y filtrado lo eleva a la capa de enlace de datos.
 
-* **Routers:** Capa 3 (Red). Encaminan paquetes basándose en direcciones IP.
+**Routers:** Capa 3 (Red). Encaminan paquetes basándose en direcciones IP.
 
 El router es el dispositivo que interconecta redes distintas tomando decisiones de enrutamiento basadas en las direcciones IP de los paquetes, no en las direcciones MAC de las tramas. Opera en la capa de red del modelo OSI y constituye la frontera entre dominios de broadcast: ningún tráfico de broadcast cruza un router.
 
-* **Gateways:** Capas superiores. Traductores entre protocolos distintos.
+**Gateways:** Capas superiores. Traductores entre protocolos distintos.
 
 La pasarela o **gateway** es el dispositivo más complejo de interconexión: opera en las capas superiores del modelo OSI (transporte, sesión, presentación, aplicación) y puede traducir entre protocolos completamente heterogéneos. Un gateway de correo electrónico convierte entre formatos SMTP y X.400; un gateway VoIP convierte entre telefonía clásica RTC y VoIP sobre IP. Conceptualmente, un gateway realiza una conversión semántica del tráfico, no solo un reenvío.
 
@@ -120,7 +128,7 @@ En el contexto de las WAN, los estándares son esenciales porque:
 * Facilitan la evolución tecnológica sin romper la compatibilidad.  
 * Disminuyen los costes al fomentar la competencia.
 
-### **4.1. Estándares de red de área local (LAN)**
+### 4.1. Estándares de red de área local (LAN)
 
 Dominados por el comité **IEEE 802**:
 
@@ -128,7 +136,7 @@ Dominados por el comité **IEEE 802**:
 * **802.11 (Wi-Fi):** Estándares inalámbricos (a, b, g, n, ac, ax, be).  Bandas de 2.4, 5 y 6 GHz
 * **802.1Q VLANs y 802.1W Rapid Spanning Tree**
 
-### **4.2. Estándares de red de área extensa (WAN)**
+### 4.2. Estándares de red de área extensa (WAN)
 
 Emitidos por organismos como la **ITU-T** y el **IETF**. Se centran en la transmisión a larga distancia y la gestión de la congestión.
 
@@ -149,14 +157,14 @@ Un **protocolo de acceso WAN** es un conjunto de reglas que define cómo un disp
 
 Hay 2 tipos, los orientados a conexión: X.25, Frame Relay, ATM, MPLS y sin conexión: HDLC o PPP
 
-### **5.1. Protocolos clásicos de acceso WAN**
+### 5.1. Protocolos clásicos de acceso WAN
 
 *  **PPP (Point-to-Point Protocol):** Protocolo de nivel de enlace (capa 2\) para enlaces punto a punto, como líneas serie (RS-232, T1/E1, módems DSL, etc.). Reemplazó a SLIP. Enlaces serie y marcado telefónico.
 *  **HDLC (High-Level Data Link Control):** Protocolo de nivel de enlace de la ISO, Existe una variante propietaria de Cisco (Cisco HDLC)
 *  **Frame Relay:** Tecnología WAN de conmutación de tramas orientada a conexión (circuitos virtuales), optimizada para alta velocidad, baja latencia y control de congestión.
 *  **ATM (Asynchronous Transfer Mode)** — celdas fijas de 53 bytes, QoS, usado en redes backbone
 
-### **5.2. Protocolos de nivel de enlace y red para WAN modernas**
+### 5.2. Protocolos de nivel de enlace y red para WAN modernas
 
 * **MPLS (Multiprotocol Label Switching).** Protocolo de nivel 2.5 (entre enlace y red) que acelera el reenvío mediante etiquetas. No usa direcciones IP en cada salto (solo en los bordes).  
 * **DSL: (ADSL, VDSL)** Familia de protocolos que permiten transmisión digital de alta velocidad sobre par trenzado de cobre (línea telefónica tradicional), utilizando frecuencias superiores a la voz.  
@@ -165,14 +173,14 @@ Hay 2 tipos, los orientados a conexión: X.25, Frame Relay, ATM, MPLS y sin cone
 * **Ethernet WAN** (Carrier Ethernet / VPLS / EVPN) — extensión de Ethernet sobre infraestructura del operador
 * **VXLAN / GENEVE** — túneles de capa 2 sobre capa 3 para sobrelays
 
-### **5.3. Protocolos de acceso inalámbrico WAN**
+### 5.3. Protocolos de acceso inalámbrico WAN
 
 - **LTE / 5G NR** — acceso celular como enlace WAN primario o respaldo
 - **WiMAX (IEEE 802.16)** — banda ancha inalámbrica metropolitana (menos usado hoy)
 - **Satélite (Starlink, VSAT)** — enlaces WAN vía satélite con protocolos como TCP PEP para mitigar latencia
 - **LoRaWAN / NB-IoT** — WAN de baja potencia para IoT (LPWAN)
 
-### **5.4. Protocolos de enrutamiento WAN**
+### 5.4. Protocolos de enrutamiento WAN
 
 Internet no es una red única, está formada por unas 70.000 redes individuales gestionadas por ISP, universidades y grandes empresas tecnológicas, cada una con un número de identificación de sistema autónomo o ASN, que gestionan su propia política de enrutamiento en internet, utilizando el protocolo BGP para intercambiar información con otros sistemas.
 
