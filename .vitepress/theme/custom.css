@@ -1,0 +1,4 @@
+.VPSidebarItem .item .link:hover {
+  background: var(--vp-c-bg-soft);
+  border-radius: 4px;
+}
