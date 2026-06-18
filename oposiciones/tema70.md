@@ -1,6 +1,5 @@
 
- 
-  
+ # TEMA 70. DISEÑO DE SISTEMAS EN RED LOCAL. PARÁMETROS DE DISEÑO. INSTALACIÓN Y CONFIGURACIÓN DE SISTEMAS EN RED
 
 ## ÍNDICE 
 ```bash
@@ -9,10 +8,10 @@
 3. PLANIFICACIÓN Y DISEÑO  DE UN SISTEMA EN RED
 4. PARÁMETROS DE DISEÑO
 5. INSTALACIÓN Y CONFIGURACIÓN  DE UN SISTEMA EN RED  LOCAL
-5.1. INSTALACIÓN DE LA INFRAESTRUCTURA DE RED
-5.2. INTERCONEXIÓN DE EQUIPOS
-5.3. INSTALACIÓN Y CONFIGURACIÓN DE LOS EQUIPOS
-5.4. DIAGNÓSTICO DE INCIDENCIAS
+  5.1. INSTALACIÓN DE LA INFRAESTRUCTURA DE RED
+  5.2. INTERCONEXIÓN DE EQUIPOS
+  5.3. INSTALACIÓN Y CONFIGURACIÓN DE LOS EQUIPOS
+  5.4. DIAGNÓSTICO DE INCIDENCIAS
 6. CONCLUSIÓN
 7. BIBLIOGRAFÍA
 ```
@@ -74,7 +73,7 @@ interconectados y autónomos llamados nodos. Se dice que dos dispositivos  está
 interconectados si pueden intercambiar información. La interconexión puede 
 darse a través de una variedad de medios de transmisión , como par trenzado , 
 fibra óptica y ondas de radio (por ejemplo, microondas, infrarrojos, satélites de 
-comunicación)  (Tanenbaum, 2021).  
+comunicación)  `(Tanenbaum, 2021)`.  
 
 Las arquitecturas y componentes básicos de un sistema en red son los siguientes:
 - **Arquitectura:** Principalmente Cliente / Servidor o P2P
@@ -96,29 +95,29 @@ la red desde diferentes nodos.
 El diseño de un sistema en red debe seguir un enfoque jerárquico y estructurado para garantizar la escalabilidad.
  
 **Análisis de la situación de partida**. Donde se analizarán los siguientes aspectos:  
-- Servicios de red proporcionados por la instalación actual y sus problemas 
+- **Servicios de red** proporcionados por la instalación actual y sus problemas 
 asociados  
-- Hardware de la instalación actual: características de los servidores, de los 
+- **Hardware de la instalación actual:** características de los servidores, de los 
 puestos de trabajo de los clientes, electrónica de red, cableado, etc.  
-- Software de la instalación actual: sistemas operativos de servidor, 
+- **Software de la instalación actual**: sistemas operativos de servidor, 
 sistemas operativos de equipos clientes, aplicaciones, etc.  
-- Cantidad de información que manejan  
-- Número actual de usuarios: servicios que demandan y tráfico que generan  
+
+- **Número actual de usuarios**: servicios que demandan y tráfico que generan  
 - Etc. 
  
 **Análisis de necesidades detectadas**. A tener en cuenta los siguientes aspectos:
 
-- Uso de la red : habrá que determinar el tipo  de aplicaciones que van a 
+- **Uso de la red** : habrá que determinar el tipo  de aplicaciones que van a 
 hacer uso de la red y qué servicios va a ofrecer la red.  
-- Capacidad de la red : habrá que estimar las necesidades de carga, 
+- **Capacidad de la red** : habrá que estimar las necesidades de carga, 
 almacenamiento de datos y tipo de tráfico que generará.  
-- Recursos : habrá que determinar el tipo y número estimado de equipos y 
+- **Recursos** : habrá que determinar el tipo y número estimado de equipos y 
 otros dispositivos necesarios, así como los recursos humanos asociados 
 necesarios para dar soporte y garantizar el buen funcionamiento de la red.  
-- Usuarios : habrá que determinar el número y tipo de usuarios que harán 
+- **Usuarios** : habrá que determinar el número y tipo de usuarios que harán 
 uso de la red, haciendo una estimación por lo alto en cuanto a número de 
 usuarios.  
-- Conectividad : habrá que determinar las necesidades de conexión entre 
+- **Conectividad** : habrá que determinar las necesidades de conexión entre 
 los dispositivos de cada subred dentro de la red y con el exterior.  
 - Otros aspectos : habrá que determinar otros aspectos relacionados con 
 la disponibilidad de la información y los servicios, confidencialidad, calidad 
@@ -126,7 +125,7 @@ de servicio (QoS), etc.
  
 **Diseño lógico**: dentro del diseño lógico se ubican las siguientes tareas:  
 - Diseño de la topología lógica de red . 
-- Diseño de direccionamientos y nombres . 
+- Diseño de direccionamientos IP. 
 - Segmentación VLAN y enrutamiento.  
 - Estrategias de seguridad de la red . 
 - Estrategias para el mantenimiento de la red.  
@@ -143,7 +142,7 @@ de servicio (QoS), etc.
 Para que la red sea eficiente, se tendrán en cuenta los siguientes factores técnicos:
 
 - **Topología:** La topología en estrella extendida es el estándar actual en las redes de área local.
-- **Medios de transmisión: **Se emplean medios guiados (cable) para la estructura básica de la red y no guiados para los dispositivos móviles o portátiles.
+- **Medios de transmisión:** Se emplean medios guiados (cable) para la estructura básica de la red y no guiados para los dispositivos móviles o portátiles.
 - **Ancho de banda:** Se tendrá en cuenta para evitar cuellos de botella en la red. Cableado categoría 6 o 7 1000BASE-T
 - **Latencia:** Crucial para VoIP y videoconferencias. Políticas de QoS
 - **Seguridad:** Implementación de cortafuegos, listas de control de acceso (ACL) y cifrado.
@@ -172,13 +171,12 @@ La instalación y configuración de la red se llevará a cabo en varios pasos:
 - Diagnóstico de incidencias
  
  
- 
 
 ## 5.1. INSTALACIÓN DE LA INFRAESTRUCTURA DE RED  
 
 Se basa en el cableado estructurado (Normas ANSI 586)
 
-- **Subsistemas: **Cableado horizontal (hasta el puesto de trabajo), cableado vertical (cableado entre plantas) y el cuarto de telecomunicaciones
+- **Subsistemas:** Cableado horizontal (hasta el puesto de trabajo), cableado vertical (cableado entre plantas) y el cuarto de telecomunicaciones
 - **Categoría:** Uso de cableado UTP/FTP categorías 6 y 7 para velocidades de 1Gigabit a 10 Gigabits
 - **Instalación física:** Montaje de armarios rack, paneles de parcheo y etiquetado bajo norma
  
