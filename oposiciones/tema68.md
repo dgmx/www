@@ -48,13 +48,13 @@ A continuación vamos a detallar los componentes del software de sistemas en red
 
 ## 3. Componentes
 
-**3.1 Sistema operativo de red (NOS).** 
+### 3.1 Sistema operativo de red (NOS)
 
 Es el componente fundacional: proporciona la plataforma sobre la que se ejecutan todos los demás elementos. A las funciones clásicas de un SO —gestión de procesos, memoria, sistema de archivos y dispositivos— añade capacidades específicas de red: gestión de protocolos de comunicación, control de acceso remoto, administración centralizada de usuarios, directivas de grupo y servicios de autenticación integrados.
 
 *Windows Server* (2019, 2022\) integra Active Directory, DNS, DHCP, IIS y Hyper-V como roles del sistema. Las distribuciones *Linux* de uso empresarial (Red Hat Enterprise Linux, Debian, Ubuntu Server) implementan el stack TCP/IP en el kernel y ofrecen los mismos servicios mediante demonios del sistema (BIND para DNS, isc-dhcp-server, OpenLDAP). Los sistemas *Unix* (Solaris, AIX) mantienen presencia en entornos de misión crítica por su robustez y madurez.
 
-3.2 **Controladores (drivers) y firmware de dispositivos de red.** 
+### 3.2 Controladores (drivers) y firmware de dispositivos de red 
 
 Son el componente más cercano al hardware: el puente entre el mundo físico (señales eléctricas, ópticas o radiofrecuencias) y el mundo lógico del software.
 
@@ -62,7 +62,7 @@ El **driver de tarjeta de red** (NIC driver) es un módulo del kernel que implem
 
 El **firmware** de los dispositivos de red (conmutadores, routers, puntos de acceso) es el software embebido en el propio dispositivo que implementa su lógica de funcionamiento: tablas MAC, enrutamiento, QoS, spanning tree. Su actualización es crítica para la seguridad, ya que las vulnerabilidades en el firmware pueden comprometer toda la red. Ejemplos: firmware de switches Cisco IOS, Mikrotik, o firmware open source como OpenWrt para routers domésticos.
 
-**3.3 Protocolos de comunicación.** 
+### 3.3 Protocolos de comunicación.
 
 Son el lenguaje común que permite la interoperabilidad entre sistemas de distintos fabricantes. Se organizan en dos marcos de referencia:
 
@@ -72,7 +72,7 @@ El **modelo TCP/IP** consolida esas siete capas en cuatro (acceso a red, interne
 
 En la capa de aplicación destacan: *HTTP/HTTPS* (web), *FTP/SFTP* (transferencia de archivos), *SMTP/IMAP/POP3* (correo), *DNS* (resolución de nombres), *DHCP* (configuración dinámica), *SSH* (administración remota segura) y *SNMP* (gestión de red). Cada protocolo está normalizado mediante RFCs del IETF, que son sus fuentes primarias.
 
-**3.4 Servicios de red**
+### 3.4 Servicios de red
 
 Los servicios de red son aplicaciones o funciones instaladas en servidores que permiten a los equipos compartir recursos (archivos, impresoras, internet), comunicarse y gestionar redes. Operan bajo un modelo cliente-servidor, facilitando tareas como el correo electrónico, la navegación web (HTTP/HTTPS), el almacenamiento y la transferencia de archivos (FTP).   
 Los servicios de red más comunes incluyen:
@@ -88,7 +88,7 @@ Los servicios de red más comunes incluyen:
 
 Estos servicios se basan en sistemas operativos de red y son fundamentales para el funcionamiento tanto de redes locales (LAN) como de la infraestructura de Internet. 
 
-**3.5 Software de gestión y monitorización de red.** 
+### 3.5 Software de gestión y monitorización de red.
 
 Proporciona visibilidad sobre el estado de la red y automatiza la administración. Sin él, gestionar una red de tamaño medio a grande es inviable.
 
@@ -104,7 +104,7 @@ Otras herramientas de administración son:
 * Análisis de tráfico de red: Wireshark, tcpdump.  
 * Detección de intrusiones: Snort, suricata.
 
-**3.6 Aplicaciones cliente de red**
+### 3.6 Aplicaciones cliente de red
 
 Las aplicaciones cliente de red son software que se ejecuta en dispositivos finales (PC, móviles) para enviar peticiones y acceder a servicios (web, correo, archivos) alojados en servidores. Funcionan bajo una arquitectura cliente-servidor, siendo los navegadores web (Chrome, Firefox) y clientes de correo los ejemplos más comunes.   
 **Principales Aplicaciones y Ejemplos:**
@@ -164,7 +164,7 @@ manipulación de datos desde múltiples clientes de forma simultánea.
 
 ## 5. Estructura
 
-**5.1. Arquitectura cliente-servidor**
+### 5.1. Arquitectura cliente-servidor
 
 Es el paradigma dominante en las redes corporativas y en Internet. La idea central es la **especialización de roles**: el servidor concentra recursos, procesamiento y lógica; el cliente proporciona la interfaz al usuario y realiza peticiones.
 
@@ -176,7 +176,7 @@ Es el paradigma dominante en las redes corporativas y en Internet. La idea centr
 
 El software de sistemas en red implementa esta arquitectura proporcionando los servicios de red, el sistema operativo de red (NOS), los protocolos de comunicación y los mecanismos de gestión de conexiones simultáneas 
 
-**2. Arquitectura peer-to-peer (P2P)**
+### 5.2. Arquitectura peer-to-peer (P2P)
 
 En la arquitectura P2P cada nodo (par) actúa simultáneamente como cliente y como servidor. No existe un punto central de control, lo que elimina el cuello de botella del modelo cliente-servidor y aporta robustez ante fallos: si un nodo cae, el sistema continúa funcionando.
 
@@ -184,7 +184,7 @@ Se distinguen tres variantes. En el **P2P puro** (Gnutella) no hay ningún servi
 
 El software de sistemas en entornos P2P gestiona el descubrimiento de pares, el encaminamiento de peticiones, la replicación de contenido y los mecanismos de incentivo para evitar el problema de nodos que consumen sin aportar. La comparativa con cliente-servidor es un punto habitual en los tribunales: el P2P escala mejor horizontalmente y es más tolerante a fallos, pero es más difícil de administrar, de securizar y de garantizar la calidad de servicio.
 
-**5.3. Arquitectura orientada a servicios y microservicios**
+### 5.3. Arquitectura orientada a servicios y microservicios
 
 Ambas arquitecturas responden al mismo principio: descomponer el software en unidades funcionales independientes con interfaces bien definidas, de forma que puedan desarrollarse, desplegarse y escalarse de forma autónoma.
 
@@ -195,7 +195,7 @@ Ambas arquitecturas responden al mismo principio: descomponer el software en uni
 Desde el punto de vista del software de sistemas en red, tanto SOA como microservicios implican una infraestructura de red sofisticada: balanceo de carga, service mesh , descubrimiento de servicios, etc
 
 
-**5.4. Infraestructura en la nube e híbrida**
+### 5.4. Infraestructura en la nube e híbrida
 
 La estructura del software de sistemas en red ya no puede entenderse sin el paradigma cloud. Los modelos de servicio determinan qué parte del software gestiona el proveedor y cuál el usuario:
 
