@@ -150,7 +150,7 @@ Para que la red sea eficiente, se tendrán en cuenta los siguientes factores té
 - **Disponibilidad y redundancia:** Enlaces de respaldo y uso de protocolos STP para evitar bucles.
 - **Servidores y estaciones de trabajo**, número de equipos necesarios.
 - **Sistemas operativos de red.** Software libre o propietario.
-- **Conexión al exterior**. Salida a Internet, VPN, teniendo en cuenta las políticas de seguridad.
+- **Conexión al exterior**. Salida a Internet, conexiones VPN, etc, teniendo en cuenta las políticas de seguridad.
 
 
 
