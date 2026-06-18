@@ -42,7 +42,7 @@ controlada.
 datos se presenten de manera coherente entre sistemas distintos mediante la 
 conversión de formatos, cifrado y compresión de datos. 
 
-Por último, **la capa de aplicación**  es el nivel más cercano al usuario y facilita el acceso a servicios y protocolos esenciales para la red, como HTTP, FTP y DNS, permitiendo la transferencia de datos, acc eso a sitios web y servicios de correo electrónico. 
+Por último, **la capa de aplicación**  es el nivel más cercano al usuario y facilita el acceso a servicios y protocolos esenciales para la red, como HTTP, FTP y DNS, permitiendo la transferencia de datos, acceso a sitios web y servicios de correo electrónico. 
 
 
 Lo expuesto anteriormente justifica la importancia  del tema y es por ello que el 
@@ -59,23 +59,21 @@ y Orden/Decreto autonómico)
 - Módulo: Planificación y administración de redes  
  
 ## 2. NIVEL DE SESIÓN  
-Esta capa proporciona sus servicios a la capa de presentación, facilitando el 
-medio necesario para que las  entidades de presentación de dos máquinas 
-diferentes organicen y sincronicen su diálogo y  procedan al  intercambio de datos, 
-mediante el establecimiento de sesiones.  
+Esta capa proporciona sus servicios a la capa de presentación, 
+mediante el establecimiento de sesiones facilita que diferentes máquinas 
+organicen y sincronicen su diálogo y procedan al  intercambio de datos, 
  
 ### 2.1. FUNCIONES Y SERVICIOS  
 La función principal de la capa de sesión es el establecimiento, administración y 
 finalización ordenada de sesiones entre dos máquinas.  
-Una sesión perm ite el transporte ordinario de datos, como efectuar un login a  un 
+Una sesión permite el transporte ordinario de datos, como efectuar un login a  un 
 sistema remoto o transferir un archivo entre dos nodos, pero también proporciona 
-servicios mejorados, útiles  en algunas aplicaciones, como los que se detallan a 
-continuación:  
+servicios como los siguientes:
 - **Manejo  del control  del diálogo**. Las sesiones pueden permitir que el tráfico vaya en una única dirección, comunicaciones bidireccionales alternadas (half 
 duplex), o en ambas direcciones al mismo tiempo, comunicaciones 
 bidireccionales simultáneas (full duplex). 
 - **Sincronización  del diálogo** , mediante la inserción de puntos de 
-verificación en la corriente de datos, de modo que si se produce una 
+verificación, de modo que si se produce una 
 interrupción sólo es necesario repetir la transferencia de los datos 
 después del último punto de verificación. 
 
@@ -83,20 +81,17 @@ después del último punto de verificación.
 - **RPC  (Remote Procedure Call)**es un protocolo que permite a un programa de 
 ordenador ejecutar código en o tra máquina remota sin tener que preocuparse 
 por las comunicaciones entre ambos. Las RPC son muy utilizadas dentro del 
-paradigma cliente -servidor. Siendo el cliente el que inicia el proceso solicitando 
+paradigma cliente-servidor. Siendo el cliente el que inicia el proceso solicitando 
 al servidor que ejecute cierto procedimiento o función  y enviando éste de vuelta 
-el resultado de dicha operación al cliente.  Su estandarización aparece recogida 
-en la RFC 1057.  
+el resultado de dicha operación al cliente.  
 
 - **SCP**: El protocolo SCP (Secure Copy Protocol) permite la transferencia segura de 
-archivos entre dos equipos, empleando el protoc olo SSH para cifrar la 
-información transmitida. El protocolo en si mismo no provee autenticación ni 
-seguridad (delega estas tareas en SSH), su única función es establecer la 
-conexión entre el cliente y el servidor y gestionar la transferencia de los archiv os. 
+archivos entre dos equipos, empleando el protocolo SSH para cifrar la 
+información transmitida. El protocolo establece la 
+conexión entre el cliente y el servidor y gestionar la transferencia de los archivos. 
  
 - **ASP (AppleTalk Session Protocol)** es un protocolo de la familia AppleTalk que 
-ofrece las funciones del nivel de sesión  (establecimiento, control y desconexión 
-de la sesión) a los protocolos de los niveles superiores.  
+ofrece las funciones del nivel de sesión . 
 (AppleTalk es un conjunto de protocolos desarrollado por Apple para la conexión 
 de sus equipos en redes locales, aunque actualmente ha sido reemplazado  por 
 las redes TCP/IP)  
@@ -110,25 +105,24 @@ dependencia respecto del hardware.
 
 ## 3. NIVEL DE PRESENTACIÓN  
 
-A diferencia de lo s niveles  inferiores que se ocupan sólo del movimiento fiable 
-de bits  de un lado a otro, la capa de presentación se encarga de la sintaxis y la 
+La capa de presentación se encarga de la sintaxis y la 
 semántica de la información que se  transmite. Además, aísla a dichas capas 
 inferiores del formato de los datos de las aplicaciones específicas.  
+Traduce, comprime, cifra y descifra los datos asegurando que sean compatibles entre diferentes sistemas
 
 ### 3.1. FUNCIONES Y SERVICIOS  
-Las estructuras de datos a intercambiar s e deben definir de forma abstracta, 
-mediante la codificación de estos  datos de una manera estándar acordada, 
-haciendo posible así la comunicación entre computadoras con  representaciones 
-locales diferentes. La capa de presentación maneja estas estructuras d e datos 
-abstractas y las  convierte de la representación de la computadora a la 
+Los datos a intercambiar se codifican de manera acordada para permitir la comunicación entre computadoras con representaciones locales distintas.
+
+Convierte de la representación de la computadora a la 
 representación estándar de la red y viceversa.  
+
 Además de esta funcionalidad, la capa de presentación ofrece a la de aplicación 
 los servicios de:  
 - Garantía de que la información que envía la capa de aplicación de un 
 sistema pueda ser entendida.
 - Acuerdo y negociación de la sintaxis de transferencia.
 - Definición del código a utilizar para representar una cadena de caracteres 
-(ASCII, EBCDIC, etc.)  
+(ASCII, UTF, etc.)  
 - Interpretación de formatos de números
 - Compresión de los datos, si es necesario.  
 - Cifrado y descifrado.   
@@ -136,26 +130,20 @@ sistema pueda ser entendida.
  
  
 ### 3.2 PROTOCOLOS y ESTÁNDARES  
-- **TLS : El protocolo de seguridad de la capa de transporte** es crucial para la  ciberseguridad,  garantizando la confidencialidad, integridad y autenticación en la transmisión de  datos en redes públicas. TLS utiliza criptografía simétrica , como AES para cifrar datos.
+- **TLS : El protocolo de seguridad de la capa de transporte**  garantiza la confidencialidad, integridad y autenticación en la transmisión de  datos en redes públicas. TLS utiliza criptografía simétrica , como AES para cifrar datos.
 La versión 1.3 de TLS mejora la seguridad y  eficiencia al eliminar cifrados inseguros. TLS es esencial en comunicaciones  HTTPS, correos electrónicos 
 seguros y VPNs, garantizando  la seguridad y privacidad de los datos . 
  
-- **ASN.1 (Abstract Syntax Notation One)** es un protocolo de nivel de presentación 
-en el modelo OSI para la representación de datos de forma independiente de la 
-máquina y su codificación interna.  
-Este estándar no define como se han de codificar esos datos, sino que define 
-una sintaxis abstracta para indicar el significado de los datos. Permite emplear 
-tipos de datos simples, complejos y tipos de datos definidos por el usuario. El 
-protocolo SNMP usa el ASN.1 para representar sus objetos gestionables.  
+- **ASN.1 (Abstract Syntax Notation One)** Representa los  datos de forma independiente de la máquina y su codificación interna.  
+
+Define una sintaxis abstracta para indicar el significado de los datos. Permite emplear tipos de datos simples, complejos y tipos de datos definidos por el usuario. El protocolo SNMP usa el ASN.1 para representar sus objetos gestionables.  
  
 
 - **MIME Extensiones Multipropósito de 
 Correo de Internet** es un estándar para expandir las capacidades limitadas del correo electrónico y en particular para permitir la inserción de documentos (como imágenes, sonido y texto) en un mensaje. 
 Incorpora diversas características al servicio de correo  electrónico, como capacidad de enviar múltiples adjuntos en un solo mensaje; 
 longitud ilimitada del mensaje; uso de conjuntos de caracteres no pertenecientes 
-al código ASCII; uso de texto enriquecido (diseños, fuentes, colores, etc.); 
-adjuntos binarios (ejecutables, imágenes, archivos de audio o vídeo, etc.), que 
-se pueden dividir de ser necesario.  
+al código ASCII, etc.
 
 Otros protocolos de la capa de presentación son: **Gzip** para compresión de datos, **X.509** para la emisión de certificados o **Base64** para la codificación de binario a texto.
 
@@ -171,17 +159,9 @@ En este nivel se definen los protocolos que emplearán las aplicaciones de
 usuario para comunicarse entre ellas, acceder a información de bases de datos, 
 transferir archivos, etc.  
 
-El usuario normalmente no interactúa directamente con el nivel de aplicación, 
-sino que emplea aplicaciones que as u vez interactúan con el nivel de aplicación, 
-haciendo transparente al usuario el uso de la red.  
-
-Las funciones  y servicios ofrecidos en esta capa vienen dados por los diferentes 
-protocolos de nivel de aplicación existentes: la función de la capa es proveer 
-servicios, y normalmente cada protocolo definido en este nivel ofrece un servicio 
-diferente.  
-
 
 ### 4.1. FUNCIONES Y  SERVICIOS  
+
 Las funciones del nivel de aplicación pueden ser ofrecidas por medio de 
 aplicaciones o servicios:  
 Las aplicaciones son programas que implementan protocolos del nivel de 
