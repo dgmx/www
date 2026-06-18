@@ -2,27 +2,32 @@
 
 ## ÍNDICE 
 ```bash
-1. Introducción y justificación
-2. Lenguajes de programación
-2.1. Concepto
-2.2. Características principales
-2.3. Elementos de los lenguajes de programación por niveles
-2.4. Instrucciones
-3. Tipos de lenguajes de programación
-3.1. Clasificación por nivel de abstracción
-3.2. Clasificación cronológica
-3.3. Clasificación por Paradigmas
-3.4. Otras clasificiiones
-4. Caracteristicas de los lenguajes de programación
-5. Lenguajes más utilizados
-6. Conclusión
+1. INTRODUCCIÓN Y JUSTIFICACIÓN
+2. LENGUAJES DE PROGRAMACIÓN
+   2.1. CONCEPTO
+   2.2. CARACTERÍSTICAS PRINCIPALES
+   2.3. ELEMENTOS DE LOS LENGUAJES DE PROGRAMACIÓN POR NIVELES
+   2.4. INSTRUCCIONES
+3. TIPOS DE LENGUAJES DE PROGRAMACIÓN
+   3.1. CLASIFICACIÓN POR NIVEL DE ABSTRACCIÓN
+   3.2. CLASIFICACIÓN CRONOLÓGICA
+   3.3. CLASIFICACIÓN POR PARADIGMAS
+   3.4. SEGÚN EL LUGAR DE EJECUCIÓN
+   3.5. SEGÚN EL MÉTODO DE EJECUCIÓN
+4. CARACTERÍSTICAS DE LOS LENGUAJES DE PROGRAMACIÓN
+   4.1. PRIMEROS LENGUAJES 
+   4.2. LENGUAJES CREADORES DE SOFTWARE 
+   4.3. LENGUAJES DE LA ERA INTERNET
+   4.4. LENGUAJES MODERNOS
+5. LENGUAJES MÁS UTILIZADOS
+6. CONCLUSIÓN
 ```
 
 ---
 
 ## 1. Introducción y justificación
 
-- BOE 13 Feb 1996 Temario Informatica
+- BOE 13 Feb 1996 Temario Informática
 - Grupo Temático Algoritmos y programación
 - Importancia de los lenguajes de programación en la era tecnológica
 - Uso en dispositivos cotidianos y sectores clave
@@ -271,10 +276,8 @@ En la actualidad, la mayoría de los lenguajes populares no pertenecen a una sol
 *Nota: El uso de un paradigma u otro depende del tipo de proyecto (ej. funcional para análisis de datos masivos, POO para grandes sistemas empresariales).*
 
 
-### 3.4 Otras clasificiiones
+### 3.4 Según el lugar de ejecución:
 
-
-#### a) Según el lugar de ejecución:
 
 **Ejecución en el Lado del Cliente (Client-side)**:  El código se descarga desde un servidor, pero se ejecuta directamente en el dispositivo del usuario (computadora, tablet o smartphone).
 
@@ -312,7 +315,7 @@ En la actualidad, la mayoría de los lenguajes populares no pertenecen a una sol
 
 - Propósito: Reducir la latencia al mínimo absoluto para aplicaciones globales.
 
-#### b) Según el método de ejecución
+### 3.5 Según el método de ejecución
 
 **Lenguajes Compilados:** En estos lenguajes, un programa llamado compilador traduce todo el código fuente de una sola vez y genera un archivo ejecutable (como un .exe o un binario de Linux).
 
@@ -346,11 +349,11 @@ En la actualidad, la mayoría de los lenguajes populares no pertenecen a una sol
 
 - Ejemplo estrella: JavaScript moderno (motores como V8 de Chrome) y Julia.
 
-## 4. Caracteristicas de los lenguajes de programación
+## 4. Características de los lenguajes de programación
 
 A continuación señalamos los lenguajes de programación más influyentes de la historia, sus características principales y su impacto en la tecnología actual.
 
-#### a). Los Pioneros: Sentando las Bases (1950 - 1960)
+### 4.1. Primeros Lenguajes (1950 - 1960)
 
 #### **Fortran (1957)**
 El "abuelo" de los lenguajes de alto nivel. Fue diseñado para facilitar el trabajo de científicos e ingenieros.
@@ -362,17 +365,17 @@ Introdujo conceptos revolucionarios como la recursividad y las funciones como ci
 * **Características:** Basado completamente en listas y una sintaxis llena de paréntesis.
 * **Legado:** Pionero absoluto en el campo de la **Inteligencia Artificial**.
 
-### **COBOL (1959)**
+#### COBOL (1959)
 Diseñado para ser un lenguaje universal para el mundo de los negocios.
 * **Características:** Sintaxis muy verbosa y similar al inglés para que fuera legible por ejecutivos.
 * **Legado:** Gestiona todavía hoy la gran mayoría de los sistemas bancarios y transacciones financieras globales.
 
-### **BASIC (1964)**
+#### BASIC (1964)
 Creado para que estudiantes que no eran de ciencias pudieran interactuar con las computadoras.
 * **Características:** Extremadamente sencillo de aprender, basado en números de línea.
 * **Legado:** Fue el lenguaje que impulsó la era de las microcomputadoras (Microsoft nació creando una versión de BASIC).
 
-#### b). Los Arquitectos del Software (1970 - 1980)
+### 4.2 Lenguajes creadores de software (1970 - 1980)
 
 ### **Pascal (1970)**
 Diseñado por Niklaus Wirth con un objetivo académico: enseñar buenas prácticas de programación.
@@ -389,7 +392,7 @@ Una extensión de C que introdujo la **Programación Orientada a Objetos (POO)**
 * **Características:** Combina la velocidad de C con la capacidad de organizar grandes sistemas mediante objetos.
 * **Legado:** Motores de videojuegos (Unreal Engine), navegadores web y software de alto rendimiento como Photoshop.
 
-#### c). La Revolución del Internet y la Productividad (1990)
+### 4.3 Lenguajes de la era Internet (1990)
 
 ### **Python (1991)**
 Creado bajo la filosofía de que "la legibilidad cuenta".
@@ -413,7 +416,7 @@ Creado originalmente en 10 días para añadir interactividad básica a las pági
 
 
 
-#### d). La Era Moderna: Rendimiento, Nube y Seguridad (2000 - Presente)
+### 4.4 Lenguajes modernos. Rendimiento, Nube y Seguridad (2000 - Presente)
 
 ### **Go / Golang (2009)**
 Diseñado por Google para resolver problemas de escalabilidad y sistemas distribuidos.
@@ -472,5 +475,3 @@ Beneficios Clave:
 
 En definitiva, programar es el superpoder de nuestra era. Los lenguajes de programación han transformado el mundo en un lienzo digital donde el único límite para construir el futuro es la imaginación y la lógica del desarrollador.
 
-
-[Generar PDF](/oposdocs/pdf/tema24_full.pdf)
