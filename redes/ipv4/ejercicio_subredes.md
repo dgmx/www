@@ -1,6 +1,6 @@
-# Ejercicio de Subredes: Segmentación de Red Corporativa
+# Ejercicios de Subredes: 
 
-## Enunciado
+## Ejercicio 1. Segmentación de Red Corporativa
 
 Una empresa tiene asignada la dirección IP **172.20.0.0/16** (clase B) y quiere segmentar su red entre **4 regiones** (Norte, Sur, Este, Oeste). En cada región hay **8 sucursales** y cada sucursal tiene **4 departamentos**.
 
@@ -228,10 +228,9 @@ Las subredes se asignan secuencialmente dentro del rango de la subred padre, usa
 ```
 
 ---
+## Ejercicio 2. Provincias, oficinas y departamentos
 
-# Segmentación de Red en Provincias y Oficinas
-
-## Enunciado
+### Enunciado
 
 Una empresa tiene asignada la dirección IP **180.10.0.0** de clase B, y desea segmentar su red entre las oficinas que tiene en las provincias de **Granada**, **Málaga** y **Sevilla**. En cada provincia hay **4 oficinas** y cada oficina posee **8 departamentos**.
 
@@ -467,3 +466,67 @@ Depto 8: 180.10.14.0/23  (180.10.14.0  - 180.10.15.255)
     ├── 180.10.160.0/20  (Of. 3)
     └── 180.10.176.0/20  (Of. 4)
 ```
+
+## Ejercicio 3. VLSM
+
+**Dirección base:** `172.20.0.0/22` (255.255.252.0)
+
+### Requisitos
+
+| Red | Hosts necesarios |
+|-----|-----------------|
+| A | 320 |
+| B | 150 |
+| C | 60 |
+| D | 28 |
+| E | 12 |
+| F | 6 |
+| G | 2 |
+| Enlaces WAN (4 enlaces) | 2 c/u |
+
+### Se pide
+
+1. Ordenar las redes de mayor a menor cantidad de hosts.
+2. Calcular máscara, rango, broadcast y gateway (primera IP usable) para cada subred.
+3. Indicar la dirección de red resultante y la máscara en notación slash y decimal.
+4. Verificar que no haya solapamiento entre subredes.
+5. Calcular el % de desperdicio de direcciones IP en cada subred.
+
+
+- Los 4 enlaces WAN deben ocupar las últimas subredes disponibles.
+- El direccionamiento debe ser contiguo sin saltos.
+
+---
+
+### Solución
+
+Orden descendente: A → B → C → D → E → F → G → WAN1..4
+
+| Red | Dirección | Máscara | Rango usable | Broadcast | Gateway |
+|-----|-----------|---------|-------------|-----------|---------|
+| A | 172.20.0.0/23 | 255.255.254.0 | 172.20.0.1 – 172.20.1.254 | 172.20.1.255 | 172.20.0.1 |
+| B | 172.20.2.0/24 | 255.255.255.0 | 172.20.2.1 – 172.20.2.254 | 172.20.2.255 | 172.20.2.1 |
+| C | 172.20.3.0/26 | 255.255.255.192 | 172.20.3.1 – 172.20.3.62 | 172.20.3.63 | 172.20.3.1 |
+| D | 172.20.3.64/27 | 255.255.255.224 | 172.20.3.65 – 172.20.3.94 | 172.20.3.95 | 172.20.3.65 |
+| E | 172.20.3.96/28 | 255.255.255.240 | 172.20.3.97 – 172.20.3.110 | 172.20.3.111 | 172.20.3.97 |
+| F | 172.20.3.112/29 | 255.255.255.248 | 172.20.3.113 – 172.20.3.118 | 172.20.3.119 | 172.20.3.113 |
+| G | 172.20.3.120/30 | 255.255.255.252 | 172.20.3.121 – 172.20.3.122 | 172.20.3.123 | 172.20.3.121 |
+| WAN1 | 172.20.3.124/30 | 255.255.255.252 | 172.20.3.125 – 172.20.3.126 | 172.20.3.127 | 172.20.3.125 |
+| WAN2 | 172.20.3.128/30 | 255.255.255.252 | 172.20.3.129 – 172.20.3.130 | 172.20.3.131 | 172.20.3.129 |
+| WAN3 | 172.20.3.132/30 | 255.255.255.252 | 172.20.3.133 – 172.20.3.134 | 172.20.3.135 | 172.20.3.133 |
+| WAN4 | 172.20.3.136/30 | 255.255.255.252 | 172.20.3.137 – 172.20.3.138 | 172.20.3.139 | 172.20.3.137 |
+
+### Desperdicio
+
+| Red | Disponibles | Usados | Desperdicio |
+|-----|------------|--------|-------------|
+| A | 512 | 320 | **37.5 %** |
+| B | 256 | 150 | **41.4 %** |
+| C | 64 | 60 | **6.25 %** |
+| D | 32 | 28 | **12.5 %** |
+| E | 16 | 12 | **25 %** |
+| F | 8 | 6 | **25 %** |
+| G | 4 | 2 | **50 %** |
+| WAN | 4×4 | 4×2 | **50 % c/u** |
+
+**Total direcciones:** 1024 (rango /22) — **Usadas:** 908 — **Desperdicio global:** ~11.3 %
