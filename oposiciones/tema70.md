@@ -5,7 +5,7 @@
 ```bash
 1. INTRODUCCIÓN
 2. SISTEMAS EN RED
-3. PLANIFICACIÓN Y DISEÑO  DE UN SISTEMA EN RED
+3. DISEÑO Y PLANIFICACIÓN DE UN SISTEMA EN RED
 4. PARÁMETROS DE DISEÑO
 5. INSTALACIÓN Y CONFIGURACIÓN  DE UN SISTEMA EN RED  LOCAL
   5.1. INSTALACIÓN DE LA INFRAESTRUCTURA DE RED
@@ -23,7 +23,7 @@ El presente tema forma parte del temario oficial publicado en el BOE de 13 de
 febrero de 1996, donde se aprueban el temario de acceso a la especialidad de 
 Informática.
 
-A su vez, el actual tema 70 se ubica dentro del bloque temático de redes. A lo largo de este tema, a través de autores como Stallings y Tanenbaum, se 
+A su vez, el actual tema 70 se ubica dentro del bloque temático de redes. A lo largo de este tema, a través de autores como Martinez, Stallings y Tanenbaum, se 
 realizará una presentación general sobre el diseño, instalación y configuración 
 de un sistema en red local.  
 
@@ -78,9 +78,9 @@ comunicación)  `(Tanenbaum, 2021)`.
 Las arquitecturas y componentes básicos de un sistema en red son los siguientes:
 - **Arquitectura:** Principalmente Cliente / Servidor o P2P
 - **Componentes básicos:**
-  - Hardware de red: NICs, dispositivos de interconexión (switches, routers) y estaciones de trabajo y servidores
-  - Software de red: Sistemas operativos de red como Windows Server o Linux
-  - Medios de transmisión: Cableados o inalámbricos.
+  - **Hardware de red:** NICs, dispositivos de interconexión (switches, routers) y estaciones de trabajo y servidores
+  - **Software de red**: Sistemas operativos de red como Windows Server o Linux
+  - **Medios de transmisión**: Cableados o inalámbricos.
   
 Los beneficios que se obtienen al disponer de sistemas en red son:  
 - Permiten compartir información, recursos, como impresoras, dispositivos 
@@ -90,7 +90,7 @@ la red desde diferentes nodos.
 - Permiten reducir costes . 
 
 
-## 3. PLANIFICACIÓN Y DISEÑO  DE UN SISTEMA EN RED
+## 3. DISEÑO Y PLANIFICACIÓN DE UN SISTEMA EN RED
 
 El diseño de un sistema en red debe seguir un enfoque jerárquico y estructurado para garantizar la escalabilidad.
  
