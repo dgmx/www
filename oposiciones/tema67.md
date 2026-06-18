@@ -5,9 +5,9 @@
 1. INTRODUCCIÓN Y JUSTIFICACIÓN
 2. REDES DE ÁREA LOCAL
 3. COMPONENTES
-    3.1. Dispositivos de red
-    3.2. Estaciones de trabajo y servidores
-    3.3. Medios de transmisión
+   3.1 DISPOSITIVOS DE RED
+   3.2 ESTACIONES DE TRABAJO Y SERVIDORES
+   3.3 MEDIOS DE TRANSMISIÓN
 4. TOPOLOGÍAS
 5. ESTÁNDARES
 6. PROTOCOLOS

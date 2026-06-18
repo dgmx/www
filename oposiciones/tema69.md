@@ -1,21 +1,21 @@
 # TEMA 69. INTEGRACIÓN DE SISTEMAS. MEDIOS DE INTERCONEXIÓN. ESTÁNDARES. PROTOCOLOS DE ACCESO A REDES DE ÁREA EXTENSA.
 
 ## ÍNDICE 
-```
+```bash
 1. INTRODUCCIÓN Y JUSTIFICACIÓN
 2. INTEGRACIÓN DE SISTEMAS
 3. MEDIOS DE INTERCONEXIÓN
-   3.1. Medios guiados
-   3.2. Medios no guiados (inalámbricos)
-   3.3. Dispositivos de interconexión
+   3.1 MEDIOS GUIADOS
+   3.2 MEDIOS NO GUIADOS (INALÁMBRICOS)
+   3.3 DISPOSITIVOS DE INTERCONEXIÓN
 4. ESTÁNDARES DE INTERCONEXIÓN
-   4.1. Estándares de red de área local (LAN)
-   4.2. Estándares de red de área extensa (WAN)
+   4.1 ESTÁNDARES DE RED DE ÁREA LOCAL (LAN)
+   4.2 ESTÁNDARES DE RED DE ÁREA EXTENSA (WAN)
 5. PROTOCOLOS DE ACCESO A REDES DE ÁREA EXTENSA
-   5.1. Protocolos clásicos de acceso WAN
-   5.2. Protocolos de nivel de enlace y red para WAN modernas
-   5.3. Protocolos de acceso inalámbrico WAN
-   5.4. Protocolos de enrutamiento WAN
+   5.1 PROTOCOLOS CLÁSICOS DE ACCESO WAN
+   5.2 PROTOCOLOS DE NIVEL DE ENLACE Y RED PARA WAN MODERNAS
+   5.3 PROTOCOLOS DE ACCESO INALÁMBRICO WAN
+   5.4 PROTOCOLOS DE ENRUTAMIENTO WAN
 6. CONCLUSIÓN
 7. BIBLIOGRAFÍA
 ```
