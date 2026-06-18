@@ -530,3 +530,191 @@ Orden descendente: A → B → C → D → E → F → G → WAN1..4
 | WAN | 4×4 | 4×2 | **50 % c/u** |
 
 **Total direcciones:** 1024 (rango /22) — **Usadas:** 908 — **Desperdicio global:** ~11.3 %
+
+## Ejercicio 4. Mixto: VLSM + Subnetting Fijo
+
+Una empresa tiene la dirección `10.0.0.0/16` y debe segmentar su red en dos fases.
+
+---
+
+### Fase 1 — Subnetting Fijo (por departamento)
+
+Se dividen los primeros **512 /24** en 8 bloques fijos de **64 subredes /24** cada uno, asignados así:
+
+| Bloque | Rango /24 | Asignación |
+|--------|-----------|------------|
+| 1 | 10.0.0.0 – 10.0.63.255 | Ventas |
+| 2 | 10.0.64.0 – 10.0.127.255 | Marketing |
+| 3 | 10.0.128.0 – 10.0.191.255 | RRHH |
+| 4 | 10.0.192.0 – 10.0.255.255 | Sistemas |
+| 5 | 10.1.0.0 – 10.1.63.255 | Operaciones |
+| 6 | 10.1.64.0 – 10.1.127.255 | Logística |
+| 7 | 10.1.128.0 – 10.1.191.255 | Soporte |
+| 8 | 10.1.192.0 – 10.1.255.255 | Reserva |
+
+#### Preguntas Fase 1
+
+1. ¿Cuántas subredes /24 hay en total? ¿Cuántas direcciones usable por subred?
+2. ¿Qué máscara en decimal tienen las subredes?
+3. Para el departamento de **Sistemas** (bloque 4):
+   - ¿Cuál es la dirección de red y broadcast de la **subred 10** dentro de ese bloque?
+   - ¿Cuál es el rango de IPs usable?
+4. ¿Qué porción del espacio /16 total se ha asignado en esta fase?
+
+---
+
+### Fase 2 — VLSM (intradepartamento)
+
+El departamento de **Sistemas** (bloque 4: `10.0.192.0/18`) necesita subdividir su bloque con VLSM:
+
+| Subred | Hosts |
+|--------|-------|
+| S-Prod | 2000 |
+| S-Pre | 800 |
+| S-Test | 300 |
+| S-Dev | 100 |
+| S-WAN1 | 2 |
+| S-WAN2 | 2 |
+
+#### Preguntas Fase 2
+
+1. Ordenar de mayor a menor y calcular cada subred (red, máscara slash y decimal, rango, broadcast, gateway).
+2. ¿Las subredes S-WAN1 y S-WAN2 son contiguas? Si no, ¿cuántas direcciones se pierden entre ellas?
+3. ¿Cuánto espacio libre queda sin asignar dentro del bloque de Sistemas (en /24)?
+4. ¿El bloque de Sistemas original alcanza para cubrir todos los requisitos? Si sobra, ¿qué % del bloque queda libre?
+
+---
+
+### Preguntas Integradoras
+
+1. Si la empresa crece y necesita 20 subredes /24 adicionales, ¿de qué bloque las tomaría sin romper el direccionamiento existente?
+2. Diseñe una **ruta resumida** (supernet / ruta agregada) que cubra todo el espacio asignado en la Fase 1 con la menor máscara posible.
+3. Tomando el bloque de Sistemas después de aplicar VLSM, ¿es posible resumir S-Prod y S-Pre en una sola ruta? ¿Qué máscara usaría?
+
+---
+
+### Solución
+
+#### Fase 1 — Subnetting Fijo
+
+#### 1.1
+- **8 bloques × 64 subredes = 512 subredes /24**
+- Por cada /24: 256 direcciones totales − 2 (red y broadcast) = **254 usables**
+
+#### 1.2
+**255.255.255.0**
+
+#### 1.3 — Sistemas (bloque 4: `10.0.192.0/18`)
+
+Las subredes /24 dentro del bloque se numeran desde 0:
+
+| Subred | Dirección |
+|--------|-----------|
+| 0 | 10.0.192.0/24 |
+| 1 | 10.0.193.0/24 |
+| 2 | 10.0.194.0/24 |
+| ... | ... |
+| **10** | **10.0.202.0/24** |
+| ... | ... |
+| 63 | 10.0.255.0/24 |
+
+- **Red:** 10.0.202.0
+- **Broadcast:** 10.0.202.255
+- **Rango usable:** 10.0.202.1 – 10.0.202.254
+
+#### 1.4
+
+Los bloques 1–4 ocupan `10.0.0.0/16` completo. Los bloques 5–8 ocupan `10.1.0.0/16`. En total se asignan **2 × /16** (espacio `10.0.0.0/15`).
+
+| Concepto | Valor |
+|----------|-------|
+| Espacio asignado | 10.0.0.0/15 |
+| Subredes /24 | 512 |
+| Direcciones totales | 131,072 |
+
+---
+
+### Fase 2 — VLSM (bloque Sistemas: `10.0.192.0/18`)
+
+Orden: S-Prod (/21) → S-Pre (/22) → S-Test (/23) → S-Dev (/25) → S-WAN1 (/30) → S-WAN2 (/30)
+
+#### Tabla completa
+
+| Subred | Red | Máscara | Rango usable | Broadcast | Gateway |
+|--------|-----|---------|-------------|-----------|---------|
+| S-Prod | 10.0.192.0/21 | 255.255.248.0 | 10.0.192.1 – 10.0.199.254 | 10.0.199.255 | 10.0.192.1 |
+| S-Pre | 10.0.200.0/22 | 255.255.252.0 | 10.0.200.1 – 10.0.203.254 | 10.0.203.255 | 10.0.200.1 |
+| S-Test | 10.0.204.0/23 | 255.255.254.0 | 10.0.204.1 – 10.0.205.254 | 10.0.205.255 | 10.0.204.1 |
+| S-Dev | 10.0.206.0/25 | 255.255.255.128 | 10.0.206.1 – 10.0.206.126 | 10.0.206.127 | 10.0.206.1 |
+| S-WAN1 | 10.0.206.128/30 | 255.255.255.252 | 10.0.206.129 – 10.0.206.130 | 10.0.206.131 | 10.0.206.129 |
+| S-WAN2 | 10.0.206.132/30 | 255.255.255.252 | 10.0.206.133 – 10.0.206.134 | 10.0.206.135 | 10.0.206.133 |
+
+#### Cálculo de potencias
+
+| Subred | Hosts | Mínima potencia | Máscara | Direcciones totales |
+|--------|-------|----------------|---------|-------------------|
+| S-Prod | 2000 | 2¹¹ = 2048 | /21 | 2048 |
+| S-Pre | 800 | 2¹⁰ = 1024 | /22 | 1024 |
+| S-Test | 300 | 2⁹ = 512 | /23 | 512 |
+| S-Dev | 100 | 2⁷ = 128 | /25 | 128 |
+| S-WAN1 | 2 | 2² = 4 | /30 | 4 |
+| S-WAN2 | 2 | 2² = 4 | /30 | 4 |
+
+#### 2.2 — ¿WAN1 y WAN2 son contiguas?
+
+**Sí.** S-WAN1 termina en broadcast `10.0.206.131` y S-WAN2 arranca en `10.0.206.132`. No hay direcciones perdidas entre ellas.
+
+#### 2.3 — Espacio libre en el bloque de Sistemas
+
+El bloque `10.0.192.0/18` abarca de `10.0.192.0` a `10.0.255.255` (16,384 direcciones).
+
+Última dirección usada: broadcast de S-WAN2 = `10.0.206.135`.
+Espacio libre: `10.0.206.136` – `10.0.255.255`.
+
+```
+(255 − 206 + 1) × 256 − 136 = 50 × 256 − 136 = 12,800 − 136 = 12,664 direcciones
+```
+
+En /24: `12,664 ÷ 256 ≈ 49.47` → **49 subredes /24 completas** (más 120 direcciones sueltas).
+
+#### 2.4 — ¿Alcanza el bloque?
+
+| Concepto | Valor |
+|----------|-------|
+| Capacidad del /18 | 16,384 direcciones |
+| Total usado | 2,048 + 1,024 + 512 + 128 + 4 + 4 = **3,720** |
+| Libre | 16,384 − 3,720 = **12,664** |
+| % libre | 12,664 ÷ 16,384 ≈ **77.3 %** |
+
+Sobra ampliamente.
+
+---
+
+### Preguntas Integradoras
+
+#### 3.1 — 20 subredes /24 adicionales
+
+Del **bloque 8 (Reserva: `10.1.192.0/18`)** que está intacto y fue designado para crecimiento.
+
+#### 3.2 — Ruta resumida de toda la Fase 1
+
+Los 8 bloques abarcan `10.0.0.0` – `10.1.255.255`. La mejor ruta agregada:
+
+```
+10.0.0.0/15  → 255.254.0.0
+```
+
+Cubre exactamente `10.0.0.0` – `10.1.255.255` sin espacio extra.
+
+#### 3.3 — Resumir S-Prod y S-Pre
+
+| Subred | Rango |
+|--------|-------|
+| S-Prod | 10.0.192.0 – 10.0.199.255 (/21) |
+| S-Pre | 10.0.200.0 – 10.0.203.255 (/22) |
+
+Ambas caben dentro de `10.0.192.0/20` (10.0.192.0 – 10.0.207.255), pero ese /20 también incluye S-Test, S-Dev y las WAN.
+
+**No es posible resumir exclusivamente S-Prod + S-Pre** en un solo prefijo sin incluir otras subredes, porque no caen en un bloque alineado a potencia de 2 que excluya al resto. La máscara /20 cubre todo el rango `192.0 – 207.255` que contiene a las 6 subredes del VLSM.
+
+Para resumir **todo** el espacio VLSM de Sistemas: `10.0.192.0/20`.
