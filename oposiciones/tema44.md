@@ -9,15 +9,15 @@
 3. SEGURIDAD DE LAS BASES DE DATOS. CONFIDENCIALIDAD
    3.1. GESTIÓN DE USUARIOS Y PERMISOS
    3.2. VISTAS
-   3.3. ENCRIPTACIÓN DE DATOS
+   3.3. CIFRADO DE DATOS
    3.4. PROGRAMAS DE APLICACIÓN
    3.5. AUDITORÍA
 
 4. INTEGRIDAD DE LAS BASES DE DATOS
    4.1. RESTRICCIONES
    4.2. TRANSACCIONES
-   4.3. RECUPERACIÓN DEL SISTEMA
-   4.4. PROBLEMAS DE CONCURRENCIA
+   4.3. PROBLEMAS DE CONCURRENCIA
+   4.4. RECUPERACIÓN DEL SISTEMA
    
 5. CONCLUSIÓN
 6. BIBLIOGRAFÍA
@@ -221,16 +221,7 @@ La orden ROLLBACK aborta la transacción volviendo a la situación de las tablas
 ROLLBACK;
 ```
 
-### 4.3. RECUPERACIÓN DEL SISTEMA
-
-El sistema debe estar preparado para recuperarse no solo de fallos puramente locales, sino también de fallos globales. Un fallo local afecta sólo a la transacción en la que se presentó el fallo, mientras que un fallo global afecta a todas las transacciones que se estaban realizando en el momento del fallo.
-
-Ante un fallo global, el sistema deberá recuperarse de dos tipos de fallos:
-
-- **Fallos del sistema**, que afectan a todas las transacciones que se están realizando, pero no dañan físicamente a la base de datos. También se conocen como caídas suaves.
-- **Fallos de los medios de almacenamiento**, que causan daños a la base de datos o a una porción de ella, y afectan al menos a las transacciones que están utilizando esa porción. También se conocen como caídas duras.
-
-### 4.4. PROBLEMAS DE CONCURRENCIA
+### 4.3. PROBLEMAS DE CONCURRENCIA
 
 La mayoría de los SGBD son multiusuario. En los sistemas concurrentes múltiples usuarios pueden acceder de forma simultanea a los mismos objetos. En estos sistemas se necesita un mecanismo de control de concurrencia para asegurar que ninguna transacción concurrente interfiera con las operaciones de las demás.
 
@@ -238,6 +229,15 @@ La técnica mas habitual para estas controlar estas situaciones es el bloqueo, c
 
 - Exclusivo: Nadie lee ni escribe. Solo `UPDATE` y `DELETE`
 - Compartido: Lectura permitida, escritura bloqueada: `SELECT`
+
+### 4.4. RECUPERACIÓN DEL SISTEMA
+
+El sistema debe estar preparado para recuperarse no solo de fallos puramente locales, sino también de fallos globales. Un fallo local afecta sólo a la transacción en la que se presentó el fallo, mientras que un fallo global afecta a todas las transacciones que se estaban realizando en el momento del fallo.
+
+Ante un fallo global, el sistema deberá recuperarse de dos tipos de fallos:
+
+- **Fallos del sistema**, que afectan a todas las transacciones que se están realizando, pero no dañan físicamente a la base de datos. También se conocen como caídas suaves.
+- **Fallos de los medios de almacenamiento**, que causan daños a la base de datos o a una porción de ella, y afectan al menos a las transacciones que están utilizando esa porción. También se conocen como caídas duras.
 
 
 ## 5. CONCLUSIÓN
