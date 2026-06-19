@@ -3,16 +3,23 @@
 
 ## ÍNDICE 
 ```bash
-1. Introducción
-2. Organización Lógica de los Datos
-    2.1. Datos y variables
-    2.2. Tipos de datos
-    2.3. Tipado de datos
-    2.4. Estructuras de Datos
-3. Estructuras Dinámicas
-    3.1. Estructuras Lineales
-    3.2. Estructuras No Lineales
-4. Conclusión
+1. INTRODUCCIÓN
+2. ORGANIZACIÓN LÓGICA DE LOS DATOS
+   2.1. DATOS Y VARIABLES
+   2.2. TIPOS DE DATOS
+   2.3. TIPADO DE DATOS
+   2.4. ESTRUCTURAS DE DATOS
+3. ESTRUCTURAS DINÁMICAS
+   3.1. ESTRUCTURAS LINEALES
+      3.1.1. LISTAS ENLAZADAS
+      3.1.2. PILAS (LIFO)
+      3.1.3. COLAS (FIFO)
+   3.2. ESTRUCTURAS NO LINEALES
+      3.2.1. ÁRBOLES
+      3.2.2. GRAFOS
+      3.2.3. TABLAS HASH
+4. CONCLUSIÓN
+5. BIBLIOGRAFÍA
 ```
 
 ---

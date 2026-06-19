@@ -2,18 +2,18 @@
 
 ## ÍNDICE 
 ```bash
-1. Introducción
-2. Ficheros
-    2.1. Definición
-    2.2. Operaciones
-3. Tipos de ficheros
-    3.1. Según su duración en el sistema
-    3.2. Según su contenido
-4. Características
-5. Organización de ficheros
-    5.1. Secuencial
-    5.2. Directa
-    5.3. Indexada
+1. INTRODUCCIÓN
+2. FICHEROS
+   2.1. DEFINICIÓN
+   2.2. OPERACIONES
+3. TIPOS DE FICHEROS
+   3.1. SEGÚN SU DURACIÓN EN EL SISTEMA
+   3.2. SEGÚN SU CONTENIDO
+4. CARACTERÍSTICAS
+5. ORGANIZACIÓN DE FICHEROS
+   5.1. SECUENCIAL
+   5.2. DIRECTA
+   5.3. INDEXADA
 ```
 
 ---
@@ -124,14 +124,14 @@ Los registros se almacenan en orden consecutivo.
 Características:
 - Acceso en orden (de principio a fin).
 - Simple de implementar.
-- Poco eficiente para búsquedas específicas.
+- Poco eficiente para búsquedas específicas. `O(n)`
 
 ### 5.2. Directa
 
 Los registros se acceden por su dirección, no por orden físico.
 Permite acceder a cualquier dato sin recorrer todo el fichero.   
 Características:
-- Acceso rápido a posiciones específicas.
+- Acceso rápido a posiciones específicas. `0(1)`
 - Usa direcciones o posiciones (índices).
 - Más compleja de gestionar.
 
@@ -139,7 +139,7 @@ Características:
 
 Utiliza una estructura adicional (índice) para localizar los datos.   
 Características:
-- Acceso rápido mediante claves.
+- Acceso rápido mediante claves. `O(log n)`
 - Combina ventajas del acceso secuencial y directo.
 - Requiere espacio extra para el índice.
 

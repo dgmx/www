@@ -2,16 +2,18 @@
 
 ## ÍNDICE 
 ```bash
-1. Introducción
-2. Ficheros
-    2.1. Definición
-    2.2. Características
-    2.3. Operaciones
-    2.4. Tipos de ficheros
-3. Organización de ficheros
-    3.1. Secuencial
-    3.2. Directa
-    3.3. Indexada
+1. INTRODUCCIÓN
+2. FICHEROS
+   2.1. DEFINICIÓN
+   2.2. CARACTERÍSTICAS
+   2.3. OPERACIONES
+   2.4. TIPOS DE FICHEROS
+      2.4.1. SEGÚN SU DURACIÓN EN EL SISTEMA
+      2.4.2. SEGÚN SU CONTENIDO
+3. ORGANIZACIÓN DE FICHEROS
+   3.1. SECUENCIAL
+   3.2. DIRECTA
+   3.3. INDEXADA
 ```
 
 ---
