@@ -3,19 +3,21 @@
 
 ## ÍNDICE 
 ```bash
-1. Introducción
-2. Sistemas de Almacenamiento Externo
-3. Tipos
-4. Características y Funcionamiento
-    4.1. Memorias Magnéticas
-    4.2. Memorias Ópticas
-    4.3. Memorias Flash
-5. Medidas y Magnitudes Relacionadas
-6. Almacenamiento en Red
-7. Recursos Educativos
-8. Aplicaciones
-9. Conclusión
-10. Bibliografía
+1. INTRODUCCIÓN
+2. SISTEMAS DE ALMACENAMIENTO EXTERNO
+3. TIPOS
+4. CARACTERÍSTICAS Y FUNCIONAMIENTO
+   4.1. MEMORIAS MAGNÉTICAS
+   4.2. MEMORIAS ÓPTICAS
+   4.3. MEMORIAS FLASH
+5. MEDIDAS Y MAGNITUDES RELACIONADAS
+6. ALMACENAMIENTO EN RED
+7. RECURSOS EDUCATIVOS
+8. APLICACIONES
+   8.1. ÁMBITO ESCOLAR
+   8.2. ÁMBITO LABORAL
+9. CONCLUSIÓN
+10. BIBLIOGRAFÍA
 ```
 
 ---

@@ -1,26 +1,23 @@
 ## ÍNDICE 
 ```bash
-1. Introducción
-2. Sistemas Informáticos
-    2.1. Definición de Sistema Informático
-    2.2. Evolución Histórica de los Sistemas Informáticos
-    2.3. Estructura Básica de un Sistema Informático
-3. Estructura Física de un Sistema Informático
-    3.1. Chasis
-    3.2. Placa Base y Dispositivos Internos
-    3.3. Unidades de Almacenamiento Secundario
-    3.4. Tarjetas de Expansión
-    3.5. Periféricos
-4. Estructura Funcional de un Sistema Informático
-    4.1. Unidad Central de Proceso (UCP)
-    4.2. Memoria
-    4.3. Unidad de Entrada/Salida
-    4.4. Buses
-5. Aplicación de los Contenidos al Contexto Escolar y Laboral
-    5.1. Contexto Escolar
-    5.2. Contexto Laboral
-6. Conclusión
-7. Bibliografía
+1. INTRODUCCIÓN
+2. SISTEMAS INFORMÁTICOS
+   2.1. DEFINICIÓN DE SISTEMA INFORMÁTICO
+   2.2. EVOLUCIÓN HISTÓRICA DE LOS SISTEMAS INFORMÁTICOS
+   2.3. ESTRUCTURA BÁSICA DE UN SISTEMA INFORMÁTICO
+3. ESTRUCTURA FÍSICA DE UN SISTEMA INFORMÁTICO
+   3.1. CHASIS
+   3.2. PLACA BASE Y DISPOSITIVOS INTERNOS
+   3.3. UNIDADES DE ALMACENAMIENTO SECUNDARIO
+   3.4. TARJETAS DE EXPANSIÓN
+   3.5. PERIFÉRICOS
+4. ESTRUCTURA FUNCIONAL DE UN SISTEMA INFORMÁTICO
+   4.1. UNIDAD CENTRAL DE PROCESO (UCP)
+   4.2. MEMORIA
+   4.3. UNIDAD DE ENTRADA/SALIDA
+   4.4. BUSES
+5. CONCLUSIÓN
+6. BIBLIOGRAFÍA
 ```
 
 ---
@@ -112,29 +109,17 @@
 + Bus de direcciones
 + Bus de control
 
-## 5. Aplicación de los Contenidos al Contexto Escolar y Laboral
-
-### 5.1. Contexto Escolar
-+ Educación Secundaria
-+ Formación Profesional (CFGB, CFGM, CFGS)
-
-### 5.2. Contexto Laboral
-+ Configuración de sistemas
-+ Diagnóstico y resolución de problemas
-+ Actualizaciones y mejoras
-
-## 6. Conclusión
+## 5. Conclusión
 + Visión global de los sistemas informáticos
 + Enfoque desde estructura física y funcional
 + Diversidad de sistemas informáticos
 
-## 7. Bibliografía
+## 6. Bibliografía
 - Moreno (2010)
 - Raya (2011)
 - Stallings (2022)
 - Tanenbaum (2013)
 - Prieto (2006)
-- Universidad de Granada (videoclases)
 
 
 

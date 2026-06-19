@@ -4,22 +4,20 @@
 
 ## ÍNDICE 
 ```bash
-1. Introducción
-2. Hardware Comercial de un Ordenador
-3. Placa Base
-    3.1. Factores de Forma
-    3.2. Componentes
-    3.3. Sockets
-4. Tarjetas Controladoras
-    4.1. Tarjetas de Almacenamiento
-    4.2. Tarjetas de Red
-    4.3. Tarjetas Gráficas (GPU)
-    4.4. Tarjetas de Sonido
-    4.5. Otras Tarjetas
-5. Recursos y Herramientas Educativas
-6. Aplicaciones en Educación y Trabajo
-7. Conclusión
-8. Bibliografía
+1. INTRODUCCIÓN
+2. HARDWARE COMERCIAL DE UN ORDENADOR
+3. PLACA BASE
+   3.1. FACTORES DE FORMA
+   3.2. COMPONENTES
+   3.3. SOCKETS
+4. TARJETAS CONTROLADORAS
+   4.1. TARJETAS DE ALMACENAMIENTO
+   4.2. TARJETAS DE RED
+   4.3. TARJETAS GRÁFICAS
+   4.4. TARJETAS DE SONIDO
+   4.5. OTRAS TARJETAS
+5. CONCLUSIÓN
+6. BIBLIOGRAFÍA
 ```
 
 ---
@@ -54,8 +52,9 @@
 - **VRM** – Regula voltaje para CPU y GPU.
 
 ### 3.3. Sockets
-- **LGA** (Intel: LGA 1200, LGA 1700) – Pines en la placa.
+- **LGA** (Intel: LGA 1200, LGA 1700, AMD M5) – Pines en la placa.
 - **PGA** (AMD: AM4) – Pines en el procesador.
+- **BGA** (ARM, Apple Serie M) - Bolas sobre el procesador que se sueldan en placa
 
 ## 4. Tarjetas Controladoras
 ### 4.1. Tarjetas de Almacenamiento
@@ -64,11 +63,12 @@
 
 ### 4.2. Tarjetas de Red
 - **Ethernet** – 1Gbps, 10Gbps.
-- **Wi-Fi 6/6E** – Más velocidad y menos latencia.
+- **Wi-Fi 6/6E y 7** – Más velocidad y menos latencia. 802.11be
 
 ### 4.3. Tarjetas Gráficas (GPU)
 - **NVIDIA RTX** – RTX 40, 30, 20.
 - **AMD Radeon** – RX 7000, RX 6000.
+- **Intel ARC** - Gama media
 - **Conectores** – VGA, DVI, HDMI, DisplayPort.
 
 ### 4.4. Tarjetas de Sonido
@@ -83,24 +83,13 @@
 - **RAID Controller** – Gestión de almacenamiento.
 - **Tarjetas de expansión de puertos** – USB, SATA, NVMe.
 
-## 5. Recursos y Herramientas Educativas
-- **BuildMyPC.net** – Configuración y compatibilidad de hardware.
 
-## 6. Aplicaciones en Educación y Trabajo
-### Contexto Escolar
-- Secundaria: Introducción al hardware.
-- FP: Montaje y mantenimiento de hardware.
-
-### Contexto Laboral
-- **Configuración de equipos** – Optimización del sistema.
-- **Soporte técnico** – Diagnóstico y reparación de hardware.
-
-## 7. Conclusión
+## 5. Conclusión
 - Elección de la placa base basada en CPU y necesidades.
 - Tarjetas controladoras amplían funcionalidades.
 - Importancia del conocimiento de hardware en la informática.
 
-## 8. Bibliografía
+## 6. Bibliografía
 - Stallings, W. (2021). *Computer organization and architecture*.
 - Moreno, J.C. (2019). *Fundamentos de hardware*.
 - AMD, Intel, NVIDIA, ASUS, MSI, Gigabyte, ASRock.

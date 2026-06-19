@@ -1,30 +1,24 @@
----
-title: "Tema 25 Programación Estructurada"
-parent: "Maps"
-nav_exclude: true
----
+
 
 
 # Tema 25: Programación Estructurada Estructuras básicas. Funciones y procedimientos
 
 ## ÍNDICE 
 ```bash
-1. Introducción
-2. Conceptos Previos
-3. Programación Estructurada
-4. Estructuras Básicas
-    4.1. Estructuras Secuenciales
-    4.2. Estructuras Selectivas
-    4.3. Estructuras Repetitivas
-5. Funciones y Procedimientos
-    5.1. Funciones
-    5.2. Procedimientos
-    5.3. Paso de Parámetros
-    5.4. Ámbito de un Identificador
-6. Recursos y Herramientas
-7. Aplicaciones en el Contexto Escolar y Laboral
-8. Conclusión
-9. Bibliografía
+1. INTRODUCCIÓN
+2. CONCEPTOS PREVIOS
+3. PROGRAMACIÓN ESTRUCTURADA
+4. ESTRUCTURAS BÁSICAS
+   4.1. ESTRUCTURAS SECUENCIALES
+   4.2. ESTRUCTURAS SELECTIVAS
+   4.3. ESTRUCTURAS REPETITIVAS
+5. FUNCIONES Y PROCEDIMIENTOS
+   5.1. FUNCIONES
+   5.2. PROCEDIMIENTOS
+   5.3. PASO DE PARÁMETROS
+   5.4. ÁMBITO DE UN IDENTIFICADOR
+6. CONCLUSIÓN
+7. BIBLIOGRAFÍA
 ```
 
 ---
@@ -106,24 +100,12 @@ nav_exclude: true
 - **Local:** dentro del subprograma.
 - **Global:** accesible desde todo el programa.
 
-## 6. Recursos y Herramientas
-- [**Sololearn:**](https://www.sololearn.com) plataforma educativa de programación.
-- **Visual Studio Code:** editor de código con soporte para Java y otros lenguajes.
-- **Eclipse:** IDE para Java.
 
-
-## 7. Aplicaciones en el Contexto Escolar y Laboral
-### Escolar
-- Enseñanza en **Java, Python, C, C++** en ciclos formativos.
-### Laboral
-- **Desarrollo de Software:** Python y Java en aplicaciones web/móviles.
-- **Ciencia de Datos e IA:** Python en análisis de datos y machine learning.
-
-## 8. Conclusión
+## 6. Conclusión
 - **La programación estructurada mejora la legibilidad y mantenimiento del código.**
 - **Uso de estructuras de control y subprogramas para optimizar el desarrollo.**
 
-## 9. Bibliografía
+## 7. Bibliografía
 - Joyanes, L. (2020). Fundamentos de programación.
 - Prieto, A. (2006). Introducción a la informática.
 - López, L. (2004). Programación Estructurada.
