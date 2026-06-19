@@ -168,11 +168,12 @@ Por su parte, las librerías constituyen el pilar de la reutilización en el des
 En conjunto, los conceptos tratados en este tema: modularidad, diseño de funciones, recursividad y librerías, son competencias esenciales para cualquier desarrollador, ya que sientan las bases del desarrollo de software estructurado y escalable, aplicable tanto en entornos académicos como profesionales.
 
 ## 8. Bibliografía
-- Joyanes, L. (2020). Fundamentos de programación.
-- Prieto, A. (2006). Introducción a la informática.
-- López, L. (2004). Programación Estructurada.
+- Joyanes, L. (2020). Fundamentos de programación. Editorial McGraw-Hill
+- Prieto, A. (2006). Introducción a la informática. Editorial McGraw-Hill
+- López, L. (2004). Programación Estructurada. Editorial Alfaomega
 - Hernández M. (2022). Estructuras de datos. Editorial Ra-Ma
-
+- Behrouz, A. (2004). Introducción a la ciencia de la computación. Editorial Paraninfo
+-
 >[Mapa Visual](/oposdocs/mapasweb/tema26map.html)
 
 >[Generar PDF](/oposdocs/pdf/tema26.pdf)
