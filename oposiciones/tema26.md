@@ -158,7 +158,14 @@ public static long factorial(int n) {
 
 
 ## 7. Conclusión
-- Ventajas de la programación modular: legibilidad, mantenimiento, y resolución de problemas.
+
+La programación modular representa un avance fundamental en la ingeniería del software, al permitir descomponer problemas complejos en subprogramas más pequeños y manejables. Como se ha visto, el diseño de funciones y procedimientos, junto con un adecuado paso de parámetros y control del ámbito de los identificadores, facilita la creación de código legible, reutilizable y fácil de mantener.
+
+La recursividad, aunque más compleja que la iteración tradicional, aporta una herramienta potente para resolver problemas de naturaleza recursiva, como recorridos de árboles o algoritmos de divide y vencerás, con una elegancia y claridad que a menudo supera a la solución iterativa.
+
+Por su parte, las librerías constituyen el pilar de la reutilización en el desarrollo de software. Al encapsular funcionalidades en módulos independientes, permiten a los programadores construir sobre código ya probado, reduciendo errores y acelerando el desarrollo.
+
+En conjunto, los conceptos tratados en este tema: modularidad, diseño de funciones, recursividad y librerías, son competencias esenciales para cualquier desarrollador, ya que sientan las bases del desarrollo de software estructurado y escalable, aplicable tanto en entornos académicos como profesionales.
 
 ## 8. Bibliografía
 - Joyanes, L. (2020). Fundamentos de programación.
