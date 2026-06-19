@@ -2,18 +2,20 @@
 
 ## ÍNDICE 
 ```bash
-1. Introducción y justificación
-2. Conceptos básicos
-3. Administración de la base de datos
-    3.1. Objetivos y funciones del administrador
-    3.2. Herramientas de administración
-    3.3. Gestión del almacenamiento
-4. Seguridad de la base de datos.
-    4.1. Seguridad SQL
-    4.2. TRANSACCIONES
-    4.3. RECUPERACIÓN DEL SISTEMA
-    4.4. PROBLEMAS DE CONCURRENCIA
-    4.5. AUDITORÍA
+1. INTRODUCCIÓN Y JUSTIFICACIÓN
+2. CONCEPTOS BÁSICOS
+3. ADMINISTRACIÓN DE LA BASE DE DATOS
+   3.1. OBJETIVOS Y FUNCIONES DEL ADMINISTRADOR
+   3.2. HERRAMIENTAS DE ADMINISTRACIÓN
+   3.3. GESTIÓN DEL ALMACENAMIENTO
+4. SEGURIDAD DE LA BASE DE DATOS
+   4.1. SEGURIDAD SQL
+   4.2. TRANSACCIONES
+   4.3. RECUPERACIÓN DEL SISTEMA
+   4.4. PROBLEMAS DE CONCURRENCIA
+   4.5. AUDITORÍA
+5. CONCLUSIÓN
+6. BIBLIOGRAFÍA
 ```
 
 ---
@@ -203,14 +205,15 @@ El uso de la clausula "WITH CHECK OPTION" garantiza que se puedan insertar regis
 
   ```sql
   CREATE PROFILE <perfil> LIMIT <parámetros>;
+  ```
 
 ### 4.2. TRANSACCIONES
 
 Una transacción se define como una unidad de trabajo que consiste en un bloque de operaciones que se ejecuta como una unidad indivisible. O se ejecuta de forma completa o no se ejecuta nada, evitando que el sistema pueda quedar inconsistente
 
-Para ello el SGBD proporciona el TCL o "control de transacciones", y las operaciones en SQL son COMMIT y ROLLBACK.
+Para ello el SGBD proporciona el TCL o "control de transacciones", y las operaciones en SQL son `COMMIT` y `ROLLBACK`.
 
-La mayoría de los SGBD incluyen las funciones rollback, commit y autocommit.
+La mayoría de los SGBD incluyen las funciones *rollback, commit y autocommit*
 
 Para validar los cambios que se hagan en la base de datos tenemos que ejecutar la orden COMMIT:
 
@@ -244,7 +247,9 @@ La técnica mas habitual para estas controlar estas situaciones es el bloqueo, c
 
 ### 4.5. AUDITORÍA
 
-La auditoría de la BD permitirá al administrador de ella conocer detalles acerca del uso de la BD por parte de los usuarios. Los datos generados por las auditorias se almacenan en otra base de datos, por lo que controlar el impacto que este genera en la base de datos tanto en almacenamiento como en rendimiento es responsabilidad del administrador.
+La auditoría de la BD permitirá al administrador de ella conocer detalles acerca del uso de la BD por parte de los usuarios. 
+
+Los datos generados por las auditorias se almacenan en otra base de datos, por lo que controlar el impacto que este genera en la base de datos tanto en almacenamiento como en rendimiento es responsabilidad del administrador.
 
 Existen dos niveles de auditoría:
 
@@ -252,11 +257,21 @@ Existen dos niveles de auditoría:
 - **A nivel de objeto (DDL)**: Audita los objetos y las operaciones sobre ellos. Cambios en la estructura de la base de datos. Obligatorio en producción. Bajo impacto.
 - **Nivel de dato (DML)**: Cambios en el contenido, solo para tablas críticas, muy alto impacto 
 
-## Conclusión
+## 5. Conclusión
 
 La administración de bases de datos es esencial para garantizar que la información esté disponible, íntegra y segura. El DBA actúa como puente entre los aspectos técnicos (rendimiento, almacenamiento, recuperación) y las necesidades organizativas (usuarios, permisos, planificación). Sin una gestión adecuada —normas claras, herramientas de monitorización, copias de seguridad y control de acceso—, los datos corren riesgo de pérdida, corrupción o acceso indebido. 
 
 En definitiva, una buena administración no es opcional: es la base que sostiene la fiabilidad de cualquier sistema de información.
 
 En el tema se han analizado algunas de las tareas que pueden ayudar a mantener una base de datos segura.
+
+## 6. Bibliografía
+- **Date, C.J.** (2000). *Introducción a los sistemas de bases de datos*. Addison-Wesley.
+- **De Miguel A, Piattini M** (1999). *Fundamentos y modelos de BBDD*. Ra-Ma.
+- **Korth H, Silberschatz** (2002). *Fundamentos de bases de datos*. McGraw-Hill.
+- **Núñez, R.** (2023). *Gestión de bases de datos*. Ra-Ma.
+- Oracle, MySQL, MongoDB, MariaDB, SQL Server
+
+
+
 

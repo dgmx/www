@@ -1,30 +1,21 @@
----
-title: "Tema 40 Diseño de Bases de Datos Relacionales"
-parent: "Maps"
-nav_exclude: true
----
 
 # Tema 40 - Diseño de Bases de Datos Relacionales
 
 ## ÍNDICE 
 ```bash
-1. Introducción
-2. Diseño de Bases de Datos Relacionales
-3. Diseño Conceptual: Modelo Entidad-Relación (E/R)
-    3.1. Entidades
-    3.2. Relaciones
-    3.3. Atributos
-    3.4. Modelo E/R Extendido
-4. Diseño Lógico
-    4.1. Simplificación de Diagramas E/R
-    4.2. Paso del Modelo E/R al Modelo Relacional
-    4.3. Normalización y Formas Normales
-5. Diseño Físico
-6. Aplicación en Contexto Escolar y Laboral
-    6.1. Contexto Escolar
-    6.2. Contexto Laboral
-7. Conclusión
-8. Bibliografía
+1. INTRODUCCIÓN
+2. DISEÑO DE BASES DE DATOS RELACIONALES
+3. DISEÑO CONCEPTUAL: MODELO ENTIDAD-RELACIÓN (E/R)
+   3.1. ENTIDADES
+   3.2. RELACIONES
+   3.3. ATRIBUTOS
+   3.4. MODELO E/R EXTENDIDO
+4. DISEÑO LÓGICO
+   4.1. PASO DEL MODELO E/R AL MODELO RELACIONAL
+   4.2. NORMALIZACIÓN Y FORMAS NORMALES
+5. DISEÑO FÍSICO
+6. CONCLUSIÓN
+7. BIBLIOGRAFÍA
 ```
 
 ---
@@ -73,19 +64,16 @@ nav_exclude: true
   - Especialización: subdividir en subtipos.
 
 ## 4. Diseño Lógico
-### 4.1. Simplificación de Diagramas E/R
-- Transformaciones necesarias antes de convertir al modelo relacional:
-  - Eliminar relaciones cíclicas.
-  - Convertir entidades débiles en fuertes.
 
-### 4.2. Paso del Modelo E/R al Modelo Relacional
+
+### 4.1. Paso del Modelo E/R al Modelo Relacional
 - **Conversión de entidades en tablas**.
 - **Conversión de atributos en columnas**.
 - **Conversión de relaciones**:
   - 1:N → Propagar clave primaria.
   - M:N → Nueva tabla intermedia.
 
-### 4.3. Normalización y Formas Normales
+### 4.2. Normalización y Formas Normales
 - **Objetivos**:
   - Reducir redundancia.
   - Mejorar integridad de datos.
@@ -106,25 +94,17 @@ nav_exclude: true
   - Punteros y direccionamiento (hashing).
   - Agrupación y particionamiento de datos.
   - Seguridad y redundancia.
+  - Cifrado
 
-## 6. Aplicación en Contexto Escolar y Laboral
-### 6.1. Contexto Escolar
-- Se estudia en asignaturas como TIC en Bachillerato y módulos de FP (DAM, DAW, ASIR).
 
-### 6.2. Contexto Laboral
-- Aplicaciones en banca, telecomunicaciones, salud, e-commerce, etc.
-- Tendencias emergentes:
-  - **Inteligencia Artificial aplicada a bases de datos**.
-  - **Entornos Multicloud**.
-
-## 7. Conclusión
+## 6. Conclusión
 - Importancia del diseño en bases de datos relacionales.
 - Etapas clave:
   1. Diseño conceptual (modelo E/R).
   2. Diseño lógico (transformación al modelo relacional).
   3. Diseño físico (optimización para almacenamiento y rendimiento).
 
-## 8. Bibliografía
+## 7. Bibliografía
 - **Date, C.J.** (2000). *Introducción a los sistemas de bases de datos*. Addison-Wesley.
 - **De Miguel A, Piattini M** (1999). *Fundamentos y modelos de BBDD*. Ra-Ma.
 - **Korth H, Silberschatz** (2002). *Fundamentos de bases de datos*. McGraw-Hill.
