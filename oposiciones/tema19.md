@@ -1,9 +1,3 @@
----
-title: "Tema 19: Gestión de Archivos y Dispositivos en Sistemas Operativos"
-parent: "Maps"
-nav_exclude: true
----
-
 
 # Tema 19: Gestión de Archivos y Dispositivos en Sistemas Operativos
 

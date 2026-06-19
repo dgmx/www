@@ -1,8 +1,3 @@
----
-title: "Tema 15: Sistemas Operativos. Componentes. Estructura. Funciones. Tipos"
-parent: "Maps"
-nav_exclude: true
----
 
 # Tema 15: Sistemas Operativos. Componentes. Estructura. Funciones. Tipos
 
@@ -53,9 +48,6 @@ nav_exclude: true
 - Dividen el sistema en módulos pequeños y confiables
 - Ejemplo: AIX, Symbian
 
-#### 2.2.4. Modelo Cliente-Servidor
-- Diferencia entre clientes y servidores de procesos
-- Ejemplo: Diseño de Windows NT
 
 #### 2.2.5. Máquinas Virtuales
 - Hipervisores permiten múltiples SO en un solo hardware

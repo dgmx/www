@@ -101,13 +101,10 @@ El diseño de un sistema en red debe seguir un enfoque jerárquico y estructurad
 ### 3.1 Análisis de la situación de actual
 
 Donde se analizarán los siguientes aspectos:  
-- **Servicios de red** proporcionados por la instalación actual y sus problemas 
+- **Servicios de red** de la instalación actual y sus problemas 
 asociados  
-- **Hardware de la instalación actual:** características de los servidores, de los 
-puestos de trabajo de los clientes, electrónica de red, cableado, etc.  
-- **Software de la instalación actual**: sistemas operativos de servidor, 
-sistemas operativos de equipos clientes, aplicaciones, etc.  
-
+- **Hardware de la instalación actual:** características de los servidores, de los puestos de trabajo de los clientes, etc.
+- **Software de la instalación actual**: sistemas operativos de servidor, SO clientes, aplicaciones.
 - **Número actual de usuarios**: servicios que demandan y tráfico que generan  
 - Etc. 
  
@@ -115,21 +112,12 @@ sistemas operativos de equipos clientes, aplicaciones, etc.
 
 A tener en cuenta los siguientes aspectos:
 
-- **Uso de la red** : habrá que determinar el tipo  de aplicaciones que van a 
-hacer uso de la red y qué servicios va a ofrecer la red.  
-- **Capacidad de la red** : habrá que estimar las necesidades de carga, 
-almacenamiento de datos y tipo de tráfico que generará.  
-- **Recursos** : habrá que determinar el tipo y número estimado de equipos y 
-otros dispositivos necesarios, así como los recursos humanos asociados 
-necesarios para dar soporte y garantizar el buen funcionamiento de la red.  
-- **Usuarios** : habrá que determinar el número y tipo de usuarios que harán 
-uso de la red, haciendo una estimación por lo alto en cuanto a número de 
-usuarios.  
-- **Conectividad** : habrá que determinar las necesidades de conexión entre 
-los dispositivos de cada subred dentro de la red y con el exterior.  
-- Otros aspectos : habrá que determinar otros aspectos relacionados con 
-la disponibilidad de la información y los servicios, confidencialidad, calidad 
-de servicio (QoS), etc.  
+- **Uso y capacidad de la red**: tipo de tráfico que generará.  
+- **Servicios y Recursos** : tipo y número estimado de equipos y 
+otros dispositivos necesarios.  
+- **Usuarios** : número y tipo de usuarios
+- **Conectividad** : conexión entre las subredes el exterior.  
+
  
 ### 3.3 Diseño lógico
 
