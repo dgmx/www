@@ -125,7 +125,7 @@ public static long factorial(int n) {
 
 ### 5.2 Características
 - Uso de memoria dinámica.
-- Almacenamiento en pila.
+- Almacenamiento en pila. Estructura FIFO
 - Profundidad de la recursividad el número de veces que la función se llama a si misma
 - Muy potente en cálculo
 - La función iterativa puede consumir menos recursos que la recursiva.
@@ -174,4 +174,5 @@ En conjunto, los conceptos tratados en este tema: modularidad, diseño de funcio
 - Hernández M. (2022). Estructuras de datos. Editorial Ra-Ma
 
 >[Mapa Visual](/oposdocs/mapasweb/tema26map.html)
+
 >[Generar PDF](/oposdocs/pdf/tema26.pdf)
