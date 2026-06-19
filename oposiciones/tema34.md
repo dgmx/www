@@ -1,60 +1,56 @@
----
-title: "Tema 34 Sistemas Gestores de Bases de Datos"
-parent: "Maps"
-nav_exclude: true
----
+
 
 # Tema 34: Sistemas Gestores de Bases de Datos. Funciones. Componentes. Arquitecturas de referencia y operacionales. Tipos de sistemas.
 
 ## ÍNDICE 
 ```bash
-1. Introducción
-2. Sistemas Gestores de Bases de Datos (SGBD)
-3. Funciones
-4. Componentes
-    4.1. **Lenguajes de base de datos**
-    4.2. Diccionario de datos
-    4.3. Gestor de base de datos
-    4.4. Usuarios de la base de datos
-    4.5. Herramientas de base de datos
-5. Arquitecturas de Referencia y Operacionales
-    5.1. Arquitectura de referencia
-    5.2. Arquitectura operacional.
-6. Tipos de Sistemas
-7. Conclusión
-8. Bibliografía
+1. INTRODUCCIÓN
+2. SISTEMAS GESTORES DE BASES DE DATOS
+3. FUNCIONES
+4. COMPONENTES
+   4.1. LENGUAJES DE BASE DE DATOS
+   4.2. DICCIONARIO DE DATOS
+   4.3. GESTOR DE BASE DE DATOS
+   4.4. USUARIOS DE LA BASE DE DATOS
+   4.5. HERRAMIENTAS DE BASE DE DATOS
+5. ARQUITECTURAS DE REFERENCIA Y OPERACIONALES
+   5.1. ARQUITECTURA DE REFERENCIA
+   5.2. ARQUITECTURA OPERACIONAL
+6. TIPOS DE SISTEMAS
+7. CONCLUSIÓN
+8. BIBLIOGRAFÍA
 ```
 
 ---
 
 ## 1. Introducción
-- BOE 13 FEB 1996. Bloque Tematico: Bases de Datos.  
+- BOE 13 FEB 1996. Bloque Temático: Bases de Datos.  
 - Definiciones de bases de datos, SGBDR
 - Evolución desde los sistemas de gestión de archivos hasta las bases de datos
 - Importancia en la actualidad
-- Curriculo Familia Profesional
+- Currículo Familia Profesional
 
 ## 2. Sistemas Gestores de Bases de Datos (SGBD)
 
-- **Base de datos**: Conjunto de datos almacenados en soporte informatico. Datos relacionados y estructurados. Persistentes. Usados por las empresas.
-- **SGDBD**: Colección de programas para crear y mantener un base de datos. Facilita la definicion, construcción y manipulación.
+- **Base de datos**: Conjunto de datos almacenados en soporte informático. Datos relacionados y estructurados. Persistentes. Usados por las empresas.
+- **SGDBD**: Colección de programas para crear y mantener un base de datos. Facilita la definición, construcción y manipulación.
   **Ventajas**
    - Visión abstracta de los datos (ocultan la complejidad de almacenamiento y mantenimiento)
    - Disminuyen redundancia e inconsistencia
    - Aseguran Integridad datos
    - Aumentan la seguridad y privacidad
    - Permiten compartir datos y accesos concurrentes
-   - Copias de seguridad y mecanismos de recuperacion de datos
+   - Copias de seguridad y mecanismos de recuperación de datos
 
 ## 3. Funciones
 
-a) **Definicion**: Permite definir y describir los esquemas de la Base de Datos. Lenguaje DDL
+a) **Definición**: Permite definir y describir los esquemas de la Base de Datos. Lenguaje DDL
 
-b) **Manipulación**: Operaciones de gestion mediante Lenguaje DML: Consulta o actualizar los datos. 
+b) **Manipulación**: Operaciones de gestión mediante Lenguaje DML: Consulta o actualizar los datos. 
      - Recuperar información: Consultas a la totalidad o selectivas
      - Actualizar: Inserción, modificación o borrado.
 
-c) **Control**: Lenguaje DCL, permisos de usuario, ademas de copia de seguridad, carga de ficheros, auditoria, configuracion...
+c) **Control**: Lenguaje DCL, permisos de usuario, ademas de copia de seguridad, carga de ficheros, auditoria, configuración...
 
 ## 4. Componentes
  Son los lenguajes de la BD, el diccionario de datos, el gestor de la BD, los usuarios y las herramientas de la BD.
@@ -62,32 +58,32 @@ c) **Control**: Lenguaje DCL, permisos de usuario, ademas de copia de seguridad,
 ### 4.1. **Lenguajes de base de datos**
 - **DDL**: Simple para describir datos con facilidad y precisión
 - **DCL**: Encargado del control y seguridad de los datos
-- **DML**: Gestiona la informacion de la base de datos, permite recuperar, manipular, modificar y eliminar registros.
+- **DML**: Gestiona la información de la base de datos, permite recuperar, manipular, modificar y eliminar registros.
   
 ### 4.2. Diccionario de datos: 
 
-Almacena informacion sobre la totalidad de los datos que forman la base de datos. Es una metabase de datos. Caracteristicas logicas y de las estructuras que almacenan los datos
+Almacena informacion sobre la totalidad de los datos que forman la base de datos. Es una metabase de datos. Características lógicas y de las estructuras que almacenan los datos
 
 ### 4.3. Gestor de base de datos:
-Proporciona interfaz entre los datos y los programas de aplicacion que los manejan. Es un interprete entre usuario y datos. Se encarga de: 
+Proporciona interfaz entre los datos y los programas de aplicación que los manejan. Es un interprete entre usuario y datos. Se encarga de: 
 - Garantizar privacidad, integridad y seguridad de los datos
 - Control de accesos concurrentes
-- Interaccion con el sistema operativo.
+- Interacción con el sistema operativo.
 
 ### 4.4. Usuarios de la base de datos: 
 Diferentes perfiles:
-- **Administrador** de la base de datos: Administracion, seguridad, privacidad e integridad de la información:
+- **Administrador** de la base de datos: Administración, seguridad, privacidad e integridad de la información:
 - **Usuarios** de la base de datos:
-   - Usuarios **tecnicos**: Programadores, operadores, mantenimiento
-   - Usuarios **finales**. Interactuan con la BD con programas de aplicación
+   - Usuarios **técnicos**: Programadores, operadores, mantenimiento
+   - Usuarios **finales**. Interactúan con la BD con programas de aplicación
 
 ### 4.5. Herramientas de base de datos: 
-Conjunto de aplicaciones que permiten a los administradores la gestion de la base de datos, privaciddad (gestion de usuarios y permisos), informes, formularios, interfaces gráficas,etc
+Conjunto de aplicaciones que permiten a los administradores la gestión de la base de datos, privacidad (gestión de usuarios y permisos), informes, formularios, interfaces gráficas,etc
   
 ## 5. Arquitecturas de Referencia y Operacionales
 
 ### 5.1. Arquitectura de referencia
-(ANSI-SPARC). Separar los programas de aplicacion de la base de datos.
+(ANSI-SPARC). Separar los programas de aplicación de la base de datos.
 
 ```mermaid
 flowchart TD
@@ -123,7 +119,7 @@ flowchart TD
     EsquemaInterno --> DB3
 ```
 
-- **Nivel interno**: Nivel mas bajo de abstracción. Estructura fisica de los datos. Dispositivos de almacenamiento fisico. Usuarios Administradores
+- **Nivel interno**: Nivel mas bajo de abstracción. Estructura física de los datos. Dispositivos de almacenamiento físico. Usuarios Administradores
 - **Nivel lógico**: Esquema conceptual. Detalla las entidades, atributos y relaciones. Integridad y confidencialidad. Usuarios Programadores
 - **Nivel externo**: Describe las vistas para los usuarios, dependiendo del perfil. 
 
@@ -132,9 +128,9 @@ flowchart TD
 Arquitectura operacional (también llamada a veces arquitectura de implementación) se refiere a cómo funciona el sistema realmente en la práctica, es decir, la implementación concreta del SGBD, incluyendo hardware, software, procesos y flujos de datos.
 - **1 Nivel o Centralizada**: Sistema computacional único, sin interacción. Sistemas monousuario o BD en sistemas de alto rendimiento. Sin concurrencia ni sistemas de recuperación.   
 Ejemplo: Aplicación de escritorio que usa base de datos Access o SQLite
-- **2 Niveles o Cliente-servidor**: Cliente parte visible (formularios, informes, etc) y servidor donde se encuentran las estructuras de datos, consultas, control de concurrecia y recuperacion.   
+- **2 Niveles o Cliente-servidor**: Cliente parte visible (formularios, informes, etc) y servidor donde se encuentran las estructuras de datos, consultas, control de concurrencia y recuperación.   
 Ejemplo: Aplicación Java con PostgreSQL o MySQL remoto.
-- **3 Niveles**: Añade servidor de aplicaciones entre el cliente y la base de datos. Más segura y facil de mantener y escalar.  
+- **3 Niveles**: Añade servidor de aplicaciones entre el cliente y la base de datos. Más segura y fácil de mantener y escalar.  
 Ejemplo: Aplicaciones web con frontend, backend y base de datos.
 - **4 niveles o Distribuida**: Extiende el modelo de tres niveles agregando capas adicionales como balanceo, caché, autenticación, auditoria...   
 Ejemplo: Aplicaciones web modernas con microservicios y bases de datos distribuidas.
@@ -152,7 +148,7 @@ a) Según el modelo lógico
 - **Clave-Valor**
 
 b) Según el número de usuarios
-- **Monousuario**: Un usuario simultaneamente
+- **Monousuario**: Un usuario simultáneamente
 - **Multiusuario**: Varios usuarios al mismo tiempo. La mayor parte de los SGDBD son de este tipo
 
 c) Según su ubicación

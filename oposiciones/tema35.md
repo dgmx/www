@@ -4,21 +4,21 @@
 
 ## ÍNDICE 
 ```bash
-1. Introducción
-2. La Definición de Datos
-3. Niveles de Descripción
-    3.1. Nivel Interno o Físico
-    3.2. Nivel Lógico o Conceptual
-    3.3. Nivel Externo o de Visión del Usuario
-    3.4. Correspondencias
-4. Lenguajes de Definición de Datos (DDL)
-    4.1. Definición
-    4.2. Tipos
-    4.3. Características
-    4.4. SQL como DDL
-5. Diccionario de Datos
-6. Conclusión
-7. Bibliografía
+1. INTRODUCCIÓN
+2. LA DEFINICIÓN DE DATOS
+3. NIVELES DE DESCRIPCIÓN
+   3.1. NIVEL INTERNO O FÍSICO
+   3.2. NIVEL LÓGICO O CONCEPTUAL
+   3.3. NIVEL EXTERNO O DE VISIÓN DEL USUARIO
+   3.4. CORRESPONDENCIAS
+4. LENGUAJES DE DEFINICIÓN DE DATOS
+   4.1. DEFINICIÓN
+   4.2. TIPOS
+   4.3. CARACTERÍSTICAS
+   4.4. SQL COMO DDL
+5. DICCIONARIO DE DATOS
+6. CONCLUSIÓN
+7. BIBLIOGRAFÍA
 ```
 
 ---
