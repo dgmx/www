@@ -2,25 +2,24 @@
 
 ## ÍNDICE 
 ```bash
-1. Introducción
-2. Concepto de aplicación
-3. Aplicaciones informáticas de propósito general
-    3.1. Procesadores de texto
-    3.2. Hojas de cálculo
-    3.3. Sistemas gestores de bases de datos (SGBD)
-    3.4. Comunicaciones
-    3.5. Presentaciones
-    3.6. Diseño gráfico
-    3.7. Paquete integrado
-4. Aplicaciones informáticas para la gestión empresarial
-    4.1. Gestión financiero-contable
-    4.2. Gestión de personal
-    4.3. Gestión comercial
-    4.4. Control de stock y almacén
-5. Aplicaciones en la nube
-6. Aplicación al contexto escolar y laboral
-7. Conclusión
-8. Bibliografía
+1. INTRODUCCIÓN
+2. CONCEPTO DE APLICACIÓN
+3. APLICACIONES INFORMÁTICAS DE PROPÓSITO GENERAL
+   3.1. PROCESADORES DE TEXTO
+   3.2. HOJAS DE CÁLCULO
+   3.3. SISTEMAS GESTORES DE BASES DE DATOS (SGBD)
+   3.4. COMUNICACIONES
+   3.5. PRESENTACIONES
+   3.6. DISEÑO GRÁFICO
+   3.7. PAQUETE INTEGRADO
+4. APLICACIONES INFORMÁTICAS PARA LA GESTIÓN EMPRESARIAL
+   4.1. GESTIÓN FINANCIERO-CONTABLE
+   4.2. GESTIÓN DE PERSONAL
+   4.3. GESTIÓN COMERCIAL
+   4.4. CONTROL DE STOCK Y ALMACÉN
+5. APLICACIONES EN LA NUBE
+6. CONCLUSIÓN
+7. BIBLIOGRAFÍA
 ```
 
 ---
@@ -193,22 +192,14 @@
   - Herramientas para ventas y marketing
   - Seguimiento de clientes, potenciales y contratos
   - Aumento de lealtad y satisfacción del cliente
-## 6. Aplicación al contexto escolar y laboral
-- Contexto escolar
-  - ESO y bachillerato: TIC I de 1º de bachillerato
-  - Ciclos formativos: DAM, DAW, SMR
-- Contexto laboral
-  - Entornos variados: banca, universidad, medicina, líneas aéreas
-  - Tendencia: aplicaciones completamente online
-## 7. Conclusión
+
+## 6. Conclusión
 - Importancia de aplicaciones de propósito general en trabajo diario
 - Aplicaciones de gestión empresarial imprescindibles para eficiencia
 - Buena selección de aplicaciones es clave
 - Tendencia hacia aplicaciones en la nube y trabajo colaborativo
-## 8. Bibliografía
+
+## 7. Bibliografía
 - Montañez F. (2013). Aplicaciones informáticas de propósito general. Ed. McGraw-Hill
 - Gómez A., y otros. (2011). Sistemas de información: herramientas prácticas para la gestión empresarial. Editorial Ra-Ma
 - Date C.J. (2000). Introducción a los sistemas de bases de datos. Editorial Addison-Wesley
-- http://tecnomundo.es/aplicaciones-informaticas/
-- https://es.wikipedia.org/wiki/Procesador_de_texto#Funciones
-- https://aprende-web.net/comple/programas/programas5.php
