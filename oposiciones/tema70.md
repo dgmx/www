@@ -6,6 +6,10 @@
 1. INTRODUCCIÓN
 2. SISTEMAS EN RED
 3. DISEÑO Y PLANIFICACIÓN DE UN SISTEMA EN RED
+   3.1. ANÁLISIS DE LA SITUACIÓN ACTUAL
+   3.2. ANÁLISIS DE NECESIDADES DETECTADAS
+   3.3. DISEÑO LÓGICO
+   3.4. DISEÑO FÍSICO
 4. PARÁMETROS DE DISEÑO
 5. INSTALACIÓN Y CONFIGURACIÓN  DE UN SISTEMA EN RED  LOCAL
   5.1. INSTALACIÓN DE LA INFRAESTRUCTURA DE RED
@@ -23,7 +27,7 @@ El presente tema forma parte del temario oficial publicado en el BOE de 13 de
 febrero de 1996, donde se aprueban el temario de acceso a la especialidad de 
 Informática.
 
-A su vez, el actual tema 70 se ubica dentro del bloque temático de redes. A lo largo de este tema, a través de autores como Martinez, Stallings y Tanenbaum, se 
+A su vez, el actual tema 70 se ubica dentro del bloque temático de redes. A lo largo de este tema, a través de autores como Martínez, Stallings y Tanenbaum, se 
 realizará una presentación general sobre el diseño, instalación y configuración 
 de un sistema en red local.  
 
@@ -94,7 +98,9 @@ la red desde diferentes nodos.
 
 El diseño de un sistema en red debe seguir un enfoque jerárquico y estructurado para garantizar la escalabilidad.
  
-**Análisis de la situación de partida**. Donde se analizarán los siguientes aspectos:  
+### 3.1 Análisis de la situación de actual
+
+Donde se analizarán los siguientes aspectos:  
 - **Servicios de red** proporcionados por la instalación actual y sus problemas 
 asociados  
 - **Hardware de la instalación actual:** características de los servidores, de los 
@@ -105,7 +111,9 @@ sistemas operativos de equipos clientes, aplicaciones, etc.
 - **Número actual de usuarios**: servicios que demandan y tráfico que generan  
 - Etc. 
  
-**Análisis de necesidades detectadas**. A tener en cuenta los siguientes aspectos:
+### 3.2 Análisis de necesidades detectadas
+
+A tener en cuenta los siguientes aspectos:
 
 - **Uso de la red** : habrá que determinar el tipo  de aplicaciones que van a 
 hacer uso de la red y qué servicios va a ofrecer la red.  
@@ -123,14 +131,17 @@ los dispositivos de cada subred dentro de la red y con el exterior.
 la disponibilidad de la información y los servicios, confidencialidad, calidad 
 de servicio (QoS), etc.  
  
-**Diseño lógico**: dentro del diseño lógico se ubican las siguientes tareas:  
-- Diseño de la topología lógica de red . 
-- Diseño de direccionamientos IP. 
-- Segmentación VLAN y enrutamiento.  
-- Estrategias de seguridad de la red . 
-- Estrategias para el mantenimiento de la red.  
+### 3.3 Diseño lógico
 
-**Diseño físico**: implementación del diseño lógico.  
+Dentro del diseño lógico se ubican las siguientes tareas:  
+- Diseño de la topología lógica de red . 
+- Direccionamiento IP. 
+- Segmentación VLAN y enrutamiento.  
+- Estrategias de seguridad y mantenimiento de la red.  
+
+### 3.4 Diseño físico
+
+Implementación del diseño lógico.  
 
 - Ubicación de los armarios de comunicaciones
 - Canalizaciones
@@ -172,7 +183,7 @@ La instalación y configuración de la red se llevará a cabo en varios pasos:
  
  
 
-## 5.1. INSTALACIÓN DE LA INFRAESTRUCTURA DE RED  
+### 5.1. Instalación de la infraestructura de red
 
 Se basa en el cableado estructurado (Normas ANSI 586)
 
@@ -180,21 +191,21 @@ Se basa en el cableado estructurado (Normas ANSI 586)
 - **Categoría:** Uso de cableado UTP/FTP categorías 6 y 7 para velocidades de 1Gigabit a 10 Gigabits
 - **Instalación física:** Montaje de armarios rack, paneles de parcheo y etiquetado bajo norma
  
-## 5.2. INTERCONEXIÓN DE EQUIPOS  
+### 5.2. Interconexión de equipos 
 
 Se realiza mediante dispositivos de capa 2 (enlace) y capa 3 (red) del modelo OSI.
 - **Conmutadores:** (Switches) Segmentan dominios de colisión. Configuración de puertos, agregación de enlaces y gestión de VLANs. Gestionables para administración web o ssh.
-- **Encaminadores:** (routers) Interconectan diferentes redes, configuración de rutas estáticas o protocolos de enrutamiento dinámico.  DHCP para configuración dinámimica de host.
+- **Encaminadores:** (routers) Interconectan diferentes redes, configuración de rutas estáticas o protocolos de enrutamiento dinámico.  DHCP para configuración dinámica de host.
 - **Puntos de acceso.** Para conexiones inalámbricas.
   
-## 5.3. INSTALACIÓN Y CONFIGURACIÓN DE LOS EQUIPOS  
+### 5.3. Instalación y configuración de equipos
 
 Incluye tanto los servidores como las estaciones de trabajo
 - **Configuración IP:** Asignación estática para servidores e impresoras, dinámica para clientes
 - **Sistemas operativos de red**: Instalación de roles y características. Gestión de usuarios AD/LDAP, archivos NFS/SMB, bases de datos, servidores web, etc.
 - **Seguridad de host;** Configuración de firewall locales, antivirus y políticas de grupo (GPO)
 
-## 5.4. DIAGNÓSTICO DE INCIDENCIAS  
+### 5.4. Diagnóstico de incidencias  
 
 El proceso de monitorización y resolución de incidencias en los sistemas de red se realiza en 3 niveles:
 - **Capa física**: Comprobación del cableado con certificadores, comprobación de tarjetas de red y conectores.
