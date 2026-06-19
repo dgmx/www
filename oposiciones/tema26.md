@@ -173,5 +173,5 @@ En conjunto, los conceptos tratados en este tema: modularidad, diseño de funcio
 - López, L. (2004). Programación Estructurada.
 - Hernández M. (2022). Estructuras de datos. Editorial Ra-Ma
 
-[Mapa Visual](/oposdocs/mapasweb/tema26map.html)
-[Generar PDF](/oposdocs/pdf/tema26.pdf)
+>[Mapa Visual](/oposdocs/mapasweb/tema26map.html)
+>[Generar PDF](/oposdocs/pdf/tema26.pdf)
