@@ -122,6 +122,20 @@ Debe aparecer una línea por cada libro que cumpla dicho requisito, sin repetici
 
    :::
 
+Solución usando la función `YEAR` en lugar de `BETWEEN`
+ ::: details Mostrar solución {close}
+
+```sql
+    SELECT l.Titulo, l.Autor, COUNT(*) AS Total_Lecturas 
+    FROM Leido ld 
+    INNER JOIN Libro l ON ld.id_Libro = l.id_Libro 
+    INNER JOIN Genero g ON l.id_Genero = g.id_Genero 
+    INNER JOIN Lector le ON ld.id_Lector = le.id_Lector 
+    WHERE g.Nombre = 'Terror'   
+        AND YEAR(ld.Fecha_Comienzo)=2024    
+        AND le.Nacionalidad = 'Italia' 
+    GROUP BY l.id_Libro;
+```
 
 ### Inserts para pruebas
 
