@@ -3,14 +3,24 @@
 
 ## ÍNDICE 
 ```bash
-1. Introducción
-2. Definición de Dispositivo Periferico
-3. Clasificación de Periféricos
-4. Periféricos de Entrada
-5. Periféricos de Salida
-6. Periféricos de Entrada/Salida
-7. Tendencias Actuales
-8. Aplicaciones
+1. INTRODUCCIÓN
+2. DEFINICIÓN DE DISPOSITIVO PERIFÉRICO
+3. CLASIFICACIÓN DE PERIFÉRICOS
+4. PERIFÉRICOS DE ENTRADA
+   4.1. TECLADO
+   4.2. RATÓN
+   4.3. OTROS
+5. PERIFÉRICOS DE SALIDA
+   5.1. MONITOR
+   5.2. IMPRESORA
+   5.3. ALTAVOZ
+6. PERIFÉRICOS DE ENTRADA/SALIDA
+   6.1. ALMACENAMIENTO
+   6.2. COMUNICACIÓN
+   6.3. DISPOSITIVOS MULTIFUNCIÓN
+7. CONCLUSION
+8. BIBLIOGRAFÍA
+
 ```
 
 ---
@@ -19,28 +29,28 @@
 - **Basado en la arquitectura de Von Neumann (1946)**
   - Componentes principales: Unidad de memoria, CPU, Unidad de E/S, Buses
 - **Fundamentales para la comunicación entre computadora y usuario**
-  - Definición y clasificación y perifericos mas relevantes
+  - Definición y clasificación y periféricos mas relevantes
 - **Relevancia**:
   - Parte del currículo en módulos de informática (hardware, sistemas, montaje).
 
-## 2. Definición de Dispositivo Periferico
+## 2. Definición de Dispositivo Periférico
   - Permiten la comunicación entre la computadora y el usuario
 
 ## 3. Clasificación de Periféricos
 - **Entrada**:
-  - Permiten al equipo recibir datos: Raton, teclado, etc.
+  - Permiten al equipo recibir datos: Ratón, teclado, etc.
 - **Salida**:
   - Permiten al equipo mostrar datos: Monitor, impresora, etc.
 - **Entrada / salida**:
-  - Pueden actuar como perifericos de entrada o salia segun necesidad del sistema o usuario:
+  - Pueden actuar como periféricos de entrada o salia según necesidad del sistema o usuario:
     - De almacenamiento: Almacenan datos
-    - De Comunicacion: Interacción entre dos o mas dispositivos
+    - De Comunicación: Interacción entre dos o mas dispositivos
 
 
 ## 4. Periféricos de Entrada
 Permiten introducir información al ordenador
 ### Teclado
-Incluyen teclas para letras, numeros, simboles, de función y especiales. 
+Incluyen teclas para letras, números, símbolos, de función y especiales. 
 - Tipos: Mecánico, Membrana, Cúpula de goma, Óptico
 - Conectividad: USB o Inalámbrico (Bluetooth/RF)
 - Marcas principales: Logitech, Corsair, Razer
@@ -93,27 +103,12 @@ Incluyen teclas para letras, numeros, simboles, de función y especiales.
 - Router
 - Switch
 
-## 7. Tendencias Actuales
-### Realidad Virtual y Aumentada
-- Aplicaciones:
-  - Educación y cultura
-  - Medicina
-  - Aviación
-  - Entretenimiento (metaversos)
+## 7. CONCLUSIÓN
 
-- Dispositivos principales:
-  - VR: Oculus Quest 2, PlayStation VR, HTC Vive
-  - AR: Microsoft HoloLens 2, Magic Leap One
+Los dispositivos periféricos constituyen la interfaz tangible entre el usuario y la máquina, haciendo posible la interacción con el sistema informático. Como se ha visto, se clasifican en periféricos de entrada (teclado, ratón), de salida (monitor, impresora) y mixtos (almacenamiento, comunicación), cada uno con tecnologías y estándares específicos que determinan su rendimiento y aplicación.
 
-## 8. Aplicaciones
-### Contexto Escolar
-- Educación Secundaria
-- Formación Profesional
+La evolución hacia la realidad virtual y aumentada marca la tendencia actual, donde la experiencia de usuario se vuelve inmersiva y los periféricos tradicionales se complementan con nuevos dispositivos sensoriales. En el ámbito educativo y laboral, su conocimiento es esencial para el montaje, configuración y soporte técnico de equipos, competencias clave en la formación profesional de informática.
 
-### Contexto Laboral
-- Diseño y evaluación de periféricos
-- Soporte técnico
-- Desarrollo de nuevas aplicaciones
-
+En definitiva, el estudio de los periféricos no solo aporta una comprensión del hardware comercial, sino que sienta las bases para entender la evolución de la interacción persona-ordenador y las exigencias de un mercado tecnológico en constante cambio.
 
 [Tema 7 Mapa Visual](/oposdocs/mapasweb/tema7map.html).

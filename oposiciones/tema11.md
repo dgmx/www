@@ -3,18 +3,19 @@
 
 ## ÍNDICE 
 ```bash
-1. Introducción
-2. Organización Lógica de los Datos
-    2.1. Datos y variables
-    2.2. Tipos de datos
-    2.3. Tipado de datos
-    2.4. Estructuras de Datos
-3. Estructuras Estáticas
-    3.1. Arrays
-    3.2. Cadenas de Caracteres
-    3.3. Registros
-    3.4. Enumeraciones
-4. Conclusión
+1. INTRODUCCIÓN
+2. ORGANIZACIÓN LÓGICA DE LOS DATOS
+   2.1. DATOS Y VARIABLES
+   2.2. TIPOS DE DATOS
+   2.3. TIPADO DE DATOS
+   2.4. ESTRUCTURAS DE DATOS
+3. ESTRUCTURAS ESTÁTICAS
+   3.1. ARRAYS
+   3.2. CADENAS DE CARACTERES
+   3.3. REGISTROS
+   3.4. ENUMERACIONES
+4. CONCLUSIÓN
+5. BIBLIOGRAFÍA
 ```
 
 ---
@@ -212,6 +213,15 @@ Definición: Colección lineal de elementos del mismo tipo los cuales tienen aso
     ```c
     int len = strlen(cadena);
     ```
+  - **Comparación**
+    ```c
+    strcmp(s1,s2);
+    ```
+  - **Asignación**: Directa o con
+    ```c
+    strcpy(dest, src)
+    ```
+
 
 ### 3.3. Registros
 - Definición: Conjunto de campos de distintos tipos.
