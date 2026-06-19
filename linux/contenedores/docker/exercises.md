@@ -1,7 +1,3 @@
----
-title: 12. Ejercicios
-parent: "Docker"
----
 
 # Ejercicios de Docker para Administración de Sistemas Linux
 
@@ -41,8 +37,6 @@ docker start mi-ubuntu
 docker exec -it mi-ubuntu /bin/bash
 ```
 
----
-
 ## Ejercicio 2: Gestión de usuarios y permisos
 
 **Objetivo:** Crear usuarios, grupos y configurar permisos dentro de un contenedor.
@@ -81,7 +75,6 @@ cat /etc/group | grep devteam
 - Grupo `devteam` creado y asignado
 - Directorio `/proyectos` con permisos `rwxrwx---`
 
----
 
 ## Ejercicio 3: Gestión de procesos y servicios
 
@@ -118,7 +111,6 @@ netstat -tlnp
 ps aux | grep apache2 | grep -v grep
 ```
 
----
 
 ## Ejercicio 4: Configuración de red y conectividad
 
@@ -156,8 +148,6 @@ docker network inspect red-empresarial
 # Listar todas las redes
 docker network ls
 ```
-
----
 
 ## Ejercicio 5: Montaje de volúmenes y persistencia de datos
 
@@ -208,7 +198,6 @@ cat /var/data/archivo.txt  # Los datos persisten
 cat ~/docker-data/logs/app.log
 ```
 
----
 
 ## Ejercicio 6: Monitorización de recursos del sistema
 
@@ -254,7 +243,6 @@ docker stats monitor-recursos
 docker stats
 ```
 
----
 
 ## Ejercicio 7: Programación de tareas con cron
 
@@ -305,7 +293,6 @@ cat /var/log/backup.log
 tail -f /var/log/cron.log
 ```
 
----
 
 ## Ejercicio 8: Gestión de logs y rotación
 
@@ -365,7 +352,6 @@ docker logs log-manager
 docker logs -f log-manager
 ```
 
----
 
 ## Ejercicio 9: Configuración de firewall con iptables
 
@@ -419,7 +405,6 @@ nc -l -p 8080 &
 # El puerto 80 debería ser accesible, el 8080 no
 ```
 
----
 
 ## Ejercicio 10: Dockerfile personalizado con script de inicialización
 
@@ -514,8 +499,6 @@ ls -la /var/www/proyecto
 netstat -tlnp
 ```
 
----
-
 ## Comandos útiles de Docker para todos los ejercicios
 
 ```bash
@@ -545,7 +528,6 @@ docker cp archivo.txt mi-ubuntu:/root/
 docker cp mi-ubuntu:/root/archivo.txt ./
 ```
 
----
 
 ## Notas adicionales
 
