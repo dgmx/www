@@ -1,7 +1,4 @@
----
-title: 06. Router con Docker
-parent: "Docker"
----
+
 
 # Práctica de Laboratorio
 
@@ -14,7 +11,6 @@ servidor DHCP + NAT**, y otro contenedor funcione como **cliente**,
 obteniendo IP automáticamente y accediendo a Internet a través del
 router.
 
-------------------------------------------------------------------------
 
 ## 1. Requisitos
 
@@ -22,10 +18,11 @@ router.
 - Docker Compose v2
 - Acceso a Internet desde el host
 
-------------------------------------------------------------------------
+
 
 ## 2. Topología
 
+```
     Internet
        |
     Docker bridge
@@ -33,18 +30,18 @@ router.
     [ server ]
        | 192.168.100.0/24
     [ client ]
+```
 
-------------------------------------------------------------------------
 
 ## 3. Estructura de Archivos
 
 Crear:
-
+```
     lab-router/
      ├── docker-compose.yml
      └── dhcp/
          └── dhcpd.leases
-
+```
 Comandos:
 
 ```bash
@@ -53,7 +50,6 @@ touch lab-router/dhcp/dhcpd.leases
 cd lab-router
 ```
 
-------------------------------------------------------------------------
 
 ## 4. docker-compose.yml
 
@@ -133,7 +129,7 @@ services:
       "
 ```
 
-------------------------------------------------------------------------
+
 
 ## 5. Arranque
 
@@ -142,7 +138,7 @@ docker compose up -d
 docker ps
 ```
 
-------------------------------------------------------------------------
+
 
 ## 6. Verificación
 
@@ -167,15 +163,15 @@ ping 8.8.8.8
 ping google.com
 ```
 
-------------------------------------------------------------------------
+
 
 ## 7. Persistencia DHCP
 
 Archivo persistente:
 
-    dhcp/dhcpd.leases
+`dhcp/dhcpd.leases`
 
-------------------------------------------------------------------------
+
 
 ## 8. Actividades Académicas
 
@@ -195,7 +191,7 @@ dhclient -r eth0
 dhclient eth0
 ```
 
-------------------------------------------------------------------------
+
 
 ### B. Simular múltiples clientes
 
@@ -203,7 +199,7 @@ dhclient eth0
 docker compose up -d --scale client=3
 ```
 
-------------------------------------------------------------------------
+
 
 ### C. Firewall
 
@@ -213,7 +209,7 @@ Bloquear ICMP:
 iptables -A FORWARD -p icmp -j DROP
 ```
 
-------------------------------------------------------------------------
+
 
 ### D. Medición de latencia
 
@@ -221,7 +217,7 @@ iptables -A FORWARD -p icmp -j DROP
 ping -c 20 8.8.8.8
 ```
 
-------------------------------------------------------------------------
+
 
 ### E. Medición de ancho de banda
 
@@ -243,7 +239,7 @@ Cliente:
 iperf3 -c 192.168.100.1
 ```
 
-------------------------------------------------------------------------
+
 
 ## 9. Preguntas de Evaluación
 
@@ -253,7 +249,6 @@ iperf3 -c 192.168.100.1
 4.  ¿Por qué se usan capabilities en lugar de privileged?
 5.  Analiza una captura DHCP.
 
-------------------------------------------------------------------------
 
 ## 10. Conclusión
 
