@@ -136,7 +136,8 @@ Solución usando la función `YEAR` en lugar de `BETWEEN`
         AND le.Nacionalidad = 'Italia' 
     GROUP BY l.id_Libro;
 ```
-
+   :::
+   
 ### Inserts para pruebas
 
 ```sql
