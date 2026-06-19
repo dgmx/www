@@ -74,17 +74,21 @@ La exstructura del subprograma es similar a la de un programa y su función es r
 - **Cabecera**: modificadores, tipo de retorno, nombre función y parámetros y tipo.
 - **Cuerpo**: Instrucciones a realizar por la función
 
+#### Ejemplo: Función Java que calcula el cubo de un número
 ```java
-// Funcion que calcula el factorial de un numero en java
-
-public static void factoria(int n){   // Cabecera de la funcion
-    int fact = 1;                       // Cuerpo de la funcion.
-    for(int i=1; i<n; i++){
-        fact = fact * i;
-        return fact;
-    }
+public static long cubo(int n){      // Cabecera de la función
+   return n*n*n                      // Cuerpo de la función.
 }
 ```
+La declaración puede variar de un lenguaje a otro.
+
+
+#### Ejemplo: Función Python que calcula el cubo de un número
+```python
+def cubo(n):
+   return n ** 3
+```
+
 ### 4.2 Invocación
 - Llamada con parámetros actuales.
 
@@ -106,6 +110,18 @@ Los lenguajes modernos como Java, Python o Rust no implementan el paso por refer
 ### 5.1 Estructura
 - **Caso base**: Se resuelve sin recursividad, debe existir para salir de la recursividad.
 - **Llamada recursiva**: La llamada recursiva debe progresar al caso base
+#### Ejemplo: Factorial Recursivo en Java
+
+```java
+public static long factorial(int n) {
+    // Caso base
+    if (n == 0 || n == 1) {
+        return 1;
+    }
+    // Llamada recursiva
+    return n * factorial(n - 1);
+}
+```
 
 ### 5.2 Características
 - Uso de memoria dinámica.
@@ -114,26 +130,30 @@ Los lenguajes modernos como Java, Python o Rust no implementan el paso por refer
 - Muy potente en cálculo
 - La función iterativa puede consumir menos recursos que la recursiva.
 
+
+
 ### 5.3 Tipos
 - **Recursividad directa:** La función se llama a si misma.
 - **Indirecta:** La función llama a otra función que a su vez vuelve a llamar a la primera función
 
 ## 6. Librerías
-- **Definición**: Conjunto de funciones reutilizables.
+- **Definición**: Conjunto de implementaciones realizadas en algún lenguaje de programación para el desarrollo de funciones reutilizables.
+- No pueden ejecutarse de modo aislado, deben ser invocadas para utilizarse en un programa. Algunas deben ser previamente importadas, ya que no forman parte de las librerías estándar del lenguaje. **Ejemplo:** Clase Scanner de Java
 
 ### 6.1 Estructura
-- Llamadas a otras librerías.
-- Declaraciones globales. Variables, constantes, funciones
-- Definición de funciones. Desarrollo de las funciones de la librería
+- **Declaraciones globales.** Variables, constantes, funciones
+- **Definición de funciones.** Desarrollo de las funciones de la librería
+- **Llamadas a otras librerías.**
 
 ### 6.2 Características
 - Ocultación de información.
-- Reutilización y portabilidad.
-- Portabilidad
+- Reutilización del código
+- Portabilidad de software
 - Permite la invocación de cualquier función de la librería
 
 ### 6.3 Tipos
-- Librerías estándar vs de usuario.
+- **Librerías estándar:** Proporcionadas por el propio lenguaje, como la API de Java
+- **Librerías de usuario.** Creadas por los usuarios para los desarrollos de sus implementaciones.
 
 
 
