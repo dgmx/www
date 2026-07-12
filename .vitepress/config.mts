@@ -43,6 +43,7 @@ export default defineConfig({
         { text: 'Contenedores', link: '/linux/contenedores/' },
         { text: 'Terminal', link: '/linux/terminal/' },
       ]},
+      { text: 'Formación', link: '/formacion/' },
       { text: 'Redes', items: [
         { text: 'General', link: '/redes/' },
         { text: 'IPv6', link: '/redes/ipv6/' },
