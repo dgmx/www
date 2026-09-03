@@ -102,6 +102,7 @@ export default defineConfig({
               { text: "Introducción HTML", link: "/programacion/html/introduccion_html" },
               { text: "Introducción CSS", link: "/programacion/html/introduccion_css" },
               { text: "CSS", link: "/programacion/html/css" },
+              { text: "Maquetación web", link: "/programacion/html/maquetacion_web" },
             ],
           },
           {
