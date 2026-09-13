@@ -6,8 +6,11 @@ hero:
   name: "Programación"
   text: "Material de la asignatura"
   tagline: Recursos y contenidos de la asignatura de Programación
+
+
+features:
+  - title: Tema 1
+    details: Tema 1. Introducción a los lenguajes de programación. Tipos. Características. 
+    link: /docencia/programacion/tema1
+    linkText: Leer más
 ---
-
-# Programación y Computación
-
-Material de la asignatura de Programacióny Computación de 2º de Bachillerato.
