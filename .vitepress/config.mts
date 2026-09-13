@@ -44,6 +44,7 @@ export default defineConfig({
         { text: 'Terminal', link: '/linux/terminal/' },
       ]},
       { text: 'Formación', link: '/formacion/' },
+      { text: 'Docencia', link: '/docencia/' },
       { text: 'Redes', items: [
         { text: 'General', link: '/redes/' },
         { text: 'IPv6', link: '/redes/ipv6/' },
@@ -61,6 +62,18 @@ export default defineConfig({
       }
     },
     sidebar: [
+      {
+        text: 'Docencia',
+        items: [
+          {
+            text: "Programación",
+            collapsed: true,
+            items: [
+              { text: "Inicio", link: "/docencia/programacion/" },
+            ],
+          },
+        ]
+      },
       {
         text: 'Programación',
         items: [
