@@ -4,16 +4,16 @@ layout: home
 
 hero:
   name: "Docencia"
-  text: "Material de asignaturas"
-  tagline: Recursos para las asignaturas en las que imparto clase
+  text: "Material docente"
+  tagline: Recursos para los módulos de secundaria
   actions:
     - theme: brand
-      text: Programación
+      text: Programación y Computación
       link: /docencia/programacion/
 
 features:
-  - title: Programación
-    details: Material de la asignatura de Programación
+  - title: Programación y Computación
+    details: Material de la asignatura de Programación y Computación de 2º de Bachillerato
     link: /docencia/programacion/
     linkText: Leer más
 ---
