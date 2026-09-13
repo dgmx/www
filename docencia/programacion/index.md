@@ -8,6 +8,6 @@ hero:
   tagline: Recursos y contenidos de la asignatura de Programación
 ---
 
-# Programación
+# Programación y Computación
 
-Material de la asignatura de Programación.
+Material de la asignatura de Programacióny Computación de 2º de Bachillerato.
