@@ -115,4 +115,4 @@ plugins=(... podman)
 | pxc     | `podman container exec`                       | Run a new command in a running container                                                 |
 | pxcit   | `podman container exec --interactive --tty`   | Run a new command in a running container in an interactive shell                         |
 
-📄 [Podman Basics](podman_basics.pdf)
+📄 [Podman Basics](/linux/contenedores/podman/podman_basics.pdf)

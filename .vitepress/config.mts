@@ -212,6 +212,7 @@ export default defineConfig({
                   { text: "Manual de Podman", link: "/linux/contenedores/podman/podman_pods" },
                   { text: "Docker a Podman", link: "/linux/contenedores/podman/docker_to_podman" },
                   { text: "Podman Lab", link: "/linux/contenedores/podman/podman_lab" },
+                  { text: "AdGuard Home", link: "/linux/contenedores/podman/adguard" },
                 ],
               },
             ],
