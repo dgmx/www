@@ -1,7 +1,4 @@
----
-title: 02. Introducción a Docker
-parent: "Docker"
----
+
 
 # Manual de Introducción a Docker
 
