@@ -1,0 +1,100 @@
+MANUAL PARA CREAR UN KAHOOT CON LOS DOCUMENTOS GENERADOS
+=============================================================
+Asignatura: Tecnologías de la Información y Comunicación I - 1º Bachillerato
+Tema 1: La Sociedad de la Información y el Ordenador (TICO.1.A.1.1 - 1.6)
+Carpeta: /Users/diego/Documents/tic1/
+Fecha: 21/09/2026
+
+ARCHIVOS INCLUIDOS EN ESTA CARPETA
+-----------------------------------
+1. TICO1_Tema1_Sociedad_Informacion.md
+   -> Tema completo en Markdown con teoría, mapa conceptual y actividades.
+
+2. Kahoot_TICO1_Tema1_Sociedad_Informacion.xlsx  [RECOMENDADO]
+   -> Plantilla Kahoot lista para importar. 20 preguntas Quiz, 4 opciones, 1 correcta.
+   -> Formato: Question | Answer 1 | Answer 2 | Answer 3 | Answer 4 | Time limit | Correct answer(s)
+
+3. Kahoot_TICO1_Tema1_Sociedad_Informacion.csv
+   -> Mismo contenido en CSV (alternativa si el XLSX da error).
+
+4. Este manual (MANUAL_KAHOOT_TICO1.txt)
+
+REQUISITOS PREVIOS
+-------------------
+- Cuenta gratuita en Kahoot! (https://kahoot.com > Sign up > Teacher/Student)
+- Navegador actualizado (Chrome/Firefox/Edge)
+- No es necesario tener Kahoot! Pro para importar.
+
+OPCIÓN A: IMPORTAR EL EXCEL (MÉTODO RECOMENDADO - 2 MINUTOS)
+-------------------------------------------------------------
+1. Entra en https://create.kahoot.it y haz login.
+2. Pulsa el botón azul "Create" (arriba a la derecha) > selecciona "Import spreadsheet".
+   (Si no lo ves: Create > New kahoot > Import spreadsheet)
+3. Arrastra el archivo "Kahoot_TICO1_Tema1_Sociedad_Informacion.xlsx"
+   o pulsa "Upload" y selecciónalo desde /Documents/tic1/
+4. Kahoot! previsualizará las 20 preguntas. Verifica que:
+   - Type = Quiz
+   - Time limit = 20 o 30 segundos (ya configurado)
+   - Correct answer = marcada en verde
+5. Pulsa "Import" / "Add questions".
+6. Se creará un borrador de Kahoot con título provisional. Haz clic en "Settings":
+   - Título: TICO1 - Tema 1: Sociedad de la Información y el Ordenador
+   - Descripción: 1º Bachillerato - Bloque A.1 (SI, Big Data, IoT, IA, Sostenibilidad)
+   - Cover image: Busca "Sociedad de la información" en la librería de Kahoot
+   - Language: Spanish
+7. (Opcional pero recomendado) Añade imágenes a las preguntas:
+   - P.11 (IoT): termostato Nest / casa domótica
+   - P.12 (IA): logo ChatGPT/Midjourney
+   - P.17 (Obsolescencia): foto Fairphone modular
+8. Pulsa "Done" > "Save".
+
+OPCIÓN B: IMPORTAR EL CSV (SI EL EXCEL FALLA)
+----------------------------------------------
+1. Sigue los mismos pasos que arriba pero selecciona el archivo .csv
+2. Si Kahoot da error de codificación, abre el CSV con Excel/Numbers y guárdalo de nuevo como .xlsx.
+
+OPCIÓN C: CREACIÓN MANUAL (SI NO FUNCIONA LA IMPORTACIÓN)
+----------------------------------------------------------
+1. Create > New kahoot > Create new
+2. Copia/pega pregunta por pregunta desde el archivo .md (Bloque 9 > Banco de Preguntas)
+   o desde el .xlsx abierto en Excel.
+
+CÓMO CONFIGURAR LA PARTIDA PARA CLASE
+---------------------------------------
+1. Dentro de tu Kahoot, pulsa "Play" > Elige modo:
+   - Classic (1:1, cada alumno con su dispositivo) -> para repaso/examen
+   - Team mode (por grupos) -> para fomentar debate
+2. Opciones recomendadas (Settings del lobby):
+   - Randomize order of questions: ON
+   - Randomize order of answers: ON
+   - Show question and answers on players' devices: ON
+   - Podium: ON
+3. Pulsa "Host live" si es en clase presencial, o "Assign" si es tarea asíncrona.
+4. Comparte el PIN en la pizarra. Los alumnos entran en kahoot.it
+
+CONSEJOS PARA EL DOCENTE
+-------------------------
+- Tiempo total: 20 preguntas x 20-30 seg = 12-15 min + explicaciones = 25 min.
+- Usa el informe final (Reports > Download) para ver qué criterio falla más:
+  Ej: Si fallan mucho P.6-P.7 -> reforzar RGPD.
+  Si fallan P.10-P.14 -> reforzar Big Data/IoT/IA.
+- Después del Kahoot, proyecta el .md y repasa solo las preguntas con <60% aciertos.
+
+SOLUCIÓN DE ERRORES COMUNES
+----------------------------
+- "File not supported": Asegúrate de usar el .xlsx, no el .md.
+- "Too many characters": Cada pregunta tiene <120 caracteres (ya optimizado).
+- "Correct answer missing": La columna G debe ser 1, 2, 3 o 4 (ya configurado).
+- No se ven tildes: El archivo está en UTF-8. Si usas Excel antiguo, guarda como UTF-8.
+- Límite gratuito: Kahoot free permite hasta 40 alumnos por partida. Si sois más, usa Team mode.
+
+¿Y DESPUÉS DEL KAHOOT?
+-----------------------
+- Actividades complementarias en el .md (Bloque 9):
+  B1 Auditoría de huella digital, C1 IoT sostenible, D2 Escape Room "Apagón Global".
+- Puedes pedirme que genere la versión para Quizizz, Blooket o Google Forms.
+
+SOPORTE
+-------
+Documentación oficial Kahoot!: https://support.kahoot.com/hc/en-us/articles/115002390832-How-to-import-a-spreadsheet
+Carpeta local: /Users/diego/Documents/tic1/
