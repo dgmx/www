@@ -16,6 +16,7 @@ export default defineConfig({
     /\.sql$/
   ],
   markdown: {
+    math: true,
     config: (md) => {
       const fence = md.renderer.rules.fence
       md.renderer.rules.fence = (tokens, idx, options, env, self) => {
