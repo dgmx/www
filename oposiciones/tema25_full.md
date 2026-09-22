@@ -363,7 +363,7 @@ El proceso de declaración de un procedimiento es similar al de una función, ex
 
 Al igual que las funciones, la declaración de un procedimiento consta de 2 partes: cabecera y cuerpo. Su sintaxis en pseudocódigo es:
 
-```pseudo
+```txt
 procedimiento nombre(parámetros formales){
  <instrucciones>
 }
@@ -373,7 +373,7 @@ procedimiento nombre(parámetros formales){
 
 La llamada a un procedimiento se realiza de igual modo que la llamada a una función. Su sintaxis es:
 
-```pseudo
+```txt
 nombre_procedimiento(lista parámetros actuales)
 ```
 

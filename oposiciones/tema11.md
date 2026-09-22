@@ -176,7 +176,7 @@ Definición: Colección lineal de elementos del mismo tipo los cuales tienen aso
   - **Asignación**: `numeros[0] = 99; // Java`
   - **Acceso**: `int valor = numeros[2]; // C++`
   - **Recorrido**:
-    ```pseudocódigo
+    ```txt
     Para i = 1 hasta tamaño 
       Escribir notas[i]
     FinPara
