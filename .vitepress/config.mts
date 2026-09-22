@@ -43,7 +43,6 @@ export default defineConfig({
         { text: 'Contenedores', link: '/linux/contenedores/' },
         { text: 'Terminal', link: '/linux/terminal/' },
       ]},
-      { text: 'Formación', link: '/formacion/' },
       { text: 'Docencia', link: '/docencia/' },
       { text: 'Redes', items: [
         { text: 'General', link: '/redes/' },
