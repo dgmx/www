@@ -22,6 +22,9 @@ hero:
     - theme: brand
       text: Shell Scripting
       link: /programacion/shell/manual_shell_script
+    - theme: alt
+      text: Python
+      link: /programacion/python/03_manual_python
 
 features:
   - title: NodeJS

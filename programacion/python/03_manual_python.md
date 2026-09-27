@@ -3086,5 +3086,5 @@ Una lista de los errores más habituales, su causa y su solución.
 - [Documentación oficial de Python](https://docs.python.org/es/3/tutorial/)
 - [Tutorial interactivo de Python](https://www.trypython.org/)
 - [Manual de programación en Python con VS Code](/programacion/python/01_python_vscode) — instalación y entorno de desarrollo
-- [Curso práctico de Python](/programacion/python/02_curso_python) — del principiante a la POO
 - [Ejercicios básicos](/programacion/python/01_ejercicios) — para empezar a practicar
+- [Itinerario de aprendizaje de Python](/programacion/python/02_curso_python) — profundizar en los temas del manual

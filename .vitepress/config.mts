@@ -94,6 +94,7 @@ export default defineConfig({
             text: "Python",
             collapsed: true,
             items: [
+              { text: "Manual de Python", link: "/programacion/python/03_manual_python" },
               { text: "Manual de programación con Python y VS Code", link: "/programacion/python/01_python_vscode" },
               { text: "Curso práctico de Python con VS Code", link: "/programacion/python/02_curso_python" },
             ],
