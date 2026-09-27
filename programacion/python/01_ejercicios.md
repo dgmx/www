@@ -1,17 +1,5 @@
 # Ejercicios básicos de Python
 
-## Tabla de contenidos
-
-- [Ejercicio 1: calcular la suma de dos números](#ejercicio-1-calcular-la-suma-de-dos-números)
-- [Ejercicio 2: calcular el área de un círculo](#ejercicio-2-calcular-el-área-de-un-círculo)
-- [Ejercicio 3: convertir grados Celsius a Fahrenheit](#ejercicio-3-convertir-grados-celsius-a-fahrenheit)
-- [Ejercicio 4: calcular el doble y el triple de un número](#ejercicio-4-calcular-el-doble-y-el-triple-de-un-número)
-- [Ejercicio 5: calcular la media de tres números](#ejercicio-5-calcular-la-media-de-tres-números)
-- [Ejercicio 6: multiplicar dos números](#ejercicio-6-multiplicar-dos-números)
-- [Ejercicio 7: concatenar dos cadenas de texto](#ejercicio-7-concatenar-dos-cadenas-de-texto)
-- [Ejercicio 8: mostrar un número repetido varias veces](#ejercicio-8-mostrar-un-número-repetido-varias-veces)
-- [Ejercicio 9: calcular el área de un rectángulo](#ejercicio-9-calcular-el-área-de-un-rectángulo)
-- [Ejercicio 10: calcular el perímetro de un rectángulo](#ejercicio-10-calcular-el-perímetro-de-un-rectángulo)
 
 Para que puedas practicar sobre los conceptos de variables, constantes, operadores, expresiones y la entrada/salida de datos usando Python, aquí tienes una batería de ejercicios resueltos con explicaciones detalladas de cada uno.
 
