@@ -306,6 +306,7 @@ export default defineConfig({
               { text: "IPv6 SLAAC", link: "/redes/calc/ipv6-slaac" },
               { text: "Generador Contraseñas", link: "/redes/calc/contrasenas" },
               { text: "Sistemas Numeración", link: "/redes/calc/sistemas-numeracion" },
+              { text: "Códigos ASCII", link: "/redes/calc/ascii" },
             ],
           },
         ]
