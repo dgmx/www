@@ -484,23 +484,48 @@ onBeforeUnmount(() => window.removeEventListener('keydown', onKey))
 .cell:hover, .cell:focus-visible { transform: scale(1.18); box-shadow: 0 6px 18px rgba(0,0,0,.22); border-color: var(--vp-c-brand-1); outline: none; z-index: 2; }
 .cell.pinned { border-color: var(--vp-c-brand-1); box-shadow: inset 0 0 0 1px var(--vp-c-brand-1); }
 .glyph { font-size: 1.15rem; line-height: 1; }
-.dec { font-size: .6rem; color: var(--vp-c-text-3); }
-.cell.control { background: #f3f4f6; }
-.cell.control .glyph { color: #9ca3af; }
-.cell.espacio { background: #fef9c3; }
-.cell.espacio .glyph { color: #a16207; }
-.cell.digitos { background: #dcfce7; }
-.cell.mayusculas { background: #dbeafe; }
-.cell.minusculas { background: #ede9fe; }
-.cell.puntuacion { background: #fce7f3; }
-[data-theme="dark"] .cell.control { background: #2a2a2e; }
-[data-theme="dark"] .cell.control .glyph { color: #6b7280; }
-[data-theme="dark"] .cell.espacio { background: #453a12; }
-[data-theme="dark"] .cell.espacio .glyph { color: #fde047; }
-[data-theme="dark"] .cell.digitos { background: #14351f; }
-[data-theme="dark"] .cell.mayusculas { background: #14304d; }
-[data-theme="dark"] .cell.minusculas { background: #2b2350; }
-[data-theme="dark"] .cell.puntuacion { background: #451a33; }
+.dec { font-size: .6rem; font-weight: 600; }
+
+/* Colores por categoría. Cada glifo y cada número se colorean de forma
+   explícita (no heredan --vp-c-text-1) para garantizar el contraste.
+   Todos los pares fondo/texto superan 4.5:1 (WCAG AA) en los dos temas. */
+.cell.control { background: #d1d5db; }
+.cell.control .glyph, .cell.control .dec { color: #111827; }
+.cell.espacio { background: #fcd34d; }
+.cell.espacio .glyph, .cell.espacio .dec { color: #451a03; }
+.cell.digitos { background: #4ade80; }
+.cell.digitos .glyph, .cell.digitos .dec { color: #052e16; }
+.cell.mayusculas { background: #60a5fa; }
+.cell.mayusculas .glyph { color: #172554; }
+.cell.mayusculas .dec { color: #1b337a; }
+.cell.minusculas { background: #a78bfa; }
+.cell.minusculas .glyph { color: #2e1065; }
+.cell.minusculas .dec { color: #41197f; }
+.cell.puntuacion { background: #f472b6; }
+.cell.puntuacion .glyph { color: #500724; }
+.cell.puntuacion .dec { color: #671334; }
+
+/* Modo oscuro: VitePress marca el tema con la clase .dark en <html>.
+   Se admite también [data-theme="dark"] por compatibilidad. */
+.dark .cell.control, [data-theme="dark"] .cell.control { background: #3f3f46; }
+.dark .cell.control .glyph, [data-theme="dark"] .cell.control .glyph { color: #e4e4e7; }
+.dark .cell.control .dec, [data-theme="dark"] .cell.control .dec { color: #acacb4; }
+.dark .cell.espacio, [data-theme="dark"] .cell.espacio { background: #a16207; }
+.dark .cell.espacio .glyph, [data-theme="dark"] .cell.espacio .glyph { color: #fffbeb; }
+.dark .cell.espacio .dec, [data-theme="dark"] .cell.espacio .dec { color: #fef5d1; }
+.dark .cell.digitos, [data-theme="dark"] .cell.digitos { background: #15803d; }
+.dark .cell.digitos .glyph, [data-theme="dark"] .cell.digitos .glyph { color: #ecfdf5; }
+.dark .cell.digitos .dec, [data-theme="dark"] .cell.digitos .dec { color: #dafbe6; }
+.dark .cell.mayusculas, [data-theme="dark"] .cell.mayusculas { background: #1d4ed8; }
+.dark .cell.mayusculas .glyph, [data-theme="dark"] .cell.mayusculas .glyph { color: #eff6ff; }
+.dark .cell.mayusculas .dec, [data-theme="dark"] .cell.mayusculas .dec { color: #bfdbfe; }
+.dark .cell.minusculas, [data-theme="dark"] .cell.minusculas { background: #6d28d9; }
+.dark .cell.minusculas .glyph, [data-theme="dark"] .cell.minusculas .glyph { color: #f5f3ff; }
+.dark .cell.minusculas .dec, [data-theme="dark"] .cell.minusculas .dec { color: #ddd6fe; }
+.dark .cell.puntuacion, [data-theme="dark"] .cell.puntuacion { background: #be185d; }
+.dark .cell.puntuacion .glyph, [data-theme="dark"] .cell.puntuacion .glyph { color: #fdf2f8; }
+.dark .cell.puntuacion .dec, [data-theme="dark"] .cell.puntuacion .dec { color: #fbd5eb; }
+
 .no-results { grid-column: 1 / -1; text-align: center; padding: 2rem; color: var(--vp-c-text-3); }
 
 .ascii-tip { position: fixed; z-index: 100; width: 330px; padding: .8rem .9rem; background: var(--vp-c-bg); border: 1px solid var(--vp-c-brand-1); border-radius: 10px; box-shadow: 0 12px 32px rgba(0,0,0,.28); pointer-events: none; font-size: .8rem; }
