@@ -177,12 +177,10 @@ Escribe un programa que pida al usuario un número y luego muestre ese número r
 ::: details Ver solución {close}
 
 ```python
-numero = int(input("Introduce un número: "))
+numero = input("Introduce un número: ")
+veces = int(input("Introduce cuántas veces quieres repetir el número: "))
 
-for _ in range(5):
-    print(numero, end=" ")
-
-print()
+print((numero + " ") * veces)
 ```
 
 **Explicación:**
