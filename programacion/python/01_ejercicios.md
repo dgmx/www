@@ -183,13 +183,6 @@ veces = int(input("Introduce cuántas veces quieres repetir el número: "))
 print((numero + " ") * veces)
 ```
 
-**Explicación:**
-
-- `range(5)` genera cinco iteraciones, con valores del 0 al 4.
-- La variable `_` se utiliza porque su valor concreto no se necesita.
-- `end=" "` coloca un espacio detrás de cada número.
-- El último `print()` añade un salto de línea al finalizar.
-
 :::
 
 ## Ejercicio 9: calcular el área de un rectángulo
