@@ -324,6 +324,55 @@ Utilizando 8 bits:
 
 Los ceros iniciales se utilizan para completar las 8 posiciones.
 
+## Actividad 5. Texto digital
+
+### 1. Valores decimales en ASCII
+
+Según la tabla ASCII:
+
+| Letra | Decimal ASCII |
+|:-----:|--------------:|
+| H     | 72            |
+| O     | 79            |
+| L     | 76            |
+| A     | 65            |
+
+Por tanto, **HOLA** se representa en decimal como:
+
+```text
+72 - 79 - 76 - 65
+```
+
+### 2. Conversión a binario
+
+Convertimos cada valor decimal a 8 bits:
+
+| Letra | Decimal | Binario  |
+|:-----:|--------:|:--------:|
+| H     | 72      | 01001000 |
+| O     | 79      | 01001111 |
+| L     | 76      | 01001100 |
+| A     | 65      | 01000001 |
+
+Así que **HOLA** en binario ASCII es:
+
+```text
+01001000 01001111 01001100 01000001
+```
+
+### 3. Ampliación: ¿qué ocurre con Ñ?
+
+La Ñ no pertenece al ASCII estándar. ASCII utiliza originalmente 7 bits y solo contiene 128 caracteres, desde 0 hasta 127. Por eso no existe un código ASCII estándar para Ñ.
+
+Para representar Ñ se utiliza Unicode, que asigna a la Ñ mayúscula el código:
+
+- Unicode: `U+00D1`
+- Decimal: `209`
+- UTF-8: `C3 91` en hexadecimal
+- UTF-8 en binario: `11000011 10010001`
+
+Por tanto, una frase como **HOLA Ñ** requiere una codificación más amplia que el ASCII estándar, como Unicode/UTF-8.
+
 ## Actividad 6
 
 800 × 600 =
