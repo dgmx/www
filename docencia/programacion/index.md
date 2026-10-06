@@ -9,8 +9,12 @@ hero:
 
 
 features:
+  - title: Tema 0
+    details: Tema 0. Representación digital de la información.
+    link: /docencia/programacion/tema0
+    linkText: Leer más
   - title: Tema 1
-    details: Tema 1. Introducción a los lenguajes de programación. Tipos. Características. 
+    details: Introducción a los lenguajes de programación. Tipos. Características. 
     link: /docencia/programacion/tema1
     linkText: Leer más
 ---
