@@ -15,7 +15,8 @@
 -   **PRYC.2.A.1.3.** Funciones y reutilización de código. Manipulación
     de archivos.
 
-**Lenguaje de referencia:** Python 3
+**Lenguaje de referencia:** Python 3.   
+
 [Introducción a los lenguajes de programación](tema1_conceptos.md)
 
 ------------------------------------------------------------------------
