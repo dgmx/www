@@ -1,473 +1,1700 @@
-# Tema 1. Introducción a los lenguajes de programación. Tipos. Características. 
 
 
-## 1. Introducción 
+# Programación y Computación. Andalucía
 
-La importancia de los lenguajes de programación en la era tecnológica, así como su presencia en dispositivos cotidianos y sectores clave, se fundamenta en diversos aspectos esenciales:
+### Bloque A. Programación
 
-Sostén de la era tecnológica y la innovación: Los lenguajes de programación actúan como el puente entre el pensamiento lógico humano y la capacidad de procesamiento de las máquinas, traduciendo ideas en soluciones digitales tangibles. Permiten la automatización de procesos, reduciendo tareas de meses a milisegundos, y facilitan la resolución de problemas complejos mediante el procesamiento de enormes volúmenes de datos. Además, son la base sobre la que se construye la infraestructura global de internet y las comunicaciones.  
+**Referencia curricular**
 
+-   **PRYC.2.A.1.1.** Tipos de lenguajes. Estructura de un programa
+    informático y elementos básicos del lenguaje. Tipos básicos de
+    datos. Constantes y variables. Operadores y expresiones.
+    Comentarios.
+-   **PRYC.2.A.1.2.** Estructuras de control condicionales e iterativas.
+    Estructuras de datos.
+-   **PRYC.2.A.1.3.** Funciones y reutilización de código. Manipulación
+    de archivos.
 
-Uso en dispositivos cotidianos:
+**Lenguaje de referencia:** Python 3
+[Introducción a los lenguajes de programación](tema1_conceptos.md)
 
-+ Teléfonos móviles y computadoras: Sistemas como Android basan su desarrollo en lenguajes como Java y Kotlin, mientras que la navegación web interactiva en cualquier smartphone o ordenador se soporta sobre JavaScript.  
-        
-+ Sistemas operativos y software básico: Los sistemas operativos de las computadoras y dispositivos modernos (como Windows, Linux o Unix) están construidos principalmente sobre C y C++.  
-        
+------------------------------------------------------------------------
 
-+ Tejido de la microcomputación: Desde los inicios de la computación personal, lenguajes como BASIC permitieron la interacción del usuario común con los dispositivos en el hogar.  
+# Índice
 
+1.  Introducción a la programación
+2.  Lenguajes de programación y estructura de un programa
+3.  Variables, constantes y tipos de datos
+4.  Operadores y expresiones
+5.  Entrada, salida y comentarios
+6.  Estructuras condicionales
+7.  Estructuras iterativas
+8.  Estructuras de datos
+9.  Funciones y reutilización de código
+10. Manipulación de archivos
+11. Buenas prácticas, depuración y pruebas
+12. Proyecto final
+13. Ejercicios de repaso
+14. Solucionario
+15. Glosario
 
-Presencia en sectores clave:
+------------------------------------------------------------------------
 
-+ Sector bancario y financiero: Sólidos sistemas bancarios y la gran mayoría de las transacciones financieras globales siguen siendo gestionados hoy en día por COBOL, mientras que lenguajes híbridos como Java son fundamentales para las aplicaciones empresariales del sector.  
+# 1. Introducción a la programación
 
-+ Ciencia de datos e Inteligencia Artificial: La investigación avanzada, la automatización y el desarrollo de IA están dominados por Python, junto con lenguajes especializados en estadística y computación científica como R y Julia.  
+## 1.1. ¿Qué es programar?
 
-+ Supercomputación, ingeniería y climatología: Modelos climáticos y cálculos numéricos pesados en supercomputadoras continúan apoyándose en Fortran.  
+Programar consiste en diseñar un conjunto ordenado de instrucciones que
+un ordenador puede ejecutar para resolver un problema o realizar una
+tarea.
 
-+ Infraestructura en la nube y videojuegos: Herramientas clave de infraestructura en la nube y contenedores (como Docker y Kubernetes) dependen de lenguajes de alta concurrencia como Go, mientras que el desarrollo de motores gráficos para videojuegos de alto rendimiento hace uso exhaustivo de C++.  
- 
+Un programa suele seguir este esquema:
 
-## 2. Lenguajes de programación
+**Entrada → Procesamiento → Salida**
 
-### 2.1 Concepto
-Un **lenguaje de programación** es un sistema de símbolos y reglas que permite dar instrucciones a una computadora.
+Por ejemplo, para calcular el precio final de un producto:
 
-Es como un “idioma” para comunicarse con ella.
+-   Entrada: precio y porcentaje de descuento.
+-   Procesamiento: cálculo del descuento.
+-   Salida: precio final.
 
-### 2.2 Características principales
-- **Sintaxis**: reglas para escribir correctamente el código.  
-- **Semántica**: significado de las instrucciones.  
-- **Precisión**: no hay ambigüedades.  
-- **Estructura**: permite organizar el código (funciones, clases…).  
-- **Portabilidad**: funciona en distintos sistemas (en algunos casos).  
-- **Nivel de abstracción**:  
-  - Bajo nivel → más cerca del hardware  
-  - Alto nivel → más fácil para humanos  
-- **Eficiencia**: uso de recursos y velocidad.
+``` python
+precio = float(input("Precio: "))
+descuento = float(input("Descuento (%): "))
 
+precio_final = precio * (1 - descuento / 100)
 
-### 2.3 Elementos de los lenguajes de programación por niveles
-
-#### Nivel léxico (léxico)
-Elementos básicos del lenguaje (tokens):
-- **Palabras clave**: `if`, `while`, `int`  
-- **Identificadores**: nombres de variables (`edad`, `total`)  
-- **Literales**: valores (`10`, `"hola"`, `true`)  
-- **Operadores**: `+`, `-`, `=`, `==`  
-- **Separadores**: `;`, `,`, `{ }`, `( )`  
-
-Son las “piezas” mínimas del código.
-
-#### Nivel sintáctico (sintaxis)
-Elementos que organizan el código:
-- **Expresiones**: `a + b`  
-- **Sentencias**: `int x = 5;`  
-- **Bloques de código**: `{ ... }`  
-- **Estructuras de control**: `if`, `for`, `while`  
-- **Declaraciones**: variables, funciones, clases  
-
-Define cómo se combinan los tokens.
-
-#### Nivel semántico (semántica)
-Elementos relacionados con el significado:
-- **Tipos de datos**: `int`, `float`, `String`  
-- **Compatibilidad de tipos**: operaciones válidas o no  
-- **Ámbito (scope)**: dónde existe una variable  
-- **Inicialización de variables**  
-- **Significado de operaciones**: qué hace realmente cada instrucción  
-
-Asegura que el programa tenga sentido lógico.
-
-
-### 2.4 Instrucciones
-
-Las instrucciones en programación son órdenes que se dan al ordenador para ejecutar acciones concretas. Se pueden clasificar en:
-
-#### a). Instrucciones de declaración
-Sirven para crear variables o constantes.
-
-Ejemplo en Java:
-```java
-int edad = 20;
+print("Precio final:", precio_final)
 ```
 
-#### b) Instrucciones de asignación
-Sirven para modificar el valor de una variable.
+## 1.2. Algoritmo
 
-```java
-edad = 25;
+Un algoritmo es una secuencia finita y ordenada de pasos que permite
+resolver un problema.
+
+Un buen algoritmo debe ser:
+
+-   preciso;
+-   ordenado;
+-   finito;
+-   comprensible;
+-   eficaz.
+
+Antes de escribir código conviene identificar:
+
+1.  Qué datos conocemos.
+2.  Qué datos necesitamos solicitar.
+3.  Qué proceso debemos realizar.
+4.  Qué resultado debemos mostrar.
+
+## 1.3. Del problema al programa
+
+Una estrategia habitual es:
+
+1.  Comprender el problema.
+2.  Identificar entradas y salidas.
+3.  Diseñar el algoritmo.
+4.  Dividir el problema en partes.
+5.  Implementar el código.
+6.  Probar el programa.
+7.  Corregir errores.
+8.  Documentar y mejorar.
+
+------------------------------------------------------------------------
+
+# 2. Lenguajes de programación y estructura de un programa
+
+## 2.1. Lenguajes de bajo y alto nivel
+
+Los lenguajes de bajo nivel están más próximos al funcionamiento interno
+del ordenador.
+
+Los lenguajes de alto nivel utilizan estructuras más cercanas al
+lenguaje humano y permiten desarrollar programas con mayor facilidad.
+
+Ejemplos de lenguajes de alto nivel:
+
+-   Python
+-   Java
+-   C#
+-   JavaScript
+-   C++
+
+## 2.2. Compiladores e intérpretes
+
+Un **compilador** traduce el programa a un código que posteriormente
+puede ejecutarse.
+
+Un **intérprete** ejecuta el programa mediante un proceso de
+interpretación del código.
+
+En la práctica, los lenguajes modernos pueden utilizar sistemas
+híbridos. Por ello, la distinción no siempre es absoluta.
+
+## 2.3. Python
+
+Python es un lenguaje:
+
+-   de alto nivel;
+-   de propósito general;
+-   interpretado mediante una implementación como CPython;
+-   con tipado dinámico;
+-   con una sintaxis relativamente sencilla;
+-   compatible con programación estructurada, orientada a objetos y
+    otros paradigmas.
+
+Ejemplo:
+
+``` python
+nombre = "Ana"
+edad = 17
+
+print(nombre, edad)
 ```
 
-#### c) Instrucciones de entrada/salida
-Permiten mostrar información o recibir datos.
+## 2.4. Estructura básica de un programa
 
-```java
-System.out.println("Hola");
+Un programa sencillo puede contener:
+
+1.  Comentarios.
+2.  Importaciones.
+3.  Definición de constantes.
+4.  Definición de funciones.
+5.  Código principal.
+
+Ejemplo:
+
+``` python
+# Programa para calcular el área de un círculo
+
+import math
+
+PI = math.pi
+
+def area_circulo(radio):
+    return PI * radio ** 2
+
+radio = float(input("Radio: "))
+resultado = area_circulo(radio)
+
+print("Área:", resultado)
 ```
 
-#### d) Instrucciones de control de flujo
+## 2.5. Sintaxis e indentación
 
-#### Condicionales:
-```java
-if (edad >= 18) {
-    System.out.println("Adulto");
+Python utiliza la indentación para delimitar bloques de código.
+
+Correcto:
+
+``` python
+edad = 18
+
+if edad >= 18:
+    print("Mayor de edad")
+```
+
+Incorrecto:
+
+``` python
+edad = 18
+
+if edad >= 18:
+print("Mayor de edad")
+```
+
+La indentación forma parte de la sintaxis del lenguaje.
+
+------------------------------------------------------------------------
+
+# 3. Variables, constantes y tipos de datos
+
+## 3.1. Variables
+
+Una variable es un nombre asociado a un valor que puede cambiar durante
+la ejecución.
+
+``` python
+edad = 17
+edad = 18
+```
+
+Después de la segunda asignación, `edad` contiene `18`.
+
+## 3.2. Identificadores
+
+Los nombres de variables deben seguir las reglas del lenguaje.
+
+Buenas prácticas:
+
+``` python
+nombre_alumno = "Lucía"
+numero_alumnos = 25
+nota_media = 7.8
+```
+
+Evita nombres poco descriptivos:
+
+``` python
+x = 7.8
+a = 25
+```
+
+salvo que el contexto lo justifique, por ejemplo, en una fórmula
+matemática.
+
+## 3.3. Constantes
+
+Python no impone constantes mediante una palabra reservada específica.
+Por convención se escriben en mayúsculas:
+
+``` python
+IVA = 0.21
+PI = 3.141592653589793
+```
+
+La convención indica que esos valores no deberían modificarse.
+
+## 3.4. Tipos básicos
+
+### Enteros: `int`
+
+``` python
+edad = 17
+numero = -8
+```
+
+### Reales: `float`
+
+``` python
+altura = 1.78
+precio = 12.95
+```
+
+### Cadenas: `str`
+
+``` python
+nombre = "María"
+```
+
+### Booleanos: `bool`
+
+Solo pueden tomar dos valores:
+
+``` python
+aprobado = True
+activo = False
+```
+
+## 3.5. Comprobar el tipo
+
+``` python
+valor = 25
+
+print(type(valor))
+```
+
+Resultado aproximado:
+
+``` text
+<class 'int'>
+```
+
+## 3.6. Conversión de tipos
+
+``` python
+numero = int("25")
+decimal = float("3.14")
+texto = str(100)
+```
+
+Es especialmente importante al utilizar `input()`.
+
+``` python
+edad = input("Edad: ")
+```
+
+El resultado de `input()` es siempre una cadena.
+
+Para realizar operaciones numéricas:
+
+``` python
+edad = int(input("Edad: "))
+```
+
+------------------------------------------------------------------------
+
+# 4. Operadores y expresiones
+
+## 4.1. Operadores aritméticos
+
+  Operador   Significado       Ejemplo
+  ---------- ----------------- ----------
+  `+`        suma              `5 + 2`
+  `-`        resta             `5 - 2`
+  `*`        multiplicación    `5 * 2`
+  `/`        división real     `5 / 2`
+  `//`       división entera   `5 // 2`
+  `%`        resto             `5 % 2`
+  `**`       potencia          `5 ** 2`
+
+Ejemplo:
+
+``` python
+a = 17
+b = 5
+
+print(a + b)
+print(a / b)
+print(a // b)
+print(a % b)
+print(a ** 2)
+```
+
+## 4.2. Operadores de comparación
+
+  Operador   Significado
+  ---------- ---------------
+  `==`       igual
+  `!=`       distinto
+  `<`        menor
+  `>`        mayor
+  `<=`       menor o igual
+  `>=`       mayor o igual
+
+Ejemplo:
+
+``` python
+edad = 18
+
+print(edad >= 18)
+```
+
+## 4.3. Operadores lógicos
+
+  Operador   Significado
+  ---------- -------------
+  `and`      Y
+  `or`       O
+  `not`      Negación
+
+Ejemplo:
+
+``` python
+edad = 20
+tiene_carnet = True
+
+puede_conducir = edad >= 18 and tiene_carnet
+```
+
+## 4.4. Asignación
+
+``` python
+x = 10
+x += 5
+x -= 2
+x *= 3
+x /= 2
+```
+
+## 4.5. Precedencia
+
+Las operaciones siguen un orden de evaluación. Como regla general:
+
+1.  Paréntesis.
+2.  Potencias.
+3.  Multiplicaciones, divisiones, divisiones enteras y restos.
+4.  Sumas y restas.
+5.  Comparaciones.
+6.  Operadores lógicos.
+
+Cuando exista duda, utiliza paréntesis:
+
+``` python
+resultado = (a + b) * c
+```
+
+------------------------------------------------------------------------
+
+# 5. Entrada, salida y comentarios
+
+## 5.1. Entrada con `input()`
+
+``` python
+nombre = input("Nombre: ")
+```
+
+## 5.2. Salida con `print()`
+
+``` python
+print("Hola", nombre)
+```
+
+## 5.3. Formateo de cadenas
+
+La forma recomendada es utilizar f-strings:
+
+``` python
+nombre = "Luis"
+nota = 8.5
+
+print(f"{nombre} ha obtenido un {nota}")
+```
+
+## 5.4. Comentarios
+
+Los comentarios explican el código y no son ejecutados.
+
+``` python
+# Calculamos el precio con IVA
+precio_final = precio * 1.21
+```
+
+Un comentario útil explica el **porqué** cuando este no resulta evidente
+en el código.
+
+------------------------------------------------------------------------
+
+# 6. Estructuras condicionales
+
+## 6.1. Condicional simple
+
+``` python
+edad = int(input("Edad: "))
+
+if edad >= 18:
+    print("Es mayor de edad")
+```
+
+## 6.2. `if ... else`
+
+``` python
+edad = int(input("Edad: "))
+
+if edad >= 18:
+    print("Mayor de edad")
+else:
+    print("Menor de edad")
+```
+
+## 6.3. `if ... elif ... else`
+
+``` python
+nota = float(input("Nota: "))
+
+if nota < 5:
+    print("Insuficiente")
+elif nota < 7:
+    print("Aprobado")
+elif nota < 9:
+    print("Notable")
+else:
+    print("Sobresaliente")
+```
+
+## 6.4. Condiciones compuestas
+
+``` python
+edad = int(input("Edad: "))
+
+if 16 <= edad <= 18:
+    print("Edad entre 16 y 18")
+```
+
+También:
+
+``` python
+usuario = input("Usuario: ")
+contraseña = input("Contraseña: ")
+
+if usuario == "admin" and contraseña == "1234":
+    print("Acceso concedido")
+else:
+    print("Acceso denegado")
+```
+
+## 6.5. Condicionales anidados
+
+``` python
+nota = float(input("Nota: "))
+
+if nota >= 5:
+    if nota >= 9:
+        print("Sobresaliente")
+    else:
+        print("Aprobado")
+else:
+    print("Suspenso")
+```
+
+Siempre que sea posible, conviene evitar una anidación innecesariamente
+compleja.
+
+------------------------------------------------------------------------
+
+# 7. Estructuras iterativas
+
+Una estructura iterativa permite repetir un bloque de instrucciones.
+
+## 7.1. Bucle `for`
+
+``` python
+for i in range(5):
+    print(i)
+```
+
+Produce:
+
+``` text
+0
+1
+2
+3
+4
+```
+
+## 7.2. `range()`
+
+``` python
+range(fin)
+range(inicio, fin)
+range(inicio, fin, paso)
+```
+
+Ejemplo:
+
+``` python
+for i in range(2, 11, 2):
+    print(i)
+```
+
+Salida:
+
+``` text
+2
+4
+6
+8
+10
+```
+
+## 7.3. Recorrer una lista
+
+``` python
+notas = [7, 8.5, 6, 9]
+
+for nota in notas:
+    print(nota)
+```
+
+## 7.4. Bucle `while`
+
+Se utiliza cuando la repetición depende de una condición.
+
+``` python
+numero = 1
+
+while numero <= 5:
+    print(numero)
+    numero += 1
+```
+
+Es fundamental modificar adecuadamente la condición para evitar bucles
+infinitos.
+
+## 7.5. `break`
+
+Interrumpe el bucle:
+
+``` python
+while True:
+    numero = int(input("Número positivo: "))
+
+    if numero > 0:
+        break
+```
+
+## 7.6. `continue`
+
+Salta a la siguiente iteración:
+
+``` python
+for numero in range(1, 11):
+    if numero % 2 == 0:
+        continue
+
+    print(numero)
+```
+
+## 7.7. Contadores y acumuladores
+
+Contador:
+
+``` python
+contador = 0
+
+for numero in range(1, 11):
+    if numero % 2 == 0:
+        contador += 1
+
+print("Hay", contador, "números pares")
+```
+
+Acumulador:
+
+``` python
+suma = 0
+
+for numero in range(1, 6):
+    suma += numero
+
+print(suma)
+```
+
+------------------------------------------------------------------------
+
+# 8. Estructuras de datos
+
+## 8.1. Listas
+
+Una lista almacena una colección ordenada y modificable.
+
+``` python
+frutas = ["manzana", "pera", "plátano"]
+```
+
+Acceso mediante índices:
+
+``` python
+print(frutas[0])
+print(frutas[-1])
+```
+
+Modificar:
+
+``` python
+frutas[1] = "naranja"
+```
+
+Añadir:
+
+``` python
+frutas.append("kiwi")
+```
+
+Eliminar:
+
+``` python
+frutas.remove("manzana")
+```
+
+Longitud:
+
+``` python
+print(len(frutas))
+```
+
+## 8.2. Recorrer listas
+
+``` python
+notas = [6, 7, 8, 9]
+
+for nota in notas:
+    print(nota)
+```
+
+También puede utilizarse `enumerate()`:
+
+``` python
+for posicion, nota in enumerate(notas):
+    print(posicion, nota)
+```
+
+## 8.3. Tuplas
+
+Las tuplas son secuencias ordenadas que no se pueden modificar después
+de crearse.
+
+``` python
+coordenadas = (10, 20)
+```
+
+Son apropiadas para representar agrupaciones de datos que no deben
+cambiar.
+
+## 8.4. Diccionarios
+
+Un diccionario almacena pares **clave-valor**.
+
+``` python
+alumno = {
+    "nombre": "Laura",
+    "edad": 17,
+    "nota": 8.5
 }
 ```
 
-#### Bucles:
-```java
-while (edad < 30) {
-    edad++;
-}
+Acceso:
+
+``` python
+print(alumno["nombre"])
 ```
 
-#### e) Instrucciones de salto
-Modifican el flujo del programa:
+Modificar:
 
-- break → sale de un bucle  
-- continue → salta una iteración  
-- return → termina una función  
+``` python
+alumno["nota"] = 9
+```
 
+Añadir:
 
-## 3. Tipos de lenguajes de programación
+``` python
+alumno["curso"] = "2º Bachillerato"
+```
 
+Recorrer:
 
-### 3.1 Clasificación por nivel de abstracción
-La clasificación por nivel de abstracción indica qué tan cerca está un lenguaje del hardware o del lenguaje humano.
+``` python
+for clave, valor in alumno.items():
+    print(clave, valor)
+```
 
-#### a) Bajo nivel (poca abstracción)
-Son los más cercanos al hardware.
+## 8.5. Conjuntos
 
-- Lenguaje máquina (binario: 0 y 1)
-- Lenguaje ensamblador
+Un conjunto (`set`) almacena elementos sin duplicados.
 
-Características:
-- Muy difíciles de entender
-- Muy rápidos y eficientes
-- Dependientes del hardware
+``` python
+numeros = {1, 2, 3, 3, 4}
 
-#### b) Nivel medio
-Actúan como puente entre hardware y software.
+print(numeros)
+```
+
+El resultado contiene cada elemento una sola vez.
+
+## 8.6. Estructuras anidadas
+
+Las estructuras pueden combinarse:
+
+``` python
+alumnos = [
+    {"nombre": "Ana", "nota": 8},
+    {"nombre": "Luis", "nota": 6.5},
+    {"nombre": "Marta", "nota": 9}
+]
+
+for alumno in alumnos:
+    print(alumno["nombre"], alumno["nota"])
+```
+
+Este patrón es especialmente útil en pequeños programas de gestión de
+datos.
+
+------------------------------------------------------------------------
+
+# 9. Funciones y reutilización de código
+
+## 9.1. ¿Qué es una función?
+
+Una función es un bloque de código identificado por un nombre que puede
+ejecutarse cuando sea necesario.
+
+``` python
+def saludar():
+    print("Hola")
+```
+
+Llamada:
+
+``` python
+saludar()
+```
+
+## 9.2. Parámetros
+
+``` python
+def saludar(nombre):
+    print(f"Hola, {nombre}")
+```
+
+Uso:
+
+``` python
+saludar("Ana")
+saludar("Luis")
+```
+
+## 9.3. Retorno de valores
+
+``` python
+def sumar(a, b):
+    return a + b
+```
+
+Uso:
+
+``` python
+resultado = sumar(4, 7)
+print(resultado)
+```
+
+## 9.4. Parámetros por defecto
+
+``` python
+def saludar(nombre, saludo="Hola"):
+    print(f"{saludo}, {nombre}")
+```
+
+## 9.5. Ámbito de las variables
+
+Una variable creada dentro de una función normalmente tiene ámbito
+local:
+
+``` python
+def ejemplo():
+    mensaje = "Hola"
+    print(mensaje)
+```
+
+`mensaje` no debe considerarse una variable global disponible para todo
+el programa.
+
+## 9.6. Modularización
+
+Un programa grande debe dividirse en funciones con responsabilidades
+claras.
 
 Ejemplo:
-- C
 
-Características:
-- Más fáciles que los de bajo nivel
-- Permiten control de memoria
+``` python
+def pedir_numero():
+    return float(input("Número: "))
 
-#### c) Alto nivel (alta abstracción)
-Más cercanos al lenguaje humano.
+def calcular_cuadrado(numero):
+    return numero ** 2
 
-Ejemplos:
-- Python
-- Java
-- C#
+def mostrar_resultado(resultado):
+    print(f"Resultado: {resultado}")
 
-Características:
-- Fáciles de aprender y usar
-- Independientes del hardware
-- No requieren gestión directa de memoria
+numero = pedir_numero()
+resultado = calcular_cuadrado(numero)
+mostrar_resultado(resultado)
+```
 
-#### d). Muy alto nivel (ultra abstracción)
-Se centran en qué hacer, no cómo hacerlo.
+La modularización mejora:
 
-Ejemplos:
-- SQL
-- Prolog
+-   legibilidad;
+-   reutilización;
+-   mantenimiento;
+-   pruebas;
+-   detección de errores.
 
-Características:
-- Muy expresivos
-- El sistema resuelve la lógica internamente
+------------------------------------------------------------------------
 
-### 3.2 Clasificación cronológica
+# 10. Manipulación de archivos
 
-#### 1ª generación (1GL) – Lenguaje máquina
-- Basado en código binario (0 y 1)
-- Ejecutado directamente por el hardware
-- Muy difícil de programar
+## 10.1. ¿Por qué utilizar archivos?
 
-Ejemplo:
-10110000 01100001
-
-#### 2ª generación (2GL) – Lenguaje ensamblador
-- Usa mnemónicos en lugar de binario
-- Más legible que el lenguaje máquina
-- Dependiente del hardware
-
-Ejemplo (Assembly):
-MOV AX, 1
-ADD AX, 2
-
-#### 3ª generación (3GL) – Lenguajes de alto nivel
-- Más cercanos al lenguaje humano
-- Independientes del hardware
-- Uso de estructuras como bucles y funciones
+Las variables desaparecen al terminar el programa. Los archivos permiten
+conservar información.
 
 Ejemplos:
-- C
-- Java
-- Python
 
-#### 4ª generación (4GL) – Lenguajes orientados a problemas
-- Más declarativos (qué hacer, no cómo hacerlo)
-- Usados en bases de datos y análisis
+-   notas;
+-   listas de alumnado;
+-   configuraciones;
+-   resultados;
+-   registros.
 
-Ejemplos:
-- SQL
-- MATLAB
-- R
+## 10.2. Abrir un archivo
 
-#### 5ª generación (5GL) – Inteligencia artificial
-- Basados en lógica y resolución automática de problemas
-- Usados en IA y sistemas expertos
+La forma recomendada es:
 
-Ejemplos:
-- Prolog
+``` python
+with open("datos.txt", "r", encoding="utf-8") as archivo:
+    contenido = archivo.read()
+```
 
+`with` garantiza que el archivo se gestione correctamente al terminar el
+bloque.
 
+## 10.3. Modos habituales
 
-### 3.3 Clasificación por Paradigmas
+  Modo   Función
+  ------ --------------------------------------
+  `r`    lectura
+  `w`    escritura, sustituyendo el contenido
+  `a`    añadir al final
+  `x`    crear si no existe
 
-Un paradigma de programación representa un enfoque filosófico o un modelo para la resolución de problemas mediante código. A continuación, se detallan las categorías principales:
+## 10.4. Leer todo el contenido
 
-#### a) Paradigma Imperativo
-Se centra en describir **cómo** debe funcionar el programa mediante cambios de estado y secuencias de comandos.
+``` python
+with open("datos.txt", "r", encoding="utf-8") as archivo:
+    contenido = archivo.read()
 
-* **Programación Estructurada:** Utiliza estructuras de control (bucles, condicionales) para hacer el código legible y evitar saltos arbitrarios.
-    * *Ejemplos:* **C, Pascal, ALGOL.**
-* **Programación Orientada a Objetos (POO):** Organiza el software en "objetos" que agrupan datos (atributos) y comportamientos (métodos). Se basa en conceptos como herencia, encapsulamiento y polimorfismo.
-    * *Ejemplos:* **Java, C++, Ruby, C#.**
-* **Programación Procedural:** Basada en llamadas a procedimientos o funciones que operan sobre datos.
-    * *Ejemplos:* **Fortran, COBOL.**
+print(contenido)
+```
 
-#### b) Paradigma Declarativo
-Se centra en describir **qué** es lo que se desea obtener o qué problema se quiere resolver, sin detallar los pasos exactos del flujo de control.
+## 10.5. Leer línea a línea
 
-* **Programación Funcional:** Trata la computación como la evaluación de funciones matemáticas, evitando el cambio de estado y los datos mutables.
-    * *Ejemplos:* **Haskell, Lisp, Elixir, Scala.**
-* **Programación Lógica:** Basada en la lógica matemática. El programador define reglas y hechos, y el sistema deduce las respuestas.
-    * *Ejemplos:* **Prolog.**
-* **Lenguajes de Consulta:** Diseñados específicamente para interactuar con bases de datos o estructuras de datos complejas.
-    * *Ejemplos:* **SQL, XQuery.**
+``` python
+with open("datos.txt", "r", encoding="utf-8") as archivo:
+    for linea in archivo:
+        print(linea.strip())
+```
 
-#### c) Paradigmas Especializados
-* **Programación Reactiva:** Orientada al manejo de flujos de datos asíncronos y la propagación de cambios.
-    * *Ejemplos:* **RxJS, Elm.**
-* **Programación Orientada a Aspectos (POA):** Permite separar funcionalidades transversales (como seguridad o logs) del núcleo del programa.
+## 10.6. Escribir
 
-#### d) Lenguajes Multiparadigma
-En la actualidad, la mayoría de los lenguajes populares no pertenecen a una sola categoría, sino que permiten combinar estilos según la necesidad.
+``` python
+with open("salida.txt", "w", encoding="utf-8") as archivo:
+    archivo.write("Primera línea\n")
+    archivo.write("Segunda línea\n")
+```
 
-| Lenguaje | Paradigmas principales que soporta |
-| :--- | :--- |
-| **Python** | Imperativo, POO, Funcional. |
-| **JavaScript** | Funcional, Basado en prototipos (POO), Imperativo. |
-| **Rust** | Imperativo, Funcional, Genérico. |
-| **Swift** | POO, Funcional, Orientado a protocolos. |
+## 10.7. Añadir contenido
 
----
-*Nota: El uso de un paradigma u otro depende del tipo de proyecto (ej. funcional para análisis de datos masivos, POO para grandes sistemas empresariales).*
+``` python
+with open("salida.txt", "a", encoding="utf-8") as archivo:
+    archivo.write("Nueva línea\n")
+```
 
+## 10.8. Procesar un archivo
 
-### 3.4 Según el lugar de ejecución:
+Supongamos que `notas.txt` contiene una nota por línea:
 
+``` text
+7
+8.5
+6
+9
+```
 
-**Ejecución en el Lado del Cliente (Client-side)**:  El código se descarga desde un servidor, pero se ejecuta directamente en el dispositivo del usuario (computadora, tablet o smartphone).
+Podemos calcular la media:
 
-- Cómo funciona: El procesador local y la memoria RAM del usuario son los que realizan el trabajo.
+``` python
+notas = []
 
-- Lenguaje Rey: JavaScript (y sus derivados como TypeScript). También lenguajes que compilan a WebAssembly (como Rust o C++ ejecutándose en el navegador).
+with open("notas.txt", "r", encoding="utf-8") as archivo:
+    for linea in archivo:
+        notas.append(float(linea.strip()))
 
-- Ventajas:
+media = sum(notas) / len(notas)
 
-  - Respuesta inmediata (no hay que esperar al servidor).
+print(f"Media: {media:.2f}")
+```
 
-  - Interactividad fluida (animaciones, validación de formularios al instante).
+------------------------------------------------------------------------
 
-  - Ahorra costes de procesamiento al dueño de la web.
+# 11. Buenas prácticas, depuración y pruebas
 
-- Desventajas: Depende de la potencia del dispositivo del usuario y el código es visible para cualquiera ("Ver código fuente").
+## 11.1. Errores frecuentes
 
-**Ejecución en el Lado del Servidor (Server-side)**: El código se ejecuta en una computadora remota (servidor). El usuario solo recibe el resultado final, generalmente en forma de HTML, JSON o una imagen.
+### Error de sintaxis
 
-- Cómo funciona: El usuario envía una petición, el servidor procesa la lógica, consulta bases de datos y devuelve solo la respuesta procesada.
+El programa no respeta las reglas del lenguaje.
 
-- Lenguajes comunes: Python, PHP, Java, Go, Ruby, C#, Node.js.
+``` python
+if edad >= 18
+    print("Mayor")
+```
 
-- Ventajas:
+Falta `:`.
 
-  - Seguridad: La lógica de negocio y las bases de datos están protegidas; el usuario no ve el código.
+### Error de ejecución
 
-  - Consistencia: No importa si el usuario tiene un móvil viejo o una PC potente; el servidor hace el trabajo igual de rápido.
+El programa comienza a ejecutarse pero se produce un problema.
 
-- Desventajas: Requiere una conexión a internet constante y cada acción genera una pequeña espera (latencia) mientras viajan los datos.
+``` python
+numero = int("hola")
+```
 
-**Ejecución en el Borde (Edge Computing)**: Es la tendencia más moderna. El código no se ejecuta ni "tan lejos" como el servidor central, ni "tan cerca" como el dispositivo del usuario.
+### Error lógico
 
-- Cómo funciona: Se ejecuta en servidores intermedios distribuidos geográficamente (nodos de una red como Cloudflare o AWS Lambda@Edge), muy cerca de la ubicación física del usuario.
+El programa funciona, pero produce un resultado incorrecto.
 
-- Propósito: Reducir la latencia al mínimo absoluto para aplicaciones globales.
+``` python
+media = suma / cantidad + 1
+```
 
-### 3.5 Según el método de ejecución
+Si el algoritmo requiere otra operación, el programa puede ejecutarse
+sin lanzar una excepción y, aun así, estar equivocado.
 
-**Lenguajes Compilados:** En estos lenguajes, un programa llamado compilador traduce todo el código fuente de una sola vez y genera un archivo ejecutable (como un .exe o un binario de Linux).
+## 11.2. Pruebas
 
-- Proceso: Código Fuente → Compilador → Código Máquina (Binario).
+Un programa debe probarse con distintos casos:
 
-- Ventajas: Son extremadamente rápidos y eficientes, ya que la traducción se hace una sola vez antes de ejecutar.
+-   valores normales;
+-   valores mínimos;
+-   valores máximos;
+-   valores límite;
+-   entradas inesperadas.
 
-- Desventajas: Si haces un cambio, debes volver a compilar todo. No son multiplataforma por defecto (un binario de Windows no sirve en Mac).
+Ejemplo: para comprobar si un número es positivo:
 
-- Ejemplos: C, C++, Rust, Go, Pascal.
+    Entrada Resultado esperado
+  --------- --------------------
+          8 positivo
+          1 positivo
+          0 no positivo
+         -4 no positivo
 
-**Lenguajes Interpretados:** Aquí no hay un archivo ejecutable previo. Un programa llamado intérprete lee el código línea por línea y lo ejecuta en tiempo real.
+## 11.3. Validación de datos
 
-- Proceso: Código Fuente → Intérprete → Ejecución inmediata.
+``` python
+while True:
+    edad = int(input("Edad: "))
 
-- Ventajas: Facilitan el desarrollo y la depuración. Son altamente portátiles: el mismo código funciona en cualquier sistema que tenga el intérprete instalado.
+    if 0 <= edad <= 120:
+        break
 
-- Desventajas: Son más lentos que los compilados, ya que la máquina debe traducir el código mientras lo ejecuta.
+    print("Edad no válida.")
+```
 
-- Ejemplos: Python, Ruby, JavaScript (en su concepción original), PHP.
+------------------------------------------------------------------------
 
-**Lenguajes Híbridos (Intermedios):** Son una mezcla de ambos mundos. El código fuente se compila primero a un lenguaje intermedio (llamado Bytecode) y luego una Máquina Virtual lo interpreta o lo compila "al vuelo" (JIT - Just In Time) en el dispositivo del usuario.
+# 12. Proyecto final: gestor de notas
 
-- Proceso: Código Fuente → Compilador → Bytecode → Máquina Virtual → Código Máquina.
+## 12.1. Objetivo
 
-- Ventajas: Combinan la portabilidad de los interpretados con una velocidad cercana a los compilados.
+Desarrollar un programa que permita gestionar las notas de un grupo de
+estudiantes.
 
-- Ejemplos: Java (usa la JVM), C# (usa .NET), Kotlin.
+El programa deberá:
 
-**Compilación JIT (Just-In-Time)**: Es una técnica moderna utilizada principalmente por lenguajes interpretados o híbridos para ganar velocidad. En lugar de interpretar cada línea siempre, el motor identifica las partes del código que se usan mucho y las compila a código máquina real mientras el programa corre.
+1.  Añadir estudiantes.
+2.  Consultar estudiantes.
+3.  Mostrar la media.
+4.  Indicar quién ha aprobado.
+5.  Guardar los datos en un archivo.
+6.  Recuperar los datos desde un archivo.
+7.  Utilizar funciones.
+8.  Utilizar estructuras de datos.
+9.  Incorporar un menú.
 
-- Ejemplo estrella: JavaScript moderno (motores como V8 de Chrome) y Julia.
+## 12.2. Diseño de los datos
 
-## 4. Características de los lenguajes de programación
+Podemos utilizar una lista de diccionarios:
 
-A continuación señalamos los lenguajes de programación más influyentes de la historia, sus características principales y su impacto en la tecnología actual.
+``` python
+alumnos = [
+    {"nombre": "Ana", "nota": 8.5},
+    {"nombre": "Luis", "nota": 6.0}
+]
+```
 
-### 4.1. Primeros Lenguajes (1950 - 1960)
+## 12.3. Funciones previstas
 
-#### **Fortran (1957)**
-El "abuelo" de los lenguajes de alto nivel. Fue diseñado para facilitar el trabajo de científicos e ingenieros.
-* **Características:** Optimizado para cálculos numéricos y científicos complejos.
-* **Legado:** Sigue siendo utilizado hoy en día en supercomputación y modelos climáticos.
+``` text
+mostrar_menu()
+añadir_alumno()
+mostrar_alumnos()
+calcular_media()
+guardar_archivo()
+cargar_archivo()
+```
 
-#### **Lisp (1958)**
-Introdujo conceptos revolucionarios como la recursividad y las funciones como ciudadanos de primera clase.
-* **Características:** Basado completamente en listas y una sintaxis llena de paréntesis.
-* **Legado:** Pionero absoluto en el campo de la **Inteligencia Artificial**.
+## 12.4. Implementación orientativa
 
-#### COBOL (1959)
-Diseñado para ser un lenguaje universal para el mundo de los negocios.
-* **Características:** Sintaxis muy verbosa y similar al inglés para que fuera legible por ejecutivos.
-* **Legado:** Gestiona todavía hoy la gran mayoría de los sistemas bancarios y transacciones financieras globales.
+``` python
+def mostrar_menu():
+    print("\n--- GESTOR DE NOTAS ---")
+    print("1. Añadir alumno")
+    print("2. Mostrar alumnos")
+    print("3. Calcular media")
+    print("4. Guardar")
+    print("5. Salir")
 
-#### BASIC (1964)
-Creado para que estudiantes que no eran de ciencias pudieran interactuar con las computadoras.
-* **Características:** Extremadamente sencillo de aprender, basado en números de línea.
-* **Legado:** Fue el lenguaje que impulsó la era de las microcomputadoras (Microsoft nació creando una versión de BASIC).
 
-### 4.2 Lenguajes creadores de software (1970 - 1980)
+def añadir_alumno(alumnos):
+    nombre = input("Nombre: ")
+    nota = float(input("Nota: "))
 
-#### **Pascal (1970)**
-Diseñado por Niklaus Wirth con un objetivo académico: enseñar buenas prácticas de programación.
-* **Características:** Estructura rígida y clara que obliga a una programación ordenada.
-* **Legado:** Fue el estándar educativo en las universidades durante décadas.
+    alumnos.append({
+        "nombre": nombre,
+        "nota": nota
+    })
 
-#### **C (1972)**
-Probablemente el lenguaje más influyente jamás creado. Es la base de los sistemas operativos modernos.
-* **Características:** Bajo nivel (acceso directo al hardware) pero con portabilidad. Extremadamente rápido.
-* **Legado:** Unix, Linux y Windows están escritos en C. Es la base sintáctica de Java, C++, PHP y JavaScript.
 
-#### **C++ (1983)**
-Una extensión de C que introdujo la **Programación Orientada a Objetos (POO)**.
-* **Características:** Combina la velocidad de C con la capacidad de organizar grandes sistemas mediante objetos.
-* **Legado:** Motores de videojuegos (Unreal Engine), navegadores web y software de alto rendimiento como Photoshop.
+def mostrar_alumnos(alumnos):
+    if not alumnos:
+        print("No hay alumnos.")
+        return
 
-### 4.3 Lenguajes de la era Internet (1990)
+    for alumno in alumnos:
+        print(f"{alumno['nombre']}: {alumno['nota']}")
 
-#### **Python (1991)**
-Creado bajo la filosofía de que "la legibilidad cuenta".
-* **Características:** Sintaxis limpia que parece inglés. Es multiparadigma (orientado a objetos, funcional).
-* **Legado:** El lenguaje más popular hoy para **Ciencia de Datos, IA** y automatización.
 
-#### **R (1993)**
-El lenguaje especializado para el análisis estadístico.
-* **Características:** Entorno de software libre con herramientas potentes para gráficos y minería de datos.
-* **Legado:** El estándar de oro en la academia y la estadística avanzada.
+def calcular_media(alumnos):
+    if not alumnos:
+        return 0
 
-#### **Java (1995)**
-Su promesa fue: "Write Once, Run Anywhere" (Escríbelo una vez, ejecútalo en cualquier lugar).
-* **Características:** Se ejecuta sobre una Máquina Virtual (JVM), lo que lo hace muy seguro y portátil.
-* **Legado:** El corazón de las aplicaciones empresariales bancarias y de Android.
+    return sum(alumno["nota"] for alumno in alumnos) / len(alumnos)
 
-#### **JavaScript (1995)**
-Creado originalmente en 10 días para añadir interactividad básica a las páginas web.
-* **Características:** Es el único lenguaje nativo de los navegadores web.
-* **Legado:** Hoy es ubicuo gracias a Node.js, permitiendo desarrollar tanto el frente (front-end) como el servidor (back-end).
 
+def guardar_archivo(alumnos, nombre_archivo="alumnos.txt"):
+    with open(nombre_archivo, "w", encoding="utf-8") as archivo:
+        for alumno in alumnos:
+            archivo.write(
+                f"{alumno['nombre']};{alumno['nota']}\n"
+            )
 
 
-### 4.4 Lenguajes modernos. Rendimiento, Nube y Seguridad (2000 - Presente)
+def cargar_archivo(nombre_archivo="alumnos.txt"):
+    alumnos = []
 
-#### **Go / Golang (2009)**
-Diseñado por Google para resolver problemas de escalabilidad y sistemas distribuidos.
-* **Características:** Muy simple y extremadamente eficiente en **concurrencia** (manejar múltiples tareas a la vez).
-* **Uso notable:** **Podman**, Docker y Kubernetes están escritos principalmente en **Go**.
+    try:
+        with open(nombre_archivo, "r", encoding="utf-8") as archivo:
+            for linea in archivo:
+                nombre, nota = linea.strip().split(";")
+                alumnos.append({
+                    "nombre": nombre,
+                    "nota": float(nota)
+                })
+    except FileNotFoundError:
+        pass
 
-#### **Rust (2010)**
-Enfocado en la seguridad y el rendimiento.
-* **Características:** Garantiza la **seguridad de memoria** sin necesidad de un recolector de basura, evitando errores que causan hackeos o caídas.
-* **Legado:** Está empezando a reemplazar a C++ en sistemas críticos y núcleos de sistemas operativos.
+    return alumnos
 
-#### **Kotlin (2011)**
-La alternativa moderna de JetBrains para mejorar Java.
-* **Características:** Mucho más conciso y seguro que Java, pero totalmente compatible con él.
-* **Legado:** Lenguaje oficial para el desarrollo de **Android**.
 
-#### **Julia (2012)**
-Diseñado para la computación científica de alto nivel.
-* **Características:** Resuelve el "problema de los dos lenguajes": facilidad de Python con velocidad de C.
-* **Legado:** Utilizado en investigación avanzada, física y finanzas.
+alumnos = cargar_archivo()
 
+while True:
+    mostrar_menu()
+    opcion = input("Opción: ")
 
-## 5. Lenguajes más utilizados
+    if opcion == "1":
+        añadir_alumno(alumnos)
 
-El Top 10 del índice TIOBE a abril de 2026:
+    elif opcion == "2":
+        mostrar_alumnos(alumnos)
 
-| Puesto | Lenguaje |
-|--------|----------|
-| 1 | Python |
-| 2 | C |
-| 3 | C++ |
-| 4 | Java |
-| 5 | C# |
-| 6 | JavaScript |
-| 7 | Visual Basic |
-| 8 | SQL |
-| 9 | R |
-| 10 | Delphi / Pascal |
+    elif opcion == "3":
+        media = calcular_media(alumnos)
+        print(f"Media: {media:.2f}")
 
+    elif opcion == "4":
+        guardar_archivo(alumnos)
+        print("Datos guardados.")
 
-## 6. Conclusión
+    elif opcion == "5":
+        guardar_archivo(alumnos)
+        print("Programa finalizado.")
+        break
 
-La evolución de los lenguajes de programación representa una de las mayores proezas del ingenio humano: la capacidad de traducir el pensamiento lógico en realidades tangibles.
+    else:
+        print("Opción no válida.")
+```
 
-Los lenguajes de programación no son solo herramientas técnicas; son el puente entre la creatividad humana y el potencial de las máquinas. A lo largo de la historia, han pasado de ser crípticos y mecánicos a ser fluidos y casi naturales, democratizando el acceso a la creación de tecnología.
+## 12.5. Mejoras propuestas
 
-Beneficios Clave:
+Una vez terminado el programa básico, se pueden añadir:
 
-- Automatización y Eficiencia: Han permitido que tareas que antes tomaban meses se realicen en milisegundos, liberando al ser humano de trabajos repetitivos.
+-   validación de notas entre 0 y 10;
+-   búsqueda por nombre;
+-   eliminación de estudiantes;
+-   cálculo de máxima y mínima;
+-   número de aprobados;
+-   porcentaje de aprobados;
+-   ordenación por nota;
+-   estadísticas;
+-   separación del código en varios módulos;
+-   gestión de errores de entrada.
 
-- Resolución de Problemas Complejos: Desde descifrar el genoma humano hasta modelar el cambio climático, la programación permite procesar volúmenes de datos inalcanzables para la mente biológica.
+------------------------------------------------------------------------
 
-- Conectividad Global: El desarrollo de la infraestructura de internet y las comunicaciones modernas es, en su esencia, una red de protocolos escritos en diversos lenguajes.
+# 13. Ejercicios de repaso
 
-- Innovación Constante: Cada nuevo lenguaje (como Rust o Go) surge para resolver una deficiencia del anterior, garantizando que el software sea cada vez más seguro, rápido y accesible.
+## Nivel 1 --- Fundamentos
 
-En definitiva, programar es el superpoder de nuestra era. Los lenguajes de programación han transformado el mundo en un lienzo digital donde el único límite para construir el futuro es la imaginación y la lógica del desarrollador.
+### Ejercicio 1
 
+Solicita el nombre y la edad de una persona y muestra un mensaje con
+ambos datos.
+
+### Ejercicio 2
+
+Solicita dos números y muestra suma, resta, multiplicación y división.
+
+### Ejercicio 3
+
+Calcula el área de un círculo a partir de su radio.
+
+### Ejercicio 4
+
+Convierte una cantidad de minutos en horas y minutos.
+
+### Ejercicio 5
+
+Solicita una nota y determina si está aprobada.
+
+------------------------------------------------------------------------
+
+## Nivel 2 --- Condicionales
+
+### Ejercicio 6
+
+Solicita un número e indica si es positivo, negativo o cero.
+
+### Ejercicio 7
+
+Solicita tres números y muestra el mayor.
+
+### Ejercicio 8
+
+Determina si un año es bisiesto.
+
+### Ejercicio 9
+
+Solicita una nota entre 0 y 10 y muestra su calificación cualitativa.
+
+### Ejercicio 10
+
+Calcula el precio final de un producto aplicando un descuento según su
+precio.
+
+------------------------------------------------------------------------
+
+## Nivel 3 --- Bucles
+
+### Ejercicio 11
+
+Muestra los números del 1 al 100.
+
+### Ejercicio 12
+
+Muestra todos los números pares del 1 al 100.
+
+### Ejercicio 13
+
+Calcula la suma de los números del 1 al `n`.
+
+### Ejercicio 14
+
+Solicita números hasta que el usuario introduzca cero y muestra la suma.
+
+### Ejercicio 15
+
+Calcula el factorial de un número.
+
+------------------------------------------------------------------------
+
+## Nivel 4 --- Estructuras de datos
+
+### Ejercicio 16
+
+Crea una lista de notas y calcula su media.
+
+### Ejercicio 17
+
+Cuenta cuántas notas son iguales o superiores a 5.
+
+### Ejercicio 18
+
+Encuentra el valor máximo de una lista sin utilizar `max()`.
+
+### Ejercicio 19
+
+Crea un diccionario con información de un estudiante y recorre sus
+elementos.
+
+### Ejercicio 20
+
+Crea una lista de diccionarios que represente un grupo de estudiantes y
+muestra los aprobados.
+
+------------------------------------------------------------------------
+
+## Nivel 5 --- Funciones
+
+### Ejercicio 21
+
+Crea una función que reciba un número y devuelva su cuadrado.
+
+### Ejercicio 22
+
+Crea una función que determine si un número es primo.
+
+### Ejercicio 23
+
+Crea una función que reciba una lista de notas y devuelva la media.
+
+### Ejercicio 24
+
+Divide un programa de gestión de notas en varias funciones.
+
+------------------------------------------------------------------------
+
+## Nivel 6 --- Archivos
+
+### Ejercicio 25
+
+Crea un archivo de texto con diez números y calcula su suma.
+
+### Ejercicio 26
+
+Lee un archivo y cuenta sus líneas.
+
+### Ejercicio 27
+
+Lee un archivo de notas y calcula la media.
+
+### Ejercicio 28
+
+Crea un programa que permita añadir líneas a un archivo.
+
+------------------------------------------------------------------------
+
+# 14. Solucionario
+
+## Solución 1
+
+``` python
+nombre = input("Nombre: ")
+edad = int(input("Edad: "))
+
+print(f"{nombre} tiene {edad} años.")
+```
+
+## Solución 2
+
+``` python
+a = float(input("Primer número: "))
+b = float(input("Segundo número: "))
+
+print("Suma:", a + b)
+print("Resta:", a - b)
+print("Multiplicación:", a * b)
+
+if b != 0:
+    print("División:", a / b)
+else:
+    print("No se puede dividir entre cero.")
+```
+
+## Solución 3
+
+``` python
+import math
+
+radio = float(input("Radio: "))
+area = math.pi * radio ** 2
+
+print(f"Área: {area:.2f}")
+```
+
+## Solución 5
+
+``` python
+nota = float(input("Nota: "))
+
+if nota >= 5:
+    print("Aprobado")
+else:
+    print("Suspenso")
+```
+
+## Solución 6
+
+``` python
+numero = float(input("Número: "))
+
+if numero > 0:
+    print("Positivo")
+elif numero < 0:
+    print("Negativo")
+else:
+    print("Cero")
+```
+
+## Solución 7
+
+``` python
+a = float(input("Número 1: "))
+b = float(input("Número 2: "))
+c = float(input("Número 3: "))
+
+mayor = a
+
+if b > mayor:
+    mayor = b
+
+if c > mayor:
+    mayor = c
+
+print("Mayor:", mayor)
+```
+
+## Solución 11
+
+``` python
+for numero in range(1, 101):
+    print(numero)
+```
+
+## Solución 13
+
+``` python
+n = int(input("n: "))
+
+suma = 0
+
+for numero in range(1, n + 1):
+    suma += numero
+
+print("Suma:", suma)
+```
+
+## Solución 15
+
+``` python
+n = int(input("Número: "))
+
+factorial = 1
+
+for numero in range(1, n + 1):
+    factorial *= numero
+
+print("Factorial:", factorial)
+```
+
+## Solución 16
+
+``` python
+notas = [7, 8.5, 6, 9, 5]
+
+media = sum(notas) / len(notas)
+
+print(f"Media: {media:.2f}")
+```
+
+## Solución 18
+
+``` python
+numeros = [8, 3, 12, 5, 9]
+
+mayor = numeros[0]
+
+for numero in numeros[1:]:
+    if numero > mayor:
+        mayor = numero
+
+print("Mayor:", mayor)
+```
+
+## Solución 21
+
+``` python
+def cuadrado(numero):
+    return numero ** 2
+
+
+resultado = cuadrado(5)
+
+print(resultado)
+```
+
+## Solución 22
+
+``` python
+def es_primo(numero):
+    if numero < 2:
+        return False
+
+    for divisor in range(2, int(numero ** 0.5) + 1):
+        if numero % divisor == 0:
+            return False
+
+    return True
+
+
+numero = int(input("Número: "))
+
+if es_primo(numero):
+    print("Es primo")
+else:
+    print("No es primo")
+```
+
+## Solución 25
+
+``` python
+suma = 0
+
+with open("numeros.txt", "r", encoding="utf-8") as archivo:
+    for linea in archivo:
+        suma += float(linea.strip())
+
+print("Suma:", suma)
+```
+
+------------------------------------------------------------------------
+
+# 15. Glosario
+
+**Algoritmo:** conjunto finito y ordenado de pasos para resolver un
+problema.
+
+**Argumento:** valor que se proporciona a una función cuando se llama.
+
+**Bucle:** estructura que permite repetir instrucciones.
+
+**Compilador:** programa que traduce código fuente a otra representación
+ejecutable o intermedia.
+
+**Condición:** expresión cuyo resultado permite decidir qué
+instrucciones ejecutar.
+
+**Constante:** valor que, por convención, no se modifica durante la
+ejecución.
+
+**Diccionario:** estructura de datos basada en pares clave-valor.
+
+**Función:** bloque reutilizable de código que realiza una tarea.
+
+**Índice:** posición utilizada para acceder a un elemento de una
+secuencia.
+
+**Iteración:** repetición de un conjunto de instrucciones.
+
+**Lista:** colección ordenada y modificable de elementos.
+
+**Parámetro:** variable definida en la declaración de una función.
+
+**Programa:** conjunto de instrucciones que puede ejecutar un ordenador.
+
+**Variable:** nombre asociado a un valor que puede cambiar.
+
+------------------------------------------------------------------------
+
+# Relación con el currículo
+
+Este manual desarrolla directamente los saberes básicos proporcionados
+para el **Bloque A. Programación**:
+
+## PRYC.2.A.1.1
+
+Se trabajan:
+
+-   tipos de lenguajes;
+-   estructura de programas;
+-   elementos básicos del lenguaje;
+-   tipos básicos de datos;
+-   variables;
+-   constantes;
+-   operadores;
+-   expresiones;
+-   comentarios.
+
+## PRYC.2.A.1.2
+
+Se trabajan:
+
+-   estructuras condicionales;
+-   estructuras iterativas;
+-   contadores y acumuladores;
+-   listas;
+-   tuplas;
+-   diccionarios;
+-   conjuntos;
+-   estructuras anidadas.
+
+## PRYC.2.A.1.3
+
+Se trabajan:
+
+-   funciones;
+-   parámetros;
+-   retorno de valores;
+-   ámbito;
+-   modularización;
+-   reutilización de código;
+-   lectura de archivos;
+-   escritura de archivos;
+-   procesamiento de información almacenada.
+
+------------------------------------------------------------------------
+
+# Recomendaciones para el aprendizaje
+
+La programación se aprende principalmente **programando**. La lectura de
+teoría debe acompañarse de experimentación y resolución de problemas.
+
+Una metodología recomendable es:
+
+1.  Leer el problema.
+2.  Identificar entradas y salidas.
+3.  Escribir el algoritmo en lenguaje natural.
+4.  Transformarlo en código.
+5.  Ejecutarlo con datos sencillos.
+6.  Comprobar casos límite.
+7.  Analizar los errores.
+8.  Mejorar la solución.
+9.  Dividir el código en funciones cuando sea necesario.
+10. Documentar las decisiones relevantes.
+
+## Checklist antes de entregar un programa
+
+-   [ ] El programa resuelve el problema planteado.
+-   [ ] Las variables tienen nombres descriptivos.
+-   [ ] El código está correctamente indentado.
+-   [ ] Las funciones tienen responsabilidades claras.
+-   [ ] Se validan las entradas cuando es necesario.
+-   [ ] Se han probado casos normales y casos límite.
+-   [ ] No existen errores de sintaxis.
+-   [ ] No existen errores lógicos conocidos.
+-   [ ] Los archivos se abren utilizando `with`.
+-   [ ] Los comentarios aportan información útil.
+-   [ ] El código es legible y mantenible.
+
+------------------------------------------------------------------------
+
+# Proyecto de ampliación
+
+Como actividad final del bloque, desarrolla una aplicación de gestión
+académica que permita:
+
+-   registrar estudiantes;
+-   almacenar varias notas por estudiante;
+-   calcular medias;
+-   determinar aprobados y suspensos;
+-   buscar estudiantes;
+-   ordenar resultados;
+-   guardar información en archivos;
+-   recuperar información al iniciar el programa;
+-   utilizar un menú;
+-   dividir la aplicación en funciones.
+
+### Requisitos técnicos mínimos
+
+El proyecto deberá incluir obligatoriamente:
+
+-   variables;
+-   operadores y expresiones;
+-   condicionales;
+-   bucles;
+-   al menos dos estructuras de datos;
+-   funciones con parámetros;
+-   funciones con valores de retorno;
+-   lectura de archivos;
+-   escritura de archivos;
+-   tratamiento básico de errores;
+-   comentarios y nombres descriptivos.
+
+### Reto adicional
+
+Añade un sistema de estadísticas que muestre:
+
+-   número total de estudiantes;
+-   media del grupo;
+-   nota máxima;
+-   nota mínima;
+-   número de aprobados;
+-   porcentaje de aprobados;
+-   estudiante con mayor nota.
+
+------------------------------------------------------------------------
+
+## Fin del manual
+
+**Programación y Computación --- 2.º de Bachillerato**
+
+**Bloque A. Programación · Python 3**

@@ -66,10 +66,21 @@ export default defineConfig({
         text: 'Docencia',
         items: [
           {
-            text: "Programación",
+            text: "Programación y Computación",
             collapsed: true,
             items: [
               { text: "Inicio", link: "/docencia/programacion/" },
+              { text: "Tema 0. Representación digital", link: "/docencia/programacion/tema0" },
+              { text: "Tema 1. Lenguajes de programación", link: "/docencia/programacion/tema1" },
+            ],
+          },
+          {
+            text: "TIC 1",
+            collapsed: true,
+            items: [
+              { text: "Inicio", link: "/docencia/tic1/" },
+              { text: "Tema 1. Sociedad de la información", link: "/docencia/tic1/tema1" },
+              { text: "Tema 2. Información Digital", link: "/docencia/tic1/tema2" },
             ],
           },
         ]
