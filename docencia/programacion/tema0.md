@@ -23,9 +23,10 @@ En este tema estudiaremos:
 
 ---
 
-# 2. La Sociedad del Conocimiento
+## 2. La Sociedad del Conocimiento
 
-## 2.1. De la Sociedad de la Información a la Sociedad del Conocimiento
+
+### 2.1. De la Sociedad de la Información a la Sociedad del Conocimiento
 
 La sociedad actual se caracteriza por la enorme cantidad de información que se genera y se comparte continuamente.
 
@@ -45,7 +46,7 @@ Por ejemplo:
 
 La Computación permite recopilar, almacenar, organizar, procesar y analizar enormes cantidades de datos para convertirlos en información útil.
 
-## 2.2. Características de la Sociedad del Conocimiento
+### 2.2. Características de la Sociedad del Conocimiento
 
 Entre sus principales características encontramos:
 
@@ -65,7 +66,7 @@ Cada vez que realizamos una búsqueda en Internet, enviamos un mensaje, hacemos 
 
 ---
 
-# 3. El papel de la Computación en la innovación tecnológica
+## 3. El papel de la Computación en la innovación tecnológica
 
 La **Computación** estudia los métodos y sistemas utilizados para representar, procesar, almacenar y transmitir información mediante sistemas automáticos.
 
@@ -87,11 +88,11 @@ La innovación tecnológica suele surgir de la combinación de diferentes áreas
 
 ---
 
-# 4. Impacto social y económico de la Computación
+## 4. Impacto social y económico de la Computación
 
 La digitalización ha transformado profundamente nuestra sociedad.
 
-## 4.1. Impactos positivos
+### 4.1. Impactos positivos
 
 Entre los principales beneficios podemos destacar:
 
@@ -106,7 +107,7 @@ Entre los principales beneficios podemos destacar:
 - Creación de nuevos sectores profesionales.
 - Acceso a servicios digitales.
 
-## 4.2. Riesgos y desafíos
+### 4.2. Riesgos y desafíos
 
 La tecnología también plantea problemas que deben ser considerados:
 
@@ -124,7 +125,7 @@ Por tanto, la innovación tecnológica no debe analizarse únicamente desde el p
 
 ---
 
-# 5. ¿Cómo entiende un ordenador la información?
+## 5. ¿Cómo entiende un ordenador la información?
 
 Un ordenador trabaja internamente con señales que pueden distinguir entre diferentes estados.
 
@@ -146,7 +147,7 @@ El sistema binario solamente tiene:
 
 ---
 
-# 6. El bit
+## 6. El bit
 
 La unidad mínima de información digital es el **bit**.
 
@@ -170,7 +171,7 @@ Los bits suelen representarse con una `b` minúscula:
 
 ---
 
-# 7. El byte
+## 7. El byte
 
 Un **byte (B)** está formado por:
 
@@ -200,7 +201,7 @@ Por tanto, con 8 bits podemos representar los valores:
 
 ---
 
-# 8. Unidades de almacenamiento
+## 8. Unidades de almacenamiento
 
 A partir del byte podemos utilizar unidades mayores.
 
@@ -223,7 +224,7 @@ En informática conviene prestar atención a si se está utilizando la escala de
 
 ---
 
-# 9. Conversión de decimal a binario
+## 9. Conversión de decimal a binario
 
 Para convertir un número decimal a binario podemos realizar divisiones sucesivas entre 2.
 
@@ -242,7 +243,7 @@ Leemos los restos **de abajo hacia arriba**:
 
 ---
 
-# 10. Conversión de binario a decimal
+## 10. Conversión de binario a decimal
 
 Cada posición de un número binario representa una potencia de 2.
 
@@ -267,7 +268,7 @@ Por tanto:
 
 ---
 
-# 11. Los números en un ordenador
+## 11. Los números en un ordenador
 
 Los números pueden representarse utilizando secuencias de bits.
 
@@ -294,7 +295,7 @@ En este ejemplo estamos hablando de **números enteros sin signo**. La represent
 
 ---
 
-# 12. ¿Cómo se representa un texto?
+## 12. ¿Cómo se representa un texto?
 
 Los ordenadores también necesitan representar caracteres:
 
@@ -306,7 +307,7 @@ Los ordenadores también necesitan representar caracteres:
 
 Para ello se utilizan **sistemas de codificación de caracteres**.
 
-## 12.1. ASCII
+### 12.1. ASCII
 
 Uno de los sistemas históricos más conocidos es **ASCII**.
 
@@ -324,7 +325,7 @@ Otro ejemplo:
 
 ASCII utiliza originalmente 7 bits para representar 128 caracteres.
 
-## 12.2. Unicode
+### 12.2. Unicode
 
 ASCII resulta insuficiente para representar todos los alfabetos y símbolos del mundo.
 
@@ -347,7 +348,7 @@ UTF-8 es especialmente importante en Internet y en el desarrollo de aplicaciones
 
 ---
 
-# 13. ¿Cómo se representan las imágenes?
+## 13. ¿Cómo se representan las imágenes?
 
 Una imagen digital puede representarse mediante una cuadrícula de pequeños elementos llamados **píxeles**.
 
@@ -374,7 +375,7 @@ En imágenes en color se necesitan más bits por píxel.
 
 ---
 
-# 14. Color RGB
+## 14. Color RGB
 
 Una forma muy habitual de representar colores en imágenes digitales es el modelo **RGB**:
 
@@ -408,7 +409,7 @@ RGB(0, 0, 0)         → negro
 
 ---
 
-# 15. Resolución y tamaño de una imagen
+## 15. Resolución y tamaño de una imagen
 
 La resolución indica el número de píxeles de una imagen.
 
@@ -446,11 +447,11 @@ En la práctica, formatos como JPEG o PNG pueden reducir considerablemente el ta
 
 ---
 
-# 16. Compresión de la información
+## 16. Compresión de la información
 
 Los archivos pueden ocupar mucho espacio, por lo que se utilizan técnicas de **compresión**.
 
-## 16.1. Compresión sin pérdida
+### 16.1. Compresión sin pérdida
 
 Permite recuperar exactamente la información original.
 
@@ -462,7 +463,7 @@ Ejemplos:
 
 Si comprimimos un documento y después lo descomprimimos, obtenemos exactamente el documento original.
 
-## 16.2. Compresión con pérdida
+### 16.2. Compresión con pérdida
 
 El archivo comprimido puede perder parte de la información original para conseguir una reducción de tamaño mayor.
 
@@ -476,7 +477,7 @@ La pérdida puede ser prácticamente imperceptible o muy evidente, dependiendo d
 
 ---
 
-# 17. Ficheros
+## 17. Ficheros
 
 Un **fichero o archivo** es una colección organizada de datos almacenada en un dispositivo.
 
@@ -497,7 +498,7 @@ Sin embargo, la extensión por sí sola no determina completamente el contenido:
 
 ---
 
-# 18. Almacenamiento de la información
+## 18. Almacenamiento de la información
 
 La información digital puede almacenarse en diferentes dispositivos:
 
@@ -513,7 +514,7 @@ Aunque físicamente la información se almacene de diferentes maneras, desde el 
 
 ---
 
-# 19. Transmisión de información digital
+## 19. Transmisión de información digital
 
 La información digital también debe poder viajar de un dispositivo a otro.
 
@@ -562,7 +563,7 @@ Como:
 
 ---
 
-# 20. Representación hexadecimal
+## 20. Representación hexadecimal
 
 El sistema hexadecimal utiliza **16 símbolos**:
 
@@ -589,7 +590,7 @@ El hexadecimal resulta especialmente útil en informática porque permite repres
 
 ---
 
-# 21. Relación entre binario y hexadecimal
+## 21. Relación entre binario y hexadecimal
 
 Cada dígito hexadecimal equivale exactamente a **4 bits**.
 
@@ -639,7 +640,7 @@ Por tanto:
 
 ---
 
-# 22. Hexadecimal y colores
+## 22. Hexadecimal y colores
 
 El sistema hexadecimal se utiliza mucho en informática para representar colores.
 
@@ -678,7 +679,7 @@ Esta representación aparece habitualmente en HTML y CSS.
 
 ---
 
-# 23. Del mundo real al mundo digital
+## 23. Del mundo real al mundo digital
 
 Podemos resumir el proceso de digitalización de la siguiente manera:
 
@@ -711,7 +712,7 @@ Por ejemplo, al hacer una fotografía:
 
 ---
 
-# 24. Información digital y errores
+## 24. Información digital y errores
 
 Los datos pueden sufrir errores durante su almacenamiento o transmisión.
 
@@ -740,7 +741,7 @@ Estos mecanismos son fundamentales en sistemas de comunicación y almacenamiento
 
 ---
 
-# 25. Conceptos clave
+## 25. Conceptos clave
 
 Al finalizar este bloque debes comprender especialmente:
 
