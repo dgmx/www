@@ -16,4 +16,8 @@ features:
     details: Material de la asignatura de Programación y Computación de 2º de Bachillerato
     link: /docencia/programacion/
     linkText: Leer más
+  - title: Creación Digital y Pensamiento Computacional
+    details: Material de CDPC de 1º de Bachillerato. Programación con Python y gráficos con Processing
+    link: /docencia/cdpc/
+    linkText: Leer más
 ---

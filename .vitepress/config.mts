@@ -81,6 +81,21 @@ export default defineConfig({
               { text: "Tema 2. Información Digital", link: "/docencia/tic1/tema2" },
             ],
           },
+          {
+            text: "Creación Digital y P. Computacional",
+            collapsed: true,
+            items: [
+              { text: "Tema 1. Fundamentos de programación", link: "/docencia/cdpc/tema1" },
+              { text: "Tema 2. Estructuras de control", link: "/docencia/cdpc/tema2" },
+              { text: "Tema 3. Funciones y gráficos básicos", link: "/docencia/cdpc/tema3" },
+              { text: "Tema 4. Eventos y transformaciones", link: "/docencia/cdpc/tema4" },
+              { text: "Tema 5. Arte generativo e imágenes", link: "/docencia/cdpc/tema5" },
+              { text: "Tema 6. Modelado 3D", link: "/docencia/cdpc/tema6" },
+              { text: "Tema 7. Vídeo, audio y animaciones", link: "/docencia/cdpc/tema7" },
+              { text: "Tema 8. Sonido, juegos e instalaciones", link: "/docencia/cdpc/tema8" },
+              { text: "Tema 9. Trabajo colaborativo", link: "/docencia/cdpc/tema9" },
+            ],
+          },
         ]
       },
       {
