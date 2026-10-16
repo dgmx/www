@@ -328,15 +328,15 @@ edad = int(input("Edad: "))
 
 ## 4.1. Operadores aritméticos
 
-  Operador   Significado       Ejemplo
-  ---------- ----------------- ----------
-  `+`        suma              `5 + 2`
-  `-`        resta             `5 - 2`
-  `*`        multiplicación    `5 * 2`
-  `/`        división real     `5 / 2`
-  `//`       división entera   `5 // 2`
-  `%`        resto             `5 % 2`
-  `**`       potencia          `5 ** 2`
+| Operador | Significado | Ejemplo |
+| --- | --- | --- |
+| `+` | suma | `5 + 2` |
+| `-` | resta | `5 - 2` |
+| `*` | multiplicación | `5 * 2` |
+| `/` | división real | `5 / 2` |
+| `//` | división entera | `5 // 2` |
+| `%` | resto | `5 % 2` |
+| `**` | potencia | `5 ** 2` |
 
 Ejemplo:
 
@@ -353,14 +353,14 @@ print(a ** 2)
 
 ## 4.2. Operadores de comparación
 
-  Operador   Significado
-  ---------- ---------------
-  `==`       igual
-  `!=`       distinto
-  `<`        menor
-  `>`        mayor
-  `<=`       menor o igual
-  `>=`       mayor o igual
+| Operador | Significado |
+| --- | --- |
+| `==` | igual |
+| `!=` | distinto |
+| `<` | menor |
+| `>` | mayor |
+| `<=` | menor o igual |
+| `>=` | mayor o igual |
 
 Ejemplo:
 
@@ -372,11 +372,11 @@ print(edad >= 18)
 
 ## 4.3. Operadores lógicos
 
-  Operador   Significado
-  ---------- -------------
-  `and`      Y
-  `or`       O
-  `not`      Negación
+| Operador | Significado |
+| --- | --- |
+| `and` | Y |
+| `or` | O |
+| `not` | Negación |
 
 Ejemplo:
 
