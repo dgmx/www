@@ -21,4 +21,8 @@ features:
     details: Lenguajes de programación, características, elementos, instrucciones, tipos, lenguajes más importantes
     link: /docencia/programacion/tema1_conceptos
     linkText: Leer más
+  - title: Situaciones de Aprendizaje
+    details: Situación de aprendizaje 1 y 2 (sda1, sda2)
+    link: /docencia/programacion/sda1
+    linkText: Leer más
 ---
