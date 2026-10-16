@@ -10,11 +10,11 @@ hero:
 
 features:
   - title: Tema 1
-    details: Tema 1. La sociedad de la información y el ordenador.
+    details: La sociedad de la información y el ordenador.
     link: /docencia/tic1/tema1
     linkText: Leer más
   - title: Tema 2
-    details: Información Digital.
+    details: Información digital.
     link: /docencia/tic1/tema2
     linkText: Leer más
 ---

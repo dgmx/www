@@ -3,18 +3,18 @@
 layout: home
 
 hero:
-  name: "Programación"
+  name: "Programación y Computación"
   text: "Material de la asignatura"
-  tagline: Recursos y contenidos de la asignatura de Programación
+  tagline: Recursos y contenidos de la asignatura de Programación y Computación de 2º de Bachillerato
 
 
 features:
   - title: Tema 0
-    details: Tema 0. Representación digital de la información.
+    details: Representación digital de la información.
     link: /docencia/programacion/tema0
     linkText: Leer más
   - title: Tema 1
-    details: Introducción a los lenguajes de programación. Tipos. Características. 
+    details: Lenguajes de programación, estructuras de control, funciones y archivos.
     link: /docencia/programacion/tema1
     linkText: Leer más
 ---
