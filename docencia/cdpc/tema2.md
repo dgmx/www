@@ -97,7 +97,7 @@ Un `if` puede estar dentro de otro, lo que permite modelar decisiones que depend
 
 ```python
 edad = int(input("Edad: "))
-tiene_licencia = input("¿Tiene tarjeta de transporte? (s/n): ") == "s"
+tiene_licencia = input("¿Tiene carnet de conducir? (s/n): ") == "s"
 
 if edad >= 18:
     if tiene_licencia:

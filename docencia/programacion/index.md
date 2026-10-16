@@ -17,4 +17,8 @@ features:
     details: Lenguajes de programación, estructuras de control, funciones y archivos.
     link: /docencia/programacion/tema1
     linkText: Leer más
+  - title: Introduccion a los lenguajes de programación
+    details: Lenguajes de programación, características, elementos, instrucciones, tipos, lenguajes más importantes
+    link: /docencia/programacion/tema1_conceptos
+    linkText: Leer más
 ---
