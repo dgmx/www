@@ -1,6 +1,10 @@
-# Situaciones de Aprendizaje — Programación y Computación (2º Bachillerato)
+# Situaciones de Aprendizaje
 
-**Enfoque LOMLOE · Lenguaje: Python · Hilo conductor: "FinanzApp", una aplicación de gestión financiera personal**
+##Programación y Computación (2º Bachillerato)
+
+**Enfoque LOMLOE**
++ Lenguaje: Python 
++ Hilo conductor: "FinanzApp", una aplicación de gestión financiera personal**
 
 Este documento recoge **una situación de aprendizaje (SdA1)**, correspondiente a la primera unidad de la materia:
 
