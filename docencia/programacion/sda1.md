@@ -1,6 +1,6 @@
 # Situaciones de Aprendizaje
 
-##Programación y Computación (2º Bachillerato)
+## Programación y Computación (2º Bachillerato)
 
 **Enfoque LOMLOE**
 + Lenguaje: Python 
