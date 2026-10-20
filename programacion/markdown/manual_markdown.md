@@ -1,26 +1,6 @@
 # Manual de Markdown
 
-## Índice
-
-1. [¿Qué es Markdown?](#que-es-markdown)
-2. [Historia y variantes](#_2-historia-y-variantes)
-3. [Sintaxis básica](#_3-sintaxis-basica)
-4. [Listas](#_4-listas)
-5. [Enlaces](#_5-enlaces)
-6. [Imágenes](#_6-imagenes)
-7. [Bloques de código](#_7-bloques-de-codigo)
-8. [Tablas](#_8-tablas)
-9. [Citas y separadores](#_9-citas-y-separadores)
-10. [Elementos HTML](#_10-elementos-html)
-11. [Sintaxis extendida](#_11-sintaxis-extendida)
-12. [Extensiones de VitePress](#_12-extensiones-de-vitepress)
-13. [Buenas prácticas](#_13-buenas-practicas)
-14. [Herramientas](#_14-herramientas)
-15. [Chuleta rápida](#_15-chuleta-rapida)
-
----
-
-## 1. ¿Qué es Markdown? {#que-es-markdown}
+## 1. ¿Qué es Markdown?
 
 **Markdown** es un lenguaje de marcado ligero creado para escribir texto con formato de forma sencilla y legible, incluso antes de ser convertido a HTML. Su idea principal es que el documento fuente se pueda leer tal cual, sin etiquetas que ensucien el contenido.
 
