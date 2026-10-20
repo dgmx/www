@@ -15,6 +15,7 @@ Este documento recoge **dos situaciones de aprendizaje (SdA) encadenadas**, corr
 
 Ambas comparten **centro de interés y contexto**, formando un itinerario coherente: primero se construye el software de forma estructurada y después se rediseña aplicando el paradigma orientado a objetos. Esto permite al alumnado **transferir** aprendizajes y comprender *por qué* la POO mejora la mantenibilidad del código.
 
+> **Nota de viabilidad y adaptación curricular.** La implementación de esta situación de aprendizaje está supeditada a la correcta temporalización de la SdA 1 y al grado de consecución competencial alcanzado por el alumnado. Por consiguiente, la secuencia aquí diseñada posee carácter flexible y no prescriptivo en cuanto a su extensión: en caso de que la SdA 1 experimente retrasos o de que el nivel de desempeño del grupo requiera una mayor consolidación de los saberes del bloque A.1, podrá reducirse el alcance de esta SdA 2. Dicha reducción se efectuará priorizando los saberes esenciales de la unidad (A.2.1 y A.2.2) y posponiendo o suprimiendo, total o parcialmente, los saberes de ampliación y del bloque transversal A.3, así como aquellos elementos de la orientación a objetos que no resulten imprescindibles para la consecución de los criterios de evaluación. En consecuencia, no se garantiza la impartición íntegra de todos los epígrafes contemplados, decisión que se adoptará atendiendo a la evolución del grupo y al criterio del equipo docente.
 ---
 
 ## Índice
@@ -35,6 +36,7 @@ Ambas comparten **centro de interés y contexto**, formando un itinerario cohere
 - **Materia:** Programación y Computación (PRYC)
 - **Marco normativo:** RD 243/2022 (enseñanzas mínimas de Bachillerato) y concreción autonómica correspondiente
 - **Carácter:** Materia de modalidad (Ciencias y Tecnología / opción afín)
+- **Bloque transversal:** A.3. Ciclo de vida del software
 
 ## 1.2. Competencias específicas trabajadas
 
@@ -64,7 +66,15 @@ Ambas comparten **centro de interés y contexto**, formando un itinerario cohere
 - *A.2. Orientación a objetos*
   - A.2.1. Clases, objetos y constructores. Sobrecarga, encapsulamiento y ocultación.
   - A.2.2. Herencia. Subclases y superclases. Interfaces. Polimorfismo.
-- *Saberes de proceso* (transversales): enfoque *top-down* y fragmentación de problemas; pseudocódigo y diagramas de flujo; desarrollo iterativo; entornos de desarrollo integrado (IDE); análisis, diseño, programación y pruebas; depuración; control de versiones; trabajo en equipo.
+- *A.3. Ciclo de vida del software*
+  - A.3.1. Metodologías de desarrollo de software.
+  - A.3.2. Enfoque Top-Down, fragmentación de problemas y algoritmos.
+  - A.3.3. Pseudocódigo y diagramas de flujo.
+  - A.3.4. Desarrollo iterativo.
+  - A.3.5. Entornos de desarrollo integrado.
+  - A.3.6. Análisis, Diseño, Programación y Pruebas. Depuración.
+  - A.3.7. Control de versiones.
+  - A.3.8. Trabajo en equipo.
 
 ## 1.5. Vinculación con competencias clave y descriptores operativos
 
@@ -125,10 +135,13 @@ La situación de arendizaje 1 se encuentra en el siguiente enlace:
 - **Unidad:** A.2. Orientación a objetos
 - **Duración:** 12 horas (12 sesiones de 60 min)
 - **Área/agrupamiento:** aula de informática; individual, parejas y grupos de 4
+- **Bloque transversal:** A.3. Ciclo de vida del software
 
 ## 3.2. Contexto y justificación
 
 El motor de la SdA 1 funciona, pero al crecer se vuelve difícil de mantener: todo son funciones y diccionarios sueltos. Se plantea ahora el reto profesional de **rediseñar la aplicación aplicando el paradigma orientado a objetos**. El alumnado comprueba de primera mano las ventajas de la abstracción (clases), el encapsulamiento y el polimorfismo, conectando la teoría de la programación con la ingeniería de software real. La continuidad del producto refuerza el sentido de progreso y el trabajo sobre código propio.
+
+Además, la SdA se organiza como un **proyecto de desarrollo real**, de modo que el alumnado no solo aprende POO, sino que la sitúa dentro del **ciclo de vida del software** (bloque A.3): elige una metodología de desarrollo, analiza y descompone el problema (*top-down*), planifica con pseudocódigo y diagramas de flujo, trabaja de forma **iterativa**, usa un **IDE**, aplica **análisis, diseño, programación, pruebas y depuración**, gestiona el código con **control de versiones** y colabora en **equipo**.
 
 ## 3.3. Reto / pregunta motriz
 
@@ -143,15 +156,16 @@ La versión **2.0 objetual** de FinanzApp:
 4. **Herencia** e **interfaces** (clases abstractas `ABC`) con distintas implementaciones.
 5. **Polimorfismo** aplicado (p. ej. distintas formas de exportar: CSV, JSON, pantalla).
 6. **Memoria técnica** breve con **diagrama de clases (UML)** y reflexión sobre las mejoras frente a la versión 1.0.
+7. **Repositorio Github** con historial de *commits* que refleje el desarrollo iterativo.
 
 ## 3.5. Concreción curricular (criterios ↔ saberes ↔ sesiones)
 
-| Criterio | Saberes (A.2) | Sesiones |
-|----------|---------------|----------|
-| PRYC.2.1.1 | A.2.1, A.2.2 (abstracción y modelado) | 0, 1, 9, 10 |
+| Criterio | Saberes | Sesiones |
+|----------|---------|----------|
+| PRYC.2.1.1 | A.2.1, A.2.2 (abstracción y modelado); A.3.2, A.3.3 | 0, 1, 9, 10 |
 | PRYC.2.1.2 | A.2.1, A.2.2 | 2–9 |
-| PRYC.2.1.3 | Ciclo de vida, depuración, Git, trabajo en equipo | 10, 11 |
-| PRYC.2.2.1 | Persistencia desde el modelo objetual | 8, 9 |
+| PRYC.2.1.3 | A.3.1, A.3.4, A.3.5, A.3.6, A.3.7, A.3.8 | 0, 10, 11, 12 |
+| PRYC.2.2.1 | Persistencia desde el modelo objetual; A.3.6 | 8, 9 |
 
 ## 3.6. Secuenciación didáctica (12 sesiones)
 
@@ -212,32 +226,51 @@ La versión **2.0 objetual** de FinanzApp:
 - *Práctica:* interfaz `Exportador` con implementaciones `ExportadorCSV`, `ExportadorJSON` y `ExportadorPantalla`.
 - *Producto:* `exportadores.py`.
 
-**Sesión 10 — Integración del producto final**
+**Sesión 10 — Integración del producto final (desarrollo iterativo)**
 - Refactor completo de `finanzapp.py` usando el modelo objetual y aplicando polimorfismo para exportar.
-- **Depuración** con el IDE y **control de versiones** (commits descriptivos).
+- **Desarrollo iterativo (A.3.4):** abordar el refactor en incrementos pequeños y funcionales, revisando el resultado tras cada uno.
+- **Análisis, diseño, programación y pruebas. Depuración (A.3.6):** depurar con el IDE (puntos de ruptura, inspección de variables).
+- **Control de versiones (A.3.7):** *commits* descriptivos por incremento; uso de ramas si el grupo lo necesita.
+- **Trabajo en equipo (A.3.8):** reparto de tareas y revisión cruzada del código.
 - *Producto:* `finanzapp_v2.py` + `repositorio.py`.
 
 > **Sesión 11 — Documentación, pruebas y memoria** *(fase final)*
 - Elaboración del **diagrama de clases UML** y de la **memoria técnica** (decisiones de diseño, ventajas de la POO frente a la v1.0).
-- Pruebas manuales y casos límite; `assert` o `unittest` básico.
+- **Pruebas y depuración (A.3.6):** plan de pruebas con casos normales y casos límite; `assert` o `unittest` básico; registrar los errores encontrados y su corrección.
+- **Control de versiones (A.3.7):** consolidar el historial y etiquetar la versión final.
 - *Agrupamiento:* parejas/grupos. *DUA:* se admite memoria en vídeo o presentación.
 
 > **Sesión 12 — Socialización y evaluación** *(fase final)*
 - Demostración funcional de la v2.0 y comparación razonada con la v1.0.
+- **Trabajo en equipo (A.3.8):** coevaluación del reparto de roles y de la contribución individual.
+- **Control de versiones (A.3.7):** presentar el historial de *commits* como evidencia del proceso.
 - **Coevaluación** entre grupos con rúbrica; **autoevaluación** con diario; cierre reflexivo sobre el ciclo de vida del software.
-- *Producto:* repositorio Git final con v2.0 + memoria + UML.
+- *Producto:* repositorio Git final con v2.0 + memoria + UML + cuaderno de desarrollo.
+
+## 3.6.1. Tratamiento explícito del bloque A.3 (Ciclo de vida del software)
+
+| Saber (A.3) | Cómo se trabaja en la SdA 2 | Sesiones | Evidencia |
+|-------------|-----------------------------|:--------:|-----------|
+| **A.3.1** Metodologías de desarrollo | Comparación cascada vs. iterativo/ágil y elección justificada | 0 | Apartado de la memoria |
+| **A.3.2** Enfoque Top-Down y algoritmos | Descomposición del problema en subproblemas y clases | 0, 1 | Esquema de descomposición |
+| **A.3.3** Pseudocódigo y diagramas de flujo | Pseudocódigo del flujo principal y diagrama de flujo | 0 | Cuaderno de desarrollo |
+| **A.3.4** Desarrollo iterativo | Incrementos funcionales del refactor | 1–10 | Historial de *commits* |
+| **A.3.5** Entornos de desarrollo integrado | Configuración y uso del IDE y su depurador | 0–10 | Observación directa |
+| **A.3.6** Análisis, diseño, programación y pruebas | Diseño UML, codificación y plan de pruebas/depuración | 10, 11 | UML + batería de pruebas |
+| **A.3.7** Control de versiones | Repositorio Git y *commits* descriptivos | 10–12 | Repositorio |
+| **A.3.8** Trabajo en equipo | Roles, revisión cruzada y coevaluación | 10–12 | Rúbrica de equipo |
 
 ## 3.7. Evaluación de la SdA 2
 
 | Criterio | Instrumento | Momento | Peso |
 |----------|-------------|---------|:----:|
-| PRYC.2.1.1 | Diagrama UML + memoria técnica (modelado) | S11 | 20 % |
-| PRYC.2.1.2 | Prácticas de sesión + rúbrica del producto final | Continuo | 50 % |
-| PRYC.2.1.3 | Historial de commits, depuración y coevaluación | S10–S12 | 20 % |
+| PRYC.2.1.1 | Diagrama UML + memoria técnica + cuaderno de desarrollo (metodología, *top-down*, pseudocódigo y diagrama de flujo) | S0, S11 | 20 % |
+| PRYC.2.1.2 | Prácticas de sesión + rúbrica del producto final | Continuo | 45 % |
+| PRYC.2.1.3 | Historial de commits, depuración, plan de pruebas y coevaluación | S10–S12 | 25 % |
 | PRYC.2.2.1 | Rúbrica de persistencia objetual | S9–S10 | 10 % |
 
 - **Autoevaluación:** diario de aprendizaje (S12).
-- **Coevaluación:** rúbrica entre grupos (S12).
+- **Coevaluación:** rúbrica entre grupos y de trabajo en equipo (S12).
 - **Prueba práctica** de POO (opcional, S11).
 
 ## 3.8. Materiales y recursos
@@ -310,6 +343,15 @@ La versión **2.0 objetual** de FinanzApp:
 | A.1.3 Funciones y archivos | ✔ | |
 | A.2.1 Clases, objetos, constructores, sobrecarga, encapsulamiento | | ✔ |
 | A.2.2 Herencia, interfaces, polimorfismo | | ✔ |
+| A.3.1 Metodologías de desarrollo de software | | ✔ |
+| A.3.2 Enfoque Top-Down, fragmentación y algoritmos | (base) | ✔ |
+| A.3.3 Pseudocódigo y diagramas de flujo | (base) | ✔ |
+| A.3.4 Desarrollo iterativo | | ✔ |
+| A.3.5 Entornos de desarrollo integrado | ✔ | ✔ |
+| A.3.6 Análisis, diseño, programación y pruebas. Depuración | (base) | ✔ |
+| A.3.7 Control de versiones | (base) | ✔ |
+| A.3.8 Trabajo en equipo | ✔ | ✔ |
+
 
 ---
 

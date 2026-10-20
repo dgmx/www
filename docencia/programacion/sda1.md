@@ -58,8 +58,18 @@ Este documento recoge **una situación de aprendizaje (SdA1)**, correspondiente 
   - A.1.1. Tipos de lenguajes. Estructura de un programa informático y elementos básicos del lenguaje. Tipos básicos de datos. Constantes y variables. Operadores y expresiones. Comentarios.
   - A.1.2. Estructuras de control condicionales e iterativas. Estructuras de datos.
   - A.1.3. Funciones y reutilización de código. Manipulación de archivos.
-
-- *Saberes de proceso* (transversales): enfoque *top-down* y fragmentación de problemas; pseudocódigo y diagramas de flujo; desarrollo iterativo; entornos de desarrollo integrado (IDE); análisis, diseño, programación y pruebas; depuración; control de versiones; trabajo en equipo.
+- *A.2. Orientación a objetos*
+  - A.2.1. Clases, objetos y constructores. Sobrecarga, encapsulamiento y ocultación.
+  - A.2.2. Herencia. Subclases y superclases. Interfaces. Polimorfismo.
+- *A.3. Ciclo de vida del software*
+  - A.3.1. Metodologías de desarrollo de software.
+  - A.3.2. Enfoque Top-Down, fragmentación de problemas y algoritmos.
+  - A.3.3. Pseudocódigo y diagramas de flujo.
+  - A.3.4. Desarrollo iterativo.
+  - A.3.5. Entornos de desarrollo integrado.
+  - A.3.6. Análisis, Diseño, Programación y Pruebas. Depuración.
+  - A.3.7. Control de versiones.
+  - A.3.8. Trabajo en equipo.
 
 ## 1.5. Vinculación con competencias clave y descriptores operativos
 
