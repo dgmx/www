@@ -151,6 +151,13 @@ export default defineConfig({
             ],
           },
           {
+            text: "Markdown",
+            collapsed: true,
+            items: [
+              { text: "Manual de Markdown", link: "/programacion/markdown/manual_markdown" },
+            ],
+          },
+          {
             text: "Shell Scripting",
             collapsed: true,
             items: [

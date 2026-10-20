@@ -39,4 +39,8 @@ features:
     details: Manual de CSS
     link: /programacion/html/introduccion_css
     linkText: Leer más
+  - title: Markdown
+    details: Manual completo de Markdown
+    link: /programacion/markdown/manual_markdown
+    linkText: Leer más
 ---
