@@ -171,12 +171,15 @@ La versión **2.0 objetual** de FinanzApp:
 
 ### FASE INICIAL (Sesión 0 · 1 h)
 
-**Sesión 0 — "Del procedimiento al objeto"**
+**Sesión 0 — "Del procedimiento al objeto" (arranque del ciclo de vida)**
 - *Arranque:* recuperar el código de la SdA 1 y detectar sus "dolores" (duplicidad, diccionarios frágiles).
 - **Pregunta motriz** y presentación de la v2.0 y su rúbrica.
 - **Evaluación inicial:** identificar en el código v1.0 dónde "cabría" un objeto.
+- **Metodologías de desarrollo (A.3.1):** comparar el modelo en cascada con las metodologías iterativas/ágiles y justificar la elección para el proyecto.
+- **Análisis y diseño (A.3.2, A.3.3):** descomponer el problema *top-down*; escribir el pseudocódigo del flujo principal y dibujar su **diagrama de flujo**.
+- **Entorno de desarrollo integrado (A.3.5):** configurar el IDE (intérprete, depurador, extensiones) y el repositorio.
 - Introducción conceptual: qué es una clase, qué es un objeto, qué es una instancia.
-- *Agrupamiento:* gran grupo. *DUA:* esquema visual clase/objeto.
+- *Agrupamiento:* gran grupo y parejas. *DUA:* esquema visual clase/objeto y plantilla de pseudocódigo.
 
 ### FASE DE DESARROLLO (Sesiones 1–10)
 
