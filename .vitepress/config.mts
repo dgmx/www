@@ -79,6 +79,7 @@ export default defineConfig({
             items: [
               { text: "Tema 1. Sociedad de la información", link: "/docencia/tic1/tema1" },
               { text: "Tema 2. Información Digital", link: "/docencia/tic1/tema2" },
+              { text: "Tema 3. Arquitectura de ordenadores", link: "/docencia/tic1/tema3" },
             ],
           },
           {

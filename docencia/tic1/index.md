@@ -17,4 +17,8 @@ features:
     details: Información digital.
     link: /docencia/tic1/tema2
     linkText: Leer más
+  - title: Tema 3
+    details: Arquitectura de ordenadores y sistemas operativos.
+    link: /docencia/tic1/tema3
+    linkText: Leer más
 ---
