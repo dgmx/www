@@ -1,313 +1,379 @@
-# TEMA 9: Trabajo colaborativo
-### Bloque B. Creación digital y pensamiento computacional | CDPC.1.A.10
+# TEMA 9: Sonido, mini-juegos e instalaciones generativas
+### Bloque B. Creación digital y pensamiento computacional | CDPC.1.A.9
 
-> **Currículo LOMLOE - Andalucía** | Criterios: CDPC.1.A.10
-
----
-
-## 1. Por qué se programa en equipo
-
-En la industria del software casi nadie programa en solitario. Los proyectos reales (aplicaciones, videojuegos, instalaciones) los realizan equipos que reparten tareas, revisan el código de los demás y mantienen el trabajo a lo largo de meses. Trabajar en equipo aporta:
-
-- **Más puntos de vista:** una misma solución se puede abordar de varias formas; el debate mejora la decisión.
-- **Revisión cruzada:** dos pares de ojos detectan errores (*bugs*) que una sola persona pasa por alto.
-- **Especialización:** alguien se ocupa de la interfaz, otro de la lógica, otro de los recursos gráficos o sonoros.
-- **Continuidad:** si una persona se ausenta, el proyecto no se paraliza porque el trabajo está documentado y compartido.
-- **Aprendizaje:** se aprende leyendo código ajeno y explicando el propio.
-
-También aparecen riesgos: conflictos de opinión, trabajo duplicado, la llamada **"tragedia de los comunes"** (unos trabajan mucho y otros poco) y el **messiah** o integrador que lo arregla todo la noche antes de la entrega. Las prácticas de este tema existen justo para evitarlos.
+> **Currículo LOMLOE - Andalucía** | Criterios: CDPC.1.A.9
 
 ---
 
-## 2. Habilidades blandas
+## 1. Fundamentos del sonido
 
-Las **habilidades blandas** (*soft skills*) son las competencias personales y sociales que hacen funcionar al equipo. Junto a las técnicas, son las más valoradas en el mundo laboral.
+### 1.1. Onda, frecuencia, amplitud y timbre
 
-### 2.1. Comunicación y escucha activa
+El **sonido** es una onda mecánica que necesita un medio (aire, agua, sólido) para propagarse. En un ordenador la tratamos como una señal continua que después **digitalizamos**. Las propiedades que nos interesan programar son:
 
-- **Hablar con claridad:** explica qué necesitas, qué has hecho y qué problemas tienes, sin rodeos.
-- **Escucha activa:** presta atención completa, parafrasea lo que entendiste ("O sea, ¿quieres que...?") y pregunta antes de asumir.
-- **Comunicación asíncrona:** en un equipo distribuido no todos responden al instante; escribe mensajes completos y autoconclusivos.
-- **Canales adecuados:** dudas rápidas → mensajería; decisiones → documento o hilo concreto; reuniones → solo si se necesita acordar en vivo.
+- **Amplitud:** la "altura" de la onda; se asocia al **volumen**. En código es el valor máximo que puede alcanzar la señal (en Processing, `amp()` trabaja entre 0.0 y 1.0).
+- **Frecuencia:** número de ciclos por segundo, medida en **hercios (Hz)**; se asocia al **tono**. El oído humano percibe aproximadamente entre 20 Hz y 20.000 Hz.
+  - 220 Hz → La (A3), 440 Hz → La (A4, tono de referencia)
+- **Timbre:** la "huella dactilar" del sonido; es lo que permite distinguir un piano de una flauta tocando la misma nota. Depende de los **armónicos**, frecuencias superiores que se suman a la fundamental. En síntesis, cambiamos el timbre cambiando la **forma de onda** (seno, sierra, cuadrada, ruido).
 
-### 2.2. Reparto de tareas
+### 1.2. Digitalización: muestreo y profundidad de bits
 
-1. **Lista de tareas:** escribir todo lo que hay que hacer (diseño, código, pruebas, documentación, presentación).
-2. **Estimación:** valorar el esfuerzo de cada tarea (a veces con una escala sencilla: S/M/L o story points).
-3. **Asignación por responsabilidad:** cada tarea tiene **un responsable claro**; el "entre todos lo haremos" suele significar que nadie lo hará.
-4. **Dependencias:** identificar qué tareas bloquean a otras y ordenar el trabajo en consecuencia.
-5. **Puntos de sincronización:** acordar cuándo se integra el trabajo (p. ej. cada semana).
+Para guardar sonido en un ordenador muestreamos la onda: tomamos una muestra de amplitud cada cierto intervalo.
 
-### 2.3. Gestión de conflictos
+- **Frecuencia de muestreo ($f_s$):** muestras por segundo. Según el **teorema de muestreo de Nyquist–Shannon**, para reconstruir correctamente la señal hace falta:
 
-Los conflictos no son malos si se gestionan bien: surgen de las ideas, no de las personas.
+$$f_s \geq 2 \cdot f_{\text{máx}}$$
 
-- Ataca el **problema**, no a la persona: "este código falla con listas vacías" en lugar de "tú siempre haces esto".
-- Busca **criterios objetivos** para decidir (rendimiento, legibilidad, plazo) en lugar de discusiones de gustos.
-- Si hay empate, **acuerda una prueba** que decida: implementar ambas opciones y medir.
-- Escala a tiempo: si dos personas no se ponen de acuerdo, pide opinión al resto del equipo o al docente.
+  Por eso el CD usa **44.100 Hz** (cubre hasta 22.05 kHz, por encima del oído humano) y el vídeo digital suele usar 48.000 Hz.
 
-### 2.4. Documentación
+- **Profundidad de bits:** cuántos niveles discretos tiene cada muestra. Con **16 bits** hay $2^{16} = 65.536$ niveles (rango −32.768 a 32.767); con 24 bits, más de 16 millones. Más profundidad = menor **ruido de cuantización**.
 
-Documentar es dejar constancia de *qué* se hizo y *por qué*:
+Cálculo de tamaño de una pista PCM sin comprimir: $$\text{tamaño} = f_s \times \frac{\text{bits}}{8} \times \text{canales} \times \text{duración}$$ — un minuto a 44.100 Hz, 16 bits y estéreo ocupa $44100 \times 2 \times 2 \times 60 \approx 10{,}6$ MB.
 
-- **README** del proyecto: qué hace, cómo se ejecuta, quiénes participan.
-- **Comentarios** en el código donde la lógica no es evidente.
-- **Decisiones:** un archivo breve con las decisiones tomadas y su motivo (registro de decisiones).
-- **Manual de uso** o guía de montaje si el proyecto es una instalación.
+### 1.3. Formatos de audio
+
+| Formato | Compresión | Calidad | Tamaño | Uso típico |
+|---------|-----------|---------|--------|------------|
+| **WAV** (PCM) | Sin pérdida | Máxima | Grande | Efectos cortos, edición, grabación |
+| **MP3** | Con pérdida | Muy buena | Pequeño | Música, podcasts, distribución |
+| **OGG** (Vorbis) | Con pérdida | Muy buena | Pequeño | Videojuegos, software libre |
+| **AAC/M4A** | Con pérdida | Muy buena | Pequeño | Vídeo, plataformas de streaming |
+
+Criterio de decisión en nuestros proyectos: **WAV** para sonidos cortos que se disparan muchas veces (menos latencia), **MP3/OGG** para música de fondo larga.
 
 ---
 
-## 3. Buenas prácticas de código
+## 2. Síntesis básica de sonido en Processing
 
-### 3.1. Convención de nombres
+### 2.1. Osciladores con la librería Sound
 
-| Mal ejemplo | Buen ejemplo | Regla |
-|-------------|--------------|-------|
-| `a`, `x1`, `temp` | `puntuacionJugador` | nombres que describen la intención |
-| `MI_VARIABLE` | `puntuacionMaxima` | en Processing/Java se usa *camelCase* |
-| `dibujar()` | `dibujarObstaculos()` | verbos para funciones |
-| `datos2.csv` | `lecturas_sensor.csv` | separadores claros, sin espacios |
+La librería **Sound** no solo reproduce archivos: puede **generar** sonido desde cero con **osciladores**, funciones que producen una onda periódica de la frecuencia que indiquemos.
 
-Regla práctica: si otro compañero no puede adivinar qué hace una variable leyendo su nombre, renómbrala.
-
-### 3.2. Comentarios
-
-- Comenta el **por qué**, no el **qué**: el código ya dice qué hace.
-- Explica bloques complejos (algoritmos, fórmulas) con una frase encima.
-- Actualiza o borra comentarios obsoletos: un comentario viejo es peor que no comentar.
-- Todo el texto en español (o el idioma acordado por el equipo).
+| Oscilador | Forma de onda | Característica |
+|-----------|---------------|----------------|
+| `SinOsc` | Seno | Tono puro, suave; base de la síntesis aditiva |
+| `SawOsc` | Sierra | Rica en armónicos, sonido "eléctrico" |
+| `SqrOsc` | Cuadrada | Armónicos impares, timbre clásico de 8 bits |
+| `Noise` | Ruido | Todas las frecuencias; golpes, viento, estática |
 
 ```java
-// Umbral adaptativo: sube con el ruido de fondo para evitar falsos positivos
-float umbral = ruidoFondo * 1.5 + 0.08;
+import processing.sound.*;
 
-// Esto NO aporta nada: suma 1 al contador
-cont++;   // incrementa el contador
+SinOsc tono;
+float frecuencia = 440;
+
+void setup() {
+  size(600, 300);
+  textAlign(CENTER, CENTER);
+  tono = new SinOsc(this);
+  tono.play();          // empieza a sonar
+  tono.amp(0.2);        // volumen inicial bajo (nunca por encima de 0.5)
+}
+
+void draw() {
+  tono.freq(frecuencia);                     // fijar frecuencia en Hz
+  background(20, 24, 40);
+  fill(255);
+  text("Frecuencia: " + int(frecuencia) + " Hz  |  ↑↓ tono  |  ←→ volumen",
+       width / 2, height / 2);
+}
+
+void keyPressed() {
+  if (keyCode == UP)    frecuencia = min(frecuencia + 40, 2000);
+  if (keyCode == DOWN)  frecuencia = max(frecuencia - 40, 80);
+  if (keyCode == RIGHT) tono.amp(min(tono.amp() + 0.1, 0.5));
+  if (keyCode == LEFT)  tono.amp(max(tono.amp() - 0.1, 0.0));
+}
 ```
 
-### 3.3. El README
+**Atención al oído:** trabaja siempre con amplitudes bajas (por debajo de 0.5) y usa auriculares o volumen moderado para evitar molestias.
 
-Todo repositorio debe incluir un `README.md` con, al menos:
+### 2.2. Envolventes: hacer que un sonido viva
 
-1. **Nombre y descripción** del proyecto (una frase).
-2. **Requisitos** (Processing + librerías Video/Sound, versión).
-3. **Cómo ejecutarlo** (abrir el `.pde` y pulsar ▶).
-4. **Controles** del juego o de la interacción.
-5. **Autores** y curso.
-6. **Licencia** (ver apartado 7).
-7. Capturas de pantalla o GIF del funcionamiento.
+Un tono que empieza y termina de golpe suena artificial. Una **envolvente** (ADSR) modula la amplitud en el tiempo: **ataque** (sube), **sostenido** (se mantiene), **caída/liberación** (baja). La clase `Env` de la librería Sound la aplica automáticamente a un oscilador:
 
-### 3.4. Estilo de código
+```java
+import processing.sound.*;
 
-- **Formato consistente:** misma indentación (4 espacios), llaves en la misma línea, espacios alrededor de los operadores.
-- **Funciones cortas:** si un bloque supera una pantalla, probablemente conviene dividirlo.
-- **Constantes con nombre claro:** `float VELOCIDAD_JUGADOR = 6;` en lugar de un número mágico repetido.
-- **Sin código muerto:** borra lo que no se usa; el equipo lo mantendrá igualmente en el historial de Git.
-- **Prueba antes de enviar:** un código que no compila no está "terminado".
+SinOsc osc;
+Env envolvente;
+
+void setup() {
+  size(500, 300);
+  textAlign(CENTER, CENTER);
+  osc = new SinOsc(this);
+  envolvente = new Env(this);
+}
+
+void draw() {
+  background(30);
+  fill(255);
+  text("Clic o ESPACIO para disparar un tono con envolvente", width / 2, height / 2);
+}
+
+void mousePressed() { disparar(); }
+void keyPressed()   { disparar(); }
+
+void disparar() {
+  // oscilador, ataque 0.02 s, sostenido 0.2 s, nivel 0.6, caída 0.4 s
+  envolvente.play(osc, 0.02, 0.2, 0.6, 0.4);
+}
+```
+
+Cambiando la frecuencia del oscilador antes de `disparar()` obtenemos notas distintas: ya tenemos un **instrumento sintético** básico.
 
 ---
 
-## 4. Herramientas de comunicación y organización
+## 3. Reactividad sonora
 
-| Herramienta | Para qué sirve | Ejemplos |
-|-------------|----------------|----------|
-| **Correo** | Comunicación formal, entrega, avisos a docentes | Gmail, Outlook |
-| **Mensajería** | Dudas rápidas, coordinación diaria | Slack, Discord, Teams, Telegram |
-| **Videollamada** | Reuniones, pair programming, revisiones | Google Meet, Jitsi, Zoom |
-| **Tableros kanban** | Organizar el trabajo por estados | Trello, Notion, GitHub Projects |
-| **Documentos compartidos** | Redactar a la vez (actas, guiones) | Google Docs, Notion, HedgeDoc |
-| **Almacenamiento** | Recursos grandes (vídeos, audio) | Drive, Dropbox |
-| **Control de versiones** | Código fuente | Git + GitHub (apartado 5) |
+La idea central de este apartado: **el sonido responde al ratón y al teclado**. Mapeamos las entradas del usuario a parámetros del audio con `map()`, reutilizando el oscilador `osc` del apartado anterior (si no está sonando, lanza `osc.play()` una vez en `setup()`):
 
-Un tablero kanban mínimo para un proyecto:
+```java
+void draw() {
+  // la altura del ratón controla el tono (agudo arriba, grave abajo)
+  float frecuencia = map(mouseY, 0, height, 1200, 110);
+  // el ancho del ratón controla el volumen
+  float volumen = map(mouseX, 0, width, 0.0, 0.4);
+  osc.freq(frecuencia);
+  osc.amp(volumen);
 
-```text
-| Por hacer | En curso | En revisión | Hecho |
-|-----------|----------|-------------|-------|
-| Niveles   | Sonido   | Menú inicio | Vídeo |
-| README    | Colisión |             |      |
+  // el dibujo "canta" lo que suena
+  background(map(mouseY, 0, height, 30, 90), 25, 60);
+  fill(255);
+  text("Frecuencia: " + int(frecuencia) + " Hz   Volumen: " + nf(volumen, 1, 2),
+       width / 2, 30);
+}
+
+void keyPressed() {
+  osc.amp(0);   // tecla pulsada → silencio instantáneo
+}
 ```
 
-Normas útiles: **máximo 2-3 tareas "en curso" por persona**, tarjetas con responsable y fecha, y revisión del tablero al empezar cada sesión (reunión diaria de 5 minutos: ¿qué hice, qué haré, qué me bloquea?).
+Otros patrones de reactividad muy usados:
+
+- **Teclado → notas:** cada tecla (`a, s, d, f…`) dispara una frecuencia de una escala; es el típico *piano minimalista*.
+- **Datos → sonido:** mapear un valor de un fichero CSV o una lectura de sensor a frecuencia o volumen (puente con las instalaciones del apartado 5).
 
 ---
 
-## 5. Control de versiones con Git y GitHub
+## 4. Diseño de mini-juegos
 
-### 5.1. Repositorio y commits
+### 4.1. Arquitectura de un juego
 
-- **Repositorio:** carpeta del proyecto bajo el control de Git, con todo su historial.
-- **Commit:** una instantánea del estado del proyecto con un **mensaje** que explica el cambio. Debe ser pequeño e independiente.
-- **Remote (origin):** la copia del repositorio alojada en **GitHub** (o similar) con la que sincronizamos.
+Todo juego, por pequeño que sea, se apoya en tres piezas:
 
-```bash
-# inicializar un repositorio en la carpeta del proyecto
-git init
+1. **Estados del juego:** `INICIO` (menú), `JUGANDO`, `PAUSA`, `FIN` (game over). Se representan con una variable entera o un enumerado y se cambia mediante condiciones.
+2. **Bucle de juego:** en Processing ya existe: `draw()` se ejecuta fotograma a fotograma. En cada vuelta se **actualiza** el estado (mover, comprobar colisiones) y se **dibuja** la escena. Patrón clásico: *actualizar → dibujar*.
+3. **Entradas:** ratón y teclado actualizan la posición del jugador o disparan acciones. En Processing se modelan con una variable `estado` y funciones distintas según su valor.
 
-# ver el estado: qué archivos están modificados o sin seguimiento
-git status
+### 4.2. Colisiones punto-círculo
 
-# incluir cambios en la zona de preparación (staging)
-git add sketch_principal.pde
+La colisión más sencilla y útil: un jugador es un **punto** (o un círculo) y un obstáculo otro círculo. Hay colisión si la distancia entre centros es menor que la suma de los radios: `dist(x1, y1, x2, y2) < r1 + r2`. También se puede usar un rectángulo para el jugador "encajando" el punto del obstáculo con `constrain()`, técnica llamada *AABB con radio*.
 
-# registrar el commit con un mensaje claro en imperativo
-git commit -m "Añade movimiento del jugador con el teclado"
+### 4.3. Puntuación, vidas y dificultad creciente
 
-# conectar con el repositorio remoto de GitHub
-git remote add origin https://github.com/USUARIO/proyecto-cdpc.git
-git push -u origin main
+- **Puntuación:** variable entera que aumenta según la acción (sobrevivir, acertar). Se muestra con `text()`.
+- **Vidas:** contador que decrementa en cada colisión; al llegar a 0, cambio de estado a `FIN`.
+- **Dificultad creciente:** aumentar progresivamente la **velocidad** de los obstáculos, reducir el **intervalo** entre apariciones o disminuir el **tamaño** de la zona segura. Fórmula típica: `velocidad = base + tiempo * incremento`.
+
+### 4.4. Juego completo: "Esquiva"
+
+Juego de esquivar obstáculos que caen desde arriba, controlado con ← y →, con 3 vidas, puntuación y dificultad creciente.
+
+```java
+// ESQUIVA - mini-juego completo para Processing
+// Estados: 0 = inicio, 1 = jugando, 2 = fin de partida
+
+float px, py;              // posición del jugador
+float pr = 16;             // radio del jugador
+int puntos = 0;
+int vidas = 3;
+int estado = 0;
+
+ArrayList<Obstaculo> lista;
+int intervalo = 800;       // milisegundos entre obstáculos
+int ultimo = 0;            // timestamp del último obstáculo
+float dificultad = 1.0;    // multiplicador de velocidad
+
+void setup() {
+  size(600, 500);
+  textAlign(CENTER, CENTER);
+  textSize(16);
+  lista = new ArrayList<Obstaculo>();
+  reiniciar();
+}
+
+void reiniciar() {
+  px = width / 2;
+  py = height - 60;
+  puntos = 0; vidas = 3;
+  dificultad = 1.0; intervalo = 800;
+  lista.clear();
+  ultimo = millis();
+}
+
+void draw() {
+  background(12, 16, 34);
+
+  if (estado == 0) {
+    texto("E S Q U I V A", "Pulsa ESPACIO para empezar");
+  } else if (estado == 1) {
+    jugar();
+  } else {
+    texto("FIN DE LA PARTIDA", "Puntos: " + puntos + " - ESPACIO para reiniciar");
+  }
+}
+
+void jugar() {
+  // 1) MOVIMIENTO del jugador con el teclado
+  if (keyPressed) {
+    if (keyCode == LEFT)  px -= 7;
+    if (keyCode == RIGHT) px += 7;
+  }
+  px = constrain(px, pr, width - pr);
+
+  // 2) GENERAR obstáculos cada menos tiempo (dificultad creciente)
+  if (millis() - ultimo > intervalo) {
+    float xAleatoria = random(30, width - 30);
+    float velocidad = random(3, 6) * dificultad;
+    float radio = random(12, 26);
+    lista.add(new Obstaculo(xAleatoria, -30, velocidad, radio));
+    ultimo = millis();
+    dificultad += 0.03;
+    intervalo = max(250, intervalo - 15);
+  }
+
+  // 3) ACTUALIZAR y comprobar colisiones (recorrido inverso para poder borrar)
+  for (int i = lista.size() - 1; i >= 0; i--) {
+    Obstaculo o = lista.get(i);
+    o.mover();
+    o.mostrar();
+
+    if (colisiona(px, py, pr, o.x, o.y, o.r)) {
+      lista.remove(i);
+      vidas--;
+      if (vidas <= 0) {
+        estado = 2;
+      }
+      continue;
+    }
+
+    if (o.y > height + o.r) {   // ha pasado sin tocarnos: +1 punto
+      lista.remove(i);
+      puntos++;
+    }
+  }
+
+  // 4) INTERFAZ (HUD)
+  fill(255);
+  textAlign(LEFT, TOP);
+  text("Puntos: " + puntos + "   Vidas: " + vidas, 10, 10);
+  textAlign(CENTER, CENTER);
+
+  // jugador
+  fill(80, 210, 255);
+  noStroke();
+  circle(px, py, pr * 2);
+}
+
+boolean colisiona(float x1, float y1, float r1, float x2, float y2, float r2) {
+  return dist(x1, y1, x2, y2) < r1 + r2;
+}
+
+void texto(String titulo, String subtitulo) {
+  fill(255);
+  textSize(40);
+  text(titulo, width / 2, height / 2 - 40);
+  textSize(18);
+  fill(180);
+  text(subtitulo, width / 2, height / 2 + 20);
+}
+
+void keyPressed() {
+  if (key == ' ' && (estado == 0 || estado == 2)) {
+    reiniciar();
+    estado = 1;
+  }
+}
+
+// Clase que describe cada obstáculo que cae
+class Obstaculo {
+  float x, y, velocidad, r;
+
+  Obstaculo(float x, float y, float velocidad, float r) {
+    this.x = x;
+    this.y = y;
+    this.velocidad = velocidad;
+    this.r = r;
+  }
+
+  void mover() {
+    y += velocidad;
+  }
+
+  void mostrar() {
+    fill(255, 90, 100);
+    noStroke();
+    circle(x, y, r * 2);
+  }
+}
 ```
 
-Consejos de mensajes: qué cambia y por qué (`Corrige colisión con obstáculos pequeños`), no `cosas` ni `update`.
-
-### 5.2. Ramas y merge
-
-Una **rama** (*branch*) es una línea de desarrollo paralelo: puedes experimentar sin romper la versión estable (`main`). **Merge** es la unión de dos ramas cuando el trabajo está listo.
-
-```bash
-# crear y cambiar a la rama de una nueva característica
-git checkout -b feature/puntuacion
-
-# ... trabajar y guardar avances ...
-git add .
-git commit -m "Implementa puntuación y vidas"
-
-# volver a main y traer la característica
-git checkout main
-git merge feature/puntuacion
-```
-
-### 5.3. Pull request e issues
-
-- **Pull request (PR):** propuesta formal de fusionar una rama en `main`. El equipo **revisa** el código, comenta y sugiere cambios antes de aprobar.
-- **Issues:** tickets para errores (*bug*), tareas o discusiones. Son el "tablero" del repositorio y documentan el trabajo.
-
-```bash
-# subir la rama de la característica al remoto para abrir la PR
-git push origin feature/puntuacion
-```
-
-### 5.4. Flujo de trabajo *feature-branch*
-
-Este es el flujo estándar que usaremos en clase:
-
-```mermaid
-flowchart TD
-    A[1. Clonar el repositorio<br/>git clone] --> B[2. Crear una rama<br/>git checkout -b feature/nombre]
-    B --> C[3. Desarrollar y probar]
-    C --> D[4. git add y git commit]
-    D --> E[5. git push origin feature/nombre]
-    E --> F[6. Abrir Pull Request en GitHub]
-    F --> G{7. Revisión por el equipo}
-    G -->|Cambios solicitados| C
-    G -->|Aprobado| H[8. Merge en main]
-    H --> I[9. Borrar la rama<br/>git branch -d feature/nombre]
-    I --> J[10. git pull en main<br/>para trabajar con la última versión]
-```
-
-Reglas del flujo:
-
-- `main` siempre funciona: nadie hace *push* directo a `main`.
-- Cada tarea o característica → **una rama** con nombre descriptivo (`feature/audio`, `fix/colision`).
-- Antes de abrir la PR: pull de `main`, resuelve conflictos y comprueba que el sketch compila.
-- Toda PR necesita **al menos una revisión** de un compañero.
-- Los conflictos de merge se resuelven abriendo el archivo marcado con `<<<<<<<`, eligiendo el código correcto y borrando los marcadores.
-
-```bash
-# mantener main actualizado antes de empezar a trabajar
-git checkout main
-git pull origin main
-```
+Mejoras posibles: temporizador de supervivencia, movimiento del jugador con `mouseX`, partículas al chocar o modo para dos jugadores.
 
 ---
 
-## 6. Plataformas educativas: GitHub Classroom
+## 5. Instalaciones artísticas generativas e interactivas
 
-**GitHub Classroom** permite al docente crear un aula virtual donde cada estudiante (o cada equipo) recibe automáticamente un **repositorio individual o grupal** a partir de una plantilla. Ventajas en el aula:
+### 5.1. Concepto
 
-- Entrega automática: el *commit* en la rama indicada **es** la entrega con fecha y hora.
-- El docente puede revisar el código, dejar comentarios línea a línea en la PR y ver la evolución del historial.
-- Se fomenta el uso real de Git desde el primer día, con un entorno de error tolerable.
-- Las **acciones de GitHub** (*Actions*) pueden comprobar de forma automática tareas sencillas (por ejemplo, que el código compile o que exista el README).
+Una **instalación artística** es una obra que ocupa un espacio físico y se experimenta in situ, no en una pantalla suelta. Cuando su lógica se define con **algoritmos** hablamos de **instalación generativa**, y cuando responde a la presencia o acciones del público, de **instalación interactiva**: el espectador deja de ser observador y se convierte en **parte del sistema**.
 
-Alternativas equivalentes: GitLab Classroom, Bitbucket con scripts propios, o simplemente una carpeta compartida con entregas por correo para cursos sin acceso a estas plataformas.
+Características principales:
 
----
+- **Generatividad:** la obra no muestra siempre lo mismo; reglas + azar (o datos en vivo) producen resultados siempre nuevos.
+- **Interacción:** entrada de datos (movimiento, sonido, distancia, redes) que modifica la salida.
+- **Espacio y tiempo:** se piensan la escala (proyección, sonido, luz), la ubicación, el recorrido del público y la duración: la obra puede funcionar horas seguidas sin repetirse ni "romperse".
+- **Concepto:** la técnica está al servicio de una idea; sin ella es solo una demostración tecnológica.
 
-## 7. Licencias y autoría
+### 5.2. Ejemplos de referencia
 
-### 7.1. Plagio, citas y honestidad intelectual
+| Artista/colectivo | Obra clave | Idea |
+|-------------------|-----------|------|
+| **teamLab** (Japón) | *Borderless* (Tokio) | Florales inmersivos que reaccionan al paso del visitante; lo que tocas florece o se desvanece |
+| **Rafael Lozano-Hemmer** (México/Canadá) | *Pulse* series, *Voz Alta* | Biometría (pulso, voz) y sensores que conectan al público con la obra a gran escala |
+| **Refik Anadol** | *Unsupervised* | Datos masivos convertidos en esculturas lumínicas generativas |
 
-- **Plagio:** presentar código, textos, imágenes o sonidos de otra persona (o de una IA) como propios sin citar la fuente. Es una falta académica y, si el trabajo se publica, un problema legal.
-- **Citar correctamente:** indica autor, título y enlace de cualquier recurso externo (librería, tutorial, imagen, música). Un apartado **Créditos** en el README es suficiente.
-- **Código ajeno:** copiar fragmentos pequeños con atribución es aceptable y habitual; copiar un proyecto completo y cambiar el nombre no lo es.
-- **Trabajo con IA generativa:** si la norma del centro lo permite, declara qué partes se han generado y verifica que funcionan; la responsabilidad del código es tuya.
-- **Uso de recursos:** respeta los derechos de autor de las imágenes, músicas y vídeos que uses; busca siempre material con licencia abierta o de uso educativo.
+### 5.3. Sensores: la entrada del mundo físico
 
-### 7.2. Licencias: el caso de la licencia MIT
+Para que un programa "viva" fuera del ordenador necesitamos **sensores**, dispositivos que convierten magnitudes físicas en datos que el software lee:
 
-Una **licencia** dice qué pueden hacer otras personas con tu trabajo. Sin licencia, por defecto todos los derechos están reservados. La **licencia MIT** es una de las más usadas en software: permisiva, corta y compatible con casi todo.
+- **Sensores de presencia y de distancia** (ultrasonidos, infrarrojos, **cámara** con visión por ordenador): detectan cuánta gente hay, a qué distancia está o qué se mueve (diferencia entre fotogramas).
+- **Micrófono → librería Sound (`Amplitude`, `FFT`):** el volumen o el espectro del ambiente mueve la imagen.
+- **Sensores sencillos con Arduino** (LDR de luz, PIR de presencia, ultrasonidos): lectura en serie que Processing recibe por puerto serie.
+- **Datos de red:** clima, aforos, redes sociales… la obra se genera con información externa.
 
-Permite libremente:
+### 5.4. Cómo plantear un proyecto de instalación en el aula
 
-- **Usar** el software con cualquier fin.
-- **Copiarlo y distribuirlo.**
-- **Modificarlo** y publicar las versiones derivadas.
-
-Únicas condiciones: incluir el **aviso de copyright** y la licencia original en cualquier copia. No exige publicar el código fuente de lo que construyas con él.
-
-Texto de la licencia MIT (versión abreviada para incluir en el repositorio):
-
-```text
-MIT License
-
-Copyright (c) 2026 Nombre del autor / Equipo X - 1º Bachillerato CDPC
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction... [texto completo en LICENSE]
-```
-
-Otras licencias frecuentes: **GPL** (exige que los derivados sean también libres), **Apache 2.0** (como MIT más una cláusula de patentes), **CC BY-SA** (obra creativa con atribución y misma licencia, típica de Wikipedia) y **CC0** (dominio público). En los recursos gráficos o musicales de tus proyectos busca licencias **Creative Commons**.
-
----
-
-## 8. Evaluación del trabajo en equipo
-
-### 8.1. Rueda de evaluación por pares
-
-La **evaluación por pares** reparte la calificación del trabajo en equipo: una parte es colectiva y otra depende de la valoración de los compañeros. Evita "gratuitos" (quien no aportó recibe la misma nota) y hace visible el reparto real del esfuerzo.
-
-**Dinámica de la rueda (15-20 min):**
-
-1. **Autoevaluación:** cada persona explica en 1 minuto qué ha aportado, qué le ha costado y qué mejoraríamos.
-2. **Evidencias:** el equipo muestra el historial de Git (commits por persona), el tablero de tareas y el README.
-3. **Valoración individual:** cada miembro puntúa a los demás en una rúbrica breve (comunicación, cumplimiento de tareas, calidad del código, actitud).
-4. **Comentarios concretos:** aportación más valiosa de cada persona y una sugerencia de mejora, siempre con un hecho concreto detrás.
-5. **Acuerdo final:** el equipo nombra un portavoz que resume conclusiones y se entrega la hoja de evaluación.
-
-**Rúbrica resumida de evaluación por pares (ejemplo):**
-
-| Criterio | 1 (Insuficiente) | 3 (Suficiente) | 5 (Sobresaliente) |
-|----------|------------------|----------------|-------------------|
-| Comunicación | Casi no responde a los mensajes | Responde cuando se le pide | Informa proactivamente y documenta decisiones |
-| Reparto de tareas | Realiza menos de lo acordado | Cumple sus tareas | Ayuda a compañeros bloqueados |
-| Calidad del código | Código sin revisar ni comentar | Legible y funcional | Sigue convenciones, comentado y probado |
-| Actitud ante conflictos | Evita o agrava los desacuerdos | Participa en los acuerdos | Propone soluciones basadas en criterios |
+1. **Idea y mensaje:** ¿qué queremos que sienta o entienda quien la vea? Una frase basta.
+2. **Interacción:** define qué hará el público (acercarse, hablar, pasar la mano) y qué responderá la obra.
+3. **Diagrama del sistema:** entradas, programa, salidas y requisitos técnicos (espacio, proyector, altavoz, luz).
+4. **Prototipo en Processing:** primero en el aula con `mouseX/mouseY` y teclado simulando el sensor; después, sustitúyelos por la entrada real (`Capture`, `Amplitude`, puerto serie).
+5. **Prueba con "usuarios":** pide a compañeros de otra clase que la prueben sin instrucciones y observa dónde se pierden.
+6. **Montaje y documentación:** vídeo de la instalación funcionando, README con montaje y código comentado. Proyectos de aula asequibles: un espejo que distorsiona el reflejo con la voz, un jardín generativo que crece con el silencio de la clase o un muro de luz que reaccione a la distancia de quien pasa.
 
 ---
 
 ## Ejercicios
 
-1. **Práctica: primer repositorio.** Crea en GitHub un repositorio llamado `cdpc-proyecto-[apellido]` con un README que describa un mini-proyecto de la asignatura (juego, instalación o arte generativo). Clónalo localmente, realiza al menos tres commits con mensajes claros y sube los cambios. Incluye la licencia MIT.
+1. Investiga y resume en una tabla las diferencias entre WAV, MP3 y OGG en cuanto a compresión, calidad y uso. Justifica qué formato elegirías para (a) un efecto de sonido de un juego, (b) la banda sonora de una instalación de 30 minutos y (c) un podcast.
 
-2. **Práctica: flujo feature-branch.** Dentro del repositorio anterior, crea la rama `feature/primer-boceto`, añade un esqueleto de sketch de Processing (`setup()` y `draw()` con un dibujo básico), haz commit, sube la rama y abre un **pull request**. Pide a un compañero (o al docente) que lo revise y, tras sus comentarios, haz el merge en `main`.
+2. Programa un "teclado de senos": con las teclas A S D F G H J K reproduce 8 notas de una escala con `SinOsc` y una envolvente `Env`; la tecla ESPACIO silencia todo. Incluye un dibujo que muestre la onda de la nota que está sonando.
 
-3. **Práctica: issues y tablero.** Crea tres *issues* en tu repositorio (uno de error, dos de mejoras), asígnalos a un tablero de GitHub Projects con las columnas "Por hacer / En curso / Hecho" y muéstralos moviéndose a lo largo del trabajo.
+3. Crea un efecto reactivo: el volumen del sonido (con `Amplitude` sobre un `SoundFile` en bucle) debe controlar la altura de una barra central y el color de fondo del sketch. Comprueba que al subir el volumen del archivo con `amp()` la barra responde más.
 
-4. Escribe el README completo de un proyecto real de la asignatura (puede ser el juego del Tema 8), con descripción, requisitos, controles, autores, licencia y créditos de recursos externos. Aplica las reglas de nombres de variables y comentarios vistas en este tema a al menos 30 líneas de código existente.
+4. Amplía el juego "Esquiva" con estas mejoras: (a) sonido de impacto y de punto conseguido, (b) power-up que otorga +1 vida, (c) pantalla de pausa con la tecla P, (d) dificultad basada en el tiempo transcurrido en lugar de un contador fijo.
 
-5. Diseña una rueda de evaluación por pares para tu equipo: redacta la rúbrica con 4 criterios, prepara la plantilla de la hoja de valoración (puntuación del 1 al 5 más comentarios) y explica cómo se repartirá la nota individual a partir de las valoraciones.
+5. Diseña por escrito (esquema + descripción) una instalación interactiva para el hall de tu centro: indica entradas (sensores), salidas (proyección/sonido), qué hará el público, qué cambiará la obra y qué idea comunica. Identifica al menos un artista de referencia que te haya inspirado.
 
-6. Analiza un caso de conflicto en un equipo de programación (inventado o real): describe la situación, aplica las técnicas de gestión de conflictos del apartado 2.3, acuerda un criterio objetivo de decisión y documenta la resolución en un archivo `decisiones.md` dentro de un repositorio de ejemplo.
+6. Desarrolla el prototipo en Processing de tu instalación usando la webcam y `Amplitude` como "falsos sensores": por ejemplo, que el ruido de la clase genere partículas y que el movimiento detectado por la cámara las disperse. Documenta el código con comentarios en español.

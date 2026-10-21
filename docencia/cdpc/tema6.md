@@ -1,293 +1,370 @@
-# TEMA 6: Modelado 3D
+# TEMA 6: Arte generativo, fractales y procesamiento de imágenes
 
-### Bloque B. Creación digital y pensamiento computacional | CDPC.1.A.7
+### Bloque B. Creación digital y pensamiento computacional | CDPC.1.A.6
 
-> **Currículo LOMLOE - Andalucía** | Criterios: CDPC.1.A.7
-
----
-
-## 1. Fundamentos del modelado tridimensional
-
-### 1.1. Los tres ejes y el espacio de coordenadas
-
-En un sistema de coordenadas **tridimensional** necesitamos tres valores para localizar cualquier punto. Sobre la pantalla seguimos usando el origen en la esquina superior izquierda, pero añadimos un tercer eje:
-
-| Eje | Dirección | Equivalencia |
-|---|---|---|
-| **X** | Horizontal, hacia la derecha | Igual que en 2D |
-| **Y** | Vertical, hacia abajo | Igual que en 2D (en Processing) |
-| **Z** | Hacia delante / hacia el espectador | Novedad del 3D |
-
-Un punto se escribe como `(x, y, z)`; por ejemplo, `translate(100, 50, -80)` mueve el origen 100 px en X, 50 px en Y y 80 px **hacia atrás** (porque el valor de Z es negativo).
-
-### 1.2. Cámara, proyección y solapamiento
-
-Tres conceptos son imprescindibles para comprender cómo se dibuja una escena 3D:
-
-- **Cámara**: es el punto de vista desde el que observamos la escena. Cambiar la cámara es como mover la cámara de un vídeo: la escena no cambia, cambia lo que vemos. En Processing se controla con `camera()`.
-- **Proyección**: es la operación matemática que **aplantra** el espacio 3D sobre la pantalla 2D, asignando un tamaño a cada objeto según su distancia. La predeterminada es la **perspectiva**: los objetos lejanos se ven más pequeños y las líneas paralelas convergen. Existe también la **proyección ortogonal** (sin profundidad aparente), útil en planos técnicos.
-- **Solapamiento y ocultamiento**: los objetos más cercanos **taparán** a los lejanos. Processing resuelve el **test de profundidad** (*z-buffer*) automáticamente: descarta los fragmentos que quedan detrás de otros ya dibujados. Por eso el orden de dibujo importa mucho menos que en 2D.
-
-::: tip Dibujo no visible
-Aunque estemos en 3D, Processing sigue dibujando sobre una superficie de 2 dimensiones: lo 3D es una simulación. Los fragmentos que quedan fuera del volumen visible se recortan (*clipping*) y no se muestran.
-:::
+> **Currículo LOMLOE - Andalucía** | Criterios: CDPC.1.A.6
 
 ---
 
-## 2. Processing en 3D
+## 1. Arte generativo en la naturaleza
 
-### 2.1. Activar el modo 3D: `P3D`
+### 1.1. La secuencia de Fibonacci
 
-Para trabajar en tres dimensiones hay que declarar el motor de renderizado en `size()`:
+La **secuencia de Fibonacci** es una sucesión de números en la que cada término es la suma de los dos anteriores, empezando por 0 y 1:
 
-```java
-// Lienzo 3D. El tercer parámetro activa el renderer P3D.
-size(800, 600, P3D);
-```
+$$F_0 = 0,\quad F_1 = 1,\quad F_n = F_{n-1} + F_{n-2} \;\text{ para } n \geq 2$$
 
-Sin `P3D` las funciones 3D no funcionarán correctamente.
+Así se obtiene: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144...
 
-### 2.2. Primitivas y sólidos
+Dos propiedades la hacen especialmente interesante para el diseño:
 
-| Función | Descripción |
-|---|---|
-| `box(w)`, `box(w, h, d)` | Caja (cubo o paralelepípedo) centrada en el origen |
-| `sphere(r)` | Esfera de radio `r` |
-| `sphereDetail(n)` | Calidad de la esfera (número de segmentos) |
-| `ellipse()`, `rect()` | Siguen funcionando, dibujadas sobre el plano XY |
+- El **cociente entre dos términos consecutivos** se aproxima cada vez más al **número áureo**:
 
-`cylinder()` **no es una función nativa** de Processing. Se puede aproximar con `ellipse() + rect()` o construir una función propia con `beginShape(QUAD_STRIP)`, como se muestra a continuación:
+$$\varphi = \frac{1 + \sqrt{5}}{2} \approx 1{,}6180339887\ldots$$
+
+- A partir de cierto término, la secuencia permite construir **rectángulos áureos** encadenados, base de la **espiral áurea**.
+
+### 1.2. Espirales áureas en la naturaleza
+
+Los **girosores**, las **piñas**, las **conchas** o los **cascos de los girasoles** presentan espirales que giran en sentidos opuestos y cuyo número suele ser un par de números consecutivos de Fibonacci (por ejemplo, 34 y 55). La razón es evolutiva: los elementos (semillas, escamas, hojas) se disponen con un giro de unos 137,5° —el llamado **ángulo áureo**, $360°\,(1-\varphi)^{-2} \bmod 360° \approx 137{,}5°$— respecto al anterior, lo que maximiza el espacio ocupado y la exposición a la luz.
 
 ```java
-// Función propia: cilindro vertical de radio r y altura h, centrado en el origen.
-void cylinder(float r, float h) {
-  int n = 40;                    // número de segmentos del borde
-  beginShape(QUAD_STRIP);
-  for (int i = 0; i <= n; i++) {
-    float angulo = TWO_PI * i / n;
-    float x = cos(angulo) * r;
-    float z = sin(angulo) * r;
-    vertex(x, -h / 2, z);        // círculo superior
-    vertex(x,  h / 2, z);        // círculo inferior
-  }
-  endShape();
-  // tapas
-  ellipse(0, -h / 2, r * 2, r * 2);
-  ellipse(0,  h / 2, r * 2, r * 2);
+// Semilla de girasol generada con el ángulo áureo y la secuencia de Fibonacci.
+size(640, 640);
+background(255, 240, 200);
+noStroke();
+
+int n = 600;                 // número de semillas
+float phi = (1 + sqrt(5)) / 2;   // número áureo
+
+for (int i = 0; i < n; i++) {
+  // ángulo: giro acumulado de unos 137,5 grados por semilla
+  float angulo = i * radians(137.50776405);
+  // radio: proporcional a la raíz de i (distribución uniforme en el área)
+  float radio = 6 * sqrt(i);
+  float x = width / 2 + radio * cos(angulo);
+  float y = height / 2 + radio * sin(angulo);
+  // el color y el tamaño crecen hacia el exterior
+  float t = map(i, 0, n, 0, 1);
+  fill(60 + 60 * t, 40 + 40 * t, 20, 255);
+  ellipse(x, y, 4 + 8 * t, 4 + 8 * t);
 }
 ```
 
-### 2.3. Transformaciones en 3D
-
-Se reutilizan las transformaciones del Tema 4 y se añaden las versiones con eje explícito:
-
-- `translate(x, y, z)` — desplazamiento en los tres ejes.
-- `rotateX(a)`, `rotateY(a)`, `rotateZ(a)` — rotación alrededor de un eje concreto.
-- `rotate(a)` — equivale a `rotateZ(a)`.
-- `scale(s)` o `scale(sx, sy, sz)` — escalado.
-- `pushMatrix()` / `popMatrix()` — guardan y restauran el estado, igual que en 2D.
-
-### 2.4. Luces
-
-Sin luces, los sólidos se ven planos y monocromos. Processing ofrece varios tipos:
-
-| Función | Efecto |
-|---|---|
-| `ambientLight(r, g, b)` | Luz difusa uniforme desde todos los lados |
-| `directionalLight(r, g, b, dx, dy, dz)` | Luz paralela en una dirección (sol) |
-| `pointLight(r, g, b, x, y, z)` | Luz que emite desde un punto (bombilla) |
-| `specular(r, g, b)` + `shininess(n)` | Brillo especular de la superficie |
-| `noLights()` | Apaga todas las luces |
-
 ```java
-// Sólidos iluminados: esfera con luz direccional y caja con luz puntual.
-size(700, 450, P3D);
-background(10, 12, 20);
+// Rectángulos áureos encadenados: base de la espiral áurea.
+size(640, 400);
+background(255);
+stroke(40);
+strokeWeight(2);
+noFill();
 
-directionalLight(255, 230, 200, -0.5, -0.5, -1);   // luz tipo sol
-pointLight(120, 180, 255, 300, -100, 300);         // luz azulada
+float a = 233;                 // término de Fibonacci como lado inicial
+float b = a * (1 + sqrt(5)) / 2;  // lado según el número áureo
+float x = 20, y = 60;
 
-noStroke();
-fill(220, 120, 60);
-translate(-140, 0, 0);
-sphere(90);
-
-fill(80, 200, 160);
-translate(300, 0, 0);
-box(140);
-```
-
-### 2.5. Cámara y perspectiva
-
-```java
-// Cámara personalizada: la función camera(eye, center, up) define el punto de vista.
-//   eyeX, eyeY, eyeZ    -> posición del observador
-//   centerX, centerY, centerZ -> punto al que mira
-//   upX, upY, upZ       -> vector "arriba" (normalmente 0, -1, 0)
-size(700, 450, P3D);
-background(15);
-
-camera(0, -250, 400,  0, 0, 0,  0, 1, 0);   // vista cenital
-// perspective(PI/3, width/float(height), 10, 5000);  // descomentar para ajustar la proyección
-
-noStroke();
-fill(230, 90, 110);
-box(160);
-fill(90, 170, 230);
-translate(0, 0, -200);
-sphere(90);
-```
-
-Parámetros de `perspective(fovy, aspect, zNear, zFar)`:
-
-- `fovy`: ángulo vertical del campo de visión (en radianes; `PI/3` es un valor habitual).
-- `aspect`: proporción ancho/alto, normalmente `width / float(height)`.
-- `zNear` / `zFar`: planos de recorte; todo lo más cercano o más lejano no se dibuja.
-
----
-
-## 3. Ejemplo completo: escena 3D animada
-
-```java
-// Escena 3D animada: plataforma giratoria con cajas y una esfera orbital.
-// Teclas: '+' y '-' aceleran o frenan la rotación; 'p' alterna la cámara.
-float velocidad = 0.01;
-float anguloPlataforma = 0;
-float anguloOrbita = 0;
-boolean camaraAlta = true;
-
-void setup() {
-  size(800, 550, P3D);
-  noStroke();
-}
-
-void draw() {
-  background(8, 10, 18);
-
-  // luces de la escena
-  ambientLight(70, 70, 80);
-  directionalLight(255, 240, 220, -0.4, -0.8, -0.6);
-
-  // cámara: dos puntos de vista alternativos
-  if (camaraAlta) {
-    camera(0, -320, 520,  0, 0, 0,  0, 1, 0);
+for (int i = 0; i < 6; i++) {
+  if (i % 2 == 0) {
+    rect(x, y, b, a);
+    x += a;                    // el siguiente rectángulo va a la derecha
   } else {
-    camera(450, -60, 350,  0, 0, 0,  0, 1, 0);
+    rect(x, y, a, b);
+    y += b - a;
   }
-
-  // --- plataforma giratoria ---
-  pushMatrix();
-  rotateY(anguloPlataforma);
-
-  fill(60, 65, 80);
-  translate(0, 60, 0);
-  box(340, 20, 340);           // base
-
-  // ocho cajas dispuestas en círculo
-  for (int i = 0; i < 8; i++) {
-    pushMatrix();
-    float a = TWO_PI * i / 8;
-    translate(cos(a) * 130, 0, sin(a) * 130);
-    rotateY(-a);               // cada caja mira hacia fuera
-    fill(200 - i * 15, 110 + i * 12, 90);
-    box(50, 60, 50);
-    popMatrix();
-  }
-
-  // --- esfera en órbita alrededor del conjunto ---
-  pushMatrix();
-  float eo = anguloOrbita;
-  translate(cos(eo) * 220, -80 + 30 * sin(eo * 2), sin(eo) * 220);
-  fill(120, 220, 255);
-  sphereDetail(30);
-  sphere(45);
-  popMatrix();
-
-  popMatrix();
-
-  anguloPlataforma += velocidad;   // animación
-  anguloOrbita += 0.03;
+  float t = a; a = b - a; b = t;   // paso al siguiente par de Fibonacci
 }
+```
 
-void keyPressed() {
-  if (key == '+') velocidad += 0.005;
-  if (key == '-') velocidad = max(0, velocidad - 0.005);
-  if (key == 'p' || key == 'P') camaraAlta = !camaraAlta;
+> **Idea clave**: no es que la naturaleza «sepa» matemáticas, sino que la **selección premia** las disposiciones que aprovechan mejor el espacio. El arte generativo imita ese procedimiento: definir una regla numérica y dejar que el algoritmo despliegue la forma.
+
+---
+
+## 2. Fractales
+
+### 2.1. ¿Qué es un fractal?
+
+Un **fractal** es una estructura geométrica que presenta **autosemejanza**: una porción cualquiera de la figura, ampliada, se parece al conjunto completo. Se generan a partir de un procedimiento repetido muchas veces, normalmente mediante **recursión**.
+
+Rasgos característicos:
+
+- **Detalle a cualquier escala**: cuanto más se amplía, más estructura aparece.
+- **Dimensión fractal**: a diferencia de una curva (dimensión 1) o una superficie (dimensión 2), muchos fractales tienen dimensión **no entera**. Por ejemplo, la curva de Koch tiende a $D = \dfrac{\ln 4}{\ln 3} \approx 1{,}2619$, porque con cada iteración multiplica su longitud por 4 mientras se mantiene dentro de una escala acotada: «llena» más que una línea pero no llega a llenar una superficie.
+- **Origen simple**: reglas cortas aplicadas de forma iterativa producen complejidad emergente.
+
+Ejemplos naturales: costas, ramificaciones de los ríos, nerviuras de las hojas, copos de nieve, retículo pulmonar, relámpagos.
+
+### 2.2. Recursión: el motor de los fractales
+
+Una **función recursiva** es la que **se llama a sí misma** con un argumento más pequeño, hasta alcanzar un caso base en el que deja de repetirse. En Processing (sintaxis tipo Java), la recursión se escribe igual que en cualquier otro lenguaje:
+
+```java
+// Ejemplo mínimo de recursión: cuenta hacia atrás hasta 0.
+void cuenta(int n) {
+  if (n <= 0) {          // caso base: detiene la recursión
+    println("¡Fin!");
+    return;
+  }
+  println(n);
+  cuenta(n - 1);         // llamada recursiva
+}
+```
+
+::: warning Regla de oro
+Toda función recursiva necesita un **caso base** y debe **acercarse** a él en cada llamada. Si falta una de las dos cosas, el programa entra en bucle infinito y el sistema operativo terminará cerrando el sketch.
+:::
+
+### 2.3. Árbol binario recursivo
+
+```java
+// Árbol binario: cada rama genera dos ramas hijas más cortas y giradas.
+size(700, 500);
+background(20, 25, 40);
+stroke(220, 200, 160);
+strokeWeight(3);
+noFill();
+
+translate(width / 2, height - 40);   // base del tronco
+rama(150, radians(-90));             // ángulo inicial: hacia arriba
+
+void rama(float largo, float angulo) {
+  pushMatrix();
+  rotate(angulo);
+  line(0, 0, largo, 0);              // trazo de la rama
+  translate(largo, 0);               // nos situamos en el extremo
+
+  if (largo > 4) {                   // caso base: longitud mínima
+    strokeWeight(max(1, strokeWeight - 0.4));
+    rama(largo * 0.72, radians(-25));   // rama izquierda
+    rama(largo * 0.72, radians(25));    // rama derecha
+  }
+  popMatrix();
+}
+```
+
+Conviene probar variaciones: cambiar el factor `0.72`, el ángulo de bifurcación o el número de ramas (3 en lugar de 2) produce especies vegetales muy distintas.
+
+### 2.4. Curva de Koch
+
+La **curva de Koch** se construye dividiendo cada segmento en tres partes iguales y reemplazando el tercio central por dos segmentos que forman un triángulo equilátero. Iterando sobre los seis lados de un triángulo inicial se obtiene el **copo de nieve de Koch**.
+
+```java
+// Copo de nieve de Koch: recursión sobre un segmento inicial.
+size(700, 700);
+background(10, 20, 40);
+stroke(230, 245, 255);
+strokeWeight(1.5);
+noFill();
+
+// triángulo equilátero inicial inscrito en el lienzo
+float lado = 480;
+float x1 = width / 2 - lado / 2, y1 = height / 2 + lado / 4;
+float x2 = width / 2 + lado / 2, y2 = y1;
+float x3 = width / 2,            y3 = height / 2 - lado / 2 + lado / 4;
+
+koch(x1, y1, x2, y2, 5);   // nivel de detalle 5
+koch(x2, y2, x3, y3, 5);
+koch(x3, y3, x1, y1, 5);
+
+void koch(float ax, float ay, float bx, float by, int nivel) {
+  if (nivel == 0) {                     // caso base: dibuja el segmento
+    line(ax, ay, bx, by);
+    return;
+  }
+  // puntos de división en tercios
+  float dx = (bx - ax) / 3, dy = (by - ay) / 3;
+  float px = ax + dx, py = ay + dy;          // primer tercio
+  float qx = ax + 2 * dx, qy = ay + 2 * dy;  // segundo tercio
+  // vértice del triángulo equilátero (rotación de 60° del vector px->qx)
+  float vx = px + (qx - px) * cos(radians(-60)) - (qy - py) * sin(radians(-60));
+  float vy = py + (qx - px) * sin(radians(-60)) + (qy - py) * cos(radians(-60));
+
+  koch(ax, ay, px, py, nivel - 1);
+  koch(px, py, vx, vy, nivel - 1);
+  koch(vx, vy, qx, qy, nivel - 1);
+  koch(qx, qy, bx, by, nivel - 1);
 }
 ```
 
 ---
 
-## 4. Herramientas de modelado 3D
+## 3. Imagen de mapa de bits
 
-El **modelado 3D** consiste en construir una representación matemática de un objeto volumétrico. Existen dos grandes familias:
+### 3.1. Píxel, resolución, canal y profundidad de color
 
-- **Modelado por cajas / *mesh***: se parte de primitivas (cubo, esfera) que se deforman y combinan (Blender, SketchUp, Tinkercad).
-- **Modelado paramétrico / procedural**: el objeto se define mediante restricciones o código, lo que permite regenerarlo variando parámetros (OpenSCAD, FreeCAD).
+Una **imagen de mapa de bits** (*bitmap*) es una rejilla rectangular de puntos de color indivisibles llamados **píxeles**. Cuatro magnitudes la definen:
 
-### 4.1. Tabla comparativa
+| Concepto | Definición | Ejemplo |
+|---|---|---|
+| **Píxel** | Mínima unidad de información de la imagen | Un cuadradito con un color |
+| **Resolución** | Número de píxeles en alto × ancho | 1920 × 1080 px |
+| **Canal** | Valor de un componente de color (R, G, B, A) | Rojo = 200 |
+| **Profundidad de color** | Bits por píxel → número de colores posibles | 8 bits = 256 colores; 24 bits = 16 777 216 colores |
 
-| Herramienta | Tipo | Para qué sirve | Curva de aprendizaje | Licencia | Coste |
-|---|---|---|---|---|---|
-| **Tinkercad** | Cajas en el navegador | Piezas sencillas, iniciación educativa, electrónica y circuitos | **Muy baja** (arrastrar y soltar) | Propietaria (Autodesk) | Gratuita (nube) |
-| **Blender** | *Mesh* y escena completa | Animación, modelado orgánico, renderizado, VFX, impresión 3D | **Alta** (muy amplia) | GPL v2+ | Gratuita y código abierto |
-| **OpenSCAD** | Código / programático | Piezas técnicas y mecánicas descritas con script; ideal para quien programa | **Media-alta** (pensar en código, no en dibujo) | GPL v2+ | Gratuita y código abierto |
-| **FreeCAD** | Paramétrico CAD técnico | Ingeniería, piezas con cotas y restricciones, arquitectura técnica | **Media-alta** | LGPL v2.1 / GPL | Gratuita y código abierto |
-| **SketchUp** | Cajas / polígonos | Arquitectura, interiores, maquetas rápidas y presentaciones | **Baja** | Propietaria (Trimble) | Gratuita (versión web) y de pago |
+En el modelo **RGB** aditivo, cada píxel almacena tres valores de 0 a 255:
 
-### 4.2. ¿Cuándo usar cada una?
+- **R** (rojo), **G** (verde), **B** (azul).
+- `color(255, 0, 0)` es rojo puro; `color(0, 0, 0)` es negro; `color(255)` es gris claro y `color(255, 255, 255)` blanco.
+- Profundidad de **24 bits** = 8 bits por canal × 3 canales = $2^{24} = 16\,777\,216$ colores posibles. Si se añade el canal alfa (transparencia) hablamos de **32 bits**.
 
-- **Tinkercad**: primeras piezas, aula de informática sin instalación, bloques lógicos y placas.
-- **SketchUp**: edificios, habitaciones y mobiliario con medidas reales.
-- **Blender**: personajes, escenas orgánicas, animación y texturizado de alta calidad.
-- **FreeCAD**: piezas mecánicas con tolerancias, tornillos, engranajes, planos acotados.
-- **OpenSCAD**: cuando el diseño **es un algoritmo** —piezas generadas por fórmulas, variaciones masivas, adaptación a datos—. Es el más afin con lo visto en esta asignatura.
+### 3.2. Acceso a los píxeles en Processing
 
-Ejemplo mínimo en OpenSCAD, equivalente programático a un sólido de revolución:
+Processing gestiona la imagen con la clase `PImage`. Las dos formas de trabajar con sus píxeles son:
 
-```c
-// Plato con agujero central: operaciones booleanas de sustracción.
-difference() {
-  cylinder(h = 12, r = 40, $fn = 64);   // cilindro exterior
-  translate([0, 0, -1])
-    cylinder(h = 20, r = 12, $fn = 64);  // agujero que se resta
-}
-```
-
-### 4.3. Exportación de modelos: formato STL
-
-El **STL** (*STereoLithography*) es el formato de intercambio más extendido para objetos 3D. Describe la superficie como una **malla de triángulos** (vértices y normales), sin colores ni texturas.
-
-**Ruta de trabajo habitual:**
-
-1. Se modela en la herramienta elegida.
-2. Se **exporta** a STL (`File > Export` / `Export STL`).
-3. Se abre el STL en un **slicer** (Cura, PrusaSlicer, Bambu Studio) que lo convierte en **G-code**: capas, rellenos, soportes y temperatura.
-4. La impresora 3D ejecuta ese G-code.
-
-::: warning Comprueba la escala
-El STL **no guarda unidades**: los programas asientan milímetros o pulgadas por convención. Antes de imprimir, verifica en el slicer que la pieza mide lo que debe.
-:::
-
-**STL y Processing:**
-
-- Processing **no lee STL de forma nativa**; `loadShape()` admite formatos como **OBJ**, **DAE**, **SVG** y fuentes **TTF**:
+- **Método directo (sencillo)**: `img.get(x, y)` devuelve el color de una posición y `img.set(x, y, c)` lo escribe. Ideal para operaciones puntuales, pero lento si se recorre la imagen entera (llamada a función por píxel).
+- **Método masivo (rápido)**: `img.loadPixels()` carga el array `img.pixels[]` en memoria; se recorre con un bucle y, al terminar, `img.updatePixels()` lo escribe de vuelta. El índice de un píxel es `i = x + y * img.width`.
 
 ```java
-// Carga de un modelo OBJ (misma carpeta data/) con cámara orbital sencilla.
-size(700, 500, P3D);
-PShape modelo = loadShape("pieza.obj");
-background(30);
+// Carga de una imagen del directorio data/ y visualización con ambas técnicas.
+// Guarda la foto como "foto.jpg" dentro de una carpeta data/ junto al sketch.
+size(800, 400);
+PImage img = loadImage("foto.jpg");
+image(img, 0, 0);                      // imagen original a la izquierda
 
-translate(width / 2, height / 2);
-rotateY(frameCount * 0.01);      // giro continuo para inspeccionar la pieza
-scale(1.5);
-shape(modelo);
+// copia pixel a pixel usando get()/set()
+PImage copia = createImage(img.width, img.height, RGB);
+for (int x = 0; x < img.width; x++) {
+  for (int y = 0; y < img.height; y++) {
+    color c = img.get(x, y);
+    copia.set(x, y, c);
+  }
+}
+image(copia, img.width, 0);
 ```
 
-- Para importar STL en Processing se recurre a **librerías de terceros** (disponibles en *Sketch > Import Library...*), que convierten la malla a una `PShape`.
-- Otra vía habitual es **exportar desde Processing** un modelo OBJ con librerías de mallas y llevarlo a un slicer o a Blender.
-- Los formatos **OBJ** y **STL** son interoperables: Blender, FreeCAD, Tinkercad y SketchUp trabajan con ambos (y con **3MF**, más moderno y con metadatos).
+---
+
+## 4. Filtros pixel a pixel
+
+### 4.1. Estructura común de un filtro
+
+Todo filtro sigue el mismo esquema:
+
+1. Cargar la imagen con `loadImage()`.
+2. Llamar a `loadPixels()` para traer los píxeles al array.
+3. Recorrer la imagen con dos bucles anidados.
+4. Leer el color, **extraer sus canales** con `red()`, `green()`, `blue()`.
+5. Calcular el nuevo valor y guardarlo en `pixels[i]`.
+6. Llamar a `updatePixels()` y mostrar con `image()`.
+
+Toda la diferencia entre filtros está en el paso 4: la **fórmula** que transforma los canales.
+
+### 4.2. Escala de grises (luminancia)
+
+Convertir a gris no consiste en promediar simplemente: el ojo humano es más sensible al verde. Se usa la fórmula de **luminancia**:
+
+```java
+// Filtro: escala de grises por luminancia.
+size(800, 400);
+PImage img = loadImage("foto.jpg");
+
+img.loadPixels();
+for (int i = 0; i < img.pixels.length; i++) {
+  float r = red(img.pixels[i]);
+  float g = green(img.pixels[i]);
+  float b = blue(img.pixels[i]);
+  // pesos de la luminancia: 0,3·R + 0,59·G + 0,11·B
+  float gris = 0.3 * r + 0.59 * g + 0.11 * b;
+  img.pixels[i] = color(gris, gris, gris);
+}
+img.updatePixels();
+image(img, 0, 0);
+```
+
+### 4.3. Negativo (inversión)
+
+```java
+// Filtro: negativo, invirtiendo cada canal con 255 - valor.
+size(800, 400);
+PImage img = loadImage("foto.jpg");
+
+img.loadPixels();
+for (int i = 0; i < img.pixels.length; i++) {
+  float r = 255 - red(img.pixels[i]);
+  float g = 255 - green(img.pixels[i]);
+  float b = 255 - blue(img.pixels[i]);
+  img.pixels[i] = color(r, g, b);
+}
+img.updatePixels();
+image(img, 0, 0);
+```
+
+### 4.4. Umbral (binarización)
+
+El filtro de **umbral** convierte la imagen en blanco y negro puros: si la luminancia supera un valor crítico el píxel es blanco, en caso contrario negro. Es la base de la **segmentación** y del reconocimiento de siluetas.
+
+```java
+// Filtro: umbral (binarización) con valor de corte 128.
+size(800, 400);
+PImage img = loadImage("foto.jpg");
+
+int umbral = 128;
+img.loadPixels();
+for (int i = 0; i < img.pixels.length; i++) {
+  float r = red(img.pixels[i]);
+  float g = green(img.pixels[i]);
+  float b = blue(img.pixels[i]);
+  float gris = 0.3 * r + 0.59 * g + 0.11 * b;
+  if (gris > umbral) {
+    img.pixels[i] = color(255);        // blanco
+  } else {
+    img.pixels[i] = color(0);          // negro
+  }
+}
+img.updatePixels();
+image(img, 0, 0);
+```
+
+### 4.5. Sepia
+
+El tono sepia se obtiene aplicando una **mezcla ponderada** de los canales y reduciendo el contraste hacia los marrones:
+
+```java
+// Filtro: sepia con combinación lineal de canales.
+size(800, 400);
+PImage img = loadImage("foto.jpg");
+
+img.loadPixels();
+for (int i = 0; i < img.pixels.length; i++) {
+  float r = red(img.pixels[i]);
+  float g = green(img.pixels[i]);
+  float b = blue(img.pixels[i]);
+  // fórmula clásica de sepia
+  float nr = min(255, 0.393 * r + 0.769 * g + 0.189 * b);
+  float ng = min(255, 0.349 * r + 0.686 * g + 0.168 * b);
+  float nb = min(255, 0.272 * r + 0.534 * g + 0.131 * b);
+  img.pixels[i] = color(nr, ng, nb);
+}
+img.updatePixels();
+image(img, 0, 0);
+```
+
+### 4.6. Extracción de un canal
+
+Aislamos un solo canal y lo replicamos en los tres para obtener una imagen dominada por ese componente:
+
+```java
+// Filtro: canal rojo dominante.
+size(800, 400);
+PImage img = loadImage("foto.jpg");
+
+img.loadPixels();
+for (int i = 0; i < img.pixels.length; i++) {
+  float r = red(img.pixels[i]);
+  img.pixels[i] = color(r, r * 0.3, r * 0.3);   // rojo puro atenuado
+}
+img.updatePixels();
+image(img, 0, 0);
+```
+
+### 4.7. Comparativa de filtros
+
+| Filtro | Operación sobre los canales | Efecto visual |
+|---|---|---|
+| **Escala de grises** | $0{,}3R + 0{,}59G + 0{,}11B$ en los tres canales | Blanco y negro con matices |
+| **Negativo** | $255 - R,\; 255 - G,\; 255 - B$ | Inversión tipo película rayada |
+| **Umbral** | Si luminancia > T → 255, si no → 0 | Dos niveles, siluetas marcadas |
+| **Sepia** | Combinación lineal con pesos ~0,3 / 0,7 / 0,18 | Fotografía antigua |
+| **Canal rojo** | Se conserva R y se atenúan G y B | Tono rojizo dominante |
 
 ---
 
@@ -295,28 +372,26 @@ shape(modelo);
 
 | Aprendizaje | Herramienta |
 |---|---|
-| Espacio 3D | Ejes X, Y, Z; punto `(x, y, z)` |
-| Punto de vista | `camera(eye, center, up)` |
-| Proyección | `perspective(fovy, aspect, zNear, zFar)` |
-| Motor de render | `size(w, h, P3D)` |
-| Sólidos | `box()`, `sphere()`, `sphereDetail()`; cilindro propio |
-| Transformaciones | `translate()`, `rotateX/Y/Z()`, `scale()`, `push/popMatrix()` |
-| Iluminación | `ambientLight()`, `directionalLight()`, `pointLight()` |
-| Herramientas | Tinkercad, Blender, OpenSCAD, FreeCAD, SketchUp |
-| Intercambio | STL (impresión 3D), OBJ (Processing/`loadShape`) |
+| Fibonacci y número áureo | Secuencia $F_n = F_{n-1} + F_{n-2}$, ángulo de 137,5° |
+| Espirales y rosetas generativas | `sqrt(i)`, `cos()`, `sin()` con giro acumulado |
+| Fractales y recursión | Función que se llama a sí misma + caso base |
+| Fractal típico en Processing | Árbol binario, curva de Koch / copo de nieve |
+| Imagen de mapa de bits | `PImage`, píxel, resolución, canal RGB, profundidad |
+| Acceso a píxeles | `get()/set()` (puntual) o `loadPixels()/pixels[]/updatePixels()` (masivo) |
+| Filtros | Escala de grises, negativo, umbral, sepia, canales |
 
 ---
 
 ## Ejercicios
 
-1. **Primeros sólidos.** Crea una escena con tres piezas: una caja de 100×40×60 px, una esfera de radio 50 y un cilindro construido con la función propia de la sección 2.2. Sitúalas sin solaparse y asígnales colores distintos. Explica con una frase qué ocurriría si olvidaras `pushMatrix()/popMatrix()` en el cilindro.
+1. **Sucesor de Fibonacci.** Escribe un sketch en Processing que almacene los 30 primeros términos de la secuencia en un `int[]` usando un bucle (sin recursión) y los muestre en pantalla en dos columnas: el término y el cociente aproximado con su siguiente. Observa a partir de qué posición el cociente se estabiliza en torno a 1,618.
 
-2. **Giro en los tres ejes.** Dibuja una pirámide (con `beginShape()` y `vertex()`) que rote simultáneamente con `rotateX()`, `rotateY()` y `rotateZ()` a velocidades distintas. Añade `directionalLight()` y describe cómo cambia la percepción del volumen al apagar las luces con `noLights()`.
+2. **Girasol paramétrico.** Modifica el ejemplo de la sección 1.1 para que el número de semillas, el paso angular y el tamaño inicial se lean de variables al inicio del código. Experimenta con `137,5°`, `90°` y `60°` y explica qué patrón visual produce cada valor.
 
-3. **Órbita lunar.** Diseña una escena con un planeta fijo en el origen, una luna que orbite a su alrededor y un satélite que orbite a su vez alrededor de la luna. Las órbitas deben animarse con variables acumulativas, no con `frameCount` directamente dentro de las transformaciones.
+3. **Árbol con tres ramas.** Partiendo del árbol binario de la sección 2.3, haz que cada rama genere **tres** ramas hijas con ángulos de −30°, 0° y +30°. Controla el nivel de profundidad con un parámetro adicional en lugar de limitar solo la longitud, y dibuja las ramas finales en verde y el tronco en marrón.
 
-4. **Comparativa crítica.** Elige una pieza que te gustaría fabricar (por ejemplo, un llavero, un soporte de auriculares o una caja organizadora) y redacta una tabla de decisión con dos columnas: **Tinkercad** y **OpenSCAD**. Indica en qué casos elegirías cada herramienta, justificando la respuesta con la curva de aprendizaje, la necesidad de variaciones paramétricas y la licencia.
+4. **Copo de nieve de Minkowski.** Investiga brevemente una variante de la curva de Koch y descríbela como pseudocódigo antes de programarla. Implementa la versión básica con nivel de detalle 3 y dibuja los seis lados de un hexágono regular en lugar de un triángulo.
 
-5. **De la nube a la impresora.** Documenta por escrito el flujo completo: (a) modela la pieza del ejercicio anterior en la herramienta elegida, (b) expórtala a STL, (c) ábrela en un slicer e indica qué parámetros configurarías (altura de capa, relleno, soportes), (d) explica por qué Processing no puede sustituir a un slicer. Si dispones de impresora, imprime la pieza.
+5. **Comparador de filtros.** Crea un sketch que muestre **tres copias** de la misma imagen en pantalla: original, escala de grises y negativo. Usa `get()` y `set()` en una de las copias y `loadPixels()/pixels[]` en otra; mide con `millis()` el tiempo de cada proceso y anota cuál es más rápido y por qué.
 
-6. **Mini visor 3D con cámara.** Partiendo del ejemplo de la sección 2.5, programa una escena que cargue un archivo `pieza.obj` con `loadShape()` y permita cambiar la cámara con las teclas `1` (vista frontal), `2` (vista lateral) y `3` (vista cenital), alterando los argumentos de `camera()`. Añade la tecla `l` para encender y apagar las luces.
+6. **Filtro propio: duotono.** Implementa un filtro que convierta la imagen en dos colores fijos (por ejemplo, azul oscuro para las zonas oscuras y naranja claro para las claras) usando la luminancia como valor de interpolación con `lerpColor(colorA, colorB, gris / 255)`. Añade una tecla para alternar entre el filtro y la imagen original.

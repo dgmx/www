@@ -1,397 +1,363 @@
-# TEMA 5: Arte generativo, fractales y procesamiento de imágenes
+# TEMA 5: Eventos, gráficos vectoriales y transformaciones
 
-### Bloque B. Creación digital y pensamiento computacional | CDPC.1.A.6
+### Bloque B. Creación digital y pensamiento computacional | CDPC.1.A.5
 
-> **Currículo LOMLOE - Andalucía** | Criterios: CDPC.1.A.6
+> **Currículo LOMLOE - Andalucía** | Criterios: CDPC.1.A.5
 
 ---
 
-## 1. Arte generativo en la naturaleza
+## 1. Gráficos vectoriales y diseño generativo
 
-### 1.1. La secuencia de Fibonacci
+### 1.1. Gráficos vectoriales frente a mapa de bits
 
-La **secuencia de Fibonacci** es una sucesión de números en la que cada término es la suma de los dos anteriores, empezando por 0 y 1:
+En procesamiento de imágenes conviven dos grandes familias de representación:
 
-$$F_0 = 0,\quad F_1 = 1,\quad F_n = F_{n-1} + F_{n-2} \;\text{ para } n \geq 2$$
+| Característica | **Gráfico vectorial** | **Imagen de mapa de bits** |
+|---|---|---|
+| Elemento básico | Primitivas geométricas (punto, línea, curva) | Píxeles en una rejilla |
+| Escalado | Sin pérdida de calidad | Se pixela y se degrada |
+| Edición | Se modifican los objetos por separado | Se modifican píxeles sueltos |
+| Tamaño de archivo | Suele ser menor en dibujos técnicos | Crece con la resolución |
+| Uso típico | Logotipos, ilustración, tipografía, croquis | Fotografías, capturas, texturas |
 
-Así se obtiene: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144...
+En Processing trabajamos sobre todo con **gráficos vectoriales**: cada forma se describe mediante coordenadas y parámetros (`line(x1, y1, x2, y2)`), de modo que podemos redibujarla a otra escala sin que se deteriore. La imagen de mapa de bits se estudia en el Tema 5.
 
-Dos propiedades la hacen especialmente interesante para el diseño:
+### 1.2. Diseño digital generativo basado en algoritmos
 
-- El **cociente entre dos términos consecutivos** se aproxima cada vez más al **número áureo**:
+Un **diseño generativo** es aquel cuya apariencia final la define un **algoritmo**: el artista no dibuja cada trazo a mano, sino que fija reglas, parámetros y grados de azar, y el programa produce la obra. Sus rasgos fundamentales son:
 
-$$\varphi = \frac{1 + \sqrt{5}}{2} \approx 1{,}6180339887\ldots$$
+- **Regla explícita**: el diseño se describe como una secuencia finita de instrucciones (CDPC.1.A.2).
+- **Iteración**: se repiten módulos, simetrías o variaciones mediante bucles (CDPC.1.A.3).
+- **Parámetros variables**: colores, longitudes, densidades o semillas aleatorias que producen familias enteras de composiciones.
+- **Emergencia**: de reglas simples aparecen estructuras visuales complejas y difíciles de prever a simple vista.
 
-- A partir de cierto término, la secuencia permite construir **rectángulos áureos** encadenados, base de la **espiral áurea**.
-
-### 1.2. Espirales áureas en la naturaleza
-
-Los **girosores**, las **piñas**, las **conchas** o los **cascos de los girasoles** presentan espirales que giran en sentidos opuestos y cuyo número suele ser un par de números consecutivos de Fibonacci (por ejemplo, 34 y 55). La razón es evolutiva: los elementos (semillas, escamas, hojas) se disponen con un giro de unos 137,5° —el llamado **ángulo áureo**, $360°\,(1-\varphi)^{-2} \bmod 360° \approx 137{,}5°$— respecto al anterior, lo que maximiza el espacio ocupado y la exposición a la luz.
+Ejemplos habituales: tramas de líneas con variación de grosor, mosaicos irregulares, estelas de partículas, composiciones tipográficas repetidas, mapas abstractos generados a partir de datos o de números aleatorios.
 
 ```java
-// Semilla de girasol generada con el ángulo áureo y la secuencia de Fibonacci.
-size(640, 640);
-background(255, 240, 200);
+// Composición generativa: rejilla de cuadrados con tamaño y tono aleatorios.
+// Cada ejecución produce una variante distinta de la misma regla.
+size(600, 600);
 noStroke();
-
-int n = 600;                 // número de semillas
-float phi = (1 + sqrt(5)) / 2;   // número áureo
-
-for (int i = 0; i < n; i++) {
-  // ángulo: giro acumulado de unos 137,5 grados por semilla
-  float angulo = i * radians(137.50776405);
-  // radio: proporcional a la raíz de i (distribución uniforme en el área)
-  float radio = 6 * sqrt(i);
-  float x = width / 2 + radio * cos(angulo);
-  float y = height / 2 + radio * sin(angulo);
-  // el color y el tamaño crecen hacia el exterior
-  float t = map(i, 0, n, 0, 1);
-  fill(60 + 60 * t, 40 + 40 * t, 20, 255);
-  ellipse(x, y, 4 + 8 * t, 4 + 8 * t);
+int celda = 40;                     // tamaño de celda de la rejilla
+for (int x = 0; x < width; x += celda) {
+  for (int y = 0; y < height; y += celda) {
+    float t = random(0.2, 1.0);     // parámetro aleatorio por celda
+    fill(40 + 180 * t, 90, 160 + 70 * t);
+    float lado = celda * t;         // el lado depende del parámetro
+    rect(x + (celda - lado) / 2, y + (celda - lado) / 2, lado, lado);
+  }
 }
 ```
 
+---
+
+## 2. Eventos: ratón y teclado
+
+### 2.1. ¿Qué es un evento?
+
+Un **evento** es cualquier acción del usuario (pulsar el ratón, moverlo, teclear) que interrumpe el flujo normal del programa. Processing ofrece una solución sencilla: basta con **definir una función con un nombre concreto** y el entorno la ejecutará automáticamente cada vez que ocurra ese suceso. No hay que registrar ningún oyente ni escribir un bucle de espera.
+
+Las funciones de evento se escriben **fuera** de `setup()` y de `draw()`, normalmente al final del archivo:
+
 ```java
-// Rectángulos áureos encadenados: base de la espiral áurea.
+void mousePressed() { ... }   // al pulsar un botón del ratón
+void mouseDragged()  { ... }   // al arrastrar con un botón pulsado
+void mouseReleased() { ... }   // al soltar el botón
+void keyPressed()    { ... }   // al pulsar una tecla
+void keyReleased()   { ... }   // al soltar la tecla
+```
+
+### 2.2. Variables disponibles del ratón y del teclado
+
+| Variable | Tipo | Significado |
+|---|---|---|
+| `mouseX`, `mouseY` | `int` | Posición actual del puntero en el lienzo |
+| `pmouseX`, `pmouseY` | `int` | Posición del puntero en el **frame** anterior |
+| `mousePressed` | `boolean` | `true` mientras hay un botón pulsado |
+| `mouseButton` | `int` | Botón activo: `LEFT`, `RIGHT` o `CENTER` |
+| `key` | `char` | Última tecla pulsada (carácter) |
+| `keyCode` | `int` | Código numérico de la tecla (flechas, MAYÚS...) |
+
+> **Consejo**: `pmouseX/pmouseY` es la clave para dibujar trazos continuos: conectando la posición actual con la anterior obtenemos un segmento por cada fotograma.
+
+### 2.3. Ejemplo: pintar al arrastrar y borrar con la barra espaciadora
+
+```java
+// Pizarra con eventos de ratón y teclado.
+// - Arrastrar el ratón dibuja un trazo.
+// - Pulsa 'c' o la barra espaciadora para limpiar el lienzo.
 size(640, 400);
+background(30);
+stroke(255);
+strokeWeight(3);
+
+void draw() {
+  // Dibujo continuo: se actualiza solo cuando el botón está pulsado
+  if (mousePressed) {
+    line(pmouseX, pmouseY, mouseX, mouseY);
+  }
+}
+
+void mousePressed() {
+  // Un punto inicial evita el "salto" de la primera línea
+  point(mouseX, mouseY);
+}
+
+void keyPressed() {
+  if (key == 'c' || key == 'C' || key == ' ') {
+    background(30);              // borrar el lienzo
+  }
+}
+```
+
+### 2.4. Ejemplo: dibujo a mano alzada combinando `point()` y `line()`
+
+El dibujo a mano alzada es el ejemplo clásico de uso conjunto de **punto** y **línea**: se coloca un punto en la posición actual y se traza un segmento hacia ella desde la anterior.
+
+```java
+// Dibujo a mano alzada con cambio de color y grosor por teclado.
+// Teclas: '+' engrosa el trazo, '-' lo adelgaza, 'l' limpia.
+size(700, 450);
 background(255);
-stroke(40);
-strokeWeight(2);
+stroke(20, 60, 140);
+strokeWeight(4);
 noFill();
 
-float a = 233;                 // término de Fibonacci como lado inicial
-float b = a * (1 + sqrt(5)) / 2;  // lado según el número áureo
-float x = 20, y = 60;
-
-for (int i = 0; i < 6; i++) {
-  if (i % 2 == 0) {
-    rect(x, y, b, a);
-    x += a;                    // el siguiente rectángulo va a la derecha
-  } else {
-    rect(x, y, a, b);
-    y += b - a;
+void draw() {
+  if (mousePressed) {
+    // punto en la posición actual del ratón
+    point(mouseX, mouseY);
+    // y segmento desde la posición del fotograma anterior
+    line(pmouseX, pmouseY, mouseX, mouseY);
   }
-  float t = a; a = b - a; b = t;   // paso al siguiente par de Fibonacci
+}
+
+void mouseDragged() {
+  // coloreamos el trazo según la posición horizontal
+  stroke(mouseX * 255 / width, 80, 180);
+}
+
+void keyPressed() {
+  if (key == '+') strokeWeight(strokeWeight + 1);
+  if (key == '-') strokeWeight(max(1, strokeWeight - 1));
+  if (key == 'l' || key == 'L') {
+    background(255);
+    strokeWeight(4);
+  }
 }
 ```
 
-> **Idea clave**: no es que la naturaleza «sepa» matemáticas, sino que la **selección premia** las disposiciones que aprovechan mejor el espacio. El arte generativo imita ese procedimiento: definir una regla numérica y dejar que el algoritmo despliegue la forma.
-
----
-
-## 2. Fractales
-
-### 2.1. ¿Qué es un fractal?
-
-Un **fractal** es una estructura geométrica que presenta **autosemejanza**: una porción cualquiera de la figura, ampliada, se parece al conjunto completo. Se generan a partir de un procedimiento repetido muchas veces, normalmente mediante **recursión**.
-
-Rasgos característicos:
-
-- **Detalle a cualquier escala**: cuanto más se amplía, más estructura aparece.
-- **Dimensión fractal**: a diferencia de una curva (dimensión 1) o una superficie (dimensión 2), muchos fractales tienen dimensión **no entera**. Por ejemplo, la curva de Koch tiende a $D = \dfrac{\ln 4}{\ln 3} \approx 1{,}2619$, porque con cada iteración multiplica su longitud por 4 mientras se mantiene dentro de una escala acotada: «llena» más que una línea pero no llega a llenar una superficie.
-- **Origen simple**: reglas cortas aplicadas de forma iterativa producen complejidad emergente.
-
-Ejemplos naturales: costas, ramificaciones de los ríos, nerviuras de las hojas, copos de nieve, retículo pulmonar, relámpagos.
-
-### 2.2. Recursión: el motor de los fractales
-
-Una **función recursiva** es la que **se llama a sí misma** con un argumento más pequeño, hasta alcanzar un caso base en el que deja de repetirse. En Processing (sintaxis tipo Java), la recursión se escribe igual que en cualquier otro lenguaje:
-
-```java
-// Ejemplo mínimo de recursión: cuenta hacia atrás hasta 0.
-void cuenta(int n) {
-  if (n <= 0) {          // caso base: detiene la recursión
-    println("¡Fin!");
-    return;
-  }
-  println(n);
-  cuenta(n - 1);         // llamada recursiva
-}
-```
-
-::: warning Regla de oro
-Toda función recursiva necesita un **caso base** y debe **acercarse** a él en cada llamada. Si falta una de las dos cosas, el programa entra en bucle infinito y el sistema operativo terminará cerrando el sketch.
+::: warning Atención
+Si en `mousePressed()` no dibujas nada, al hacer clic y arrastrar de golpe puede aparecer un **hueco** en el trazo: `pmouseX/pmouseY` aún no se ha actualizado. Por eso se marca primero un `point()` en la posición actual.
 :::
 
-### 2.3. Árbol binario recursivo
+---
+
+## 3. Transformaciones espaciales
+
+### 3.1. El sistema de coordenadas y la matriz de transformación
+
+De forma predeterminada, el origen `(0, 0)` está en la esquina superior izquierda y el eje **X** crece hacia la derecha y el eje **Y** hacia abajo. Las transformaciones no modifican los datos de las figuras: modifican el **sistema de referencia** en el que se dibuja, mediante una **matriz** interna que Processing multiplica por cada coordenada.
+
+Las tres transformaciones fundamentales son:
+
+- **`translate(dx, dy)`**: desplaza el origen del sistema (traslación).
+- **`rotate(ángulo)`**: gira el sistema alrededor del origen, en **radianes** (giro positivo = sentido horario porque Y apunta hacia abajo).
+- **`scale(sx, sy)`**: escala el sistema (ampliación o reducción).
 
 ```java
-// Árbol binario: cada rama genera dos ramas hijas más cortas y giradas.
-size(700, 500);
-background(20, 25, 40);
-stroke(220, 200, 160);
-strokeWeight(3);
+// Las tres transformaciones básicas aplicadas a un rectángulo.
+size(640, 360);
+background(20);
+stroke(255);
 noFill();
 
-translate(width / 2, height - 40);   // base del tronco
-rama(150, radians(-90));             // ángulo inicial: hacia arriba
+// Traslación: el rectángulo se dibuja desplazado
+translate(120, 180);
+rect(0, 0, 80, 50);
 
-void rama(float largo, float angulo) {
+// Rotación: giramos el sistema 45 grados y volvemos a dibujar
+rotate(radians(45));
+rect(140, 0, 80, 50);
+
+// Escalado: ampliamos el sistema 2 veces
+scale(2);
+rect(0, -140, 30, 20);
+```
+
+> **Unidad de ángulo**: Processing trabaja en **radianes**. `radians(90)` convierte 90 grados a `PI/2` radianes; a la inversa, `degrees(PI)` devuelve 180.
+
+### 3.2. El orden importa
+
+Las transformaciones se aplican en el **orden en que se escriben**, de arriba abajo. Si cambiamos el orden, el resultado es distinto:
+
+```java
+// Comparación del orden de las transformaciones.
+size(640, 240);
+background(20);
+stroke(255);
+noFill();
+
+// Caso A: primero trasladar y después girar -> gira alrededor del nuevo origen
+translate(160, 120);
+rotate(radians(45));
+rect(-30, -30, 60, 60);
+
+// Caso B: primero girar y después trasladar -> rota en torno al origen original
+translate(480, 120);
+rect(-30, -30, 60, 60);
+rotate(radians(45));
+rect(-30, -30, 60, 60);
+```
+
+### 3.3. `pushMatrix()` y `popMatrix()`
+
+Cada transformación es **acumulativa**: si trasladas 100 px y vuelves a trasladar 100 px, acabas en 200 px. Para que una figura quede aislada del efecto de las transformaciones anteriores se **guarda el estado** con `pushMatrix()` y se **restaura** con `popMatrix()`:
+
+```java
+// Estado de transformación: cada estrella se dibuja en su propio sistema.
+size(640, 360);
+background(15, 25, 45);
+stroke(255, 210, 90);
+strokeWeight(2);
+fill(255, 120, 60, 90);
+
+for (int i = 0; i < 6; i++) {
+  pushMatrix();                  // guardo el sistema actual
+  translate(90 + i * 95, 180);   // me muevo a la posición de la figura
+  rotate(radians(i * 15));       // giro local, no afecta a las demás
+  scale(0.6 + i * 0.15);         // escala local
+  rect(-35, -35, 70, 70);
+  ellipse(0, 0, 30, 30);
+  popMatrix();                   // restauro el sistema anterior
+}
+```
+
+La regla práctica es: **todo lo que se dibuje entre `pushMatrix()` y `popMatrix()` vive en su propio sistema de coordenadas**.
+
+---
+
+## 4. Diseño de patrones
+
+### 4.1. Patrones con bucles y transformaciones
+
+Un **patrone** es una estructura visual que se repite según una regla. Combinando bucles (repeticiones) con transformaciones (desplazamientos, giros, escalados) obtenemos tres familias clásicas:
+
+1. **Rejillas**: dos bucles anidados que desplazan el origen.
+2. **Espirales**: un solo bucle que acumula rotación y traslación.
+3. **Rosetas**: giros sucesivos alrededor de un mismo centro (simetría rotacional).
+
+### 4.2. Rejilla de motivos
+
+```java
+// Rejilla 8x5 con rotación alternada: patrón textil sencillo.
+size(640, 400);
+background(250, 245, 235);
+stroke(30);
+strokeWeight(1.5);
+fill(90, 160, 200);
+
+int filas = 5, columnas = 8;
+float ancho = width / columnas;
+float alto = height / filas;
+
+for (int f = 0; f < filas; f++) {
+  for (int c = 0; c < columnas; c++) {
+    pushMatrix();
+    translate(c * ancho + ancho / 2, f * alto + alto / 2);
+    // alternamos la orientación para crear ritmo visual
+    if ((f + c) % 2 == 0) rotate(radians(45));
+    rect(-18, -18, 36, 36);
+    popMatrix();
+  }
+}
+```
+
+### 4.3. Espiral de cuadrados
+
+```java
+// Espiral construida acumulando rotación y traslación en cada paso.
+size(640, 640);
+background(10);
+noFill();
+strokeWeight(2);
+
+translate(width / 2, height / 2);   // centro de la espiral
+float angulo = 0;
+float distancia = 0;
+
+for (int i = 0; i < 220; i++) {
+  angulo += radians(13);            // giro acumulado (ángulo áureo aproximado)
+  distancia += 2.4;                 // radio creciente
+  stroke(80 + i, 200 - i / 2, 255);
   pushMatrix();
   rotate(angulo);
-  line(0, 0, largo, 0);              // trazo de la rama
-  translate(largo, 0);               // nos situamos en el extremo
-
-  if (largo > 4) {                   // caso base: longitud mínima
-    strokeWeight(max(1, strokeWeight - 0.4));
-    rama(largo * 0.72, radians(-25));   // rama izquierda
-    rama(largo * 0.72, radians(25));    // rama derecha
-  }
+  translate(distancia, 0);
+  rect(-6, -6, 12, 12);
   popMatrix();
 }
 ```
 
-Conviene probar variaciones: cambiar el factor `0.72`, el ángulo de bifurcación o el número de ramas (3 en lugar de 2) produce especies vegetales muy distintas.
-
-### 2.4. Curva de Koch
-
-La **curva de Koch** se construye dividiendo cada segmento en tres partes iguales y reemplazando el tercio central por dos segmentos que forman un triángulo equilátero. Iterando sobre los seis lados de un triángulo inicial se obtiene el **copo de nieve de Koch**.
+### 4.4. Roseta con simetría rotacional
 
 ```java
-// Copo de nieve de Koch: recursión sobre un segmento inicial.
-size(700, 700);
-background(10, 20, 40);
-stroke(230, 245, 255);
+// Roseta de 12 pétalos: se dibuja una vez y se replica rotando.
+size(600, 600);
+background(20, 12, 30);
+stroke(255, 190, 80);
 strokeWeight(1.5);
-noFill();
+fill(255, 90, 140, 70);
 
-// triángulo equilátero inicial inscrito en el lienzo
-float lado = 480;
-float x1 = width / 2 - lado / 2, y1 = height / 2 + lado / 4;
-float x2 = width / 2 + lado / 2, y2 = y1;
-float x3 = width / 2,            y3 = height / 2 - lado / 2 + lado / 4;
+translate(width / 2, height / 2);   // centro del lienzo
+int n = 12;                         // número de pétalos
 
-koch(x1, y1, x2, y2, 5);   // nivel de detalle 5
-koch(x2, y2, x3, y3, 5);
-koch(x3, y3, x1, y1, 5);
-
-void koch(float ax, float ay, float bx, float by, int nivel) {
-  if (nivel == 0) {                     // caso base: dibuja el segmento
-    line(ax, ay, bx, by);
-    return;
-  }
-  // puntos de división en tercios
-  float dx = (bx - ax) / 3, dy = (by - ay) / 3;
-  float px = ax + dx, py = ay + dy;          // primer tercio
-  float qx = ax + 2 * dx, qy = ay + 2 * dy;  // segundo tercio
-  // vértice del triángulo equilátero (rotación de 60° del vector px->qx)
-  float vx = px + (qx - px) * cos(radians(-60)) - (qy - py) * sin(radians(-60));
-  float vy = py + (qx - px) * sin(radians(-60)) + (qy - py) * cos(radians(-60));
-
-  koch(ax, ay, px, py, nivel - 1);
-  koch(px, py, vx, vy, nivel - 1);
-  koch(vx, vy, qx, qy, nivel - 1);
-  koch(qx, qy, bx, by, nivel - 1);
+for (int i = 0; i < n; i++) {
+  pushMatrix();
+  rotate(TWO_PI * i / n);           // giro equiespaciado (360° / n)
+  ellipse(70, 0, 140, 40);          // pétalo desplazado sobre el eje X
+  popMatrix();
 }
+
+// centro decorativo
+fill(255, 220, 120);
+ellipse(0, 0, 60, 60);
 ```
-
----
-
-## 3. Imagen de mapa de bits
-
-### 3.1. Píxel, resolución, canal y profundidad de color
-
-Una **imagen de mapa de bits** (*bitmap*) es una rejilla rectangular de puntos de color indivisibles llamados **píxeles**. Cuatro magnitudes la definen:
-
-| Concepto | Definición | Ejemplo |
-|---|---|---|
-| **Píxel** | Mínima unidad de información de la imagen | Un cuadradito con un color |
-| **Resolución** | Número de píxeles en alto × ancho | 1920 × 1080 px |
-| **Canal** | Valor de un componente de color (R, G, B, A) | Rojo = 200 |
-| **Profundidad de color** | Bits por píxel → número de colores posibles | 8 bits = 256 colores; 24 bits = 16 777 216 colores |
-
-En el modelo **RGB** aditivo, cada píxel almacena tres valores de 0 a 255:
-
-- **R** (rojo), **G** (verde), **B** (azul).
-- `color(255, 0, 0)` es rojo puro; `color(0, 0, 0)` es negro; `color(255)` es gris claro y `color(255, 255, 255)` blanco.
-- Profundidad de **24 bits** = 8 bits por canal × 3 canales = $2^{24} = 16\,777\,216$ colores posibles. Si se añade el canal alfa (transparencia) hablamos de **32 bits**.
-
-### 3.2. Acceso a los píxeles en Processing
-
-Processing gestiona la imagen con la clase `PImage`. Las dos formas de trabajar con sus píxeles son:
-
-- **Método directo (sencillo)**: `img.get(x, y)` devuelve el color de una posición y `img.set(x, y, c)` lo escribe. Ideal para operaciones puntuales, pero lento si se recorre la imagen entera (llamada a función por píxel).
-- **Método masivo (rápido)**: `img.loadPixels()` carga el array `img.pixels[]` en memoria; se recorre con un bucle y, al terminar, `img.updatePixels()` lo escribe de vuelta. El índice de un píxel es `i = x + y * img.width`.
-
-```java
-// Carga de una imagen del directorio data/ y visualización con ambas técnicas.
-// Guarda la foto como "foto.jpg" dentro de una carpeta data/ junto al sketch.
-size(800, 400);
-PImage img = loadImage("foto.jpg");
-image(img, 0, 0);                      // imagen original a la izquierda
-
-// copia pixel a pixel usando get()/set()
-PImage copia = createImage(img.width, img.height, RGB);
-for (int x = 0; x < img.width; x++) {
-  for (int y = 0; y < img.height; y++) {
-    color c = img.get(x, y);
-    copia.set(x, y, c);
-  }
-}
-image(copia, img.width, 0);
-```
-
----
-
-## 4. Filtros pixel a pixel
-
-### 4.1. Estructura común de un filtro
-
-Todo filtro sigue el mismo esquema:
-
-1. Cargar la imagen con `loadImage()`.
-2. Llamar a `loadPixels()` para traer los píxeles al array.
-3. Recorrer la imagen con dos bucles anidados.
-4. Leer el color, **extraer sus canales** con `red()`, `green()`, `blue()`.
-5. Calcular el nuevo valor y guardarlo en `pixels[i]`.
-6. Llamar a `updatePixels()` y mostrar con `image()`.
-
-Toda la diferencia entre filtros está en el paso 4: la **fórmula** que transforma los canales.
-
-### 4.2. Escala de grises (luminancia)
-
-Convertir a gris no consiste en promediar simplemente: el ojo humano es más sensible al verde. Se usa la fórmula de **luminancia**:
-
-```java
-// Filtro: escala de grises por luminancia.
-size(800, 400);
-PImage img = loadImage("foto.jpg");
-
-img.loadPixels();
-for (int i = 0; i < img.pixels.length; i++) {
-  float r = red(img.pixels[i]);
-  float g = green(img.pixels[i]);
-  float b = blue(img.pixels[i]);
-  // pesos de la luminancia: 0,3·R + 0,59·G + 0,11·B
-  float gris = 0.3 * r + 0.59 * g + 0.11 * b;
-  img.pixels[i] = color(gris, gris, gris);
-}
-img.updatePixels();
-image(img, 0, 0);
-```
-
-### 4.3. Negativo (inversión)
-
-```java
-// Filtro: negativo, invirtiendo cada canal con 255 - valor.
-size(800, 400);
-PImage img = loadImage("foto.jpg");
-
-img.loadPixels();
-for (int i = 0; i < img.pixels.length; i++) {
-  float r = 255 - red(img.pixels[i]);
-  float g = 255 - green(img.pixels[i]);
-  float b = 255 - blue(img.pixels[i]);
-  img.pixels[i] = color(r, g, b);
-}
-img.updatePixels();
-image(img, 0, 0);
-```
-
-### 4.4. Umbral (binarización)
-
-El filtro de **umbral** convierte la imagen en blanco y negro puros: si la luminancia supera un valor crítico el píxel es blanco, en caso contrario negro. Es la base de la **segmentación** y del reconocimiento de siluetas.
-
-```java
-// Filtro: umbral (binarización) con valor de corte 128.
-size(800, 400);
-PImage img = loadImage("foto.jpg");
-
-int umbral = 128;
-img.loadPixels();
-for (int i = 0; i < img.pixels.length; i++) {
-  float r = red(img.pixels[i]);
-  float g = green(img.pixels[i]);
-  float b = blue(img.pixels[i]);
-  float gris = 0.3 * r + 0.59 * g + 0.11 * b;
-  if (gris > umbral) {
-    img.pixels[i] = color(255);        // blanco
-  } else {
-    img.pixels[i] = color(0);          // negro
-  }
-}
-img.updatePixels();
-image(img, 0, 0);
-```
-
-### 4.5. Sepia
-
-El tono sepia se obtiene aplicando una **mezcla ponderada** de los canales y reduciendo el contraste hacia los marrones:
-
-```java
-// Filtro: sepia con combinación lineal de canales.
-size(800, 400);
-PImage img = loadImage("foto.jpg");
-
-img.loadPixels();
-for (int i = 0; i < img.pixels.length; i++) {
-  float r = red(img.pixels[i]);
-  float g = green(img.pixels[i]);
-  float b = blue(img.pixels[i]);
-  // fórmula clásica de sepia
-  float nr = min(255, 0.393 * r + 0.769 * g + 0.189 * b);
-  float ng = min(255, 0.349 * r + 0.686 * g + 0.168 * b);
-  float nb = min(255, 0.272 * r + 0.534 * g + 0.131 * b);
-  img.pixels[i] = color(nr, ng, nb);
-}
-img.updatePixels();
-image(img, 0, 0);
-```
-
-### 4.6. Extracción de un canal
-
-Aislamos un solo canal y lo replicamos en los tres para obtener una imagen dominada por ese componente:
-
-```java
-// Filtro: canal rojo dominante.
-size(800, 400);
-PImage img = loadImage("foto.jpg");
-
-img.loadPixels();
-for (int i = 0; i < img.pixels.length; i++) {
-  float r = red(img.pixels[i]);
-  img.pixels[i] = color(r, r * 0.3, r * 0.3);   // rojo puro atenuado
-}
-img.updatePixels();
-image(img, 0, 0);
-```
-
-### 4.7. Comparativa de filtros
-
-| Filtro | Operación sobre los canales | Efecto visual |
-|---|---|---|
-| **Escala de grises** | $0{,}3R + 0{,}59G + 0{,}11B$ en los tres canales | Blanco y negro con matices |
-| **Negativo** | $255 - R,\; 255 - G,\; 255 - B$ | Inversión tipo película rayada |
-| **Umbral** | Si luminancia > T → 255, si no → 0 | Dos niveles, siluetas marcadas |
-| **Sepia** | Combinación lineal con pesos ~0,3 / 0,7 / 0,18 | Fotografía antigua |
-| **Canal rojo** | Se conserva R y se atenúan G y B | Tono rojizo dominante |
 
 ---
 
 ## 5. Síntesis
 
-| Aprendizaje | Herramienta |
+| Aprendizaje | Herramienta en Processing |
 |---|---|
-| Fibonacci y número áureo | Secuencia $F_n = F_{n-1} + F_{n-2}$, ángulo de 137,5° |
-| Espirales y rosetas generativas | `sqrt(i)`, `cos()`, `sin()` con giro acumulado |
-| Fractales y recursión | Función que se llama a sí misma + caso base |
-| Fractal típico en Processing | Árbol binario, curva de Koch / copo de nieve |
-| Imagen de mapa de bits | `PImage`, píxel, resolución, canal RGB, profundidad |
-| Acceso a píxeles | `get()/set()` (puntual) o `loadPixels()/pixels[]/updatePixels()` (masivo) |
-| Filtros | Escala de grises, negativo, umbral, sepia, canales |
+| Gráficos vectoriales | Figuras definidas por coordenadas, escalables sin pérdida |
+| Diseño generativo | Algoritmo + parámetros + azar controlado |
+| Eventos de ratón | `mousePressed()`, `mouseDragged()`, `mouseReleased()`, `mouseX/Y`, `pmouseX/Y` |
+| Eventos de teclado | `keyPressed()`, `keyReleased()`, `key`, `keyCode` |
+| Dibujo a mano alzada | `point()` + `line(pmouseX, pmouseY, mouseX, mouseY)` |
+| Transformaciones | `translate()`, `rotate()`, `scale()` |
+| Aislamiento de estado | `pushMatrix()` / `popMatrix()` |
+| Patrones | Bucles + transformaciones (rejilla, espiral, roseta) |
 
 ---
 
 ## Ejercicios
 
-1. **Sucesor de Fibonacci.** Escribe un sketch en Processing que almacene los 30 primeros términos de la secuencia en un `int[]` usando un bucle (sin recursión) y los muestre en pantalla en dos columnas: el término y el cociente aproximado con su siguiente. Observa a partir de qué posición el cociente se estabiliza en torno a 1,618.
+1. **Mural interactivo.** Crea un sketch donde, al mantener pulsado el ratón y arrastrarlo, se dibujen cuadrados de 20 px de lado en la posición del puntero, con un color que dependa de `mouseY`. Al pulsar la tecla `g`, el lienzo debe limpiarse. Incluye un comentario que explique por qué se usa `pmouseX/pmouseY`.
 
-2. **Girasol paramétrico.** Modifica el ejemplo de la sección 1.1 para que el número de semillas, el paso angular y el tamaño inicial se lean de variables al inicio del código. Experimenta con `137,5°`, `90°` y `60°` y explica qué patrón visual produce cada valor.
+2. **Retrato a mano alzada.** Diseña una herramienta de dibujo con tres modos seleccionados por teclas: `1` trazo fino y azul, `2` trazo grueso y rojo, `3` borrador (color del fondo). Añade una función `mouseReleased()` que dibuje un círculo pequeño en el punto de soltado para marcar el final del trazo.
 
-3. **Árbol con tres ramas.** Partiendo del árbol binario de la sección 2.3, haz que cada rama genere **tres** ramas hijas con ángulos de −30°, 0° y +30°. Controla el nivel de profundidad con un parámetro adicional en lugar de limitar solo la longitud, y dibuja las ramas finales en verde y el tronco en marrón.
+3. **Patrón de damero rotado.** Genera una rejilla de 10 × 10 celdas en la que solo se dibuje un cuadrado cuando la suma de los índices de fila y columna sea par. Aplica `rotate(radians(45))` dentro de `pushMatrix()/popMatrix()` de modo que cada cuadrado gire sobre su propio centro. Explica con una frase qué ocurriría si eliminaras las llamadas a `pushMatrix()` y `popMatrix()`.
 
-4. **Copo de nieve de Minkowski.** Investiga brevemente una variante de la curva de Koch y descríbela como pseudocódigo antes de programarla. Implementa la versión básica con nivel de detalle 3 y dibuja los seis lados de un hexágono regular en lugar de un triángulo.
+4. **Roseta de pétalos elípticos.** Dibuja una roseta con 20 pétalos usando `ellipse()` y rotaciones de `TWO_PI * i / 20`. Para cada pétalo, varía el color con `map(i, 0, 19, 0, 255)` y la longitud del eje mayor entre 60 y 160 px. El resultado debe quedar centrado en el lienzo.
 
-5. **Comparador de filtros.** Crea un sketch que muestre **tres copias** de la misma imagen en pantalla: original, escala de grises y negativo. Usa `get()` y `set()` en una de las copias y `loadPixels()/pixels[]` en otra; mide con `millis()` el tiempo de cada proceso y anota cuál es más rápido y por qué.
+5. **Espiral de Fibonacci visual.** Partiendo del bucle de la espiral de la sección 4.3, sustituye el incremento lineal de la distancia por el incremento que proporciona la **secuencia de Fibonacci** (1, 1, 2, 3, 5, 8, 13, 21...). Genera la secuencia con un bucle y dibuja un cuadrado por cada término. (Se conecta con el Tema 5.)
 
-6. **Filtro propio: duotono.** Implementa un filtro que convierta la imagen en dos colores fijos (por ejemplo, azul oscuro para las zonas oscuras y naranja claro para las claras) usando la luminancia como valor de interpolación con `lerpColor(colorA, colorB, gris / 255)`. Añade una tecla para alternar entre el filtro y la imagen original.
+6. **Analiza el siguiente código** y describe, sin ejecutarlo, qué se verá en pantalla y por qué. Después modifícalo para que la figura resultante sea el doble de grande y esté desplazada 50 px a la derecha:
+
+```java
+size(500, 300);
+background(255);
+translate(250, 150);
+rotate(radians(30));
+rect(-40, -40, 80, 80);
+```
