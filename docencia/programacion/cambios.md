@@ -12,3 +12,8 @@ Cambios aplicados únicamente en sda1.md, todos relativos a la SdA 2 y al bloque
 11. 3.7 Evaluación — amplié el instrumento de PRYC.2.1.1 (cuaderno de desarrollo) y ajusté pesos (50 %→45 % y 20 %→25 %); añadí 3.7.1 Indicadores de logro del bloque A.3.
 12. Anexo F — añadí las 8 filas de A.3.1–A.3.8 a la tabla de correspondencia.
 No toqué la SdA 1 ni su código.
+
+
+El proyecto trasciende la mera programación de aula: articula unos fundamentos pedagógicos sólidos con el marco normativo vigente, los adapta al contexto real del centro y del aula y los concreta en una propuesta didáctica coherente, con una concreción curricular explícita y unas situaciones de aprendizaje para el primer trimestre dotadas de criterios, instrumentos de evaluación y materiales. Esta alineación entre principios, normas, contexto y práctica es precisamente lo que garantiza su viabilidad y su valor formativo.
+Para la asignatura de Programación y Computación de 2.º de Bachillerato, el proyecto aporta un enfoque competencial que supera la enseñanza transmisiva: el alumnado aprende a abstraer problemas, descomponerlos, diseñar algoritmos, aplicar el ciclo de vida del software, trabajar en equipo y evaluar sus propias soluciones. Esa forma de pensar y de proceder constituye la base de las carreras técnicas universitarias —informática, ingeniería, matemáticas o ciencia de datos—, donde no basta con conocer un lenguaje, sino con resolver problemas complejos con rigor, autonomía y criterio.
+En definitiva, el proyecto no solo cumple una función inmediata en el aula, sino que actúa como puente entre la etapa preuniversitaria y la formación técnica superior, y evidencia el valor de una práctica docente reflexiva, planificada y evaluada propia de un funcionario en prácticas.

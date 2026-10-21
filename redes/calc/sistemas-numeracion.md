@@ -39,7 +39,7 @@ Convierte al instante entre **binario**, **octal**, **decimal** y **hexadecimal*
 
 > **Truco:** cada dígito hexadecimal equivale a 4 bits. Por eso `0xF = 1111₂` y `0xFF = 11111111₂ = 255₁₀`.
 
-## Aplicaciones en ASIR
+## Aplicaciones
 
 * **Direcciones IP y máscaras:** la máscara `255.255.255.0` es `0xFFFFFF00`.
 * **Permisos Linux:** `chmod 755` → `111 101 101₂` → `rwxr-xr-x`.
