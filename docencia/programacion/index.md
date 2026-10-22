@@ -23,6 +23,6 @@ features:
     linkText: Leer más
   - title: Situaciones de Aprendizaje
     details: Situación de aprendizaje 1 y 2 (sda1, sda2)
-    link: /docencia/programacion/sda1_completo
+    link: /docencia/programacion/sda/sda1_completo
     linkText: Leer más
 ---
