@@ -2,18 +2,6 @@
 
 En esta tercera tanda de ejercicios trabajamos con **funciones** (`def`, parámetros, `return`) y con **módulos**, es decir, archivos `.py` que contienen funciones reutilizables. Cada ejercicio incluye una solución comentada que puedes desplegar.
 
-## Tabla de contenidos
-
-- [Ejercicio 1: calcular el salario total de un trabajador con horas extras](#ejercicio-1-calcular-el-salario-total-de-un-trabajador-con-horas-extras)
-- [Ejercicio 2: crear un módulo con funciones de conversión de temperatura](#ejercicio-2-crear-un-modulo-con-funciones-de-conversion-de-temperatura)
-- [Ejercicio 3: contar cuántos elementos de una lista son pares e impares](#ejercicio-3-contar-cuantos-elementos-de-una-lista-son-pares-e-impares)
-- [Ejercicio 4: verificar si una palabra es un palíndromo](#ejercicio-4-verificar-si-una-palabra-es-un-palindromo)
-- [Ejercicio 5: función que devuelva el número mayor de tres valores](#ejercicio-5-funcion-que-devuelva-el-numero-mayor-de-tres-valores)
-- [Ejercicio 6: crear una calculadora simple con funciones](#ejercicio-6-crear-una-calculadora-simple-con-funciones)
-- [Ejercicio 7: generar una tabla de multiplicar usando funciones](#ejercicio-7-generar-una-tabla-de-multiplicar-usando-funciones)
-- [Ejercicio 8: calcular el promedio de una lista de números con una función](#ejercicio-8-calcular-el-promedio-de-una-lista-de-numeros-con-una-funcion)
-- [Ejercicio 9: crear una función que invierta una cadena de texto](#ejercicio-9-crear-una-funcion-que-invierta-una-cadena-de-texto)
-- [Ejercicio 10: crear un módulo con operaciones matemáticas simples](#ejercicio-10-crear-un-modulo-con-operaciones-matematicas-simples)
 
 ## Ejercicio 1: calcular el salario total de un trabajador con horas extras
 
