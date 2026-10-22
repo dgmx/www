@@ -2,21 +2,6 @@
 
 En esta segunda tanda de ejerciciosAmpliamos lo aprendido: aquí trabajamos con **condicionales** (`if`, `elif`, `else`) y **bucles** (`for`, `while`) para tomar decisiones y repetir acciones en Python.
 
-## Tabla de contenidos
-
-- [Ejercicio 1: determinar si un número es positivo, negativo o cero](#ejercicio-1-determinar-si-un-numero-es-positivo-negativo-o-cero)
-- [Ejercicio 2: comprobar si un número es par o impar](#ejercicio-2-comprobar-si-un-numero-es-par-o-impar)
-- [Ejercicio 3: calcular el factorial de un número](#ejercicio-3-calcular-el-factorial-de-un-numero)
-- [Ejercicio 4: contar cuántos números son mayores que 10](#ejercicio-4-contar-cuantos-numeros-son-mayores-que-10)
-- [Ejercicio 5: calcular la suma de los números pares del 1 al 100](#ejercicio-5-calcular-la-suma-de-los-numeros-pares-del-1-al-100)
-- [Ejercicio 6: encontrar el mayor de tres números](#ejercicio-6-encontrar-el-mayor-de-tres-numeros)
-- [Ejercicio 7: contar los múltiplos de 3 entre dos números](#ejercicio-7-contar-los-multiplos-de-3-entre-dos-numeros)
-- [Ejercicio 8: suma de dígitos de un número](#ejercicio-8-suma-de-digitos-de-un-numero)
-- [Ejercicio 9: imprimir los números del 1 al 10 en orden inverso](#ejercicio-9-imprimir-los-numeros-del-1-al-10-en-orden-inverso)
-- [Ejercicio 10: menú para elegir una operación matemática](#ejercicio-10-menu-para-elegir-una-operacion-matematica)
-- [Ejercicio 11: adivinar un número con límite de intentos](#ejercicio-11-adivinar-un-numero-con-limite-de-intentos)
-- [Ejercicio 12: imprimir números impares entre 1 y 10](#ejercicio-12-imprimir-numeros-impares-entre-1-y-10)
-- [Ejercicio 13: buscar un número múltiplo de 7 y menor que 100](#ejercicio-13-buscar-un-numero-multiplo-de-7-y-menor-que-100)
 
 ## Ejercicio 1: determinar si un número es positivo, negativo o cero
 

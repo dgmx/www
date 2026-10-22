@@ -355,7 +355,3 @@ La versión **2.0 objetual** de FinanzApp:
 | A.3.7 Control de versiones | (base) | ✔ |
 | A.3.8 Trabajo en equipo | ✔ | ✔ |
 
-
----
-
-*Documento elaborado como propuesta didáctica. Adaptar códigos, calificaciones y nomenclatura a la concreción curricular de la comunidad autónoma y del centro.*
