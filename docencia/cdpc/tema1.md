@@ -1,8 +1,11 @@
 # TEMA 1: Fundamentos de programación
 
-### Bloque B. Creación digital y pensamiento computacional | CDPC.1.A.1 y CDPC.1.A.2
+### Bloque A. Programación Gráfica Multimedia | CDPC.1.A.1 y CDPC.1.A.2
 
-> **Currículo LOMLOE - Andalucía** | Criterios: CDPC.1.A.1, CDPC.1.A.2
+> **Currículo LOMLOE - Andalucía** | Saberes básicos:
+>
+> - **CDPC.1.A.1.** Fundamentos de Programación.
+> - **CDPC.1.A.2.** Conceptos de instrucción y secuenciación, algoritmo vs. código.
 
 ---
 
@@ -21,7 +24,7 @@ Programar no consiste en "hablar con el ordenador", sino en **descomponer un pro
 - **Intérprete**: programa que traduce y ejecuta el código línea a línea.
 - **Compilador**: programa que traduce el código completo a un archivo ejecutable antes de ejecutarlo.
 
-La relación entre ambos conceptos clave del criterio CDPC.1.A.2 es la siguiente:
+La relación entre ambos conceptos clave del saber básico CDPC.1.A.2 es la siguiente:
 
 | Algoritmo | Código |
 |---|---|

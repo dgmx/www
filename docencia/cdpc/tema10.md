@@ -1,7 +1,10 @@
 # TEMA 10: Trabajo colaborativo
-### Bloque B. Creación digital y pensamiento computacional | CDPC.1.A.10
 
-> **Currículo LOMLOE - Andalucía** | Criterios: CDPC.1.A.10
+### Bloque A. Programación Gráfica Multimedia | CDPC.1.A.10
+
+> **Currículo LOMLOE - Andalucía** | Saberes básicos:
+>
+> - **CDPC.1.A.10.** Habilidades y herramientas para el trabajo colaborativo.
 
 ---
 

@@ -1,7 +1,10 @@
 # TEMA 9: Sonido, mini-juegos e instalaciones generativas
-### Bloque B. Creación digital y pensamiento computacional | CDPC.1.A.9
 
-> **Currículo LOMLOE - Andalucía** | Criterios: CDPC.1.A.9
+### Bloque A. Programación Gráfica Multimedia | CDPC.1.A.9
+
+> **Currículo LOMLOE - Andalucía** | Saberes básicos:
+>
+> - **CDPC.1.A.9.** Tratamiento del sonido. Diseño de mini-juegos e instalaciones artísticas generativas e interactivas.
 
 ---
 

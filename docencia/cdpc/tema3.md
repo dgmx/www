@@ -1,8 +1,10 @@
 # TEMA 3: Estructuras de datos
 
-### Bloque B. Creación digital y pensamiento computacional | CDPC.1.A.1, CDPC.1.A.2 y CDPC.1.A.3
+### Bloque A. Programación Gráfica Multimedia | CDPC.1.A.1
 
-> **Currículo LOMLOE - Andalucía** | Criterios: CDPC.1.A.1, CDPC.1.A.2 y CDPC.1.A.3
+> **Currículo LOMLOE - Andalucía** | Saberes básicos:
+>
+> - **CDPC.1.A.1.** Fundamentos de Programación.
 
 ---
 

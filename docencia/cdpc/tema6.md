@@ -1,8 +1,10 @@
 # TEMA 6: Arte generativo, fractales y procesamiento de imágenes
 
-### Bloque B. Creación digital y pensamiento computacional | CDPC.1.A.6
+### Bloque A. Programación Gráfica Multimedia | CDPC.1.A.6
 
-> **Currículo LOMLOE - Andalucía** | Criterios: CDPC.1.A.6
+> **Currículo LOMLOE - Andalucía** | Saberes básicos:
+>
+> - **CDPC.1.A.6.** Arte generativo en la naturaleza: Fibonacci y fractales. Imagen de mapa de bit. Aplicación de filtros. Procesamiento de imágenes píxel a píxel.
 
 ---
 

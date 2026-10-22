@@ -1,7 +1,10 @@
 # TEMA 8: Vídeo, audio y animaciones
-### Bloque B. Creación digital y pensamiento computacional | CDPC.1.A.8
 
-> **Currículo LOMLOE - Andalucía** | Criterios: CDPC.1.A.8
+### Bloque A. Programación Gráfica Multimedia | CDPC.1.A.8
+
+> **Currículo LOMLOE - Andalucía** | Saberes básicos:
+>
+> - **CDPC.1.A.8.** Procesamiento de vídeo, audio y animaciones. Tratamiento de vídeo como vector de fotogramas.
 
 ---
 

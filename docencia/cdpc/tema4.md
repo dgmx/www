@@ -1,8 +1,10 @@
 # TEMA 4: Funciones e introducción a Processing
 
-### Bloque B. Creación digital y pensamiento computacional | CDPC.1.A.4
+### Bloque A. Programación Gráfica Multimedia | CDPC.1.A.4
 
-> **Currículo LOMLOE - Andalucía** | Criterios: CDPC.1.A.4
+> **Currículo LOMLOE - Andalucía** | Saberes básicos:
+>
+> - **CDPC.1.A.4.** Funciones. Introducción al uso de funciones gráficas: punto, línea, triángulo, cuadrado, rectángulo, círculo, elipse, sectores y arcos.
 
 ---
 

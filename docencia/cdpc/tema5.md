@@ -1,8 +1,10 @@
 # TEMA 5: Eventos, gráficos vectoriales y transformaciones
 
-### Bloque B. Creación digital y pensamiento computacional | CDPC.1.A.5
+### Bloque A. Programación Gráfica Multimedia | CDPC.1.A.5
 
-> **Currículo LOMLOE - Andalucía** | Criterios: CDPC.1.A.5
+> **Currículo LOMLOE - Andalucía** | Saberes básicos:
+>
+> - **CDPC.1.A.5.** Procesamiento de imágenes. Gráficos vectoriales. Diseño digital generativo basado en algoritmos. Eventos: ratón y teclado. Uso de la línea y el punto para dibujar líneas a mano alzada. Operaciones en el espacio: translaciones, escalados, rotaciones, etc. Diseño de patrones.
 
 ---
 

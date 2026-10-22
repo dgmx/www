@@ -1,8 +1,10 @@
 # TEMA 2: Estructuras de control
 
-### Bloque B. Creación digital y pensamiento computacional | CDPC.1.A.3
+### Bloque A. Programación Gráfica Multimedia | CDPC.1.A.3
 
-> **Currículo LOMLOE - Andalucía** | Criterios: CDPC.1.A.3
+> **Currículo LOMLOE - Andalucía** | Saberes básicos:
+>
+> - **CDPC.1.A.3.** Estructuras de control selectivas e iterativas, finitas e infinitas.
 
 ---
 
@@ -16,7 +18,7 @@ Cualquier algoritmo se construye con solo tres estructuras básicas (teorema de 
 2. **Selección (alternancia)**: elegir entre caminos según una condición.
 3. **Iteración (repetición)**: repetir un bloque mientras se cumpla una condición.
 
-En el criterio **CDPC.1.A.3** trabajaremos las **selectivas** y las **iterativas**, y las clasificaremos como **finitas** (sabemos de antemano o por condición que terminan) o **infinitas** (que solo se detienen por una orden explícita o por un error).
+En el saber básico **CDPC.1.A.3** trabajaremos las **selectivas** y las **iterativas**, y las clasificaremos como **finitas** (sabemos de antemano o por condición que terminan) o **infinitas** (que solo se detienen por una orden explícita o por un error).
 
 ---
 

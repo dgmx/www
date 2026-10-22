@@ -1,8 +1,10 @@
 # TEMA 7: Modelado 3D
 
-### Bloque B. Creación digital y pensamiento computacional | CDPC.1.A.7
+### Bloque A. Programación Gráfica Multimedia | CDPC.1.A.7
 
-> **Currículo LOMLOE - Andalucía** | Criterios: CDPC.1.A.7
+> **Currículo LOMLOE - Andalucía** | Saberes básicos:
+>
+> - **CDPC.1.A.7.** Modelado 3D. Herramientas.
 
 ---
 
