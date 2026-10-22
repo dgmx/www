@@ -588,18 +588,400 @@ Estos arrays se usan continuamente en los gráficos y animaciones del **Tema 4**
 
 ## Ejercicios
 
-1. **Estadísticas de notas.** Crea una lista con las notas de una clase (al menos ocho valores). Muestra la nota media, la máxima, la mínima, la lista ordenada de mayor a menor y cuántos alumnos han aprobado. Hazlo primero con funciones integradas y después con un bucle.
+### Ejercicio 1: estadísticas de notas
 
-2. **Gestión de nombres.** Pide nombres por teclado hasta que el usuario escriba `"fin"`. Guárdalos en una lista, elimina los duplicados conservando el orden y muestra la lista final ordenada alfabéticamente. Indica cuántos nombres se han descartado por estar repetidos.
+Crea una lista con las notas de una clase (al menos ocho valores). Muestra la nota media, la máxima, la mínima, la lista ordenada de mayor a menor y cuántos alumnos han aprobado. Hazlo primero con funciones integradas y después con un bucle.
 
-3. **Matriz 3 × 3.** Crea una matriz de 3 filas y 3 columnas con números introducidos por el usuario. Muestra la matriz en forma de tabla, la suma de la diagonal principal y su traspuesta (intercambiando filas y columnas).
+::: details Ver solución {close}
 
-4. **Agenda de contactos.** Usa un diccionario donde la clave sea el nombre y el valor, el teléfono. Implementa un menú con `while` que permita añadir, buscar, eliminar y listar contactos. Al buscar uno inexistente, muestra un aviso sin que el programa falle.
+**Con funciones integradas:**
 
-5. **Frecuencia de palabras.** Pide una frase, divídela con `split()`, cuenta cuántas veces aparece cada palabra (ignorando mayúsculas y signos sencillos) y muestra las palabras ordenadas de más a menos frecuentes. Utiliza un diccionario y `sorted()` con una función `lambda` como clave.
+```python
+notas = [7.5, 8.0, 4.5, 9.25, 6.0, 3.5, 5.0, 10.0]
 
-6. **Conjuntos de asignaturas.** Dos listas contienen los alumnos matriculados en dos optativas. Conviértelas en conjuntos y muestra: quiénes están en ambas, quiénes están solo en la primera, quiénes están en una u otra y quiénes no se repiten. Ordena el resultado antes de mostrarlo.
+media = sum(notas) / len(notas)
+maxima = max(notas)
+minima = min(notas)
+ordenadas = sorted(notas, reverse=True)
+aprobados = len([nota for nota in notas if nota >= 5])
 
-7. **Pila y cola.** Simula el historial de un navegador con una pila: visita tres páginas, retrocede dos veces y muestra la página actual. Después simula con `deque` una cola de atención en una oficina: llegan tres personas, se atiende a dos y se muestra quién queda esperando.
+print("Media:", media)
+print("Máxima:", maxima)
+print("Mínima:", minima)
+print("Ordenadas de mayor a menor:", ordenadas)
+print("Aprobados:", aprobados)
+```
 
-8. **Array en Processing.** Cuando llegues al Tema 4, crea un sketch con un array de diez números enteros y dibuja un **gráfico de barras**: la altura de cada barra será el valor correspondiente y su posición horizontal se calculará con el índice. Recorre el array con un bucle `for`.
+**Con un bucle:**
+
+```python
+notas = [7.5, 8.0, 4.5, 9.25, 6.0, 3.5, 5.0, 10.0]
+
+suma = 0
+maxima = notas[0]
+minima = notas[0]
+aprobados = 0
+
+for nota in notas:
+    suma += nota
+
+    if nota > maxima:
+        maxima = nota
+
+    if nota < minima:
+        minima = nota
+
+    if nota >= 5:
+        aprobados += 1
+
+media = suma / len(notas)
+
+print("Media:", media)
+print("Máxima:", maxima)
+print("Mínima:", minima)
+print("Ordenadas de mayor a menor:", sorted(notas, reverse=True))
+print("Aprobados:", aprobados)
+```
+
+**Explicación:**
+
+- `sum()` suma todos los elementos y `len()` cuenta cuántos hay; la media es la división de ambos valores.
+- `max()` y `min()` devuelven el mayor y el menor elemento de la lista.
+- `sorted(notas, reverse=True)` devuelve una **copia ordenada** de mayor a menor sin modificar la original.
+- La comprensión `[nota for nota in notas if nota >= 5]` crea una lista solo con las notas aprobadas; `len()` cuenta cuántas son.
+- En la versión con bucle, `maxima` y `minima` se inicializan con el primer elemento para poder comparar el resto.
+- El acumulador `suma` y el contador `aprobados` se actualizan en cada vuelta del `for`.
+
+:::
+
+### Ejercicio 2: gestión de nombres
+
+Pide nombres por teclado hasta que el usuario escriba `"fin"`. Guárdalos en una lista, elimina los duplicados conservando el orden y muestra la lista final ordenada alfabéticamente. Indica cuántos nombres se han descartado por estar repetidos.
+
+::: details Ver solución {close}
+
+```python
+nombres = []
+
+while True:
+    nombre = input("Introduce un nombre (o 'fin' para terminar): ").strip()
+
+    if nombre.lower() == "fin":
+        break
+
+    if nombre:
+        nombres.append(nombre)
+
+sin_duplicados = list(dict.fromkeys(nombres))
+descartados = len(nombres) - len(sin_duplicados)
+nombres_ordenados = sorted(sin_duplicados, key=str.lower)
+
+print("Lista original:", nombres)
+print("Sin duplicados:", sin_duplicados)
+print("Ordenada alfabéticamente:", nombres_ordenados)
+print("Nombres descartados por repetidos:", descartados)
+```
+
+**Explicación:**
+
+- El bucle `while True` se repite hasta que se ejecuta `break` al escribir `"fin"`.
+- `strip()` elimina los espacios que puedan quedar al principio o al final del nombre.
+- `dict.fromkeys(nombres)` crea un diccionario usando los nombres como claves; al convertirlo de nuevo a lista se eliminan los duplicados y se conserva el orden de la primera aparición.
+- `len(nombres) - len(sin_duplicados)` calcula cuántos nombres repetidos se han descartado.
+- `sorted(..., key=str.lower)` ordena alfabéticamente sin distinguir mayúsculas de minúsculas.
+
+:::
+
+### Ejercicio 3: matriz 3 × 3
+
+Crea una matriz de 3 filas y 3 columnas con números introducidos por el usuario. Muestra la matriz en forma de tabla, la suma de la diagonal principal y su traspuesta (intercambiando filas y columnas).
+
+::: details Ver solución {close}
+
+```python
+matriz = []
+
+for i in range(3):
+    fila = []
+
+    for j in range(3):
+        valor = int(input(f"Valor [{i}][{j}]: "))
+        fila.append(valor)
+
+    matriz.append(fila)
+
+print("\nMatriz:")
+for fila in matriz:
+    for valor in fila:
+        print(f"{valor:4}", end="")
+    print()
+
+suma_diagonal = 0
+
+for i in range(3):
+    suma_diagonal += matriz[i][i]
+
+print("Suma de la diagonal principal:", suma_diagonal)
+
+traspuesta = []
+
+for i in range(3):
+    fila = []
+
+    for j in range(3):
+        fila.append(matriz[j][i])
+
+    traspuesta.append(fila)
+
+print("Traspuesta:")
+for fila in traspuesta:
+    for valor in fila:
+        print(f"{valor:4}", end="")
+    print()
+```
+
+**Explicación:**
+
+- La matriz se construye como una **lista de listas**: cada vuelta del primer `for` crea una fila y la añade a la matriz.
+- El segundo bucle recorre cada fila y cada valor para mostrarlos con un ancho fijo de cuatro caracteres.
+- Los elementos de la diagonal principal son `matriz[0][0]`, `matriz[1][1]` y `matriz[2][2]`, es decir, aquellos cuyo índice de fila coincide con el de columna.
+- La traspuesta intercambia fila y columna: el elemento de la posición `[i][j]` pasa a la posición `[j][i]`.
+- `print()` sin argumentos al final de cada fila añade el salto de línea.
+
+:::
+
+### Ejercicio 4: agenda de contactos
+
+Usa un diccionario donde la clave sea el nombre y el valor, el teléfono. Implementa un menú con `while` que permita añadir, buscar, eliminar y listar contactos. Al buscar uno inexistente, muestra un aviso sin que el programa falle.
+
+::: details Ver solución {close}
+
+```python
+agenda = {}
+
+while True:
+    print("\n--- AGENDA ---")
+    print("1. Añadir contacto")
+    print("2. Buscar contacto")
+    print("3. Eliminar contacto")
+    print("4. Listar contactos")
+    print("5. Salir")
+
+    opcion = input("Elige una opción: ")
+
+    if opcion == "1":
+        nombre = input("Nombre: ").strip()
+        telefono = input("Teléfono: ").strip()
+        agenda[nombre] = telefono
+        print("Contacto guardado.")
+
+    elif opcion == "2":
+        nombre = input("Nombre a buscar: ").strip()
+
+        if nombre in agenda:
+            print(f"{nombre}: {agenda[nombre]}")
+        else:
+            print("Contacto no encontrado.")
+
+    elif opcion == "3":
+        nombre = input("Nombre a eliminar: ").strip()
+
+        if nombre in agenda:
+            del agenda[nombre]
+            print("Contacto eliminado.")
+        else:
+            print("Contacto no encontrado.")
+
+    elif opcion == "4":
+        if not agenda:
+            print("La agenda está vacía.")
+        else:
+            for nombre, telefono in agenda.items():
+                print(f"{nombre}: {telefono}")
+
+    elif opcion == "5":
+        print("Fin del programa.")
+        break
+
+    else:
+        print("Opción no válida.")
+```
+
+**Explicación:**
+
+- El diccionario `agenda` guarda cada nombre como clave y su teléfono como valor.
+- Asignar `agenda[nombre] = telefono` añade el contacto o actualiza su teléfono si ya existía.
+- Antes de buscar o eliminar se comprueba `nombre in agenda` para evitar un `KeyError`.
+- `del agenda[nombre]` elimina el contacto de forma segura una vez comprobado que existe.
+- `items()` devuelve los pares nombre-teléfono para listarlos uno por uno.
+- El `while True` mantiene el menú activo hasta que se elige la opción de salir.
+
+:::
+
+### Ejercicio 5: frecuencia de palabras
+
+Pide una frase, divídela con `split()`, cuenta cuántas veces aparece cada palabra (ignorando mayúsculas y signos sencillos) y muestra las palabras ordenadas de más a menos frecuentes. Utiliza un diccionario y `sorted()` con una función `lambda` como clave.
+
+::: details Ver solución {close}
+
+```python
+frase = input("Introduce una frase: ")
+
+frase = frase.lower()
+
+for signo in ".,;:!?¡¿\"'()":
+    frase = frase.replace(signo, "")
+
+palabras = frase.split()
+frecuencia = {}
+
+for palabra in palabras:
+    frecuencia[palabra] = frecuencia.get(palabra, 0) + 1
+
+ordenadas = sorted(
+    frecuencia.items(),
+    key=lambda pareja: pareja[1],
+    reverse=True
+)
+
+for palabra, veces in ordenadas:
+    print(f"{palabra}: {veces}")
+```
+
+**Explicación:**
+
+- `lower()` convierte toda la frase a minúsculas para que `"Python"` y `"python"` cuenten como la misma palabra.
+- El bucle recorre una cadena de signos y los sustituye por una cadena vacía, eliminándolos.
+- `split()` separa la frase por espacios y devuelve una lista de palabras.
+- `frecuencia.get(palabra, 0) + 1` obtiene el contador actual (o `0` si es la primera vez) y lo incrementa.
+- `frecuencia.items()` devuelve pares `(palabra, veces)`; `sorted()` los ordena usando como clave `pareja[1]`, que es la frecuencia.
+- `reverse=True` coloca primero las palabras más repetidas.
+
+:::
+
+### Ejercicio 6: conjuntos de asignaturas
+
+Dos listas contienen los alumnos matriculados en dos optativas. Conviértelas en conjuntos y muestra: quiénes están en ambas, quiénes están solo en la primera, quiénes están en una u otra y quiénes no se repiten. Ordena el resultado antes de mostrarlo.
+
+::: details Ver solución {close}
+
+```python
+optica1 = ["Ana", "Luis", "Marta", "Ana", "Eva"]
+optica2 = ["Luis", "Eva", "Pablo", "Luis"]
+
+alumnos1 = set(optica1)
+alumnos2 = set(optica2)
+
+print("En ambas:", sorted(alumnos1 & alumnos2))
+print("Solo en la primera:", sorted(alumnos1 - alumnos2))
+print("En una u otra:", sorted(alumnos1 | alumnos2))
+print("Solo en una (no se repiten):", sorted(alumnos1 ^ alumnos2))
+```
+
+**Explicación:**
+
+- `set()` convierte cada lista en un conjunto, eliminando automáticamente los nombres duplicados.
+- `&` calcula la intersección: alumnos que están en las dos optativas.
+- `-` calcula la diferencia: alumnos de la primera que no están en la segunda.
+- `|` calcula la unión: todos los alumnos de cualquiera de las dos optativas.
+- `^` calcula la diferencia simétrica: alumnos que están solo en una de las dos, es decir, los que no se repiten.
+- `sorted()` convierte el conjunto en una lista ordenada alfabéticamente para mostrar el resultado.
+
+:::
+
+### Ejercicio 7: pila y cola
+
+Simula el historial de un navegador con una pila: visita tres páginas, retrocede dos veces y muestra la página actual. Después simula con `deque` una cola de atención en una oficina: llegan tres personas, se atiende a dos y se muestra quién queda esperando.
+
+::: details Ver solución {close}
+
+**Historial con una pila:**
+
+```python
+historial = []
+
+historial.append("inicio")
+historial.append("noticias")
+historial.append("deportes")
+
+print("Página actual:", historial[-1])
+
+historial.pop()
+print("Atrás ->", historial[-1])
+
+historial.pop()
+print("Atrás ->", historial[-1])
+```
+
+**Cola de atención con `deque`:**
+
+```python
+from collections import deque
+
+cola = deque()
+
+cola.append("Ana")
+cola.append("Luis")
+cola.append("Marta")
+
+print("Atendiendo a", cola.popleft())
+print("Atendiendo a", cola.popleft())
+print("Quedan esperando:", list(cola))
+```
+
+**Explicación:**
+
+- Una **pila** sigue el criterio LIFO: el último elemento en entrar es el primero en salir.
+- `append()` añade al final y `pop()` extrae el último elemento; por eso se usan para el historial.
+- `historial[-1]` muestra la página actual sin extraerla.
+- Una **cola** sigue el criterio FIFO: el primero en llegar es el primero en ser atendido.
+- `deque.append()` añade al final y `popleft()` extrae por el principio de forma eficiente.
+- `list(cola)` convierte la cola restante en una lista para mostrar quién sigue esperando.
+
+:::
+
+### Ejercicio 8: array en Processing
+
+Cuando llegues al Tema 4, crea un sketch con un array de diez números enteros y dibuja un **gráfico de barras**: la altura de cada barra será el valor correspondiente y su posición horizontal se calculará con el índice. Recorre el array con un bucle `for`.
+
+::: details Ver solución {close}
+
+```java
+int[] valores = {3, 7, 2, 9, 5, 8, 4, 6, 1, 10};
+
+int margen = 20;
+int anchoBarra = 30;
+int separacion = 10;
+
+void setup() {
+  size(500, 300);
+  textAlign(CENTER);
+}
+
+void draw() {
+  background(240);
+
+  for (int i = 0; i < valores.length; i++) {
+    float x = margen + i * (anchoBarra + separacion);
+    float altura = valores[i] * 20;
+    float y = height - margen - altura;
+
+    fill(50, 120, 200);
+    rect(x, y, anchoBarra, altura);
+
+    fill(0);
+    text(valores[i], x + anchoBarra / 2, y - 5);
+  }
+}
+```
+
+**Explicación:**
+
+- `int[] valores` declara un **array** de enteros con un tamaño fijo de diez elementos.
+- `valores.length` devuelve el número de elementos del array; en Java es una propiedad, sin paréntesis.
+- El bucle recorre el array desde `0` hasta `length - 1`.
+- La posición horizontal `x` se calcula multiplicando el índice por el ancho de cada barra más la separación.
+- La altura se obtiene multiplicando el valor por una escala; la coordenada `y` se calcula desde abajo, porque en Processing el eje Y crece hacia abajo.
+- `rect(x, y, ancho, alto)` dibuja cada barra y `text()` escribe su valor encima.
+
+:::
