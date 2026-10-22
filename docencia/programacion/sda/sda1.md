@@ -200,4 +200,4 @@ Un programa de consola modular `finanzapp.py` que:
 | A.3.8 Trabajo en equipo | ✔ |
 
 
-[Repositorio Github](https://github.com/dgmx/ppc_sda1)
+>[Repositorio Github](https://github.com/dgmx/pyc_sda1)

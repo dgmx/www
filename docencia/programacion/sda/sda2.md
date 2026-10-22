@@ -253,3 +253,6 @@ La versión **2.0 objetual** de FinanzApp:
 | A.3.6 Análisis, diseño, programación y pruebas. Depuración | ✔ |
 | A.3.7 Control de versiones | ✔ |
 | A.3.8 Trabajo en equipo | ✔ |
+
+
+>[Repositorio Github](https://github.com/dgmx/pyc_sda2)
