@@ -1,139 +1,40 @@
-# Situaciones de Aprendizaje
+# Situación de Aprendizaje 1 — "El motor de FinanzApp"
 
-## Programación y Computación (2º Bachillerato)
+**Programación y Computación · 2.º de Bachillerato · Unidad A.1 · 12 sesiones**
 
-**Enfoque LOMLOE**
-+ Lenguaje: Python 
-+ Hilo conductor: "FinanzApp", una aplicación de gestión financiera personal**
+> Documento independiente de la SdA 1. El marco curricular completo, las otras situaciones y los anexos generales se recogen en `sda_completo.md`.
 
-Este documento recoge **una situación de aprendizaje (SdA1)**, correspondiente a la primera unidad de la materia:
+## Marco curricular de referencia
 
-| SdA | Unidad | Saberes básicos | Duración | Producto final |
-|-----|--------|-----------------|----------|----------------|
-| **SdA 1 — "El motor de FinanzApp"** | Unidad 1 · A.1 Lenguajes de programación | A.1.1, A.1.2, A.1.3 | 12 h (12 sesiones) | Motor en Python (programación estructurada) que registra, clasifica y guarda movimientos financieros |
-
-
-
----
-
-## Índice
-
-1. Marco curricular común a las dos SdA
-2. SdA 1 — El motor de FinanzApp (Unidad A.1)
-3. Anexos: rúbricas, listas de cotejo y plantillas
+- **Materia:** Programación y Computación (PRYC).
+- **Marco normativo:** RD 243/2022, de enseñanzas mínimas de Bachillerato, y concreción autonómica correspondiente.
+- **Competencias específicas:** PRYC.2.1 y PRYC.2.2.
+- **Criterios de evaluación:** PRYC.2.1.1, PRYC.2.1.2 y PRYC.2.2.1.
+- **Saberes básicos:** A.1.1, A.1.2 y A.1.3.
+- **Metodología:** ABP, pensamiento computacional, *pair programming*, depuración guiada y aula invertida puntual.
+- **Evaluación:** formativa y continua, con heteroevaluación, coevaluación y autoevaluación.
+- **DUA:** múltiples formas de representación, acción y expresión, e implicación.
 
 ---
 
-# 1. Marco curricular común
-
-## 1.1. Datos identificativos
-
-- **Etapa:** Bachillerato
-- **Curso:** 2º de Bachillerato
-- **Materia:** Programación y Computación (PRYC)
-- **Marco normativo:** RD 243/2022 (enseñanzas mínimas de Bachillerato) y concreción autonómica correspondiente
-- **Carácter:** Materia de modalidad (Ciencias y Tecnología / opción afín)
-
-## 1.2. Competencias específicas trabajadas
-
-- **PRYC.2.1.** Desarrollar la capacidad de abstracción, producir programas informáticos funcionales e integrarse en un equipo de desarrollo de software que sea capaz de afrontar proyectos acordes al nivel de desarrollo del alumnado, fomentando sus habilidades sociales y aplicando la creatividad.
-- **PRYC.2.2.** Recopilar y procesar datos que ayuden en la resolución de un problema, analizando cómo su almacenamiento, transmisión y presentación se benefician de la manipulación computacional.
-
-> La SdA 1 incide especialmente en **PRYC.2.1** (creación de programas funcionales) y parte de **PRYC.2.2** (procesar y almacenar datos). 
-
-## 1.3. Criterios de evaluación
-
-| Código | Criterio de evaluación | 
-|--------|------------------------|
-| PRYC.2.1.1 | Transformar ideas en aplicaciones de forma creativa, descomponiendo problemas complejos en otros más simples e ideando modelos abstractos de los mismos y algoritmos que permitan implementar una solución computacional. | 
-| PRYC.2.1.2 | Escribir programas, convenientemente estructurados y comentados, que recogen y procesan la información procedente de diferentes fuentes y generan la correspondiente salida. | 
-| PRYC.2.2.1 | Explotar las posibilidades del almacenamiento de datos para la recogida y procesamiento de información, buscando patrones y conexiones que faciliten la resolución de problemas. | 
-
-**Método de calificación:** media aritmética de los criterios implicados.
-
-## 1.4. Saberes básicos
-
-**A. Programación**
-- *A.1. Lenguajes de programación*
-  - A.1.1. Tipos de lenguajes. Estructura de un programa informático y elementos básicos del lenguaje. Tipos básicos de datos. Constantes y variables. Operadores y expresiones. Comentarios.
-  - A.1.2. Estructuras de control condicionales e iterativas. Estructuras de datos.
-  - A.1.3. Funciones y reutilización de código. Manipulación de archivos.
-- *A.2. Orientación a objetos*
-  - A.2.1. Clases, objetos y constructores. Sobrecarga, encapsulamiento y ocultación.
-  - A.2.2. Herencia. Subclases y superclases. Interfaces. Polimorfismo.
-- *A.3. Ciclo de vida del software*
-  - A.3.1. Metodologías de desarrollo de software.
-  - A.3.2. Enfoque Top-Down, fragmentación de problemas y algoritmos.
-  - A.3.3. Pseudocódigo y diagramas de flujo.
-  - A.3.4. Desarrollo iterativo.
-  - A.3.5. Entornos de desarrollo integrado.
-  - A.3.6. Análisis, Diseño, Programación y Pruebas. Depuración.
-  - A.3.7. Control de versiones.
-  - A.3.8. Trabajo en equipo.
-
-## 1.5. Vinculación con competencias clave y descriptores operativos
-
-| Competencia clave | Descriptores operativos | Cómo se movilizan |
-|-------------------|-------------------------|-------------------|
-| STEM | STEM1, STEM2, STEM3, STEM4, STEM5 | Descomposición de problemas, modelización, algoritmos, resolución de problemas reales |
-| CD (digital) | CD1, CD2, CD3, CD4, CD5 | Uso del IDE, control de versiones, depuración, seguridad y buenas prácticas |
-| CCL | CCL1, CCL2, CCL5 | Comentarios, documentación, memoria técnica, exposición oral |
-| CPSAA | CPSAA1, CPSAA3, CPSAA4, CPSAA5 | Autorregulación, trabajo cooperativo, gestión del error y de la frustración |
-| CE (emprendedora) | CE1, CE2, CE3 | Creatividad, iniciativa, ideación de producto con valor real |
-| CC (ciudadana) | CC1, CC3 | Uso crítico y responsable de la tecnología; datos y privacidad |
-| CCEC | CCEC4 | Cuidado estético de la interfaz y de la presentación del producto |
-
-## 1.6. Objetivos didácticos comunes
-
-- OA1. Diseñar soluciones computacionales a problemas reales aplicando el pensamiento computacional.
-- OA2. Utilizar el entorno de desarrollo, el depurador y el control de versiones con autonomía.
-- OA3. Escribir código legible, estructurado y comentado, siguiendo convenciones de estilo (PEP 8).
-- OA4. Trabajar de forma cooperativa, asumiendo roles y comunicando el resultado del trabajo técnico.
-
-## 1.7. Metodología
-
-- **Aprendizaje Basado en Proyectos (ABP):** cada SdA culmina en un producto funcional evaluable.
-- **Pensamiento computacional:** modelado, descomposición y abstracción guiados.
-- **Programación por parejas (*pair programming*):** roles de conductor y copiloto, rotando.
-- **Depuración guiada y aprendizaje del error:** el error como fuente de aprendizaje.
-- **Aula invertida puntual:** vídeos breves de sintaxis como trabajo previo.
-- **Instrucción directa** para sintaxis nueva, combinada con **práctica autónoma**.
-
-## 1.8. Evaluación común
-
-- **Formativa y continua**, con retroalimentación en cada práctica.
-- **Tres agentes:** heteroevaluación (docente), coevaluación (entre iguales) y autoevaluación.
-- **Instrumentos:** rúbricas, listas de cotejo, portafolio de código (repositorio Git), pruebas prácticas cortas, diario de aprendizaje y exposición oral.
-
-## 1.9. Principios DUA y atención a la diversidad (comunes)
-
-- **Representación:** material en múltiples formatos (texto, vídeo, esquemas, ejemplos resueltos).
-- **Acción y expresión:** el alumnado puede demostrar lo aprendido mediante código, diagrama o explicación oral.
-- **Implicación:** reto con contexto real, elección de temática dentro de FinanzApp, niveles de dificultad.
-- **Medidas:** plantillas de código para niveles de apoyo, retos de ampliación para nivel avanzado, tiempos flexibles y tutoría entre iguales.
-
----
-
-# 2. Situación de Aprendizaje 1 — "El motor de FinanzApp"
-
-## 2.1. Datos e identificación
+## 1.1. Datos e identificación
 
 - **Título:** El motor de FinanzApp
 - **Unidad:** A.1. Lenguajes de programación
 - **Duración:** 12 horas (12 sesiones de 60 min)
 - **Área/agrupamiento:** aula de informática; individual, parejas y grupos de 4
 
-## 2.2. Contexto y justificación
+## 1.2. Contexto y justificación
 
 El alumnado de 2º de Bachillerato está próximo a la vida adulta y a la gestión de sus propios recursos (matrícula, transporte, ocio). A partir de una situación cotidiana —querer saber *en qué se gasta el dinero*—, diseñarán el **motor lógico de una aplicación de finanzas personales**. El reto permite trabajar con naturalidad todos los elementos básicos del lenguaje: variables, tipos, operadores, control de flujo, estructuras de datos, funciones y archivos.
 
 Se plantea como **primera etapa** de un proyecto mayor que continuará en la SdA 2 con la orientación a objetos, de modo que el código que produzcan aquí será la materia prima de la siguiente situación.
 
-## 2.3. Reto / pregunta motriz
+## 1.3. Reto / pregunta motriz
 
 > **¿Podemos crear un programa en Python que registre nuestros ingresos y gastos, los clasifique por categorías y guarde los datos para consultarlos otro día?**
 
-## 2.4. Producto final
+## 1.4. Producto final
 
 Un programa de consola modular `finanzapp.py` que:
 1. Registra ingresos y gastos (fecha, concepto, importe, categoría).
@@ -142,7 +43,7 @@ Un programa de consola modular `finanzapp.py` que:
 4. Está organizado en **funciones**, comentado y estructurado.
 5. Se acompaña de un **diagrama de flujo** del flujo principal y un **breve manual de uso**.
 
-## 2.5. Concreción curricular (criterios ↔ saberes ↔ sesiones)
+## 1.5. Concreción curricular (criterios ↔ saberes ↔ sesiones)
 
 | Criterio | Saberes (A.1) | Sesiones |
 |----------|---------------|----------|
@@ -150,7 +51,7 @@ Un programa de consola modular `finanzapp.py` que:
 | PRYC.2.1.2 | A.1.1, A.1.2, A.1.3 | 1–10 |
 | PRYC.2.2.1 | A.1.3 (manipulación de archivos) | 9, 10, 11 |
 
-## 2.6. Secuenciación didáctica (12 sesiones)
+## 1.6. Secuenciación didáctica (12 sesiones)
 
 ### FASE INICIAL (Sesión 0 · 1 h)
 
@@ -226,7 +127,7 @@ Un programa de consola modular `finanzapp.py` que:
 - **Coevaluación** entre parejas con rúbrica; **autoevaluación** con diario de aprendizaje; cierre del docente.
 - *Producto:* repositorio Git con el motor + memoria breve.
 
-## 2.7. Evaluación de la SdA 1
+## 1.7. Evaluación de la SdA 1
 
 | Criterio | Instrumento | Momento | Peso |
 |----------|-------------|---------|:----:|
@@ -238,23 +139,23 @@ Un programa de consola modular `finanzapp.py` que:
 - **Coevaluación:** rúbrica entre parejas (S12).
 - **Prueba práctica corta** opcional (S10) para consolidar sintaxis.
 
-## 2.8. Materiales y recursos
+## 1.8. Materiales y recursos
 
 - Aula de informática con Python 3.x, VS Code, acceso a Git/GitHub.
 - Repositorio plantilla con `README.md` y estructura de carpetas.
 - Guiones de prácticas y **recursos de apoyo** (chuletas de sintaxis, plantillas de código).
 - Archivos de ejemplo `movimientos_ejemplo.csv`.
 
-## 2.9. Evaluación de la práctica docente
+## 1.9. Evaluación de la práctica docente
 
 - Cuestionario final al alumnado (claridad, ritmo, utilidad, dificultad percibida).
 - Análisis de resultados por criterio y ajuste de tiempos; revisión de las plantillas de apoyo y retos de ampliación.
 
 ---
 
-# 3. Anexos
+# Anexos
 
-## Anexo A · Rúbrica general de producto de código (SdA )
+## Anexo A · Rúbrica general de producto de código (SdA 1)
 
 | Criterio | 4 — Excelente | 3 — Adecuado | 2 — En desarrollo | 1 — Insuficiente |
 |----------|---------------|--------------|-------------------|------------------|
@@ -263,16 +164,16 @@ Un programa de consola modular `finanzapp.py` que:
 | *Persistencia* (archivos) | Guarda y recupera sin pérdida de datos y con manejo de errores | Guarda y recupera correctamente | Persistencia parcial | No persiste o corrompe datos |
 | *Documentación* | Memoria/diagrama completos y claros | Documentación suficiente | Documentación escasa | Sin documentación |
 
-## Anexo B · Lista de cotejo — entrega de repositorio
+## Anexo B · Lista de cotejo — entrega de repositorio (SdA 1)
 
 - [ ] El repositorio tiene `README.md` con instrucciones de uso.
 - [ ] Los *commits* son frecuentes y descriptivos.
-- [ ] El código sigue un estilo homogéneo (PEP 8).
-- [ ] Existen comentarios/docstrings en clases y funciones principales.
-- [ ] Se incluyen datos de ejemplo y se documenta el formato de archivo.
-- [ ] El programa arranca desde cero sin errores.
+- [ ] El código y los scripts SQL siguen un estilo homogéneo (PEP 8 / convenciones SQL).
+- [ ] Existen comentarios/docstrings en clases, funciones y scripts principales.
+- [ ] Se incluyen datos de ejemplo y se documenta el formato de archivo o el esquema de la base de datos.
+- [ ] El programa arranca desde cero sin errores o la base de datos se crea y carga sin errores.
 
-## Anexo D · Diario de aprendizaje (autoevaluación)
+## Anexo C · Diario de aprendizaje (autoevaluación)
 
 1. ¿Qué he aprendido en esta situación de aprendizaje?
 2. ¿Qué parte me ha resultado más difícil y cómo la he resuelto?
@@ -280,16 +181,20 @@ Un programa de consola modular `finanzapp.py` que:
 4. ¿Qué mejoraría si volviera a empezar?
 5. Valoración personal del resultado (1–5) y por qué.
 
+## Anexo D · Banco de retos de ampliación (SdA 1)
 
-## Anexo C · Correspondencia de la SdA con los saberes básicos
+- Añadir autenticación por usuario y varios perfiles.
+- Incorporar gráficos con `matplotlib` a partir de los datos guardados.
+- Exportar a PDF o a base de datos SQLite.
+- Añadir tests con `unittest` y cobertura.
+- Refactorizar usando `dataclasses` para los modelos.
+
+## Anexo E · Correspondencia con los saberes básicos (SdA 1)
 
 | Saber básico | SdA 1 |
 |--------------|:-----:|
-| A.1.1 Tipos, variables, operadores, comentarios | ✔ | |
-| A.1.2 Condicionales, iterativas, estructuras de datos | ✔ | |
-| A.1.3 Funciones y archivos | ✔ | |
-
-
----
-
-*Documento elaborado como propuesta didáctica. Adaptar códigos, calificaciones y nomenclatura a la concreción curricular de la comunidad autónoma y del centro.*
+| A.1.1 Tipos, variables, operadores, comentarios | ✔ |
+| A.1.2 Condicionales, iterativas, estructuras de datos | ✔ |
+| A.1.3 Funciones y archivos | ✔ |
+| A.3.5 Entornos de desarrollo integrado | ✔ |
+| A.3.8 Trabajo en equipo | ✔ |
