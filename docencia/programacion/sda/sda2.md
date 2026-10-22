@@ -1,4 +1,4 @@
-# Situación de Aprendizaje 2 — "FinanzApp se vuelve objetual"
+# Situación de Aprendizaje 2. "FinanzApp se vuelve objetual"
 
 **Programación y Computación · 2.º de Bachillerato · Unidad A.2 · Bloque A.3 · 12 sesiones**
 

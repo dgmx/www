@@ -1,4 +1,4 @@
-# Situación de Aprendizaje 3 — "InvernaderoDB: los datos del invernadero familiar"
+# Situación de Aprendizaje 3. "InvernaderoDB: los datos del invernadero familiar"
 
 **Programación y Computación · 2.º de Bachillerato · Unidad B.1 · 12 sesiones**
 

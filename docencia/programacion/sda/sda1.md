@@ -1,4 +1,4 @@
-# Situación de Aprendizaje 1 — "El motor de FinanzApp"
+# Situación de Aprendizaje 1. "El motor de FinanzApp"
 
 **Programación y Computación · 2.º de Bachillerato · Unidad A.1 · 12 sesiones**
 
