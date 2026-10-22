@@ -1,9 +1,7 @@
-# Bloque B. Arquitectura de ordenadores y sistemas operativos
+# TEMA 3: Arquitectura de ordenadores
+### Bloque B. Arquitectura de ordenadores y sistemas operativos | TICO.1.B.1
 
-## Unidad didáctica: Arquitectura de ordenadores (TICO.1.B.1)
-
-**Materia:** Tecnologías de la Información y la Comunicación I  
-**Curso:** 1.º de Bachillerato  
+> **Currículo LOMLOE - Andalucía** | Criterios: TICO.1.B.1.1 a TICO.1.B.1.6
 
 ---
 
