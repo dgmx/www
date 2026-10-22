@@ -122,9 +122,10 @@ export default defineConfig({
             items: [
               { text: "Manual de Python", link: "/programacion/python/03_manual_python" },
               { text: "Manual de programación con Python y VS Code", link: "/programacion/python/01_python_vscode" },
-              { text: "Ejercicios básicos", link: "/programacion/python/01_ejercicios" },
-              { text: "Ejercicios de condicionales y bucles", link: "/programacion/python/02_ejercicios" },
-              { text: "Ejercicios de funciones y módulos", link: "/programacion/python/03_ejercicios" },
+              { text: "Ejercicios básicos", link: "/programacion/python/ejercicios/01_ejercicios" },
+              { text: "Ejercicios de condicionales y bucles", link: "/programacion/python/ejercicios/02_ejercicios" },
+              { text: "Ejercicios de estructuras de datos", link: "/programacion/python/ejercicios/03_ejercicios" },
+              { text: "Ejercicios de funciones y módulos", link: "/programacion/python/ejercicios/04_ejercicios" },
             ],
           },
           {

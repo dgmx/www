@@ -1,6 +1,6 @@
 # Ejercicios de funciones y módulos en Python
 
-En esta tercera tanda de ejercicios trabajamos con **funciones** (`def`, parámetros, `return`) y con **módulos**, es decir, archivos `.py` que contienen funciones reutilizables. Cada ejercicio incluye una solución comentada que puedes desplegar.
+En esta cuarta tanda de ejercicios trabajamos con **funciones** (`def`, parámetros, `return`) y con **módulos**, es decir, archivos `.py` que contienen funciones reutilizables. Cada ejercicio incluye una solución comentada que puedes desplegar.
 
 
 ## Ejercicio 1: calcular el salario total de un trabajador con horas extras
