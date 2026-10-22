@@ -22,7 +22,7 @@ features:
     link: /docencia/programacion/tema1_conceptos
     linkText: Leer más
   - title: Situaciones de Aprendizaje
-    details: Situación de aprendizaje 1 y 2 (sda1, sda2)
+    details: Situación de aprendizaje 1, 2, 3 (SdA1, SdA2, SdA3)
     link: /docencia/programacion/sda/sda_completo
     linkText: Leer más
 ---
