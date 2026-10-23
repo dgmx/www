@@ -1,6 +1,6 @@
 
 
-# Programación y Computación. Andalucía
+# A.1. Lenguajes de programación.
 
 ### Bloque A. Programación
 
