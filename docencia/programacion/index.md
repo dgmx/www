@@ -13,16 +13,24 @@ features:
     details: Representación digital de la información.
     link: /docencia/programacion/tema0
     linkText: Leer más
-  - title: Tema 1
-    details: Lenguajes de programación, estructuras de control, funciones y archivos.
-    link: /docencia/programacion/tema1
-    linkText: Leer más
   - title: Introduccion a los lenguajes de programación
     details: Lenguajes de programación, características, elementos, instrucciones, tipos, lenguajes más importantes
     link: /docencia/programacion/tema1_conceptos
     linkText: Leer más
+  - title: Bloque A.1
+    details: Lenguajes de programación, estructuras de control, funciones y archivos.
+    link: /docencia/programacion/tema1
+    linkText: Leer más
+  - title: Bloque A.2
+    details: Orientación a objetos.
+    link: /docencia/programacion/tema2
+    linkText: Leer más
+  - title: Bloque A.3
+    details: Ciclo de vida del software
+    link: /docencia/programacion/tema3
+    linkText: Leer más
   - title: Situaciones de Aprendizaje
-    details: Situación de aprendizaje 1, 2, 3 (SdA1, SdA2, SdA3)
+    details: Situación de aprendizaje 1, 2, 3 (SdA1, SdA2, SdA3). Bloques A y B
     link: /docencia/programacion/sda/sda_completo
     linkText: Leer más
 ---

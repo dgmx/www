@@ -71,6 +71,7 @@ export default defineConfig({
             items: [
               { text: "Tema 0. Representación digital", link: "/docencia/programacion/tema0" },
               { text: "Tema 1. Lenguajes de programación", link: "/docencia/programacion/tema1" },
+              { text: "Tema 2. Orientación a objetos", link: "/docencia/programacion/tema2" },
               { text: "Tema 3. Ciclo de vida del software", link: "/docencia/programacion/tema3" },
             ],
           },
