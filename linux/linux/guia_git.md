@@ -1,6 +1,10 @@
 
 # Guía de Comandos Git. De Principiante a Avanzado
 
+::: tip
+Si empiezas desde cero, consulta primero el [Manual de introducción a Git y GitHub](manual_git_github), donde se explican los conceptos, la creación de claves SSH y la sincronización con GitHub paso a paso.
+:::
+
 ## 1. Configuración Inicial
 Antes de usar Git, debes configurarlo en tu máquina:
 

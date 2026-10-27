@@ -273,6 +273,7 @@ export default defineConfig({
               { text: "Comandos", link: "/linux/linux/comandos_linux" },
               { text: "Comandos Red", link: "/linux/linux/comandos_red_avanzados" },
               { text: "DHCP y NAT", link: "/linux/linux/dhcp_nat" },
+              { text: "Manual Git y GitHub", link: "/linux/linux/manual_git_github" },
               { text: "Guía Git", link: "/linux/linux/guia_git" },
               { text: "Networking", link: "/linux/linux/networking" },
               { text: "Permisos Linux", link: "/linux/linux/permisos-linux" },
