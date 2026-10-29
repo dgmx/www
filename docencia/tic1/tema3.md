@@ -271,17 +271,15 @@ $$3{,}2 \times 10^9 \times 2 = 6{,}4 \times 10^9 \text{ instrucciones/s}$$
 
 Ninguna memoria es a la vez grande, rápida y barata. Por eso se organizan en niveles:
 
-```
-+------------------+-----------+-----------+-------------------+
-| Nivel            | Velocidad | Capacidad | Coste por bit     |
-+------------------+-----------+-----------+-------------------+
-| Registros        | Muy alta  | Muy baja  | Muy alto          |
-| Caché L1/L2/L3   | Alta      | Baja      | Alto              |
-| Memoria RAM      | Media     | Media     | Medio             |
-| SSD              | Media-baja| Alta      | Bajo              |
-| HDD / nube       | Baja      | Muy alta  | Muy bajo          |
-+------------------+-----------+-----------+-------------------+
-```
+
+| Nivel | Velocidad | Capacidad | Coste por bit |
+| --- | --- | --- | --- |
+| Registros | Muy alta | Muy baja | Muy alto |
+| Caché L1/L2/L3 | Alta | Baja | Alto |
+| Memoria RAM | Media | Media | Medio |
+| SSD | Media-baja | Alta | Bajo |
+| HDD / nube | Baja | Muy alta | Muy bajo |
+
 
 Cuanto más cerca de la CPU, más rápida y más cara es la memoria.
 
