@@ -1,0 +1,25 @@
+Question,Answer 1,Answer 2,Answer 3,Answer 4,Time limit (sec),Correct answer(s)
+"¿En la arquitectura de von Neumann, dónde se guardan instrucciones y datos?",En memorias separadas,En la misma memoria,Solo en la caché,Solo en el disco,20,2
+La ley de Moore se refiere a...,La velocidad de Internet,El número de transistores por chip,La capacidad de los discos,La frecuencia del reloj,20,2
+¿Qué unidad decodifica las instrucciones?,ALU,UC,RAM,Bus de datos,20,2
+La ALU realiza...,Solo sumas,Operaciones aritméticas y lógicas,La decodificación,El arranque del equipo,20,2
+Las fases del ciclo de instrucción son:,"Búsqueda, decodificación, ejecución, escritura","Arranque, carga, cierre","Lectura, escritura, borrado","Entrada, salida, proceso",30,1
+La memoria volátil por excelencia es...,ROM,RAM,SSD,HDD,20,2
+Un SSD se caracteriza por...,Tener platos giratorios,Usar memoria flash,Ser siempre más lento que un HDD,No poder almacenar el SO,20,2
+El bus de direcciones es...,Bidireccional,Unidireccional,Inexistente,Solo para periféricos,20,2
+Una pantalla táctil es un periférico de...,Entrada,Salida,Entrada/salida,Almacenamiento,20,3
+El sistema operativo es...,Un programa de aplicación,"El intermediario entre usuario, aplicaciones y hardware",Un periférico,Un tipo de licencia,20,2
+¿Qué arquitectura deja la mayoría de los servicios en espacio de usuario?,Monolítica,Por capas,Microkernel,Híbrida,20,3
+Round Robin es un algoritmo de...,Gestión de archivos,Planificación de CPU,Gestión de usuarios,Compresión,20,2
+Un proceso en estado bloqueado está...,Usando la CPU,Esperando un evento o recurso,Terminado,Recién creado,20,2
+¿Qué sistema de archivos es típico de Linux y usa journaling?,FAT32,NTFS,ext4,exFAT,20,3
+"En Linux, los permisos rwxr-xr-- significan...","Propietario rwx, grupo r-x, otros r--",Todos tienen rwx,Nadie tiene permisos,Solo lectura para todos,20,1
+El principio de mínimo privilegio implica...,Dar permisos de administrador a todos,Dar solo los permisos necesarios,No usar contraseñas,Desactivar el firewall,20,2
+Un driver es...,Un dispositivo físico,Un programa que controla un dispositivo,Un sistema de archivos,Un usuario,20,2
+DMA sirve para...,Imprimir documentos,Transferir datos sin intervención directa de la CPU,Cifrar archivos,Crear usuarios,20,2
+¿Qué herramienta muestra procesos en Linux?,tasklist,htop,ipconfig,format,20,2
+El thrashing se produce por...,Exceso de uso de swap,Demasiada memoria libre,Disco SSD muy rápido,CPU a 0%,20,1
+Un dual boot permite...,Ejecutar dos programas a la vez,Tener dos sistemas operativos en el mismo equipo,Duplicar los datos,Aumentar la RAM,20,2
+La regla 3-2-1 se refiere a...,Procesos,Copias de seguridad,Buses,Permisos,20,2
+Una instalación limpia...,Mantiene archivos y aplicaciones,Borra todo y reinstala,Solo actualiza drivers,Crea usuarios,20,2
+¿Qué sistema operativo es libre?,Windows 11,macOS,Ubuntu,iOS,20,3
