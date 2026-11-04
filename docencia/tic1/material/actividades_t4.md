@@ -236,3 +236,4 @@ d) permisos.
 ---
 
 **Nota final:** el sistema operativo es el software más importante del equipo. Conocerlo en profundidad te permitirá instalarlo, mantenerlo, protegerlo y sacar el máximo partido a cualquier dispositivo, hoy y en el futuro.
+

@@ -702,4 +702,4 @@ Antes de instalar, hay que comprobar:
 
 ---
 
-> Las prácticas de laboratorio, actividades de repaso, autoevaluación, glosario, recursos, criterios de evaluación y rúbrica de este tema se encuentran en `material/actividades_t4.md`.
+> Las prácticas de laboratorio, actividades de repaso, autoevaluación, glosario, recursos, criterios de evaluación y rúbrica de este tema se encuentran en [`material/actividades_t4.md`](material/actividades_t4.md)
