@@ -83,6 +83,7 @@ export default defineConfig({
               { text: "Tema 2. Información Digital", link: "/docencia/tic1/tema2" },
               { text: "Tema 3. Arquitectura de ordenadores", link: "/docencia/tic1/tema3" },
               { text: "Tema 4. Sistemas operativos", link: "/docencia/tic1/tema4" },
+              { text: "SdA T3-T4. Monta, instala y optimiza", link: "/docencia/tic1/sda_t3_t4" },
             ],
           },
           {

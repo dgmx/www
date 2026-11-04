@@ -25,4 +25,8 @@ features:
     details: Sistemas operativos.
     link: /docencia/tic1/tema4
     linkText: Leer más
+  - title: SdA T3-T4
+    details: Situación de aprendizaje integrada.
+    link: /docencia/tic1/sda_t3_t4
+    linkText: Leer más
 ---
