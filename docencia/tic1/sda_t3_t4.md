@@ -13,7 +13,7 @@
 - **Curso:** 1.º de Bachillerato.
 - **Bloque:** B. Arquitectura de ordenadores y sistemas operativos.
 - **Saberes básicos:** TICO.1.B.1.1 a TICO.1.B.1.6 y TICO.1.B.2.1 a TICO.1.B.2.7.
-- **Duración:** 14 sesiones de 55 minutos (aprox. 13 horas).
+- **Duración:** 10 sesiones de 55 minutos (aprox. 9 horas).
 - **Agrupamiento:** individual, parejas y grupos de 3–4.
 - **Espacios:** aula de informática con equipos reales o virtuales, proyector, acceso a Internet.
 
@@ -44,100 +44,83 @@ Cada grupo entrega y defiende:
 
 | Saber básico | Contenido | Sesiones |
 |---|---|---|
-| TICO.1.B.1.1 | Hardware y software. Sistemas propietarios y libres. | 1, 2 |
-| TICO.1.B.1.2 | Arquitectura clásica y ley de Moore. | 3 |
-| TICO.1.B.1.3 | CPU, unidad de control, ALU. | 4 |
-| TICO.1.B.1.4 | Memoria principal y almacenamiento secundario. | 5 |
-| TICO.1.B.1.5 | Periféricos y nueva generación. | 6 |
-| TICO.1.B.1.6 | Buses de comunicación. | 6 |
-| TICO.1.B.2.1 | Arquitecturas y funciones. Licencias. Interfaces. | 7 |
-| TICO.1.B.2.2 | Gestión de procesos. | 8 |
-| TICO.1.B.2.3 | Sistema de archivos. | 9 |
-| TICO.1.B.2.4 | Gestión de usuarios. | 9 |
-| TICO.1.B.2.5 | Gestión de dispositivos. | 10 |
-| TICO.1.B.2.6 | Monitorización y rendimiento. | 11 |
-| TICO.1.B.2.7 | Instalación y configuración. | 12, 13 |
+| TICO.1.B.1.1 | Hardware y software. Sistemas propietarios y libres. | 1 |
+| TICO.1.B.1.2 | Arquitectura clásica y ley de Moore. | 1 |
+| TICO.1.B.1.3 | CPU, unidad de control, ALU. | 2 |
+| TICO.1.B.1.4 | Memoria principal y almacenamiento secundario. | 2 |
+| TICO.1.B.1.5 | Periféricos y nueva generación. | 3 |
+| TICO.1.B.1.6 | Buses de comunicación. | 4 |
+| TICO.1.B.2.1 | Arquitecturas y funciones. Licencias. Interfaces. | 4 |
+| TICO.1.B.2.2 | Gestión de procesos. | 5 |
+| TICO.1.B.2.3 | Sistema de archivos. | 6 |
+| TICO.1.B.2.4 | Gestión de usuarios. | 6 |
+| TICO.1.B.2.5 | Gestión de dispositivos. | 7 |
+| TICO.1.B.2.6 | Monitorización y rendimiento. | 7 |
+| TICO.1.B.2.7 | Instalación y configuración. | 8 |
 
 **Criterios de evaluación asociados:** distinguir hardware/software y licencias; comprender la arquitectura; analizar la CPU; diferenciar memorias y almacenamiento; clasificar periféricos; comprender buses; comprender el SO; gestionar procesos; organizar archivos; administrar usuarios; gestionar dispositivos; monitorizar rendimiento; instalar y configurar.
 
 ## 6. Secuenciación didáctica
 
-### Fase inicial (Sesiones 1–2)
+### Fase inicial (Sesión 1)
 
-**Sesión 1 — "¿Qué es un sistema informático?"**
-- Presentación del reto y del producto final.
+**Sesión 1 — "Reto y arquitectura básica"**
+- Presentación del reto, del producto final y de la rúbrica.
 - Diagnóstico inicial: cuestionario de ideas previas (hardware, software, SO).
-- Conceptos de hardware, software, firmware y licencias.
-- Debate: propietario vs libre en el aula.
-- *Agrupamiento:* gran grupo. *Evaluación:* diagnóstica.
-
-**Sesión 2 — "Arquitectura y ley de Moore"**
-- Arquitectura de von Neumann y cuello de botella.
-- Ley de Moore: cálculo y límites.
-- Actividad: estimar transistores y discutir tendencias.
+- Hardware, software, firmware y licencias.
+- Arquitectura de von Neumann y ley de Moore.
 - *Producto:* esquema anotado de la arquitectura.
 
-### Fase de desarrollo (Sesiones 3–12)
+### Fase de desarrollo (Sesiones 2–8)
 
-**Sesión 3 — "La CPU por dentro"**
-- UC, ALU, registros, caché, ciclo de instrucción.
-- Cálculo de instrucciones por segundo.
-- Práctica: ordenar memorias por velocidad.
-
-**Sesión 4 — "Memoria y almacenamiento"**
+**Sesión 2 — "CPU, memoria y almacenamiento"**
+- CPU: UC, ALU, registros, caché y ciclo de instrucción.
 - Jerarquía de memoria, RAM/ROM, HDD/SSD.
-- Particiones, sistemas de archivos, clústeres, RAID.
-- Actividad: calcular espacio real ocupado por archivos.
+- Particiones, sistemas de archivos y RAID.
+- Práctica: calcular espacio real ocupado por archivos.
 
-**Sesión 5 — "Periféricos y buses"**
+**Sesión 3 — "Periféricos, buses y presupuesto"**
 - Clasificación de periféricos y nueva generación.
 - Buses de datos, direcciones y control; ancho de banda.
-- Práctica: calcular ancho de banda de un bus.
-
-**Sesión 6 — "Presupuesto de un equipo"**
-- Elaborar presupuesto para tres perfiles.
-- Justificar compatibilidad y decisiones.
+- Elaboración de un presupuesto de equipo para un perfil.
 - *Producto:* tabla comparativa y presupuesto.
 
-**Sesión 7 — "El sistema operativo"**
-- Concepto, funciones, arquitecturas internas.
+**Sesión 4 — "El sistema operativo"**
+- Concepto, funciones y arquitecturas internas.
 - Licencias e interfaces (CLI/GUI).
 - Actividad: comparar Windows, macOS y Linux.
 
-**Sesión 8 — "Procesos y rendimiento"**
-- Estados de un proceso, planificación, hilos.
-- Interbloqueos y sincronización (nivel básico).
-- Práctica: observar procesos con el gestor de tareas / `htop`.
+**Sesión 5 — "Procesos y rendimiento"**
+- Estados de un proceso, planificación y hilos.
+- Monitorización: métricas, herramientas y cuellos de botella.
+- Optimización y copias de seguridad (regla 3-2-1).
+- Práctica: observar procesos y detectar un cuello de botella.
 
-**Sesión 9 — "Archivos, usuarios y permisos"**
-- Sistemas de archivos, permisos en Windows y Linux.
+**Sesión 6 — "Archivos, usuarios y dispositivos"**
+- Sistemas de archivos y permisos (Windows/Linux).
 - Gestión de usuarios y grupos.
+- Drivers, Plug and Play y mecanismos de E/S.
 - Práctica: crear usuarios y asignar permisos en una carpeta compartida.
 
-**Sesión 10 — "Dispositivos y monitorización"**
-- Drivers, Plug and Play, mecanismos de E/S.
-- Métricas de rendimiento y herramientas.
-- Práctica: detectar un cuello de botella en un equipo.
-
-**Sesión 11 — "Optimización"**
-- Limpieza, arranque, servicios, TRIM, desfragmentación.
-- Copias de seguridad y regla 3-2-1.
-- Diseño de un plan de copias para el aula.
-
-**Sesión 12 — "Instalación en máquina virtual"**
-- Requisitos, medio de instalación, particionado.
+**Sesión 7 — "Instalación en máquina virtual (I)"**
+- Requisitos, medio de instalación y particionado.
 - Instalación guiada de un SO libre.
-- Configuración inicial: usuarios, actualizaciones, firewall, snapshot.
-- *Producto:* VM funcional.
+- *Producto:* VM con el sistema instalado.
 
-### Fase final (Sesiones 13–14)
+**Sesión 8 — "Instalación en máquina virtual (II)"**
+- Configuración inicial: usuarios, actualizaciones, firewall.
+- Creación de snapshot inicial.
+- Verificación del funcionamiento y documentación.
+- *Producto:* VM funcional y configurada.
 
-**Sesión 13 — "Elaboración del informe"**
+### Fase final (Sesiones 9–10)
+
+**Sesión 9 — "Elaboración del informe"**
 - Redacción del informe técnico en grupo.
 - Revisión por pares (coevaluación).
 - Preparación de la presentación.
 
-**Sesión 14 — "Defensa y cierre"**
+**Sesión 10 — "Defensa y cierre"**
 - Presentaciones orales con demostración.
 - Autoevaluación y coevaluación.
 - Reflexión final: sostenibilidad y soberanía tecnológica.
