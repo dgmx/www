@@ -21,4 +21,8 @@ features:
     details: Arquitectura de ordenadores y sistemas operativos.
     link: /docencia/tic1/tema3
     linkText: Leer más
+  - title: Tema 4
+    details: Sistemas operativos.
+    link: /docencia/tic1/tema4
+    linkText: Leer más
 ---
